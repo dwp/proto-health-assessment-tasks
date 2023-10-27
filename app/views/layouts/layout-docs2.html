@@ -1,0 +1,86 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %}
+<header class="dwp-header" data-module="govuk-header">
+    <div class=" govuk-width-container ">
+        <a href="../" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
+          Health Assessment Service
+        </a>
+    </div>
+    </header>
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dt class="key-details-bar__name">John Smith</dt>
+
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dt class="key-details-bar__nino">RN 00 01 23 A</dt>
+
+      <dt class="govuk-visually-hidden">Claim status:</dt>
+      <dd class="key-details-bar__status">HCP REVIEW</dd>
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>31 December 1999</dd>
+
+      <dt>Postcode:</dt>
+      <dd>N2 1XX</dd>
+
+     
+
+    </div>
+  </dl>
+</section>
+<header class="moj-primary-navigation">
+  <div class="govuk-width-container ">
+    <div class="moj-primary-navigation">
+
+      <div class="moj-primary-navigation__container">
+    
+        <div class="moj-primary-navigation__nav">
+    
+          <nav class="moj-primary-navigation" aria-label="Primary navigation">
+    
+            <ul class="moj-primary-navigation__list">
+              <li class="moj-primary-navigation__item"> 
+                <a class="moj-primary-navigation__link"href="ta-task-list2">Assessment</a>
+                </li>
+    
+
+              <li class="moj-primary-navigation__item" style="border-bottom: 5px solid #1d70b8;">
+               
+               
+                
+                <a class="moj-primary-navigation__link"  aria-current="page" href=" ">Claimant documents</a>
+                 
+
+              </li>
+    
+
+              <li class="moj-primary-navigation__item">
+                <a class="moj-primary-navigation__link" href="other-services/timeline-view">Timeline</a>
+              </li>
+
+
+            </ul>
+    
+          </nav>
+    
+        </div>
+      </div>
+    
+    </div>
+    
+
+      
+  </div>
+  </header>
+{% endblock %}
+

@@ -1,0 +1,127 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Engaging face to face</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" novalidate="">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="facetofaceNotes">
+              Functional history for engaging face to face
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="8">{{data["facetofaceNotes"]}}</textarea>
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can engage face to face?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>                                     
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
