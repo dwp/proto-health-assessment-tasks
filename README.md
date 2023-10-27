@@ -1,1 +1,1 @@
-# health-assessment-tasks
+# Prototype template

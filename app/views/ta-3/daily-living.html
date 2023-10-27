@@ -1,0 +1,175 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Provide a justification for daily living
+        </h1>
+      </legend>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Preparing food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["preparingfoodSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="preparingfood">
+              Add<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Taking nutrition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["takingnutritionSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="takingnutrition">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing therapy
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["managingtherapySelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="managingtherapy">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Washing and bathing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["washingbathingSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="washingbathing">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing toilet needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["toiletneedsSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="toiletneeds">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["dressingSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="dressing">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Communicating verbally
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["communicatingverballySelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="communicatingverbally">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reading and understanding signs, symbols and words
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["readingunderstandingSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="readingunderstanding">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Engaging face to face
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["facetofaceSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="facetoface">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Budgeting
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["budgetingSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="budgeting">
+              Add<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+    </fieldset>
+  </div>
+
+  <h2 class="govuk-heading-m">Daily living justification</h2>
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="recommendation-daily-living" name="recommendation-daily-living" rows="15"></textarea>
+  </div>
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+  </form>
+      
+
+{% endblock %}

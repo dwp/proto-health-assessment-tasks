@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <h2 class="govuk-heading-l" id="research">PIP Telephone assessment</h3>
+
+      <!--<h3 class="govuk-heading-m" id="research">Iteration 1.5 - combined question screens</h3>
+
+      <p class="govuk-body">Includes:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Task queue screen</li>
+        <li>Task triage question</li>
+        <li>Prep stage</li>
+        <li>Linear telephone journey</li>
+      </ul>
+
+      <h3 class="govuk-heading-s"><a href="ta-1-5/task-queue">Assessment Journey </a> </h3>-->
+      <h3 class="govuk-heading-m" id="research">Iteration 3</h3>
+
+      <p class="govuk-body">What we changed:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>-</li>
+      </ul>
+
+      <h3 class="govuk-heading-s"><a href="ta-3/task-queue">Assessment Journey </a> </h3>
+
+      <h3 class="govuk-heading-m" id="research">Iteration 2</h3>
+
+      <p class="govuk-body">What we changed:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Separate fields for functional history</li>
+        <li>Structured inputs for meds/treatments</li>
+        <li>Remove mid-call CYA screen</li>
+        <li>Changed split screen activation method</li>
+      </ul>
+
+      <h3 class="govuk-heading-s"><a href="ta-2/task-queue">Assessment Journey </a> </h3>
+
+      <h3 class="govuk-heading-m" id="research">Iteration 1</h3>
+
+      <p class="govuk-body">Includes:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Task queue screen</li>
+        <li>Task triage question</li>
+        <li>Prep stage</li>
+        <li>Linear telephone journey</li>
+      </ul>
+
+      <h3 class="govuk-heading-s"><a href="ta-1/task-queue">Assessment Journey </a> </h3>
+
+  </div>
+</div>
+
+{% endblock %}

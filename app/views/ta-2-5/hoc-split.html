@@ -1,0 +1,144 @@
+{% extends "layouts/split-hoc.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <a href="ta-task-list2.html" class="govuk-back-link">Back</a>
+    
+
+<form action="meds-treatment-split" method="get">
+  <div class="govuk-form-group">
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="more-detail">
+       History of condition
+      </label>
+    </h1>
+    <textarea class="govuk-textarea" id="history-condition" name="history-of-condition-prep" rows="15" aria-describedby="history-condition-hint"></textarea>
+  </div>
+      <div class="govuk-button-group">
+
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+</div>
+
+      
+  <div class="govuk-grid-column-one-half">
+    
+    <h1 class="govuk-heading-l">Claimant documents</h1>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      
+      <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document type</th>
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document label</th>
+      
+            <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">Benefit type</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Date of document</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>            
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Latest document activity</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a class="reco-document" href="cq-hoc.html">Claimant questionaire</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">PIP</td>
+  
+            <td class="govuk-table__cell" data-sort-value="8/06/23">8 June 2023</td>
+
+            <td class="govuk-table__cell" data-sort-value="9/06/23">9 June 2023</td>
+
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">New document</strong></td>
+
+          </tr>
+
+    
+          <!--<tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a class="reco-document" href="fme-hoc">Further evidence</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">PIP</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">23 June 2019</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Aug 2019</td>
+
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">New document</strong></td>
+ 
+          </tr>
+
+          
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a class="reco-document" href="uwm1-hoc">White mail unstructured</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">PIP</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">19 Aug 2019</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">11 Sept 2019</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2022</a> and 1 other claim(s)</td>
+ 
+          </tr>
+
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a class="reco-document" href="uwm2-hoc">White mail unstructured</a></td>
+
+            <td class="govuk-table__cell"></td>
+      
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell" data-sort-value="21/04/21">19 Aug 2019</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2022</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2022</a> and 1 other claim(s)</td>
+ 
+          </tr>-->
+  
+
+      
+        </tbody>
+      </table>
+<br>
+  </div>     
+
+  </div> 
+     
+      </div>
+
+{% endblock %}
