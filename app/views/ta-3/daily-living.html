@@ -30,7 +30,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="preparingfood">
-              Add<span class="govuk-visually-hidden">preparing food</span>
+              Change<span class="govuk-visually-hidden">preparing food</span>
             </a>
           </dd>
           {% else %}
@@ -52,7 +52,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="takingnutrition">
-              Add<span class="govuk-visually-hidden"> taking nutrition</span>
+              Change<span class="govuk-visually-hidden"> taking nutrition</span>
             </a>
           </dd>
           {% else %}
@@ -65,6 +65,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% endif %}
         </div>
         <div class="govuk-summary-list__row">
+          {% if (data['managingtherapySelect']) %}
           <dt class="govuk-summary-list__key">
             Managing therapy
           </dt>
@@ -73,11 +74,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="managingtherapy">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> managing therapy</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Managing therapy
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="managingtherapy" class="govuk-link">Select managing therapy descriptor</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+          {% endif %}
         </div>
         <div class="govuk-summary-list__row">
+          {% if (data['washingbathingSelect']) %}
           <dt class="govuk-summary-list__key">
             Washing and bathing
           </dt>
@@ -86,12 +99,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="washingbathing">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> Washing and bathing</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Washing and bathing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="washingbathing" class="govuk-link">Select washing and bathing descriptor</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+          {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['toiletneedsSelect']) %}
           <dt class="govuk-summary-list__key">
             Managing toilet needs
           </dt>
@@ -100,12 +125,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="toiletneeds">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> managing toilet needs</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Managing toilet needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="toiletneeds" class="govuk-link">Select managing toilet needs descriptor</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+          {% endif %}
+      
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['dressingSelect']) %}
           <dt class="govuk-summary-list__key">
             Dressing and undressing
           </dt>
@@ -114,12 +152,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="dressing">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> dressing and undressing</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="dressing" class="govuk-link">Select dressing and undressing descriptor</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+          {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['communicatingverballySelect']) %}
           <dt class="govuk-summary-list__key">
             Communicating verbally
           </dt>
@@ -128,9 +178,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="communicatingverbally">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> communicating verbally</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Communicating verbally
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="communicatingverbally" class="govuk-link">Select communicating verbally descriptor</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+          {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
@@ -143,7 +204,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="readingunderstanding">
-              Add<span class="govuk-visually-hidden"> reading understanding</span>
+              Change<span class="govuk-visually-hidden"> reading understanding</span>
             </a>
           </dd>
           {% else %}
@@ -151,12 +212,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Reading and understanding signs, symbols and words
           </dt>
           <dd class="govuk-summary-list__actions">
-            <a href="readingunderstanding" class="govuk-link">Enter reading and understanding signs, symbols and words score</a>
+            <a href="readingunderstanding" class="govuk-link" style="text-align: left;">Select reading and understanding signs, symbols and words descriptor</a>
           </dd>
           {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['facetofaceSelect']) %}
           <dt class="govuk-summary-list__key">
             Engaging face to face
           </dt>
@@ -165,12 +227,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="facetoface">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> engaging face to face</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Engaging face to face
+          </dt>
+          <dd class="govuk-summary-list__actions">
+            <a href="facetoface" class="govuk-link" style="text-align: left;">Select engaging face to face descriptor</a>
+          </dd>
+          {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['budgetingSelect']) %}
           <dt class="govuk-summary-list__key">
             Budgeting
           </dt>
@@ -179,9 +250,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="budgeting">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> budgeting</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Budgeting
+          </dt>
+          <dd class="govuk-summary-list__actions">
+            <a href="budgeting" class="govuk-link" style="text-align: left;">Select budgeting descriptor</a>
+          </dd>
+          {% endif %}
         </div>
     </fieldset>
   </div>
