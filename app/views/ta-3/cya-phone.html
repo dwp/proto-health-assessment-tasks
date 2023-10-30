@@ -13,9 +13,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
 
     <span class="govuk-caption-xl"></span>
-    <h1 class="govuk-heading-l">Check your answers</h1>
+    <h1 class="govuk-heading-xl">Check your answers</h1>
 
-    <h2 class="govuk-heading-m">Telephone call</h2>
+    <h2 class="govuk-heading-l">Telephone call</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -58,7 +58,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">Conditions</h2>
+    <h2 class="govuk-heading-l">Conditions</h2>
 
     {% for query in data['queriesCondition'] %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -116,7 +116,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </dl>
  {% endfor %}
 
-  <h2 class="govuk-heading-m">Medications</h2>
+  <h2 class="govuk-heading-l">Medications</h2>
 
   {% for query in data['queriesMedication'] %}
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -202,7 +202,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   {% endfor %}
 
-    <h2 class="govuk-heading-m">Treatments</h2>
+    <h2 class="govuk-heading-l">Treatments</h2>
 
     {% for query in data['queriesTreatment'] %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -246,7 +246,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </dl>
     {% endfor %}
 
-    <h2 class="govuk-heading-m">Social and occupational history</h2>
+    <h2 class="govuk-heading-l">Social and occupational history</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -394,195 +394,138 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Functional history</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Preparing food
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["preparingfoodNotes"]}} {{data["food"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Taking nutrition
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["takingnutritionNotes"]}} {{data["nutrition"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Managing therapy
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["managingtherapyNotes"]}} {{data["therapy"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Washing and bathing
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["washingbathingNotes"]}} {{data["washing"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Managing toilet needs
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["toiletneedsNotes"]}} {{data["toilet"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Dressing and undressing
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["dressingNotes"]}} {{data["dressing"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Communicating verbally
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["communicatingverballyNotes"]}} {{data["communicating"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Reading and understanding signs, symbols and words
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["readingunderstandingNotes"]}} {{data["reading"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Engaging face to face
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["facetofaceNotes"]}} {{data["face"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Budgeting
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["budgetingNotes"]}} {{data["budgeting"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Planning and following journeys
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["journeysNotes"]}} {{data["journeys"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Moving around
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["movingaroundNotes"]}} {{data["moving"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        </dl>  
+      <h2 class="govuk-heading-l">Daily living</h2>
 
-      <h2 class="govuk-heading-m">Examination</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Mental state
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["mental-state"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Observations
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["observations"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Preparing food</h3>
+      <p>{{data["preparingfoodNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Taking nutrition</h3>
+      <p>{{data["takingnutritionNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Managing therapy</h3>
+      <p> {{data["managingtherapyNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Washing and bathing</h3>
+      <p>  {{data["washingbathingNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Managing toilet needs</h3>
+      <p>  {{data["toiletneedsNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Dressing and undressing</h3>
+      <p>   {{data["dressingNotes"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Communicating verbally</h3>
+      <p> {{data["communicatingverballyNotes"]}} </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m"> Reading and understanding signs, symbols and words</h3>
+      <p>  {{data["readingunderstandingNotes"]}} </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Engaging face to face</h3>
+      <p> {{data["facetofaceNotes"]}} </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Budgeting</h3>
+      <p> {{data["budgetingNotes"]}} </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+    
+  
+        <h2 class="govuk-heading-l">Mobility</h2>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+       </p>
+        <h3 class="govuk-heading-m">Planning and following journeys</h3>
+        <p>  {{data["journeysNotes"]}} </p>
+  
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <br>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+       </p>
+        <h3 class="govuk-heading-m">Moving around</h3>
+        <p> {{data["movingaroundNotes"]}} </p>
+  
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <br>
+
+      <h2 class="govuk-heading-l">Examination</h2>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Mental state</h3>
+      <p>   {{data["mental-state"]}} </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-m">Observations</h3>
+      <p> {{data["observations"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
   
     <form action="ta-task-list5.html" method="get" novalidate>
       <input type="hidden" name="answers-checked" value="true">
