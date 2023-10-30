@@ -134,6 +134,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-summary-list__row">
+          {% if (data['readingunderstandingSelect']) %}
           <dt class="govuk-summary-list__key">
             Reading and understanding signs, symbols and words
           </dt>
@@ -142,9 +143,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="readingunderstanding">
-              Add<span class="govuk-visually-hidden"> date of birth</span>
+              Add<span class="govuk-visually-hidden"> reading understanding</span>
             </a>
           </dd>
+          {% else %}
+          <dt class="govuk-summary-list__key">
+            Reading and understanding signs, symbols and words
+          </dt>
+          <dd class="govuk-summary-list__actions">
+            <a href="readingunderstanding" class="govuk-link">Enter reading and understanding signs, symbols and words score</a>
+          </dd>
+          {% endif %}
         </div>
 
         <div class="govuk-summary-list__row">
