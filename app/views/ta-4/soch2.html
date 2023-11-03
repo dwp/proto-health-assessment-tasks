@@ -1,0 +1,53 @@
+{% extends "layouts/prep-soch.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="functional-history.html" class="govuk-back-link">Back</a>
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-heading-l">
+       Social and occupational history
+    </h1>
+
+
+<form action="soch3.html" method="get">
+  
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+      Do they work?
+    </label>
+    <textarea class="govuk-textarea" id="do-they-work" name="do-they-work" rows="5"></textarea>
+  </div>      
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+     How did they do at school?
+    </label>
+    <textarea class="govuk-textarea" id="school" name="school" rows="5"></textarea>
+  </div>      
+
+
+  <div class="govuk-button-group">
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
