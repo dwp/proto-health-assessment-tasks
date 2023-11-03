@@ -895,3 +895,26 @@ router.get(/callTreatment/ , function (req, res) {
         res.redirect('soch1-additional')
     }
 })
+
+router.post('/ta-4/claimant-available' , function (req, res) {
+    if (req.session.data['take-call'] == "unavailable-evidence") {
+        res.redirect('/ta-4/assessment-without-consultation')
+
+      } else  if (req.session.data['take-call'] == "answerNo") {
+        res.redirect('/ta-4/not-taken-call')
+
+      } else  if (req.session.data['take-call'] == "failed-attend") {
+        res.redirect('/ta-4/failed-to-attend')
+      }
+})
+
+
+router.post('/ta-4/not-taken-call' , function (req, res) {
+    if (req.session.data['assessment'] == "unavailable-evidence") {
+        res.redirect('/ta-4/assessment-without-consultation')
+      } else  if (req.session.data['assessment'] == "book-consultation") {
+        res.redirect('/ta-4/consultation-to-be-booked')
+      } else  if (req.session.data['assessment'] == "failed-attend") {
+        res.redirect('/ta-4/failed-to-attend')
+      }
+})
