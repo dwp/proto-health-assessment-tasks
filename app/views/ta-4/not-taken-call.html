@@ -10,32 +10,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+    <h1 class="govuk-heading-l">The claimant answered but could not take the call</h1>
 
 <form action="#" method="post">
     <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-                Can the claimant take the call?
-            </h1>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What is the next step for this assessment?
+            </h2>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="available" name="take-call" type="radio" value="yes">
+              <input class="govuk-radios__input" id="available" name="assessment" type="radio" value="unavailable-evidence">
               <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
-                Yes, they answered the phone and can take the call
+                Complete the assessment with available evidence
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="available-2" name="take-call" type="radio" value="answerNo">
+              <input class="govuk-radios__input" id="available-2" name="assessment" type="radio" value="book-consultation">
               <label class="govuk-label govuk-radios__label" for="available-2">
-                No, they answered the phone and cannot take the call
+                Book another consultation for this claimant
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="available-3" name="take-call" type="radio" value="noAnswer">
+              <input class="govuk-radios__input" id="available-3" name="assessment" type="radio" value="failed-attend">
               <label class="govuk-label govuk-radios__label" for="available-3">
-                No, they did not answer after 3 attempts
+                Mark as failed to attend
               </label>
             </div>
           </div>
