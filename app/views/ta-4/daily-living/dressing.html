@@ -1,0 +1,155 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Dressing and undressing</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" novalidate="">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="dressingNotes">
+              Functional history for dressing and undressing
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="8">{{data["dressingNotes"]}}</textarea>
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can dress and undress?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>                 
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
