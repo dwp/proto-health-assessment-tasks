@@ -12,7 +12,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 
-<form action="idVerify" method="get">
+<form action="#" method="post">
     <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -58,13 +58,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="radioGroupId" type="radio" value="pass">
+              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="pass">
               <label class="govuk-label govuk-radios__label" for="id">
                 Yes, their identity was verified
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id-2" name="radioGroupId" type="radio" value="fail">
+              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="fail">
               <label class="govuk-label govuk-radios__label" for="id-2">
                 No, their identity was not verified
               </label>
@@ -78,7 +78,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
-      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon call</a></p>
+      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
     </div>
 
       </form>

@@ -1,14 +1,17 @@
-{% extends "layouts/layout-split.html" %}
+{% extends "layouts/layout-ta.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content_left %}
+{% block content %}
 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
 <form action="#" method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -105,7 +108,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
+      
     </div>
+    <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
   </form>
       
 
