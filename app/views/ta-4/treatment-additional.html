@@ -1,4 +1,4 @@
-{% extends "layouts/prep-meds.html" %}
+{% extends "layouts/layout-ta.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -17,7 +17,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <a href="hoc" class="govuk-back-link">Back</a>
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
@@ -102,6 +102,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
+      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
     </div>
 
       </form>
