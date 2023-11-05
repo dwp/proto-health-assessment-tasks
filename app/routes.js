@@ -896,9 +896,44 @@ router.get(/callTreatment/ , function (req, res) {
     }
 })
 
+router.post('/ta-4/consent' , function (req, res) {
+    if (req.session.data['consent'] == "no") {
+        res.redirect('/ta-4/no-consent')
+
+      } else {
+        res.redirect('/ta-4/attendees')
+      }
+      
+})
+
+router.post('/ta-4/verify-id' , function (req, res) {
+    if (req.session.data['verify'] == "pass") {
+        res.redirect('/ta-4/consent')
+
+      } else {
+        res.redirect('/ta-4/not-verified')
+      }
+      
+})
+
+router.post('/ta-4/end-why' , function (req, res) {
+    if (req.session.data['abandon'] == "Complete the assessment without a full consultation") {
+        res.redirect('/ta-4/assessment-without-consultation')
+
+      } else  if (req.session.data['abandon'] == "Book another consultation for this claimant") {
+        res.redirect('/ta-4/book-another')
+
+      } else  if (req.session.data['abandon'] == "Mark as assessment not completed") {
+        res.redirect('/ta-4/not-complete')
+
+      }  else  if (req.session.data['abandon'] == "Record unacceptable claimant behaviour") {
+        res.redirect('/ta-4/unacceptable-behaviour')
+      }
+})
+
 router.post('/ta-4/claimant-available' , function (req, res) {
     if (req.session.data['take-call'] == "unavailable-evidence") {
-        res.redirect('/ta-4/assessment-without-consultation')
+        res.redirect('/ta-4/verify-id')
 
       } else  if (req.session.data['take-call'] == "answerNo") {
         res.redirect('/ta-4/not-taken-call')

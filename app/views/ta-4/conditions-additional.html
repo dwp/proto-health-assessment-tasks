@@ -1,10 +1,10 @@
-{% extends "layouts/layout-split.html" %}
+{% extends "layouts/layout-ta.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content_left %}
+{% block content %}
 
 <style>
   .govuk-summary-list__actions {
@@ -14,7 +14,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
  }
 </style>
 
-<a href="meds.html" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
@@ -121,6 +124,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
       </form>
+
+      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
 <!--
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
@@ -128,5 +133,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
   -->
+
+</div>      
+    </div>
 
 {% endblock %}
