@@ -939,7 +939,7 @@ router.post('/ta-4/claimant-available' , function (req, res) {
         res.redirect('/ta-4/not-taken-call')
 
       } else  if (req.session.data['take-call'] == "failed-attend") {
-        res.redirect('/ta-4/failed-to-attend')
+        res.redirect('/ta-4/no-answer-after-three')
       }
 })
 
