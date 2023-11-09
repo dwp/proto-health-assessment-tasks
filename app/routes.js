@@ -537,13 +537,12 @@ router.get(/callTreatment/ , function (req, res) {
 
 // IT 4 ROUTES //
 
-router.get(/conditionAddAnother/ , function (req, res) {
-    if (req.query.radioGroup === "Yes") {
-        res.redirect('conditions') // in input value is "yes" = redirect to 'page-name' //
-    }
-    else {
-        res.redirect('ta-task-list3')
-    }
+router.post('/ta-4/add-condition', function (req, res) {
+    if (req.session.data['anotherCondition'] == "Yes") {
+        res.redirect('/ta-4/conditions')
+      } else {
+        res.redirect('/ta-4/ta-task-list')
+      }
 })
 
 router.post('/ta-4/conditions', function(req, res) {
@@ -576,7 +575,7 @@ router.post('/ta-4/meds-treatment2' , function (req, res) {
     if (req.session.data['another-med'] == "Yes") {
         res.redirect('/ta-4/meds')
       } else {
-        res.redirect('/ta-4/ta-task-list3-5')
+        res.redirect('/ta-4/ta-task-list')
       }
 })
 
@@ -756,7 +755,7 @@ router.post('/ta-4/treatment2' , function (req, res) {
     if (req.session.data['another-treatment'] == "Yes") {
         res.redirect('/ta-4/treatment')
       } else {
-        res.redirect('/ta-4/ta-task-list4')
+        res.redirect('/ta-4/ta-task-list')
       }
 })
 
@@ -861,7 +860,7 @@ router.post('/ta-4/evidence' , function (req, res) {
   
     req.session.data.evidence[req.session.data.evidence.length - 1].action
 
-   res.redirect('/ta-4/ta-task-list2')
+   res.redirect('/ta-4/ta-task-list')
 
 })
 

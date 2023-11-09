@@ -31,7 +31,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Evidence used
               </a>
             </span>
+            {% if (data['evidenceusedpip']) %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+            {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% endif %}
           </li>
           
           <li class="app-task-list__item">
@@ -44,7 +48,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   Medical conditions
                 </a>
               </span>
+              {% if (data['anotherCondition']) == 'No' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -52,7 +60,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   Medications
                 </a>
               </span>
+              {% if (data['another-med']) == 'No' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %} 
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -60,7 +72,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   Treatments
                 </a>
               </span>
+              {% if (data['another-treatment']) == 'No' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %} 
             </li>
             <!-- <li class="app-task-list__item">
             <span class="app-task-list__task-name">
