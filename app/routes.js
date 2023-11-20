@@ -1314,6 +1314,10 @@ router.post('/ta-5/end-why' , function (req, res) {
       }  else  if (req.session.data['abandon'] == "Record unacceptable claimant behaviour") {
         res.redirect('/ta-5/unacceptable-behaviour')
       }
+
+      else  if (req.session.data['abandon'] == "answerNoClaim") {
+        res.redirect('/ta-5/no-longer-required')
+      }
 })
 
 router.post('/ta-5/claimant-available' , function (req, res) {
@@ -1324,8 +1328,13 @@ router.post('/ta-5/claimant-available' , function (req, res) {
         res.redirect('/ta-5/status-failed-to-attend')
 
       } else  if (req.session.data['take-call'] == "failed-attend") {
-        res.redirect('/ta-5/status-failed-to-attend')
-      }
+        res.redirect('/ta-5/no-answer-after-three')
+      
+      } else  if (req.session.data['take-call'] == "answerNoClaim") {
+      res.redirect('/ta-5/no-longer-required')
+    }
+
+      
 })
 
 
