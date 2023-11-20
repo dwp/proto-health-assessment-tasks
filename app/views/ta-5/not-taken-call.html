@@ -1,0 +1,62 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+    <h1 class="govuk-heading-l">The claimant answered but could not take the call</h1>
+
+<form action="#" method="post">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What is the next step for this assessment?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available" name="assessment" type="radio" value="unavailable-evidence">
+              <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+                Complete the assessment with available evidence
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available-2" name="assessment" type="radio" value="book-consultation">
+              <label class="govuk-label govuk-radios__label" for="available-2">
+                Book another consultation for this claimant
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available-3" name="assessment" type="radio" value="failed-attend">
+              <label class="govuk-label govuk-radios__label" for="available-3">
+                Mark as failed to attend
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}

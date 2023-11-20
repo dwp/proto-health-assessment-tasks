@@ -1,0 +1,153 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Managing therapy</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" novalidate="">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="managingtherapyNotes">
+              Functional history for managing therapy
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyNotes" name="managingtherapyNotes" rows="8">{{data["managingtherapyNotes"]}}</textarea>
+          </div>          
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can manage therapy or monitor a health condition?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect" name="managingtherapySelect" type="radio" value="(3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect">
+                  (3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect-2" name="managingtherapySelect" type="radio" value="(3b) Needs to use an aid or appliance to be able to manage medication, or needs supervision, prompting or assistance to be able to manage medication, or needs supervision, prompting or assistance to be able to monitor a health condition">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect-2">
+                  (3b) Needs to use an aid or appliance to be able to manage medication, or needs supervision, prompting or assistance to be able to manage medication, or needs supervision, prompting or assistance to be able to monitor a health condition
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect-3" name="managingtherapySelect" type="radio" value="(3c) Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect-3">
+                  (3c) Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect-4" name="managingtherapySelect" type="radio" value="(3d) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect-4">
+                  (3d) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect-5" name="managingtherapySelect" type="radio" value="(3e) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect-5">
+                  (3e) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="managingtherapySelect-6" name="managingtherapySelect" type="radio" value="(3f) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week">
+                    <label class="govuk-label govuk-radios__label" for="managingtherapySelect-6">
+                  (3f) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>              <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "layouts/split-meds.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <a href="hoc-split" class="govuk-back-link">Back</a>
+    
+
+<form action="soch-split" method="get">
+  <div class="govuk-form-group">
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="more-detail">
+       Current medication or treatment
+      </label>
+    </h1>
+    <textarea class="govuk-textarea" id="meds-treatment" name="meds-treatment-prep" rows="15" aria-describedby="more-detail-hint"></textarea>
+  </div>
+      <div class="govuk-button-group">
+
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+</div>
+
+<div class="govuk-grid-column-one-half">
+    
+    <h1 class="govuk-heading-l">Claimant documents</h1>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      
+      <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document type</th>
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document label</th>
+      
+            <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">Benefit type</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Date of document</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>            
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Latest document activity</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+
+            <tr class="govuk-table__row">
+      
+                <td class="govuk-table__cell"><a class="reco-document" href="cq-meds.html">Claimant questionaire</a></td>
+    
+                <td class="govuk-table__cell">PIP2 questionnaire</td>
+        
+                <td class="govuk-table__cell">PIP</td>
+      
+                <td class="govuk-table__cell" data-sort-value="8/06/23">8 June 2023</td>
+
+                <td class="govuk-table__cell" data-sort-value="9/06/23">9 June 2023</td>
+        
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">New document</strong></td>
+    
+              </tr>
+    
+  
+
+      
+        </tbody>
+      </table>
+<br>
+  </div>     
+
+      
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
