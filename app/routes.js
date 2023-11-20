@@ -1302,10 +1302,10 @@ router.post('/ta-5/verify-id' , function (req, res) {
 })
 
 router.post('/ta-5/end-why' , function (req, res) {
-    if (req.session.data['abandon'] == "Complete the assessment without a full consultation") {
+    if (req.session.data['abandon'] == "Complete the assessment with available evidence") {
         res.redirect('/ta-5/assessment-without-consultation')
 
-      } else  if (req.session.data['abandon'] == "Book another consultation for this claimant") {
+      } else  if (req.session.data['abandon'] == "Send to admin") {
         res.redirect('/ta-5/book-another')
 
       } else  if (req.session.data['abandon'] == "Mark as assessment not completed") {
