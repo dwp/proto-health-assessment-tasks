@@ -1321,10 +1321,10 @@ router.post('/ta-5/claimant-available' , function (req, res) {
         res.redirect('/ta-5/verify-id')
 
       } else  if (req.session.data['take-call'] == "answerNo") {
-        res.redirect('/ta-5/not-taken-call')
+        res.redirect('/ta-5/status-failed-to-attend')
 
       } else  if (req.session.data['take-call'] == "failed-attend") {
-        res.redirect('/ta-5/no-answer-after-three')
+        res.redirect('/ta-5/status-failed-to-attend')
       }
 })
 
