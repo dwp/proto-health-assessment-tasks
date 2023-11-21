@@ -1190,9 +1190,9 @@ router.get(/callConditions/ , function (req, res) {
 
 router.post('/ta-5/conditions-additional' , function (req, res) {
     if (req.session.data['add-another-condition'] == "Yes") {
-        res.redirect('/ta-4/conditions2')
+        res.redirect('/ta-5/conditions2')
       } else {
-        res.redirect('/ta-4/meds-additional')
+        res.redirect('/ta-5/meds-additional')
       }
 })
 
