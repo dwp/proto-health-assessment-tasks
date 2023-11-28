@@ -1,0 +1,200 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+</style>
+
+<a href="meds.html" class="govuk-back-link">Back</a>
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+            Check the medications you have added
+        </h1>
+
+        <!--<table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Medications</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Dose and frequency</th>
+              <th scope="col" class="govuk-table__header">Side effects</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">            {{data["meds-name"]}}            </th>
+              <td class="govuk-table__cell">{{data["meds-dose"]}}, {{data["meds-frequency"]}}</td>
+              <td class="govuk-table__cell">None</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="meds">
+                Change<span class="govuk-visually-hidden"> this medication</span>
+              </a></td>
+            </tr>
+          </tbody>
+        </table>-->
+        <!-- <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">{{data["meds-name"]}}</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Dose and frequency
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["meds-dose"]}}, {{data["meds-frequency"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> age</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Side effects
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  None
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> nationality</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div> -->
+
+        {% for query in data['queriesMedication'] %}
+        <div>
+          <!-- <h2 class="govuk-heading-m">Condition</h2> -->
+          <br>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Medication name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.medicationName }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden"> contact details</span>
+                  </a></li>
+              </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Dose
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.medicationDose }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Frequency
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.medicationFrequency }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Efficacy
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.medicationEfficacy }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Side effects
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.medSideEffect }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Additional information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.additonalInfo }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </div>
+          {% endfor %}
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label" for="event-name">
+        Add another medication?
+      </label>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="available" name="another-med" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="available-2" name="another-med" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="available-2">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}
