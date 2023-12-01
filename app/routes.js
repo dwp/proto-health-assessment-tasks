@@ -1308,6 +1308,9 @@ router.post('/ta-5/end-why' , function (req, res) {
       } else  if (req.session.data['abandon'] == "Send to admin") {
         res.redirect('/ta-5/book-another')
 
+      } else  if (req.session.data['abandon'] == "Book another") {
+        res.redirect('/ta-5/book-assessment')
+
       } else  if (req.session.data['abandon'] == "Mark as assessment not completed") {
         res.redirect('/ta-5/not-complete')
 
@@ -1325,7 +1328,7 @@ router.post('/ta-5/claimant-available' , function (req, res) {
         res.redirect('/ta-5/verify-id')
 
       } else  if (req.session.data['take-call'] == "answerNo") {
-        res.redirect('/ta-5/status-failed-to-attend')
+        res.redirect('/ta-5/claimant-aware')
 
       } else  if (req.session.data['take-call'] == "failed-attend") {
         res.redirect('/ta-5/no-answer-after-three')
@@ -1337,6 +1340,15 @@ router.post('/ta-5/claimant-available' , function (req, res) {
       
 })
 
+router.post('/ta-5/claimant-aware' , function (req, res) {
+  if (req.session.data['take-call'] == "answerYes") {
+      res.redirect('/ta-5/failed-to-attend')
+
+    } else  if (req.session.data['take-call'] == "answerNo") {
+      res.redirect('/ta-5/claimant-not-aware')
+
+    }
+})
 
 router.post('/ta-5/not-taken-call' , function (req, res) {
     if (req.session.data['assessment'] == "unavailable-evidence") {
