@@ -9,37 +9,61 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    
 
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+      Prototype: PIP assessment with telephone consultation
     </h1>
 
-    <h2 class="govuk-heading-l" id="research">PIP Telephone assessment</h3>
+    <p class="govuk-body">The following prototypes have been created to test designs for PIP health assessments where a telephone consultation is required with the claimant.</p>
 
-      <!--<h3 class="govuk-heading-m" id="research">Iteration 1.5 - combined question screens</h3>
+    <p class="govuk-body">These designs are currently owned by team Kestrel.</p>
 
-      <p class="govuk-body">Includes:</p>
+    <p class="govuk-body">If you have any questions about this prototype, or to arrange a demo, contact:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="mailto:james.ashcroft@engineering.digital.dwp.gov.uk" class="govuk-link" >James Ashcroft</a> - Interaction Designer</li>
+      <li><a href="mailto:connor.brady@engineering.digital.dwp.gov.uk" class="govuk-link" >Connor Brady</a> - Content Designer</li>
+      <li><a href="mailto:annette.ek4@engineering.digital.dwp.gov.uk" class="govuk-link" >Annette Ek</a> - Senior User Researcher</li>
+    </ul>
+
+    <a href="ta-5/ta-task-list" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      View latest version
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg></a>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">Changelog</h2>
+      
+      <h3 class="govuk-heading-m" id="research">Iteration 6 
+        <strong class="govuk-tag govuk-tag--yellow">
+          In progress
+        </strong>
+      </h3>
+
+      <p class="govuk-body">What we're changing:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>Task queue screen</li>
-        <li>Task triage question</li>
-        <li>Prep stage</li>
-        <li>Linear telephone journey</li>
+        <li>Add a new section to tasklist for submitting the report. This replaces the green 'check answers' button that was conditionally revealed once all tasks were complete</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-1-5/task-queue">Assessment Journey </a> </h3>-->
-
-      <h3 class="govuk-heading-m" id="research">Iteration 6 - November 2023</h3>
-
-      <p class="govuk-body">What we changed:</p>
+      <p class="govuk-body">Why we're changing it:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>Added another section to tasklist for submission of report replacing the green 'check answers' button</li>
+        <li>To improve accessibility and align the task list pattern with the Gov Design System guidance</li>
       </ul>
-      <h3 class="govuk-heading-s"><a href="ta-6/ta-task-list">Assessment Journey</a> </h3>
+      
+      <h3 class="govuk-heading-s"><a href="ta-6/ta-task-list">View iteration 6</a> </h3>
 
-      <h3 class="govuk-heading-m" id="research">Iteration 5 - November 2023</h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" id="research">Iteration 5
+        <strong class="govuk-tag govuk-tag">
+          Latest version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">November 2023</h4>
 
       <p class="govuk-body">What we changed:</p>
 
@@ -47,9 +71,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>Updated content for telephone call end points</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-5/ta-task-list">Assessment Journey</a> </h3>
+      <h3 class="govuk-heading-s"><a href="ta-5/ta-task-list">View iteration 5</a> </h3>
 
-      <h3 class="govuk-heading-m" id="research">Iteration 4 - November 2023</h3>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" id="research">Iteration 4
+        <strong class="govuk-tag govuk-tag--grey">
+          Older version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">November 2023</h4>
 
       <p class="govuk-body">What we changed:</p>
 
@@ -58,10 +90,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>Abandon call journey</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-4/ta-task-list">Assessment Journey</a> </h3>
+      <h3 class="govuk-heading-s"><a href="ta-4/ta-task-list">View iteration 4</a> </h3>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
-      <h3 class="govuk-heading-m" id="research">Iteration 3 - October 2023</h3>
+      <h3 class="govuk-heading-m" id="research">Iteration 3
+        <strong class="govuk-tag govuk-tag--grey">
+          Older version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">October 2023</h4>
 
       <p class="govuk-body">What we changed:</p>
 
@@ -72,9 +111,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>Global justification</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-3/task-queue">Assessment Journey </a> </h3>
+      <h3 class="govuk-heading-s"><a href="ta-3/task-queue">View iteration 3 </a> </h3>
 
-      <h3 class="govuk-heading-m" id="research">Iteration 2 - September 2023</h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" id="research">Iteration 2 
+        <strong class="govuk-tag govuk-tag--grey">
+          Older version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">September 2023</h4>
 
       <p class="govuk-body">What we changed:</p>
 
@@ -85,9 +131,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>Changed split screen activation method</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-2/task-queue">Assessment Journey </a> </h3>
+      <h3 class="govuk-heading-s"><a href="ta-2/task-queue">View iteration 2 </a> </h3>
 
-      <h3 class="govuk-heading-m" id="research">Iteration 1 - July 2023</h3>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" id="research">Iteration 1 
+        <strong class="govuk-tag govuk-tag--grey">
+          Older version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">July 2023</h4>
 
       <p class="govuk-body">Includes:</p>
 
@@ -98,7 +151,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>Linear telephone journey</li>
       </ul>
 
-      <h3 class="govuk-heading-s"><a href="ta-1/task-queue">Assessment Journey </a> </h3>
+      <h3 class="govuk-heading-s"><a href="ta-1/task-queue">View iteration 1 </a> </h3>
 
   </div>
 </div>
