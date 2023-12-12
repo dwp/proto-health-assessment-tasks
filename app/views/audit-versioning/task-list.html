@@ -1,4 +1,4 @@
-{% extends "layouts/main-case-2.html" %}
+{% extends "layouts/versioning-tasklist.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -10,16 +10,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Assessment overview
+      Audit for [HCP name?]
     </h1>
-
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        Telephone consultation booked. <a href="telephone-start">Call the claimant.</a>
-      </strong>
-    </div>
   
       <ul class="app-task-list__items" style="padding-left: 0%;">
         <h2 class="app-task-list__section">
@@ -27,7 +19,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </h2>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="evidence" aria-describedby="eligibility-status">
+              <a href="evidence-used" aria-describedby="eligibility-status">
                 Evidence used
               </a>
             </span>
@@ -44,8 +36,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </h2>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="conditions.html" aria-describedby="read-declaration-status">
-                  Medical conditions
+                <a href="conditions-medications-treatments.html" aria-describedby="read-declaration-status">
+                  Medical conditions, medications and treatments
                 </a>
               </span>
               {% if (data['anotherCondition']) == 'No' %}
@@ -56,8 +48,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="meds.html" aria-describedby="read-declaration-status">
-                  Medications
+                <a href="variability.html" aria-describedby="read-declaration-status">
+                  Variability
                 </a>
               </span>
               {% if (data['another-med']) == 'No' %}
@@ -68,8 +60,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="treatment.html" aria-describedby="read-declaration-status">
-                  Treatments
+                <a href="functional-history.html" aria-describedby="read-declaration-status">
+                  Functional history
                 </a>
               </span>
               {% if (data['another-treatment']) == 'No' %}
@@ -78,73 +70,54 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %} 
             </li>
-            <!-- <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="meds.html" aria-describedby="read-declaration-status">
-                Daily living descriptors
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-          </li>
 
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="evidence" aria-describedby="eligibility-status">
-                Mobility descriptors
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-          </li> -->
-      
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="social-history.html" aria-describedby="read-declaration-status">
+                  Social and occupational history
+                </a>
+              </span>
+              {% if (data['another-treatment']) == 'No' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %} 
+            </li>
   </li>
   
 
   <li class="app-task-list__item">
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">Analysis
+      <span class="app-task-list__section-number">HCP Analysis
     </h2>
     <span class="app-task-list__task-name">
-      <a href="daily-living.html" aria-describedby="read-declaration-status">
-        Daily living
+      <a href="descriptor-choices.html" aria-describedby="read-declaration-status">
+        Descriptor choices
       </a>
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
   </li>
-  <!-- <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-      <a href="daily-living2.html" aria-describedby="read-declaration-status">
-        Daily living justification (test)
-      </a>
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-  </li> -->
+ 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      <a href="mobility.html" aria-describedby="read-declaration-status">
-        Mobility
+      <a href="justifications.html" aria-describedby="read-declaration-status">
+        Justifications
         </a>
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
   </li>
-<!-- <li class="app-task-list__item">
-<span class="app-task-list__task-name">
-  <a href="journeys.html" aria-describedby="read-declaration-status">
-    Mobility justification
-    </a>
-</span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-</li> -->
+
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-  <a href="dl-qual.html" aria-describedby="read-declaration-status">
-  Qualifying period
+  <a href="observations.html" aria-describedby="read-declaration-status">
+  Observations
   </a>
   </span>
   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
 </li>
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-  <a href="review.html" aria-describedby="read-declaration-status">
+  <a href="review-period.html" aria-describedby="read-declaration-status">
   Review period
   </a>
   </span>
@@ -154,12 +127,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <li class="app-task-list__item">
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">Report
+    <span class="app-task-list__section-number">Summary
   </h2>
   <span class="app-task-list__task-name">
-      Preview report
-  </span>
-  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+    <a href="audit-outcome" aria-describedby="read-declaration-status">
+    Audit outcome
+    </a>
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
 </li>
 
 
