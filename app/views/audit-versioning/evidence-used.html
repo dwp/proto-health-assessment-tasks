@@ -4,10 +4,9 @@
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+{% block content_left %}
+
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
@@ -63,12 +62,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       Save and continue
     </button>
           
-    </div>                                     
+
+      
+                                     
          
           
           </form>
-    </div>
-    </div>
+    
 
 <!--
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
@@ -79,5 +79,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   -->
   </div>      
       </div>
+
 
 {% endblock %}
