@@ -1303,7 +1303,7 @@ router.post('/ta-5/verify-id' , function (req, res) {
 
 router.post('/ta-5/end-why' , function (req, res) {
     if (req.session.data['abandon'] == "Complete the assessment with available evidence") {
-        res.redirect('/ta-5/assessment-without-consultation')
+        res.redirect('/ta-5/consultation-abandoned')
 
       } else  if (req.session.data['abandon'] == "Send to admin") {
         res.redirect('/ta-5/book-another')
@@ -1321,6 +1321,14 @@ router.post('/ta-5/end-why' , function (req, res) {
       else  if (req.session.data['abandon'] == "answerNoClaim") {
         res.redirect('/ta-5/no-longer-required')
       }
+})
+
+router.post('/ta-5/consultation-abandoned', function (req, res) {
+  res.redirect('/ta-5/mental-state-abandon')
+})
+
+router.post('/ta-5/mental-state-abandon', function (req, res) {
+  res.redirect('/ta-5/check-consultation-notes')
 })
 
 router.post('/ta-5/claimant-available' , function (req, res) {
