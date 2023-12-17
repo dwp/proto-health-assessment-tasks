@@ -1768,100 +1768,51 @@ router.post('/ta-6/not-taken-call' , function (req, res) {
 
 // evidence
 router.post('/audit-versioning/evidence-used' , function (req, res) {
-      res.redirect('/audit-versioning/evidence-used-check-answers')
-})
-
-// evidence check answers
-router.post('/audit-versioning/evidence-used-check-answers' , function (req, res) {
-    res.redirect('/audit-versioning/task-list')
+      res.redirect('/audit-versioning/task-list')
 })
 
 // medical conditions, medications and treatments
 router.post('/audit-versioning/conditions-medications-treatments' , function (req, res) {
-  res.redirect('/audit-versioning/conditions-med-treatment-check-answers')
-})
-
-// medical conditions, medications and treatments answers
-router.post('/audit-versioning/conditions-med-treatment-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // variability
 router.post('/audit-versioning/variability' , function (req, res) {
-  res.redirect('/audit-versioning/variability-check-answers')
-})
-
-// variability answers
-router.post('/audit-versioning/variability-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // functional history
 router.post('/audit-versioning/functional-history' , function (req, res) {
-  res.redirect('/audit-versioning/functional-history-check-answers')
-})
-
-// functional history answers
-router.post('/audit-versioning/functional-history-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // social history
 router.post('/audit-versioning/social-history' , function (req, res) {
-  res.redirect('/audit-versioning/social-history-check-answers')
-})
-
-// social history answers
-router.post('/audit-versioning/social-history-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // descriptor choices
 router.post('/audit-versioning/descriptor-choices' , function (req, res) {
-  res.redirect('/audit-versioning/descriptor-choices-check-answers')
-})
-
-// descriptor choices answers
-router.post('/audit-versioning/descriptor-choices-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // justifications
 router.post('/audit-versioning/justifications' , function (req, res) {
-  res.redirect('/audit-versioning/justifications-check-answers')
-})
-
-// justifications answers
-router.post('/audit-versioning/justifications-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
+
 // observations
 router.post('/audit-versioning/observations' , function (req, res) {
-  res.redirect('/audit-versioning/observations-check-answers')
-})
-
-// observations answers
-router.post('/audit-versioning/observations-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // review period
 router.post('/audit-versioning/review-period' , function (req, res) {
-  res.redirect('/audit-versioning/review-period-check-answers')
-})
-
-// review period answers
-router.post('/audit-versioning/review-period-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
 
 // audit outcome
 router.post('/audit-versioning/audit-outcome' , function (req, res) {
-  res.redirect('/audit-versioning/audit-outcome-check-answers')
-})
-
-// audit answers answers
-router.post('/audit-versioning/audit-outcome-check-answers' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
