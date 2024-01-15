@@ -21,11 +21,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </strong>
     </div>
   
-      <ul class="app-task-list__items" style="padding-left: 0%;">
+    <!-- tasklist start -->
+    <!-- tasklist end -->
+    
+      <ul class="govuk-task-list" style="padding-left: 0%;">
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">Evidence
         </h2>
-          <li class="app-task-list__item">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <span class="app-task-list__task-name">
               <a href="evidence" aria-describedby="eligibility-status">
                 Evidence used
@@ -151,7 +154,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
 </li>
 
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">Review
+</h2>
+<li class="govuk-task-list__item">
+  <div class="govuk-task-list__name-and-hint">
+    <div>Review</div>
+    <!-- <div id="application-details-3-hint" class="govuk-task-list__hint">
+      The funds will be announced on 1 April 2022
+    </div> -->
+  </div>
+  <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+    Cannot start yet
+  </div>
+</li>
 
+</ul>
 
 <!--
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
