@@ -1,0 +1,50 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+   .govuk-summary-list__actions {
+    width: 25%;
+    padding-right: 0;
+    text-align: right;
+  }
+</style>
+
+<a href="meds.html" class="govuk-back-link">Back</a>
+
+<form action="#" method="post">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Special rules
+        </h1>
+        
+          <h2 class="govuk-heading-m">Date when special rules started</h2>
+          <input class="govuk-input" id="specialRules" name="SRDate" type="text">
+
+          <br>
+          <br>
+        
+
+
+
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}
