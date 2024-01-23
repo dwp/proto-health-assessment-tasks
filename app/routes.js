@@ -1816,3 +1816,62 @@ router.post('/audit-versioning/review-period' , function (req, res) {
 router.post('/audit-versioning/audit-outcome' , function (req, res) {
   res.redirect('/audit-versioning/task-list')
 })
+
+
+
+
+// SREL routes
+
+//Evidence
+router.post('/SREL/evidence' , function (req, res) {
+  res.redirect('/SREL/tasklist')
+})
+
+// Conditions
+router.post('/SREL/conditions', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/SREL/add-condition')
+})
+
+router.post('/SREL/add-condition', function (req, res) {
+  if (req.session.data['anotherCondition'] == "Yes") {
+      res.redirect('/SREL/conditions')
+    } else {
+      res.redirect('/SREL/tasklist')
+    }
+})
+
+//Special rules
+router.post('/SREL/special-rules', function (req, res) {
+  if (req.session.data['specialRules'] == "Yes") {
+      res.redirect('/SREL/special-rules-date')
+    } else {
+      res.redirect('/SREL/justification')
+    }
+})
+
+router.post('/SREL/special-rules-date' , function (req, res) {
+  res.redirect('/SREL/mobility')
+})
+
+router.post('/SREL/mobility' , function (req, res) {
+  res.redirect('/SREL/justification')
+})
+
+//Justification
+router.post('/SREL/justification' , function (req, res) {
+  res.redirect('/SREL/tasklist')
+})
+
+
+
+
+
