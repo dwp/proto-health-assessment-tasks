@@ -1,0 +1,154 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Taking nutrition</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" novalidate="">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="takingnutritionNotes">
+              Functional history for taking nutrition
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionNotes" name="takingnutritionNotes" rows="8">{{data["takingnutritionNotes"]}}</textarea>
+          </div>
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can take nutrition?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+                  (2a) Can take nutrition unaided
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+                  (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+                  (2c) Needs a therapeutic source to be able to take nutrition
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+                  (2d) Needs prompting to be able to take nutrition
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+                  (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+                    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+                  (2f) Cannot convey food and drink to their mouth and needs another person to do so
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>
+              <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}

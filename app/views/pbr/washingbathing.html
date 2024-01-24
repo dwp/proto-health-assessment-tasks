@@ -1,0 +1,158 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Select a descriptor for washing and bathing</h1>
+      </div>
+    </div>
+
+    <form action="daily-living" method="get" novalidate="">
+              
+              
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can wash and bathe?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect" name="washingbathingSelect" type="radio" value="(4a) Can wash and bathe unaided">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect">
+                  (4a) Can wash and bathe unaided
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-2" name="washingbathingSelect" type="radio" value="(4b) Needs to use an aid or appliance to be able to wash or bathe">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-2">
+                  (4b) Needs to use an aid or appliance to be able to wash or bathe
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-3" name="washingbathingSelect" type="radio" value="(4c) Needs supervision or prompting to be able to wash or bathe">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-3">
+                  (4c) Needs supervision or prompting to be able to wash or bathe
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-4" name="washingbathingSelect" type="radio" value="(4d) Needs assistance to be able to wash either their hair or body below the waist">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-4">
+                  (4d) Needs assistance to be able to wash either their hair or body below the waist
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-5" name="washingbathingSelect" type="radio" value="(4e) Needs assistance to be able to get in or out of a bath or shower">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-5">
+                  (4e) Needs assistance to be able to get in or out of a bath or shower
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-6" name="washingbathingSelect" type="radio" value="(4f) Needs assistance to be able to wash their body between the shoulders and waist">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-6">
+                  (4f) Needs assistance to be able to wash their body between the shoulders and waist
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="washingbathingSelect-7" name="washingbathingSelect" type="radio" value="(4g) Cannot wash and bathe at all and needs another person to wash their entire body">
+                    <label class="govuk-label govuk-radios__label" for="washingbathingSelect-7">
+                  (4g) Cannot wash and bathe at all and needs another person to wash their entire body
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
