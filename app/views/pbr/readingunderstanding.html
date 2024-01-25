@@ -1,0 +1,130 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Select a descriptor for reading and understanding signs, symbols and words</h1>
+      </div>
+    </div>
+
+    <form action="daily-living" method="get" novalidate="">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can read and understand signs, symbols and words?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+                
+                    
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect" name="readingunderstandingSelect" type="radio" value="(8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses">
+                    <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect">
+                  (8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect-2" name="readingunderstandingSelect" type="radio" value="(8b) Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information">
+                    <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect-2">
+                  (8b) Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect-3" name="readingunderstandingSelect" type="radio" value="(8c) Needs prompting to be able to read or understand complex written information">
+                    <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect-3">
+                  (8c) Needs prompting to be able to read or understand complex written information
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect-4" name="readingunderstandingSelect" type="radio" value="(8d) Needs prompting to be able to read or understand basic written information">
+                    <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect-4">
+                  (8d) Needs prompting to be able to read or understand basic written information
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+                
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect-5" name="readingunderstandingSelect" type="radio" value="(8e) Cannot read or understand signs, symbols or words at all">
+                    <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect-5">
+                  (8e) Cannot read or understand signs, symbols or words at all
+                </label>
+                    
+                  </div>
+                  
+                  
+                
+              
+            </div>
+            
+          
+          </fieldset>
+          
+          
+          </div>                                 
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+              </button>
+          
+          </form>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
