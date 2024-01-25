@@ -1,0 +1,220 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+
+  
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preparing food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["preparingfoodSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Taking nutrition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["takingnutritionSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing therapy
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["managingtherapySelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Washing and bathing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["washingbathingSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing toilet needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["toiletneedsSelect"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+          Dressing and undressing
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["dressingSelect"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Communicating verbally
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["communicatingverballySelect"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Reading and understanding signs, symbols and words
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["readingunderstandingSelect"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Engaging face to face
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["facetofaceNotes"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Budgeting
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["budgetingNotes"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Daily living justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["recommendation-daily-living"]}}          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+      </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+         Have they had the functional restriction for at least 3 months?
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["dl"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+         Are they likely to have the functional restriction in 9 months?
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data["dl9"]}}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+
+       </div>
+     </dl>
+
+    <form action="ta-task-list5.html" method="get" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+    <!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
