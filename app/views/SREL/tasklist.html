@@ -26,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
       <ul class="govuk-task-list" style="padding-left: 0%;">
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">Evidence
+          <span class="app-task-list__section-number">Evidence</span>
         </h2>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <span class="app-task-list__task-name">
@@ -35,7 +35,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </a>
             </span>
             {% if (data['evidenceusedpip']) %}
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+            <div class="govuk-task-list__status" id="application-details-1-status">
+              Completed
+            </div>
             {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
             {% endif %}
@@ -43,16 +45,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           <li class="app-task-list__item">
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">Claimant history
+              <span class="app-task-list__section-number">Claimant history</span>
             </h2>
-            <li class="app-task-list__item">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <span class="app-task-list__task-name">
                 <a href="conditions.html" aria-describedby="read-declaration-status">
                   Medical conditions
                 </a>
               </span>
               {% if (data['anotherCondition']) == 'No' %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %}
@@ -62,15 +66,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   <li class="app-task-list__item">
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">Analysis
+      <span class="app-task-list__section-number">Analysis</span>
     </h2>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <span class="app-task-list__task-name">
       <a href="special-rules.html" aria-describedby="read-declaration-status">
         Special rules
       </a>
     </span>
     {% if (data['harmful-info']) %}
-    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+    <div class="govuk-task-list__status" id="application-details-1-status">
+      Completed
+    </div>
+
+    {% elseif (data['mobility-two']) %}
+    <div class="govuk-task-list__status" id="application-details-1-status">
+      Completed
+    </div>
+
     {% else %}
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
     {% endif %}
@@ -79,7 +92,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   {% if (data['harmful-info'])  %}
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">Review
+    <span class="app-task-list__section-number">Review</span>
   </h2>
   <li class="govuk-task-list__item">
     <span class="app-task-list__task-name">

@@ -24,9 +24,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dt class="govuk-summary-list__key">
             Planning and following journeys
           </dt>
-          {% if (data['journeysSelectpbr']) %}
+          {% if (data['mobility-one']) %}
           <dd class="govuk-summary-list__value">
-            {{data["journeysSelectpbr"]}}
+            {{data["mobility-one"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="journeys">
@@ -47,18 +47,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dt class="govuk-summary-list__key">
            Moving around
           </dt>
-          {% if (data['movingaroundSelectpbr']) %}
+          {% if (data['mobility-two']) %}
           <dd class="govuk-summary-list__value">
-            {{data["movingaroundSelectpbr"]}}
+            {{data["mobility-two"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="movingaround">
+            <a class="govuk-link" href="moving-around">
               Change<span class="govuk-visually-hidden">moving around</span>
             </a>
           </dd>
           {% else %}
           <dd class="govuk-summary-list__value">
-            <a href="movingaround" class="govuk-link">Select moving around descriptor</a>
+            <a href="moving-around" class="govuk-link">Select moving around descriptor</a>
           </dd>
           <dd class="govuk-summary-list__actions">
            
