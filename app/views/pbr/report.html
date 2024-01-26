@@ -13,7 +13,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
 
     <span class="govuk-caption-xl"></span>
-    <span class="govuk-caption-xl">PIP telephone assessment</span>
     <h1 class="govuk-heading-xl">Health assessment report</h1>
 
     <h2 class="govuk-heading-l">Assessment details</h2>
@@ -49,7 +48,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          Type of assessment
         </dt>
         <dd class="govuk-summary-list__value">
-            Telephone assessment
+            Paper-based assessment
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -272,152 +271,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </dl>
     {% endfor %}
 
-    <h2 class="govuk-heading-l">Social and occupational history</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they live with anyone?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-live-with"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What kind of home do they live in?        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-type"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Has the home been adapted in any way? 
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-adaptations"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they use any aids or appliances?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["aids-appliances"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they work?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["do-they-work"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Can they drive?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["drive-details"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How can they get around?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["get-around"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they buy their shopping?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["shopping"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they manage their housework?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["housework"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they spend their spare time?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["hobbies"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Additional social and occupational history
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["hobbies"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
 
       <h2 class="govuk-heading-l">Daily living</h2>
       

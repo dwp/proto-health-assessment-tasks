@@ -1871,7 +1871,399 @@ router.post('/SREL/justification' , function (req, res) {
   res.redirect('/SREL/tasklist')
 })
 
+// PBR Routes
 
+router.post('/pbr/add-condition', function (req, res) {
+  if (req.session.data['anotherCondition'] == "Yes") {
+      res.redirect('/pbr/conditions')
+    } else {
+      res.redirect('/pbr/ta-task-list')
+    }
+})
+
+router.post('/pbr/conditions', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const conditionLength = req.session.data['condition-length']
+  const conditionSymptoms = req.session.data['symptoms']
+  const conditionVariability = req.session.data['variability']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, conditionLength, conditionSymptoms, conditionVariability })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/pbr/add-condition')
+})
+
+router.post('/pbr/meds-treatment2' , function (req, res) {
+  if (req.session.data['another-med'] == "Yes") {
+      res.redirect('/pbr/meds')
+    } else {
+      res.redirect('/pbr/ta-task-list')
+    }
+})
+
+router.post('/pbr/meds', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const medicationName = req.session.data['meds-name']
+  const medicationDose = req.session.data['meds-dose']
+  const medicationFrequency = req.session.data['meds-frequency']
+  const medicationEfficacy = req.session.data['meds-efficacy']
+  const medSideEffect = req.session.data['meds-side-effects']
+  const additonalInfo = req.session.data['addInfo']
+
+  const queriesMedication = req.session.data.queriesMedication || []
+  queriesMedication.push({ medicationName, medicationDose, medicationFrequency, medicationEfficacy, medSideEffect, additonalInfo })
+  req.session.data.queriesMedication = queriesMedication
+
+  req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action
+
+ res.redirect('/pbr/meds-treatment2')
+})
+
+router.post('/pbr/meds2', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const medicationName = req.session.data['meds-name']
+  const medicationDose = req.session.data['meds-dose']
+  const medicationFrequency = req.session.data['meds-frequency']
+  const medicationEfficacy = req.session.data['meds-efficacy']
+  const medSideEffect = req.session.data['side-effects']
+  const medicationSideEffects = req.session.data['side-effects-detail']
+  const additonalInfo = req.session.data['additional-info']
+
+  const queriesMedication = req.session.data.queriesMedication || []
+  queriesMedication.push({ medicationName, medicationDose, medicationFrequency, medicationEfficacy, medicationSideEffects, medSideEffect, additonalInfo })
+  req.session.data.queriesMedication = queriesMedication
+
+  req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action
+
+ res.redirect('/pbr/meds-additional')
+})
+
+router.post('/pbr/treatment22', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const treatmentType = req.session.data['treatment-type']
+  const treatmentFrequency = req.session.data['frequency']
+  const additionalInfo = req.session.data['addInfo']
+
+  const queriesTreatment = req.session.data.queriesTreatment || []
+  queriesTreatment.push({ treatmentType, treatmentFrequency, additionalInfo })
+  req.session.data.queriesTreatment = queriesTreatment
+
+  req.session.data.queriesTreatment[req.session.data.queriesTreatment.length - 1].action
+
+ res.redirect('/pbr/treatment-additional')
+})
+
+router.post('/pbr/treatment', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const treatmentType = req.session.data['treatment-type']
+  const treatmentFrequency = req.session.data['frequency']
+  const additionalInfo = req.session.data['addInfo']
+
+  const queriesTreatment = req.session.data.queriesTreatment || []
+  queriesTreatment.push({ treatmentType, treatmentFrequency, additionalInfo })
+  req.session.data.queriesTreatment = queriesTreatment
+
+  req.session.data.queriesTreatment[req.session.data.queriesTreatment.length - 1].action
+
+ res.redirect('/pbr/treatment2')
+})
+
+router.post('/pbr/daily-living', function(req, res) {
+  
+  res.redirect('/pbr/ta-task-list6')
+ })
+
+ router.post('/pbr/mobility', function(req, res) {
+  
+  res.redirect('/pbr/ta-task-list7')
+ })
+
+router.post('/pbr/daily-living/preparingfood', function(req, res) {
+  
+ res.redirect('/pbr/daily-living2')
+})
+
+router.post('/pbr/daily-living/takingnutrition', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/managingtherapy', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/washingbathing', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/toiletneeds', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/dressing', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/communicatingverbally', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/readingunderstanding', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/facetoface', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/daily-living/budgeting', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/journeys', function(req, res) {
+  
+  res.redirect('/pbr/mobility')
+ })
+
+ router.post('/pbr/movingaround', function(req, res) {
+  
+  res.redirect('/pbr/mobility')
+ })
+ 
+ router.post('/pbr/daily-living-justification', function(req, res) {
+  
+  res.redirect('/pbr/daily-living2')
+ })
+
+ router.post('/pbr/dl-qual', function(req, res) {
+  
+  res.redirect('/pbr/mobility-qual')
+ })
+
+ // mobility qualiffying period
+ router.post('/pbr/mobility-qual', function(req, res) {
+  
+  res.redirect('/pbr/ta-task-list9')
+ })
+
+ // Review period route
+ router.post('/pbr/review', function(req, res) {
+  
+  res.redirect('/pbr/ta-task-list10')
+ })
+
+  router.post('/pbr/ta-task-list10', function(req, res) {
+  
+      res.redirect('/pbr/report')
+     })
+
+router.post('/pbr/treatment2' , function (req, res) {
+  if (req.session.data['another-treatment'] == "Yes") {
+      res.redirect('/pbr/treatment')
+    } else {
+      res.redirect('/pbr/ta-task-list')
+    }
+})
+
+
+router.post('/pbr/attendees' , function (req, res) {
+  if (req.session.data['appointee'] == "yes") {
+      res.redirect('/pbr/attendee-details')
+    } else {
+      res.redirect('/pbr/conditions-additional')
+    }
+})
+
+
+
+router.post('/pbr/another-attendee' , function (req, res) {
+  if (req.session.data['another-attendee'] == "yes") {
+      res.redirect('/pbr/attendee-details')
+    } else {
+      res.redirect('/pbr/conditions-additional')
+    }
+})
+
+router.get(/callConditions/ , function (req, res) {
+  if (req.query.radioGroup === "Yes") {
+      res.redirect('conditions') // in input value is "yes" = redirect to 'page-name' //
+  }
+  else {
+      res.redirect('meds-additional')
+  }
+})
+
+router.post('/pbr/conditions-additional' , function (req, res) {
+  if (req.session.data['add-another-condition'] == "Yes") {
+      res.redirect('/pbr/conditions2')
+    } else {
+      res.redirect('/pbr/meds-additional')
+    }
+})
+
+router.post('/pbr/appointee-answers' , function (req, res) {
+  if (req.session.data['add-another-attendee'] == "Yes") {
+      res.redirect('/pbr/attendee-details')
+    } else {
+      res.redirect('/pbr/conditions-additional')
+    }
+})
+
+router.post('/pbr/meds-additional' , function (req, res) {
+  if (req.session.data['add-another-med'] == "Yes") {
+      res.redirect('/pbr/meds2')
+    } else {
+      res.redirect('/pbr/treatment-additional')
+    }
+})
+
+router.post('/pbr/treatment-additional' , function (req, res) {
+  if (req.session.data['add-treatment'] == "Yes") {
+      res.redirect('/pbr/treatment22')
+    } else {
+      res.redirect('/pbr/soch1-additional')
+    }
+})
+
+router.post('/pbr/conditions2' , function (req, res) {
+  const condition = req.session.data['condition-name']
+  const conditionLength = req.session.data['condition-length']
+  const conditionSymptoms = req.session.data['symptoms']
+  const conditionVariability = req.session.data['variability']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, conditionLength, conditionSymptoms, conditionVariability })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/pbr/conditions-additional')
+
+})
+
+router.post('/pbr/evidence' , function (req, res) {
+  const documentDate = req.session.data['document-date']
+  const evidenceType = req.session.data['evidenceusedpip']
+
+  const evidence = req.session.data.evidence || []
+  evidence.push({ documentDate, evidenceType })
+  req.session.data.evidence = evidence
+
+  req.session.data.evidence[req.session.data.evidence.length - 1].action
+
+ res.redirect('/pbr/ta-task-list')
+
+})
+
+router.post('/ta-6/attendee-details' , function (req, res) {
+  const name = req.session.data['attendee-name']
+  const relationshipToClaimant = req.session.data['attendee-relationship']
+
+  const queriesAttendee = req.session.data.queriesAttendee || []
+  queriesAttendee.push({ name, relationshipToClaimant })
+  req.session.data.queriesAttendee = queriesAttendee
+
+  req.session.data.queriesAttendee[req.session.data.queriesAttendee.length - 1].action
+
+ res.redirect('/ta-6/appointee-answers')
+
+})
+router.get(/callMeds/ , function (req, res) {
+  if (req.query.radioGroup === "Yes") {
+      res.redirect('meds-additional-add') // in input value is "yes" = redirect to 'page-name' //
+  }
+  else {
+      res.redirect('treatment-additional')
+  }
+})
+
+router.get(/callTreatment/ , function (req, res) {
+  if (req.query.radioGroup === "Yes") {
+      res.redirect('treatment-additional-add') // in input value is "yes" = redirect to 'page-name' //
+  }
+  else {
+      res.redirect('soch1-additional')
+  }
+})
+
+router.post('/ta-6/consent' , function (req, res) {
+  if (req.session.data['consent'] == "no") {
+      res.redirect('/ta-6/no-consent')
+
+    } else {
+      res.redirect('/ta-6/attendees')
+    }
+    
+})
+
+router.post('/ta-6/verify-id' , function (req, res) {
+  if (req.session.data['verify'] == "pass") {
+      res.redirect('/ta-6/consent')
+
+    } else {
+      res.redirect('/ta-6/not-verified')
+    }
+    
+})
+
+router.post('/ta-6/end-why' , function (req, res) {
+  if (req.session.data['abandon'] == "Complete the assessment with available evidence") {
+      res.redirect('/ta-6/assessment-without-consultation')
+
+    } else  if (req.session.data['abandon'] == "Send to admin") {
+      res.redirect('/ta-6/book-another')
+
+    } else  if (req.session.data['abandon'] == "Mark as assessment not completed") {
+      res.redirect('/ta-6/not-complete')
+
+    }  else  if (req.session.data['abandon'] == "Record unacceptable claimant behaviour") {
+      res.redirect('/ta-6/unacceptable-behaviour')
+    }
+
+    else  if (req.session.data['abandon'] == "answerNoClaim") {
+      res.redirect('/ta-6/no-longer-required')
+    }
+})
+
+router.post('/ta-6/claimant-available' , function (req, res) {
+  if (req.session.data['take-call'] == "unavailable-evidence") {
+      res.redirect('/ta-6/verify-id')
+
+    } else  if (req.session.data['take-call'] == "answerNo") {
+      res.redirect('/ta-6/status-failed-to-attend')
+
+    } else  if (req.session.data['take-call'] == "failed-attend") {
+      res.redirect('/ta-6/no-answer-after-three')
+    
+    } else  if (req.session.data['take-call'] == "answerNoClaim") {
+    res.redirect('/ta-6/no-longer-required')
+  }
+
+    
+})
+
+
+router.post('/ta-6/not-taken-call' , function (req, res) {
+  if (req.session.data['assessment'] == "unavailable-evidence") {
+      res.redirect('/ta-6/assessment-without-consultation')
+    } else  if (req.session.data['assessment'] == "book-consultation") {
+      res.redirect('/ta-6/consultation-to-be-booked')
+    } else  if (req.session.data['assessment'] == "failed-attend") {
+      res.redirect('/ta-6/failed-to-attend')
+    }
+})
 
 
 
