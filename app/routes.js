@@ -1863,7 +1863,16 @@ router.post('/SREL/special-rules-date' , function (req, res) {
 })
 
 router.post('/SREL/mobility' , function (req, res) {
-  res.redirect('/SREL/justification')
+  res.redirect('/SREL/tasklist')
+})
+
+// Mobility descriptors
+router.post('/SREL/journeys' , function (req, res) {
+  res.redirect('/SREL/mobility')
+})
+
+router.post('/SREL/moving-around' , function (req, res) {
+  res.redirect('/SREL/mobility')
 })
 
 //Justification
