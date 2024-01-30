@@ -65,27 +65,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           {% endif %}
         </div>
-        </dl>
-      
-
-
-      
-
-
-       
-
-        
-
-       
+        </dl>     
           </fieldset>
         </div>
 
         <h2 class="govuk-heading-m">Mobility justification</h2>
         <div class="govuk-form-group">
-          <textarea class="govuk-textarea" id="recommendation-daily-living" name="recommendation-mobility" rows="15"></textarea>
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="global-justification-mobility" rows="15"></textarea>
         </div>
-            <div class="govuk-button-group">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <label class="govuk-label" for="event-name">
+              Is this information harmful?
+            </label>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="available" name="anotherCondition" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+                  Yes
+                </label>
+              </div>
+      
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="available-2" name="anotherCondition" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="available-2">
+                  No
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+      </div>
+
+
+    <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
