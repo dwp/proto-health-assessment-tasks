@@ -15,22 +15,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Add a medical condition
+          Short phone call
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
-          You can add more medical conditions on the next screen if you need to
+         
         </div>
       </legend>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="condition-name">
-              Condition
+            <label class="govuk-label govuk-label--m" for="call">
+              Who did you call?
             </label>
-            <input class="govuk-input" id="condition-name" name="condition-name" type="text">
+            <input class="govuk-input" id="call" name="short-call" type="text">
           </div>
+
+          <h2 class="govuk-heading-m">Consultation notes</h2>
+        <div class="govuk-form-group">
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="recommendation-mobility" rows="15"></textarea>
+        </div>
+      
     </fieldset>
   </div>
-
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
@@ -55,7 +60,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </fieldset>
 </div>
 
-
       <div class="govuk-button-group">
 
       <button class="govuk-button" data-module="govuk-button">
@@ -64,4 +68,5 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
   </form>
       
+
 {% endblock %}

@@ -1866,6 +1866,11 @@ router.post('/SREL/mobility' , function (req, res) {
   res.redirect('/SREL/tasklist')
 })
 
+//Shortcall
+router.post('/SREL/shortcall' , function (req, res) {
+  res.redirect('/SREL/tasklist')
+})
+
 // Mobility descriptors
 router.post('/SREL/journeys' , function (req, res) {
   res.redirect('/SREL/mobility')
