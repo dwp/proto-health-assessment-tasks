@@ -16,63 +16,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <span class="govuk-caption-xl"></span>
     <h1 class="govuk-heading-xl">Health assessment report</h1>
 
-    <!-- <h2 class="govuk-heading-l">Assessment details</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date report was completed
-        </dt>
-        <dd class="govuk-summary-list__value">
-           13th October 2023
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Benefit type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Personal Independence Payment
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Type of assessment
-        </dt>
-        <dd class="govuk-summary-list__value">
-            Telephone assessment
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Healthcare professional
-        </dt>
-        <dd class="govuk-summary-list__value">
-            Dr. Smith
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> health professional</span>
-          </a>
-        </dd>
-        
-      </div>
-    </dl> -->
-
     <h2 class="govuk-heading-l">Evidence used</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       {% for evidence in data['evidenceusedpip'] %}
@@ -91,6 +34,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
       {% endfor %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence used
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          {{data["other-evidence"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
     </dl>
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
