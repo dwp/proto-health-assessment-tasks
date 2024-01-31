@@ -1831,9 +1831,10 @@ router.post('/SREL/evidence' , function (req, res) {
 router.post('/SREL/conditions', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
+  const harmfulInfo = req.session.data['harmful']
 
   const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition })
+  queriesCondition.push({ condition, harmfulInfo })
   req.session.data.queriesCondition = queriesCondition
 
   req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
