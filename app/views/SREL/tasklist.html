@@ -49,7 +49,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Short call
               </a>
             </span>
+            {% if (data['shortCall']) %}
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+              {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="status">Optional</strong>
+            {% endif %}
           </li>
           
           <li class="app-task-list__item">
@@ -99,7 +105,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </li>
 
 
-  {% if (data['mobility-two'])  %}
+  {% if (data['mobility-two']) %}
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">Review</span>
+  </h2>
+  <li class="govuk-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="report.html" aria-describedby="read-declaration-status">
+        Review
+      </a>
+    </span>
+    <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+    
+    </div>
+  </li>
+
+  {% elseif (data['harmful-info']) %}
+
   <h2 class="app-task-list__section">
     <span class="app-task-list__section-number">Review</span>
   </h2>
