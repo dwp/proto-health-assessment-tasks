@@ -85,16 +85,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
 
-
-   
-    
-
     {% for query in data['queriesCondition'] %}
 
     {% if  (query.harmfulInfo) == 'Yes' %}
-
-
-    {% elseif (query.harmfulInfo) == 'No' %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -127,9 +120,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
     </dl>
+
+    {% elseif (query.harmfulInfo) == 'No' %}
+
     {% endif %}
  {% endfor %}
-
 
       <h2 class="govuk-heading-l">Special rules</h2>
       
@@ -148,7 +143,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-        <!-- <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Special rules started
           </dt>
@@ -160,8 +155,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
-        </div> -->
+        </div>
 
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is this information harmful?</dt>
+          <dd class="govuk-summary-list__value">
+            {{data["harmfulInfoDate"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </ul>
+          </dd>
+        </div> -->
       </dl>
 
       <h3 class="govuk-heading-m">Planning and following journeys</h3>
@@ -189,17 +198,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       
       <h3 class="govuk-heading-m">Justification for mobility choices</h3>
-      {% if (data["justificationHarmfulInfo"]) == 'No' %}
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-    
       <p>{{data["global-justification-mobility"]}}</p>
+      <!-- <p>{{data["justification-mobility"]}}</p> -->
       
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-     
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -216,30 +223,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
 </dl>
-{% elseif (data["justificationHarmfulInfo"]) == 'Yes' %}
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Is this information harmful?</dt>
-    <dd class="govuk-summary-list__value">
-      {{data["justificationHarmfulInfo"]}}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <ul class="govuk-summary-list__actions-list">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden"> name</span>
-        </a>
-      </ul>
-    </dd>
-  </div>
-</dl>
-
-      {% endif %}
    
-      <div class="govuk-inset-text">
+      <!-- <div class="govuk-inset-text">
         No harmful information has been included in this report.
-      </div>
+      </div> -->
     
 
       <p class="govuk-body">
@@ -280,7 +267,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
-       Continue
+        Submit report
       </button>
     </form>
     <!--
