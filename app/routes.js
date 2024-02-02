@@ -1886,6 +1886,15 @@ router.post('/SREL/justification' , function (req, res) {
   res.redirect('/SREL/tasklist')
 })
 
+//Report
+router.post('/SREL/report' , function (req, res) {
+  res.redirect('/SREL/report-harmful')
+})
+
+router.post('/SREL/report-harmful' , function (req, res) {
+  res.redirect('/SREL/submit')
+})
+
 // PBR Routes
 
 router.post('/pbr/add-condition', function (req, res) {
