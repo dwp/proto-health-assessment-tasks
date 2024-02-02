@@ -1888,12 +1888,9 @@ router.post('/SREL/justification' , function (req, res) {
 
 //Report
 router.post('/SREL/report' , function (req, res) {
-  res.redirect('/SREL/report-harmful')
-})
-
-router.post('/SREL/report-harmful' , function (req, res) {
   res.redirect('/SREL/submit')
 })
+
 
 // PBR Routes
 
