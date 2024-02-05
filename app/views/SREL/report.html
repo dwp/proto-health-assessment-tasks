@@ -51,7 +51,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
       {% else %}
-    
+      <p>All evidence provided with this referral has been analysed.</p>
       {% endif %}
      
     </dl>
@@ -90,7 +90,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
       {% else %}
-
+      <p>A short call was made to the primary clinician.</p>
       {% endif %}
     </dl>
 
@@ -118,7 +118,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </ul>
         </dd>
       </div>
-      {% else %}
+      {% elseif (query.harmfulInfo) !== 'No' %}
+      <p>non condition text</p>
 
      {% endif %}
    {% endfor %}
@@ -127,7 +128,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
 
 
-      <h2 class="govuk-heading-l">Special rules</h2>
+      <h2 class="govuk-heading-l">Analysis</h2>
       
 
       <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -176,7 +177,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
     
-      <p>{{data["global-justification-mobility"]}}</p>
+      <p>The claimant is experiencing significant difficulties. Therefore, I am satisfied that this claimant meets all relevant descriptors in accordance with the legislation.</p>
       
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -205,9 +206,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-inset-text">
         No harmful information has been included in this report.
       </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
 <!------------------------Harmful information starts below--------------------------------------------------------------------------------------------->
 
-      <h2 class="govuk-heading-l">Harmful info</h2>
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    The data below has been identified as harmful information.
+  </strong>
+</div>
 
       <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -243,7 +253,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
         {% else %}
-
+        <p>text</p>
         {% endif %}
         
       </dl>
@@ -282,7 +292,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
   
         {% else %}
-  
+        <p>shortcall text</p>
         {% endif %}
       </dl>
 
@@ -311,7 +321,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </ul>
           </dd>
         </div>
-        {% else %}
+        {% elseif (query.harmfulInfo) !== 'Yes' %}
+        <p>harmful condition text</p>
 
      {% endif %}
      {% endfor %}
@@ -337,7 +348,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Special rules started
+        Special rules date
       </dt>
       <dd class="govuk-summary-list__value">
         {{data["SRDate"]}}
