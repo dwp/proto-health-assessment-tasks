@@ -1,0 +1,94 @@
+{% extends "layouts/layout-split.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="meds.html" class="govuk-back-link">Back</a>
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Check attendees
+        </h1>
+
+        {% for query in data['queriesAttendee'] %}
+        <div>
+          <!-- <h2 class="govuk-heading-m">Condition</h2> -->
+          <br>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.name }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Relationship to claimant
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.relationshipToClaimant }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          
+        </div>
+          {% endfor %}
+          <br>
+          <br>
+
+      
+
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label" for="event-name">
+        Add another attendee?
+      </label>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="available" name="add-another-attendee" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="available-2" name="add-another-attendee" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="available-2">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}

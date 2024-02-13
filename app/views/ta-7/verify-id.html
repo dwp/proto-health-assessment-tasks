@@ -1,0 +1,95 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<form action="#" method="post">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Verify the claimant's identity
+                <div id="passport-issued-hint" class="govuk-hint">
+                  Follow the agent led process for confirming the claimant's identity.
+                </div>
+            </h1>   
+
+            <!-- <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">Claimant details</caption>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Name</th>
+                  <td class="govuk-table__cell">John Doe</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">31 December 1999</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">57 Westbourne Avenue<br>London<br>AB1 2CD</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">National Insurance number</th>
+                  <td class="govuk-table__cell">AA 37 07 73 A</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Benefit type</th>
+                  <td class="govuk-table__cell">Personal independence payment (PIP)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">GP address</th>
+                  <td class="govuk-table__cell">123 The Street<br>London<br>AB1 2CD</td>
+                </tr>
+              </tbody>
+            </table> -->
+          </legend>
+          <legend class="govuk-fieldset__legend">
+            Was the claimant's identity verified?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="pass">
+              <label class="govuk-label govuk-radios__label" for="id">
+                Yes, their identity was verified
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="fail">
+              <label class="govuk-label govuk-radios__label" for="id-2">
+                No, their identity was not verified
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
