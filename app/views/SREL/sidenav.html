@@ -17,6 +17,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <a href="meds.html" class="govuk-back-link">Back</a>
  
 
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+{{ dwpSideNavigation({
+pageId: "side-navigation-3",
+selectedItem: "#item-2",
+items: [
+{
+text: "Item 1",
+href: "#item-1"
+},
+{
+text: "Item 2",
+href: "#item-2"
+},
+{
+text: "Item 3",
+href: "#item-3"
+},
+{
+text: "Item 4",
+href: "#item-4"
+},
+{
+text: "Item 5",
+href: "#item-5"
+}
+],
+mobile: { 
+disabled: true
+}
+}) }}  
+
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
           Check the medical conditions you have added
