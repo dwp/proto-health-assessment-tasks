@@ -1,8 +1,11 @@
-{% extends "layouts/layout-split-banner.html" %}
+{% extends "layouts/side-nav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+
 
 {% block content_left %}
 
@@ -14,40 +17,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   }
 </style>
 
-<a href="meds.html" class="govuk-back-link">Back</a>
+
  
 
-{% from "side-navigation/macro.njk" import dwpSideNavigation %}
-
-{{ dwpSideNavigation({
-pageId: "side-navigation-3",
-selectedItem: "#item-2",
-items: [
-{
-text: "Item 1",
-href: "#item-1"
-},
-{
-text: "Item 2",
-href: "#item-2"
-},
-{
-text: "Item 3",
-href: "#item-3"
-},
-{
-text: "Item 4",
-href: "#item-4"
-},
-{
-text: "Item 5",
-href: "#item-5"
-}
-],
-mobile: { 
-disabled: true
-}
-}) }}  
+<a href="meds.html" class="govuk-back-link">Back</a>
 
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
@@ -124,6 +97,7 @@ disabled: true
     </div>
 
       </form>
+
 <!--
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>

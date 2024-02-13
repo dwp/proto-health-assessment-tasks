@@ -7,7 +7,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block header %}
 <header class="dwp-header" data-module="govuk-header">
-    <div class=" govuk-width-container ">
+    <div class="govuk-width-container">
         <a href="../" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
           Health Assessment Service
         </a>
@@ -37,7 +37,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   </dl>
 </section>
 <header class="moj-primary-navigation">
-  <div class="govuk-width-container ">
+  <div class="govuk-width-container">
     <div class="moj-primary-navigation">
 
       <div class="moj-primary-navigation__container">
@@ -83,6 +83,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       
   </div>
   </header>
+    
 {% endblock %}
 
 {% block content %}
@@ -102,8 +103,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     
     </div>
 </div>
+
 <div class="govuk-grid-row">
-    
+  
+
   <div class="{{ "govuk-grid-column-one-half" if data.splitScreen else "govuk-grid-column-two-thirds" }}">
     {% block content_left %}{% endblock %}
   </div>
@@ -114,5 +117,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </div>
 {% endif %}
 
-</div>
+    
+  </div>
 {% endblock %}
