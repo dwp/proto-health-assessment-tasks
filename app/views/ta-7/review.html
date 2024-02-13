@@ -1,0 +1,179 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Select a review period for PIP</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            When should this claim be reviewed?
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whenreview" name="whenreview" type="radio" value="18 months">
+                  <label class="govuk-label govuk-radios__label" for="whenreview">
+                18 months
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whenreview-2" name="whenreview" type="radio" value="3 years">
+                  <label class="govuk-label govuk-radios__label" for="whenreview-2">
+                3 years
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whenreview-3" name="whenreview" type="radio" value="5 years">
+                  <label class="govuk-label govuk-radios__label" for="whenreview-3">
+                5 years
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whenreview-4" name="whenreview" type="radio" value="No future assessments required">
+                  <label class="govuk-label govuk-radios__label" for="whenreview-4">
+                No future assessments required
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whenreview-5" name="whenreview" type="radio" value="Other" aria-controls="conditional-whenreview-5" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="whenreview-5">
+                Other
+              </label>
+                </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-whenreview-5">
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="other-review">
+            Recommended review period
+          </label>
+        <input class="govuk-input" id="other-review" name="other-review" type="text">
+        </div>
+                  </div>
+          </div>
+        </fieldset>
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="reviewtimereasons">
+            Why do you recommend this review period?
+          </label>
+          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5"></textarea>
+        </div>
+          
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Is it likely that the functional restriction identified in this report will still be present when the claim is reviewed?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
+                No
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
+                Not applicable
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+          
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Is the claimant likely to need additional support for future claim processes?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="as-marker">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="as-marker-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+          
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="special-rules">
+                Yes
+              </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="special-rules-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Harmful information
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="harmful-info" name="harmful-info" type="checkbox" value="No harmful information has been included in this report." {{ checked('harmful-info','No harmful information has been included in this report') }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="harmful-info">
+                No harmful information has been included in this report.
+              </label>
+                  </div>
+          </div>
+        </fieldset>
+        </div>
+
+    <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+        
+    </form>    
+</div>
+
+  </div>      
+      </div>
+
+{% endblock %}

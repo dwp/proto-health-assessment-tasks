@@ -1,0 +1,86 @@
+{% extends "layouts/prep-meds.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="hoc" class="govuk-back-link">Back</a>
+    
+        <span class="govuk-caption-xl">PIP telephone assessment</span>
+        <h1 class="govuk-heading-l">
+            Current medication or treatment
+        </h1>
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Medications</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Dose and frequency</th>
+              <th scope="col" class="govuk-table__header">Side effects</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{data["meds-name"]}}</th>
+              <td class="govuk-table__cell">{{data["meds-dose"]}}, {{data["meds-frequency"]}}</td>
+              <td class="govuk-table__cell">None</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="meds">
+                Change<span class="govuk-visually-hidden"> this medication</span>
+              </a></td>
+            </tr>
+          </tbody>
+        </table>
+<form action="callMedsTreatment" method="get">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label" for="event-name">
+        Add another medication or treatment?
+      </label>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="available" name="radioGroup" type="radio" value="meds">
+          <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+            Medication
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="available-2" name="radioGroup" type="radio" value="treatment">
+          <label class="govuk-label govuk-radios__label" for="available-2">
+          Treatment
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="available-2" name="radioGroup" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="available-2">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group">
+
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
