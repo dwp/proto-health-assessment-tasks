@@ -108,22 +108,18 @@
     <div class="govuk-grid-column-one-quarter">
   
       {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-      
+
+      <a href="ta-task-list.html" class="govuk-back-link">Go back to assessment type</a>
+
           {{ mojSideNavigation({
             label: 'Side navigation',
             sections: [
             {
-              items: [{
-                text: 'Evidence',
-                href: '#',
-                active: true
-              }]
-            },  
-            {
-                heading: {
-                  text: 'Consultation'
-                },
                 items: [{
+                  text: 'Evidence',
+                  href: '#',
+                  active: true
+                }, {
                   text: 'Verify identity',
                   href: '#1.1',
                   active: false
@@ -133,13 +129,7 @@
                 }, {
                   text: 'Additional attendees',
                   href: '#1.3'
-                }]
-              },
-              {
-                heading: {
-                  text: 'Claimant history'
-                },
-                items: [{
+                }, {
                   text: 'History of condition',
                   href: '#2.1'
                 }, {
@@ -227,20 +217,14 @@
                   text: 'Review period for PIP',
                   href: '#2.2'
                 }]
-              },
-              {
-                heading: {
-                  text: 'Review'
-                },
-                items: [{
-                  text: 'Preview report',
-                  href: '#2.1'
-                }]
               }
             ]
           }) }}
-      
-      
+
+          {{ govukButton({
+            text: "Check answers"
+          }) }}
+        
       </div>
   
     <div class="{{ "govuk-grid-column-one-half" if data.splitScreen else "govuk-grid-column-two-thirds" }}">
