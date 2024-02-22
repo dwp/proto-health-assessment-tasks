@@ -8,27 +8,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% block content_left %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">    
+  <div class="govuk-grid-column-two-thirds">
+    
 
-<form action="#" method="post">
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="more-detail">
-            Is there anyone with the claimant?
-          </label>
-        </h1>
-        <div id="more-detail-hint" class="govuk-hint">
-          hint text.
-        </div>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+<form action="cya-phone" method="get">
+ 
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="more-detail">
+       Physical state observations
+      </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+        This can include breathlessness, tiredness, or signs they are in pain
       </div>
+    </h1>
+    <textarea class="govuk-textarea" id="observations" name="observations" rows="7" aria-describedby="history-condition-hint"></textarea>
+  </div>
 
-      <div class="govuk-button-group">
-
-      <!-- </div><button class="govuk-button" data-module="govuk-button">
+      <!-- <div class="govuk-button-group">
+      </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button> -->
-
     </div>
 
       </form>

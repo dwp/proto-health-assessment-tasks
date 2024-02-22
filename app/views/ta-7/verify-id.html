@@ -1,15 +1,15 @@
-{% extends "layouts/layout-ta.html" %}
+{% extends "layouts/side-nav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% set containerClasses = "full-width-container" %}
+
+{% block content_left %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 
 <form action="#" method="post">
@@ -17,56 +17,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-                Verify the claimant's identity
+                Verify claimant's identity
                 <div id="passport-issued-hint" class="govuk-hint">
                   Follow the agent led process for confirming the claimant's identity.
                 </div>
             </h1>   
 
-            <!-- <table class="govuk-table">
-              <caption class="govuk-table__caption govuk-table__caption--m">Claimant details</caption>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Name</th>
-                  <td class="govuk-table__cell">John Doe</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Date of birth</th>
-                  <td class="govuk-table__cell">31 December 1999</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Address</th>
-                  <td class="govuk-table__cell">57 Westbourne Avenue<br>London<br>AB1 2CD</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">National Insurance number</th>
-                  <td class="govuk-table__cell">AA 37 07 73 A</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Benefit type</th>
-                  <td class="govuk-table__cell">Personal independence payment (PIP)</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">GP address</th>
-                  <td class="govuk-table__cell">123 The Street<br>London<br>AB1 2CD</td>
-                </tr>
-              </tbody>
-            </table> -->
           </legend>
-          <legend class="govuk-fieldset__legend">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             Was the claimant's identity verified?
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="id" name="verify" type="radio" value="pass">
               <label class="govuk-label govuk-radios__label" for="id">
-                Yes, their identity was verified
+                Yes
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="fail">
               <label class="govuk-label govuk-radios__label" for="id-2">
-                No, their identity was not verified
+                No
               </label>
             </div>
           </div>
@@ -75,10 +46,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-button-group">
 
-      </div><button class="govuk-button" data-module="govuk-button">
+      <!-- </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button>
-      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
+      </button> -->
     </div>
 
       </form>

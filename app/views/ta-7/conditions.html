@@ -1,12 +1,12 @@
-{% extends "layouts/layout-split-banner.html" %}
+{% extends "layouts/side-nav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 
 <form action="#" method="post">
@@ -15,36 +15,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Add a medical condition
+          History of condition
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
-          You can add more medical conditions on the next screen if you need to
+         
         </div>
       </legend>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="condition-name">
-              Condition
-            </label>
-            <input class="govuk-input" id="condition-name" name="condition-name" type="text">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="condition-length">
-              Approximate start date
-            </label>
-            <input class="govuk-input govuk-input--width-10" id="condition-length" name="condition-length" type="text">
-          </div>
-          <div class="govuk-form-group">
             <label class="govuk-label" for="meds-frequency">
-              Condition overview
+              Conditions, medications and treatments
             </label>
-            <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint"></textarea>
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="meds-frequency">
-              Variability
-            </label>
-            <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint"></textarea>
+            <textarea class="govuk-textarea" id="variability" name="variability" rows="15" aria-describedby="variability-hint"></textarea>
           </div>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -102,9 +84,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
       <div class="govuk-button-group">
 
-      <button class="govuk-button" data-module="govuk-button">
+      <!-- <button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button>
+      </button> -->
     </div>
   </form>
       
