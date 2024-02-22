@@ -1,10 +1,11 @@
-{% extends "layouts/layout-split-banner.html" %}
+{% extends "layouts/side-nav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -188,9 +189,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           
           </div>
-<button class="govuk-button" data-module="govuk-button">
+<!-- <button class="govuk-button" data-module="govuk-button">
   Save and continue
-</button>
+</button> -->
           
           </form>
     </div>
