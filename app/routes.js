@@ -1907,6 +1907,98 @@ router.post('/SREL/report' , function (req, res) {
 })
 
 
+// SREL-2 routes //
+
+//Evidence
+router.post('/SREL-2/evidence' , function (req, res) {
+  res.redirect('/SREL-2/short-call')
+})
+
+// Conditions
+router.post('/SREL-2/conditions', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const harmfulInfo = req.session.data['harmful']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, harmfulInfo })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/SREL-2/add-condition')
+})
+
+router.post('/SREL-2/add-condition', function (req, res) {
+  if (req.session.data['anotherCondition'] == "Yes") {
+      res.redirect('/SREL-2/conditions')
+    } else {
+      res.redirect('/SREL-2/special-rules')
+    }
+})
+
+//Special rules
+router.post('/SREL-2/special-rules', function (req, res) {
+  if (req.session.data['specialRules'] == "Yes") {
+      res.redirect('/SREL-2/special-rules-yes')
+    } else {
+      res.redirect('/SREL-2/justification')
+    }
+})
+
+router.post('/SREL-2/special-rules-yes' , function (req, res) {
+  res.redirect('/SREL-2/special-rules-date')
+})
+
+router.post('/SREL-2/special-rules-date' , function (req, res) {
+  res.redirect('/SREL-2/mobility')
+})
+
+router.post('/SREL-2/mobility' , function (req, res) {
+  res.redirect('/SREL-2/mobility-justification')
+})
+
+router.post('/SREL-2/mobility-justification' , function (req, res) {
+  res.redirect('/SREL-2/report')
+})
+
+router.post('/SREL-2/report' , function (req, res) {
+  res.redirect('/SREL-2/report-two')
+})
+
+//Shortcall
+router.post('/SREL-2/short-call' , function (req, res) {
+  if (req.session.data['short-call'] == "Yes") {
+    res.redirect('/SREL-2/shortcall')
+  } else {
+    res.redirect('/SREL-2/conditions')
+  }
+})
+
+router.post('/SREL-2/shortcall' , function (req, res) {
+  res.redirect('/SREL-2/conditions')
+})
+
+// Mobility descriptors
+router.post('/SREL-2/journeys' , function (req, res) {
+  res.redirect('/SREL-2/mobility')
+})
+
+router.post('/SREL-2/moving-around' , function (req, res) {
+  res.redirect('/SREL-2/mobility')
+})
+
+//Justification
+router.post('/SREL-2/justification' , function (req, res) {
+  res.redirect('/SREL-2/report')
+})
+
+//Report
+router.post('/SREL-2/report-two' , function (req, res) {
+  res.redirect('/SREL-2/submit')
+})
+
+
 // PBR Routes
 
 router.post('/pbr/add-condition', function (req, res) {
