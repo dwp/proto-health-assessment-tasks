@@ -1749,7 +1749,6 @@ router.post('/ta-6/claimant-available' , function (req, res) {
     res.redirect('/ta-6/no-longer-required')
   }
 
-    
 })
 
 
@@ -1761,6 +1760,22 @@ router.post('/ta-6/not-taken-call' , function (req, res) {
     } else  if (req.session.data['assessment'] == "failed-attend") {
       res.redirect('/ta-6/failed-to-attend')
     }
+})
+
+// Telephone assessment v7 - side nav design //
+
+router.post('/ta-7/preparingfood' , function (req, res) {
+  const functionalHistory = req.session.data['preparingfoodNotes']
+  const descriptor = req.session.data['preparingfoodSelect']
+
+  const activity = req.session.data.activity || []
+  activity.push({ functionalHistory, descriptor })
+  req.session.data.activity = activity
+
+  req.session.data.activity[req.session.data.activity.length - 1].action
+
+  res.redirect('/')
+
 })
 
 
