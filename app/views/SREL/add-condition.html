@@ -18,7 +18,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
-          Check the medical conditions you have added
+          Check medical conditions
         </h1>
         
         {% for query in data['queriesCondition'] %}
@@ -47,7 +47,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Is this information harmful?
+              Is this harmful information?
             </dt>
             <dd class="govuk-summary-list__value">
              {{ query.harmfulInfo }}
