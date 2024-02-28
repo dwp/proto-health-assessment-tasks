@@ -12,11 +12,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
     <span class="govuk-caption-l">Report 2 of 2</span>
-    <h1 class="govuk-heading-l">Harmful information</h1>
+    <h1 class="govuk-heading-xl">Harmful information</h1>
 
 <!------------------------Harmful information starts below--------------------------------------------------------------------------------------------->
 
-      <h2 class="govuk-heading-m">Evidence used</h2>
+      <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% if (data['harmfulEvidence']) == 'Yes' %}
         {% for evidence in data['evidenceusedpip'] %}
@@ -55,7 +55,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         
       </dl>
 
-      <h2 class="govuk-heading-m">Short call</h2>
+      <h2 class="govuk-heading-l">Short call</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% if (data['shortCall']) == 'Yes' %}
         <div class="govuk-summary-list__row">
@@ -93,7 +93,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% endif %}
       </dl>
 
-      <h2 class="govuk-heading-m">Medical conditions</h2>
+      <h2 class="govuk-heading-l">Medical conditions</h2>
 
       
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -127,7 +127,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
       
 
-   <h2 class="govuk-heading-m">Special rules</h2>
+   <h2 class="govuk-heading-l">Special rules</h2>
    
    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -173,7 +173,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div> -->
   </dl>
 
-  <h2 class="govuk-heading-m">Justification for mobility choices</h2>
+  <h2 class="govuk-heading-l">Justification for mobility choices</h2>
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
@@ -195,7 +195,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
-       Continue
+       Submit report
       </button>
     </form>
  
