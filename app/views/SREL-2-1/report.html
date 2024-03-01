@@ -110,26 +110,46 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </dl>
 
   
+      <h2 class="govuk-heading-l">Special rules</h2>
+   
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Special rules
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{data["specialRules"]}}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="#">
+             Change<span class="govuk-visually-hidden"> name</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Special rules date
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{data["srel-date-day"]}}  {{data["srel-date-month"]}}  {{data["srel-date-year"]}}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="#">
+             Change<span class="govuk-visually-hidden"> name</span>
+           </a>
+         </dd>
+       </div>
+     </dl>
 
+     <h3 class="govuk-heading-m">Justification for special rules</h3>
+     <p class="govuk-body">
+       <a href="#" class="govuk-link" style="float: right">Change</a>
+    </p>
+   
+    <p>{{data["justification-sr"]}}</p>
+  
 
-      <h2 class="govuk-heading-l">Mobility</h2>
-      
-
-      <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Special rules
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data["specialRules"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-      </dl> -->
+     <h2 class="govuk-heading-l">Mobility</h2>
 
       <h3 class="govuk-heading-m">Planning and following journeys</h3>
       <p class="govuk-body">
@@ -155,16 +175,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       
-      <h3 class="govuk-heading-m">Justification for mobility choices</h3>
+      <h3 class="govuk-heading-m">Justification for mobility</h3>
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
     
-      <p>The claimant is experiencing significant difficulties. Therefore, I am satisfied that this claimant meets all relevant descriptors in accordance with the legislation.</p>
+     <p>{{data["global-justification-mobility"]}}</p>
       
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</dl>
+
+
 
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -182,7 +203,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </dd>
   </div>
 </dl> -->
-
    
       <div class="govuk-inset-text">
         No harmful information has been included in this report.
