@@ -97,7 +97,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       
       {% for query in data['queriesCondition'] %}
-      {% if  (query.harmfulInfo) == 'No' %}
+      {% if  (query.harmfulInfo) == 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Condition       
@@ -116,7 +116,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </ul>
         </dd>
       </div>
-      {% elseif (query.harmfulInfo) !== 'No' %}
+      {% elseif (query.harmfulInfo) !== 'Yes' %}
       <p>All medical conditions listed in the supporting evidence have been explored.</p>
 
      {% endif %}
