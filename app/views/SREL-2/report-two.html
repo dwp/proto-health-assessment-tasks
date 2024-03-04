@@ -18,7 +18,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        {% if (data['harmfulEvidence']) == 'Yes' %}
         {% for evidence in data['evidenceusedpip'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -49,15 +48,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-        {% else %}
-        <p>text</p>
-        {% endif %}
-        
       </dl>
 
       <h2 class="govuk-heading-l">Short call</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        {% if (data['shortCall']) == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Who did you call
@@ -87,10 +81,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-  
-        {% else %}
-        <p>shortcall text</p>
-        {% endif %}
       </dl>
 
       <h2 class="govuk-heading-l">Medical conditions</h2>
@@ -99,7 +89,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         {% for query in data['queriesCondition'] %}
-        {% if  (query.harmfulInfo) == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Condition       
@@ -118,10 +107,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </ul>
           </dd>
         </div>
-        {% elseif (query.harmfulInfo) !== 'Yes' %}
-        <p>harmful condition text</p>
-
-     {% endif %}
      {% endfor %}
    </dl>
   
