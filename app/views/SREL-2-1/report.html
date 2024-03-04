@@ -33,6 +33,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     
       {% endfor %}
+
+      {% if (data['other-evidence']) %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
          Other evidence used
@@ -47,9 +49,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+      {% elseif (data['shortCall']) == '' %}
+
+    {% endif %}
      
     </dl>
-
+    {% if (data['shortCall']) == 'Yes' %}
     <h2 class="govuk-heading-l">Short call</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -58,7 +63,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         
         <dd class="govuk-summary-list__value">
-          {{data["short-call"]}}
+          {{data["short-call-name"]}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -82,6 +87,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
     </dl>
+
+    {% elseif (data['shortCall']) == 'No' %}
+
+    {% endif %}
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
 
@@ -126,6 +135,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
            </a>
          </dd>
        </div>
+       {% if (data['specialRules']) == 'Yes' %}
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
            Special rules date
@@ -139,7 +149,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
            </a>
          </dd>
        </div>
+       {% elseif (data['specialRules']) == 'No' %}
+
+       {% endif %}
      </dl>
+
+   
 
      <h3 class="govuk-heading-m">Justification for special rules</h3>
      <p class="govuk-body">

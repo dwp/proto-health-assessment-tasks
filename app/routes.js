@@ -2059,7 +2059,7 @@ router.post('/SREL-2-1/report' , function (req, res) {
 
 //Shortcall
 router.post('/SREL-2-1/short-call' , function (req, res) {
-  if (req.session.data['short-call'] == "Yes") {
+  if (req.session.data['shortCall'] == "Yes") {
     res.redirect('/SREL-2-1/shortcall')
   } else {
     res.redirect('/SREL-2-1/conditions')
