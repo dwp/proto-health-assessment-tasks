@@ -21,7 +21,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </h1>
 
 
-<form action="functional-history-additional" method="get">
+<form action="#" method="post">
   
   <div class="govuk-form-group">
     <div class="govuk-form-group">
@@ -70,7 +70,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <label class="govuk-label" for="more-detail">
      Can they drive?
     </label>
-    <textarea class="govuk-textarea" id="school" name="drive-details" rows="2"></textarea>
+    <textarea class="govuk-textarea" id="school" name="drive-details" rows="2">{{data["drive-details"]}}</textarea>
   </div> 
 
   <div class="govuk-form-group">
@@ -109,9 +109,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>  
 
   <div class="govuk-button-group">
-      <!-- </div><button class="govuk-button" data-module="govuk-button">
+      </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button> -->
+      </button>
       
     </div>
 

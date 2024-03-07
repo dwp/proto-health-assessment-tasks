@@ -1762,21 +1762,153 @@ router.post('/ta-6/not-taken-call' , function (req, res) {
     }
 })
 
-// Telephone assessment v7 - side nav design //
+// start of v7 routes // 
 
-router.post('/ta-7/preparingfood' , function (req, res) {
-  const functionalHistory = req.session.data['preparingfoodNotes']
-  const descriptor = req.session.data['preparingfoodSelect']
+router.post('/ta-7/conditions', function(req, res) {
+  
+  res.redirect('/ta-7/soch1-additional')
+ })
+ 
+ router.post('/ta-7/soch1-additional', function(req, res) {
+   
+   res.redirect('/ta-7/preparingfood')
+  })
+ 
+ router.post('/ta-7/attendees' , function (req, res) {
+   
+       res.redirect('/ta-7/conditions')
+ })
+ 
+ router.post('/ta-7/evidence' , function (req, res) {
+   const documentDate = req.session.data['document-date']
+   const evidenceType = req.session.data['evidenceusedpip']
+ 
+   const evidence = req.session.data.evidence || []
+   evidence.push({ documentDate, evidenceType })
+   req.session.data.evidence = evidence
+ 
+   req.session.data.evidence[req.session.data.evidence.length - 1].action
+ 
+  res.redirect('/ta-7/verify-id')
+ 
+ })
+ 
+ router.post('/ta-7/consent' , function (req, res) {
+   if (req.session.data['consent'] == "no") {
+       res.redirect('/ta-7/no-consent')
+ 
+     } else {
+       res.redirect('/ta-7/attendees')
+     }
+     
+ })
+ 
+ router.post('/ta-7/verify-id' , function (req, res) {
+   if (req.session.data['verify'] == "pass") {
+       res.redirect('/ta-7/consent')
+ 
+     } else {
+       res.redirect('/ta-7/not-verified')
+     }
+     
+ })
+// Telephone assessment v7 - side nav design activities //
 
-  const activity = req.session.data.activity || []
-  activity.push({ functionalHistory, descriptor })
-  req.session.data.activity = activity
-
-  req.session.data.activity[req.session.data.activity.length - 1].action
-
-  res.redirect('/')
+router.post('/ta-7/preparingfood', function (req, res) {
+ 
+  res.redirect('/ta-7/takingnutrition')
 
 })
+
+router.post('/ta-7/takingnutrition', function (req, res) {
+ 
+  res.redirect('/ta-7/managingtherapy')
+})
+
+router.post('/ta-7/managingtherapy', function (req, res) {
+ 
+  res.redirect('/ta-7/washingbathing')
+})
+
+router.post('/ta-7/washingbathing', function (req, res) {
+ 
+  res.redirect('/ta-7/toiletneeds')
+})
+
+router.post('/ta-7/toiletneeds', function (req, res) {
+ 
+  res.redirect('/ta-7/dressing')
+})
+
+router.post('/ta-7/dressing', function (req, res) {
+ 
+  res.redirect('/ta-7/communicatingverbally')
+})
+
+router.post('/ta-7/communicatingverbally', function (req, res) {
+ 
+  res.redirect('/ta-7/readingunderstanding')
+})
+
+router.post('/ta-7/readingunderstanding', function (req, res) {
+ 
+  res.redirect('/ta-7/facetoface')
+})
+
+router.post('/ta-7/facetoface', function (req, res) {
+ 
+  res.redirect('/ta-7/budgeting')
+})
+
+router.post('/ta-7/budgeting', function (req, res) {
+ 
+  res.redirect('/ta-7/journeys')
+})
+
+router.post('/ta-7/journeys', function (req, res) {
+ 
+  res.redirect('/ta-7/movingaround')
+})
+
+router.post('/ta-7/movingaround' , function (req, res) {
+ 
+  res.redirect('/ta-7/mental-state')
+})
+
+router.post('/ta-7/mental-state', function (req, res) {
+ 
+  res.redirect('/ta-7/physical-state')
+})
+
+router.post('/ta-7/physical-state', function (req, res) {
+ 
+  res.redirect('/ta-7/dl-qual')
+})
+
+router.post('/ta-7/dl-qual', function (req, res) {
+ 
+  res.redirect('/ta-7/daily-living')
+})
+
+router.post('/ta-7/daily-living', function (req, res) {
+ 
+  res.redirect('/ta-7/mobility-qual')
+})
+
+router.post('/ta-7/mobility-qual', function (req, res) {
+ 
+  res.redirect('/ta-7/mobility')
+})
+
+router.post('/ta-7/mobility', function(req, res) {
+  
+  res.redirect('/ta-7/review')
+ })
+
+ router.post('/ta-7/review', function(req, res) {
+  
+  res.redirect('/ta-7/report')
+ })
 
 
 // Versioning routes //
