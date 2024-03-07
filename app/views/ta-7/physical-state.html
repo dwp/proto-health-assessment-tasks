@@ -11,7 +11,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     
 
-<form action="cya-phone" method="get">
+<form action="#" method="post">
  
   <div class="govuk-form-group">
     <h1 class="govuk-label-wrapper">
@@ -22,13 +22,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         This can include breathlessness, tiredness, or signs they are in pain
       </div>
     </h1>
-    <textarea class="govuk-textarea" id="observations" name="observations" rows="7" aria-describedby="history-condition-hint"></textarea>
+    <textarea class="govuk-textarea" id="observations" name="physical-state" rows="7" aria-describedby="history-condition-hint">{{data["physical-state"]}}</textarea>
   </div>
 
-      <!-- <div class="govuk-button-group">
+      <div class="govuk-button-group">
       </div><button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button> -->
+      </button>
     </div>
 
       </form>
