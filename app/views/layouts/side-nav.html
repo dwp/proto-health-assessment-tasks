@@ -111,6 +111,8 @@
 
       <a href="ta-task-list.html" class="govuk-back-link">Go back to assessment type</a>
 
+      <form action="#" method="post">
+
           {{ mojSideNavigation({
             label: 'Side navigation',
             sections: [
@@ -223,10 +225,46 @@
             ]
           }) }}
 
-          {{ govukButton({
-            text: "Check answers",
-            href: "report"
-          }) }}
+        </form>
+
+<!-- 
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+            <h4 class="moj-side-navigation__title">Section 1</h4>
+            <ul class="moj-side-navigation__list">
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="evidence">Evidence</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="takingnutrition" class="govuk-link" data-module="govuk-button">Taking nutrition</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#1.3">Verify identity</a>
+              </li>
+            </ul>
+      
+            <h4 class="moj-side-navigation__title">Section 2</h4>
+            <ul class="moj-side-navigation__list">
+              <li class="moj-side-navigation__item">
+                <a href="#2.1">Claimant consent</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#2.2">Nav item 2.2</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#2.3">Nav item 2.3</a>
+              </li>
+            </ul>
+          </nav> -->
+      
+
+          <a href="report" class="govuk-link">Check answers</a>
+
+        </form>
+       
         
         </div>
   

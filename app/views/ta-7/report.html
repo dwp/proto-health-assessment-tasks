@@ -95,182 +95,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
 
-    {% for query in data['queriesCondition'] %}
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Condition       </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.condition }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> contact details</span>
-              </a></li>
-            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                Remove<span class="govuk-visually-hidden"> contact details</span>
-              </a></li>
-          </ul>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Approximate start date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.conditionLength }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-         
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Condition overview
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.conditionSymptoms }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Variability
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.conditionVariability }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-         
-        </dd>
-      </div>
-    </dl>
- {% endfor %}
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <h3 class="govuk-heading-s">History of condition</h3>
+    <p>{{data["condition-history"]}} </p>
 
-  <h2 class="govuk-heading-l">Medications</h2>
-
-  {% for query in data['queriesMedication'] %}
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       Medication name      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.medicationName }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <ul class="govuk-summary-list__actions-list">
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-            </a></li>
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-              Remove<span class="govuk-visually-hidden"> contact details</span>
-            </a></li>
-        </ul>
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       Dose      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.medicationDose }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-       
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       Frequency      </dt>
-      <dd class="govuk-summary-list__value">
-         {{ query.medicationFrequency }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       Efficacy     </dt>
-      <dd class="govuk-summary-list__value">
-         {{ query.medicationEfficacy}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-       
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-       Side effects
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.medSideEffect }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-       
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Additional information for this medication
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.additonalInfo }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-       
-      </dd>
-    </div>
-  </dl>
-
-  {% endfor %}
-
-    <h2 class="govuk-heading-l">Treatments</h2>
-
-    {% for query in data['queriesTreatment'] %}
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Type of treatmemnt </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.treatmentType }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> contact details</span>
-              </a></li>
-            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                Remove<span class="govuk-visually-hidden"> contact details</span>
-              </a></li>
-          </ul>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Hours of treatment per week      </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.treatmentFrequency }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Additional information for this treatment
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.additionalInfo }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          
-        </dd>
-      </div>
-    </dl>
-    {% endfor %}
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
 
     <h2 class="govuk-heading-l">Social and occupational history</h2>
 
@@ -598,6 +430,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p>{{data["movingaroundSelectpbr"]}}</p>
 
 
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Mental state</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["mental-state"]}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Physical state</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["physical-state"]}}</p>
+    
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
