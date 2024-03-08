@@ -26,14 +26,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="call">
               Who did you call?
             </label>
-            <input class="govuk-input" id="call" name="short-call" type="text">
+            <input class="govuk-input" id="call" name="short-call" type="text" value="{{data["short-call"]}}">
           </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="consultation-notes">
             Consultation notes
           </label>
-          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10"></textarea>
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10">{{data["consultation-notes"]}}</textarea>
         </div>
       
     </fieldset>
