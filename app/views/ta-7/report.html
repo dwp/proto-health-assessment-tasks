@@ -13,9 +13,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
 
     <span class="govuk-caption-xl"></span>
-    <span class="govuk-caption-xl">PIP telephone assessment</span>
-    <h1 class="govuk-heading-xl">Health assessment report</h1>
+    <h1 class="govuk-heading-xl">Check answers</h1>
 
+    <!--
     <h2 class="govuk-heading-l">Assessment details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -72,8 +72,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         
       </div>
     </dl>
+    -->
 
-    <h2 class="govuk-heading-l">Evidence used</h2>
+    <h2 class="govuk-heading-l">Evidence</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       {% for evidence in data['evidenceusedpip'] %}
       <div class="govuk-summary-list__row">
@@ -93,19 +94,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% endfor %}
     </dl>
 
-    <h2 class="govuk-heading-l">Medical conditions</h2>
+    <h2 class="govuk-heading-l">History of condition</h2>
 
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
-    <h3 class="govuk-heading-s">History of condition</h3>
     <p>{{data["condition-history"]}} </p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
     <h2 class="govuk-heading-l">Social and occupational history</h2>
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <p>{{data["social-occupational-history"]}} </p>
 
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <!--
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -250,6 +258,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
       </dl>
+      -->
 
       <h2 class="govuk-heading-l">Daily living</h2>
       
@@ -432,6 +441,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
+
+      <h2 class="govuk-heading-l">Observations</h2>
 
       <h3 class="govuk-heading-m">Mental state</h3>
       <p class="govuk-body">
