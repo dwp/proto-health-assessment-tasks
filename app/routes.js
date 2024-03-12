@@ -8,6 +8,17 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+/* utlity route for redirects */
+router.use((req, res, next) => {
+  if (req.session.data?.redirect) {
+    const serviceRedirect = req.session.data.redirect;
+    delete req.session.data.redirect;
+    res.redirect(serviceRedirect)
+  } else {
+    next();
+  }
+})
+
 // TA V1 routes //
 
 router.get(/claimantAvailable/ , function (req, res) {
@@ -2612,6 +2623,3 @@ router.post('/ta-6/not-taken-call' , function (req, res) {
       res.redirect('/ta-6/failed-to-attend')
     }
 })
-
-
-
