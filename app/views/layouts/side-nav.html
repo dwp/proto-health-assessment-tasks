@@ -4,17 +4,20 @@
   #}
   
   {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-  
+  {% from "internal-service-header/macro.njk" import dwpHeader %}
+
   {% block header %}
-  <header class="dwp-header" data-module="govuk-header">
-      <div class="govuk-width-container">
-          <a href="../" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
-            Health Assessment Service
-          </a>
-      </div>
-      </header>
+    {{
+        dwpHeader({
+            name: "Health Assessment Service",
+            serviceHref: '../',
+            container: true,
+            containerClasses: "govuk-width-container--full-width"
+        })
+    }}
+
   <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-    <dl class="key-details-bar__key-details">
+    <dl class="key-details-bar__key-details govuk-width-container--full-width">
       <div class="key-details-bar__top-block">
         <dt class="govuk-visually-hidden">Name:</dt>
         <dt class="key-details-bar__name">John Smith</dt>
@@ -37,10 +40,9 @@
     </dl>
   </section>
   <header class="moj-primary-navigation">
-    <div class="govuk-width-container">
       <div class="moj-primary-navigation">
   
-        <div class="moj-primary-navigation__container">
+        <div class="moj-primary-navigation__container govuk-width-container--full-width">
       
           <div class="moj-primary-navigation__nav">
       
@@ -79,9 +81,7 @@
       
       </div>
       
-  
-        
-    </div>
+
     </header>
       
   {% endblock %}
@@ -112,7 +112,6 @@
       <a href="ta-task-list.html" class="govuk-back-link">Go back to assessment type</a>
 
       <form action="#" method="post">
-
           {{ mojSideNavigation({
             label: 'Side navigation',
             sections: [
@@ -226,7 +225,19 @@
           }) }}
 
         </form>
-
+        <script>
+          const item = document.querySelectorAll(".moj-side-navigation__item > a");
+          item.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+                  
+        
+        </script>
 <!-- 
           <nav class="moj-side-navigation" aria-label="Side navigation">
             <h4 class="moj-side-navigation__title">Section 1</h4>
