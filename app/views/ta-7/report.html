@@ -12,10 +12,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
 
-    <span class="govuk-caption-xl"></span>
-    <h1 class="govuk-heading-xl">Check answers</h1>
+    <span class="govuk-caption-xl">Personal Independance Payment</span>
+    <h1 class="govuk-heading-xl">Health Assessment Report</h1>
 
-    <!--
+    
     <h2 class="govuk-heading-l">Assessment details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -33,7 +33,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Benefit type
+          Benefit
         </dt>
         <dd class="govuk-summary-list__value">
           Personal Independence Payment
@@ -46,7 +46,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-         Type of assessment
+         Assessment type
         </dt>
         <dd class="govuk-summary-list__value">
             Telephone assessment
@@ -71,8 +71,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
         
       </div>
-    </dl>
-    -->
+    </dl>   
 
     <h2 class="govuk-heading-l">Evidence</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -92,6 +91,52 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
       {% endfor %}
+    </dl>
+
+    <h2 class="govuk-heading-l">Consultation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimants identity confirmed?
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          {{data["verify"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant give their consent?
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          {{data["consent"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional attendees
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          {{data["attendeesAssessment"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
     </dl>
 
     <h2 class="govuk-heading-l">History of condition</h2>
@@ -438,27 +483,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
       <p>{{data["movingaroundSelectpbr"]}}</p>
 
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h2 class="govuk-heading-l">Observations</h2>
-
-      <h3 class="govuk-heading-m">Mental state</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <p>{{data["mental-state"]}}</p>
-    
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Physical state</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <p>{{data["physical-state"]}}</p>
-    
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
@@ -494,7 +518,30 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </dl>
 
-      <h2 class="govuk-heading-l">Review period</h2>
+
+      <h2 class="govuk-heading-l">Observations</h2>
+
+      <h3 class="govuk-heading-m">Mental state</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["mental-state"]}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Physical state</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["physical-state"]}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      
+
+      <h2 class="govuk-heading-l">Reccomendation</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -537,7 +584,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Is the claimant likely to need additional support for future claim processes?
+            Do they need additional support for future claims processes?
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["as-marker"]}}
