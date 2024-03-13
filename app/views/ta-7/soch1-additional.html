@@ -11,6 +11,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form action="#" method="post" id="auto-redirect">
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
@@ -20,7 +21,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </legend>
 
           <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="variability" name="social-occupational-history" rows="15" aria-describedby="variability-hint">{{data["condition-history"]}}</textarea>
+            <textarea class="govuk-textarea" id="variability" name="social-occupational-history" rows="15" aria-describedby="variability-hint">{{data["social-occupational-history"]}}</textarea>
           </div>
 
 <!-- Structured inputs for SOCH below
@@ -127,6 +128,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
   -->
+  </fieldset>
+  </form>
   </div>      
       </div>
 
