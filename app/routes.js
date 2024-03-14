@@ -1791,12 +1791,17 @@ router.post('/ta-7/conditions', function(req, res) {
  })
  
  router.post('/ta-7/evidence' , function (req, res) {
+  console.log('is-this-calling-questions', req.session.data)
    const documentDate = req.session.data['document-date']
    const evidenceType = req.session.data['evidenceusedpip']
- 
+   const section = req.session.data.source
+
    const evidence = req.session.data.evidence || []
-   evidence.push({ documentDate, evidenceType })
+   evidence.push({ documentDate, evidenceType, section })
    req.session.data.evidence = evidence
+
+
+   console.log(section)
  
    req.session.data.evidence[req.session.data.evidence.length - 1].action
  
