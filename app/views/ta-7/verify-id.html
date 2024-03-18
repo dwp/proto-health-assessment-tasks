@@ -24,10 +24,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </h1>   
 
           </legend>
+          
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Was the claimant's identity verified?
           </legend>
+          
           <div class="govuk-radios" data-module="govuk-radios">
+            {% if data["verify"] == 'Yes' %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes" {{ checked }}>
               <label class="govuk-label govuk-radios__label" for="id">
@@ -40,6 +43,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 No
               </label>
             </div>
+            {% elseif data["verify"] == 'No' %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="id">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="No" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="id-2">
+                No
+              </label>
+            </div>
+            {% elseif data["verify"] === undefined %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="id">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="id-2">
+                No
+              </label>
+            </div>
+            {% endif %}
           </div>
         </fieldset>
       </div>
