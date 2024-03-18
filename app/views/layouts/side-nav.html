@@ -109,9 +109,9 @@
   
       {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
 
-      <a href="ta-task-list.html" class="govuk-back-link">Go back to assessment type</a>
+      <a href="evidence.html" class="govuk-back-link">Go back to assessment type</a>
 
-      <form action="report" method="post">
+      <form action="#" method="post">
 
         <!-- {{ data['source'] }} -->
 
@@ -491,18 +491,28 @@
 
     
        
-          <!-- <a href="report" class="govuk-button">Check answers</a> -->
+          <a href="report" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
 
-          <button type="submit" class="govuk-button" data-module="govuk-button">
+          <!-- <a href="/next-page" class="govuk-link save-and-redirect-link">Next page></a> -->
+
+          <!-- <button type="submit" class="govuk-button" data-module="govuk-button">
             Check answers
-          </button>
+          </button> -->
           
-      
-
         </form>
         <script>
           const item = document.querySelectorAll(".moj-side-navigation__item > a");
           item.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const x = document.querySelectorAll(".save-and-redirect-link"); // this will make anything redirect-able 
+          x.forEach(link => {
             link.addEventListener("click", function (e) {
               e.preventDefault();
               const formElement = document.getElementById("auto-redirect");
