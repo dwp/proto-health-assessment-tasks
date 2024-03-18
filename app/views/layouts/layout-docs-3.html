@@ -2,20 +2,22 @@
 For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-
+{% set containerClasses = "full-width-container" %}
 {% block header %}
-<header class="dwp-header" data-module="govuk-header">
-    <div class=" govuk-width-container">
-        <a href="../" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
-          Health Assessment Service
-        </a>
-    </div>
-    </header>
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true,
+      containerClasses: "govuk-width-container--full-width"
+  })
+}}
     
 <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-  <dl class="key-details-bar__key-details">
+  <dl class="key-details-bar__key-details govuk-width-container--full-width">
     <div class="key-details-bar__top-block">
       <dt class="govuk-visually-hidden">Name:</dt>
       <dt class="key-details-bar__name">John Smith</dt>
@@ -24,7 +26,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       <dt class="key-details-bar__nino">RN 00 01 23 A</dt>
 
       <dt class="govuk-visually-hidden">Claim status:</dt>
-      <dd class="key-details-bar__status">HCP REVIEW</dd>
+      <!-- <dd class="key-details-bar__status">HCP REVIEW</dd> -->
     </div>
 
     <div class="key-details-bar__bottom-block">
@@ -40,10 +42,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   </dl>
 </section>
 <header class="moj-primary-navigation">
-  <div class="govuk-width-container">
+
     <div class="moj-primary-navigation">
 
-      <div class="moj-primary-navigation__container">
+      <div class="moj-primary-navigation__container govuk-width-container--full-width">
     
         <div class="moj-primary-navigation__nav">
     
@@ -51,12 +53,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     
             <ul class="moj-primary-navigation__list">
               <li class="moj-primary-navigation__item"> 
-                <a class="moj-primary-navigation__link"href="ta-task-list">Assessment</a>
+                <a class="moj-primary-navigation__link"href="evidence">Assessment</a>
                 </li>
     
-                  <li class="moj-primary-navigation__item"> 
+                  <!-- <li class="moj-primary-navigation__item"> 
                     <a class="moj-primary-navigation__link"href="telephone-start">Telephone call</a>
-                    </li>
+                    </li> -->
 
               <li class="moj-primary-navigation__item" style="border-bottom: 5px solid #1d70b8;">
                
@@ -68,9 +70,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
               </li>
     
 
-              <li class="moj-primary-navigation__item">
+              <!-- <li class="moj-primary-navigation__item">
                 <a class="moj-primary-navigation__link"href="#">Timeline</a>
-              </li>
+              </li> -->
 
 
             </ul>
