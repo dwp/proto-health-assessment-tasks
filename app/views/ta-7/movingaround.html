@@ -42,92 +42,309 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             
           
             <div class="govuk-radios">
-              
-                
-                    
-                  
-                  
+  
+              {% if data["movingaroundSelectpbr"] == '(12a) Can stand and then move more than 200 metres, either aided or unaided' %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
                   (12a) Can stand and then move more than 200 metres, either aided or unaided
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
-                
-                  
-                  
+         
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
                   (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
-                
-                  
-                  
+     
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
                   (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
-                
-                  
-                  
+  
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
                   (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
-                
-                  
-                  
+   
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
                   (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
-                
-                  
-                  
+
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
                     <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
                   (12f) Cannot stand or move more than 1 metre, either aided or unaided
                 </label>
-                    
                   </div>
-                  
-                  
-                
-              
+
+                  {% elseif data["movingaroundSelectpbr"] == '(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% elseif data["movingaroundSelectpbr"] == '(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% elseif data["movingaroundSelectpbr"] == '(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% elseif data["movingaroundSelectpbr"] == '(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% elseif data["movingaroundSelectpbr"] == '(12f) Cannot stand or move more than 1 metre, either aided or unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% elseif data["movingaroundSelectpbr"] === undefined %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr">
+                  (12a) Can stand and then move more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+         
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-2" name="movingaroundSelectpbr" type="radio" value="(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-2">
+                  (12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+                </label>
+                  </div>
+     
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-3" name="movingaroundSelectpbr" type="radio" value="(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-3">
+                  (12c) Can stand and then move unaided more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-4" name="movingaroundSelectpbr" type="radio" value="(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-4">
+                  (12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-5" name="movingaroundSelectpbr" type="radio" value="(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-5">
+                  (12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="movingaroundSelectpbr-6" name="movingaroundSelectpbr" type="radio" value="(12f) Cannot stand or move more than 1 metre, either aided or unaided">
+                    <label class="govuk-label govuk-radios__label" for="movingaroundSelectpbr-6">
+                  (12f) Cannot stand or move more than 1 metre, either aided or unaided
+                </label>
+                  </div>
+
+                  {% endif %}
             </div>
             
           
