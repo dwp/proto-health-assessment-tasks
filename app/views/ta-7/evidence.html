@@ -14,7 +14,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h1 class="govuk-heading-l">Evidence</h1>
 
-
+ 
 
 
     <form action="#" method="post" id="auto-redirect">
@@ -30,7 +30,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
         
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip" name="evidenceusedpip" type="checkbox" value="Claimant questionnaire" data-aria-controls="conditional-evidence">
+            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip" name="evidenceusedpip" type="checkbox" value="Claimant questionnaire" values="data['evidenceusedpip']" data-aria-controls="conditional-evidence">
             <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip">
         Claimant questionnaire
         </label>
@@ -453,6 +453,25 @@ Other evidence used
 Save and continue
 </button> -->
 
+<script>
+
+// const a = document.querySelectorAll(".govuk-checkboxes__item")
+//     a.addEventListener("change", function check () {
+//       for (let i = 0; i < inputs.length; i++) {
+//                 inputs[i].checked = true;
+//             }
+//         }
+      
+//     );
+
+//   function check() {
+//     document.getElementById("evidenceusedpip").checked = true;
+// }
+        
+
+
+
+</script>
 
     </form>
 
