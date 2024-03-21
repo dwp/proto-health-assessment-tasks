@@ -61,7 +61,7 @@
                  
                  
                   
-                  <a class="moj-primary-navigation__link" href="docs-3">Claimant documents</a>
+                  <a class="moj-primary-navigation__link claim-documents" href="docs-3">Claimant documents</a>
                    
   
                 </li>
@@ -109,7 +109,7 @@
   
       {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
 
-      <a href="evidence.html" class="govuk-back-link">Go back to assessment type</a>
+      <a href="evidence.html" class="govuk-back-link assessment-back">Go back to assessment type</a>
 
       <form action="#" method="post">
 
@@ -513,6 +513,26 @@
 
           const x = document.querySelectorAll(".save-and-redirect-link"); // this will make anything redirect-able 
           x.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const y = document.querySelectorAll(".claim-documents"); // this will make anything redirect-able 
+          y.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const z = document.querySelectorAll(".assessment-back"); // this will make anything redirect-able 
+          z.forEach(link => {
             link.addEventListener("click", function (e) {
               e.preventDefault();
               const formElement = document.getElementById("auto-redirect");
