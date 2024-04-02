@@ -1,0 +1,125 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Mobility justification
+        </h1>
+      </legend>
+      <br />
+
+      <h2 class="govuk-heading-m">
+        Your descriptor choices for mobility
+      </h2>
+
+      <h3 class="govuk-heading-s">Planning and following journeys</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      
+      <p>{{data["mobility-one"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-s">Moving around</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+  
+      <p>{{data["mobility-two"]}}</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <!-- <h2 class="govuk-heading-m">
+        Your mobility descriptor choices
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planning and following journeys
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["mobility-one"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="journeys">
+              Change<span class="govuk-visually-hidden">planning journeys</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Moving around
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["mobility-two"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="moving-around">
+              Change<span class="govuk-visually-hidden">moving around</span>
+            </a>
+          </dd>
+        </div>
+        </dl>      -->
+          </fieldset>
+        </div>
+
+        <h2 class="govuk-heading-m">Justification for mobility</h2>
+        <div class="govuk-form-group">
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="global-justification-mobility" rows="15">{{data["global-justification-mobility"]}}</textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Does this justification contain harmful information?
+              </h2>
+            </legend>
+            <div id="changedName-hint" class="govuk-hint">
+              Harmful information will be separated from the report
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="harmful-yes" name="justificationHarmfulInfo" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="harmful-yes">
+                  Yes
+                </label>
+              </div>
+      
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="harmful-no" name="justificationHarmfulInfo" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="harmful-no">
+                  No
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+      </div>
+
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+  </form>
+      
+
+{% endblock %}
