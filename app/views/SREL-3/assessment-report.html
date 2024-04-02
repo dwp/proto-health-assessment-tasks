@@ -1,4 +1,4 @@
-{% extends "layouts/layout-split-banner-SREL.html" %}
+{% extends "layouts/layout-split-banner.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -12,24 +12,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
     <span class="govuk-caption-l">Report 2 of 2</span>
-    <h1 class="govuk-heading-xl">Harmful information</h1>
+    <h1 class="govuk-heading-xl">Health assessment report</h1>
 
 <!------------------------Harmful information starts below--------------------------------------------------------------------------------------------->
+<div class="govuk-inset-text">
+  No harmful information has been included in this report
+</div>
 
       <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        {% if (data['harmfulEvidence']) == 'Yes' %}
         {% for evidence in data['evidenceusedpip'] %}
+        <h2 class="govuk-heading-m">{{ evidence }}</h2>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            {{ evidence }}
+            Date of {{ evidence }}
           </dt>
-          
           <dd class="govuk-summary-list__value">
-       
+            12 December 2023
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="evidence">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
@@ -44,62 +46,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {{data["other-evidence"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="evidence">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
-        {% else %}
-        <p>text</p>
-        {% endif %}
-        
       </dl>
 
       <h2 class="govuk-heading-l">Short call</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        {% if (data['shortCall']) == 'Yes' %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Who did you call
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            {{data["short-call"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-   
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Consultation notes
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
-            {{data["consultation-notes"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-  
-        {% else %}
-        <p>shortcall text</p>
-        {% endif %}
-      </dl>
+      <h3 class="govuk-heading-m">Who was called?</h3>
+        <p class="govuk-body">
+          <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+        </p>
+        <p> {{data["short-call-name"]}}</p>
 
-      <h2 class="govuk-heading-l">Medical conditions</h2>
+        <h3 class="govuk-heading-m">Consultation notes</h3>
+        <p class="govuk-body">
+          <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+        </p>
+        <p>{{data["consultation-notes"]}}</p>
 
+ 
       
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+      <h2 class="govuk-heading-l">Medical conditions</h2> 
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% for query in data['queriesCondition'] %}
-        {% if  (query.harmfulInfo) == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Condition       
@@ -109,7 +81,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions">
                     Change<span class="govuk-visually-hidden"> contact details</span>
                 </a></li>
               <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
@@ -118,27 +90,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </ul>
           </dd>
         </div>
-        {% elseif (query.harmfulInfo) !== 'Yes' %}
-        <p>harmful condition text</p>
-
-     {% endif %}
-     {% endfor %}
+        {% endfor %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant aware of this diagnosis?     
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["diagnosis"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions">
+                    Change<span class="govuk-visually-hidden"> contact details</span>
+                </a></li>
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                  Remove<span class="govuk-visually-hidden"> contact details</span>
+                </a></li>
+            </ul>
+          </dd>
+        </div>
    </dl>
   
       
 
-   <h2 class="govuk-heading-l">Special rules</h2>
-   
+   <h2 class="govuk-heading-l">Special rules eligibility</h2>
    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Special rules
+        Does the claimant meet the criteria for special rules?
       </dt>
       <dd class="govuk-summary-list__value">
         {{data["specialRules"]}}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
+        <a class="govuk-link" href="special-rules">
           Change<span class="govuk-visually-hidden"> name</span>
         </a>
       </dd>
@@ -151,51 +136,61 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {{data["srel-date-day"]}}  {{data["srel-date-month"]}}  {{data["srel-date-year"]}}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
+        <a class="govuk-link" href="special-rules-date">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is claimant aware of this prognosis?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{data["prognosis"]}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="special-rules-date">
           Change<span class="govuk-visually-hidden"> name</span>
         </a>
       </dd>
     </div>
-
-    <!-- <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Is this information harmful?</dt>
-      <dd class="govuk-summary-list__value">
-        {{data["harmfulInfoDate"]}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <ul class="govuk-summary-list__actions-list">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </ul>
-      </dd>
-    </div> -->
   </dl>
 
-  <h2 class="govuk-heading-l">Justification for mobility</h2>
+  <h3 class="govuk-heading-m">Justification for special rules</h3>
+  <p class="govuk-body">
+    <a href="#" class="govuk-link" style="float: right">Change</a>
+ </p>
+
+ <p>{{data["justification-sr"]}}</p>
+
+  <h2 class="govuk-heading-l">Mobility</h2>
+  <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
       <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
+        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
      </p>
-      <p>{{data["global-justification-mobility"]}}</p>
-      <!-- <p>{{data["justification-mobility"]}}</p> -->
-      
+      <p>{{data["justification-planning"]}}</p>    
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</dl>
+
+  <h3 class="govuk-heading-m">Justification for moving around</h3>
+  <p class="govuk-body">
+    <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+  </p>
+  <p>{{data["justification-moving"]}}</p>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     
 
       <p class="govuk-body">
         <a href="#" class="govuk-link">Print this page</a>
       </p>
 
-  
-    
-  
+
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
-       Submit report
+       Save and continue
       </button>
     </form>
  

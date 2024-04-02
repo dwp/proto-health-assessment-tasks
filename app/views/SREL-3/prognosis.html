@@ -15,36 +15,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Record a short call
+          Is the claimant aware of their prognosis?
         </h1>
-        <div id="passport-issued-hint" class="govuk-hint">
-        </div>
       </legend>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s" for="call">
-              Who did you call?
-            </label>
-            <input class="govuk-input" id="call" name="short-call-name" type="text" value="{{data["short-call-name"]}}">
-          </div>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="consultation-notes">
-            Consultation notes
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="prognosis-yes" name="prognosis" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="prognosis-yes">
+            Yes
           </label>
-          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10">{{data["consultation-notes"]}}</textarea>
         </div>
-      
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="prognosis-no" name="prognosis" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="prognosis-no">
+            No
+            </label>
+          </div>
+        </div>
     </fieldset>
   </div>
-
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
+
     </div>
   </form>
       
-
 {% endblock %}
