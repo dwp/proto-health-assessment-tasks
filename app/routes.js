@@ -2262,6 +2262,29 @@ router.post('/SREL-3/add-condition', function (req, res) {
     }
 })
 
+// Shortcalls
+router.post('/SREL-3/shortcall', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const callName = req.session.data['short-call-name']
+  const consultationNotes = req.session.data['consultation-notes']
+
+  const queriesShortcall = req.session.data.queriesShortcall || []
+  queriesShortcall.push({ callName, consultationNotes })
+  req.session.data.queriesShortcall = queriesShortcall
+
+  req.session.data.queriesShortcall[req.session.data.queriesShortcall.length - 1].action
+
+ res.redirect('/SREL-3/add-shortcall')
+})
+
+router.post('/SREL-3/add-shortcall', function (req, res) {
+  if (req.session.data['anotherShortcall'] == "Yes") {
+      res.redirect('/SREL-3/shortcall')
+    } else {
+      res.redirect('/SREL-3/diagnosis')
+    }
+})
+
 //Special rules
 router.post('/SREL-3/special-rules', function (req, res) {
   if (req.session.data['specialRules'] == "Yes") {
@@ -2306,6 +2329,10 @@ router.post('/SREL-3/short-call' , function (req, res) {
 })
 
 router.post('/SREL-3/shortcall' , function (req, res) {
+  res.redirect('/SREL-3/add-shortcall')
+})
+
+router.post('/SREL-3/add-shortcall' , function (req, res) {
   res.redirect('/SREL-3/conditions')
 })
 
@@ -2329,6 +2356,10 @@ router.post('/SREL-3/prognosis', function (req, res) {
 
 //Justification
 router.post('/SREL-3/report-h' , function (req, res) {
+  res.redirect('/SREL-3/assessment-report')
+})
+
+router.post('/SREL-3/justification' , function (req, res) {
   res.redirect('/SREL-3/assessment-report')
 })
 
