@@ -8,7 +8,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
-
 <form action="#" method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -25,19 +24,43 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="call">
               Who did you call?
             </label>
-            <input class="govuk-input" id="call" name="short-call-name" type="text" value="{{data["short-call-name"]}}">
+            <input class="govuk-input" id="call" name="short-call-name" type="text">
           </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="consultation-notes">
             Consultation notes
           </label>
-          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10">{{data["consultation-notes"]}}</textarea>
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10"></textarea>
         </div>
       
     </fieldset>
   </div>
 
+    <!-- <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+           Add another short call?
+          </h2>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="add-yes" name="anotherCondition" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="add-yes">
+              Yes
+            </label>
+          </div>
+  
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-no" name="anotherCondition" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="add-no">
+              No
+              </label>
+            </div>
+          </div>
+      </fieldset>
+    </div>   -->
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">
