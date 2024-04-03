@@ -23,55 +23,52 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <h2 class="govuk-heading-l">Evidence used</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      {% if (data['diagnosis'] && data['prognosis']) == 'No' %}
-      {% for evidence in data['evidenceusedpip'] %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          {{ evidence }}
-        </dt>
-        
-        <dd class="govuk-summary-list__value">
-     
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="evidence">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        {% for evidence in data['evidenceusedpip'] %}
+        <h2 class="govuk-heading-m">{{ evidence }}</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of {{ evidence }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 December 2023
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="evidence">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        {% endfor %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Other evidence used
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            {{data["other-evidence"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="evidence">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
     
-      {% endfor %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Other evidence used
-        </dt>
-        
-        <dd class="govuk-summary-list__value">
-          {{data["other-evidence"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="evidence">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      {% else %}
-      <p>All evidence provided with this referral has been analysed.</p>
-      {% endif %}
-     
-    </dl>
+  {% if (data['shortCall'] == 'Yes') %}
 
     <h2 class="govuk-heading-l">Short call</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      {% if (data['shortCall']) == 'No' %}
+      {% for query in data['queriesShortcall'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Who did you call
         </dt>
         
         <dd class="govuk-summary-list__value">
-          {{data["short-call-name"]}}
+          {{ query.callname }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="shortcall">
@@ -86,7 +83,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         
         <dd class="govuk-summary-list__value">
-          {{data["consultation-notes"]}}
+          {{ query.consultationNotes }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="shortcall">
@@ -94,18 +91,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
-
-      {% else %}
-      <p>A short call was made to the primary clinician.</p>
-      {% endif %}
+      {% endfor %}
     </dl>
+
+    {% else %}
+
+    {% endif %}
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       
       {% for query in data['queriesCondition'] %}
-      {% if  (query.harmfulInfo) == 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Condition       
@@ -124,10 +121,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </ul>
         </dd>
       </div>
-      {% elseif (query.harmfulInfo) !== 'Yes' %}
-      <p>All medical conditions listed in the supporting evidence have been explored.</p>
-
-     {% endif %}
    {% endfor %}
     </dl>
 
@@ -136,7 +129,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-l">Mobility</h2>
       
-
       <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -176,19 +168,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      
-      <h3 class="govuk-heading-m">Justification for mobility choices</h3>
-      {% if (data["justificationHarmfulInfo"]) == 'Yes' %}
+  <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
       <p class="govuk-body">
         <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
      </p>
-    
-      <p>The claimant is experiencing significant difficulties. Therefore, I am satisfied that this claimant meets all relevant descriptors in accordance with the legislation.</p>
-      
+      <p>{{data["justification-planning"]}}</p>    
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h3 class="govuk-heading-m">Justification for moving around</h3>
+  <p class="govuk-body">
+    <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+  </p>
+  <p>{{data["justification-moving"]}}</p>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 </dl>
-{% elseif (data["justificationHarmfulInfo"]) == 'No' %}
 
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -207,14 +202,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </dl> -->
 
-      {% endif %}
-   
-      <div class="govuk-inset-text">
-        No harmful information has been included in this report.
-      </div>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
   
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
