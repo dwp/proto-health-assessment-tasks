@@ -2367,6 +2367,14 @@ router.post('/SREL-3/justification' , function (req, res) {
   res.redirect('/SREL-3/assessment-report')
 })
 
+router.post('/SREL-3/assessment-report' , function (req, res) {
+  res.redirect('/SREL-3/submit')
+})
+
+router.post('/SREL-3/report-cleanFull' , function (req, res) {
+  res.redirect('/SREL-3/submit')
+})
+
 
 
 
