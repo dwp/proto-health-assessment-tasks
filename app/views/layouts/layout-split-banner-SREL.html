@@ -4,15 +4,18 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
 
 {% block header %}
-<header class="dwp-header" data-module="govuk-header">
-    <div class="govuk-width-container">
-        <a href="../" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
-          Health Assessment Service
-        </a>
-    </div>
-    </header>
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
 <section class="key-details-bar" role="contentinfo" aria-label="Key details">
   <dl class="key-details-bar__key-details">
     <div class="key-details-bar__top-block">
