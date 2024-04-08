@@ -2308,7 +2308,7 @@ router.post('/SREL-3/mobility-eleven' , function (req, res) {
 })
 
 router.post('/SREL-3/mobility-twelve' , function (req, res) {
-  if (req.session.data['diagnosis'] && req.session.data['diagnosis'] == "Yes") {
+  if (req.session.data['diagnosis'] === "Yes" && req.session.data['prognosis'] === "Yes") {
     res.redirect('/SREL-3/report-cleanFull')
   } else {
     res.redirect('/SREL-3/report-h')
