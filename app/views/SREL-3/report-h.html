@@ -39,7 +39,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+        <br>
         {% endfor %}
+        {% if (data['other-evidence'] == ' ') %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Other evidence used
@@ -54,6 +56,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+        {% else %}
+
+        {% endif %}
       </dl>
 
  
@@ -66,8 +71,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
      </p>
       <p> {{ query.callName }}</p>    
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h3 class="govuk-heading-m">Consultation notes</h3>
       <p class="govuk-body">
@@ -140,7 +143,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          </a>
        </dd>
      </div>
-     <div class="govuk-summary-list__row">
+     <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Is the claimant aware of this prognosis?
       </dt>
@@ -152,7 +155,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Change<span class="govuk-visually-hidden"> name</span>
         </a>
       </dd>
-    </div>
+    </div> -->
    </dl>
  
    <h3 class="govuk-heading-m">Justification for special rules</h3>
@@ -175,6 +178,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
       <p>{{data["mobility-one"]}}</p>
 
+      <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
+      <p class="govuk-body">
+        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["justification-planning"]}}</p>    
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
@@ -185,18 +194,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
       <p>{{data["mobility-two"]}}</p>
-
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-  <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
-      <p class="govuk-body">
-        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <p>{{data["justification-planning"]}}</p>    
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
   <h3 class="govuk-heading-m">Justification for moving around</h3>
   <p class="govuk-body">

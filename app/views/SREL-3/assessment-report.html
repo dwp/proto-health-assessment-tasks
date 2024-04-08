@@ -22,14 +22,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <h2 class="govuk-heading-l">Evidence used</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <!-- prognosis and diagnosis  = no -->
-  {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
+  {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
 
   <p>All relevant supporting evidence has been reviewed and considered when writing this report.</p>
 
    <!-- if yes to diagnosis but no to prognosis -->
-  {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
+  {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
+
+  <p>All evidence provided with this referral has been analysed.</p>
+
+  {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
+
+  <p>All evidence provided with this referral has been analysed.</p>
  
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   {% for evidence in data['evidenceusedpip'] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -60,49 +66,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </a>
     </dd>
   </div>
-</dl>
+</dl> -->
 {% endif %}
 
 
 
-  {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
+  {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
   <h2 class="govuk-heading-l">Short call</h2>
 
     <p>A telephone call was made to gather further information.</p>
     
-    {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
-    {% if (data['shortCall'] == 'Yes') %}
+    {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
+
     <h2 class="govuk-heading-l">Short call</h2>
-    {% for query in data['queriesShortcall'] %}
-   
-      <h3 class="govuk-heading-m">Who did you call?</h3>
-        <p class="govuk-body">
-          <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
-       </p>
-        <p> {{ query.callName }}</p>    
-  
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  
-        <h3 class="govuk-heading-m">Consultation notes</h3>
-        <p class="govuk-body">
-          <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
-       </p>
-        <p> {{ query.consultationNotes }}</p>    
-  
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  
-        {% endfor %}
-  
-        {% else %}
-    
-        {% endif %}
+
+    <p>A telephone call was made to gather further information.</p>
+
+    {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
+
+    <h2 class="govuk-heading-l">Short call</h2>
+
+    <p>A telephone call was made to gather further information.</p>
+      
   {% endif %}
+
  
   <h2 class="govuk-heading-l">Medical conditions</h2> 
-  {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
+  {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
      <p>All relevant medical conditions have been explored by a health care professional.</p>
 
-     {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
+     {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
+     <p>All relevant medical conditions have been explored by a health care professional.</p>
+
+     {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% for query in data['queriesCondition'] %}
         <div class="govuk-summary-list__row">
@@ -171,11 +167,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <br>
   
   <h3 class="govuk-heading-m">Justification for mobility</h3>
-  {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
+  {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
 
   <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
 
-  {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
+  {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
       <p class="govuk-body">
         <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
      </p>
@@ -190,7 +186,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <p>{{data["justification-moving"]}}</p>
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  {% endif %}
+  {% endif %} 
     
 
       <p class="govuk-body">
