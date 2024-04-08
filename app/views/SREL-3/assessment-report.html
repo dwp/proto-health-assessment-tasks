@@ -24,7 +24,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <!-- prognosis and diagnosis  = no -->
   {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
 
-  <p>All evidence provided with this referral has been analysed.</p>
+  <p>All relevant supporting evidence has been reviewed and considered when writing this report.</p>
 
    <!-- if yes to diagnosis but no to prognosis -->
   {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
@@ -170,10 +170,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <br>
   
-  <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
+  <h3 class="govuk-heading-m">Justification for mobility</h3>
   {% if (data['diagnosis'] and data['prognosis']) == 'No' %}
 
-  <p>Does this need a prompt?</p>
+  <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
 
   {% elseif (data['diagnosis'] == 'No' and data['prognosis']) == 'Yes' %}
       <p class="govuk-body">
