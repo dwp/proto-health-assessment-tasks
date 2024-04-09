@@ -21,11 +21,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Check medical conditions
         </h1>
         
-        {% for query in data['queriesCondition'] %}
-        <div>
-          <!-- <h2 class="govuk-heading-m">Condition</h2> -->
-          <br>
         <dl class="govuk-summary-list">
+        {% for query in data['queriesCondition'] %}          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Condition
@@ -44,21 +41,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </ul>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Is the claimant aware of this diagnosis?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data["diagnosis"]}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-  
-            </dd>
-          </div>
-          </dl>
-        </div>
+         
           {% endfor %}
+        </dl>
 
 <form action="#" method="post">
   <div class="govuk-form-group">

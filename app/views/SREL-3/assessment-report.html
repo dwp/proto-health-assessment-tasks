@@ -120,7 +120,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
         {% endfor %}
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the claimant aware of this diagnosis?     
           </dt>
@@ -137,7 +137,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </a></li>
             </ul>
           </dd>
-        </div>
+        </div> -->
    </dl>
    {% endif %}
 
@@ -170,8 +170,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
 
   <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
   {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
+
+  <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  {% else %}
+
       <p class="govuk-body">
         <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
      </p>
@@ -179,13 +185,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-  <h3 class="govuk-heading-m">Justification for moving around</h3>
-  <p class="govuk-body">
-    <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
-  </p>
-  <p>{{data["justification-moving"]}}</p>
-
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   {% endif %} 
     
 
