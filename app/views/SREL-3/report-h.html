@@ -23,7 +23,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <h2 class="govuk-heading-l">Evidence used</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
         {% for evidence in data['evidenceusedpip'] %}
         <h2 class="govuk-heading-m">{{ evidence }}</h2>
         <div class="govuk-summary-list__row">
@@ -62,8 +62,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% endif %}
       </dl>
 
-      <br>
- 
   {% if (data['shortCall'] == 'Yes') %}
   <h2 class="govuk-heading-l">Short call</h2>
   {% for query in data['queriesShortcall'] %}
