@@ -12,7 +12,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
     <span class="govuk-caption-l">Report 1 of 2</span>
-    <h1 class="govuk-heading-xl">Harmful information</h1>
+    <h1 class="govuk-heading-xl">Harmful information assessment report</h1>
 
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -62,6 +62,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% endif %}
       </dl>
 
+      <br>
  
   {% if (data['shortCall'] == 'Yes') %}
   <h2 class="govuk-heading-l">Short call</h2>
@@ -78,14 +79,48 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p> {{ query.consultationNotes }}</p>    
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
       {% endfor %}
 
       {% else %}
-  
       {% endif %}
 
+      <br>
+      <br>
 
+      <h2 class="govuk-heading-l">Diagnosis and prognosis</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is the claimant aware of their diagnosis?     
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["diagnosis"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="diagnosis">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+              </a></li>
+          </ul>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is the claimant aware of their prognosis?     
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["prognosis"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="prognosis">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+              </a></li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -129,6 +164,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          </a>
        </dd>
      </div>
+     </dl>
+
+     <h3 class="govuk-heading-s" style="margin-top:-5%;">Justification for special rules</h3>
+     <p class="govuk-body">
+      <a href="mobility" class="govuk-link" style="float: right">Change</a>
+   </p>
+          <p>{{data["justification-sr"]}}</p>
+     
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
      <div class="govuk-summary-list__row">
        <dt class="govuk-summary-list__key">
          Special rules date
@@ -142,30 +188,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          </a>
        </dd>
      </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Is the claimant aware of this prognosis?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{data["prognosis"]}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="special-rules-date">
-          Change<span class="govuk-visually-hidden"> name</span>
-        </a>
-      </dd>
-    </div> 
    </dl>
- 
-   <h3 class="govuk-heading-m">Justification for special rules</h3>
-   <p class="govuk-body">
-     <a href="#" class="govuk-link" style="float: right">Change</a>
-  </p>
- 
-  <p>{{data["justification-sr"]}}</p>
-
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
 
       <h2 class="govuk-heading-l">Mobility</h2>
 
@@ -177,7 +200,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
       <p>{{data["mobility-one"]}}</p>
 
-      <h3 class="govuk-heading-m">Justification for planning and following journeys</h3>
+      <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
     
       <p>{{data["justification-planning"]}}</p>    
 
@@ -192,7 +215,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
       <p>{{data["mobility-two"]}}</p>
 
-  <h3 class="govuk-heading-m">Justification for moving around</h3>
+  <h3 class="govuk-heading-s">Justification for moving around</h3>
  
   <p>{{data["justification-moving"]}}</p>
 
