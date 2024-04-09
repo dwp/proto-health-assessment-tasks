@@ -36,26 +36,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <br>
         {% endfor %}
+        </dl>
         
         {% if (data['other-evidence']) %}
-        <h2 class="govuk-heading-m">Other evidence used</h2>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            {{data["other-evidence"]}}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="evidence">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
+        <h3 class="govuk-heading-m" style="margin-top:-5%;">Other evidence used</h3>
+            <p class="govuk-body">
+              <a href="evidence" class="govuk-link" style="float: right">Change</a>
+          </p>
+          <p>{{data["other-evidence"]}}</p>
+     
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {% elseif (data['other-evidence'] !== ' ') %}
     
         {% endif %}
-      </dl>
 
  
   {% if (data['shortCall'] == 'Yes') %}
@@ -64,13 +57,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h3 class="govuk-heading-m">Who did you call?</h3>
       <p class="govuk-body">
-        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+        <a href="shortcall" class="govuk-link" style="float: right">Change</a>
      </p>
       <p> {{ query.callName }}</p>    
 
       <h3 class="govuk-heading-m">Consultation notes</h3>
       <p class="govuk-body">
-        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+        <a href="shortcall" class="govuk-link" style="float: right">Change</a>
      </p>
       <p> {{ query.consultationNotes }}</p>    
 
