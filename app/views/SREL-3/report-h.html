@@ -41,26 +41,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <br>
         {% endfor %}
-        
+        </dl>
+
         {% if (data['other-evidence']) %}
-        <h2 class="govuk-heading-m">Other evidence used</h2>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            {{data["other-evidence"]}}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="evidence">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
+        <h3 class="govuk-heading-m" style="margin-top:-5%;">Other evidence used</h3>
+            <p class="govuk-body">
+              <a href="evidence" class="govuk-link" style="float: right">Change</a>
+          </p>
+          <p>{{data["other-evidence"]}}</p>
+     
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {% elseif (data['other-evidence'] !== ' ') %}
     
         {% endif %}
-      </dl>
 
   {% if (data['shortCall'] == 'Yes') %}
   <h2 class="govuk-heading-l">Short call</h2>
@@ -68,7 +61,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h3 class="govuk-heading-m">Who did you call?</h3>
       <p class="govuk-body">
-        <a href="mobility-justification" class="govuk-link" style="float: right">Change</a>
+        <a href="shortcall" class="govuk-link" style="float: right">Change</a>
      </p>
       <p> {{ query.callName }}</p>    
 
@@ -166,7 +159,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
      <h3 class="govuk-heading-s" style="margin-top:-5%;">Justification for special rules</h3>
      <p class="govuk-body">
-      <a href="mobility" class="govuk-link" style="float: right">Change</a>
+      <a href="special-rules-yes" class="govuk-link" style="float: right">Change</a>
    </p>
           <p>{{data["justification-sr"]}}</p>
      
@@ -192,7 +185,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h3 class="govuk-heading-m">Planning and following journeys</h3>
       <p class="govuk-body">
-        <a href="mobility" class="govuk-link" style="float: right">Change</a>
+        <a href="mobility-eleven" class="govuk-link" style="float: right">Change</a>
      </p>
       
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
@@ -207,7 +200,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h3 class="govuk-heading-m">Moving around</h3>
       <p class="govuk-body">
-        <a href="mobility" class="govuk-link" style="float: right">Change</a>
+        <a href="mobility-twelve" class="govuk-link" style="float: right">Change</a>
      </p>
      
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
