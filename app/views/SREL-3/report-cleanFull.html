@@ -36,14 +36,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <br>
         {% endfor %}
-        {% if (data['other-evidence'] == ' ') %}
+        
+        {% if (data['other-evidence']) %}
+        <h2 class="govuk-heading-m">Other evidence used</h2>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Other evidence used
-          </dt>
-          
-          <dd class="govuk-summary-list__value">
+          <dt class="govuk-summary-list__value">
             {{data["other-evidence"]}}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="evidence">
@@ -51,8 +52,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-        {% else %}
-
+        {% elseif (data['other-evidence'] !== ' ') %}
+    
         {% endif %}
       </dl>
 
