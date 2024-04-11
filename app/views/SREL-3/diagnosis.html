@@ -18,7 +18,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Is the claimant aware of their diagnosis?
         </h1>
       </legend>
-      <div class="govuk-radios" data-module="govuk-radios">
+      <div id="aware-diagnosis-hint" class="govuk-hint">
+        If they are not aware, it will be handled as harmful information. Harmful information will be automatically separated from the report.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios" aria-describedby="aware-diagnosis-hint">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="diagnosis-yes" name="diagnosis" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="diagnosis-yes">
