@@ -29,11 +29,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    <!-- if yes to diagnosis but no to prognosis -->
   {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
 
-  <p>All evidence provided with this referral has been analysed.</p>
+  <p>All relevant supporting evidence has been reviewed and considered when writing this report.</p>
 
   {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
 
-  <p>All evidence provided with this referral has been analysed.</p>
+  <p>All relevant supporting evidence has been reviewed and considered when writing this report.</p>
  
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   {% for evidence in data['evidenceusedpip'] %}
@@ -169,12 +169,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <h3 class="govuk-heading-m">Justification for mobility</h3>
   {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
 
-  <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
+  <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
+  
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
   {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
 
-  <p>After considering the available evidence, I have concluded that the claimant will have severe mobility limitations. This is likely to affect their ability to plan journeys and mobilise on the majority of days.</p>
+  <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   {% else %}
 
