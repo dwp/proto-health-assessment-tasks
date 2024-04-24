@@ -1,0 +1,96 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+   .govuk-summary-list__actions {
+    width: 25%;
+    padding-right: 0;
+    text-align: right;
+  }
+</style>
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+        <span class="govuk-caption-xl"></span>
+        
+        <form action="#" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Planning and following journeys
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-1" name="mobility-one" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                <label class="govuk-label govuk-radios__label" for="option-1">
+                  (11a) Can plan and follow the route of a journey unaided 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-2" name="mobility-one" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                <label class="govuk-label govuk-radios__label" for="option-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-3" name="mobility-one" type="radio" value="(11c) Cannot plan the route of a journey ">
+                <label class="govuk-label govuk-radios__label" for="option-3">
+                  (11c) Cannot plan the route of a journey 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-4" name="mobility-one" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                <label class="govuk-label govuk-radios__label" for="option-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-5" name="mobility-one" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                <label class="govuk-label govuk-radios__label" for="option-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-6" name="mobility-one" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                <label class="govuk-label govuk-radios__label" for="option-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid 
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <h2 class="govuk-heading-m">Justification for planning and following journeys</h2>
+        <div class="govuk-form-group">
+          <textarea class="govuk-textarea" id="justification" name="justification-planning" rows="10">{{data["justification-planning"]}}</textarea>
+        </div>
+
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}

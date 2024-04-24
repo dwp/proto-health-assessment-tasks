@@ -1,0 +1,46 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Record a short call
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="call">
+              Who did you call?
+            </label>
+            <input class="govuk-input" id="call" name="short-call-name" type="text">
+          </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="consultation-notes">
+            Consultation notes
+          </label>
+          <textarea class="govuk-textarea" id="recommendation-daily-living" name="consultation-notes" rows="10"></textarea>
+        </div>
+    </fieldset>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </div>
+
+  </form>
+      
+
+{% endblock %}

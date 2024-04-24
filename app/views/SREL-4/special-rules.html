@@ -1,0 +1,65 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+   .govuk-summary-list__actions {
+    width: 25%;
+    padding-right: 0;
+    text-align: right;
+  }
+</style>
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+
+        <h1 class="govuk-heading-l">
+          Does the claimant meet the criteria for special rules?
+        </h1>
+        <div id="changedName-hint" class="govuk-hint">
+          This means they have a progressive disease that would limit their life expectancy to less than 12 months.
+        </div>
+        
+         
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label" for="event-name"></label>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sr-yes" name="specialRules" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="sr-yes">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sr-no" name="specialRules" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="sr-no">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}
