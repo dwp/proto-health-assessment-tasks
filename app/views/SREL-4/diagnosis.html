@@ -1,0 +1,50 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Is the claimant aware of their diagnosis?
+        </h1>
+      </legend>
+      <div id="aware-diagnosis-hint" class="govuk-hint">
+        Harmful information will be automatically separated from the report.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios" aria-describedby="aware-diagnosis-hint">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="diagnosis-yes" name="diagnosis" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="diagnosis-yes">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="diagnosis-no" name="diagnosis" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="diagnosis-no">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </div>
+  </form>
+      
+{% endblock %}

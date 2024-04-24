@@ -1,0 +1,159 @@
+{% extends "layouts/main-case-2.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Assessment overview
+    </h1>
+
+    <!-- <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Telephone consultation booked. <a href="telephone-start">Call the claimant.</a>
+      </strong>
+    </div> -->
+  
+    <!-- tasklist start -->
+    <!-- tasklist end -->
+    
+      <ul class="govuk-task-list" style="padding-left: 0%;">
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">Evidence</span>
+        </h2>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <span class="app-task-list__task-name">
+              <a href="evidence" aria-describedby="eligibility-status">
+                Evidence used
+              </a>
+            </span>
+            {% if (data['evidenceusedpip']) %}
+            <div class="govuk-task-list__status" id="application-details-1-status">
+              Completed
+            </div>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% endif %}
+          </li>
+
+           <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <span class="app-task-list__task-name">
+              <a href="shortcall" aria-describedby="eligibility-status">
+                Short call
+              </a>
+            </span>
+            {% if (data['shortCall']) %}
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+              {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="status">Optional</strong>
+            {% endif %}
+          </li>
+          
+          <li class="app-task-list__item">
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">Claimant history</span>
+            </h2>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <span class="app-task-list__task-name">
+                <a href="conditions.html" aria-describedby="read-declaration-status">
+                  Medical conditions
+                </a>
+              </span>
+              {% if (data['anotherCondition']) == 'No' %}
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+            </li>
+  </li>
+  
+
+  <li class="app-task-list__item">
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">Analysis</span>
+    </h2>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <span class="app-task-list__task-name">
+      <a href="special-rules.html" aria-describedby="read-declaration-status">
+        Special rules
+      </a>
+    </span>
+    {% if (data['harmful-info']) %}
+    <div class="govuk-task-list__status" id="application-details-1-status">
+      Completed
+    </div>
+
+    {% elseif (data['mobility-two']) %}
+    <div class="govuk-task-list__status" id="application-details-1-status">
+      Completed
+    </div>
+
+    {% else %}
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+    {% endif %}
+  </li>
+
+
+  {% if (data['mobility-two']) %}
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">Review</span>
+  </h2>
+  <li class="govuk-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="report.html" aria-describedby="read-declaration-status">
+        Review
+      </a>
+    </span>
+    <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+    
+    </div>
+  </li>
+
+  {% elseif (data['harmful-info']) %}
+
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">Review</span>
+  </h2>
+  <li class="govuk-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="report.html" aria-describedby="read-declaration-status">
+        Review
+      </a>
+    </span>
+    <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+    
+    </div>
+  </li>
+
+  {% else %}
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">Review
+  </h2>
+  <li class="govuk-task-list__item">
+    <div class="govuk-task-list__name-and-hint">
+      <div>Review</div>
+    </div>
+    <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+      Cannot start yet
+    </div>
+  </li>
+ 
+  {% endif %}
+
+</ul>
+
+  </div>      
+      </div>
+
+{% endblock %}
