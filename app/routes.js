@@ -2376,6 +2376,149 @@ router.post('/SREL-3/report-cleanFull' , function (req, res) {
 })
 
 
+// SREL-4 routes //
+
+router.post('/SREL-4/evidence' , function (req, res) {
+  res.redirect('/SREL-4/short-call')
+})
+
+// Conditions
+router.post('/SREL-4/conditions', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const harmfulInfo = req.session.data['harmful']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, harmfulInfo })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/SREL-4/add-condition')
+})
+
+router.post('/SREL-4/add-condition', function (req, res) {
+  if (req.session.data['anotherCondition'] == "Yes") {
+      res.redirect('/SREL-4/conditions')
+    } else {
+      res.redirect('/SREL-4/special-rules')
+    }
+})
+
+// Shortcalls
+router.post('/SREL-4/shortcall', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const callName = req.session.data['short-call-name']
+  const consultationNotes = req.session.data['consultation-notes']
+
+  const queriesShortcall = req.session.data.queriesShortcall || []
+  queriesShortcall.push({ callName, consultationNotes })
+  req.session.data.queriesShortcall = queriesShortcall
+
+  req.session.data.queriesShortcall[req.session.data.queriesShortcall.length - 1].action
+
+ res.redirect('/SREL-4/add-shortcall')
+})
+
+router.post('/SREL-4/add-shortcall', function (req, res) {
+  if (req.session.data['anotherShortcall'] == "Yes") {
+      res.redirect('/SREL-4/shortcall')
+    } else {
+      res.redirect('/SREL-4/diagnosis')
+    }
+})
+
+//Special rules
+router.post('/SREL-4/special-rules', function (req, res) {
+  if (req.session.data['specialRules'] == "Yes") {
+      res.redirect('/SREL-4/special-rules-yes')
+    } else {
+      res.redirect('/SREL-4/justification')
+    }
+})
+
+router.post('/SREL-4/special-rules-yes' , function (req, res) {
+  res.redirect('/SREL-4/special-rules-date')
+})
+
+router.post('/SREL-4/special-rules-date' , function (req, res) {
+  res.redirect('/SREL-4/mobility-eleven')
+})
+
+// mobility descriptors
+router.post('/SREL-4/mobility-eleven' , function (req, res) {
+  res.redirect('/SREL-4/mobility-twelve')
+})
+
+router.post('/SREL-4/mobility-twelve' , function (req, res) {
+  if (req.session.data['diagnosis'] === "Yes" && req.session.data['prognosis'] === "Yes") {
+    res.redirect('/SREL-4/report-cleanFull')
+  } else {
+    res.redirect('/SREL-4/report-h')
+  }
+})
+
+router.post('/SREL-4/mobility-justification' , function (req, res) {
+  res.redirect('/SREL-4/report')
+})
+
+router.post('/SREL-4/report' , function (req, res) {
+  res.redirect('/SREL-4/submit')
+})
+
+//Shortcall
+router.post('/SREL-4/short-call' , function (req, res) {
+  if (req.session.data['shortCall'] == "Yes") {
+    res.redirect('/SREL-4/shortcall')
+  } else {
+    res.redirect('/SREL-4/diagnosis')
+  }
+})
+
+router.post('/SREL-4/shortcall' , function (req, res) {
+  res.redirect('/SREL-4/add-shortcall')
+})
+
+router.post('/SREL-4/add-shortcall' , function (req, res) {
+  res.redirect('/SREL-4/conditions')
+})
+
+// diagnosis - prognosis
+
+router.post('/SREL-4/diagnosis', function (req, res) {
+  if (req.session.data['diagnosis'] == "Yes") {
+    res.redirect('/SREL-4/prognosis')
+  } else {
+    res.redirect('/SREL-4/prognosis')
+  }
+})
+
+router.post('/SREL-4/prognosis', function (req, res) {
+  if (req.session.data['prognosis'] == "Yes") {
+    res.redirect('/SREL-4/conditions')
+  } else {
+    res.redirect('/SREL-4/conditions')
+  }
+})
+
+//Justification
+router.post('/SREL-4/report-h' , function (req, res) {
+  res.redirect('/SREL-4/assessment-report')
+})
+
+router.post('/SREL-4/justification' , function (req, res) {
+  res.redirect('/SREL-4/assessment-report')
+})
+
+router.post('/SREL-4/assessment-report' , function (req, res) {
+  res.redirect('/SREL-4/submit')
+})
+
+router.post('/SREL-4/report-cleanFull' , function (req, res) {
+  res.redirect('/SREL-4/submit')
+})
+
+
 
 
 // PBR Routes
