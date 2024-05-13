@@ -1926,6 +1926,159 @@ router.post('/ta-7/mobility', function(req, res) {
   res.redirect('/ta-7/report')
  })
 
+ // start of v8 routes // 
+
+router.post('/ta-8/conditions', function(req, res) {
+  
+  res.redirect('/ta-8/soch1-additional')
+ })
+ 
+ router.post('/ta-8/soch1-additional', function(req, res) {
+   
+   res.redirect('/ta-8/preparingfood')
+  })
+ 
+ router.post('/ta-8/attendees' , function (req, res) {
+   
+       res.redirect('/ta-8/conditions')
+ })
+ 
+ router.post('/ta-8/evidence' , function (req, res) {
+  console.log('is-this-calling-questions', req.session.data)
+   const documentDate = req.session.data['document-date']
+   const evidenceType = req.session.data['evidenceusedpip']
+   const section = req.session.data.source
+
+   const evidence = req.session.data.evidence || []
+   evidence.push({ documentDate, evidenceType, section })
+   req.session.data.evidence = evidence
+
+
+   console.log(section)
+ 
+   req.session.data.evidence[req.session.data.evidence.length - 1].action
+ 
+  res.redirect('/ta-8/verify-id')
+ 
+ })
+ 
+ router.post('/ta-8/consent' , function (req, res) {
+   if (req.session.data['consent'] == "no") {
+       res.redirect('/ta-8/no-consent')
+ 
+     } else {
+       res.redirect('/ta-8/attendees')
+     }
+     
+ })
+ 
+ router.post('/ta-8/verify-id' , function (req, res) {
+   if (req.session.data['verify'] == "pass") {
+       res.redirect('/ta-8/consent')
+ 
+     } else {
+       res.redirect('/ta-8/not-verified')
+     }
+     
+ })
+// Telephone assessment v8 - side nav design activities //
+
+router.post('/ta-8/preparingfood', function (req, res) {
+ 
+  res.redirect('/ta-8/takingnutrition')
+
+})
+
+router.post('/ta-8/takingnutrition', function (req, res) {
+ 
+  res.redirect('/ta-8/managingtherapy')
+})
+
+router.post('/ta-8/managingtherapy', function (req, res) {
+ 
+  res.redirect('/ta-8/washingbathing')
+})
+
+router.post('/ta-8/washingbathing', function (req, res) {
+ 
+  res.redirect('/ta-8/toiletneeds')
+})
+
+router.post('/ta-8/toiletneeds', function (req, res) {
+ 
+  res.redirect('/ta-8/dressing')
+})
+
+router.post('/ta-8/dressing', function (req, res) {
+ 
+  res.redirect('/ta-8/communicatingverbally')
+})
+
+router.post('/ta-8/communicatingverbally', function (req, res) {
+ 
+  res.redirect('/ta-8/readingunderstanding')
+})
+
+router.post('/ta-8/readingunderstanding', function (req, res) {
+ 
+  res.redirect('/ta-8/facetoface')
+})
+
+router.post('/ta-8/facetoface', function (req, res) {
+ 
+  res.redirect('/ta-8/budgeting')
+})
+
+router.post('/ta-8/budgeting', function (req, res) {
+ 
+  res.redirect('/ta-8/journeys')
+})
+
+router.post('/ta-8/journeys', function (req, res) {
+ 
+  res.redirect('/ta-8/movingaround')
+})
+
+router.post('/ta-8/movingaround' , function (req, res) {
+ 
+  res.redirect('/ta-8/mental-state')
+})
+
+router.post('/ta-8/mental-state', function (req, res) {
+ 
+  res.redirect('/ta-8/physical-state')
+})
+
+router.post('/ta-8/physical-state', function (req, res) {
+ 
+  res.redirect('/ta-8/dl-qual')
+})
+
+router.post('/ta-8/dl-qual', function (req, res) {
+ 
+  res.redirect('/ta-8/daily-living')
+})
+
+router.post('/ta-8/daily-living', function (req, res) {
+ 
+  res.redirect('/ta-8/mobility-qual')
+})
+
+router.post('/ta-8/mobility-qual', function (req, res) {
+ 
+  res.redirect('/ta-8/mobility')
+})
+
+router.post('/ta-8/mobility', function(req, res) {
+  
+  res.redirect('/ta-8/review')
+ })
+
+ router.post('/ta-8/review', function(req, res) {
+  
+  res.redirect('/ta-8/report')
+ })
+
 
 // Versioning routes //
 
