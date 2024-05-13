@@ -1,0 +1,38 @@
+{% extends "layouts/layout-split.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="treatment2.html" class="govuk-back-link">Back</a>
+
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-heading-l">
+       History of Condition
+    </h1>
+
+<form action="ta-task-list3.html" method="get">
+     <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="history-condition" name="history-of-condition-prep" rows="15" aria-describedby="history-condition-hint"></textarea>
+  </div>
+
+
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}
