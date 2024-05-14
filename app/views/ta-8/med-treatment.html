@@ -16,22 +16,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          History of condition
+          Current medication and treatment
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
         </div>
       </legend>
 
           <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="variability" name="condition-history" rows="15" aria-describedby="variability-hint">{{data["condition-history"]}}</textarea>
+            <textarea class="govuk-textarea" id="med-treatment" name="medication-treatment" rows="15" aria-describedby="med-hint">{{data["medication-treatment"]}}</textarea>
           </div>
-          
+         
 
-      </fieldset>
-    </div>
+          </fieldset>
+        </div>
+      </div>
+    </form>
   </div>
- </form>
-</div>
       
 
 {% endblock %}
