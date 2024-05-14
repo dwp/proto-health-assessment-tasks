@@ -75,14 +75,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Evidence</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      {% for evidenceSelection in data['evidenceusedpip'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          {{ evidenceSelection }}
+          Evidence used
         </dt>
         
         <dd class="govuk-summary-list__value">
-          16th March
+          <ul>
+            {% for evidenceType in data['evidenceusedpip'] %}
+              <p>{{ evidenceType }}, {{ docuemnt-date }}</p>
+            {% endfor %}
+
+            {{ data['evidence']['document-date'] }}
+            <!-- {% for evidenceDate in evidence['document-date'] %}
+              <p>{{ document-date }}</p>
+            {% endfor %} -->
+          </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -90,16 +98,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
-      {% endfor %}
     </dl>
 
     <h2 class="govuk-heading-l">Consultation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Was the claimants identity confirmed?
+         Consulation date
         </dt>
-        
+        <dd class="govuk-summary-list__value">
+          {{data["ConsulationDate"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimants identity verified?
+        </dt>
         <dd class="govuk-summary-list__value">
           {{data["verify"]}}
         </dd>
@@ -109,11 +129,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Did the claimant give their consent?
+          Did the claimant give consent?
         </dt>
-        
         <dd class="govuk-summary-list__value">
           {{data["consent"]}}
         </dd>
@@ -123,6 +143,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Additional attendees
@@ -139,17 +160,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </dl>
 
-    <h2 class="govuk-heading-l">History of condition</h2>
+    <h2 class="govuk-heading-l">History</h2>
+
+    <h2 class="govuk-heading-m">History of condition</h2>
 
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
-    <p>{{data["condition-history"]}} </p>
+    <p>{{data["condition-history"]}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-    <h2 class="govuk-heading-l">Social and occupational history</h2>
+    <h2 class="govuk-heading-m">Current medication and treatment</h2>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <p>{{data["medication-treatment"]}} </p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <h2 class="govuk-heading-m">Social and occupational history</h2>
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
@@ -157,153 +190,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
-
-    <!--
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they live with anyone?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-live-with"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What kind of home do they live in?        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-type"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Has the home been adapted in any way? 
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["home-adaptations"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they use any aids or appliances?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["aids-appliances"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Do they work?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["do-they-work"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Can they drive?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["drive-details"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How can they get around?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["get-around"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they buy their shopping?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["shopping"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they manage their housework?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["housework"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How do they spend their spare time?
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["hobbies"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Additional social and occupational history
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data["hobbies"]}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-      -->
 
       <h2 class="govuk-heading-l">Daily living</h2>
       
@@ -313,8 +199,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for preparing food</h3>
       <p>{{data["preparingfoodNotes"]}}</p>
-      <h3 class="govuk-heading-s">How well can the claimant cook food?</h3>
+
+      <h3 class="govuk-heading-s">How well can the claimant prepare food?</h3>
       <p>{{data["preparingfoodSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for preparing food</h3>
+      <p>{{data["preparingfoodJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -326,8 +216,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for taking nutrition</h3>
       <p>{{data["takingnutritionNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant take nutrition?</h3>
       <p>{{data["takingnutritionSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for taking nutrition</h3>
+      <p>{{data["takingnutritionJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -338,8 +232,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for managing therapy</h3>
       <p>{{data["managingtherapyNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant manage therapy or monitor a health condition?</h3>
       <p>{{data["managingtherapySelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing therapy</h3>
+      <p>{{data["managingtherapyJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -350,8 +248,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for washing and bathing</h3>
       <p>{{data["washingbathingNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant wash and bathe?</h3>
       <p>{{data["washingbathingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for washing and bathing</h3>
+      <p>{{data["washingJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -362,8 +264,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for managing toilet needs</h3>
       <p>{{data["toiletneedsNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant manage toilet needs?</h3>
       <p>{{data["toiletneedsSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing toilet needs</h3>
+      <p>{{data["toiletneedsJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -374,8 +280,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for dressing and undressing</h3>
       <p>{{data["dressingNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant dress or undress?</h3>
       <p>{{data["dressingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing dressing and undressing</h3>
+      <p>{{data["dressingJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -386,8 +296,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for communicating verbally</h3>
       <p>{{data["communicatingverballyNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant communicate verbally?</h3>
       <p>{{data["communicatingverballySelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for communicating verbally</h3>
+      <p>{{data["communicatingverballyJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -398,8 +312,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for reading and understanding signs, symbols and words</h3>
       <p>{{data["readingunderstandingNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant reading and understanding signs, symbols and words?</h3>
       <p>{{data["readingunderstandingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for reading and understanding signs, symbols and words</h3>
+      <p>{{data["readingJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -410,8 +328,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for engaging face to face</h3>
       <p>{{data["facetofaceNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant engage face to face?</h3>
       <p>{{data["facetofaceSelect"]}}</p>
+     
+      <h3 class="govuk-heading-s">Justification for engaging face to face</h3>
+      <p>{{data["facetofaceJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -422,13 +344,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for budgeting</h3>
       <p>{{data["budgetingNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant budget?</h3>
       <p>{{data["budgetingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for budgeting</h3>
+      <p>{{data["budgetingJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Justification for daily living choices</h3>
+      <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
       <p>{{data["recommendation-daily-living"]}}</p>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -468,8 +394,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
       <p>{{data["planningJourneyNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
       <p>{{data["journeysSelectpbr"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
+      <p>{{data["planningJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -480,13 +410,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       <h3 class="govuk-heading-s">Functional history for moving around</h3>
       <p>{{data["movingaroundNotes"]}}</p>
+
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
       <p>{{data["movingaroundSelectpbr"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for moving around</h3>
+      <p>{{data["movingJustify"]}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Justification for mobility choices</h3>
+      <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
       <p>{{data["recommendation-mobility"]}}</p>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -521,7 +455,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-l">Observations</h2>
 
-      <h3 class="govuk-heading-m">Mental state</h3>
+      <h3 class="govuk-heading-m">Mental state observations</h3>
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
@@ -530,7 +464,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Physical state</h3>
+      <h3 class="govuk-heading-m">Physical state observations</h3>
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
