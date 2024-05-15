@@ -81,16 +81,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         
         <dd class="govuk-summary-list__value">
-          <ul>
+          <!-- <ul>
             {% for evidenceType in data['evidenceusedpip'] %}
               <p>{{ evidenceType }}, {{ docuemnt-date }}</p>
             {% endfor %}
 
             {{ data['evidence']['document-date'] }}
-            <!-- {% for evidenceDate in evidence['document-date'] %}
+            {% for evidenceDate in evidence['document-date'] %}
               <p>{{ document-date }}</p>
-            {% endfor %} -->
-          </ul>
+            {% endfor %} 
+          </ul> -->
+
+          {% for evidenceType in data['evidenceusedpip'] %}
+              <p>{{ evidenceType }}, {{ data['evidence'][ evidenceType | lower | replace(" ", "-")] }}</p>
+            {% endfor %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
