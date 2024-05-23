@@ -75,6 +75,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Evidence</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      {% for evidenceType in data['evidenceusedpip'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence used
@@ -92,9 +93,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% endfor %} 
           </ul> -->
 
-          {% for evidenceType in data['evidenceusedpip'] %}
-              <p>{{ evidenceType }}, {{ data['evidence'][ evidenceType | lower | replace(" ", "-")] }}</p>
-            {% endfor %}
+          
+          {{ evidenceType }}, {{ data['evidence'][ evidenceType | lower | replace(" ", "-")] }}
+          
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -102,6 +103,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+      {% endfor %}
     </dl>
 
     <h2 class="govuk-heading-l">Consultation</h2>
