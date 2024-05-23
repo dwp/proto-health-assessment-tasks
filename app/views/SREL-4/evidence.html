@@ -29,12 +29,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </label>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-evidence">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-               Date of DS1500
-              </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="document-date" type="text" spellcheck="false" autocomplete="email">
-            </div>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="evidence-date-hint">
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 27 3 2007
+                  </div>
+                  <div class="govuk-date-input" id="evidence-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="evidence-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="evidence-issued-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="evidence-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="evidence-issued-month" name="evidence-issued-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="evidence-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="evidence-issued-year" name="evidence-issued-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
             </div>
         
           <div class="govuk-checkboxes__item">
