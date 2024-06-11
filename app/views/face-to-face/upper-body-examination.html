@@ -37,17 +37,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% if data["shoulderNotExamined"] == "None" %}
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="shoulder" name="shoulderNotExamined" type="checkbox" value="The claimant's shoulders were not examined during the consultation" data-aria-controls="">
+                    <input class="govuk-checkboxes__input" id="shoulder" name="shoulderNotExamined" type="checkbox" value="The claimant's shoulders were not examined during the consultation." data-aria-controls="">
                     <label class="govuk-label govuk-checkboxes__label" for="shoulder">
                       The claimant's shoulders were not examined during the consultation.
                     </label>
                   </div>
                 </div>
 
-                {% elseif data["shoulderNotExamined"] == "The claimant's shoulders were not examined during the consultation" %}
+                {% elseif data["shoulderNotExamined"] == "The claimant's shoulders were not examined during the consultation." %}
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="shoulder" name="shoulderNotExamined" type="checkbox" value="The claimant's shoulders were not examined during the consultation" data-aria-controls="" {{ checked }}>
+                    <input class="govuk-checkboxes__input" id="shoulder" name="shoulderNotExamined" type="checkbox" value="The claimant's shoulders were not examined during the consultation." data-aria-controls="" {{ checked }}>
                     <label class="govuk-label govuk-checkboxes__label" for="shoulder">
                       The claimant's shoulders were not examined during the consultation.
                     </label>
@@ -390,7 +390,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </div>
                 </div>
 
-                {% elseif data["gripNotExamined"] == "The claimant's grip was not examined during the consultation.." %}
+                {% elseif data["gripNotExamined"] == "The claimant's grip was not examined during the consultation." %}
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="grip" name="gripNotExamined" type="checkbox" value="The claimant's grip was not examined during the consultation." data-aria-controls="" {{ checked }}>
@@ -452,7 +452,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </div>
                   </div>
   
-                  {% elseif data["gripNotExamined"] == "The claimant's cervical spine was not examined during the consultation." %}
+                  {% elseif data["cervicalSpineNotExamined"] == "The claimant's cervical spine was not examined during the consultation." %}
                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="cervicalSpine" name="cervicalSpineNotExamined" type="checkbox" value="The claimant's cervical spine was not examined during the consultation." data-aria-controls="" {{ checked }}>
@@ -487,7 +487,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="cervicalSpineDescription">
               </label>
-              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="cervicalSpineDescription" name="cervialSpine" rows="8">{{data["cervicalSpine"]}}</textarea>
+              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="cervicalSpineDescription" name="cervicalSpine" rows="8">{{data["cervicalSpine"]}}</textarea>
             </div>
 
                <!--Lumbar spine-->

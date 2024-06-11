@@ -458,6 +458,211 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </dl>
 
+      <!--physical examinations-->
+
+      <h2 class="govuk-heading-l">Physical examinations</h2> 
+
+      <h3 class="govuk-heading-m">Examination consent</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
+      <p>{{data["planningJourneyNotes"]}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
+      <p>{{data["journeysSelectpbr"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
+      <p>{{data["planningJustify"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Upper body examination</h3>
+      <!--Shoulder-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Shoulder</h3>
+      {% if (data['shoulder']) %}
+      <p class="govuk-body">{{data["shoulder"]}}</p>
+      
+      {% elseif data["shoulderNotExamined"] == "The claimant's shoulders were not examined during the consultation." %}
+      <p class="govuk-body">{{data["shoulderNotExamined"]}}</p>
+      {% endif %}
+      
+      <!--Elbow-->
+      <h3 class="govuk-heading-s">Elbow</h3>
+      {% if (data['elbow']) %}
+      <p class="govuk-body">{{data["elbow"]}}</p>
+      
+      {% elseif data["elbowNotExamined"] == "The claimant's elbows were not examined during the consultation." %}
+      <p class="govuk-body">{{data["elbowNotExamined"]}}</p>
+      {% endif %}
+
+      <!--Wrist-->
+      <h3 class="govuk-heading-s">Wrist</h3>
+      {% if (data['wrist']) %}
+      <p class="govuk-body">{{data["wrist"]}}</p>
+      
+      {% elseif data["wristNotExamined"] == "The claimant's wrists were not examined during the consultation." %}
+      <p class="govuk-body">{{data["wristNotExamined"]}}</p>
+      {% endif %}
+
+       <!--Hands-->
+       <h3 class="govuk-heading-s">Hands</h3>
+       {% if (data['hands']) %}
+       <p class="govuk-body">{{data["hands"]}}</p>
+       
+       {% elseif data["handsNotExamined"] == "The claimant's hands were not examined during the consultation." %}
+       <p class="govuk-body">{{data["handsNotExamined"]}}</p>
+       {% endif %}
+
+        <!--Thumb-->
+        <h3 class="govuk-heading-s">Thumb</h3>
+        {% if (data['thumb']) %}
+        <p class="govuk-body">{{data["thumb"]}}</p>
+        
+        {% elseif data["thumbNotExamined"] == "The claimant's thumbs were not examined during the consultation." %}
+        <p class="govuk-body">{{data["thumbNotExamined"]}}</p>
+        {% endif %}
+
+         <!--Grip-->
+         <h3 class="govuk-heading-s">Grip</h3>
+         {% if (data['grip']) %}
+         <p class="govuk-body">{{data["grip"]}}</p>
+         
+         {% elseif data["gripNotExamined"] == "The claimant's grip was not examined during the consultation." %}
+         <p class="govuk-body">{{data["gripNotExamined"]}}</p>
+         {% endif %}
+
+          <!--Cervical Spine-->
+          <h3 class="govuk-heading-s">Cervical spine</h3>
+          {% if (data['cervicalSpine']) %}
+          <p class="govuk-body">{{data["cervicalSpine"]}}</p>
+          
+          {% elseif data["cervicalSpineNotExamined"] == "The claimant's cervical spine was not examined during the consultation." %}
+          <p class="govuk-body">{{data["cervicalSpineNotExamined"]}}</p>
+          {% endif %}
+
+          <!--Lumbar Spine-->
+          <h3 class="govuk-heading-s">Lumbar spine</h3>
+          {% if (data['lumbarSpine']) %}
+          <p class="govuk-body">{{data["lumbarSpine"]}}</p>
+          
+          {% elseif data["lumbarSpineNotExamined"] == "The claimant's lumbar spine was not examined during the consultation." %}
+          <p class="govuk-body">{{data["lumbarSpineNotExamined"]}}</p>
+          {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Lower body examination</h3>
+      <!--Hip-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Hip</h3>
+      {% if (data['hip']) %}
+      <p class="govuk-body">{{data["hip"]}}</p>
+      
+      {% elseif data["hipNotExamined"] == "The claimant's hips were not examined during the consultation." %}
+      <p class="govuk-body">{{data["shoulderNotExamined"]}}</p>
+      {% endif %}
+
+      <!--Knee-->
+      <h3 class="govuk-heading-s">Knee</h3>
+      {% if (data['knee']) %}
+      <p class="govuk-body">{{data["knee"]}}</p>
+      
+      {% elseif data["kneeNotExamined"] == "The claimant's knees were not examined during the consultation." %}
+      <p class="govuk-body">{{data["kneeNotExamined"]}}</p>
+      {% endif %}
+
+      <!--Ankle-->
+      <h3 class="govuk-heading-s">Ankle</h3>
+      {% if (data['ankle']) %}
+      <p class="govuk-body">{{data["ankle"]}}</p>
+      
+      {% elseif data["ankleNotExamined"] == "The claimant's ankles were not examined during the consultation." %}
+      <p class="govuk-body">{{data["ankleNotExamined"]}}</p>
+      {% endif %}
+
+      <!--Hallux-->
+      <h3 class="govuk-heading-s">Hallux</h3>
+      {% if (data['hallux']) %}
+      <p class="govuk-body">{{data["hallux"]}}</p>
+      
+      {% elseif data["halluxNotExamined"] == "The claimant's halluces were not examined during the consultation." %}
+      <p class="govuk-body">{{data["halluxNotExamined"]}}</p>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Vision examination</h3>
+      <!--Vision-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Vision</h3>
+      {% if (data['vision']) %}
+      <p class="govuk-body">{{data["vision"]}}</p>
+      
+      {% elseif data["visionNotExamined"] == "The claimant's vision was not examined during the consultation." %}
+      <p class="govuk-body">{{data["visionNotExamined"]}}</p>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Hearing examination</h3>
+      <!--Hearing-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Hearing</h3>
+      {% if (data['hearing']) %}
+      <p class="govuk-body">{{data["hearing"]}}</p>
+      
+      {% elseif data["hearingNotExamined"] == "The claimant's hearing was not examined during the consultation." %}
+      <p class="govuk-body">{{data["hearingNotExamined"]}}</p>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Cardio-respriatory examination</h3>
+      <!--Cardio-respriatory-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Cardio-respriatory</h3>
+      {% if (data['cardio-respriatory']) %}
+      <p class="govuk-body">{{data["cardio-respriatory"]}}</p>
+      
+      {% elseif data["cardio-respriatoryNotExamined"] == "The claimant's cardio-respiratory function was not examined during the consultation." %}
+      <p class="govuk-body">{{data["cardio-respriatoryNotExamined"]}}</p>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Neurological examination</h3>
+      <!--Neurological-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Neurological</h3>
+      {% if (data['neurological']) %}
+      <p class="govuk-body">{{data["neurological"]}}</p>
+      
+      {% elseif data["neurologicalNotExamined"] == "A neurological examination was not done during the consultation." %}
+      <p class="govuk-body">{{data["neurologicalNotExamined"]}}</p>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
 
       <h2 class="govuk-heading-l">Observations</h2>
 
