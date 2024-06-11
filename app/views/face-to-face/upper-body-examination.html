@@ -160,10 +160,399 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </fieldset>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s" for="shoulderDescription">
+            <label class="govuk-label govuk-label--s" for="elbowDescription">
             </label>
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="shoulderDescription" name="elbow" rows="8">{{data["elbow"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="elbowDescription" name="elbow" rows="8">{{data["elbow"]}}</textarea>
           </div>
+
+           <!--Wrist-->
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Wrist
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["wristNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="elbow" name="wristNotExamined" type="checkbox" value="The claimant's wrists were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="wrist">
+                      The claimant's wrists were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["wristNotExamined"] == "The claimant's wrists were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="shoulder" name="wristNotExamined" type="checkbox" value="The claimant's wrists were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="shoulder">
+                      The claimant's wrists were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard wrist examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A wrist examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>wrist dorsiflexion</li>
+                  <li>wrist palmar flexion</li>
+                  <li>wrist radial deviation</li>
+                  <li>wrist ulnar deviation</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="wristDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="wristDescription" name="wrist" rows="8">{{data["wrist"]}}</textarea>
+          </div>
+
+           <!--Hands-->
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Hands
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["handsNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hands" name="handsNotExamined" type="checkbox" value="The claimant's hands were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="hands">
+                      The claimant's hands were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["handsNotExamined"] == "The claimant's hands were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hands" name="handsNotExamined" type="checkbox" value="The claimant's hands were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="hands">
+                      The claimant's hands were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard hand examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A hand examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>hand adduction</li>
+                  <li>hand abduction</li>
+                  <li>hand flexion of proximal interphalangeal</li>
+                  <li>hand flexion at distal interphalangeal</li>
+                  <li>hand extension at distal interphalangeal</li>
+                  <li>hand flexion at metacarpophalangeal</li>
+                  <li>hand extension at metacarpophalangeal</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="handsDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="handsDescription" name="hands" rows="8">{{data["hands"]}}</textarea>
+          </div>
+
+           <!--Thumb-->
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Thumb
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["thumbNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="thumb" name="thumbNotExamined" type="checkbox" value="The claimant's thumbs were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="hands">
+                      The claimant's thumbs were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["thumbNotExamined"] == "The claimant's thumbs were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="thumb" name="thumbNotExamined" type="checkbox" value="The claimant's thumbs were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="thumb">
+                      The claimant's thumbs were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard thumb examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A thumb examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>thumb abduction</li>
+                  <li>thumb flexion of proximal interphalangeal</li>
+                  <li>thumb flexion at metacarpophalangeal</li>
+                  <li>thumb flexion at carpometacarpal</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="thumbDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="thumbDescription" name="thumb" rows="8">{{data["thumb"]}}</textarea>
+          </div>
+
+          <!--Grip-->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Grip
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["gripNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="grip" name="gripNotExamined" type="checkbox" value="The claimant's grip was not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="grip">
+                      The claimant's grip was not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["gripNotExamined"] == "The claimant's grip was not examined during the consultation.." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="grip" name="gripNotExamined" type="checkbox" value="The claimant's grip was not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="grip">
+                      The claimant's grip was not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard grip examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A grip examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>power grip</li>
+                  <li>pinch grip</li>
+                </ul>
+            </div>
+          </details>        
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="gripDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="gripDescription" name="grip" rows="8">{{data["grip"]}}</textarea>
+          </div>
+
+             <!--Cervical spine-->
+
+             <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              </legend>
+  
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Cervical spine
+                    </h2>
+                  </legend>
+                  <div id="cervicalSpine-hint" class="govuk-hint"></div>
+  
+                  {% if data["cervicalSpineNotExamined"] == "None" %}
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="cervicalSpine" name="cervicalSpineNotExamined" type="checkbox" value="The claimant's cervical spine was not examined during the consultation." data-aria-controls="">
+                      <label class="govuk-label govuk-checkboxes__label" for="cervicalSpine">
+                        The claimant's cervical spine was not examined during the consultation.
+                      </label>
+                    </div>
+                  </div>
+  
+                  {% elseif data["gripNotExamined"] == "The claimant's cervical spine was not examined during the consultation." %}
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="cervicalSpine" name="cervicalSpineNotExamined" type="checkbox" value="The claimant's cervical spine was not examined during the consultation." data-aria-controls="" {{ checked }}>
+                      <label class="govuk-label govuk-checkboxes__label" for="grip">
+                        The claimant's cervical spine was not examined during the consultation.
+                      </label>
+                    </div>
+                  </div> 
+                  {% endif %}
+                </div>
+              </fieldset>
+            </div>
+  
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Standard cervical spine examinations
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">A cervical spine examination can include:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>forward flexion (chin to chest)</li>
+                    <li>extension</li>
+                    <li>lateral flexion (ear to shoulder)</li>
+                    <li>rotation</li>
+                  </ul>
+              </div>
+            </details>        
+            </fieldset>
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="cervicalSpineDescription">
+              </label>
+              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="cervicalSpineDescription" name="cervialSpine" rows="8">{{data["cervicalSpine"]}}</textarea>
+            </div>
+
+               <!--Lumbar spine-->
+
+               <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                </legend>
+    
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h2 class="govuk-fieldset__heading">
+                        Lumbar spine
+                      </h2>
+                    </legend>
+                    <div id="lumbarSpine-hint" class="govuk-hint"></div>
+    
+                    {% if data["lumbarSpineNotExamined"] == "None" %}
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="lumbarSpine" name="lumbarSpineNotExamined" type="checkbox" value="The claimant's lumbar spine was not examined during the consultation." data-aria-controls="">
+                        <label class="govuk-label govuk-checkboxes__label" for="lumbarSpine">
+                          The claimant's lumbar spine was not examined during the consultation.
+                        </label>
+                      </div>
+                    </div>
+    
+                    {% elseif data["gripNotExamined"] == "The claimant's lumbar spine was not examined during the consultation." %}
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="lumbarSpine" name="lumbarSpineNotExamined" type="checkbox" value="The claimant's lumbar spine was not examined during the consultation." data-aria-controls="" {{ checked }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="lumbarSpine">
+                          The claimant's lumbar spine was not examined during the consultation.
+                        </label>
+                      </div>
+                    </div> 
+                    {% endif %}
+                  </div>
+                </fieldset>
+              </div>
+    
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Standard lumbar spine examinations
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">A lumbar spine examination can include:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>forward flexion</li>
+                      <li>extension</li>
+                      <li>lateral flexion</li>
+                      <li>rotation</li>
+                    </ul>
+                </div>
+              </details>        
+              </fieldset>
+    
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="lumbarSpineDescription">
+                </label>
+                <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="lumbarSpineDescription" name="lumbarSpine" rows="8">{{data["lumbarSpine"]}}</textarea>
+              </div>
           
           
            </div>
