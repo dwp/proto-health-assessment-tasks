@@ -1,15 +1,16 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const addFilter = govukPrototypeKit.views.addFilter
+const filters = govukPrototypeKit.views.addFilter
 
-addFilter('monthName', function () {
-    const monthName = {
-        month: {
-          1: 'January',
-          2: 'Feburary',
-          3: 'March',
-          4: 'April',
-        }
-      }
-           
-  return monthName
-})
+filters.toMonth = function(x){ 
+  
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];   
+
+if (x > 0){ return months[x - 1]; // returns date as per month      
+} else {
+        return x;      
+}};     
+
+filters.toMoney = function(x){  return("£" + x );
+//TO ADD - case to handle nothing being there 
+}
