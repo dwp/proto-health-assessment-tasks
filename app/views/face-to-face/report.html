@@ -168,31 +168,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">History</h2>
 
-    <h2 class="govuk-heading-m">History of condition</h2>
-
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
+    <h2 class="govuk-heading-m">History of condition</h2>
     <p>{{data["condition-history"]}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-    <h2 class="govuk-heading-m">Current medication and treatment</h2>
-
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
+    <h2 class="govuk-heading-m">Current medication and treatment</h2>
     <p>{{data["medication-treatment"]}} </p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-    <h2 class="govuk-heading-m">Social and occupational history</h2>
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
-    <p>{{data["social-occupational-history"]}} </p>
+    <h2 class="govuk-heading-m">Social and occupational history</h2>
+    <p>{{data["social-occupational-history"]}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
@@ -469,9 +467,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">Did the claimant consent to the physical examination?</h3>
       {% if data["examinationConsent"] == "Yes" %}
       <p>{{data["examinationConsent"]}}</p>
+
       {% elseif data["examinationConsent"] == "No" %}
       <p>{{data["examinationConsent"]}}</p>
       <p>{{data["no-consent-given"]}}</p>
+
       {% elseif data["examinationConsent"] == "Physical examination not required" %}
       <p>{{data["examinationConsent"]}}</p>
       <p>{{data["not-required"]}}</p>
