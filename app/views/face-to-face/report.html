@@ -467,7 +467,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Did the claimant consent to the physical examination?</h3>
+      {% if data["examinationConsent"] == "Yes" %}
       <p>{{data["examinationConsent"]}}</p>
+      {% elseif data["examinationConsent"] == "No" %}
+      <p>{{data["examinationConsent"]}}</p>
+      <p>{{data["no-consent-given"]}}</p>
+      {% elseif data["examinationConsent"] == "Physical examination not required" %}
+      <p>{{data["examinationConsent"]}}</p>
+      <p>{{data["not-required"]}}</p>
+      {% endif %}
 
       <h3 class="govuk-heading-s">Chaperone name</h3>
       <p>{{data["chaperone"]}}</p>
