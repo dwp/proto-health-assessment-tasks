@@ -17,6 +17,7 @@ module.exports = {
   'cardio-respriatoryNotExamined': 'None',
   'visionNotExamined': 'None',
   'hearingNotExamined': 'None',
-  'neurologicalNotExamined': 'None'
+  'neurologicalNotExamined': 'None',
+  'noPhysicalExamination': 'None'
 
 }

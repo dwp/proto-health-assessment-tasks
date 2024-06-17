@@ -1,0 +1,63 @@
+{% extends "layouts/evidence-docs.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-one-half">
+    <h1 class="govuk-heading-l">Claimant documents</h1>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      
+      <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document type</th>
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document label</th>
+      
+            <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">Benefit type</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Date of document</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>            
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Latest document activity</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a class="reco-document" href="cq2.html">Claimant questionnaire</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">PIP</td>
+  
+            <td class="govuk-table__cell" data-sort-value="8/06/23">1 June 2023</td>
+
+            <td class="govuk-table__cell" data-sort-value="9/06/23">4 June 2023</td>
+
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">New document</strong></td>
+
+          </tr>
+
+      
+        </tbody>
+      </table>
+<br>
+  </div>     
+      </div>
+
+{% endblock %}
