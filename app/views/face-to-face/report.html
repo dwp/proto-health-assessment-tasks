@@ -156,7 +156,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         
         <dd class="govuk-summary-list__value">
-          {{data["attendeesAssessment"]}}
+          {{data["attendeesAssessment"] | escape | nl2br}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -172,7 +172,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
     <h2 class="govuk-heading-m">History of condition</h2>
-    <p>{{data["condition-history"]}}</p>
+    <p>{{data["condition-history"]  | safe | escape | nl2br}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
@@ -181,7 +181,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
     <h2 class="govuk-heading-m">Current medication and treatment</h2>
-    <p>{{data["medication-treatment"]}} </p>
+    <p>{{data["medication-treatment"] | escape | nl2br}} </p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
@@ -190,7 +190,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
     <h2 class="govuk-heading-m">Social and occupational history</h2>
-    <p>{{data["social-occupational-history"]}}</p>
+    <p>{{data["social-occupational-history"] | escape | nl2br}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
@@ -202,13 +202,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for preparing food</h3>
-      <p>{{data["preparingfoodNotes"]}}</p>
+      <p>{{data["preparingfoodNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant prepare food?</h3>
       <p>{{data["preparingfoodSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for preparing food</h3>
-      <p>{{data["preparingfoodJustify"]}}</p>
+      <p>{{data["preparingfoodJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -219,13 +219,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for taking nutrition</h3>
-      <p>{{data["takingnutritionNotes"]}}</p>
+      <p>{{data["takingnutritionNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant take nutrition?</h3>
       <p>{{data["takingnutritionSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for taking nutrition</h3>
-      <p>{{data["takingnutritionJustify"]}}</p>
+      <p>{{data["takingnutritionJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -235,13 +235,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for managing therapy</h3>
-      <p>{{data["managingtherapyNotes"]}}</p>
+      <p>{{data["managingtherapyNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant manage therapy or monitor a health condition?</h3>
       <p>{{data["managingtherapySelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for managing therapy</h3>
-      <p>{{data["managingtherapyJustify"]}}</p>
+      <p>{{data["managingtherapyJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -251,13 +251,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for washing and bathing</h3>
-      <p>{{data["washingbathingNotes"]}}</p>
+      <p>{{data["washingbathingNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant wash and bathe?</h3>
       <p>{{data["washingbathingSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for washing and bathing</h3>
-      <p>{{data["washingJustify"]}}</p>
+      <p>{{data["washingJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -267,13 +267,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for managing toilet needs</h3>
-      <p>{{data["toiletneedsNotes"]}}</p>
+      <p>{{data["toiletneedsNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant manage toilet needs?</h3>
       <p>{{data["toiletneedsSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for managing toilet needs</h3>
-      <p>{{data["toiletneedsJustify"]}}</p>
+      <p>{{data["toiletneedsJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -283,13 +283,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for dressing and undressing</h3>
-      <p>{{data["dressingNotes"]}}</p>
+      <p>{{data["dressingNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant dress or undress?</h3>
       <p>{{data["dressingSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for managing dressing and undressing</h3>
-      <p>{{data["dressingJustify"]}}</p>
+      <p>{{data["dressingJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -299,13 +299,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for communicating verbally</h3>
-      <p>{{data["communicatingverballyNotes"]}}</p>
+      <p>{{data["communicatingverballyNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant communicate verbally?</h3>
       <p>{{data["communicatingverballySelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for communicating verbally</h3>
-      <p>{{data["communicatingverballyJustify"]}}</p>
+      <p>{{data["communicatingverballyJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -315,13 +315,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for reading and understanding signs, symbols and words</h3>
-      <p>{{data["readingunderstandingNotes"]}}</p>
+      <p>{{data["readingunderstandingNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant reading and understanding signs, symbols and words?</h3>
       <p>{{data["readingunderstandingSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for reading and understanding signs, symbols and words</h3>
-      <p>{{data["readingJustify"]}}</p>
+      <p>{{data["readingJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -331,13 +331,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for engaging face to face</h3>
-      <p>{{data["facetofaceNotes"]}}</p>
+      <p>{{data["facetofaceNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant engage face to face?</h3>
       <p>{{data["facetofaceSelect"]}}</p>
      
       <h3 class="govuk-heading-s">Justification for engaging face to face</h3>
-      <p>{{data["facetofaceJustify"]}}</p>
+      <p>{{data["facetofaceJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -347,13 +347,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for budgeting</h3>
-      <p>{{data["budgetingNotes"]}}</p>
+      <p>{{data["budgetingNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant budget?</h3>
       <p>{{data["budgetingSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for budgeting</h3>
-      <p>{{data["budgetingJustify"]}}</p>
+      <p>{{data["budgetingJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -397,13 +397,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
-      <p>{{data["planningJourneyNotes"]}}</p>
+      <p>{{data["planningJourneyNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
       <p>{{data["journeysSelectpbr"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
-      <p>{{data["planningJustify"]}}</p>
+      <p>{{data["planningJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -413,13 +413,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for moving around</h3>
-      <p>{{data["movingaroundNotes"]}}</p>
+      <p>{{data["movingaroundNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
       <p>{{data["movingaroundSelectpbr"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for moving around</h3>
-      <p>{{data["movingJustify"]}}</p>
+      <p>{{data["movingJustify"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -494,7 +494,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["shoulderNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["shoulder"]}}</p>
+      <p class="govuk-body">{{data["shoulder"] | escape | nl2br}}</p>
      
       <!--Elbow-->
       <h3 class="govuk-heading-s">Elbow</h3>
@@ -503,7 +503,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["elbowNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["elbow"]}}</p>
+      <p class="govuk-body">{{data["elbow"] | escape | nl2br}}</p>
     
       <!--Wrist-->
       <h3 class="govuk-heading-s">Wrist</h3>
@@ -512,7 +512,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["wristNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["wrist"]}}</p>
+      <p class="govuk-body">{{data["wrist"] | escape | nl2br}}</p>
       
        <!--Hands-->
        <h3 class="govuk-heading-s">Hands</h3>
@@ -521,7 +521,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        {% elseif data["handsNotExamined"] == "None" %}
 
        {% endif %}
-       <p class="govuk-body">{{data["hands"]}}</p>
+       <p class="govuk-body">{{data["hands"] | escape | nl2br}}</p>
     
         <!--Thumb-->
         <h3 class="govuk-heading-s">Thumb</h3>
@@ -530,7 +530,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% elseif data["thumbNotExamined"] == "None" %}
 
         {% endif %}
-        <p class="govuk-body">{{data["thumb"]}}</p>
+        <p class="govuk-body">{{data["thumb"] | escape | nl2br}}</p>
 
          <!--Grip-->
          <h3 class="govuk-heading-s">Grip</h3>
@@ -539,7 +539,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          {% elseif data["gripNotExamined"] == "None" %}
 
          {% endif %}
-         <p class="govuk-body">{{data["grip"]}}</p>
+         <p class="govuk-body">{{data["grip"] | escape | nl2br}}</p>
 
           <!--Cervical Spine-->
           <h3 class="govuk-heading-s">Cervical spine</h3>
@@ -548,7 +548,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% elseif data["cervicalSpineNotExamined"] == "None" %}
 
          {% endif %}
-          <p class="govuk-body">{{data["cervicalSpine"]}}</p>
+          <p class="govuk-body">{{data["cervicalSpine"] | escape | nl2br}}</p>
       
           <!--Lumbar Spine-->
           <h3 class="govuk-heading-s">Lumbar spine</h3>
@@ -557,7 +557,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% elseif data["lumbarSpineNotExamined"] == "None" %}
 
           {% endif %}
-          <p class="govuk-body">{{data["lumbarSpine"]}}</p>
+          <p class="govuk-body">{{data["lumbarSpine"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -573,7 +573,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["hipNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["hip"]}}</p>
+      <p class="govuk-body">{{data["hip"] | escape | nl2br}}</p>
       
       <!--Knee-->
       <h3 class="govuk-heading-s">Knee</h3>
@@ -582,7 +582,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["kneeNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["knee"]}}</p>
+      <p class="govuk-body">{{data["knee"] | escape | nl2br}}</p>
   
       <!--Ankle-->
       <h3 class="govuk-heading-s">Ankle</h3>
@@ -591,7 +591,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["ankleNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["ankle"]}}</p>
+      <p class="govuk-body">{{data["ankle"] | escape | nl2br}}</p>
 
       <!--Hallux-->
       <h3 class="govuk-heading-s">Hallux</h3>
@@ -600,7 +600,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["halluxNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["hallux"]}}</p>
+      <p class="govuk-body">{{data["hallux"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -616,7 +616,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["visionNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["vision"]}}</p>
+      <p class="govuk-body">{{data["vision"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -632,7 +632,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["hearingNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["hearing"]}}</p>
+      <p class="govuk-body">{{data["hearing"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -648,7 +648,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["cardio-respriatoryNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["cardio-respriatory"]}}</p>
+      <p class="govuk-body">{{data["cardio-respriatory"] | escape | nl2br}}</p>
 
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -666,7 +666,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% elseif data["neurologicalNotExamined"] == "None" %}
 
       {% endif %}
-      <p class="govuk-body">{{data["neurological"]}}</p>
+      <p class="govuk-body">{{data["neurological"] | escape | nl2br}}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -677,7 +677,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <p>{{data["mental-state"]}}</p>
+      <p>{{data["mental-state"] | escape | nl2br}}</p>
     
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -686,7 +686,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <p>{{data["physical-state"]}}</p>
+      <p>{{data["physical-state"]  | escape | nl2br}}</p>
     
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
