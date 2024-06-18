@@ -610,7 +610,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <h3 class="govuk-heading-s">Vision</h3>
+
       {% if data["visionNotExamined"] == "The claimant's vision was not examined during the consultation." %}
       <p class="govuk-body">{{data["visionNotExamined"]}}</p>
       {% elseif data["visionNotExamined"] == "None" %}
@@ -626,7 +626,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <h3 class="govuk-heading-s">Hearing</h3>
+    
       {% if data["hearingNotExamined"] == "The claimant's hearing was not examined during the consultation." %}
       <p class="govuk-body">{{data["hearingNotExamined"]}}</p>
       {% elseif data["hearingNotExamined"] == "None" %}
@@ -637,12 +637,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Cardio-respriatory examination</h3>
+      <h3 class="govuk-heading-m">Cardio-respiratory examination</h3>
       <!--Cardio-respriatory-->
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <h3 class="govuk-heading-s">Cardio-respriatory</h3>
+
       {% if data["cardio-respriatoryNotExamined"] == "The claimant's cardio-respiratory function was not examined during the consultation." %}
       <p class="govuk-body">{{data["cardio-respriatoryNotExamined"]}}</p>
       {% elseif data["cardio-respriatoryNotExamined"] == "None" %}
@@ -659,8 +659,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link" style="float: right">Change</a>
      </p>
-      <h3 class="govuk-heading-s">Neurological</h3>
-      
+    
       {% if data["neurologicalNotExamined"] == "A neurological examination was not done during the consultation." %}
       <p class="govuk-body">{{data["neurologicalNotExamined"]}}</p>
       {% elseif data["neurologicalNotExamined"] == "None" %}
