@@ -1,0 +1,303 @@
+{% extends "layouts/side-nav-face-to-face-two.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Lower body examination</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+              
+  
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Hip
+                  </h2>
+                </legend>
+                <div id="hip-hint" class="govuk-hint"></div>
+
+                {% if data["hipNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hip" name="hipNotExamined" type="checkbox" value="The claimant's hips were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="hip">
+                      The claimant's hips were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["hipNotExamined"] == "The claimant's hips were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hip" name="hipNotExamined" type="checkbox" value="The claimant's hips were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="hip">
+                      The claimant's hips were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+
+              
+
+                <!-- <p id="result"></p>
+
+                <script>
+                  var input = document.querySelector('input[type=checkbox]');
+                  function check() {
+                      var a = input.checked ? "checked" : "not checked";
+                      document.getElementById('result').innerHTML = 'result ' + a;
+                  }
+                  input.onchange = check;
+                  check();
+                  </script> -->
+      
+              
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard hip examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A hip examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>hip flexion</li>
+                  <li>hip extension</li>
+                  <li>hip abduction</li>
+                  <li>hip adduction</li>
+                  <li>hip external rotation</li>
+                  <li>hip internal rotation</li>
+                  <li>straight leg raising</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="hipDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="hipDescription" name="hip" rows="8">{{data["hip"]}}</textarea>
+          </div>
+
+          <!--Knee-->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Knee
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["kneeNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="knee" name="kneeNotExamined" type="checkbox" value="The claimant's knees were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="knee">
+                      The claimant's knees were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["kneeNotExamined"] == "The claimant's knees were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="knee" name="kneeNotExamined" type="checkbox" value="The claimant's knees were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="knee">
+                      The claimant's knees were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard knee examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A knee examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>knee flexion</li>
+                  <li>knee extension</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="kneeDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="kneeDescription" name="knee" rows="8">{{data["knee"]}}</textarea>
+          </div>
+
+           <!--Ankle-->
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Ankle
+                  </h2>
+                </legend>
+                <div id="ankle-hint" class="govuk-hint"></div>
+
+                {% if data["ankleNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ankle" name="ankleNotExamined" type="checkbox" value="The claimant's ankles were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="ankle">
+                      The claimant's ankles were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["ankleNotExamined"] == "The claimant's ankles were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ankle" name="ankleNotExamined" type="checkbox" value="The claimant's ankles were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="ankle">
+                      The claimant's ankles were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard ankle examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">An ankle examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>ankle plantar flexion</li>
+                  <li>ankle dorsiflexion</li>
+                </ul>
+            </div>
+          </details>
+           
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="ankleDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="ankleDescription" name="ankle" rows="8">{{data["ankle"]}}</textarea>
+          </div>
+
+           <!--Hallux-->
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            </legend>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Hallux
+                  </h2>
+                </legend>
+                <div id="shoulder-hint" class="govuk-hint"></div>
+
+                {% if data["halluxNotExamined"] == "None" %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hallux" name="halluxNotExamined" type="checkbox" value="The claimant's halluces were not examined during the consultation." data-aria-controls="">
+                    <label class="govuk-label govuk-checkboxes__label" for="hallux">
+                      The claimant's halluces were not examined during the consultation.
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif data["halluxNotExamined"] == "The claimant's halluces were not examined during the consultation." %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hallux" name="halluxNotExamined" type="checkbox" value="The claimant's halluces were not examined during the consultation." data-aria-controls="" {{ checked }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="hallux">
+                      The claimant's halluces were not examined during the consultation.
+                    </label>
+                  </div>
+                </div> 
+                {% endif %}
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Standard hallux examinations
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A hallux examination can include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>hallux plantar flexion</li>
+                  <li>hallux dorsiflexion</li>
+                </ul>
+            </div>
+          </details>
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="halluxDescription">
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="halluxDescription" name="hallux" rows="8">{{data["hallux"]}}</textarea>
+          </div>
+
+          
+           </div>
+        </form>
+     </div>
+   </div>
+
+ 
+
+{% endblock %}
