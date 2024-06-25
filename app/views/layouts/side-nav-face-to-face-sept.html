@@ -114,7 +114,7 @@
           <!-- <h4 class="moj-side-navigation__title">Section 1</h4> -->
           <ul class="moj-side-navigation__list">
 
-            <h4 class="moj-side-navigation__title">Evidence</h4>
+          <h4 class="moj-side-navigation__title">History</h4>
             {% if data["source"] == 'evidence' or data["source"] == 'default' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="evidence?source=evidence" aria-current="location">Evidence</a>
@@ -125,58 +125,6 @@
             </li>
             {% endif %}
 
-            <h4 class="moj-side-navigation__title">Consultation</h4>
-            {% if data["source"] == 'Consultation date' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="consultation-date?source=Consultation date">Consultation date</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="consultation-date?source=Consultation date">Consultation date</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Claimant identity' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Travel to consultation' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="assessment-travel?source=Travel to consultation">Travel to consultation</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="assessment-travel?source=Travel to consultation">Travel to consultation</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Claimant consent' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="consent?source=Claimant consent">Claimant consent</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="consent?source=Claimant consent">Claimant consent</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Additional attendees' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="attendees?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="attendees?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% endif %}
-            
-            <h4 class="moj-side-navigation__title">History</h4>
             {% if data["source"] == 'History of condition' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="conditions?source=History of condition">History of condition</a>
@@ -207,7 +155,46 @@
             </li>
             {% endif %}
 
-            
+            <h4 class="moj-side-navigation__title">Consultation</h4>
+            {% if data["source"] == 'Consultation date' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="consultation-date?source=Consultation date">Consultation date</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="consultation-date?source=Consultation date">Consultation date</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Verify identity' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="verify-id?source=Verify identity">Verify identity</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="verify-id?source=Verify identity">Verify identity</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Claimant consent' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="consent?source=Claimant consent">Claimant consent</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="consent?source=Claimant consent">Claimant consent</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Additional attendees' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="attendees?source=Additional attendees">Additional attendees</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="attendees?source=Additional attendees">Additional attendees</a>
+            </li>
+            {% endif %}
 
           
              <h4 class="moj-side-navigation__title">Daily living</h4>
@@ -343,66 +330,16 @@
              </li>
              {% endif %}
 
-             {% if data["source"] == 'Upper body examination' %}
+             {% if data["source"] == 'Physical examination' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="upper-body-examination?source=Upper body examination" aria-current="location">Upper body examination</a>
+               <a href="physical-examination?source=Physical examination" aria-current="location">Physical examination</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="upper-body-examination?source=Upper body examination">Upper body examination</a>
+               <a href="physical-examination?source=Physical examination">Physical examination</a>
              </li>
              {% endif %}
-
-             {% if data["source"] == 'Lower body examination' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="lower-body-examination?source=Lower body examination" aria-current="location">Lower body examination</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="lower-body-examination?source=Lower body examination">Lower body examination</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Vision examination' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="vision-examination?source=Vision examination" aria-current="location">Vision examination</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="vision-examination?source=Vision examination">Vision examination</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Hearing examination' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="hearing-examination?source=Hearing examination" aria-current="location">Hearing examination</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="hearing-examination?source=Hearing examination">Hearing examination</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Cardio-respiratory examination' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="cardio-respriatory-examination?source=Cardio-respiratory examination" aria-current="location">Cardio-respiratory examination</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="cardio-respriatory-examination?source=Cardio-respiratory examination">Cardio-respiratory examination</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Neurological examination' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="neurological-examination?source=Neurological examination" aria-current="location">Neurological examination</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="neurological-examination?source=Neurological examination">Neurological examination</a>
-             </li>
-             {% endif %}
-
+    
              <h4 class="moj-side-navigation__title">Observations</h4>
              {% if data["source"] == 'Mental state observations' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
