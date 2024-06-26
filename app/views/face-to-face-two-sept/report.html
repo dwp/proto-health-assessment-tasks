@@ -124,10 +124,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Was the claimant's identity verified?
+          Was the claimant's identity confirmed?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data["verify"]}}
+          {{data["ClaimantVerify"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How was their identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["yesWhy"]}}
+          {{data["noWhy"]}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
