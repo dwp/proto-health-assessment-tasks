@@ -122,26 +122,56 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
 
+      {% if data["claimantVerify"] == 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Was the claimant's identity confirmed?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data["ClaimantVerify"]}}
+          {{data["claimantVerify"]}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
           </a>
         </dd>
-        </div>
+      </div>
 
-        <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           How was their identity confirmed?
         </dt>
         <dd class="govuk-summary-list__value">
           {{data["yesWhy"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      {% elseif data["claimantVerify"] == 'No' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimant's identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["claimantVerify"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for not confirming their identity
+        </dt>
+        <dd class="govuk-summary-list__value">
           {{data["noWhy"]}}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -150,6 +180,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+
+      {% endif %}
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
