@@ -11,6 +11,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
+    <style>
+    .govuk-summary-list__row--no-border {
+    display: table-row;
+      }
+     
+    </style>
 
     <!-- <span class="govuk-caption-xl">Personal Independance Payment</span> -->
     <h1 class="govuk-heading-xl">Check answers</h1>
@@ -123,7 +129,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
       {% if data["claimantVerify"] == 'Yes' %}
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row--no-border">
         <dt class="govuk-summary-list__key">
           Was the claimant's identity confirmed?
         </dt>
@@ -132,7 +138,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
+            Change<span class="govuk-visually-hidden">change</span>
           </a>
         </dd>
       </div>
@@ -144,16 +150,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__value">
           {{data["yesWhy"]}}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+        <dd class="govuk-summary-list__actions--no-actions">
         </dd>
       </div>
 
       {% elseif data["claimantVerify"] == 'No' %}
-
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row--no-border">
         <dt class="govuk-summary-list__key">
           Was the claimant's identity confirmed?
         </dt>
@@ -162,7 +164,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
+            Change<span class="govuk-visually-hidden">change</span>
           </a>
         </dd>
       </div>
@@ -174,10 +176,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__value">
           {{data["noWhy"]}}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+        <dd class="govuk-summary-list__actions--no-actions">
         </dd>
       </div>
 
