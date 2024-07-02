@@ -517,10 +517,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       {% elseif data["examinationConsent"] == "No" %}
       <p>{{data["examinationConsent"]}}</p>
+      <h3 class="govuk-heading-s">Reason for not consenting</h3>
       <p>{{data["no-consent-given"]}}</p>
 
       {% elseif data["examinationConsent"] == "Physical examination not required" %}
       <p>{{data["examinationConsent"]}}</p>
+      <h3 class="govuk-heading-s">Reason for not consenting to the physical examination</h3>
       <p>{{data["not-required"]}}</p>
       {% endif %}
 
