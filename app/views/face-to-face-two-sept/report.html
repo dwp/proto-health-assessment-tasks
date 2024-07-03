@@ -555,6 +555,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
+
+      <h2 class="govuk-heading-l">Observations</h2>
+
+      <h3 class="govuk-heading-m">Mental state observations</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["mental-state"] | escape | nl2br}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Informal state observations</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["physical-state"]  | escape | nl2br}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
           
 
       <h2 class="govuk-heading-l">Recommendation</h2>
@@ -635,37 +655,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p class="govuk-body">
         <a href="#" class="govuk-link">Print this page</a>
       </p>
-
-  
-      <!-- <h2 class="govuk-heading-m">Examination</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Mental state
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["mental-state"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Observations
-          </dt>
-          <dd class="govuk-summary-list__value">
-              {{data["observations"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-      </dl> -->
   
     <form action="ta-done.html" method="get" novalidate>
       <input type="hidden" name="answers-checked" value="true">
