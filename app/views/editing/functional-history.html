@@ -1,0 +1,353 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-heading-l">
+        Functional history
+    </h1>
+
+    <form action="end-call.html" method="get">
+              
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="preparingfoodNotes">
+          Preparing food
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="preparingfoodNotes" name="preparingfoodNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="food" name="food" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="food">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="takingnutritionNotes">
+          Taking nutrition
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="takingnutritionNotes" name="takingnutritionNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="nutrition" name="nutrition" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="nutrition">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="managingtherapyNotes">
+          Managing therapy
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="managingtherapyNotes" name="managingtherapyNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="therapy" name="therapy" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="therapy">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="washingbathingNotes">
+          Washing and bathing
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="washingbathingNotes" name="washingbathingNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="washing" name="washing" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="washing">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="toiletneedsNotes">
+          Managing toilet needs
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="toiletneedsNotes" name="toiletneedsNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="toilet" name="toilet" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="toilet">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="dressingNotes">
+          Dressing and undressing
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="dressingNotes" name="dressingNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="dressing" name="dressing" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="dressing">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="communicatingverballyNotes">
+          Communicating verbally
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="communicatingverballyNotes" name="communicatingverballyNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="communicating" name="communicating" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="communicating">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="readingunderstandingNotes">
+          Reading and understanding signs, symbols and words
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="readingunderstandingNotes" name="readingunderstandingNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="reading" name="reading" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="reading">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="facetofaceNotes">
+          Engaging face to face
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="facetofaceNotes" name="facetofaceNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="face" name="face" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="face">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="budgetingNotes">
+          Budgeting
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="budgetingNotes" name="budgetingNotes" rows="8"></textarea>
+      </div>
+      
+      
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input autosave" id="budgeting" name="budgeting" type="checkbox" value="no issues reported">
+                            <label class="govuk-label govuk-checkboxes__label" for="budgeting">
+                              No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+      
+                    <h2 class="govuk-heading-m">Mobility</h2>
+      
+                      
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="journeysNotes">
+          Planning and following journeys
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="journeysNotes" name="journeysNotes" rows="8"></textarea>
+      </div>
+        
+          
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input autosave" id="journeys" name="journeys" type="checkbox" value="no issues reported">
+                                <label class="govuk-label govuk-checkboxes__label" for="journeys">
+                                  No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+          
+                        
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="movingaroundNotes">
+          Moving around
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9 autosave" id="movingaroundNotes" name="movingaroundNotes" rows="8"></textarea>
+      </div>
+      
+      
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input autosave" id="moving" name="moving" type="checkbox" value="no issues reported">
+                                <label class="govuk-label govuk-checkboxes__label" for="moving">
+                                  No problems were reported with this activity in the questionnaire or during the call, and there is no evidence to suggest otherwise.
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                    
+                          <!-- 
+      
+        
+          
+        
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+       -->
+                      
+                  
+
+      <div class="govuk-button-group">
+
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon call</a></p>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
