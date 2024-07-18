@@ -1,0 +1,37 @@
+{% extends "layouts/side-nav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Current medication and treatment
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+          <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="med-treatment" name="medication-treatment" rows="15" aria-describedby="med-hint">{{data["medication-treatment"]}}</textarea>
+          </div>
+         
+
+          </fieldset>
+        </div>
+      </div>
+    </form>
+  </div>
+      
+
+{% endblock %}
