@@ -1,4 +1,4 @@
-{% extends "layouts/side-nav.html" %}
+{% extends "layouts/editing.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -6,13 +6,115 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<style>
+@media (min-width: 72.5em) {
+  .app-pane__body {
+      width: 100%;
+    }
+  }
+  @media (min-width: 670px) {
+  .app-pane__body {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: row;
+      position: relative;
+      min-height: 0;
+      overflow: inherit;
+    }
+  }
   
-    <div class="app-pane__body">
+  .app-subnav {
+      margin-bottom: 100px;
+      padding: 6px 15px 0 0;
+      font-family: arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.14286;
+      position: sticky;
+      top: 0;
+  }
+  
+  .app-subnav__section {
+      margin: 0 0 20px;
+      padding: 0;
+      list-style-type: none;
+  }
+  
+  .app-subnav__section-item {
+      margin-bottom: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+  }
+  
+  .app-subnav__section-item--current {
+      border-left: 3px solid #1d70b8;
+      background-color: #f3f2f1;
+      padding-left: 10px;
+      padding-top: 10px;
+  }
 
+
+  .app-subnav__section--nested .app-subnav__section-item:before {
+    content: "—";
+    margin-left: -20px;
+    color: #1d70b8;
+    font-weight: 700;
+    margin-right:10px;
+}
+
+  .app-subnav__section-item--current {
+    border-left: 3px solid #1d70b8;
+}
+  
+  .govuk-link--no-underline:not(:hover):not(:active) {
+      text-decoration: none;
+  }
+  .app-subnav__section-item--current .app-subnav__link {
+      font-weight: bold;
+  }
+  
+  .govuk-link--no-visited-state:link {
+      color: #1d70b8;
+  }
+  .govuk-link:link, .app-prose-scope a:link {
+      color: #1d70b8;
+  }
+  .app-subnav__link {
+      padding: 2px 0;
+      text-underline-offset: 0.4em;
+      line-height: 1.5;
+  }
+  
+  
+  .app-subnav__section--nested {
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding-left: 20px;
+      margin-right: 15px;
+  }
+  
+  .app-subnav__section--nested .app-subnav__link {
+      padding-left: 0;
+      font-weight: normal;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-three-quarters"> -->
+    
+
+         <div class="govuk-grid-column-one-quarter"> 
+          <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+       <!-- left side nav-->
       <div class="app-pane__subnav">
         <nav class="app-subnav" aria-labelledby="app-subnav-heading">
           <h2 class="govuk-visually-hidden" id="app-subnav-heading">Pages in this section</h2>
@@ -27,22 +129,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     Referral details
                     </a>
                   </li>
-                <!--  <li class="app-subnav__section-item">
+                  <li class="app-subnav__section-item">
                     <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#consent">
                       Consent
                     </a>
-                  </li> -->
+                  </li> 
     
-    
-    
-    
-                  <!-- <li class="app-subnav__section-item">
+                  <li class="app-subnav__section-item">
                     <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#gpdetails">
                     GP details
                     </a>
-                  </li>  -->
+                  </li> 
     
-                  <li class="app-subnav__section-item">
+                   <li class="app-subnav__section-item">
                     <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="#medicalcontacts">
                       Health or care professionals
                     </a>
@@ -54,59 +153,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="pip-claimant-detail">Claimant
                 details </a>
             </li>
-           <!--- <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline"
-                href="#">Timeline</a>
-            </li>
-            <li class="app-subnav__section-item">
-              <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline"
-                href="#">Evidence</a>
-            </li>-->
           </ul>
         </nav>
-      </div>
+      </div> 
+
+    </div>
     
-      <div class="govuk-grid-row  overview">
-    
-      <!-- <div class="govuk-grid-column-full">
-    
-    
-      </div> -->
-    
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-    
-    
+      <div class="govuk-grid-column-one-half">
     
         <h1 class="govuk-visually-hidden">Full list of claimant information</h1>
-    
-       <!-- remove for old blue key details <section class="new-key-details-bar" role="identifier" aria-label="Claimant name and identifier">
-          <dl class="new-key-details-bar__key-details">
-            <div class="new-key-details-bar__top-block">
-              <dt class="govuk-visually-hidden">Name:</dt>
-              <dd class="new-key-details-bar__name">Jane Doe</dd>
-    
-              <dt class="govuk-visually-hidden">National Insurance number:</dt>
-              <dd class="new-key-details-bar__nino">RN 00 04 26 D</dd>
-    
-            </div>
-    
-            <div class="new-key-details-bar__bottom-block">
-              <dt class="govuk-visually-hidden">Claimant markers:</dt>
-              <dd>
-                <strong class="govuk-tag govuk-tag--purple">End of life</strong> -->
-                <!-- <strong class="govuk-tag govuk-tag--yellow">Additional support</strong> -->
-              <!--  <strong class="govuk-tag govuk-tag--green">Appointee</strong> -->
-                <!-- <strong class="govuk-tag govuk-tag--blue">Mental health condition</strong>
-                <strong class="govuk-tag govuk-tag--pink">Unacceptable behaviour</strong> -->
-            <!--   <strong class="govuk-tag govuk-tag--red">Deceased</strong>
-              </dd>
-            </div>
-          </dl>
-        </section> -->
-    
-    
-    
-        <h2 class="govuk-heading-m" id="referral">Referral details</h2>
+       
+        <h2 class="govuk-heading-l" id="referral">Referral details</h2>
     
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     
@@ -117,7 +174,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </dt>
             <dd class="govuk-summary-list__value">
               No
-              <!-- {{ data["important-special-rules"] }} -->
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="change-singular/important-end-of-life">
@@ -134,11 +190,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <dd class="govuk-summary-list__value">
                 Yes
               </dd>
-              <dd class="govuk-summary-list__actions">
-                <!-- <a class="govuk-link" href="change-singular/consent-gp">
-                  Change<span class="govuk-visually-hidden"> Consent for medical evidence</span>
-                </a> -->
-              </dd>
             </div>
     
     
@@ -147,20 +198,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Safety measures
               </dt>
               <dd class="govuk-summary-list__value">
-    
                 No
-               <!--  <ul class="govuk-list govuk-list--bullet">
-                  <li> Yes</li>
-                  <li>1: Claimant</li>
-                </ul>
-    
-    
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>Dealt with by member of same sex</li>
-                  <li>Monitor behaviour</li>
-                  <li>No home visits</li>
-                  <li>Not to be seen by lone females</li>
-                </ul> -->
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="change-singular/important-behaviour">
@@ -169,33 +207,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
             </div>
     
-    
-            <!--UC marker only -->
-            <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Mental health condition
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/important-mental-health">
-                  Change<span class="govuk-visually-hidden">Mental health condition</span>
-                </a>
-              </dd>
-            </div> -->
-    
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Additional support needs
               </dt>
               <dd class="govuk-summary-list__value">
                 No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <!-- <a class="govuk-link" href="change-singular/important-support">
-                  Change<span class="govuk-visually-hidden"> Additional needs support</span>
-                </a> -->
               </dd>
             </div>
     
@@ -289,130 +306,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
     
           </dl>
-    
-    
-       <!-- <h2 class="govuk-heading-m" id="important">Important information</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-    
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Special rules end of life
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Yes
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/important-end-of-life">
-                  Change<span class="govuk-visually-hidden"> Special rules end of life</span>
-                </a>
-              </dd>
-            </div>
-    
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of death
-              </dt>
-              <dd class="govuk-summary-list__value">
-    
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/personal-dod">
-                  Add<span class="govuk-visually-hidden"> Date of death</span>
-                </a>
-              </dd>
-            </div>
-    
-     <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Special rules end of life aware
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/important-end-aware">
-                  Change<span class="govuk-visually-hidden"> Special rules end of life aware</span>
-                </a>
-              </dd>
-            </div> 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Unacceptable behaviour
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/important-behaviour">
-                  Change<span class="govuk-visually-hidden">unacceptable behaviour</span>
-                </a>
-              </dd>
-            </div>
-    
-    
-    
-    
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Additional needs support
-          </dt>
-          <dd class="govuk-summary-list__value">
-         Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-singular/important-support">
-              Change<span class="govuk-visually-hidden">unacceptable behaviour</span>
-            </a>
-          </dd>
-        </div>
-     <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Mental health condition
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-singular/important-mental-health">
-                  Change<span class="govuk-visually-hidden">Mental health condition</span>
-                </a>
-              </dd>
-            </div> 
-          </dl>
-        -->
-    
-        <!-- <h2 class="govuk-heading-m" id="gpdetails">GP details</h2> 
-    
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Named GP
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Dr T Test
-                </dd>
-        
-              </div>
-            
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Phone number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  09000 000000
-                </dd>
-        
-              </div>
-        
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 Medical group<br>St Michaels way<br>Test City<br>N5 2YH
-                </dd>
-        
-              </div> -->
         
               <h2 class="govuk-heading-m" id="medicalcontacts">Health or care professionals contact details</h2>
     
@@ -457,42 +350,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </dd>
            
                   </div>
-                  <div class="govuk-summary-list__row">
-                    <!-- <dt class="govuk-summary-list__key">
-                      Email address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      test.medical@example.com
-                    </dd>
-        
-                  </div> 
-                
-           
-                  <div class="govuk-summary-list__row">
-                   <dt class="govuk-summary-list__key" style="border: none;">
-           
-                   </dt>
-                   <dd class="govuk-summary-list__value" style="text-align: right; border: none;">
-           
-                     <li class="govuk-summary-list__actions-list-item">
-                       <a class="govuk-link" href="change-singular/first-medical-contact">
-                         Change</a>
-                     </li>
-           
-                     <li class="govuk-summary-list__actions-list-item">
-                       <a class="govuk-link" href="change-singular/first-medical-remove">
-                         Remove
-                         </a> -->
-                     </li>
-           
-           
-                   </dd>
-           
-           
-                 </div>
-           
                 </dl>
-    
                 <br/>
     
               <dl class="govuk-summary-list">
@@ -536,16 +394,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </dd>
              
                     </div>
-                    <div class="govuk-summary-list__row">
-      
-                       </li>
-            
-                     </dd>
-             
-                   </div>
-             
                 </dl>
-      
                 <br/>
     
               <dl class="govuk-summary-list">
@@ -589,114 +438,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </dd>
            
                   </div>
-                  <div class="govuk-summary-list__row">
-                    <!-- <dt class="govuk-summary-list__key">
-                      Email address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      test.medical@example.com
-                    </dd>
-        
-                  </div> 
-                
-           
-                  <div class="govuk-summary-list__row">
-                   <dt class="govuk-summary-list__key" style="border: none;">
-           
-                   </dt>
-                   <dd class="govuk-summary-list__value" style="text-align: right; border: none;">
-           
-                     <li class="govuk-summary-list__actions-list-item">
-                       <a class="govuk-link" href="change-singular/first-medical-contact">
-                         Change</a>
-                     </li>
-           
-                     <li class="govuk-summary-list__actions-list-item">
-                       <a class="govuk-link" href="change-singular/first-medical-remove">
-                         Remove
-                         </a> -->
-                     </li>
-           
-           
-                   </dd>
-           
-           
-                 </div>
-           
                 </dl>
-        
-                <br/>
-                 
-    
-      <!--   <a href="change-singular/hp-medical-specialist" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Add another specialist or medical contact
-        </a> -->
-    
-    
-    
-    
-            <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Named GP
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Dr T Test
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-singular/gp-name">
-                    Change<span class="govuk-visually-hidden"> Named GP</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  1 Test Surgery<br/>Test City<br/>XX11 1XX
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-singular/gp-address">
-                    Change<span class="govuk-visually-hidden"> GP Address</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Phone number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  09000 000000
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-singular/gp-phone-no">
-                    Change<span class="govuk-visually-hidden"> GP Phone number</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Email address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  test.surgery@example.com
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-singular/gp-email">
-                    Change<span class="govuk-visually-hidden"> GP email address</span>
-                  </a>
-                </dd>
-              </div>
-            </dl> -->
-    
-          
-        </div>         
+                <br/>        
+       </div>        
         
         
     
     
-        <div class="govuk-grid-column-one-third" style="padding-left: 15px; padding-right: 0px;">
+        <div class="govuk-grid-column-one-quarter">
     
           <aside class="app-related-items" role="complementary">
             <h2 class="govuk-heading-m" id="subsection-title">
@@ -730,8 +479,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </aside>
     
         </div>
-    
-      </div>
+
+
+    <!-- </div> -->
     </div>
+    
 
 {% endblock %}
