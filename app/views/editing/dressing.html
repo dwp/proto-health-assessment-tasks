@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="8">{{data["dressingNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="15">
+              She is physically capable of putting on and taking off t-shirts, shirts, sweaters and tops independently without difficulties. 
+              She tends to find managing zips, fastenings and buttons a bit fiddly due to her hand pains and possibly having swollen fingers. She needs to be sitting down to put on and take off trousers, socks and shoes, for lower half items once sat down she leans forwards to reach down to her feet and lifts her knees closer to her chest in sitting, depending on which position is mostly comfortable.
+
+              She leans forwards and brings knees to chest to put on socks and shoes, which she can manage in this way independently whilst sat down. She normally chooses her own clothes to wear. She can choose clothing in accordance to the weather outside and to the occasion without difficulties.
+              
+              She ensures that she has clean clothes to wear whenever she washes. She usually changes her clothing as much as possible. 
+              It approximately takes her 30 minutes to dress and undress each time, as she likes to take her time not to rush things, especially in the morning if she needs to allow enough time for her joint aches to ease due to joints stiffness. </textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -355,7 +371,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for dressing and undressing
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingJustification" name="dressingJustify" rows="8">{{data["dressingJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingJustification" name="dressingJustify" rows="15">{{data["dressingJustify"]}}</textarea>
           </div> 
           
           

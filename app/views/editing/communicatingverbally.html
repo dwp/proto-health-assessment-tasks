@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyNotes" name="communicatingverballyNotes" rows="8">{{data["communicatingverballyNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyNotes" name="communicatingverballyNotes" rows="15">
+              She does not express any significant issues with verbal communication, speaking and hearing. Normally she can speak to people, can understand what is being said and can maintain a conversation going without difficulties. 
+            </textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -272,7 +283,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for communicating verbally
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyJustification" name="communicatingverballyJustify" rows="8">{{data["communicatingverballyJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyJustification" name="communicatingverballyJustify" rows="15">{{data["communicatingverballyJustify"]}}</textarea>
           </div>
           
           

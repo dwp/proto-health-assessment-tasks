@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyNotes" name="managingtherapyNotes" rows="8">{{data["managingtherapyNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyNotes" name="managingtherapyNotes" rows="15">
+              She tends to be forgetful about which medication she has to take at which time of day. Normally certain symptoms come on, and this would serve as a reminder to her that she needs to take her tablets.
+               She is able to manage pill packets and can administer the tablets with a glass of water independently. She currently has a monthly prescription. She is in control of her medication and tablets are at her disposal. 
+               
+               She doesn't get overdosing thoughts whenever exposed to medication as she can rationalise her way through the intrusive thoughts. She is able to determine whenever she's feeling sick or unwell and would ask others to contact the doctor on 
+               her behalf should any sudden changes to her conditions occur, but she can also not contact anyone at all as she prefers to let the sensation pass. 
+            </textarea>
           </div>          
           <div class="govuk-form-group">
 
@@ -356,7 +371,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Justification for managing therapy
               </label>
             
-              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyJustification" name="managingtherapyJustify" rows="8">{{data["managingtherapyJustify"]}}</textarea>
+              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyJustification" name="managingtherapyJustify" rows="15">
+                Restrictions reported: 
+
+                CQ states most mornings forgets to take anti-depressants, forgets to check blood sugars most days, hardly remembers to take Paracetamol unless asked, had to cancel tests and appointments due to anxiety and pain. 
+                Previous PA4 suggests unaided. FH states she tends to be forgetful about which medication she has to take at which time of day. 
+
+                Recommendation and evidence used to support: 
+
+                It is likely that on the majority of days she can manage medication and monitor health conditions unaided reliably. Although FE supports anxiety, overall evidence suggests she is able to drive thus focus and memory is supported.
+                Although she doesn't drive more due to lack of concentration IOs and MSE on a typical day do not support reported restrictions and she has no overdose attempts. 
+
+                Reasons why the reported restrictions are not supported by evidence: 
+
+                N/A 
+
+                Other descriptor supported by some evidence and the reasons why they haven’t been advised: 
+
+                N/A 
+              </textarea>
             </div>
             
           
