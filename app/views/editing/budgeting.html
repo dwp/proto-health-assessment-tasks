@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </label>
       
       
-        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingNotes" name="budgetingNotes" rows="8">{{data["budgetingNotes"]}}</textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingNotes" name="budgetingNotes" rows="15">
+          She has a good understanding of money and is aware of how money works. She is aware of the concept of money, the value of things and the need to budget for future purchases.
+
+          She has a bank account set up, is aware of what is coming in and out of it, and household bills payments are normally done by herself paying a monthly fee contribution for ease and convenience purposes. 
+          
+          She is able to make sense out of the change given to her from simple transactions. She uses online banking. 
+        </textarea>
       </div>
 
       <div class="govuk-form-group">
@@ -199,7 +214,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Justification for budgeting
         </label>
       
-        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingJustification" name="budgetingJustify" rows="8">{{data["budgetingJustify"]}}</textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingJustification" name="budgetingJustify" rows="15">{{data["budgetingJustify"]}}</textarea>
       </div>
       
       

@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="8">{{data["facetofaceNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="15">
+              She feels confident interacting with her friends and people she know well. She doesn't interact with people she doesn't know as she can feel uncomfortable and overwhelmed due to mental health reasons. 
+              If she is to interact with a new person face to face, she'd need to be notified of the meeting beforehand so that she mentally prepares herself for the actual encounter, and she would also need any friend or close relative support her before, during and after she meets that person to ensure that she remains calm and composed. 
+              
+              This level of help and notification are needed each time, and without this input she would cancel the meeting until help is provided due to overwhelming anxiety and fear around being new people on her own. She understands the nature of friendships, relationships and what relations entail. She understands body language, 
+              facial expressions, social cues and gestures, and can respond to them accordingly and appropriately, as long as these are straightforward, as sometimes she can interpret things differently from others. 
+              
+              She has good stranger danger awareness and is fully aware of who she can and shouldn't trust. She has close friends and family members who she normally interacts with, tending to spend time with them mainly indoors, as she doesn't go out to meet people socially at any point. 
+            </textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -204,7 +221,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for face to face
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceJustification" name="facetofaceJustify" rows="8">{{data["facetofaceJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceJustification" name="facetofaceJustify" rows="15">{{data["facetofaceJustify"]}}</textarea>
           </div>
           
           

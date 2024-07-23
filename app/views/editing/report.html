@@ -173,7 +173,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <p class="govuk-body">
       <a href="#" class="govuk-link" style="float: right">Change</a>
    </p>
-    <p>{{data["condition-history"]}}</p>
+    <p>{{data["condition-history"]| escape | nl2br}}</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
