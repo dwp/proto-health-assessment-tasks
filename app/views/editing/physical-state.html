@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
@@ -16,13 +25,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-form-group">
     <h1 class="govuk-label-wrapper">
       <label class="govuk-label govuk-label--l" for="more-detail">
-       Physical state observations
+       Informal observations
       </label>
       <div id="passport-issued-hint" class="govuk-hint">
         This can include breathlessness, tiredness, or signs they are in pain
       </div>
     </h1>
-    <textarea class="govuk-textarea" id="observations" name="physical-state" rows="7" aria-describedby="history-condition-hint">{{data["physical-state"]}}</textarea>
+    <textarea class="govuk-textarea" id="observations" name="physical-state" rows="15" aria-describedby="history-condition-hint">
+      She was able to concentrate throughout the assessment with no signs of fatigue or irritability.
+    </textarea>
   </div>
 
       <!-- <div class="govuk-button-group">

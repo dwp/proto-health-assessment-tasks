@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingaroundNotes" name="movingaroundNotes" rows="8">{{data["movingaroundNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingaroundNotes" name="movingaroundNotes" rows="15">
+              She can comfortably cover up to 30 metres prior to needing to stop, it would approximately take her 5 minutes to walk such distance, and she'd need to stop owing to knee pains especially in the left knee.
+               She would then need to have a rest break of about 5 minutes in a seated position until the pain subsides to a certain extent, prior to being able to repeat this same distance as tolerated, but sometimes she wouldn't be able to repeat it again due to her knee pains. 
+
+               She normally feels tired and in pain after covering such distances despite trying to walk as tolerated. She normally walks at a slow, comfortable pace, aided with a walking stick at all times for added leverage, support and stability. She doesn't use wheelchairs or mobility scooters for outdoors mobility. 
+               She's had some falls over this past year due to legs giving way unpredictably and being really clumsy due to unsteadiness. She isn't a blue badge holder. Her walking pattern is described as slow and at times wobbly. Indoors - she can access all rooms downstairs but if the pain is worse she's unable to manage stairs and sleeps downstairs on the settee. 
+               
+               Outdoors - her friend drops her off nearby a field and she just sits to enjoy the countryside view rather than walk around due to her physical pains, otherwise she is not walking anywhere in particular outdoors regularly. 
+            </textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -355,7 +372,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for moving around
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingJustification" name="movingJustify" rows="8">{{data["movingJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingJustification" name="movingJustify" rows="15">{{data["movingJustify"]}}</textarea>
           </div>
           
           

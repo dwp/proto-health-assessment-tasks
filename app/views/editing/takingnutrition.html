@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,7 +36,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionNotes" name="takingnutritionNotes" rows="8">{{data["takingnutritionNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionNotes" name="takingnutritionNotes" rows="15">
+              Whenever she has a plate of food in front of her, she can independently convey it to the mouth, chew and swallow, reporting no regular spillage episodes. 
+
+              However she generally eats foods which require her to only use a fork or a spoon with the right hand for ease and convenience purposes as her left hand might cause tremors. 
+
+              She asks someone else to cut up food in small portions to ensure that she doesn't have to use a fork and knife simultaneously as her left hand can have tremors.
+               She is able to acknowledge herself whenever she's hungry, but there are times when she forgets to eat due to her mental health conditions. 
+
+               She'd need to be reminded to eat regularly, and once reminded she'd get herself to eat something. She normally eats 1 main meal daily, tending to snack on fruit throughout the day when she feels like. 
+            </textarea>
           </div>
           <div class="govuk-form-group">
 
@@ -351,7 +369,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       Justification for taking nutrition
     </label>
   
-    <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionJustification" name="takingnutritionJustify" rows="8">{{data["takingnutritionJustify"]}}</textarea>
+    <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionJustification" name="takingnutritionJustify" rows="15">
+      Restrictions reported: 
+
+      CQ states due to constant shakes cannot lift food with fork, drops food, if she tries to hold a drink in left hand she spills it, cannot hold a fork and knife to eat, it's difficult to cut meat, forgets to eat due to depression and low mood, around 5 days mostly eats snacks, gets anxious missing meals due to diabetes. FH states at times forgets to eat and would need reminding to get herself to eat something, she generally eats foods which require her to only use a fork or a spoon with the right hand for ease and convenience purposes as her left hand might cause tremors, she asks someone else to cut up food in small portions to ensure that she doesn't have to use a fork and knife simultaneously as her left hand can have tremors. 
+
+      Recommendation and evidence used to support: 
+
+      It is likely that on the majority of days she can take nutrition unaided reliably. Although CQ and FH indicate limitations around having appropriate appetite, evidence from HOC shows no underlying diagnoses of eating disorders, there is no indication of any underlying specialists' input from gastro- enterology, dietitians or nutritionists, in line with CM section showing no currently prescribed dietary or vitamin supplementation medication management. 
+
+      IOs support good cognition and intellect. FH implies that upon reminding she's able to get herself to eat something, suggesting that active prompting is not required for the entire duration of this activity. Despite CQ and FH indicating aids are required, HOC shows no ongoing high physical health/musculoskeletal specialists' involvement for her upper limbs/hand grip except for standard GP care if required. 
+      HOC shows no current use of prescribed/self- purchased wrist/hand splints to specifically improve upper limb functionality and hand grip. IOs support adequate upper limb functionality and bilateral hand grip, with MSK exam also supporting adequate upper limb functionality required for daily tasks. SOH shows that she can hold onto bannisters and the wall to manage stairs and that she can constantly use a walking stick to move around, suggesting adequate upper limb functionality and bilateral hand grip required for daily tasks. Thus it is likely she can do this activity unaided. 
+  
+      Reasons why the reported restrictions are not supported by evidence: 
+
+      N/A 
+
+      Other descriptor supported by some evidence and the reasons why they haven’t been advised: 
+      
+      N/A 
+
+
+
+    </textarea>
   </div>
 
 </div>
