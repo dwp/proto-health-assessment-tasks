@@ -204,13 +204,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
      </p>
       <h3 class="govuk-heading-s">Functional history for preparing food</h3>
-      <p>{{data["preparingfoodNotes"]}}</p>
+      <p>{{data["preparingfoodNotes"] | escape | nl2br}}</p>
 
       <h3 class="govuk-heading-s">How well can the claimant prepare food?</h3>
       <p>{{data["preparingfoodSelect"]}}</p>
 
       <h3 class="govuk-heading-s">Justification for preparing food</h3>
-      <p>{{data["preparingfoodJustify"]}}</p>
+      <p>{{data["preparingfoodJustify"] }}</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
