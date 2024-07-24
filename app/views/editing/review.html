@@ -7,6 +7,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -73,7 +82,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-label--s" for="reviewtimereasons">
             Why do you recommend this review period?
           </label>
-          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5"></textarea>
+          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5">
+            Certain functional limitations were present at the time of the assessment, which would warrant a review. She is currently on the waiting list to have counselling. She is due to start having PT sessions for the left knee, and once she would have had enough sessions she's to enlist for a left TKR surgery. 
+            
+            Since there are pending specialists' interventions in place with no official confirmatory appointment start date, the reported symptoms are likely to have a functional impact on her ability to carry out daily living and mobility tasks reliably in the short term. With further specialists' interventions in place, a short term review of 1 year 6 months is most appropriate. 
+          </textarea>
         </div>
           
         <div class="govuk-form-group">
