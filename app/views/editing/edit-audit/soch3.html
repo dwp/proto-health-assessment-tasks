@@ -1,0 +1,70 @@
+{% extends "layouts/prep-soch.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="functional-history.html" class="govuk-back-link">Back</a>
+    <span class="govuk-caption-xl">PIP telephone assessment</span>
+    <h1 class="govuk-heading-l">
+       Social and occupational history
+    </h1>
+
+
+<form action="soch4.html" method="get">
+  
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend">
+              Do they drive?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="drive" name="drive" type="radio" value="yes" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="drive-details">
+                  More details
+                </label>
+                <textarea class="govuk-textarea" id="drive-details" name="drive-details" rows="5"></textarea>
+            </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="drive-2" name="drive" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="drive-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+
+  <div class="govuk-button-group">
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
