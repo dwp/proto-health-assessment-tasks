@@ -58,7 +58,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
             {% elseif data["verify"] === undefined %}
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes" {{ checked }}>
               <label class="govuk-label govuk-radios__label" for="id">
                 Yes
               </label>
