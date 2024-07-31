@@ -23,7 +23,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Select the evidence you have used
         </legend>
 
-        {% set list = [
+        <!-- {% set list = [
           "Claimant questionnaire",
           "Fit note (Med 3)",
           "Prescription or medication list",
@@ -40,11 +40,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           "Specialist letter or report",
           "Allied heath professional's letter or report",
           "Radiology and investigative report",
-          "Previous assessment report"] %}        
+          "Previous assessment report"] %}         -->
         
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
         
-          {% for item in list %}
+          <!-- {% for item in list %}
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input autosave" id="evidenceusedpip" name="evidenceusedpip" type="checkbox" value="{{ item }}" values="data['evidenceusedpip']" data-aria-controls="conditional-evidence-{{ loop.index }}">
             <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip">
@@ -60,9 +60,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
             </div>
         
-                {% endfor %}
+                {% endfor %} -->
 
-                <!-- <div class="govuk-checkboxes__item">
+                <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-2" name="evidenceusedpip" type="checkbox" value="Fit note (Med 3)" data-aria-controls="conditional-evidence-2">
                   <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip-2">
               Fit note (Med 3)
@@ -78,7 +78,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </div>
                 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-3" name="evidenceusedpip" type="checkbox" value="Prescription or medication list" data-aria-controls="conditional-evidence-3">
+                  <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-3" name="evidenceusedpip" type="checkbox" value="Prescription or medication list" data-aria-controls="conditional-evidence-3" {{ checked }}>
                   <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip-3">
               Prescription or medication list
               </label>
@@ -91,7 +91,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <label class="govuk-label" for="contact-by-email">
                       Date of prescription or medication list
                     </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email">
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email" value="20 May 2024">
                   </div>
                   </div>
 
@@ -123,7 +123,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-5" name="evidenceusedpip" type="checkbox" value="GP letter" data-aria-controls="conditional-evidence-5">
+            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-5" name="evidenceusedpip" type="checkbox" value="GP letter" data-aria-controls="conditional-evidence-5" {{ checked }}>
             <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip-5">
         GP letter
         </label>
@@ -138,7 +138,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="contact-by-email">
                 Date of GP letter
               </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email">
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email" value="12 March 2023">
             </div>
             </div>
         
@@ -223,7 +223,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-9" name="evidenceusedpip" type="checkbox" value="Factual medical report (FRR2)" data-aria-controls="conditional-evidence-9">
+            <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-9" name="evidenceusedpip" type="checkbox" value="Factual medical report (FRR2)" data-aria-controls="conditional-evidence-9" {{ checked }}>
             <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip-9">
         Factual medical report (FRR2)
         </label>
@@ -239,7 +239,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="contact-by-email">
                 Date of factual medical report
               </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email">
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email" value="18 June 2024">
             </div>
             </div>
         
@@ -437,7 +437,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </label>
               <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email">
             </div>
-            </div> -->
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input autosave" id="evidenceusedpip-18" name="evidenceusedpip" type="checkbox" value="Claimant questionnaire" data-aria-controls="conditional-evidence-18" {{ checked }}>
+              <label class="govuk-label govuk-checkboxes__label" for="evidenceusedpip-18">
+                Claimant questionnaire
+          </label>
+              
+            </div>
+            
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-evidence-18">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Date of previous claimant questionnaire
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="evidence[document-date]" type="text" spellcheck="false" autocomplete="email" value="17 April 2023 ">
+              </div>
+              </div>
         
         
         
