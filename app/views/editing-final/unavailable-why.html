@@ -1,0 +1,62 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<form action="unavailableWhy" method="get">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl">PIP telephone assessment</span>
+            <h1 class="govuk-fieldset__heading">
+                What is the reason they cannot take the call?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available" name="radioGroup" type="radio" value="unwell">
+              <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+                They are not well enough to take the call
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available-2" name="radioGroup" type="radio" value="private">
+              <label class="govuk-label govuk-radios__label" for="available-2">
+                They are not in a private place
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="available-3" name="radioGroup" type="radio" value="refused">
+              <label class="govuk-label govuk-radios__label" for="available-3">
+                They refused to take the call
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}

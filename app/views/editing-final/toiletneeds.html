@@ -1,0 +1,426 @@
+{% extends "layouts/side-nav-editing.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Managing toilet needs</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="toiletneedsNotes">
+              Functional history for managing toilet needs
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="toiletneedsNotes" name="toiletneedsNotes" rows="15">
+              She holds onto the nearby sink and the walking stick for added leverage and support to steadily get on and off the toilet due to her physical pains. 
+              Otherwise she can attend to her hygiene needs and can maintain hygiene and cleanliness throughout without difficulties. 
+
+              Sometimes she can get an upset stomach and would need to use the toilet urgently, and due to her knee pains restricting mobility she wouldn't be able to reach the toilet on time appropriately and this can cause accidents. 
+            </textarea>
+          </div>          
+          
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can manage toilet needs?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+              {% if data["toiletneedsSelect"] == '(5a) Can manage toilet needs or incontinence unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] == '(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] == '(5c) Needs supervision or prompting to be able to manage toilet needs' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] == '(5d) Needs assistance to be able to manage toilet needs' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] == '(5e) Needs assistance to be able to manage incontinence of either bladder or bowel' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] == '(5f) Needs assistance to be able to manage incontinence of both bladder and bowel' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+
+                  {% elseif data["toiletneedsSelect"] === undefined %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect" name="toiletneedsSelect" type="radio" value="(5a) Can manage toilet needs or incontinence unaided">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect">
+                  (5a) Can manage toilet needs or incontinence unaided
+                </label>
+                  </div>
+          
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-2" name="toiletneedsSelect" type="radio" value="(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-2">
+                  (5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence
+                </label>
+                  </div>
+              
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-3" name="toiletneedsSelect" type="radio" value="(5c) Needs supervision or prompting to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-3">
+                  (5c) Needs supervision or prompting to be able to manage toilet needs
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-4" name="toiletneedsSelect" type="radio" value="(5d) Needs assistance to be able to manage toilet needs">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-4">
+                  (5d) Needs assistance to be able to manage toilet needs
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-5" name="toiletneedsSelect" type="radio" value="(5e) Needs assistance to be able to manage incontinence of either bladder or bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-5">
+                  (5e) Needs assistance to be able to manage incontinence of either bladder or bowel
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="toiletneedsSelect-6" name="toiletneedsSelect" type="radio" value="(5f) Needs assistance to be able to manage incontinence of both bladder and bowel">
+                    <label class="govuk-label govuk-radios__label" for="toiletneedsSelect-6">
+                  (5f) Needs assistance to be able to manage incontinence of both bladder and bowel
+                </label>
+                  </div>
+            {% endif %}
+              
+            </div>
+
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="toiletneedsJustify">
+              Justification for managing toilet needs
+            </label>
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="toiletneedsJustification" name="toiletneedsJustify" rows="15">
+              Restrictions reported: 
+
+              CQ states gets pain and diarrhea if she has gluten and dairy, has to be close to a toilet and sometimes has accidents before she gets there, it's hard to stand up after sitting on the toilet due to knee pain and stiffness. Previous PA4 suggests aided. 
+              FH states difficulties getting to the toilet on time due to knee pains can cause accidents, holds onto the nearby sink and uses the walking stick on and off the toilet for added leverage. 
+
+              Recommendation and evidence used to support: 
+
+              It is likely that on the majority of days she needs to use an aid to be able to manage toilet needs reliably. Evidence from HOC shows a diagnosis of OA affecting both knees for which she currently refers to the GP as needed usually whenever due for a medication review, she had PT in the past which was considered to be partially beneficial, she had a left knee arthroscopy in 2018 which was successful in the short term, had steroid injections to the left knee, with the plan in place being that of having more PT sessions and once her left knee musculature is strong and it's deemed she's had enough PT, she would enlist to have a left TKR surgery. 
+              FME confirms OA diagnosis, left knee pain and knee giving way, knee pain is aggravated by walking/standing/squatting, also confirming antalgic gait and restless legs. CM section shows partially effective prescribed pain relief medication management. 
+
+              SOH shows that she holds onto bannisters and the walls to manage stairs whilst taking 1 step at a time, sometimes she cannot manage stairs due to pain and has to sleep downstairs, uses a self-purchased walking stick constantly, she has pre-installed rails at the side of the bath and uses the walking stick and car door frame for leverage in and out of the car; suggesting certain physical limitations.
+              
+              IOs support walking at a moderate pace with a slight limp using a walking stick and that she required support moving from sitting to standing and vice versa, whilst demonstrating adequate upper limb functionality and hand grip. MSK exam supports ability to perform lower limb standing movements using a walking stick for added support. This is in line with FH indicating the need to use a walking stick and to hold onto a sink when getting on and off the toilet. 
+              Thus overall evidence suggests aids are required due to pain, in line with previous PA4 suggesting the same owing to physical restrictions. 
+
+              Reasons why the reported restrictions are not supported by evidence: 
+
+              Despite CQ and FH indicating physical difficulties with reaching the toilet on time can cause accidents, the physical ability to reach the toilet is not considered within the scope of this activity, since moving around is only considered under the scope of activity 12. 
+
+              Moreover, HOC shows no underlying diagnoses of urinary/bowel incontinence related issues which could potentially cause restrictions due to bladder/bowel incontinence related accidents. 
+
+              Other descriptor supported by some evidence and the reasons why they haven’t been advised: 
+
+              N/A 
+            </textarea>
+          </div>
+          
+          
+          </div>          
+          <!-- <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button> -->
+          
+          </form>
+    </div>
+
+      </form>
+      </div>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+
+{% endblock %}

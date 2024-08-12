@@ -1,0 +1,47 @@
+{% extends "layouts/layout-ta.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-l">
+      Tell the claimant what happens next and end the call
+    </h1>
+
+    <p class="govuk-body">Let the claimant know that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the report will now be completed </li>
+          <li>a decision will be made on their claim</li>
+          <li>we will contact them by phone or letter</li>
+        </ul>
+
+
+        <p class="govuk-body">Ask the claimant if they have any questions.</p>
+    
+
+    <form action="mental-state" method="get" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+  
+
+
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}

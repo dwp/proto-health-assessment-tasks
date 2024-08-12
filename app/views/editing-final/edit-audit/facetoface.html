@@ -1,0 +1,259 @@
+{% extends "layouts/side-nav-editing-audit.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Engaging face to face</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="facetofaceNotes">
+              Functional history for engaging face to face
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="15">
+              She feels confident interacting with her friends and people she know well. She doesn't interact with people she doesn't know as she can feel uncomfortable and overwhelmed due to mental health reasons. 
+              If she is to interact with a new person face to face, she'd need to be notified of the meeting beforehand so that she mentally prepares herself for the actual encounter, and she would also need any friend or close relative support her before, during and after she meets that person to ensure that she remains calm and composed. 
+              
+              This level of help and notification are needed each time, and without this input she would cancel the meeting until help is provided due to overwhelming anxiety and fear around being new people on her own. She understands the nature of friendships, relationships and what relations entail. She understands body language, 
+              facial expressions, social cues and gestures, and can respond to them accordingly and appropriately, as long as these are straightforward, as sometimes she can interpret things differently from others. 
+              
+              She has good stranger danger awareness and is fully aware of who she can and shouldn't trust. She has close friends and family members who she normally interacts with, tending to spend time with them mainly indoors, as she doesn't go out to meet people socially at any point. 
+            </textarea>
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can engage face to face?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+              {% if data["facetofaceSelect"] == '(9a) Can engage with other people unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                  </div>
+
+                  {% elseif data["facetofaceSelect"] == '(9b) Needs prompting to be able to engage with other people' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                  </div>
+
+                  {% elseif data["facetofaceSelect"] == '(9c) Needs social support to be able to engage with other people' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                  </div>
+
+                  {% elseif data["facetofaceSelect"] == '(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                  </div>
+
+                  {% elseif data["facetofaceSelect"] === undefined %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
+                  (9a) Can engage with other people unaided
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-2" name="facetofaceSelect" type="radio" value="(9b) Needs prompting to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-2">
+                  (9b) Needs prompting to be able to engage with other people
+                </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-3" name="facetofaceSelect" type="radio" value="(9c) Needs social support to be able to engage with other people">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-3">
+                  (9c) Needs social support to be able to engage with other people
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="facetofaceSelect-4" name="facetofaceSelect" type="radio" value="(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person">
+                    <label class="govuk-label govuk-radios__label" for="facetofaceSelect-4">
+                  (9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </label>
+                  </div>
+              {% endif %}
+              
+            </div>
+            
+          
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="facetofaceJustify">
+              Justification for face to face
+            </label>
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceJustification" name="facetofaceJustify" rows="15">
+              Restrictions reported: 
+
+              CQ states cannot go in crowds or where there is a lot of people as this causes stress and anxiety, gets anxious, panicky and cannot speak when meeting new people, avoids such situations if possible, has a small group of friends who she sees occasionally but cannot meet anyone else.
+
+              Previous PA4 suggests unaided. FH states needs notification and a friend or relative to be with her when meeting a new person, without this help she'd cancel the meeting until help is provided due to anxiety, she doesn't interact with people she doesn't know as she can feel uncomfortable and overwhelmed due to mental health reasons. 
+
+              Recommendation and evidence used to support: 
+
+              It is likely that on the majority of days she can engage with other people unaided in a timely manner, to an acceptable standard and repeatedly. Although MSE indicates she was initially tearful this settled down and no apparent prompting was reported during the assessment for which she attended unaccompanied. IOs and MSE are unremarkable. 
+
+              Reasons why the reported restrictions are not supported by evidence: 
+
+              N/A 
+
+              Other descriptor supported by some evidence and the reasons why they haven’t been advised: 
+
+              Although FH indicates social support is needed, MSE indicates she was initially tearful but this settled down and no apparent prompting was reported during the assessment for which she attended unaccompanied. IOs and MSE are unremarkable. 
+            </textarea>
+          </div>
+          
+          
+          </div>                                     
+      </form>
+   </div>
+</div>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+ 
+
+{% endblock %}
