@@ -1,0 +1,109 @@
+{% extends "layouts/layout-split.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="add-condition.html" class="govuk-back-link">Back</a>
+    
+
+<form action="conditions-additional.html" method="get">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Add a condition
+        </h1>
+      </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="condition-name">
+              Name of condition
+            </label>
+            <input class="govuk-input" id="condition-name" name="condition-name" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="condition-length">
+              Length of condition
+            </label>
+            <input class="govuk-input govuk-input--width-5" id="condition-length" name="condition-length" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="meds-frequency">
+              Symptoms and how it affects them
+            </label>
+            <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint"></textarea>
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="meds-frequency">
+              Variability
+            </label>
+            <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint"></textarea>
+          </div>
+          <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <label class="govuk-label" for="width-5">
+                  Mental health condition?
+                </label>              
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mental-health" name="mental-health" type="radio" value="email" data-aria-controls="conditional-mental-health">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mental-health-2" name="mental-health" type="radio" value="phone" data-aria-controls="conditional-mental-health-2">
+                  <label class="govuk-label govuk-radios__label" for="mental-healt-2">
+                    No
+                  </label>
+                </div>
+
+              </div> -->
+                <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                          <legend class="govuk-fieldset__legend">
+                              is there self harm or suicidal ideation?
+                          </legend>
+                          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="changed-name">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                No
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail">
+                          Have they notified anyone?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+                      </div>
+                </div>
+            </fieldset>
+          </div> -->
+
+    </fieldset>
+  </div>
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </div>
+  </form>
+      
+
+{% endblock %}

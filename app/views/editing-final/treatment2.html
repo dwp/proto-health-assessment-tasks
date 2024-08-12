@@ -1,0 +1,167 @@
+{% extends "layouts/layout-split-banner.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+</style>
+
+<a href="treatment.html" class="govuk-back-link">Back</a>
+
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+            Check the treatments you have added
+        </h1>
+
+        <!--<table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Treatments</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Type</th>
+              <th scope="col" class="govuk-table__header">Frequency</th>
+              <th scope="col" class="govuk-table__header">Location</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">            {{data["treatment-type"]}}            </td>
+              <td class="govuk-table__cell">{{data["frequency"]}}</td>
+              <td class="govuk-table__cell">{{data["Location"]}}</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="treatment">
+                Change<span class="govuk-visually-hidden"> this medication</span>
+              </a></td>
+            </tr>
+          </tbody>
+        </table>-->
+        <!-- <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">{{data["treatment-type"]}}</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Frequency
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["frequency"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> age</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Location
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data["Location"]}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> nationality</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div> -->
+
+        {% for query in data['queriesTreatment'] %}
+        <div>
+          <!-- <h2 class="govuk-heading-m">Condition</h2> -->
+          <br>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Treatment type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.treatmentType }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden"> contact details</span>
+                  </a></li>
+              </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Hours per week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.treatmentFrequency }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Additional information for this treatment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.additionalInfo }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </div>
+          {% endfor %}
+
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <label class="govuk-label" for="event-name">
+        Add another treatment?
+      </label>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="available" name="another-treatment" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="can-they-take-the-call">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="available-2" name="another-treatment" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="available-2">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button></div>
+
+      </form>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+{% endblock %}

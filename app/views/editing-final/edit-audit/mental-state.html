@@ -1,0 +1,80 @@
+{% extends "layouts/side-nav-editing-audit.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="more-detail">
+       Mental state observations
+      </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+        This can include general cognition, behaviour, speech and mood
+      </div>
+    </h1>
+    <textarea class="govuk-textarea" id="mental-state" name="mental-state" rows="15" aria-describedby="history-condition-hint">
+      Behaviour
+      She managed to maintain a calm and relaxed behaviour whilst managing to establish an appropriate rapport with the assessor. She was keen on participating and was happy to provide elaborate answers to the questions asked.
+
+      Mood
+      Her mood appeared to be stable and euthymic throughout. Initially she appeared to be tearful when explaining about details in relation to her health conditions, however this sensation quickly resolved as the assessment proceeded, once she felt more at ease opening up about her health conditions.
+
+      Suicidal thoughts
+      She's been experiencing suicidal thoughts since the time of her mental health condition diagnosis, she last tried to overdose on medication in December 2020 which required hospitalisation. Currently she still experiences such thoughts, however she wouldn't have intentions or plans to act on the thoughts. 
+      Her mental health team are aware of these thoughts and past suicidal attempt.
+
+      Self-harm thoughts
+      Whenever feeling very low she engages in self-harming by cutting using knives, sharp objects like scissors and razor blades. She hasn't self-harmed for the past few weeks, triggering factors to the self-harming attempts include whenever she feels overwhelmed, and usually self-harms once every few weeks, if she sees sharp objects she still tries her best to combat her thoughts and wouldn't have intentions or plans to act on the self-harming thoughts. 
+      Her mental health team are aware of these thoughts and attempts.
+
+      Speech
+      Her speech was normal in tone, rate, flow, volume and content, being capable of clear, comprehensible speech and of speaking in full, coherent sentences during the assessment.
+
+       No questions were requested to be simplified or reworded as she was able to understand questions asked and to explain elaborate details about things being discussed without difficulties, demonstrating good information processing.
+
+       Cognition
+       She was able to follow questions and give appropriate answers in a timely manner.
+
+       Insight
+       She acknowledged diagnosis, able to identify impact of condition. 
+    </textarea>
+  </div>
+
+      <!-- <div class="govuk-button-group">
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button> -->
+    </div> 
+
+      </form>
+      </div>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  
+
+{% endblock %}
