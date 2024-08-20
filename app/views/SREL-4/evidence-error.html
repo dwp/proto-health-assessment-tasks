@@ -11,6 +11,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
     <h1 class="govuk-heading-l">Evidence</h1>
 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Date of DS1500 must include a month and year</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <h2 class="govuk-heading-m">Select the evidence you have used</h2>
 
     <form action="#" method="post">
@@ -35,7 +50,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <div id="passport-issued-hint govuk-form-group--error" class="govuk-hint">
                     For example, 27 3 2007
                   </div>
-                  <div class="govuk-date-input" id="evidence-issued">
+                  <div class="govuk-date-input govuk-form-group--error" id="evidence-issued">
+                    <p id="passport-issued-error" class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span> Date of DS1500 must include a month and year
+                    </p>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="evidence-issued-day">
@@ -49,7 +67,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="evidence-issued-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="evidence-issued-month" name="evidence-issued-month" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="evidence-issued-month" name="evidence-issued-month" type="text" inputmode="numeric">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -57,7 +75,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="evidence-issued-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="evidence-issued-year" name="evidence-issued-year" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="evidence-issued-year" name="evidence-issued-year" type="text" inputmode="numeric">
                       </div>
                     </div>
                   </div>
