@@ -1,0 +1,68 @@
+{% extends "layouts/layout-split-banner-SREL.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Select yes if the claimant is aware of their prognosis</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<form action="#" method="post">
+  <div class="govuk-form-group govuk-form-group--error">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Is the claimant aware of their prognosis?
+        </h1>
+      </legend>
+      <div id="aware-prognosis-hint" class="govuk-hint">
+        Harmful information will be automatically separated from the report.
+      </div>
+      <p id="nationality-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span>Select yes if the claimant is aware of their prognosis
+      </p>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="prognosis-yes" name="prognosis" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="prognosis-yes">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="prognosis-no" name="prognosis" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="prognosis-no">
+            No
+            </label>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </div>
+  </form>
+      
+{% endblock %}
