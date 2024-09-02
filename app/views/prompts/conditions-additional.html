@@ -23,9 +23,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Ask about the claimant's medical conditions
         </h1>
 
-        {% for query in data['queriesCondition'] %}
-
-        <p>{{ query.action }}</p>
+        {% for query in data['queriesCondition'] | reverse %}
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="condition-name">
