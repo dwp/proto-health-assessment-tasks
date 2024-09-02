@@ -3077,3 +3077,26 @@ router.use((req, res, next) => {
   next() // continue to next action
 
 })
+
+// Prompts routes
+router.post('/prompts/conditions', function(req, res) {
+  
+  res.redirect('/prompts/conditions-add')
+ })
+
+ router.post('/prompts/conditions-add', function(req, res) {
+
+  const condition = req.session.data['condition-name']
+  const conditionLength = req.session.data['condition-length']
+  const conditionSymptoms = req.session.data['symptoms']
+  const conditionVariability = req.session.data['variability']
+
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, conditionLength, conditionSymptoms, conditionVariability })
+  req.session.data.queriesCondition = queriesCondition
+
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+  
+  res.redirect('/prompts/conditions-additional')
+ })
+

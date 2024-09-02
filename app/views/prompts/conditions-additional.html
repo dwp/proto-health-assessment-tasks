@@ -1,10 +1,11 @@
-{% extends "layouts/layout-ta.html" %}
+{% extends "layouts/side-nav-prompts" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
 
 <style>
   .govuk-summary-list__actions {
@@ -16,8 +17,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
@@ -25,65 +24,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </h1>
 
         {% for query in data['queriesCondition'] %}
-        <div>
-          <!-- <h2 class="govuk-heading-m">Condition</h2> -->
-          <br>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Condition
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ query.condition }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Change<span class="govuk-visually-hidden"> contact details</span>
-                  </a></li>
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                    Remove<span class="govuk-visually-hidden"> contact details</span>
-                  </a></li>
-              </ul>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Approximate start date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ query.conditionLength }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Condition overview
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ query.conditionSymptoms }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Variability
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ query.conditionVariability }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              
-            </dd>
-          </div>
+
+        <p>{{ query.action }}</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="condition-name">
+            Condition
+          </label>
+          <input class="govuk-input" id="condition-name" name="condition-name" type="text" value="{{ query.condition }}">
         </div>
-          {% endfor %}
-          <br>
-          <br>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="condition-length">
+            Approximate start date
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="condition-length" name="condition-length" type="text" value="{{ query.conditionLength }}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-frequency">
+            Symptoms
+          </label>
+          <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint" value="{{ query.conditionSymptoms }}" ></textarea>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-frequency">
+            Variability
+          </label>
+          <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint" value="{{ query.conditionVariability }}"></textarea>
+        </div>
+        {% endfor %}
+        <div>
+
+  
 
       
 
