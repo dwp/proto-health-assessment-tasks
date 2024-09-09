@@ -1,4 +1,4 @@
-{% extends "layouts/side-nav-editing.html" %}
+{% extends "layouts/side-nav-prompts.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -25,16 +25,55 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Current medication and treatment
+          Current medication
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
         </div>
       </legend>
 
           <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="med-treatment" name="medication-treatment" rows="15" aria-describedby="med-hint">
-              
-              </textarea>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-name">
+                Medication name
+              </label>
+              <input class="govuk-input" id="meds-name" name="meds-name" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-frequency">
+                Frequency
+              </label>
+              <input class="govuk-input" id="meds-frequency" name="meds-frequency" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-dose">
+                Dosage
+              </label>
+              <input class="govuk-input" id="meds-dose" name="meds-dose" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-reason">
+                Medication taken for
+              </label>
+              <input class="govuk-input" id="meds-reason" name="meds-reason" type="text">
+            </div>
+           
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-efficacy">
+                Effectiveness
+              </label>
+              <input class="govuk-input" id="meds-efficacy" name="meds-efficacy" type="text">
+            </div>
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="meds-side-effects">
+                Side effects (optional)
+              </label>
+              <textarea class="govuk-textarea" id="meds-side-effects" name="meds-side-effects" rows="5" aria-describedby="symptoms-hint"></textarea>
+            </div>
           </div>
          
 
