@@ -22,35 +22,90 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <h1 class="govuk-heading-l">
           Ask about the claimant's medical conditions
         </h1>
+        
+          {% for query in data['queriesCondition'] | reverse %}
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Condition or disability name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.condition }} 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did the condition or disability start?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.conditionLength }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Symptoms, impact and progression
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.conditionSymptoms }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Medical care and treatments
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.conditionSymptoms }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Variability
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ query.conditionVariability }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mental health impacted?
+              </dt>
+              <dd class="govuk-summary-list__value">
 
-        {% for query in data['queriesCondition'] | reverse %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="condition-name">
-            Condition
-          </label>
-          <input class="govuk-input" id="condition-name" name="condition-name" type="text" value="{{ query.condition }}">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="condition-length">
-            Approximate start date
-          </label>
-          <input class="govuk-input govuk-input--width-10" id="condition-length" name="condition-length" type="text" value="{{ query.conditionLength }}">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="meds-frequency">
-            Symptoms
-          </label>
-          <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint" value="{{ query.conditionSymptoms }}" ></textarea>
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="meds-frequency">
-            Variability
-          </label>
-          <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint" value="{{ query.conditionVariability }}"></textarea>
-        </div>
-        {% endfor %}
-        <div>
+          {% endfor %}
 
   
 
@@ -87,16 +142,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
       </form>
-
-      <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
-<!--
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-  -->
-
 </div>      
     </div>
 

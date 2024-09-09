@@ -12,93 +12,91 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-<form action="#" method="post">
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-xl"></span>
-        <h1 class="govuk-fieldset__heading">
-          Add a medical condition
-        </h1>
-        <div id="passport-issued-hint" class="govuk-hint">
-          You can add more medical conditions on the next screen if you need to
+  <form action="#" method="post" id="auto-redirect">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-xl"></span>
+          <h1 class="govuk-fieldset__heading">
+            Condition history
+          </h1>
+          <div id="passport-issued-hint" class="govuk-hint">
+          </div>
+        </legend>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="condition-name-add">
+            Condition or disability name
+          </label>
+          <input class="govuk-input" id="condition-name-add" name="condition-name-add" type="text">
         </div>
-      </legend>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="condition-name">
-              Condition
-            </label>
-            <input class="govuk-input" id="condition-name" name="condition-name" type="text">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="condition-length">
-              Approximate start date
-            </label>
-            <input class="govuk-input govuk-input--width-10" id="condition-length" name="condition-length" type="text">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="meds-frequency">
-              Symptoms
-            </label>
-            <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint"></textarea>
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="meds-frequency">
-              Variability
-            </label>
-            <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint"></textarea>
-          </div>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                <!-- <label class="govuk-label" for="width-5">
-                  Mental health condition?
-                </label>               -->
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <!-- <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="mental-health" name="mental-health" type="radio" value="email" data-aria-controls="conditional-mental-health">
-                  <label class="govuk-label govuk-radios__label" for="contact">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="mental-health-2" name="mental-health" type="radio" value="phone" data-aria-controls="conditional-mental-health-2">
-                  <label class="govuk-label govuk-radios__label" for="mental-healt-2">
-                    No
-                  </label>
-                </div> -->
-
-              </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="condition-start-add">
+            When did the condition or disability start?
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="condition-start-add" name="condition-start-add" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-frequency-add">
+            Symptoms, impact and progression
+          </label>
+          <textarea class="govuk-textarea" id="symptoms-add" name="symptoms-add" rows="5" aria-describedby="symptoms-add"></textarea>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-care-treatments-add">
+            Medical care and treatments
+          </label>
+          <textarea class="govuk-textarea" id="meds-care-treatments-add" name="meds-care-treatments-add" rows="5" aria-describedby="medical-care-and-treatments-add"></textarea>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-variablility-add">
+            Variability
+          </label>
+          <textarea class="govuk-textarea" id="variability-add" name="variability-add" rows="5" aria-describedby="variability-add"></textarea>
+        </div>
+  
+  
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Mental health impacted?
+            </legend>
+  
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mental-health-add" name="mental-health-add" type="radio" value="Yes" aria-controls="conditional-mental-health" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="mental-health">
+                      Yes
+                    </label>
+                  </div>
+  
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mental-health">
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                          <legend class="govuk-fieldset__legend">
-                              is there self harm or suicidal ideation?
-                          </legend>
-                          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-                              <label class="govuk-label govuk-radios__label" for="changed-name">
-                                Yes
-                              </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-                              <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                                No
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="more-detail">
-                          Have they notified anyone?
-                        </label>
-                        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
-                      </div>
+                      <label class="govuk-label govuk-label--s" for="mental-health-yes">
+                        Enter whether there is suicidal ideation and if their healthcare providers are aware of this
+                      </label>
+  
+                        <textarea class="govuk-textarea" id="mental-health-yes" name="mental-health-check" rows="5">{{data["mental-health-yes"]}}</textarea>
+                    </div>
                 </div>
-            </fieldset>
+  
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="mental-health-no" name="mental-health-add" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="mental-health-no">
+                        No
+                      </label>
+                  </div>
+        
+           </div>
+        </div>
+  
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="hospital-admission" name="hospital-admission" type="checkbox" value="This condition or disability has led to hospital admissions for the claimant.">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              This condition or disability has led to hospital admissions for the claimant.
+            </label>
+          </div>
           </div>
 
     </fieldset>
@@ -110,7 +108,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </button>
       
     </div>
-    <p class="govuk-body"><a href="end-why" class="govuk-link">Abandon consultation</a></p>
+  
   </form>
       
 

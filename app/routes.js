@@ -3086,10 +3086,10 @@ router.post('/prompts/conditions', function(req, res) {
 
  router.post('/prompts/conditions-add', function(req, res) {
 
-  const condition = req.session.data['condition-name']
-  const conditionLength = req.session.data['condition-length']
-  const conditionSymptoms = req.session.data['symptoms']
-  const conditionVariability = req.session.data['variability']
+  const condition = req.session.data['condition-name-add']
+  const conditionLength = req.session.data['condition-start-add']
+  const conditionSymptoms = req.session.data['symptoms-add']
+  const conditionVariability = req.session.data['variability-add']
 
   const queriesCondition = req.session.data.queriesCondition || []
   queriesCondition.push({ condition, conditionLength, conditionSymptoms, conditionVariability })
