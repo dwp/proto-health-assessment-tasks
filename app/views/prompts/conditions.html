@@ -35,31 +35,31 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="condition-name">
           Condition or disability name
         </label>
-        <input class="govuk-input" id="condition-name" name="condition-name" type="text">
+        <input class="govuk-input" id="condition-name" name="condition-name" type="text" value="{{data["condition-name"]}}">
       </div>
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-start">
           When did the condition or disability start?
         </label>
-        <input class="govuk-input govuk-input--width-10" id="condition-start" name="condition-start" type="text">
+        <input class="govuk-input govuk-input--width-10" id="condition-start" name="condition-start" type="text" value="{{data["condition-start"]}}">
       </div>
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-frequency">
           Symptoms, impact and progression
         </label>
-        <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint"></textarea>
+        <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint">{{data["symptoms"]}}</textarea>
       </div>
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-care-treatments">
           Medical care and treatments
         </label>
-        <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments"></textarea>
+        <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments">{{data["meds-care-treatment"]}}</textarea>
       </div>
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-frequency">
           Variability
         </label>
-        <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint"></textarea>
+        <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint">{{data["variability"]}}</textarea>
       </div>
 
 
