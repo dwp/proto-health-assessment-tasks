@@ -36,28 +36,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="meds-name">
                 Medication name
               </label>
-              <input class="govuk-input" id="meds-name" name="meds-name" type="text">
+              <input class="govuk-input" id="meds-name" name="meds-name" type="text" value="{{data["meds-name"]}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="meds-frequency">
                 Frequency
               </label>
-              <input class="govuk-input" id="meds-frequency" name="meds-frequency" type="text">
+              <input class="govuk-input" id="meds-frequency" name="meds-frequency" type="text" value="{{data["meds-frequency"]}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="meds-dose">
                 Dosage
               </label>
-              <input class="govuk-input" id="meds-dose" name="meds-dose" type="text">
+              <input class="govuk-input" id="meds-dose" name="meds-dose" type="text" value="{{data["meds-dose"]}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="meds-reason">
                 Medication taken for
               </label>
-              <input class="govuk-input" id="meds-reason" name="meds-reason" type="text">
+              <input class="govuk-input" id="meds-reason" name="meds-reason" type="text" value="{{data["meds-reason"]}}">
             </div>
            
   
@@ -65,14 +65,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="meds-efficacy">
                 Effectiveness
               </label>
-              <input class="govuk-input" id="meds-efficacy" name="meds-efficacy" type="text">
+              <input class="govuk-input" id="meds-efficacy" name="meds-efficacy" type="text" value="{{data["meds-efficacy"]}}">
             </div>
   
             <div class="govuk-form-group">
               <label class="govuk-label" for="meds-side-effects">
                 Side effects (optional)
               </label>
-              <textarea class="govuk-textarea" id="meds-side-effects" name="meds-side-effects" rows="5" aria-describedby="symptoms-hint"></textarea>
+              <textarea class="govuk-textarea" id="meds-side-effects" name="meds-side-effects" rows="5" aria-describedby="symptoms-hint">{{data["meds-side-effects"]}}</textarea>
             </div>
           </div>
          
