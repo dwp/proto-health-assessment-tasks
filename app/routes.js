@@ -3079,11 +3079,25 @@ router.use((req, res, next) => {
 })
 
 // Prompts routes
-router.post('/prompts/conditions', function(req, res) {
+
+ //Routes for adding first condition only
+ router.post('/prompts/conditions', function(req, res) {
+
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start-add']
+  const conditionSymptoms = req.session.data['symptoms-add']
+  const conditionVariability = req.session.data['variability-add']
+
+  const firstConditionAdded = req.session.data.firstCondition || []
+  firstConditionAdded.push({ conditionName, conditionLength, conditionSymptoms, conditionVariability })
+  req.session.data.firstConditionAdded = firstConditionAdded
+
+  req.session.data.firstConditionAdded[req.session.data.firstConditionAdded.length - 1].action
   
   res.redirect('/prompts/conditions-add')
  })
 
+// Routes for adding another condition
  router.post('/prompts/conditions-add', function(req, res) {
 
   const condition = req.session.data['condition-name-add']
@@ -3097,6 +3111,9 @@ router.post('/prompts/conditions', function(req, res) {
 
   req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
   
-  res.redirect('/prompts/conditions-additional')
+  res.redirect('/prompts/conditions-addAnother')
  })
 
+ router.post('/prompts/conditions-addAnother', function(req, res) {
+    res.redirect('/prompts/conditions-add')
+})
