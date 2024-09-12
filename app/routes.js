@@ -3084,12 +3084,17 @@ router.use((req, res, next) => {
  router.post('/prompts/conditions', function(req, res) {
 
   const conditionName = req.session.data['condition-name-first']
-  const conditionLength = req.session.data['condition-start-add']
-  const conditionSymptoms = req.session.data['symptoms-add']
-  const conditionVariability = req.session.data['variability-add']
+  const conditionLength = req.session.data['condition-start']
+  const diagnosis = req.session.data['diagnosis']
+  const medicalcareTreatments = req.session.data['meds-care-treatments']
+  const hospital = req.session.data['hospital-admission']
+  const conditionSymptoms = req.session.data['symptoms']
+  const conditionVariability = req.session.data['variability']
+  const mentalHealth = req.session.data['mental-health-description']
+  const functionalRestriction = req.session.data['functional-restriction']
 
   const firstConditionAdded = req.session.data.firstCondition || []
-  firstConditionAdded.push({ conditionName, conditionLength, conditionSymptoms, conditionVariability })
+  firstConditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, conditionVariability, mentalHealth, functionalRestriction })
   req.session.data.firstConditionAdded = firstConditionAdded
 
   req.session.data.firstConditionAdded[req.session.data.firstConditionAdded.length - 1].action
@@ -3100,16 +3105,21 @@ router.use((req, res, next) => {
 // Routes for adding another condition
  router.post('/prompts/conditions-add', function(req, res) {
 
-  const condition = req.session.data['condition-name-add']
-  const conditionLength = req.session.data['condition-start-add']
-  const conditionSymptoms = req.session.data['symptoms-add']
-  const conditionVariability = req.session.data['variability-add']
+  const conditionAnother = req.session.data['condition-name-add']
+  const conditionLengthAnother = req.session.data['condition-start-add']
+  const diagnosisAnother = req.session.data['diagnosis-add']
+  const medicalcareTreatmentsAnother = req.session.data['meds-care-treatments-add']
+  const hospitalAnother = req.session.data['hospital-admission-add']
+  const conditionSymptomsAnother = req.session.data['symptoms-add']
+  const conditionVariabilityAnother = req.session.data['variability-add']
+  const mentalHealthAnother = req.session.data['mental-health-description-add']
+  const functionalRestrictionAnother = req.session.data['functional-restriction-add']
 
-  const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition, conditionLength, conditionSymptoms, conditionVariability })
-  req.session.data.queriesCondition = queriesCondition
+  const OtherConditions = req.session.data.OtherConditions || []
+  OtherConditions.push({ conditionAnother, conditionLengthAnother, diagnosisAnother, conditionSymptomsAnother, medicalcareTreatmentsAnother, hospitalAnother, conditionVariabilityAnother, mentalHealthAnother, functionalRestrictionAnother })
+  req.session.data.OtherConditions = OtherConditions
 
-  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+  req.session.data.OtherConditions[req.session.data.OtherConditions.length - 1].action
   
   res.redirect('/prompts/conditions-addAnother')
  })
