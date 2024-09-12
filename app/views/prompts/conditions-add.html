@@ -1,4 +1,4 @@
-{% extends "layouts/layout-ta.html" %}
+{% extends "layouts/prompts-without-sidenav" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -30,59 +30,117 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </label>
           <input class="govuk-input" id="condition-name-add" name="condition-name-add" type="text">
         </div>
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="condition-start-add">
             When did the condition or disability start?
           </label>
-          <input class="govuk-input govuk-input--width-10" id="condition-start-add" name="condition-start-add" type="text">
+          <input class="govuk-input" id="condition-start-add" name="condition-start-add" type="text">
         </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="diagnosis-add">
+            Diagnosis
+          </label>
+          <input class="govuk-input" id="diagnosis-add" name="diagnosis-add" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="meds-care-treatments">
+            Medical care, investigations and treatments
+          </label>
+          <div id="mental-health-hint" class="govuk-hint">
+            Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
+          </div>
+          <br>
+          <textarea class="govuk-textarea" id="meds-care-treatments-add" name="meds-care-treatments-add" rows="5" aria-describedby="medical-care-and-treatments"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hospital-admission">
+            Hospital admissions
+          </label>
+          <br>
+  
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="hospital-admission-add" name="hospital-admission-add" type="checkbox" value="There have been no hospital admissions as a result of 
+              this condition or disability.">
+              <label class="govuk-label govuk-checkboxes__label" for="hospital-admission">
+                There have been no hospital admissions as a result of this condition or disability.
+              </label>
+            </div>
+            </div>
+            <br>
+          <textarea class="govuk-textarea" id="hospital-admission-add" name="hospital-admission-add" rows="5" aria-describedby="hospital-admission"></textarea>
+        </div>
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="meds-frequency-add">
             Symptoms, impact and progression
           </label>
           <textarea class="govuk-textarea" id="symptoms-add" name="symptoms-add" rows="5" aria-describedby="symptoms-add"></textarea>
         </div>
+    
         <div class="govuk-form-group">
-          <label class="govuk-label" for="meds-care-treatments-add">
-            Medical care and treatments
-          </label>
-          <textarea class="govuk-textarea" id="meds-care-treatments-add" name="meds-care-treatments-add" rows="5" aria-describedby="medical-care-and-treatments-add"></textarea>
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="meds-variablility-add">
+          <label class="govuk-label" for="meds-frequency">
             Variability
           </label>
-          <textarea class="govuk-textarea" id="variability-add" name="variability-add" rows="5" aria-describedby="variability-add"></textarea>
+          <br>
+  
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="variability-check" name="variability-check" type="checkbox" value="There is no variability for this condition or disability.">
+              <label class="govuk-label govuk-checkboxes__label" for="variability">
+                There is no variability for this condition or disability.
+              </label>
+            </div>
+            </div>
+            <br>
+  
+            <div id="variability-hint" class="govuk-hint">
+              Include how symptoms might get better or worse over time.
+            </div>
+          <textarea class="govuk-textarea" id="variability-add" name="variability-add" rows="5" aria-describedby="variability-hint"></textarea>
         </div>
-  
-  
+
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Mental health impacted?
-            </legend>
+          <label class="govuk-label" for="mental-health-condition">
+            Suicidal thoughts and self harm (optional)
+          </label>
+          <br>
   
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="mental-health-check" name="mental-health-check" type="checkbox" value="There are no suicidal thoughts or self harming as a result of this condition or disability.">
+              <label class="govuk-label govuk-checkboxes__label" for="mental-health-check">
+                There are no suicidal thoughts or self harming as a result of this condition or disability.
+              </label>
+            </div>
+            </div>
+            <br>
+            <div id="mental-health-hint" class="govuk-hint">
+              Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
+            </div>
+          <textarea class="govuk-textarea" id="mental-health-description-add" name="mental-health-description-add" rows="5" aria-describedby="mental-health"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="functional-restriction">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Are significant functional restrictions caused by this condition or disability?
+            </legend>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="mental-health-add" name="mental-health-add" type="radio" value="Yes" aria-controls="conditional-mental-health" aria-expanded="false">
-                    <label class="govuk-label govuk-radios__label" for="mental-health">
+                    <input class="govuk-radios__input" id="functional-yes" name="functional-restriction-add" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="functional-yes">
                       Yes
                     </label>
                   </div>
   
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mental-health">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-label--s" for="mental-health-yes">
-                        Enter whether there is suicidal ideation and if their healthcare providers are aware of this
-                      </label>
-  
-                        <textarea class="govuk-textarea" id="mental-health-yes" name="mental-health-check" rows="5">{{data["mental-health-yes"]}}</textarea>
-                    </div>
-                </div>
-  
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="mental-health-no" name="mental-health-add" type="radio" value="No">
-                      <label class="govuk-label govuk-radios__label" for="mental-health-no">
+                      <input class="govuk-radios__input" id="fuctional-no" name="functional-restriction-add" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="functional-no">
                         No
                       </label>
                   </div>
@@ -90,14 +148,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
            </div>
         </div>
   
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="hospital-admission" name="hospital-admission" type="checkbox" value="This condition or disability has led to hospital admissions for the claimant.">
-            <label class="govuk-label govuk-checkboxes__label" for="waste">
-              This condition or disability has led to hospital admissions for the claimant.
-            </label>
-          </div>
-          </div>
+  
+      
 
     </fieldset>
   </div>
