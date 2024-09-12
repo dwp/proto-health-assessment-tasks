@@ -24,88 +24,86 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </h1>
          
         <!--logic for adding more than one condition (adding another)-->
-          {% for query in data['queriesCondition'] | reverse %}
+          {% for AddAnotherCondition in data['OtherConditions'] | reverse %}
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Condition or disability name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ query.condition }} 
+                {{ AddAnotherCondition.conditionAnother }} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                </ul>
               </dd>
             </div>
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 When did the condition or disability start?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ query.conditionLength }}
+                {{ AddAnotherCondition.conditionLengthAnother }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Symptoms, impact and progression
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ query.conditionSymptoms }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Medical care and treatments
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ query.conditionSymptoms }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Variability
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ query.conditionVariability }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Mental health impacted?
-              </dt>
-              <dd class="govuk-summary-list__value">
-
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                  </li>
-                </ul>
               </dd>
             </div>
           </dl>
 
+            <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
+
+            <p>{{ AddAnotherCondition.medicalcareTreatmentsAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+               
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+      
+            <p>{{ AddAnotherCondition.hospitalAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
+      
+            <p>{{ AddAnotherCondition.conditionSymptomsAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
+      
+            <p>{{ AddAnotherCondition.conditionVariabilityAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+           
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+
+            <p>{{ AddAnotherCondition.mentalHealthAnother }}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+                Functional restriction
+               </dt>
+               <dd class="govuk-summary-list__value">
+                 {{ AddAnotherCondition.functionalRestrictionAnother }}
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <ul class="govuk-summary-list__actions-list">
+                   <li class="govuk-summary-list__actions-list-item">
+                    
+                   </li>
+                 </ul>
+               </dd>
+              </dl>
           <br>
           <br>
           {% endfor %}
@@ -122,7 +120,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                {{ firstCondition.conditionName }} 
              </dd>
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">condition</span>
+                  </a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">condition</span>
+                  </a></li>
+              </ul>
              </dd>
            </div>
            <div class="govuk-summary-list__row">
@@ -133,71 +138,83 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                {{ firstCondition.conditionLength }}
              </dd>
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+              
              </dd>
            </div>
            <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Symptoms, impact and progression
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ firstCondition.conditionSymptoms }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
-             </dd>
-           </div>
+            <dt class="govuk-summary-list__key">
+              Diagnosis
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ firstCondition.diagnosis }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+      </dl>
+      <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
+
+      <p>{{ firstCondition.medicalcareTreatments }}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+         
+      <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+
+      <p>{{ firstCondition.hospital }}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
+
+      <p>{{ firstCondition.conditionSymptoms }}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
+
+      <p>{{ firstCondition.conditionVariability }}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+
+      <p>{{ firstCondition.mentalHealth }}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+         
+           <dl class="govuk-summary-list">
            <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Medical care and treatments
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ firstCondition.conditionSymptoms }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <ul class="govuk-summary-list__actions-list">
-                 <li class="govuk-summary-list__actions-list-item">
-                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                 </li>
-               </ul>
-             </dd>
-           </div>
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Variability
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ firstCondition.conditionVariability }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <ul class="govuk-summary-list__actions-list">
-                 <li class="govuk-summary-list__actions-list-item">
-                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                 </li>
-               </ul>
-             </dd>
-           </div>
-           <br>
-           <br>
+            <dt class="govuk-summary-list__key">
+              Functional restriction
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ firstCondition.functionalRestriction }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                 
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        
 
            {% endfor %}
 
-          
-  
-
-      
 
 <form action="#" method="post">
   
   <div class="govuk-button-group">
-
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Add another condition
     </button>
-
     </div>
 
       </form>
+    </div>
+</div>
 </div>      
     </div>
 
