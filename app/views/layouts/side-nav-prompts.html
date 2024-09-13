@@ -114,7 +114,7 @@
           <!-- <h4 class="moj-side-navigation__title">Section 1</h4> -->
           <ul class="moj-side-navigation__list">
 
-          <h4 class="moj-side-navigation__title">History</h4>
+          <h4 class="moj-side-navigation__title">Evidence</h4>
             {% if data["source"] == 'evidence' or data["source"] == 'default' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="evidence?source=evidence" aria-current="location">Evidence</a>
@@ -122,41 +122,6 @@
             {% else %}
             <li class="moj-side-navigation__item">
               <a href="evidence?source=evidence" aria-current="location">Evidence</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Condition history' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="conditions?source=Condition history">Condition history</a>
-            </li>
-            {% elseif (data['condition-name-add']) %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions-addAnother?source=Condition history">Condition history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions?source=Condition history">Condition history</a>
-            </li>
-            
-            {% endif %}
-
-            {% if data["source"] == 'Current medication' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="med-treatment?source=Current medication">Current medication</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="med-treatment?source=Current medication">Current medication</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Social and occupational history' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
             </li>
             {% endif %}
 
@@ -200,6 +165,45 @@
               <a href="attendees?source=Additional attendees">Additional attendees</a>
             </li>
             {% endif %}
+
+            <h4 class="moj-side-navigation__title">History</h4>
+
+            {% if data["source"] == 'Condition history' %} 
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="conditions?source=Condition history">Condition history</a>
+            </li>
+            {% elseif (data['condition-name-add']) %}
+            <li class="moj-side-navigation__item">
+              <a href="conditions-addAnother?source=Condition history">Condition history</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="conditions?source=Condition history">Condition history</a>
+            </li>
+           
+            {% endif %}
+
+            {% if data["source"] == 'Current medication' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="med-treatment?source=Current medication">Current medication</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="med-treatment?source=Current medication">Current medication</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Social and occupational history' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
+            </li>
+            {% endif %}
+
+            
 
           
              <h4 class="moj-side-navigation__title">Daily living</h4>
