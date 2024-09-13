@@ -20,18 +20,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
-          Ask about the claimant's medical conditions
+          Condition history
         </h1>
-         
-        <!--logic for adding more than one condition (adding another)-->
-          {% for AddAnotherCondition in data['OtherConditions'] | reverse %}
+
+          <!--logic for adding the first condition only-->
+          {% for firstCondition in data['firstConditionAdded'] %}
+          <h2 class="govuk-heading-m">{{ firstCondition.conditionName }}</h2>
           <dl class="govuk-summary-list">
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Condition or disability name
+                When did the condition or disability start?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ AddAnotherCondition.conditionAnother }} 
+                {{ firstCondition.conditionLength }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
@@ -44,7 +46,73 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </ul>
               </dd>
             </div>
+       </dl>
+       <h3 class="govuk-heading-s" style="margin-top:-3%;">Diagnosis</h3>
+ 
+       <p>{{ firstCondition.diagnosis }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+       <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
+ 
+       <p>{{ firstCondition.medicalcareTreatments }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+ 
+       {% if data["hospital-admission-check"] == "There have been no hospital admissions as a result of this condition or disability." %}
+             <p class="govuk-body">{{data["hospital-admission-check"]}}</p>
+             {% elseif data["hospital-admission-check"] == "None" %}
+       
+       {% endif %}
+ 
+       <p>{{ firstCondition.hospital }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
+ 
+       <p>{{ firstCondition.conditionSymptoms }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
+ 
+       <p>{{ firstCondition.conditionVariability }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+ 
+       <p>{{ firstCondition.mentalHealth }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          
+            <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Functional restriction
+             </dt>
+             <dd class="govuk-summary-list__value">
+               {{ firstCondition.functionalRestriction }}
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <ul class="govuk-summary-list__actions-list">
+                 <li class="govuk-summary-list__actions-list-item">
+                  
+                 </li>
+               </ul>
+             </dd>
+           </dl>
+            {% endfor %}
+
+            <br>
+         
+        <!--logic for adding more than one condition (adding another)-->
+          {% for AddAnotherCondition in data['OtherConditions'] %}
+          <h2 class="govuk-heading-m">{{ AddAnotherCondition.conditionAnother }}</h2>
+          <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 When did the condition or disability start?
@@ -53,9 +121,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {{ AddAnotherCondition.conditionLengthAnother }}
               </dd>
               <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                </ul>
               </dd>
             </div>
           </dl>
+
+          <h3 class="govuk-heading-s" style="margin-top:-3%;">Diagnosis</h3>
+ 
+          <p>{{ AddAnotherCondition.diagnosisAnother }}</p>
+    
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
 
@@ -64,6 +146,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                
             <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+
+            {% if data["hospital-admission-check"] == "There have been no hospital admissions as a result of this condition or disability." %}
+            <p class="govuk-body">{{data["hospital-admission-check"]}}</p>
+            {% elseif data["hospital-admission-check"] == "None" %}
+      
+            {% endif %}
       
             <p>{{ AddAnotherCondition.hospitalAnother }}</p>
       
@@ -109,99 +197,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% endfor %}
 
 
-          <!--logic for adding the first condition only-->
-         {% for firstCondition in data['firstConditionAdded'] | reverse %}
-         <dl class="govuk-summary-list">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Condition or disability name
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ firstCondition.conditionName }} 
-             </dd>
-             <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Change<span class="govuk-visually-hidden">condition</span>
-                  </a></li>
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                    Remove<span class="govuk-visually-hidden">condition</span>
-                  </a></li>
-              </ul>
-             </dd>
-           </div>
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               When did the condition or disability start?
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ firstCondition.conditionLength }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-              
-             </dd>
-           </div>
-           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Diagnosis
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ firstCondition.diagnosis }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
-      </dl>
-      <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
-
-      <p>{{ firstCondition.medicalcareTreatments }}</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-         
-      <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
-
-      <p>{{ firstCondition.hospital }}</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
-
-      <p>{{ firstCondition.conditionSymptoms }}</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
-
-      <p>{{ firstCondition.conditionVariability }}</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
-
-      <p>{{ firstCondition.mentalHealth }}</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-         
-           <dl class="govuk-summary-list">
-           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Functional restriction
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ firstCondition.functionalRestriction }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                 
-                </li>
-              </ul>
-            </dd>
-          </dl>
         
-
-           {% endfor %}
 
 
 <form action="#" method="post">

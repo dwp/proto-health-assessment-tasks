@@ -35,28 +35,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-name-first">
-          Condition or disability name
+          <b>Condition or disability name</b>
         </label>
         <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text" value="{{data["condition-name-first"]}}">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-start">
-          When did the condition or disability start?
+          <b>When did the condition or disability start?</b>
         </label>
         <input class="govuk-input" id="condition-start" name="condition-start" type="text" value="{{data["condition-start"]}}">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="diagnosis">
-          Diagnosis
+          <b>Diagnosis</b>
         </label>
-        <input class="govuk-input" id="diagnosis" name="diagnosis" type="text" value="{{data["diagnosis"]}}">
+        <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis">{{data["diagnosis"]}}</textarea>
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-care-treatments">
-          Medical care, investigations and treatments
+          <b>Medical care, investigations and treatments</b>
         </label>
         <div id="mental-health-hint" class="govuk-hint">
           Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
@@ -67,14 +67,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="hospital-admission">
-          Hospital admissions
+          <b>Hospital admissions</b>
         </label>
         <br>
 
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="hospital-admission" name="hospital-admission" type="checkbox" value="There have been no hospital admissions as a result of 
-            this condition or disability.">
+            <input class="govuk-checkboxes__input" id="hospital-admission-check" name="hospital-admission-check" type="checkbox" value="There have been no hospital admissions as a result of this condition or disability.">
             <label class="govuk-label govuk-checkboxes__label" for="hospital-admission">
               There have been no hospital admissions as a result of this condition or disability.
             </label>
@@ -86,14 +85,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="symptoms">
-          Symptoms, impact and progression
+          <b>Symptoms, impact and progression</b>
         </label>
         <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint">{{data["symptoms"]}}</textarea>
       </div>
       
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-frequency">
-          Variability
+          <b>Variability</b>
         </label>
         <br>
 
@@ -115,7 +114,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="mental-health-condition">
-          Suicidal thoughts and self harm (optional)
+          <b>Suicidal thoughts and self harm (optional)</b>
         </label>
         <br>
 
@@ -163,6 +162,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Add another condition
           </button>
+         
           
 
       </fieldset>
