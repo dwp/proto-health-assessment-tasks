@@ -3102,9 +3102,12 @@ router.use((req, res, next) => {
   res.redirect('/prompts/conditions-add')
  })
 
+ router.post('/prompts/conditions-addAnother', function(req, res) {
+  res.redirect('/prompts/conditions-add')
+})
+
 // Routes for adding another condition
  router.post('/prompts/conditions-add', function(req, res) {
-
   const conditionAnother = req.session.data['condition-name-add']
   const conditionLengthAnother = req.session.data['condition-start-add']
   const diagnosisAnother = req.session.data['diagnosis-add']
@@ -3124,6 +3127,4 @@ router.use((req, res, next) => {
   res.redirect('/prompts/conditions-addAnother')
  })
 
- router.post('/prompts/conditions-addAnother', function(req, res) {
-    res.redirect('/prompts/conditions-add')
-})
+ 

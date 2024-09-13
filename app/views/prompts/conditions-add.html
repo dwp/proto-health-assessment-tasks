@@ -11,7 +11,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
+   
   <form action="#" method="post" id="auto-redirect">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -24,30 +24,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </legend>
   
+        <h2 class="govuk-heading-m">Add another condition or disability</h2>
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="condition-name-add">
-            Condition or disability name
+            <b>Condition or disability name</b>
           </label>
           <input class="govuk-input" id="condition-name-add" name="condition-name-add" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="condition-start-add">
-            When did the condition or disability start?
+            <b>When did the condition or disability start?</b>
           </label>
           <input class="govuk-input" id="condition-start-add" name="condition-start-add" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="diagnosis-add">
-            Diagnosis
+            <b>Diagnosis</b>
           </label>
-          <input class="govuk-input" id="diagnosis-add" name="diagnosis-add" type="text">
+          <textarea class="govuk-textarea" id="diagnosis-add" name="diagnosis-add" rows="5" aria-describedby="diagnosis"></textarea>
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="meds-care-treatments">
-            Medical care, investigations and treatments
+            <b>Medical care, investigations and treatments</b>
           </label>
           <div id="mental-health-hint" class="govuk-hint">
             Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
@@ -58,7 +60,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="hospital-admission">
-            Hospital admissions
+            <b>Hospital admissions</b>
           </label>
           <br>
   
@@ -77,14 +79,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="meds-frequency-add">
-            Symptoms, impact and progression
+            <b>Symptoms, impact and progression</b>
           </label>
           <textarea class="govuk-textarea" id="symptoms-add" name="symptoms-add" rows="5" aria-describedby="symptoms-add"></textarea>
         </div>
     
         <div class="govuk-form-group">
           <label class="govuk-label" for="meds-frequency">
-            Variability
+            <b>Variability</b>
           </label>
           <br>
   
@@ -106,7 +108,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="mental-health-condition">
-            Suicidal thoughts and self harm (optional)
+            <b>Suicidal thoughts and self harm (optional)</b>
           </label>
           <br>
   
@@ -147,18 +149,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         
            </div>
         </div>
-  
-  
-      
 
     </fieldset>
   </div>
       <div class="govuk-button-group">
 
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
-      
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and continue
+        </button>
+
+        <p><a href="conditions">Cancel</a></p>
+       
+      </div>
     </div>
   
   </form>
