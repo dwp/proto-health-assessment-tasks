@@ -66,8 +66,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="hospital-admission-add" name="hospital-admission-add" type="checkbox" value="There have been no hospital admissions as a result of 
-              this condition or disability.">
+              <input class="govuk-checkboxes__input" id="hospital-admission-check-add" name="hospital-admission-check-add" type="checkbox" value="There have been no hospital admissions as a result of this condition or disability.">
               <label class="govuk-label govuk-checkboxes__label" for="hospital-admission">
                 There have been no hospital admissions as a result of this condition or disability.
               </label>
@@ -158,7 +157,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Save and continue
         </button>
 
+        {% if (data['condition-name-add']) %}
+        <p><a href="conditions-addAnother">Cancel</a></p>
+        {% else %}
         <p><a href="conditions">Cancel</a></p>
+        {% endif %}
        
       </div>
     </div>
