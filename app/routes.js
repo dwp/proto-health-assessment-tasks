@@ -3088,13 +3088,16 @@ router.use((req, res, next) => {
   const diagnosis = req.session.data['diagnosis']
   const medicalcareTreatments = req.session.data['meds-care-treatments']
   const hospital = req.session.data['hospital-admission']
+  const hospitalCheck = req.session.data['hospital-admission-check']
   const conditionSymptoms = req.session.data['symptoms']
   const conditionVariability = req.session.data['variability']
+  const conditionVariabilityCheck = req.session.data['variability-check']
   const mentalHealth = req.session.data['mental-health-description']
+  const mentalHealthCheck = req.session.data['mental-health-check']
   const functionalRestriction = req.session.data['functional-restriction']
 
   const firstConditionAdded = req.session.data.firstCondition || []
-  firstConditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, conditionVariability, mentalHealth, functionalRestriction })
+  firstConditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
   req.session.data.firstConditionAdded = firstConditionAdded
 
   req.session.data.firstConditionAdded[req.session.data.firstConditionAdded.length - 1].action
@@ -3113,13 +3116,16 @@ router.use((req, res, next) => {
   const diagnosisAnother = req.session.data['diagnosis-add']
   const medicalcareTreatmentsAnother = req.session.data['meds-care-treatments-add']
   const hospitalAnother = req.session.data['hospital-admission-add']
+  const hospitalCheckbox = req.session.data['hospital-admission-check-add']
   const conditionSymptomsAnother = req.session.data['symptoms-add']
+  const conditionVariabilityCheck = req.session.data['variability-check']
   const conditionVariabilityAnother = req.session.data['variability-add']
   const mentalHealthAnother = req.session.data['mental-health-description-add']
+  const mentalHealthBox = req.session.data['mental-health-check']
   const functionalRestrictionAnother = req.session.data['functional-restriction-add']
 
   const OtherConditions = req.session.data.OtherConditions || []
-  OtherConditions.push({ conditionAnother, conditionLengthAnother, diagnosisAnother, conditionSymptomsAnother, medicalcareTreatmentsAnother, hospitalAnother, conditionVariabilityAnother, mentalHealthAnother, functionalRestrictionAnother })
+  OtherConditions.push({ conditionAnother, conditionLengthAnother, diagnosisAnother, conditionSymptomsAnother, medicalcareTreatmentsAnother, hospitalAnother, hospitalCheckbox, conditionVariabilityAnother, conditionVariabilityCheck, mentalHealthAnother, mentalHealthBox, functionalRestrictionAnother })
   req.session.data.OtherConditions = OtherConditions
 
   req.session.data.OtherConditions[req.session.data.OtherConditions.length - 1].action
