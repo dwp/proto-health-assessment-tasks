@@ -60,13 +60,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           
        <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
- 
-       {% if data["hospital-admission-check"] == "There have been no hospital admissions as a result of this condition or disability." %}
-             <p class="govuk-body">{{data["hospital-admission-check"]}}</p>
-             {% elseif data["hospital-admission-check"] == "None" %}
-       
-       {% endif %}
- 
+
+      <p>{{ firstCondition.hospitalCheck }}</p>
+           
        <p>{{ firstCondition.hospital }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -79,12 +75,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
  
        <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
  
+       <p>{{ firstCondition.conditionVariabilityCheck }}</p>
+
        <p>{{ firstCondition.conditionVariability }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
  
        <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
  
+       <p>{{ firstCondition.mentalHealthCheck }}</p>
+
        <p>{{ firstCondition.mentalHealth }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -146,13 +146,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                
             <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
-
-            {% if data["hospital-admission-check"] == "There have been no hospital admissions as a result of this condition or disability." %}
-            <p class="govuk-body">{{data["hospital-admission-check"]}}</p>
-            {% elseif data["hospital-admission-check"] == "None" %}
-      
-            {% endif %}
-      
+            
+            <p>{{ AddAnotherCondition.hospitalCheckbox"}}</p>
+        
             <p>{{ AddAnotherCondition.hospitalAnother }}</p>
       
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -165,11 +161,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       
             <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
       
+            <p>{{ AddAnotherCondition.conditionVariabilityCheck }}</p>
+
             <p>{{ AddAnotherCondition.conditionVariabilityAnother }}</p>
       
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
            
             <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+
+            <p>{{ AddAnotherCondition.mentalHealthBox }}</p>
 
             <p>{{ AddAnotherCondition.mentalHealthAnother }}</p>
 
