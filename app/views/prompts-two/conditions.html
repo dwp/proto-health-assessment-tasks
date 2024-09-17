@@ -1,11 +1,10 @@
-{% extends "layouts/side-nav-prompts" %}
+{% extends "layouts/prompts-without-sidenav" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
-{% block content_left %}
+{% block content %}
 
 <style type="text/css">
   .govuk-textarea {
