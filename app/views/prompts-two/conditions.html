@@ -37,21 +37,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="condition-name-first">
           <b>Condition or disability name</b>
         </label>
-        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text" value="{{data["condition-name-first"]}}">
+        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-start">
           <b>When did the condition or disability start?</b>
         </label>
-        <input class="govuk-input" id="condition-start" name="condition-start" type="text" value="{{data["condition-start"]}}">
+        <input class="govuk-input" id="condition-start" name="condition-start" type="text">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="diagnosis">
           <b>Diagnosis</b>
         </label>
-        <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis">{{data["diagnosis"]}}</textarea>
+        <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis"></textarea>
       </div>
 
       <div class="govuk-form-group">
@@ -62,7 +62,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
         </div>
         <br>
-        <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments">{{data["meds-care-treatments"]}}</textarea>
+        <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments"></textarea>
       </div>
 
       <div class="govuk-form-group">
@@ -80,14 +80,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
           </div>
           <br>
-        <textarea class="govuk-textarea" id="hospital-admission" name="hospital-admission" rows="5" aria-describedby="hospital-admission">{{data["hospital-admission"]}}</textarea>
+        <textarea class="govuk-textarea" id="hospital-admission" name="hospital-admission" rows="5" aria-describedby="hospital-admission"></textarea>
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="symptoms">
           <b>Symptoms, impact and progression</b>
         </label>
-        <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint">{{data["symptoms"]}}</textarea>
+        <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint"></textarea>
       </div>
       
       <div class="govuk-form-group">
@@ -109,7 +109,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div id="waste-hint" class="govuk-hint">
             Include how symptoms might get better or worse over time.
           </div>
-        <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint">{{data["variability"]}}</textarea>
+        <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint"></textarea>
       </div>
 
       <div class="govuk-form-group">
@@ -130,7 +130,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div id="mental-health-hint" class="govuk-hint">
             Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
           </div>
-        <textarea class="govuk-textarea" id="mental-health-description" name="mental-health-description" rows="5" aria-describedby="mental-health">{{data["mental-health-description"]}}</textarea>
+        <textarea class="govuk-textarea" id="mental-health-description" name="mental-health-description" rows="5" aria-describedby="mental-health"></textarea>
       </div>
 
 
@@ -159,10 +159,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <br>
           <br>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Add another condition
+
+          <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
           </button>
-         
+
+          {% if (data['conditionAdded']) %}
+          <p><a href="conditions-addAnother">Cancel</a></p>
+          {% else %}
+          <p><a href="conditions-none">Cancel</a></p>
+          {% endif %}
+
+         </div>
           
 
       </fieldset>
