@@ -185,11 +185,15 @@
 
             {% if data["source"] == 'Current medication' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="med-treatment?source=Current medication">Current medication</a>
+              <a href="medications-none?source=Current medication">Current medication</a>
+            </li>
+            {% elseif (data['medicationAdded']) %}
+            <li class="moj-side-navigation__item">
+              <a href="medication-addAnother?source=Current medication">Current medication</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="med-treatment?source=Current medication">Current medication</a>
+              <a href="medications-none?source=Current medication">Current medication</a>
             </li>
             {% endif %}
 
