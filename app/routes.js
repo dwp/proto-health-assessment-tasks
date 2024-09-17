@@ -3133,4 +3133,40 @@ router.use((req, res, next) => {
   res.redirect('/prompts/conditions-addAnother')
  })
 
- 
+
+ // Routes for prompts iteration two //
+
+  // Routes for adding another condition
+  router.post('/prompts-two/conditions-none', function(req, res) {
+      
+    res.redirect('/prompts-two/conditions')
+   })
+
+ // Routes for adding another condition
+ router.post('/prompts-two/conditions', function(req, res) {
+    const conditionName = req.session.data['condition-name-first']
+    const conditionLength = req.session.data['condition-start']
+    const diagnosis = req.session.data['diagnosis']
+    const medicalcareTreatments = req.session.data['meds-care-treatments']
+    const hospital = req.session.data['hospital-admission']
+    const hospitalCheck = req.session.data['hospital-admission-check']
+    const conditionSymptoms = req.session.data['symptoms']
+    const conditionVariability = req.session.data['variability']
+    const conditionVariabilityCheck = req.session.data['variability-check']
+    const mentalHealth = req.session.data['mental-health-description']
+    const mentalHealthCheck = req.session.data['mental-health-check']
+    const functionalRestriction = req.session.data['functional-restriction']
+  
+    const conditionAdded = req.session.data.conditionAdded || []
+    conditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
+    req.session.data.conditionAdded = conditionAdded
+  
+    req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+  
+  res.redirect('/prompts-two/conditions-addAnother')
+ })
+
+ router.post('/prompts-two/conditions-addAnother', function(req, res) {
+
+  res.redirect('/prompts-two/conditions')
+})
