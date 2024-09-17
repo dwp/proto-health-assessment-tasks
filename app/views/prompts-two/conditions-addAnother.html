@@ -1,0 +1,217 @@
+-{% extends "layouts/side-nav-prompts" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Condition history
+        </h1>
+
+          <!--logic for adding the first condition only-->
+          {% for firstCondition in data['firstConditionAdded'] %}
+          <h2 class="govuk-heading-m">{{ firstCondition.conditionName }}</h2>
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did the condition or disability start?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ firstCondition.conditionLength }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+       </dl>
+       <h3 class="govuk-heading-s" style="margin-top:-3%;">Diagnosis</h3>
+ 
+       <p>{{ firstCondition.diagnosis }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+       <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
+ 
+       <p>{{ firstCondition.medicalcareTreatments }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+
+      <p>{{ firstCondition.hospitalCheck }}</p>
+           
+       <p>{{ firstCondition.hospital }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
+ 
+       <p>{{ firstCondition.conditionSymptoms }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
+ 
+       <p>{{ firstCondition.conditionVariabilityCheck }}</p>
+
+       <p>{{ firstCondition.conditionVariability }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+ 
+       <p>{{ firstCondition.mentalHealthCheck }}</p>
+
+       <p>{{ firstCondition.mentalHealth }}</p>
+ 
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          
+            <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Functional restriction
+             </dt>
+             <dd class="govuk-summary-list__value">
+               {{ firstCondition.functionalRestriction }}
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <ul class="govuk-summary-list__actions-list">
+                 <li class="govuk-summary-list__actions-list-item">
+                  
+                 </li>
+               </ul>
+             </dd>
+           </dl>
+            {% endfor %}
+
+            <br>
+         
+        <!--logic for adding more than one condition (adding another)-->
+          {% for AddAnotherCondition in data['OtherConditions'] %}
+          <h2 class="govuk-heading-m">{{ AddAnotherCondition.conditionAnother }}</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did the condition or disability start?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ AddAnotherCondition.conditionLengthAnother }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">condition</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <h3 class="govuk-heading-s" style="margin-top:-3%;">Diagnosis</h3>
+ 
+          <p>{{ AddAnotherCondition.diagnosisAnother }}</p>
+    
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
+
+            <p>{{ AddAnotherCondition.medicalcareTreatmentsAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+               
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
+            
+            <p>{{ AddAnotherCondition.hospitalCheckbox"}}</p>
+        
+            <p>{{ AddAnotherCondition.hospitalAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
+      
+            <p>{{ AddAnotherCondition.conditionSymptomsAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
+      
+            <p>{{ AddAnotherCondition.conditionVariabilityCheck }}</p>
+
+            <p>{{ AddAnotherCondition.conditionVariabilityAnother }}</p>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+           
+            <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
+
+            <p>{{ AddAnotherCondition.mentalHealthBox }}</p>
+
+            <p>{{ AddAnotherCondition.mentalHealthAnother }}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+                Functional restriction
+               </dt>
+               <dd class="govuk-summary-list__value">
+                 {{ AddAnotherCondition.functionalRestrictionAnother }}
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <ul class="govuk-summary-list__actions-list">
+                   <li class="govuk-summary-list__actions-list-item">
+                    
+                   </li>
+                 </ul>
+               </dd>
+              </dl>
+          <br>
+          <br>
+          {% endfor %}
+
+
+        
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another condition
+    </button>
+    </div>
+
+      </form>
+    </div>
+</div>
+</div>      
+    </div>
+
+{% endblock %}
