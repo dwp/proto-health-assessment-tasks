@@ -3156,7 +3156,7 @@ router.use((req, res, next) => {
     const mentalHealth = req.session.data['mental-health-description']
     const mentalHealthCheck = req.session.data['mental-health-check']
     const functionalRestriction = req.session.data['functional-restriction']
-  
+
     const conditionAdded = req.session.data.conditionAdded || []
     conditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
     req.session.data.conditionAdded = conditionAdded
@@ -3165,6 +3165,31 @@ router.use((req, res, next) => {
   
   res.redirect('/prompts-two/conditions-addAnother')
  })
+
+ // Routes for adding another condition //\
+ router.post('/prompts-two/conditions-change', function(req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const diagnosis = req.session.data['diagnosis']
+  const medicalcareTreatments = req.session.data['meds-care-treatments']
+  const hospital = req.session.data['hospital-admission']
+  const hospitalCheck = req.session.data['hospital-admission-check']
+  const conditionSymptoms = req.session.data['symptoms']
+  const conditionVariability = req.session.data['variability']
+  const conditionVariabilityCheck = req.session.data['variability-check']
+  const mentalHealth = req.session.data['mental-health-description']
+  const mentalHealthCheck = req.session.data['mental-health-check']
+  const functionalRestriction = req.session.data['functional-restriction']
+  const conditionNo = req.session.data['index']
+  const currentPage = req.session.data.source
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction, currentPage })
+  req.session.data.conditionAdded = conditionAdded
+
+
+res.redirect('/prompts-two/conditions-addAnother')
+})
 
  router.post('/prompts-two/conditions-addAnother', function(req, res) {
 

@@ -22,12 +22,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <h1 class="govuk-heading-l">
           Condition history
         </h1>
-
+       
           <!--logic for adding the first condition only-->
           {% for condition in data['conditionAdded'] %}
+           
           <h2 class="govuk-heading-m">{{ condition.conditionName }}</h2>
           <dl class="govuk-summary-list">
-
+            <!-- {{loop.index0}}: {{ condition.conditionName}} -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 When did the condition or disability start?
@@ -37,11 +38,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}">
+                        Change<span class="govuk-visually-hidden">condition change</span>
                     </a></li>
                   <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
+                      Remove<span class="govuk-visually-hidden">condition remove</span>
                     </a></li>
                 </ul>
               </dd>
