@@ -197,6 +197,20 @@
             </li>
             {% endif %}
 
+            {% if data["source"] == 'Current treatment' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="treatments-none?source=Current treatment">Current treatment</a>
+            </li>
+            {% elseif (data['treatmentAdded']) %}
+            <li class="moj-side-navigation__item">
+              <a href="treatment-addAnother?source=Current treatment">Current treatment</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="treatments-none?source=Current treatment">Current treatment</a>
+            </li>
+            {% endif %}
+
             {% if data["source"] == 'Social and occupational history' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>

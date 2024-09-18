@@ -24,7 +24,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Add a medication
+          Add a treatment
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
         </div>
@@ -32,61 +32,58 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <div class="govuk-form-group">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-name">
-                <b>Medication name</b>
+              <label class="govuk-label" for="treatments-name">
+                <b>Treatment name</b>
               </label>
-              <input class="govuk-input" id="medications-name" name="medications-name" type="text">
+              <input class="govuk-input" id="treatments-name" name="treatments-name" type="text">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-dose">
-                <b>Dosage</b>
-              </label>
-              <input class="govuk-input govuk-input--width-10" id="medications-dose" name="medications-dose" type="text">
-            </div>
-
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-frequency">
+              <label class="govuk-label" for="treatments-frequency">
                 <b>Frequency</b>
               </label>
-              <input class="govuk-input" id="medications-frequency" name="medications-frequency" type="text">
+              <input class="govuk-input" id="treatments-frequency" name="treatments-frequency" type="text">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-reason">
-                <b>Reason for taking</b>
+              <label class="govuk-label" for="treatments-reason">
+                <b>Reason for treatment</b>
               </label>
-              <textarea class="govuk-textarea" id="medications-reason" name="medications-reason" rows="5" aria-describedby="medications-reason"></textarea>
+              <textarea class="govuk-textarea" id="treatments-reason" name="treatments-reason" rows="5" aria-describedby="treatments-reason"></textarea>
             </div>
            
   
             <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-efficacy">
+              <label class="govuk-label" for="treatments-efficacy">
                 <b>Effectiveness</b>
               </label>
-              <textarea class="govuk-textarea" id="medications-efficacy" name="medications-efficacy" rows="5" aria-describedby="medications-efficacy"></textarea>
+              <textarea class="govuk-textarea" id="treatments-efficacy" name="treatments-efficacy" rows="5" aria-describedby="treatments-efficacy"></textarea>
             </div>
   
             <div class="govuk-form-group">
-              <label class="govuk-label" for="medications-side-effects">
-              <b>Side effects (optional)</b>
+              <label class="govuk-label" for="treatments-location">
+              <b>Where is this treatment done?</b>
               </label>
-              <textarea class="govuk-textarea" id="medications-side-effects" name="medications-side-effects" rows="5" aria-describedby="symptoms-hint"></textarea>
+              <div id="event-name-hint" class="govuk-hint">
+                For example, at home
+              </div>
+              <input class="govuk-input" id="treatments-location" name="treatments-location" type="text">
             </div>
           </div>
          
 
           </fieldset>
 
+          <br> 
           <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
 
-            {% if (data['medicationAdded']) %}
-            <p><a href="medication-addAnother">Cancel</a></p>
+            {% if (data['treatmentAdded']) %}
+            <p><a href="treatment-addAnother">Cancel</a></p>
             {% else %}
-            <p><a href="medications-none">Cancel</a></p>
+            <p><a href="treatments-none">Cancel</a></p>
             {% endif %}
 
           </div>

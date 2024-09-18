@@ -3171,7 +3171,7 @@ router.use((req, res, next) => {
   res.redirect('/prompts-two/conditions')
 })
 
- // Routes for adding another condition
+ // Routes for adding another medication
  router.post('/prompts-two/medications-none', function(req, res) {
       
   res.redirect('/prompts-two/medication')
@@ -3199,4 +3199,33 @@ res.redirect('/prompts-two/medication-addAnother')
 router.post('/prompts-two/medication-addAnother', function(req, res) {
 
   res.redirect('/prompts-two/medication')
+})
+
+ // Routes for adding another treatment
+ router.post('/prompts-two/treatments-none', function(req, res) {
+      
+  res.redirect('/prompts-two/treatment')
+ })
+
+
+// Routes for adding another medication //
+router.post('/prompts-two/treatment', function(req, res) {
+  const treatmentName = req.session.data['treatments-name']
+  const treatmentFrequency = req.session.data['treatments-frequency']
+  const treatmentReason = req.session.data['treatments-reason']
+  const treatmentEffectiveness = req.session.data['treatments-efficacy']
+  const treatmentLocation = req.session.data['treatments-location']
+  
+  const treatmentAdded = req.session.data.treatmentAdded || []
+  treatmentAdded.push({ treatmentName, treatmentFrequency, treatmentReason, treatmentEffectiveness, treatmentLocation })
+  req.session.data.treatmentAdded = treatmentAdded
+
+  req.session.data.treatmentAdded[req.session.data.treatmentAdded.length - 1].action
+
+res.redirect('/prompts-two/treatment-addAnother')
+})
+
+router.post('/prompts-two/treatment-addAnother', function(req, res) {
+
+  res.redirect('/prompts-two/treatment')
 })
