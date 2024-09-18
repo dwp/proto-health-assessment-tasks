@@ -18,6 +18,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">   
 
+    <!-- for (var condition in data['conditionAdded']) {
+      if (projects[i].value == value) {
+         projects[i].desc = desc;
+         break; //Stop this loop, we found it!
+      }
+    } -->
+
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" value="{{ data.source }}"/>
   <div class="govuk-form-group">
@@ -31,18 +38,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </legend>
 
+      
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-name-first">
           <b>Condition or disability name</b>
         </label>
-        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text">
+        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text" value="{{data["edit"]}}">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="condition-start">
           <b>When did the condition or disability start?</b>
         </label>
-        <input class="govuk-input" id="condition-start" name="condition-start" type="text">
+        <input class="govuk-input" id="condition-start" name="condition-start" type="text" value="{{data["condition-start"]}}">
       </div>
 
       <div class="govuk-form-group">
