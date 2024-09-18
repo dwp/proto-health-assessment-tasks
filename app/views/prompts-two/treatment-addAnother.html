@@ -20,60 +20,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
-          Current medication
+          Current treatments
         </h1>
 
-          <!--logic for adding the first condition only-->
-          {% for medication in data['medicationAdded'] %}
+          <!--logic for adding treatments-->
+          {% for treatment in data['treatmentAdded'] %}
           <p class="govuk-body">
             <a href="mobility-twelve" class="govuk-link" style="float: right">Change | Remove</a>
           </p>
 
           
-          <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
+          <h2 class="govuk-heading-m">{{ treatment.treatentName }}</h2>
           
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Dosage
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ medication.medicationDose }}
-              </dd>
-              <!-- <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                </ul> -->
-              </dd>
-            </div>
-       </dl>
        <h3 class="govuk-heading-s" style="margin-top:-3%;">Frequency</h3>
  
-       <p>{{ medication.medicationFrequency }}</p>
+       <p>{{ treatment.treatmentFrequency }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <br>
 
-       <h3 class="govuk-heading-s" style="margin-top:-3%;">Reason for taking</h3>
+       <h3 class="govuk-heading-s" style="margin-top:-3%;">Reason for treatment</h3>
  
-       <p>{{ medication.medicationReason }}</p>
+       <p>{{ treatment.treatmentReason }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           
        <h3 class="govuk-heading-s" style="margin-top:-2%;">Efficacy</h3>
            
-       <p>{{ medication.medicationEffectiveness }}</p>
+       <p>{{ treatment.treatmentEffectiveness }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
  
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Side effects</h3>
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Where is this treatment done?</h3>
  
-       <p>{{ medication.medicationSideEffect}}</p>
+       <p>{{ treatment.treatmentLocation}}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -87,7 +67,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
   <div class="govuk-button-group">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Add another medication
+      Add another treatment
     </button>
     </div>
 
