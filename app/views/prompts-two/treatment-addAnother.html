@@ -26,20 +26,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding treatments-->
           {% for treatment in data['treatmentAdded'] %}
           <p class="govuk-body">
-            <a href="mobility-twelve" class="govuk-link" style="float: right">Change | Remove</a>
+            <a href="#" class="govuk-link" style="float: right">Change | Remove</a>
           </p>
 
           
-          <h2 class="govuk-heading-m">{{ treatment.treatentName }}</h2>
-          
+          <h2 class="govuk-heading-m">{{ treatment.treatmentName }}</h2>
+          <br>
+
        <h3 class="govuk-heading-s" style="margin-top:-3%;">Frequency</h3>
  
        <p>{{ treatment.treatmentFrequency }}</p>
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <br>
 
-       <h3 class="govuk-heading-s" style="margin-top:-3%;">Reason for treatment</h3>
+       <h3 class="govuk-heading-s" style="margin-top:-2%;">Reason for treatment</h3>
  
        <p>{{ treatment.treatmentReason }}</p>
  
