@@ -3185,11 +3185,8 @@ router.post('/prompts-two/conditions', function(req, res) {
   const conditionNo = req.session.data['index']
   const currentPage = req.session.data.source
 
-  // const conditionAdded = req.session.data.conditionAdded || []
-  // conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction, currentPage })
-  // req.session.data.conditionAdded = conditionAdded
-
   const conditionAdded = req.session.data.conditionAdded || []
+    // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
     conditionAdded.splice(conditionNo, 1);
     conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
     req.session.data.conditionAdded = conditionAdded
