@@ -65,6 +65,47 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
       <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Hospital admissions
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="hospitalAdmission" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                    Label
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-two-third" id="no-examination" name="hospitalYes" rows="5" aria-describedby="more-detail-no">{{data["hospitalYes"]}}</textarea>
+                  </div>
+                </div>
+  
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="hospitalAdmission" type="radio" value="No" data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                      Label
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-two-third" id="id-2" name="hospitalNo" rows="5" aria-describedby="more-detail-no">{{data["hospitalNo"]}}</textarea>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+        </div>
+
+      <!-- <div class="govuk-form-group">
         <label class="govuk-label" for="hospital-admission">
           <b>Hospital admissions</b>
         </label>
@@ -80,7 +121,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
           <br>
         <textarea class="govuk-textarea" id="hospital-admission" name="hospital-admission" rows="5" aria-describedby="hospital-admission"></textarea>
-      </div>
+      </div> -->
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="symptoms">
@@ -93,17 +134,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="meds-frequency">
           <b>Variability</b>
         </label>
-        <br>
-
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    
+        <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="variability-check" name="variability-check" type="checkbox" value="There is no variability for this condition or disability.">
             <label class="govuk-label govuk-checkboxes__label" for="variability">
               There is no variability for this condition or disability.
             </label>
           </div>
-          </div>
-          <br>
+          </div> -->
 
           <div id="waste-hint" class="govuk-hint">
             Include how symptoms might get better or worse over time.
@@ -112,6 +151,47 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Suicidal thoughts and self harm (optional)
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mentalHealth" name="mentalHealthCondition" type="radio" value="Yes" checked data-aria-controls="conditional-mentalhealth-yes">
+              <label class="govuk-label govuk-radios__label" for="mentalHealth">
+                Yes
+              </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalhealth-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="mentalHealth">
+                  Label
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-two-third" id="mentalHealth" name="mentalHealthYes" rows="5" aria-describedby="more-detail-no">{{data["mentalHealthYes"]}}</textarea>
+                </div>
+              </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-mentalHealth" name="mentalHealthCondition" type="radio" value="No" data-aria-controls="conditional-mentalHealth-no">
+              <label class="govuk-label govuk-radios__label" for="no-mentalHealth">
+                No
+              </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalHealth-no">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="no-mentalHealth">
+                    Label
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-two-third" id="no-mentalHealth" name="mentaHealthNo" rows="5" aria-describedby="mental-health-no">{{data["mentalHealthNo"]}}</textarea>
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+      </div>
+
+      <!-- <div class="govuk-form-group">
         <label class="govuk-label" for="mental-health-condition">
           <b>Suicidal thoughts and self harm (optional)</b>
         </label>
@@ -130,7 +210,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
           </div>
         <textarea class="govuk-textarea" id="mental-health-description" name="mental-health-description" rows="5" aria-describedby="mental-health"></textarea>
-      </div>
+      </div> -->
 
 
       <div class="govuk-form-group">
