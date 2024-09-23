@@ -3143,7 +3143,8 @@ router.use((req, res, next) => {
    })
 
  // Routes for adding another condition //
- router.post('/prompts-two/conditions', function(req, res) {
+router.post('/prompts-two/conditions', function(req, res) {
+    const conditionNo = req.session.data['loop.index0']
     const conditionName = req.session.data['condition-name-first']
     const conditionLength = req.session.data['condition-start']
     const diagnosis = req.session.data['diagnosis']
@@ -3158,11 +3159,12 @@ router.use((req, res, next) => {
     const functionalRestriction = req.session.data['functional-restriction']
 
     const conditionAdded = req.session.data.conditionAdded || []
-    conditionAdded.push({ conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
     req.session.data.conditionAdded = conditionAdded
   
     req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
-  
+
+
   res.redirect('/prompts-two/conditions-addAnother')
  })
 
@@ -3183,10 +3185,14 @@ router.use((req, res, next) => {
   const conditionNo = req.session.data['index']
   const currentPage = req.session.data.source
 
-  const conditionAdded = req.session.data.conditionAdded || []
-  conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction, currentPage })
-  req.session.data.conditionAdded = conditionAdded
+  // const conditionAdded = req.session.data.conditionAdded || []
+  // conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction, currentPage })
+  // req.session.data.conditionAdded = conditionAdded
 
+  const conditionAdded = req.session.data.conditionAdded || []
+    conditionAdded.splice(conditionNo, 1);
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
+    req.session.data.conditionAdded = conditionAdded
 
 res.redirect('/prompts-two/conditions-addAnother')
 })
