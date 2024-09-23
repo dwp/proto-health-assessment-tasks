@@ -29,35 +29,48 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <a href="#" class="govuk-link" style="float: right">Change | Remove</a>
           </p>
 
-          
           <h2 class="govuk-heading-m">{{ treatment.treatmentName }}</h2>
-          <br>
-
-       <h3 class="govuk-heading-s" style="margin-top:-3%;">Frequency</h3>
- 
-       <p>{{ treatment.treatmentFrequency }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Reason for treatment</h3>
- 
-       <p>{{ treatment.treatmentReason }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Efficacy</h3>
-           
-       <p>{{ treatment.treatmentEffectiveness }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
- 
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Where is this treatment done?</h3>
- 
-       <p>{{ treatment.treatmentLocation}}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Frequency
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentFrequency }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reason for treatment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentReason }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Efficacy
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentEffectiveness }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where is this treatment done?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentLocation}}
+              </dd>
+            </div>
 
            </dl>
+
+           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             {% endfor %}
 
             <br>

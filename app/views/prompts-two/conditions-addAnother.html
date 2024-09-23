@@ -23,12 +23,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Condition history
         </h1>
        
-          <!--logic for adding the first condition only-->
+          <!--logic for adding conditions-->
           {% for condition in data['conditionAdded'] %}
-           
+          <p class="govuk-body">
+            <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}" class="govuk-link" style="float: right">Change | Remove</a>
+          </p>
           <h2 class="govuk-heading-m">{{ condition.conditionName }}</h2>
-          <dl class="govuk-summary-list">
-            <!-- {{loop.index0}}: {{ condition.conditionName}} -->
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 When did the condition or disability start?
@@ -36,7 +38,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <dd class="govuk-summary-list__value">
                 {{ condition.conditionLength }}
               </dd>
-              <dd class="govuk-summary-list__actions">
+              <!-- <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}">
                         Change<span class="govuk-visually-hidden">condition change</span>
@@ -45,69 +47,77 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       Remove<span class="govuk-visually-hidden">condition remove</span>
                     </a></li>
                 </ul>
+              </dd> -->
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Diagnosis
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.diagnosis }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Medical care and treatments
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.medicalcareTreatments }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital admission
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.hospital }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Symptoms, impact and progression
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.conditionSymptoms }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Variability
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.conditionVariability }}
+              </dd>
+            </div>
+ 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Suicidal thoughts and self harm
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.mentalHealth }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Functional restriction
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.functionalRestriction }}
               </dd>
             </div>
        </dl>
-       <h3 class="govuk-heading-s" style="margin-top:-3%;">Diagnosis</h3>
- 
-       <p>{{ condition.diagnosis }}</p>
+     
  
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-       <h3 class="govuk-heading-s" style="margin-top:-3%;">Medical care and treatments</h3>
- 
-       <p>{{ condition.medicalcareTreatments }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Hospital admission</h3>
-
-      <p>{{ condition.hospitalCheck }}</p>
-           
-       <p>{{ condition.hospital }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
- 
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Symptoms, impact and progression</h3>
- 
-       <p>{{ condition.conditionSymptoms }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
- 
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Variability</h3>
- 
-       <p>{{ condition.conditionVariabilityCheck }}</p>
-
-       <p>{{ condition.conditionVariability }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
- 
-       <h3 class="govuk-heading-s" style="margin-top:-2%;">Suicidal thoughts and self harm</h3>
- 
-       <p>{{ condition.mentalHealthCheck }}</p>
-
-       <p>{{ condition.mentalHealth }}</p>
- 
-       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          
-            <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Functional restriction
-             </dt>
-             <dd class="govuk-summary-list__value">
-               {{ condition.functionalRestriction }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <ul class="govuk-summary-list__actions-list">
-                 <li class="govuk-summary-list__actions-list-item">
-                  
-                 </li>
-               </ul>
-             </dd>
-             </div>
-           </dl>
-            {% endfor %}
+        
+       {% endfor %}
 
             <br>
 
