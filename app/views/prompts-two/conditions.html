@@ -1,10 +1,11 @@
-{% extends "layouts/prompts-without-sidenav" %}
+{% extends "layouts/prompts-without-sidenav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+
+{% block content_left %}
 
 <style type="text/css">
   .govuk-textarea {
@@ -15,8 +16,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">   
+<!-- <div class="govuk-grid-row"> -->
+  <!-- <div class="govuk-grid-column-two-thirds">    -->
 
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" name="{{ loop.index0 }}"/>
@@ -133,7 +134,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Are significant functional restrictions caused by this condition or disability?
           </legend>
@@ -151,9 +152,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       No
                     </label>
                 </div>
-      
+              </div>
+              </fieldset>
          </div>
-      </div>
 
           <br>
           <br>
@@ -175,9 +176,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       </fieldset>
     </div>
-  </div>
- </form>
-</div>
+  </form>
+  <!-- </div> -->
+<!-- </div> -->
       
 
 {% endblock %}
