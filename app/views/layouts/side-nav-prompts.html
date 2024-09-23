@@ -20,10 +20,10 @@
     <dl class="key-details-bar__key-details govuk-width-container--full-width">
       <div class="key-details-bar__top-block">
         <dt class="govuk-visually-hidden">Name:</dt>
-        <dt class="key-details-bar__name">Jane Smith</dt>
+        <dt class="key-details-bar__name">John Smith</dt>
   
         <dt class="govuk-visually-hidden">National Insurance number:</dt>
-        <dt class="key-details-bar__nino">RN 00 01 23 A</dt>
+        <dt class="key-details-bar__nino">AB  CB  12  13</dt>
   
         <dt class="govuk-visually-hidden">Claim status:</dt>
         <dd class="key-details-bar__status">ASSESSMENT BOOKED</dd>
@@ -136,13 +136,13 @@
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Verify identity' %}
+            {% if data["source"] == 'Claimant identity' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="verify-id?source=Verify identity">Verify identity</a>
+              <a href="verify-id?source=Claimant identity">Claimant identity</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="verify-id?source=Verify identity">Verify identity</a>
+              <a href="verify-id?source=Claimant identity">Claimant identity</a>
             </li>
             {% endif %}
 

@@ -8,88 +8,119 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 {% block content_left %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> -->
     
 
-  <form action="#" method="post" id="auto-redirect">
-    <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-                Claimant identity
-                <div id="passport-issued-hint" class="govuk-hint">
-                  Follow the agent led process for confirming the claimant's identity.
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">Claimant identity</h1>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Did you confirm the claimants identity?
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              {% if data["claimantVerify"] == 'Yes' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
                 </div>
-            </h1>   
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                      How did you confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                  </div>
+                </div>
+  
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                      Why could you not confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                  </div>
+                </div>
+  
+                {% elseif data["claimantVerify"] == 'No' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="id">
+                    How did you confirm their identity?
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" checked data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="id-2">
+                      Why could you not confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                  </div>
+              </div>
+              {% elseif data["claimantVerify"] === undefined %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="id">
+                      How did you confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                  </div>
+                </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="id-2">
+                    Why could you not confirm their identity?
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                </div>
+              </div>
+              {% endif %}
 
-          </legend>
-          
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Was the claimant's identity verified?
-          </legend>
-          
-          <div class="govuk-radios" data-module="govuk-radios">
-            {% if data["verify"] == 'Yes' %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes" {{ checked }}>
-              <label class="govuk-label govuk-radios__label" for="id">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="id-2">
-                No
-              </label>
-            </div>
-            {% elseif data["verify"] == 'No' %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="id">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="No" {{ checked }}>
-              <label class="govuk-label govuk-radios__label" for="id-2">
-                No
-              </label>
-            </div>
-            {% elseif data["verify"] === undefined %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="verify" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="id">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id-2" name="verify" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="id-2">
-                No
-              </label>
-            </div>
-            {% endif %}
-          </div>
-        </fieldset>
-      </div>
+              </div>
+            </fieldset>
+        </div>
+    
+</form>
 
-      <!-- <div class="govuk-button-group">
-
-      </div><button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button> -->
-    </div>
-
-      </form>
-<!--
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-  -->
-  </div>      
+  <!-- </div>  
+  
+  </div> -->
       
 
 {% endblock %}
