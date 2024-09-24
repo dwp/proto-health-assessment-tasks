@@ -23,11 +23,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Current medication
         </h1>
 
-          <!--logic for adding the first condition only-->
+          <!--logic for adding medications-->
           {% for medication in data['medicationAdded'] %}
-          <p class="govuk-body">
-            <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link" style="float: right">Change | Remove</a>
-          </p>
+         
+          <div class="govuk-body" style="float:right;">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link">Change</a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="#" class="govuk-link">Remove</a>
+              </li>
+          </ul>
+        </div>
 
           <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
           
