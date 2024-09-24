@@ -3214,12 +3214,31 @@ router.post('/prompts-two/medication', function(req, res) {
   const medicationReason = req.session.data['medications-reason']
   const medicationEffectiveness = req.session.data['medications-efficacy']
   const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
   
   const medicationAdded = req.session.data.medicationAdded || []
-  medicationAdded.push({ medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
   req.session.data.medicationAdded = medicationAdded
 
   req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+res.redirect('/prompts-two/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/prompts-two/medication-change', function(req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+    medicationAdded.splice(medNo, 1);
+    medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+    req.session.data.medicationAdded = medicationAdded
 
 res.redirect('/prompts-two/medication-addAnother')
 })
@@ -3236,7 +3255,7 @@ router.post('/prompts-two/medication-addAnother', function(req, res) {
  })
 
 
-// Routes for adding another medication //
+// Routes for adding another treatment //
 router.post('/prompts-two/treatment', function(req, res) {
   const treatmentName = req.session.data['treatments-name']
   const treatmentFrequency = req.session.data['treatments-frequency']
@@ -3246,6 +3265,25 @@ router.post('/prompts-two/treatment', function(req, res) {
   
   const treatmentAdded = req.session.data.treatmentAdded || []
   treatmentAdded.push({ treatmentName, treatmentFrequency, treatmentReason, treatmentEffectiveness, treatmentLocation })
+  req.session.data.treatmentAdded = treatmentAdded
+
+  req.session.data.treatmentAdded[req.session.data.treatmentAdded.length - 1].action
+
+res.redirect('/prompts-two/treatment-addAnother')
+})
+
+// Routes for adding another treatment //
+router.post('/prompts-two/treatment-change', function(req, res) {
+  const treatmentName = req.session.data['treatments-name']
+  const treatmentFrequency = req.session.data['treatments-frequency']
+  const treatmentReason = req.session.data['treatments-reason']
+  const treatmentEffectiveness = req.session.data['treatments-efficacy']
+  const treatmentLocation = req.session.data['treatments-location']
+  const treatmentNo = req.session.data['indexTreat']
+  
+  const treatmentAdded = req.session.data.treatmentAdded || []
+  treatmentAdded.splice(treatmentNo, 1);
+  treatmentAdded.push({ treatmentNo, treatmentName, treatmentFrequency, treatmentReason, treatmentEffectiveness, treatmentLocation })
   req.session.data.treatmentAdded = treatmentAdded
 
   req.session.data.treatmentAdded[req.session.data.treatmentAdded.length - 1].action
