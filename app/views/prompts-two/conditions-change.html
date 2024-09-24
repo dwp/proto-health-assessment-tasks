@@ -57,6 +57,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="diagnosis">
           <b>Diagnosis</b>
         </label>
+        <div id="diagnosis-hint" class="govuk-hint">
+          If there is a formal diagnosis, include who diagnosed it and when.
+        </div>
+        <br>
         <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis">{{data["diag"]}}</textarea>
       </div>
 
@@ -64,8 +68,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="meds-care-treatments">
           <b>Medical care, investigations and treatments</b>
         </label>
-        <div id="mental-health-hint" class="govuk-hint">
-          Include any history of suicidal thoughts or self harm, GP awareness, and medical interventions.
+        <div id="medical-care-hint" class="govuk-hint">
+          Include who they see for this care, the frequency and effectiveness of it.
         </div>
         <br>
         <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments">{{data["med"]}}</textarea>
@@ -74,7 +78,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Hospital admissions
+            Has the claimant been admitted to hospital as a result of this condition or disability?
           </legend>
           
           <div class="govuk-radios" data-module="govuk-radios">
@@ -87,7 +91,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="no-examination">
-                  Label
+                    Hospital admissions details
                   </label>
                   <textarea class="govuk-textarea govuk-!-width-two-third" id="no-examination" name="hospitalYes" rows="5" aria-describedby="more-detail-no">{{data["hospitalYes"]}}</textarea>
                 </div>
@@ -123,17 +127,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="meds-frequency">
           <b>Variability</b>
         </label>
-        <br>
           <div id="waste-hint" class="govuk-hint">
             Include how symptoms might get better or worse over time.
           </div>
+          <br>
         <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint">{{data["var"]}}</textarea>
       </div>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Suicidal thoughts and self harm (optional)
+            Does the claimant experience suicidal thoughts and self harm? (optional)
           </legend>
           
           <div class="govuk-radios" data-module="govuk-radios">
@@ -146,8 +150,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalhealth-yes">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="mentalHealth">
-                  Label
-                  </label>
+                    Suicidal thoughts and self harm details
+                    </label>
+                    <div id="suicidal-thoughts-hint" class="govuk-hint">
+                      Include frequency, plans, previous attempts, and any medical care.
+                    </div>
                   <textarea class="govuk-textarea govuk-!-width-two-third" id="mentalHealth" name="mentalHealthYes" rows="5" aria-describedby="more-detail-no">{{data["mentalHealthYes"]}}</textarea>
                 </div>
               </div>
@@ -175,7 +182,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Are significant functional restrictions caused by this condition or disability?
+            Does the claimant report functional restrictions caused by this condition or disability?
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
