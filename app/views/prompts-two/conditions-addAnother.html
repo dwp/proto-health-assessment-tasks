@@ -26,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding conditions-->
           {% for condition in data['conditionAdded'] %}
           <p class="govuk-body">
-            <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}" class="govuk-link" style="float: right">Change | Remove</a>
+            <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&syp={{condition.conditionSymptoms}}&var={{condition.conditionVariability}}&func={{condition.functionalRestriction}}" class="govuk-link" style="float: right">Change | Remove</a>
           </p>
           <h2 class="govuk-heading-m">{{ condition.conditionName }}</h2>
 
