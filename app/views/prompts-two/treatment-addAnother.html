@@ -25,9 +25,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <!--logic for adding treatments-->
           {% for treatment in data['treatmentAdded'] %}
-          <p class="govuk-body">
-            <a href="treatment-change?indexTreat={{loop.index0}}&treatn={{treatment.treatmentName}}&freq={{treatment.treatmentFrequency}}&reast={{treatment.treatmentReason}}&efft={{treatment.treatmentEffectiveness}}&loac={{treatment.treatmentLocation}}" class="govuk-link" style="float: right">Change | Remove</a>
-          </p>
+          <!-- <p class="govuk-body">
+            <a href="treatment-change?indexTreat={{loop.index0}}&treatn={{treatment.treatmentName}}&freq={{treatment.treatmentFrequency}}&reast={{treatment.treatmentReason}}&efft={{treatment.treatmentEffectiveness}}&loac={{treatment.treatmentLocation}}" class="govuk-link" style="float: right">Change | Remove</a> -->
+
+          <div class="govuk-body" style="float:right;">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="treatment-change?indexTreat={{loop.index0}}&treatn={{treatment.treatmentName}}&freq={{treatment.treatmentFrequency}}&reast={{treatment.treatmentReason}}&efft={{treatment.treatmentEffectiveness}}&loac={{treatment.treatmentLocation}}" class="govuk-link">Change</a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="#" class="govuk-link">Remove</a>
+              </li>
+          </ul>
+        </div>
+          
 
           <h2 class="govuk-heading-m">{{ treatment.treatmentName }}</h2>
           
