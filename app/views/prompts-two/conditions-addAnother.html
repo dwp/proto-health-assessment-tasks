@@ -26,13 +26,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding conditions-->
           {% for condition in data['conditionAdded'] %}
           <!-- <p class="govuk-body">
-            <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&syp={{condition.conditionSymptoms}}&var={{condition.conditionVariability}}&func={{condition.functionalRestriction}}" class="govuk-link" style="float: right">Change | Remove</a>
+            <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&hos={{condition.hospital}}&hosText={{condition.hospitalTextbox}}&syp={{condition.conditionSymptoms}}&var={{condition.conditionVariability}}&menth={{condition.mentalHealth}}&func={{condition.functionalRestriction}}" class="govuk-link" style="float: right">Change | Remove</a>
           </p> -->
 
           <div class="govuk-body" style="float:right;">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
-                  <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&syp={{condition.conditionSymptoms}}&var={{condition.conditionVariability}}&func={{condition.functionalRestriction}}" class="govuk-link">Change</a>
+                  <a href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&hos={{condition.hospital}}&hosText={{condition.hospitalTextbox}}&syp={{condition.conditionSymptoms}}&var={{condition.conditionVariability}}&menth={{condition.mentalHealth}}&menthText={{condition.mentalHealthTextbox}}&func={{condition.functionalRestriction}}" class="govuk-link">Change</a>
               </li>
               <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
                   <a href="#" class="govuk-link">Remove</a>
@@ -79,6 +79,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
             </div>
 
+            {% if condition.hospital == 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Has the claimant been admitted to hospital as a result of this condition or disability?
@@ -87,6 +88,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {{ condition.hospital }}
               </dd>
             </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital admissions details 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.hospitalTextbox }}
+              </dd>
+            </div>
+
+            {% elseif data["hospitalAdmission"] == 'No' %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Has the claimant been admitted to hospital as a result of this condition or disability?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.hospital }}
+              </dd>
+            </div>
+
+            {% endif %}
+          
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -106,6 +130,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
             </div>
  
+            {% if condition.mentalHealth == 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Does the claimant experience suicidal thoughts and self harm?
@@ -114,6 +139,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {{ condition.mentalHealth }}
               </dd>
             </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Suicidal thoughts and self harm details 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.mentalHealthTextbox }}
+              </dd>
+            </div>
+
+            {% elseif data["mentalHealthCondition"] == 'No' %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does the claimant experience suicidal thoughts and self harm?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.mentalHealth }}
+              </dd>
+            </div>
+
+            {% endif %}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
