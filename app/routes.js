@@ -3149,17 +3149,17 @@ router.post('/prompts-two/conditions', function(req, res) {
     const conditionLength = req.session.data['condition-start']
     const diagnosis = req.session.data['diagnosis']
     const medicalcareTreatments = req.session.data['meds-care-treatments']
-    const hospital = req.session.data['hospital-admission']
-    const hospitalCheck = req.session.data['hospital-admission-check']
+    const hospital = req.session.data['hospitalAdmission']
+    const hospitalTextbox = req.session.data['hospitalYes']
     const conditionSymptoms = req.session.data['symptoms']
     const conditionVariability = req.session.data['variability']
     const conditionVariabilityCheck = req.session.data['variability-check']
-    const mentalHealth = req.session.data['mental-health-description']
-    const mentalHealthCheck = req.session.data['mental-health-check']
+    const mentalHealth = req.session.data['mentalHealthCondition']
+    const mentalHealthTextbox = req.session.data['mentalHealthYes']
     const functionalRestriction = req.session.data['functional-restriction']
 
     const conditionAdded = req.session.data.conditionAdded || []
-    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalTextbox, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthTextbox, functionalRestriction })
     req.session.data.conditionAdded = conditionAdded
   
     req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
@@ -3174,8 +3174,8 @@ router.post('/prompts-two/conditions', function(req, res) {
   const conditionLength = req.session.data['condition-start']
   const diagnosis = req.session.data['diagnosis']
   const medicalcareTreatments = req.session.data['meds-care-treatments']
-  const hospital = req.session.data['hospital-admission']
-  const hospitalCheck = req.session.data['hospital-admission-check']
+  const hospital = req.session.data['mentalHealthCondition']
+  const hospitalTextbox = req.session.data['mentalHealthYes']
   const conditionSymptoms = req.session.data['symptoms']
   const conditionVariability = req.session.data['variability']
   const conditionVariabilityCheck = req.session.data['variability-check']
@@ -3183,12 +3183,11 @@ router.post('/prompts-two/conditions', function(req, res) {
   const mentalHealthCheck = req.session.data['mental-health-check']
   const functionalRestriction = req.session.data['functional-restriction']
   const conditionNo = req.session.data['index']
-  const currentPage = req.session.data.source
 
   const conditionAdded = req.session.data.conditionAdded || []
     // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
     conditionAdded.splice(conditionNo, 1);
-    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalCheck, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, conditionSymptoms, hospital, hospitalTextbox, conditionVariability, conditionVariabilityCheck, mentalHealth, mentalHealthCheck, functionalRestriction })
     req.session.data.conditionAdded = conditionAdded
 
 res.redirect('/prompts-two/conditions-addAnother')
