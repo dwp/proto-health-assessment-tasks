@@ -86,24 +86,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <label class="govuk-label" for="no-examination">
                     Hospital admissions details
                     </label>
-                    <textarea class="govuk-textarea govuk-!-width-two-third" id="no-examination" name="hospitalYes" rows="5" aria-describedby="more-detail-no">{{data["hospitalYes"]}}</textarea>
+                    <textarea class="govuk-textarea govuk-!-width-two-third" id="no-examination" name="hospitalYes" rows="5" aria-describedby="more-detail-no"></textarea>
                   </div>
                 </div>
   
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id-2" name="hospitalAdmission" type="radio" value="No" data-aria-controls="conditional-no">
+                <input class="govuk-radios__input" id="id-2" name="hospitalAdmission" type="radio" value="No">
                 <label class="govuk-label govuk-radios__label" for="id-2">
                   No
                 </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="no-examination">
-                      Label
-                    </label>
-                    <textarea class="govuk-textarea govuk-!-width-two-third" id="id-2" name="hospitalNo" rows="5" aria-describedby="more-detail-no">{{data["hospitalNo"]}}</textarea>
-                  </div>
-                </div>
+               
 
               </div>
             </fieldset>
@@ -163,38 +156,30 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="mentalHealth" name="mentalHealthCondition" type="radio" value="Yes"  data-aria-controls="conditional-mentalhealth-yes">
+              <input class="govuk-radios__input" id="mentalHealth-yes" name="mentalHealthCondition" type="radio" value="Yes" data-aria-controls="conditional-mentalhealth-yes">
               <label class="govuk-label govuk-radios__label" for="mentalHealth">
                 Yes
               </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalhealth-yes">
                 <div class="govuk-form-group">
-                  <label class="govuk-label" for="mentalHealth">
+                  <label class="govuk-label" for="mentalHealth-yes">
                   Suicidal thoughts and self harm details
                   </label>
                   <div id="suicidal-thoughts-hint" class="govuk-hint">
                     Include frequency, plans, previous attempts, and any medical care.
                   </div>
-                  <textarea class="govuk-textarea govuk-!-width-two-third" id="mentalHealth" name="mentalHealthYes" rows="5" aria-describedby="more-detail-no">{{data["mentalHealthYes"]}}</textarea>
+                  <textarea class="govuk-textarea govuk-!-width-two-third" id="mentalHealthText" name="mentalHealthYes" rows="5" aria-describedby="more-detail-no"></textarea>
                 </div>
               </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="no-mentalHealth" name="mentalHealthCondition" type="radio" value="No" data-aria-controls="conditional-mentalHealth-no">
-              <label class="govuk-label govuk-radios__label" for="no-mentalHealth">
+              <input class="govuk-radios__input" id="mentalHealth-no" name="mentalHealthCondition" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="mentalHealth-no">
                 No
               </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalHealth-no">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="no-mentalHealth">
-                    Label
-                  </label>
-                  <textarea class="govuk-textarea govuk-!-width-two-third" id="no-mentalHealth" name="mentaHealthNo" rows="5" aria-describedby="mental-health-no">{{data["mentalHealthNo"]}}</textarea>
-                </div>
-              </div>
-
+          
             </div>
           </fieldset>
       </div>
