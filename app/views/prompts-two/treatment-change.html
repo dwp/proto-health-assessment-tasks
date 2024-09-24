@@ -1,0 +1,97 @@
+{% extends "layouts/prompts-without-sidenav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row"> -->
+  <!-- <div class="govuk-grid-column-two-thirds">    -->
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Change a treatment
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+          <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="treatments-name">
+                <b>Treatment name</b>
+              </label>
+              <input class="govuk-input" id="treatments-name" name="treatments-name" type="text" value="{{data["treatn"]}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="treatments-frequency">
+                <b>Frequency</b>
+              </label>
+              <input class="govuk-input" id="treatments-frequency" name="treatments-frequency" type="text" value="{{data["freq"]}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="treatments-reason">
+                <b>Reason for treatment</b>
+              </label>
+              <textarea class="govuk-textarea" id="treatments-reason" name="treatments-reason" rows="5" aria-describedby="treatments-reason">{{data["reast"]}}</textarea>
+            </div>
+           
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="treatments-efficacy">
+                <b>Effectiveness</b>
+              </label>
+              <textarea class="govuk-textarea" id="treatments-efficacy" name="treatments-efficacy" rows="5" aria-describedby="treatments-efficacy">{{data["efft"]}}</textarea>
+            </div>
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="treatments-location">
+              <b>Where is this treatment done?</b>
+              </label>
+              <div id="event-name-hint" class="govuk-hint">
+                For example, at home
+              </div>
+              <input class="govuk-input" id="treatments-location" name="treatments-location" type="text" value="{{data["loac"]}}">
+            </div>
+          </div>
+         
+
+          </fieldset>
+
+          <br> 
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+            {% if (data['treatmentAdded']) %}
+            <p><a href="treatment-addAnother">Cancel</a></p>
+            {% else %}
+            <p><a href="treatments-none">Cancel</a></p>
+            {% endif %}
+
+          </div>
+
+        </div>
+      <!-- </div> -->
+    </form>
+  <!-- </div> -->
+      
+
+{% endblock %}
