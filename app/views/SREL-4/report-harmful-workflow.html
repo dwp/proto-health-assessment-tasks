@@ -24,11 +24,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-5">
-        {% for evidence in data['evidenceusedpip'] %}
-        <h2 class="govuk-heading-m">{{ evidence }}</h2>
+        <h2 class="govuk-heading-m">SR1</h2>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of {{ evidence }}
+            Date of SR1
           </dt>
           <dd class="govuk-summary-list__value">
             12 December 2023
@@ -40,7 +39,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
         <br>
-        {% endfor %}
         </dl>
 
         {% if (data['other-evidence']) %}
@@ -55,25 +53,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
         {% endif %}
 
-  {% if (data['shortCall'] == 'Yes') %}
+
   <h2 class="govuk-heading-l">Short call</h2>
-  {% for query in data['queriesShortcall'] %}
 
     <h3 class="govuk-heading-m">Who did you call?</h3>
       <p class="govuk-body">
         <a href="shortcall" class="govuk-link" style="float: right">Change</a>
      </p>
-      <p> {{ query.callName }}</p>    
+      <p>Doctor at GP practise</p>    
 
       <h3 class="govuk-heading-m">Consultation notes</h3>
     
-      <p> {{ query.consultationNotes }}</p>    
+      <p>Shortcall notes</p>    
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      {% endfor %}
-
-      {% else %}
-      {% endif %}
+   
 
       <br>
       <br>
@@ -85,7 +79,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Is the claimant aware of their diagnosis?     
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data["diagnosis"]}}
+         No
         </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
@@ -101,7 +95,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Is the claimant aware of their prognosis?     
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data["prognosis"]}}
+         No
         </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
@@ -115,14 +109,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Medical conditions</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      
-      {% for query in data['queriesCondition'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Condition       
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ query.condition }}
+          Cancer
         </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
@@ -135,7 +127,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </ul>
         </dd>
       </div>
-   {% endfor %}
     </dl>
 
 
@@ -147,7 +138,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Does the claimant meet the criteria for special rules?
        </dt>
        <dd class="govuk-summary-list__value">
-         {{data["specialRules"]}}
+         Yes
        </dd>
        <dd class="govuk-summary-list__actions">
          <a class="govuk-link" href="special-rules">
@@ -157,11 +148,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </div>
      </dl>
 
-     <h3 class="govuk-heading-s" style="margin-top:-5%;">Justification for special rules</h3>
      <p class="govuk-body">
       <a href="special-rules-yes" class="govuk-link" style="float: right">Change</a>
    </p>
-          <p>{{data["justification-sr"]}}</p>
+     <h3 class="govuk-heading-s" style="margin-top:-5%;">Justification for special rules</h3>
+          <p>Justification notes</p>
      
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -171,7 +162,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          Special rules date
        </dt>
        <dd class="govuk-summary-list__value">
-         {{data["srel-date-day"]}}  {{data["srel-date-month"]}}  {{data["srel-date-year"]}}
+         02 March 2022
        </dd>
        <dd class="govuk-summary-list__actions">
          <a class="govuk-link" href="special-rules-date">
@@ -189,11 +180,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
       
       <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
-      <p>{{data["mobility-one"]}}</p>
+      <p>(11c) Cannot plan the route of a journey</p>
 
       <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
     
-      <p>{{data["justification-planning"]}}</p>    
+      <p>Justification notes</p>    
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
@@ -204,11 +195,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      </p>
      
       <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
-      <p>{{data["mobility-two"]}}</p>
+      <p>(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres</p>
 
   <h3 class="govuk-heading-s">Justification for moving around</h3>
  
-  <p>{{data["justification-moving"]}}</p>
+  <p>Justification notes</p>
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 </dl>
@@ -232,7 +223,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
   
-    <form action="#" method="post" novalidate>
+    <form action="assessment-report-workflow" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
        Save and continue
