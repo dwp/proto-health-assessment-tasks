@@ -2558,6 +2558,14 @@ router.post('/SREL-4/add-condition', function (req, res) {
     }
 })
 
+router.post('/SREL-4/remove-condition', function (req, res) {
+  if (req.session.data['removeCondition'] == "Yes") {
+      res.redirect('/SREL-4/add-condition')
+    } else {
+      res.redirect('/SREL-4/add-condition')
+    }
+})
+
 // Shortcalls
 router.post('/SREL-4/shortcall', function(req, res) {
   console.log('is-this-calling', req.session.data)
