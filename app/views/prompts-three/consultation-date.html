@@ -1,0 +1,30 @@
+{% extends "layouts/side-nav-prompts.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">   
+
+    <form action="#" method="post" id="auto-redirect">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="consulation-date">
+              Consultation date
+            </label>
+          </h1>
+          <div id="consulation-date-hint" class="govuk-hint">
+            For example, 27 March 2024.
+          </div>
+          <input class="govuk-input" id="consultation-date" name="consultationDate" type="text" aria-describedby="consultation-date" value="{{data["consultationDate"]}}">
+        </div>
+        
+     </form>
+    </div>
+  </div>
+
+{% endblock %}
