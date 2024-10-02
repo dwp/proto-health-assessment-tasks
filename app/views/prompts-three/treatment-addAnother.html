@@ -1,0 +1,103 @@
+-{% extends "layouts/side-nav-prompts.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Current treatments
+        </h1>
+
+          <!--logic for adding treatments-->
+          {% for treatment in data['treatmentAdded'] %}
+          <!-- <p class="govuk-body">
+            <a href="treatment-change?indexTreat={{loop.index0}}&treatn={{treatment.treatmentName}}&freq={{treatment.treatmentFrequency}}&reast={{treatment.treatmentReason}}&efft={{treatment.treatmentEffectiveness}}&loac={{treatment.treatmentLocation}}" class="govuk-link" style="float: right">Change | Remove</a> -->
+
+          <div class="govuk-body" style="float:right;">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="treatment-change?indexTreat={{loop.index0}}&treatn={{treatment.treatmentName}}&freq={{treatment.treatmentFrequency}}&reast={{treatment.treatmentReason}}&efft={{treatment.treatmentEffectiveness}}&loac={{treatment.treatmentLocation}}" class="govuk-link">Change</a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
+                  <a href="#" class="govuk-link">Remove</a>
+              </li>
+          </ul>
+        </div>
+          
+
+          <h2 class="govuk-heading-m">{{ treatment.treatmentName }}</h2>
+          
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Frequency
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentFrequency }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reason for treatment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentReason }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Efficacy
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentEffectiveness }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where is this treatment done?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ treatment.treatmentLocation }}
+              </dd>
+            </div>
+
+           </dl>
+
+           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            {% endfor %}
+
+            <br>
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another treatment
+    </button>
+    </div>
+
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}
