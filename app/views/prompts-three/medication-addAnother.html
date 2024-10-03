@@ -26,19 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding medications-->
           {% for medication in data['medicationAdded'] %}
          
-          <!-- <div class="govuk-body" style="float:right;">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
-                  <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link">Change</a>
-              </li>
-              <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
-                  <a href="#" class="govuk-link">Remove</a>
-              </li>
-          </ul>
-        </div> -->
-
-          
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
@@ -58,15 +46,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
             </div>
       </dl>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
    
           
-            {% endfor %}
+     {% endfor %}
 
-            
-
-
+          
+<br>
 <form action="#" method="post">
   
   <div class="govuk-button-group">
