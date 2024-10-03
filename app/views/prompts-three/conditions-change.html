@@ -18,12 +18,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">    -->
 
-    <!-- for (var condition in data['conditionAdded']) {
-      if (projects[i].value == value) {
-         projects[i].desc = desc;
-         break; //Stop this loop, we found it!
-      }
-    } -->
 
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" value="{{ data.source }}"/>
@@ -32,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Change a condition or disability
+          Add a condition or disability
         </h1>
         <div id="passport-issued-hint" class="govuk-hint">
         </div>
@@ -55,140 +49,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="diagnosis">
-          <b>Diagnosis</b>
+          <b>Diagnosis, symptoms and variability</b>
         </label>
-        <div id="diagnosis-hint" class="govuk-hint">
-          If there is a formal diagnosis, include who diagnosed it and when.
-        </div>
-        <br>
         <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis">{{data["diag"]}}</textarea>
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="meds-care-treatments">
-          <b>Medical care, investigations and treatments</b>
+          <b>Investigations, treatments and hospital stays</b>
         </label>
-        <div id="medical-care-hint" class="govuk-hint">
-          Include who they see for this care, the frequency and effectiveness of it.
-        </div>
-        <br>
         <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments">{{data["med"]}}</textarea>
       </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Has the claimant been admitted to hospital as a result of this condition or disability?
-          </legend>
-          
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id" name="hospitalAdmission" type="radio" value="Yes" data-aria-controls="conditional-yes">
-              <label class="govuk-label govuk-radios__label" for="id">
-                Yes
-              </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="no-examination">
-                  Hospital admissions details
-                  </label>
-                  <textarea class="govuk-textarea govuk-!-width-two-third" id="no-examination" name="hospitalYes" rows="5" aria-describedby="more-detail-no">{{data["hospitalYes"]}}</textarea>
-                </div>
-              </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="id-2" name="hospitalAdmission" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="id-2">
-                No
-              </label>
-              </div>
-             
-
-            </div>
-          </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="symptoms">
-          <b>Symptoms, impact and progression</b>
-        </label>
-        <textarea class="govuk-textarea" id="symptoms" name="symptoms" rows="5" aria-describedby="symptoms-hint">{{data["syp"]}}</textarea>
-      </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label" for="meds-frequency">
-          <b>Variability</b>
+        <label class="govuk-label" for="self-harm">
+          <b>Suicidal thoughts and self harm (optional)</b>
         </label>
-          <div id="waste-hint" class="govuk-hint">
-            Include how symptoms might get better or worse over time.
-          </div>
-          <br>
-        <textarea class="govuk-textarea" id="variability" name="variability" rows="5" aria-describedby="variability-hint">{{data["var"]}}</textarea>
+        <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5" aria-describedby="mental-health">{{data["menth"]}}</textarea>
       </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Does the claimant experience suicidal thoughts and self harm? (optional)
-          </legend>
-          
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="mentalHealth-yes" name="mentalHealthCondition" type="radio" value="Yes" data-aria-controls="conditional-mentalhealth-yes">
-              <label class="govuk-label govuk-radios__label" for="mentalHealth">
-                Yes
-              </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mentalhealth-yes">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="mentalHealth-yes">
-                  Suicidal thoughts and self harm details
-                  </label>
-                  <div id="suicidal-thoughts-hint" class="govuk-hint">
-                    Include frequency, plans, previous attempts, and any medical care.
-                  </div>
-                  <textarea class="govuk-textarea govuk-!-width-two-third" id="mentalHealthText" name="mentalHealthYes" rows="5" aria-describedby="more-detail-no">{{data["mentalHealthYes"]}}</textarea>
-                </div>
-              </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="mentalHealth-no" name="mentalHealthCondition" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="mentalHealth-no">
-                No
-              </label>
-              </div>
-          
-            </div>
-          </fieldset>
-      </div>
-
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Does the claimant report functional restrictions caused by this condition or disability?
-          </legend>
-          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-yes" name="functional-restriction" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="functional-yes">
-                    Yes
-                  </label>
-                </div>
-
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="fuctional-no" name="functional-restriction" type="radio" value="No">
-                    <label class="govuk-label govuk-radios__label" for="functional-no">
-                      No
-                    </label>
-                </div>
       
-         </div>
-      </div>
-
-          <br>
-          <br>
 
           <div class="govuk-button-group">
 
