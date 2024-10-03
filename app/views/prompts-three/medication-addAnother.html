@@ -1,4 +1,4 @@
--{% extends "layouts/side-nav-prompts.html" %}
+-{% extends "layouts/side-nav-prompts-three.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -26,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding medications-->
           {% for medication in data['medicationAdded'] %}
          
-          <div class="govuk-body" style="float:right;">
+          <!-- <div class="govuk-body" style="float:right;">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item" style="display:inline-block;">
                   <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link">Change</a>
@@ -35,112 +35,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <a href="#" class="govuk-link">Remove</a>
               </li>
           </ul>
-        </div>
+        </div> -->
 
-          <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
           
           <dl class="govuk-summary-list govuk-summary-list--no-border">
-
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Dosage
+                <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ medication.medicationDose }}
+              
               </dd>
-              <!-- <dd class="govuk-summary-list__actions">
+              <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}">
+                        Change<span class="govuk-visually-hidden">medication</span>
                     </a></li>
                   <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
+                      Remove<span class="govuk-visually-hidden">medication</span>
                     </a></li>
-                </ul> -->
+                </ul>
               </dd>
             </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Frequency
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ medication.medicationFrequency }}
-              </dd>
-              <!-- <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                </ul> -->
-              </dd>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Reason for taking
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ medication.medicationReason }}
-              </dd>
-              <!-- <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                </ul> -->
-              </dd>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Efficacy
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ medication.medicationEffectiveness }}
-              </dd>
-              <!-- <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                </ul> -->
-              </dd>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Side effects
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ medication.medicationSideEffect }}
-              </dd>
-              <!-- <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                      Remove<span class="govuk-visually-hidden">condition</span>
-                    </a></li>
-                </ul> -->
-              </dd>
-             
-            </div>
-                      
-       <!-- <h3 class="govuk-heading-s" style="margin-top:-2%;">Reason for taking</h3>
- 
-       <p>{{ medication.medicationReason }}</p> -->
-
       </dl>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
