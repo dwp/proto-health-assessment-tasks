@@ -64,14 +64,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="medications-efficacy">
                 <b>Effectiveness</b>
               </label>
-              <input class="govuk-input" id="medications-efficacy" name="medications-efficacy" type="text" value="{{data["eff"]}}">
+              <textarea class="govuk-textarea" id="medications-efficacy" name="medications-efficacy" rows="1" aria-describedby="medication effectivness">{{data["eff"]}}</textarea>
             </div>
   
             <div class="govuk-form-group">
               <label class="govuk-label" for="medications-side-effects">
               <b>Side effects (optional)</b>
               </label>
-              <textarea class="govuk-textarea" id="medications-side-effects" name="medications-side-effects" rows="1" aria-describedby="symptoms-hint">{{data["side"]}}</textarea>
+              <textarea class="govuk-textarea" id="medications-side-effects" name="medications-side-effects" rows="1" aria-describedby="medication side effects">{{data["side"]}}</textarea>
             </div>
           </div>
          
