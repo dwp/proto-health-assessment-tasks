@@ -1,4 +1,4 @@
-{% extends "layouts/side-nav-none-face-to-face.html" %}
+{% extends "layouts/editing.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -6,30 +6,52 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
-    
-    <style>
-    .govuk-summary-list__row--no-border {
-    display: table-row;
-    padding-right: 1px;
-      }
-
+<style type="text/css">
   .text {
     text-align: left;
     display: block;
     white-space: pre-line;
   }
              
-    </style>
+  </style>
 
-    <!-- <span class="govuk-caption-xl">Personal Independance Payment</span> -->
-    <h1 class="govuk-heading-xl">Check answers</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
-    <!-- <h2 class="govuk-heading-l">Assessment details</h2>
+    <span class="govuk-caption-xl">Personal Independance Payment</span>
+    <h1 class="govuk-heading-xl">Health assessment report</h1>
+
+    <h2 class="govuk-heading-l">Claimant details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Jane Smith
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RN 00 01 23 A
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 December 1999
+        </dd>
+      </div>
+    </dl> 
+ 
+    <h2 class="govuk-heading-l">Assessment details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -37,11 +59,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
            13th October 2023
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -51,11 +68,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__value">
           Personal Independence Payment
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -64,11 +76,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__value">
             Telephone assessment
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> customer reference</span>
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -76,45 +83,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
             Dr. Smith
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> health professional</span>
-          </a>
-        </dd>
-        
+        </dd>  
       </div>
-    </dl>    -->
+    </dl>  
+
 
     <h2 class="govuk-heading-l">Evidence</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Evidence used
-          </dt>
-          <dd class="govuk-summary-list__value">
-              Prescription or medication list, 20 May 2024
-              GP letter, 12 March 2023
-              Factual medical report (FRR2), 18 June 2024
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-    
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Other evidence used
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Prescription letters and further evidence to support for medical conditions
-          </dd>
-          <dd class="govuk-summary-list__actions">
-        
-          </dd>
-        </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Prescription or medication list, 20 May 2024
+          GP letter, 12 March 2023
+          Factual medical report (FRR2), 18 June 2024
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Prescription letters and further evidence to support for medical conditions
+        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
     </dl>
 
     <h2 class="govuk-heading-l">Consultation</h2>
@@ -124,80 +124,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          Consulation date
         </dt>
         <dd class="govuk-summary-list__value">
-           13th October 2023 
+          13th October 2023
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row--no-border">
-        <dt class="govuk-summary-list__key">
-          Was the claimant's identity confirmed?
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Yes
-        </dd>
-        <dd class="govuk-summary-list__actions" style="padding-right: 0px;">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden">change</span>
-          </a>
+         
         </dd>
       </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          How was their identity confirmed?
+          Was the claimants identity verified?
         </dt>
         <dd class="govuk-summary-list__value">
-          Passport
+          Yes
         </dd>
-        <dd class="govuk-summary-list__actions--no-actions">
-        </dd>
-      </div>
-
-    
-      <div class="govuk-summary-list__row--no-border">
-        <dt class="govuk-summary-list__key">
-          Was the claimant's identity confirmed?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          No
-        </dd>
-        <dd class="govuk-summary-list__actions" style="padding-right: 0px;">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden">change</span>
-          </a>
+        <dd class="govuk-summary-list__actions">
+         
         </dd>
       </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reason for not confirming their identity
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Did not have relevant documents
-        </dd>
-        <dd class="govuk-summary-list__actions--no-actions">
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Travel to consulation
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Got the bus and walked for 10 minutes
-        </dd>
-        <dd class="govuk-summary-list__actions" style="padding-right: 0px;">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden">change</span>
-          </a>
-        </dd>
-      </div>
-
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -207,9 +151,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Yes
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+         
         </dd>
       </div>
 
@@ -217,14 +159,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dt class="govuk-summary-list__key">
           Additional attendees
         </dt>
-        
         <dd class="govuk-summary-list__value">
           None
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+         
         </dd>
       </div>
     </dl>
@@ -232,9 +171,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">History</h2>
 
     <h2 class="govuk-heading-m">History of condition</h2>
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
+
     <p class="text">
       Primary Condition: Depression and anxiety
 
@@ -275,15 +212,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               triggering factors to the self-harming attempts include whenever she feels overwhelmed, and usually self-harms once every few weeks, if she sees sharp objects she still tries her best to combat her thoughts and wouldn't have intentions or plans to act on the self-harming thoughts. 
               
               Her mental health team are fully aware of these intrusive thoughts and attempts, she's had Crisis team and Samaritans involvement in the past, and she is fully aware that if the thoughts get more serious and intrusive she'd immediately seek professional help.
-              </p>
+
+              Secondary condition: Osteoarthritis (OA)
+              Osteoarthritis (OA) in both knees and hands, torn rotator cuff in left shoulder, restless legs, benign essential tremor in hands.
+
+              Diagnosis
+              Diagnosed in 2005, 2015, 2018 by a neurology specialist in hospital. 
+
+              Care and management
+              She currently refers to the GP as and when required for regular monitoring of these conditions, usually whenever she's due for a medication review. 
+              She had physiotherapy in 2019 for her knee and left shoulder which was considered to be partially beneficial, she had a left knee arthroscopy in 20 which was successful in the short term, but after a while she sustained a fall and she re-damaged her left knee. 
+              
+              She had steroid injections to the left knee in February and March 2024 and had 1 left shoulder steroid injection in February 2024, the steroid injections helped with the pain in the short term for a few weeks, however the pain ultimately still persisted.
+              The plan in place is to first have a number of PT sessions for the left knee, she is currently awaiting for PT to start in order to strengthen the left knee musculature, and then once she's had enough PT sessions she'd be enlisted to have a left total knee replacement (TKR) surgery. 
+
+              Symptoms
+              Current symptoms she experiences include constant bodily aches and pains, left knee is painful all the time, in the morning has to wait for a while to straighten her knees due to stiffness and joints seizing up. 
+
+              Variability
+              Daily symptoms she experiences include constant bodily aches and pains, left knee is painful all the time, in the morning has to wait for a while to straighten her knees due to stiffness and joints seizing up. 
+
+              There is no variation in pattern in terms of symptomatology and every day is described as being the same. There are no specific aggravating or alleviating factors to the presenting symptoms as they are consistently felt. 
+              The assessment day is a typical day. This is impacting on her ability to prepare food, wash and bathe, manage toilet needs and move around reliably.
+
+              Progression
+              Over the past 12 months these symptoms have been getting worse. 
+
+              Hospital admissions
+              Over the past 12 months she had no hospital admissions due to this condition.
+    </p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
     <h2 class="govuk-heading-m">Current medication and treatment</h2>
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
 
    <p class="text">Medication
     Venlafaxine XR 325mg - 1 tablet daily - for mental health conditions (dosage increased, reasons and year of increase unspecified, potentially due to persistent mental health breakdown episodes) (Diazepam and Mirtazapine stopped on advise of her psychiatrist, year and reasons unspecified)
@@ -310,10 +272,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <br>
 
     <h2 class="govuk-heading-m">Social and occupational history</h2>
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
-
+   
    <p class="text">Living arrangements
     Lives with two house mates in a standard shared house (this is not supported living accommodation from mental health institutions).
 
@@ -358,16 +317,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     Questionnaire filled in by claimant herself with help from support worker.
     She arrived to the appointment by a lift from a friend, and she was dropped right in front of the clinic entrance.</p>
 
-
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
       <h2 class="govuk-heading-l">Daily living</h2>
       
       <h3 class="govuk-heading-m">Preparing food</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for preparing food</h3>
       <p class="text">She is unable to prepare and cook a simple meal from fresh ingredients for 1 person. 
         Her concentration is quite poor and tends to forget switching electric appliances on and off regularly. There have been instances when she's had accidents in the kitchen due to accidently burning herself. 
@@ -414,15 +370,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
         HOC and MSE establish a safety risk imposed around sharp objects and knives owing to self-harming thoughts and ideation. Thus it is likely supervision is required due to safety risk around using knives in the kitchen. </p>
 
-
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
       
       <h3 class="govuk-heading-m">Taking nutrition</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for taking nutrition</h3>
       <p class="text">Whenever she has a plate of food in front of her, she can independently convey it to the mouth, chew and swallow, reporting no regular spillage episodes. 
 
@@ -461,9 +414,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Managing therapy</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for managing therapy</h3>
       <p class="text">She tends to be forgetful about which medication she has to take at which time of day. Normally certain symptoms come on, and this would serve as a reminder to her that she needs to take her tablets.
         She is able to manage pill packets and can administer the tablets with a glass of water independently. She currently has a monthly prescription. She is in control of her medication and tablets are at her disposal. 
@@ -497,9 +448,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Washing and bathing</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+   
       <h3 class="govuk-heading-s">Functional history for washing and bathing</h3>
       <p class="text">She needs to hold onto the grab rails at the side of the bath to make bathing transfers safely owing to added leverage and stability required due to her physical pains. 
 
@@ -544,14 +493,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         Thus it is likely there is sufficient upper limb functionality and hand grip required to use aids for this activity, since limitations due to physical pains can be likely caused due to OA. </p>
 
-
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
       <h3 class="govuk-heading-m">Managing toilet needs</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for managing toilet needs</h3>
       <p class="text">She holds onto the nearby sink and the walking stick for added leverage and support to steadily get on and off the toilet due to her physical pains. 
         Otherwise she can attend to her hygiene needs and can maintain hygiene and cleanliness throughout without difficulties. 
@@ -591,9 +537,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Dressing and undressing</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+
       <h3 class="govuk-heading-s">Functional history for dressing and undressing</h3>
       <p class="text">She is physically capable of putting on and taking off t-shirts, shirts, sweaters and tops independently without difficulties. 
         She tends to find managing zips, fastenings and buttons a bit fiddly due to her hand pains and possibly having swollen fingers. She needs to be sitting down to put on and take off trousers, socks and shoes, for lower half items once sat down she leans forwards to reach down to her feet and lifts her knees closer to her chest in sitting, depending on which position is mostly comfortable.
@@ -632,9 +576,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Communicating verbally</h3>
-      <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for communicating verbally</h3>
       <p class="text">She does not express any significant issues with verbal communication, speaking and hearing. Normally she can speak to people, can understand what is being said and can maintain a conversation going without difficulties. </p>
 
@@ -663,13 +605,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Other descriptor supported by some evidence and the reasons why they haven’t been advised:
 
         N/A </p>
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
       <h3 class="govuk-heading-m">Reading and understanding signs, symbols and words</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for reading and understanding signs, symbols and words</h3>
       <p class="text">She is able to read and understand basic and complex written information and sentences without difficulties. If she receives official documentation, letters and correspondence she wouldn't require complex information to be broken down into simple text for her to make sense out of what she's just read. She can easily distinguish between signs and symbols in roads and public places. 
       </p>
@@ -705,9 +646,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Engaging face to face</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+   
       <h3 class="govuk-heading-s">Functional history for engaging face to face</h3>
       <p class="text">She feels confident interacting with her friends and people she know well. She doesn't interact with people she doesn't know as she can feel uncomfortable and overwhelmed due to mental health reasons. 
         If she is to interact with a new person face to face, she'd need to be notified of the meeting beforehand so that she mentally prepares herself for the actual encounter, and she would also need any friend or close relative support her before, during and after she meets that person to ensure that she remains calm and composed. 
@@ -744,9 +683,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Budgeting</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+     
       <h3 class="govuk-heading-s">Functional history for budgeting</h3>
       <p class="text">She has a good understanding of money and is aware of how money works. She is aware of the concept of money, the value of things and the need to budget for future purchases.
 
@@ -780,19 +717,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
-    
+      <p>{{data["recommendation-daily-living"]}}</p>
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Has the claimant had the functional restriction for at least 3 months?
           </dt>
           <dd class="govuk-summary-list__value">
-             Yes
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -800,12 +736,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Is the claimant likely to have the functional restriction in 9 months?
           </dt>
           <dd class="govuk-summary-list__value">
-           Yes
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
+         
           </dd>
         </div>
       </dl>
@@ -813,9 +747,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h2 class="govuk-heading-l">Mobility</h2>
 
       <h3 class="govuk-heading-m">Planning and following journeys</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
       <p class="text">She usually gets a lift to attend for appointments, as she's used to it being done this way. She usually goes out to the countryside accompanied by her friend once every couple of weeks.
 
@@ -857,9 +789,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Moving around</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+    
       <h3 class="govuk-heading-s">Functional history for moving around</h3>
       <p class="text">She can comfortably cover up to 30 metres prior to needing to stop, it would approximately take her 5 minutes to walk such distance, and she'd need to stop owing to knee pains especially in the left knee.
         She would then need to have a rest break of about 5 minutes in a seated position until the pain subsides to a certain extent, prior to being able to repeat this same distance as tolerated, but sometimes she wouldn't be able to repeat it again due to her knee pains. 
@@ -902,7 +832,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <br>
 
       <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
-     
+ 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -912,9 +842,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -925,183 +853,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
+            
           </dd>
         </div>
       </dl>
 
-      <!--physical examinations-->
-
-      <h2 class="govuk-heading-l">Physical examinations</h2> 
-
-      <h3 class="govuk-heading-m">Examination consent</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <h3 class="govuk-heading-s">Did the claimant consent to the physical examination?</h3>
-      <p>Yes</p>
-
-      <h3 class="govuk-heading-s">Reason for not consenting</h3>
-      <p>Too much pain on the day of examination</p>
-
-      <h3 class="govuk-heading-s">Reason for not consenting to the physical examination</h3>
-      <p>Examination not required</p>
-
-
-      <h3 class="govuk-heading-s">Chaperone name</h3>
-      <p>Chaperone name</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Upper body examination</h3>
-      <!--Shoulder-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <h3 class="govuk-heading-s">Shoulder</h3>
-      <p class="govuk-body">The claimant's shoulders were not examined during the consultation.</p>
-    
-      <p class="govuk-body">Shoulder text</p>
-     
-      <!--Elbow-->
-      <h3 class="govuk-heading-s">Elbow</h3>
-      <p class="govuk-body">The claimant's elbows were not examined during the consultation.</p>
-  
-      <p class="govuk-body">Elbow text</p>
-    
-      <!--Wrist-->
-      <h3 class="govuk-heading-s">Wrist</h3>
-      <p class="govuk-body">The claimant's wrists were not examined during the consultation.</p>
-
-      <p class="govuk-body">Wrist text</p>
-      
-       <!--Hands-->
-       <h3 class="govuk-heading-s">Hands</h3>
-       <p class="govuk-body">The claimant's hands were not examined during the consultation.</p>
- 
-       <p class="govuk-body">Hands text</p>
-    
-        <!--Thumb-->
-        <h3 class="govuk-heading-s">Thumb</h3>
-        <p class="govuk-body">The claimant's thumbs were not examined during the consultation.</p>
-
-        <p class="govuk-body">Thumb text</p>
-
-         <!--Grip-->
-         <h3 class="govuk-heading-s">Grip</h3>
-         <p class="govuk-body">The claimant's grip was not examined during the consultation.</p>
- 
-         <p class="govuk-body">Grip text</p>
-
-          <!--Cervical Spine-->
-          <h3 class="govuk-heading-s">Cervical spine</h3>
-          <p class="govuk-body">The claimant's cervical spine was not examined during the consultation.</p>
-   
-          <p class="govuk-body">Cervical spine text</p>
-      
-          <!--Lumbar Spine-->
-          <h3 class="govuk-heading-s">Lumbar spine</h3>
-          <p class="govuk-body">The claimant's lumbar spine was not examined during the consultation.</p>
-       
-          <p class="govuk-body">Lumbar spine text</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Lower body examination</h3>
-      <!--Hip-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-      <h3 class="govuk-heading-s">Hip</h3>
-      <p class="govuk-body">The claimant's hips were not examined during the consultation.</p>
-  
-      <p class="govuk-body">Hips text</p>
-      
-      <!--Knee-->
-      <h3 class="govuk-heading-s">Knee</h3>
-      <p class="govuk-body">The claimant's knees were not examined during the consultation.</p>
-
-      <p class="govuk-body">Knee text</p>
-  
-      <!--Ankle-->
-      <h3 class="govuk-heading-s">Ankle</h3>
-      <p class="govuk-body">The claimant's ankles were not examined during the consultation.</p>
- 
-      <p class="govuk-body">Ankle text</p>
-
-      <!--Hallux-->
-      <h3 class="govuk-heading-s">Hallux</h3>
-      <p class="govuk-body">The claimant's halluces were not examined during the consultation.</p>
- 
-      <p class="govuk-body">Hallux text</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Vision examination</h3>
-      <!--Vision-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-
-      <p class="govuk-body">The claimant's vision was not examined during the consultation.</p>
-
-      <p class="govuk-body">Vision text</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Hearing examination</h3>
-      <!--Hearing-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-    
-      <p class="govuk-body">The claimant's hearing was not examined during the consultation.</p>
-     
-      <p class="govuk-body">Hearing text</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Cardio-respiratory examination</h3>
-      <!--Cardio-respriatory-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-
-      <p class="govuk-body">The claimant's cardio-respiratory function was not examined during the consultation.</p>
-  
-      <p class="govuk-body">Cardio text</p>
-
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <h3 class="govuk-heading-m">Neurological examination</h3>
-      <!--Neurological-->
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
-    
-  
-      <p class="govuk-body">A neurological examination was not done during the consultation.</p>
-     
-      <p class="govuk-body">Neurological text</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
 
       <h2 class="govuk-heading-l">Observations</h2>
 
       <h3 class="govuk-heading-m">Mental state observations</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+   
      <p class="text">Behaviour
       She managed to maintain a calm and relaxed behaviour whilst managing to establish an appropriate rapport with the assessor. She was keen on participating and was happy to provide elaborate answers to the questions asked.
 
@@ -1115,15 +876,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       Self-harm thoughts
       Whenever feeling very low she engages in self-harming by cutting using knives, sharp objects like scissors and razor blades. She hasn't self-harmed for the past few weeks, triggering factors to the self-harming attempts include whenever she feels overwhelmed, and usually self-harms once every few weeks, if she sees sharp objects she still tries her best to combat her thoughts and wouldn't have intentions or plans to act on the self-harming thoughts. 
       Her mental health team are aware of these thoughts and attempts.
-      </p>
+
+      Speech
+      Her speech was normal in tone, rate, flow, volume and content, being capable of clear, comprehensible speech and of speaking in full, coherent sentences during the assessment.
+
+       No questions were requested to be simplified or reworded as she was able to understand questions asked and to explain elaborate details about things being discussed without difficulties, demonstrating good information processing.
+
+       Cognition
+       She was able to follow questions and give appropriate answers in a timely manner.
+
+       Insight
+       She acknowledged diagnosis, able to identify impact of condition. 
+    </p>
     
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Informal state observations</h3>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link" style="float: right">Change</a>
-     </p>
+      <h3 class="govuk-heading-m">Informal observations</h3>
+     
      <p class="text">She was able to concentrate throughout the assessment with no signs of fatigue or irritability.</p>
     
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -1138,12 +908,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Recommended future review period
           </dt>
           <dd class="govuk-summary-list__value">
-             18 months
+            18 months
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1154,9 +922,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Certain functional limitations were present at the time of the assessment, which would warrant a review. She is currently on the waiting list to have counselling. She is due to start having PT sessions for the left knee, and once she would have had enough sessions she's to enlist for a left TKR surgery. Since there are pending specialists' interventions in place with no official confirmatory appointment start date, the reported symptoms are likely to have a functional impact on her ability to carry out daily living and mobility tasks reliably in the short term. With further specialists' interventions in place, a short term review of 1 year 6 months is most appropriate. 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> reveiw period reason</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1167,9 +933,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> restriction</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1180,9 +944,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             No
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">additional support</span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1190,12 +952,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Does the claimant meet the criteria for special rules?
           </dt>
           <dd class="govuk-summary-list__value">
-           No
+            No
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> special rules</span>
-            </a>
+          
           </dd>
         </div>
       </dl>
@@ -1206,9 +966,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     
 
-      <p class="govuk-body">
-        <a href="#" class="govuk-link">Print this page</a>
-      </p>
 
   
       <!-- <h2 class="govuk-heading-m">Examination</h2>
@@ -1241,7 +998,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </dl> -->
   
-    <form action="ta-done.html" method="get" novalidate>
+    <form action="first-submit-done.html" method="get" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Submit report
