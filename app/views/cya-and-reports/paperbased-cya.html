@@ -114,10 +114,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </dl>
 
-    <h2 class="govuk-heading-l">History</h2>
-
   <div>
-    <h2 class="govuk-heading-m" style="display: inline-block">History of condition</h2><a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+    <h2 class="govuk-heading-l" style="display: inline-block;">Brief summary of clinical details</h2>
+    <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
   </div>
 
     <p class="text">
@@ -189,34 +188,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Hospital admissions
               Over the past 12 months she had no hospital admissions due to this condition.
     </p>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <br>
-
-    <div>
-    <h2 class="govuk-heading-m" style="display: inline-block">Current medication and treatment</h2><a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
-   </div>
-
-   <p class="text">Medication
-    Venlafaxine XR 325mg - 1 tablet daily - for mental health conditions (dosage increased, reasons and year of increase unspecified, potentially due to persistent mental health breakdown episodes) (Diazepam and Mirtazapine stopped on advise of her psychiatrist, year and reasons unspecified)
-
-    Pramipexole 0.88mcg - 1 tablet 3 times daily - for restless legs/tremors
-
-    Codeine 30mg - 2 tablets up to 4 times daily as needed - for pain relief
-
-    Paracetamol 500mg - 2 tablets up to 4 times daily - for pain relief
-
-    Capsaicin cream - applied independently on her left hip and knee before going to bed daily - for pain relief
-    (GP and specialists are fully aware of all the medication dosage that she takes)
-
-    Effectiveness
-    She finds the medication as partially effective in alleviation of the presenting symptoms. 
-
-    Side Effects
-    Memory loss, no focus, forgetfulness, feeling light headed, irregular sleep, feeling sleepy. Compliance: She tends to be forgetful about which medication she has to take at which time of day. 
-
-    Additional therapies or treatments
-    None  </p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
@@ -571,38 +542,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
-      <p>{{data["recommendation-daily-living"]}}</p>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Has the claimant had the functional restriction for at least 3 months?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is the claimant likely to have the functional restriction in 9 months?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-
       <h2 class="govuk-heading-l">Mobility</h2>
 
       <div>
@@ -675,18 +614,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
+      <br>  
 
-      <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
-      <p>{{data["recommendation-mobility"]}}</p>
-
+      <h2 class="govuk-heading-l">Recommendation</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Has the claimant had the functional restriction for at least 3 months?
           </dt>
           <dd class="govuk-summary-list__value">
-              Yes
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -694,6 +632,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the claimant likely to have the functional restriction in 9 months?
@@ -707,58 +646,35 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-      </dl>
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has the claimant had the functional restriction for at least 3 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+              Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
 
-      <h2 class="govuk-heading-l">Observations</h2>
-
-      <div>
-      <h3 class="govuk-heading-m" style="display: inline-block;">Mental state observations</h3>
-        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
-    </div>
-
-     <p class="text">Behaviour
-      She managed to maintain a calm and relaxed behaviour whilst managing to establish an appropriate rapport with the assessor. She was keen on participating and was happy to provide elaborate answers to the questions asked.
-
-      Mood
-      Her mood appeared to be stable and euthymic throughout. Initially she appeared to be tearful when explaining about details in relation to her health conditions, however this sensation quickly resolved as the assessment proceeded, once she felt more at ease opening up about her health conditions.
-
-      Suicidal thoughts
-      She's been experiencing suicidal thoughts since the time of her mental health condition diagnosis, she last tried to overdose on medication in December 2020 which required hospitalisation. Currently she still experiences such thoughts, however she wouldn't have intentions or plans to act on the thoughts. 
-      Her mental health team are aware of these thoughts and past suicidal attempt.
-
-      Self-harm thoughts
-      Whenever feeling very low she engages in self-harming by cutting using knives, sharp objects like scissors and razor blades. She hasn't self-harmed for the past few weeks, triggering factors to the self-harming attempts include whenever she feels overwhelmed, and usually self-harms once every few weeks, if she sees sharp objects she still tries her best to combat her thoughts and wouldn't have intentions or plans to act on the self-harming thoughts. 
-      Her mental health team are aware of these thoughts and attempts.
-
-      Speech
-      Her speech was normal in tone, rate, flow, volume and content, being capable of clear, comprehensible speech and of speaking in full, coherent sentences during the assessment.
-
-       No questions were requested to be simplified or reworded as she was able to understand questions asked and to explain elaborate details about things being discussed without difficulties, demonstrating good information processing.
-
-       Cognition
-       She was able to follow questions and give appropriate answers in a timely manner.
-
-       Insight
-       She acknowledged diagnosis, able to identify impact of condition. 
-    </p>
-    
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      <div>
-      <h3 class="govuk-heading-m" style="display: inline-block;">Informal observations</h3>
-        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
-      </div>
-     <p class="text">She was able to concentrate throughout the assessment with no signs of fatigue or irritability.</p>
-    
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <br>
-
-      
-
-      <h2 class="govuk-heading-l">Recommendation</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant likely to have the functional restriction in 9 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Recommended future review period
