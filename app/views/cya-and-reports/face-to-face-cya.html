@@ -867,11 +867,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-     
-
+  
       <!--physical examinations-->
 
-      <h2 class="govuk-heading-l">Physical examinations</h2> 
+      <h2 class="govuk-heading-l">Physical examination</h2> 
 
       <div>
       <h3 class="govuk-heading-m" style="display: inline-block;">Examination consent</h3>
@@ -894,7 +893,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      
+      <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Physical examination</h3>
+      <!--physical examination-->
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+    </div>
+
+      <p class="govuk-body">Physical examination</p>
+
+      <!-- <p class="govuk-body">{{data["noPhysicalExaminationText"] | escape | nl2br}}</p> -->
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
 
       <h2 class="govuk-heading-l">Observations</h2>
 
@@ -931,11 +941,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <br>
 
-      
+      <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
 
-      <h2 class="govuk-heading-l">Recommendation</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Has the claimant had the functional restriction for at least 3 months?
@@ -949,7 +957,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the claimant likely to have the functional restriction in 9 months?
@@ -963,7 +970,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+      </dl>
 
+      <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Has the claimant had the functional restriction for at least 3 months?
@@ -977,7 +988,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the claimant likely to have the functional restriction in 9 months?
@@ -991,6 +1001,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+      </dl>
+
+      
+
+      <h2 class="govuk-heading-l">Recommendation</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
