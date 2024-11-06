@@ -3319,10 +3319,11 @@ router.post('/prompts-three/conditions', function(req, res) {
     const conditionLength = req.session.data['condition-start']
     const diagnosis = req.session.data['diagnosis']
     const medicalcareTreatments = req.session.data['meds-care-treatments']
+    const homeTherapy = req.session.data['home-therapies']
     const mentalHealth = req.session.data['mentalHealthCondition']
 
     const conditionAdded = req.session.data.conditionAdded || []
-    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, mentalHealth })
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, homeTherapy, mentalHealth })
     req.session.data.conditionAdded = conditionAdded
   
     req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
@@ -3337,13 +3338,14 @@ router.post('/prompts-three/conditions', function(req, res) {
   const conditionLength = req.session.data['condition-start']
   const diagnosis = req.session.data['diagnosis']
   const medicalcareTreatments = req.session.data['meds-care-treatments']
+  const homeTherapy = req.session.data['home-therapies']
   const mentalHealth = req.session.data['mentalHealthCondition']
   const conditionNo = req.session.data['index']
 
   const conditionAdded = req.session.data.conditionAdded || []
     // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
     conditionAdded.splice(conditionNo, 1);
-    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, mentalHealth })
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, homeTherapy, mentalHealth })
     req.session.data.conditionAdded = conditionAdded
 
 res.redirect('/prompts-three/conditions-addAnother')
