@@ -1,0 +1,70 @@
+-{% extends "layouts/side-nav-prompts-three" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Condition history
+        </h1>
+       
+          <!--logic for adding conditions-->
+          {% for condition in data['conditionAdded'] %}
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <h2 class="govuk-heading-m">{{ condition.conditionName }}</h2>
+              </dt>
+              <dd class="govuk-summary-list__value">
+               
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
+                        Change<span class="govuk-visually-hidden">condition change</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">condition remove</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+       </dl>
+  
+       <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+        
+       {% endfor %}
+
+            <br>
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another condition
+    </button>
+    </div>
+
+      </form>
+    </div>
+</div>
+     
+   
+
+{% endblock %}
