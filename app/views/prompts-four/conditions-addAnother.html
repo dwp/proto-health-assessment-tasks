@@ -28,7 +28,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                <h2 class="govuk-heading-m">{{ condition.conditionName }}</h2>
+                <a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}"><h2 class="govuk-heading-m">{{ condition.conditionName }}</h2></a>
               </dt>
               <dd class="govuk-summary-list__value">
                
@@ -38,7 +38,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
                         Change<span class="govuk-visually-hidden">condition change</span>
                     </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
                       Remove<span class="govuk-visually-hidden">condition remove</span>
                     </a></li>
                 </ul>
