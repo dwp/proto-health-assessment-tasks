@@ -1,14 +1,20 @@
-{% extends "layouts/side-nav-prompts-three.html" %}
+{% extends "layouts/prompts-without-sidenav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">    
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+ 
 
   <form action="#" method="post" id="auto-redirect">
       <div class="govuk-form-group">
@@ -17,29 +23,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Additional attendees
           </label>
         </h1>
-        <div id="more-detail-hint" class="govuk-hint">
-          Record their names and relationship to the claimant
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            <b>Full name</b>
+          </label>
+          <input class="govuk-input" id="attendee-name" name="attendee-name" type="text">
         </div>
-        <textarea class="govuk-textarea" id="more-detail" name="attendeesAssessment" rows="8" aria-describedby="more-detail-hint">{{data["attendeesAssessment"]}}</textarea>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            <b>Relationship to claimant</b>
+          </label>
+          <input class="govuk-input" id="relationship-to-claimant" name="relationshipToClaimant" type="text">
+        </div>
+
       </div>
 
-      <!-- <div class="govuk-button-group">
-
-      </div><button class="govuk-button" data-module="govuk-button">
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button> -->
+      </button>
 
-    </div>
+      {% if (data['conditionAdded']) %}
+      <p><a href="conditions-addAnother">Cancel</a></p>
+      {% else %}
+      <p><a href="conditions-none">Cancel</a></p>
+      {% endif %}
+     </div>
+
 
       </form>
-<!--
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-  -->
-  </div>      
+ 
    
 
 {% endblock %}
