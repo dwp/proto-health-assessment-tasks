@@ -3603,3 +3603,13 @@ router.post('/prompts-four/treatment-addAnother', function(req, res) {
   res.redirect('/prompts-four/treatment')
 })
 
+router.post('/prompts-four/remove-condition', function(req, res) {
+
+  if (req.session.data['removeCondition'] == "Yes") {
+    res.redirect('/prompts-four/conditions-addAnother')
+  } else  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/prompts-four/conditions-addAnother')
+  }
+
+})
+
