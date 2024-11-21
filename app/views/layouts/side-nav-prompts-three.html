@@ -158,11 +158,15 @@
 
             {% if data["source"] == 'Additional attendees' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="attendees?source=Additional attendees">Additional attendees</a>
+              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
+            </li>
+            {% elseif (data['attendeeAdded']) %}
+            <li class="moj-side-navigation__item">
+              <a href="attendees-addAnother?source=Additional attendees">Additional attendees</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="attendees?source=Additional attendees">Additional attendees</a>
+              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
             </li>
             {% endif %}
 

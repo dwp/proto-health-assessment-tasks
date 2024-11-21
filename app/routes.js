@@ -3555,53 +3555,58 @@ router.post('/prompts-four/medication-addAnother', function(req, res) {
   res.redirect('/prompts-four/medication')
 })
 
- // Routes for adding another treatment
- router.post('/prompts-four/treatments-none', function(req, res) {
-      
-  res.redirect('/prompts-four/treatment')
- })
+ // Routes for adding another attendee //
+router.post('/prompts-four/attendees', function(req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
 
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
 
-// Routes for adding another treatment //
-router.post('/prompts-four/treatment', function(req, res) {
-  const treatmentName = req.session.data['treatments-name']
-  const treatmentFrequency = req.session.data['treatments-frequency']
-  const treatmentReason = req.session.data['treatments-reason']
-  const treatmentEffectiveness = req.session.data['treatments-efficacy']
-  const treatmentLocation = req.session.data['treatments-location']
-  
-  const treatmentAdded = req.session.data.treatmentAdded || []
-  treatmentAdded.push({ treatmentName, treatmentFrequency, treatmentReason, treatmentEffectiveness, treatmentLocation })
-  req.session.data.treatmentAdded = treatmentAdded
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
 
-  req.session.data.treatmentAdded[req.session.data.treatmentAdded.length - 1].action
-
-res.redirect('/prompts-four/treatment-addAnother')
+res.redirect('/prompts-four/attendees-addAnother')
 })
 
-// Routes for adding another treatment //
-router.post('/prompts-four/treatment-change', function(req, res) {
-  const treatmentName = req.session.data['treatments-name']
-  const treatmentFrequency = req.session.data['treatments-frequency']
-  const treatmentReason = req.session.data['treatments-reason']
-  const treatmentEffectiveness = req.session.data['treatments-efficacy']
-  const treatmentLocation = req.session.data['treatments-location']
-  const treatmentNo = req.session.data['indexTreat']
-  
-  const treatmentAdded = req.session.data.treatmentAdded || []
-  treatmentAdded.splice(treatmentNo, 1);
-  treatmentAdded.push({ treatmentNo, treatmentName, treatmentFrequency, treatmentReason, treatmentEffectiveness, treatmentLocation })
-  req.session.data.treatmentAdded = treatmentAdded
+ router.post('/prompts-four/conditions-change', function(req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const diagnosis = req.session.data['diagnosis']
+  const medicalcareTreatments = req.session.data['meds-care-treatments']
+  const homeTherapy = req.session.data['home-therapies']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['index']
 
-  req.session.data.treatmentAdded[req.session.data.treatmentAdded.length - 1].action
+  const conditionAdded = req.session.data.conditionAdded || []
+    // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+    conditionAdded.splice(conditionNo, 1);
+    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, homeTherapy, mentalHealth })
+    req.session.data.conditionAdded = conditionAdded
 
-res.redirect('/prompts-four/treatment-addAnother')
+res.redirect('/prompts-four/attendees-addAnother')
 })
 
-router.post('/prompts-four/treatment-addAnother', function(req, res) {
+ router.post('/prompts-four/attendees-addAnother', function(req, res) {
 
-  res.redirect('/prompts-four/treatment')
+  res.redirect('/prompts-four/attendees')
 })
+
+router.post('/prompts-four/remove-attendee', function(req, res) {
+
+  if (req.session.data['removeAttendee'] == "Yes") {
+    res.redirect('/prompts-four/attendees-addAnother')
+  } else  if (req.session.data['removeAttendee'] == "No") {
+    res.redirect('/prompts-four/attendees-addAnother')
+  }
+
+})
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 router.post('/prompts-four/remove-condition', function(req, res) {
 
@@ -3612,4 +3617,19 @@ router.post('/prompts-four/remove-condition', function(req, res) {
   }
 
 })
+
+router.post('/prompts-four/remove-medication', function(req, res) {
+
+  if (req.session.data['removeMedication'] == "Yes") {
+    res.redirect('/prompts-four/medication-addAnother')
+  } else  if (req.session.data['removeMedication'] == "No") {
+    res.redirect('/prompts-four/medication-addAnother')
+  }
+
+})
+
+router.post('/prompts-four/attendees-none', function(req, res) {
+      
+  res.redirect('/prompts-four/attendees')
+ })
 
