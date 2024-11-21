@@ -20,26 +20,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
-          Condition history
+         Additional attendees
         </h1>
        
           <!--logic for adding conditions-->
-          {% for condition in data['conditionAdded'] %}
+          {% for attendee in data['attendeeAdded'] %}
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                <h2 class="govuk-heading-m"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">{{ condition.conditionName }}</a></h2>
+                <h2 class="govuk-heading-m"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">{{ attendee.attendeeName }}</a></h2>
               </dt>
               <dd class="govuk-summary-list__value">
                
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
-                        Change<span class="govuk-visually-hidden">condition change</span>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">
+                        Change<span class="govuk-visually-hidden">attendee change</span>
                     </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
-                      Remove<span class="govuk-visually-hidden">condition remove</span>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-attendee?attendees={{attendee.attendeeName}}">
+                      Remove<span class="govuk-visually-hidden">attendee remove</span>
                     </a></li>
                 </ul>
               </dd>
@@ -57,7 +57,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
   <div class="govuk-button-group">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Add another condition
+      Add another attendee
     </button>
     </div>
 
