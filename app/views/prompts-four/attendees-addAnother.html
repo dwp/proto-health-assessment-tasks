@@ -22,37 +22,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <h1 class="govuk-heading-l">
          Additional attendees
         </h1>
-       
-          <!--logic for adding conditions-->
-          {% for attendee in data['attendeeAdded'] %}
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                <h2 class="govuk-heading-m"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">{{ attendee.attendeeName }}</a></h2>
-              </dt>
-              <dd class="govuk-summary-list__value">
-               
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">
-                        Change<span class="govuk-visually-hidden">attendee change</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-attendee?attendees={{attendee.attendeeName}}">
-                      Remove<span class="govuk-visually-hidden">attendee remove</span>
-                    </a></li>
-                </ul>
-              </dd>
-            </div>
-       </dl>
   
+        <!-- logic for adding attendees -->
+       {% for attendee in data['attendeeAdded'] %}
+       <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m">{{ attendee.attendeeName }}</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Relationship to claimant
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ attendee.relation }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">
+                    Change<span class="govuk-visually-hidden">attendee change</span>
+                </a></li>
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-attendee?attendees={{attendee.attendeeName}}">
+                  Remove<span class="govuk-visually-hidden">attendee remove</span>
+                </a></li>
+            </ul>
+          </dd>
+        </div>
+        <br>
+        </dl>
+        {% endfor %}
+       
+       
        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-        
-       {% endfor %}
-
-            <br>
-
-
+      
+       
 <form action="#" method="post">
   
   <div class="govuk-button-group">

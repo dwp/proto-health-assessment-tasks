@@ -3570,20 +3570,16 @@ router.post('/prompts-four/attendees', function(req, res) {
 res.redirect('/prompts-four/attendees-addAnother')
 })
 
- router.post('/prompts-four/conditions-change', function(req, res) {
-  const conditionName = req.session.data['condition-name-first']
-  const conditionLength = req.session.data['condition-start']
-  const diagnosis = req.session.data['diagnosis']
-  const medicalcareTreatments = req.session.data['meds-care-treatments']
-  const homeTherapy = req.session.data['home-therapies']
-  const mentalHealth = req.session.data['mentalHealthCondition']
-  const conditionNo = req.session.data['index']
+ router.post('/prompts-four/attendees-change', function(req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
 
-  const conditionAdded = req.session.data.conditionAdded || []
+  const attendeeAdded = req.session.data.attendeeAdded || []
     // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
-    conditionAdded.splice(conditionNo, 1);
-    conditionAdded.push({ conditionNo, conditionName, conditionLength, diagnosis, medicalcareTreatments, homeTherapy, mentalHealth })
-    req.session.data.conditionAdded = conditionAdded
+    attendeeAdded.splice(attendeeNo, 1);
+    attendeeAdded.push({ attendeeNo, attendeeName, relation })
+    req.session.data.attendeeAdded = attendeeAdded
 
 res.redirect('/prompts-four/attendees-addAnother')
 })
