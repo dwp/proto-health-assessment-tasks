@@ -1,0 +1,75 @@
+{% extends "layouts/prompts-without-sidenav" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">    -->
+
+
+<form action="#" method="post" id="auto-redirect">
+  <input type="hidden" value="{{ data.source }}"/>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Additional attendees
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              <b>Full name</b>
+            </label>
+            <input class="govuk-input" id="attendee-name" name="attendee-name" type="text" value="{{data["name"]}}">
+          </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              <b>Relationship to claimant</b>
+            </label>
+            <input class="govuk-input" id="relationship-to-claimant" name="relationshipToClaimant" type="text" value="{{data["relate"]}}">
+          </div>
+  
+        </div>
+  
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+  
+        {% if (data['attendeeAdded']) %}
+        <p><a href="conditions-addAnother">Cancel</a></p>
+        {% else %}
+        <p><a href="conditions-none">Cancel</a></p>
+        {% endif %}
+       </div>
+  
+        </form>
+   
+         </div>
+        
+      </fieldset>
+    </div>
+  <!-- </div> -->
+ </form>
+<!-- </div> -->
+      
+
+{% endblock %}
