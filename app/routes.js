@@ -3803,3 +3803,13 @@ router.post('/validation/attendees-none', function(req, res) {
  })
 
 
+//  router.post('/validation/consultation-date', function(req, res) {
+
+//   if (req.session.data['consultationDate']) {
+//     res.redirect('/validation/error')
+//   } else  if (req.session.data['consultationDate'] == "No") {
+//     res.redirect('/validation/consultation-date?')
+//   }
+
+// })
+
