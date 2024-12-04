@@ -3732,7 +3732,8 @@ router.post('/validation/medication-addAnother', function(req, res) {
 })
 
  // Routes for adding another attendee //
-router.post('/validation/attendees', function(req, res) {
+
+ router.post('/validation/attendees-error', function(req, res) {
   const attendeeNo = req.session.data['loop.index0']
   const attendeeName = req.session.data['attendee-name']
   const relation = req.session.data['relationshipToClaimant']
@@ -3742,8 +3743,12 @@ router.post('/validation/attendees', function(req, res) {
   req.session.data.attendeeAdded = attendeeAdded
 
   req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+  res.redirect('/validation/attendees-addAnother?source=Additional attendees')
+})
 
-res.redirect('/validation/attendees-addAnother')
+router.post('/validation/attendees', function(req, res) {
+
+ res.redirect('/validation/attendees-error')
 })
 
  router.post('/validation/attendees-change', function(req, res) {
