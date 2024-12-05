@@ -390,132 +390,12 @@
           </ul>
           </nav>
 
-       
-    
-          <!-- {{ mojSideNavigation({
-            label: 'Side navigation',
-            sections: [
-            {
-                items: [{
-                  text: 'Evidence',
-                  label: 'evidence',
-                  href: 'evidence?source=evidence',
-                  active: true
-                }, {
-                  text: 'Verify identity',
-                  href: 'verify-id?source=Verify identity',
-                  active: false
-                }, {
-                  text: 'Claimant consent',
-                  href: 'consent?source=consent',
-                  active: false
-                }, {
-                  text: 'Additional attendees',
-                  href: 'attendees'
-                }, {
-                  text: 'History of condition',
-                  href: 'conditions'
-                }, {
-                  text: 'Social and occupational history',
-                  href: 'soch1-additional'
-                }]
-              },
-              {
-                heading: {
-                  text: 'Daily living'
-                },
-                items: [{
-                  text: 'Preparing food',
-                  href: 'preparingfood'
-                }, {
-                  text: 'Taking nutrition',
-                  href: 'takingnutrition'
-                }, {
-                  text: 'Managing therapy',
-                  href: 'managingtherapy'
-                }, {
-                  text: 'Washing and bathing',
-                  href: 'washingbathing'
-                }, {
-                  text: 'Managing toilet needs',
-                  href: 'toiletneeds'
-                }, {
-                  text: 'Dressing and undressing',
-                  href: 'dressing'
-                }, {
-                  text: 'Communicating verbally',
-                  href: 'communicatingverbally'
-                }, {
-                  text: 'Reading and understanding, signs, symbols',
-                  href: 'readingunderstanding'
-                }, {
-                  text: 'Engaging face to face',
-                  href: 'facetoface'
-                }, {
-                  text: 'Budgeting',
-                  href: 'budgeting'
-                }]
-              },
-              {
-                heading: {
-                  text: 'Mobility'
-                },
-                items: [{
-                  text: 'Planning and following journeys',
-                  href: 'journeys'
-                }, {
-                  text: 'Moving around',
-                  href: 'movingaround'
-                }]
-              },
-              {
-                heading: {
-                  text: 'Observations'
-                },
-                items: [{
-                  text: 'Mental state',
-                  href: 'mental-state'
-                }, {
-                  text: 'Physical state',
-                  href: 'physical-state'
-                }]
-              },
-              {
-                heading: {
-                  text: 'Summary'
-                },
-                items: [{
-                  text: 'Daily living qualifying period and prospective test',
-                  href: 'dl-qual'
-                }, {
-                  text: 'Daily living justification',
-                  href: 'daily-living'
-                }, {
-                    text: 'Mobility qualifying period and prospective test',
-                    href: 'mobility-qual'
-                }, {
-                  text: 'Mobility justification',
-                  href: 'mobility'
-                }, {
-                  text: 'Review period for PIP',
-                  href: 'review'
-                }]
-              }
-            ]
-          }) }} -->
-
     
           {% if data["washingbathingSelect"] === undefined %}
           <a href="report" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
           {% elseif (data["washingbathingSelect"]) %}
           <a href="report-error" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
           {% endif %}
-
-          <!-- <a href="/next-page" class="govuk-link save-and-redirect-link">Next page></a> -->
-
-          <!-- <button type="submit" class="govuk-button" data-module="govuk-button">
-            Check answers
-          </button> -->
 
         </form>
 
@@ -529,16 +409,17 @@
               const formElement = document.getElementById("auto-redirect");
               const url = window.location.href.split("/").reverse()[0].replace(/\?.*/, "");
 
-              if (url  === "consultation-date") {
+              if (url === "consultation-date") {
                 const consultationDate = document.getElementById("consultation-date-day");
                 const consultationM = document.getElementById("consultation-date-month");
                 const consultationY = document.getElementById("consultation-date-year");
 
-                if (!consultationDate.value || !consultationM.value || !consultationY.value ) {
+                if (consultationDate.value || consultationM.value || consultationY.value ) {
                   formElement.error.value = "true";
                   formElement.submit();
 
                   return
+                  
                 }
               }
               
