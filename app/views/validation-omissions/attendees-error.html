@@ -1,0 +1,77 @@
+{% extends "layouts/prompts-without-sidenav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+ 
+ <div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Attendee name must not include numbers</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <form action="#" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Add an attendee
+          </label>
+        </h1>
+
+        <p id="consultation-date-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Attendee name must not include numbers
+        </p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            <b>Full name</b>
+          </label>
+          <input class="govuk-input" id="attendee-name" name="attendee-name" value="{{data["attendee-name"]}}" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            <b>Relationship to claimant</b>
+          </label>
+          <input class="govuk-input" id="relationship-to-claimant" name="relationshipToClaimant" value="{{data["relationshipToClaimant"]}}" type="text">
+        </div>
+
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      {% if (data['conditionAdded']) %}
+      <p><a href="conditions-addAnother">Cancel</a></p>
+      {% else %}
+      <p><a href="conditions-none">Cancel</a></p>
+      {% endif %}
+     </div>
+
+
+      </form>
+ 
+   
+
+{% endblock %}

@@ -10,8 +10,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-two-thirds">   
 
-    {% if (data['error'] === "true") %} 
-    <!--show error day-->
+    {% if (data['error'] === "true") %}
+
     <div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
         <h2 class="govuk-error-summary__title">
@@ -27,7 +27,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </div>
 
-     <!--show error day-->
+     <!--show error-->
     <form action="#" method="post" id="auto-redirect">
       <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -57,70 +57,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   Month
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="consultation-date-month" name="consultation-month" type="text" value="{{data["consultation-month"]}}" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="consultation-date-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="consultation-date-year" name="consultation-year" type="text"  value="{{data["consultation-year"]}}" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-        
-     </form>
-
-     {% elseif data['consultation-month'] >= '1' and data['consultation-month'] <= '12' %}
- 
-      <!--show error month-->
-    <div class="govuk-error-summary" data-module="govuk-error-summary">
-      <div role="alert">
-        <h2 class="govuk-error-summary__title">
-          There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-          <ul class="govuk-list govuk-error-summary__list">
-            <li>
-              <a href="#">Consultation date must inlude a month</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-     <!--show error month-->
-    <form action="#" method="post" id="auto-redirect">
-      <div class="govuk-form-group govuk-form-group--error">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Consultation date
-            </h1>
-          </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 2023
-          </div>
-          <p id="consultation-date-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Consultation date month
-          </p>
-          <div class="govuk-date-input" id="consultation-date">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="consultation-date-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--width-2" id="consultation-date-day" name="consultation-day" type="text" value="{{data["consultation-day"]}}" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="consultation-date-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="consultation-date-month" name="consultation-month" type="text" value="{{data["consultation-month"]}}" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
