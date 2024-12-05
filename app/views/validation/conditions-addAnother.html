@@ -1,4 +1,4 @@
--{% extends "layouts/side-nav-prompts-three" %}
+-{% extends "layouts/side-nav-validation" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -17,6 +17,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" id="auto-redirect">
    
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-heading-l">
@@ -49,7 +51,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
         
        {% endfor %}
-
+      </form>
             <br>
 
 

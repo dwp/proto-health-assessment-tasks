@@ -527,6 +527,22 @@
             link.addEventListener("click", function (e) {
               e.preventDefault();
               const formElement = document.getElementById("auto-redirect");
+              const url = window.location.href.split("/").reverse()[0].replace(/\?.*/, "");
+
+              if (url  === "consultation-date") {
+                const consultationDate = document.getElementById("consultation-date-day");
+                const consultationM = document.getElementById("consultation-date-month");
+                const consultationY = document.getElementById("consultation-date-year");
+
+                if (!consultationDate.value || !consultationM.value || !consultationY.value ) {
+                  formElement.error.value = "true";
+                  formElement.submit();
+
+                  return
+                }
+              }
+              
+              formElement.error.value = "false";
               formElement.action = window.location.href = "?redirect=" + e.target.href;
               formElement.submit();
             });

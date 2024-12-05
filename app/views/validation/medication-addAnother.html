@@ -1,4 +1,4 @@
--{% extends "layouts/side-nav-prompts-three.html" %}
+-{% extends "layouts/side-nav-validation.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -23,6 +23,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Medication
         </h1>
 
+        <form action="#" method="post" id="auto-redirect">
           <!--logic for adding medications-->
           {% for medication in data['medicationAdded'] %}
          
@@ -51,7 +52,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
      {% endfor %}
 
-          
+      </form>    
 <br>
 <form action="#" method="post">
   
