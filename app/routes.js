@@ -3807,6 +3807,12 @@ router.post('/validation/attendees-none', function(req, res) {
   res.redirect('/validation/attendees')
  })
 
+ router.post('/validation/report', function(req, res) {
+
+  res.redirect('/validation/report-error')
+})
+
+
 
 //  router.post('/validation/consultation-date', function(req, res) {
 
