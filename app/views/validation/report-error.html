@@ -19,6 +19,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    {% if data["washingbathingSelect"] === undefined %} 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="washingbathing?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            <li><a href="review?source=Review">Review period error</a></li>
+            <li><a href="#">Reason for taking medication</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% elseif (data["washingbathingSelect"]) %}
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="review?source=Review">Review period error</a></li>
+            <li><a href="#">Reason for taking medication</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endif %}
     
 
     <h1 class="govuk-heading-xl">Check answers</h1>
@@ -450,12 +481,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Once finished she sits at the edge of the bath and then steps out of the bath whilst holding onto the hand rail. She usually has a wash by the sink on most days, and has a shower once every few days, she is able to determine whenever she needs to have 
         a shower and a wash herself without difficulties, and it approximately takes her 5 minutes to shower each time, which is a normal duration for her. </p>
 
+      {% if data["washingbathingSelect"] === undefined %} 
+      <div class="govuk-form-group--error">     
        <div>
         <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
-        <a href="washingbathing?source=Washing and bathing" class="govuk-link govuk-body" style="float: right">Add</a>
+        <!-- <a href="washingbathing?source=Washing and bathing" class="govuk-link govuk-body" style="float: right">Add</a> -->
        </div>
+       <a href="washingbathing?source=Washing and bathing" class="govuk-list govuk-error-summary__list">Select a descriptor for washing and  bathing</a>
+    </div> 
 
+    {% elseif (data["washingbathingSelect"]) %}
+    <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
+      <a href="washingbathing?source=Washing and bathing" class="govuk-link govuk-body" style="float: right">Change</a>
+     </div>
       <p>{{data["washingbathingSelect"]}}</p>
+    {% endif %}
+    <br>
+
+      
 
       <h3 class="govuk-heading-s">Justification for washing and bathing</h3>
       <p class="text">Restrictions reported: 
@@ -947,12 +991,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Reason for this review period
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>{{data["reviewtimereasons"]}}</p>
+            <a href="#" class="govuk-link">Enter review period</a>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <!-- <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"> reveiw period reason</span>
-            </a>
+            </a> -->
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -1034,8 +1078,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </dl> -->
   
-    <form action="#" method="post" novalidate>
-      <input type="hidden" name="report-submit" value="true">
+    <form action="first-submit-done.html" method="get" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Submit report
       </button>
