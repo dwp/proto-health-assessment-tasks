@@ -221,34 +221,49 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-    <h2 class="govuk-heading-m">Current medication and treatment</h2>
+    <div>
+    <h2 class="govuk-heading-m" style="display: inline-block">Medication</h2>
+      <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline">Change</a> -->
+    </div>
 
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
+  {% for medication in data['medicationAdded'] %}
 
-   <p class="text">Medication
-    Venlafaxine XR 325mg - 1 tablet daily - for mental health conditions (dosage increased, reasons and year of increase unspecified, potentially due to persistent mental health breakdown episodes) (Diazepam and Mirtazapine stopped on advise of her psychiatrist, year and reasons unspecified)
+      <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
 
-    Pramipexole 0.88mcg - 1 tablet 3 times daily - for restless legs/tremors
+      <div>
+      <h2 class="govuk-heading-m" style="display: inline-block;">Dosage</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+      <p>{{ medication.medicationDose }}</p>
 
-    Codeine 30mg - 2 tablets up to 4 times daily as needed - for pain relief
+      <div>
+        <h2 class="govuk-heading-m" style="display: inline-block;">Frequency</h2>
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+        <p>{{ medication.medicationFrequency }}</p>
 
-    Paracetamol 500mg - 2 tablets up to 4 times daily - for pain relief
+      <div>
+        <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
+        <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+        <p>{{ medication.medicationReason }}</p>
 
-    Capsaicin cream - applied independently on her left hip and knee before going to bed daily - for pain relief
-    (GP and specialists are fully aware of all the medication dosage that she takes)
+      <div>
+        <h2 class="govuk-heading-m" style="display: inline-block;">Effectiveness</h2>
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+        <p>{{ medication.medicationEffectiveness }}</p>
 
-    Effectiveness
-    She finds the medication as partially effective in alleviation of the presenting symptoms. 
+      <div>
+        <h2 class="govuk-heading-m" style="display: inline-block;">Side effects</h2>
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+        <p>{{ medication.medicationEffectiveness }}</p>
 
-    Side Effects
-    Memory loss, no focus, forgetfulness, feeling light headed, irregular sleep, feeling sleepy. Compliance: She tends to be forgetful about which medication she has to take at which time of day. 
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+     {% endfor %}
 
-    Additional therapies or treatments
-    None  </p>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
     <h2 class="govuk-heading-m">Social and occupational history</h2>
