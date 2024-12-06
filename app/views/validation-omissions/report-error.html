@@ -277,7 +277,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
           <!-- <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a> -->
         </div>
-        <a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-list govuk-error-summary__list">Enter a reason for taking</a>
+        <p><b><a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link" style="color: #d4351c;">Enter a reason for taking</a></b></p>
         </div>
         <br>
           {% elseif (medication.medicationReason) %}
@@ -509,7 +509,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
         <!-- <a href="washingbathing?source=Washing and bathing" class="govuk-link govuk-body" style="float: right">Add</a> -->
        </div>
-       <a href="washingbathing-error?source=Washing and bathing" class="govuk-list govuk-error-summary__list">Select a descriptor for washing and  bathing</a>
+       <p><b><a href="washingbathing-error?source=Washing and bathing" class="govuk-link" style="color:#d4351c">Select a descriptor for washing and  bathing</a></b></p>
     </div> 
 
     {% elseif (data["washingbathingSelect"]) %}
@@ -1009,11 +1009,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
     {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] == "" %} 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key govuk-form-group--error">
             Reason for this review period
           </dt>
           <dd class="govuk-summary-list__value">
-            <a href="review-error?source=Review" class="govuk-link">Enter review period</a>
+            <b><a href="review-error?source=Review" class="govuk-link" style="color:#d4351c">Enter review period</a></b>
           </dd>
           <dd class="govuk-summary-list__actions">
             <!-- <a class="govuk-link" href="#">
@@ -1026,7 +1026,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dt class="govuk-summary-list__key">
             Reason for this review period
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__values">
             <p>{{data["reviewtimereasons"]}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
