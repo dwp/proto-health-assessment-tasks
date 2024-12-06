@@ -391,7 +391,7 @@
           </nav>
 
     
-          {% if data["washingbathingSelect"] === undefined or data["reviewtimereasons"] === 'None' or data["medications-reason"] == '' %} 
+          {% if data["report-submit"] !== 'true' %} 
           <a href="report" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
           {% else %}
           <a href="report-error" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
