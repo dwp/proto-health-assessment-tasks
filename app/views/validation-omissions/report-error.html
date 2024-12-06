@@ -20,6 +20,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
+    {% if data["washingbathingSelect"] and data["reviewtimereasons"] and data["medications-reason"] %} 
+
+    {% else %} 
     <div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
         <h2 class="govuk-error-summary__title">
@@ -33,11 +36,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% if data["reviewtimereasons"] === 'None' %} 
             <li><a href="review?source=Review">Review period error</a></li>
             {% endif %} 
+            {% if data["medications-reason"] == '' %} 
             <li><a href="#">Reason for taking medication</a></li>
+            {% endif %} 
           </ul>
         </div>
       </div>
     </div>
+    {% endif %} 
     
   
 
@@ -241,35 +247,60 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-    <h2 class="govuk-heading-m">Current medication and treatment</h2>
+    <div>
+      <h2 class="govuk-heading-m" style="display: inline-block">Medication</h2>
+        <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline">Change</a> -->
+      </div>
+  
+    {% for medication in data['medicationAdded'] %}
+  
+        <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
+  
+        <div>
+        <h2 class="govuk-heading-m" style="display: inline-block;">Dosage</h2>
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+        </div>
+        <p>{{ medication.medicationDose }}</p>
+  
+        <div>
+          <h2 class="govuk-heading-m" style="display: inline-block;">Frequency</h2>
+          <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+        </div>
+          <p>{{ medication.medicationFrequency }}</p>
+  
+      
+        {% if medication.medicationReason == "" %} 
+        <div class="govuk-form-group--error"> 
+        <div>
+          <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
+          <!-- <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a> -->
+        </div>
+        <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-list govuk-error-summary__list">Enter a reason for taking</a>
+        </div>
+        <br>
+          {% elseif (medication.medicationReason) %}
+          <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
+           <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a>
+          <p>{{ medication.medicationReason }}</p>
+          {% endif %}
 
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
-
-   <p class="text">Medication
-    Venlafaxine XR 325mg - 1 tablet daily - for mental health conditions (dosage increased, reasons and year of increase unspecified, potentially due to persistent mental health breakdown episodes) (Diazepam and Mirtazapine stopped on advise of her psychiatrist, year and reasons unspecified)
-
-    Pramipexole 0.88mcg - 1 tablet 3 times daily - for restless legs/tremors
-
-    Codeine 30mg - 2 tablets up to 4 times daily as needed - for pain relief
-
-    Paracetamol 500mg - 2 tablets up to 4 times daily - for pain relief
-
-    Capsaicin cream - applied independently on her left hip and knee before going to bed daily - for pain relief
-    (GP and specialists are fully aware of all the medication dosage that she takes)
-
-    Effectiveness
-    She finds the medication as partially effective in alleviation of the presenting symptoms. 
-
-    Side Effects
-    Memory loss, no focus, forgetfulness, feeling light headed, irregular sleep, feeling sleepy. Compliance: She tends to be forgetful about which medication she has to take at which time of day. 
-
-    Additional therapies or treatments
-    None  </p>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <br>
+        <div>
+          <h2 class="govuk-heading-m" style="display: inline-block;">Effectiveness</h2>
+          <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+        </div>
+          <p>{{ medication.medicationEffectiveness }}</p>
+  
+        <div>
+          <h2 class="govuk-heading-m" style="display: inline-block;">Side effects</h2>
+          <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+        </div>
+          <p>{{ medication.medicationEffectiveness }}</p>
+  
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        
+       {% endfor %}
+  
+      <br>
 
     <h2 class="govuk-heading-m">Social and occupational history</h2>
     <p class="govuk-body">
