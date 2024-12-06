@@ -3909,6 +3909,23 @@ router.post('/validation-omissions/medication-change', function(req, res) {
 res.redirect('/validation-omissions/medication-addAnother')
 })
 
+router.post('/validation-omissions/medication-change-error', function(req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+    medicationAdded.splice(medNo, 1);
+    medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+    req.session.data.medicationAdded = medicationAdded
+
+res.redirect('/validation-omissions/report-error#medicationSection')
+})
+
 router.post('/validation-omissions/medication-addAnother', function(req, res) {
 
   res.redirect('/validation-omissions/medication')
