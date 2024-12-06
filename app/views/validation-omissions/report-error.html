@@ -20,7 +20,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-    {% if data["washingbathingSelect"] and data["reviewtimereasons"] and data["medications-reason"] %} 
+    {% if data["washingbathingSelect"] and data["reviewtimereasons"] !== "None" and data["medications-reason"] %} 
 
     {% else %} 
     <div class="govuk-error-summary" data-module="govuk-error-summary">
@@ -31,14 +31,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             {% if data["washingbathingSelect"] === undefined %} 
-            <li><a href="washingbathing?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
             {% endif %} 
-            {% if data["reviewtimereasons"] === 'None' %} 
-            <li><a href="review?source=Review">Review period error</a></li>
+            {% if data["reviewtimereasons"] === 'None' or data["reviewtimereasons"] == "" %} 
+            <li><a href="review-error?source=Review">Review period error</a></li>
             {% endif %} 
+            {% for medication in data['medicationAdded'] %}
             {% if data["medications-reason"] == '' %} 
-            <li><a href="#">Reason for taking medication</a></li>
+            <li><a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}">Reason for taking medication</a></li>
             {% endif %} 
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -248,13 +250,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <br>
 
     <div>
-      <h2 class="govuk-heading-m" style="display: inline-block">Medication</h2>
+      <!-- <h2 class="govuk-heading-m" style="display: inline-block">Medication</h2> -->
         <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline">Change</a> -->
       </div>
   
     {% for medication in data['medicationAdded'] %}
   
-        <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
+        <h2 class="govuk-heading-m" id="medicationSection">{{ medication.medicationName }}</h2>
   
         <div>
         <h2 class="govuk-heading-m" style="display: inline-block;">Dosage</h2>
@@ -275,7 +277,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
           <!-- <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a> -->
         </div>
-        <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-list govuk-error-summary__list">Enter a reason for taking</a>
+        <a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-list govuk-error-summary__list">Enter a reason for taking</a>
         </div>
         <br>
           {% elseif (medication.medicationReason) %}
@@ -507,7 +509,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
         <!-- <a href="washingbathing?source=Washing and bathing" class="govuk-link govuk-body" style="float: right">Add</a> -->
        </div>
-       <a href="washingbathing?source=Washing and bathing" class="govuk-list govuk-error-summary__list">Select a descriptor for washing and  bathing</a>
+       <a href="washingbathing-error?source=Washing and bathing" class="govuk-list govuk-error-summary__list">Select a descriptor for washing and  bathing</a>
     </div> 
 
     {% elseif (data["washingbathingSelect"]) %}
@@ -1005,13 +1007,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
     
-    {% if data["reviewtimereasons"] == "None" %} 
+    {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] == "" %} 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reason for this review period
           </dt>
           <dd class="govuk-summary-list__value">
-            <a href="review?source=Review" class="govuk-link">Enter review period</a>
+            <a href="review-error?source=Review" class="govuk-link">Enter review period</a>
           </dd>
           <dd class="govuk-summary-list__actions">
             <!-- <a class="govuk-link" href="#">
@@ -1019,7 +1021,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a> -->
           </dd>
         </div>
-        {% elseif (data["reviewtimereasons"]) %}
+        {% else %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reason for this review period
