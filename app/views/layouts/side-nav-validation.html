@@ -107,7 +107,7 @@
       <a href="evidence.html" class="govuk-back-link assessment-back">Go back to assessment type</a>
 
       <form action="#" method="post">
-
+        
         <!-- {{ data['source'] }} -->
 
         <nav class="moj-side-navigation" aria-label="Side navigation">
@@ -189,15 +189,11 @@
 
             {% if data["source"] == 'Medication' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="medications-none?source=Medication">Medication</a>
-            </li>
-            {% elseif (data['medicationAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="medication-addAnother?source=Medication">Medication</a>
+              <a href="medication-single?source=Medication">Medication</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="medications-none?source=Medication">Medication</a>
+              <a href="medication-single?source=Medication">Medication</a>
             </li>
             {% endif %}
 
@@ -245,10 +241,22 @@
              </li>
              {% endif %}
 
-             {% if data["source"] == 'Washing and bathing' %}
+             <!-- Active on the page with radio button selected -->
+             {% if data["source"] == 'Washing and bathing' and data["washingbathingSelect"] !== undefined %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="washingbathing?source=Washing and bathing" aria-current="location">Washing and bathing</a>
+              <a href="washingbathing?source=Washing and bathing" aria-current="location">Washing and bathing</a>
+            </li>
+            <!-- Active on the page with no radio input selected -->
+             {% elseif data["source"] == 'Washing and bathing' and data["washingbathingSelect"] === undefined %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="washingbathing?source=Washing and bathing" aria-current="location" style="color:#d4351c">Error: Washing and bathing</a>
              </li>
+             <!-- Not active on page with no radio button selection -->
+             {% elseif data["washingbathingSelect"] === undefined %}
+             <li class="moj-side-navigation__item">
+               <a href="washingbathing?source=Washing and bathing" aria-current="location" style="color:#d4351c">Error: Washing and bathing</a>
+             </li>
+             <!-- Not active on page but user is naviagted to this url when the click on washing and bathing in side nav -->
              {% else %}
              <li class="moj-side-navigation__item">
                <a href="washingbathing?source=Washing and bathing">Washing and bathing</a>

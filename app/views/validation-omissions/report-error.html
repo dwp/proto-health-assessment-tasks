@@ -36,11 +36,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% if data["reviewtimereasons"] === 'None' or data["reviewtimereasons"] == "" %} 
             <li><a href="review-error?source=Review">Review period error</a></li>
             {% endif %} 
-            {% for medication in data['medicationAdded'] %}
-            {% if data["medications-reason"] == '' %} 
-            <li><a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}">Reason for taking medication</a></li>
+            {% if data["medications-reason"] === "None" or data["medications-reason"] == "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
             {% endif %} 
-            {% endfor %}
           </ul>
         </div>
       </div>
@@ -254,9 +252,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline">Change</a> -->
       </div>
   
-    {% for medication in data['medicationAdded'] %}
+    <!-- {% for medication in data['medicationAdded'] %}
   
-        <h2 class="govuk-heading-m" id="medicationSection">{{ medication.medicationName }}</h2>
+        <h2 class="govuk-heading-m">{{ medication.medicationName }}</h2>
   
         <div>
         <h2 class="govuk-heading-m" style="display: inline-block;">Dosage</h2>
@@ -275,8 +273,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-form-group--error"> 
         <div>
           <h2 class="govuk-heading-m" style="display: inline-block;">Reason for taking</h2>
-          <!-- <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a> -->
-        </div>
+           <a href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link govuk-body" style="float: right">Change</a> -->
+        <!--</div>
         <p><b><a href="medication-change-error?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}" class="govuk-link" style="color: #d4351c;">Enter a reason for taking</a></b></p>
         </div>
         <br>
@@ -300,14 +298,117 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         
-       {% endfor %}
+       {% endfor %} -->
+
+       <h2 class="govuk-heading-l" id="medicationSection">Medication</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Medication name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Codeine
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dosage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30mg
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Frequency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Once daily
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data["medications-reason"] === "None" or data["medications-reason"] == "" %} 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-form-group--error">
+            Reason for taking
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p><b><a href="medication-change-error" class="govuk-link" style="color: #d4351c;">Enter a reason for taking</a></b></p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        {% elseif (data["medications-reason"]) %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for taking
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data["medications-reason"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Effectiveness
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sometime eases symptoms
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Side effects
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Feel sick
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+    </dl>
+
   
       <br>
 
-    <h2 class="govuk-heading-m">Social and occupational history</h2>
-    <p class="govuk-body">
-      <a href="#" class="govuk-link" style="float: right">Change</a>
-   </p>
+    <div>
+    <h2 class="govuk-heading-m" style="display: inline-block;">Social and occupational history</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+  </div>
 
    <p class="text">Living arrangements
     Lives with two house mates in a standard shared house (this is not supported living accommodation from mental health institutions).

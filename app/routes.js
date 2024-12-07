@@ -3926,9 +3926,9 @@ router.post('/validation-omissions/medication-change-error', function(req, res) 
 res.redirect('/validation-omissions/report-error#medicationSection')
 })
 
-router.post('/validation-omissions/medication-addAnother', function(req, res) {
+router.post('/validation-omissions/medication-view', function(req, res) {
 
-  res.redirect('/validation-omissions/medication')
+  res.redirect('/validation-omissions/medication-single')
 })
 
  // Routes for adding another attendee //
