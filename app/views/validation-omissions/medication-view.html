@@ -35,14 +35,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="medications-name">
                 <b>Medication name</b>
               </label>
-              <input class="govuk-input" id="medications-name" name="medications-name" type="text" value="Codine">
+              <input class="govuk-input" id="medications-name" name="medications-name" type="text" value="Codeine">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="medications-dose">
                 <b>Dosage</b>
               </label>
-              <input class="govuk-input" id="medications-dose" name="medications-dose" type="text" value="30 mg">
+              <input class="govuk-input" id="medications-dose" name="medications-dose" type="text" value="30mg">
             </div>
 
             <div class="govuk-form-group">
@@ -52,14 +52,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <input class="govuk-input" id="medications-frequency" name="medications-frequency" type="text" value="Once daily">
             </div>
 
-            <div class="govuk-form-group govuk-form-group--error">
+            <div class="govuk-form-group">
               <label class="govuk-label" for="medications-reason">
                 <b>Reason for taking</b>
               </label>
-              <p id="reason-for-taking-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a reason for taking medication
-              </p>
-              <input class="govuk-input" id="medications-reason" name="medications-reason" type="text">
+              <input class="govuk-input" id="medications-reason" name="medications-reason" type="text" value="{{data["medications-reason"]}}">
             </div>
            
   
@@ -67,7 +64,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="medications-efficacy">
                 <b>Effectiveness (optional)</b>
               </label>
-              <textarea class="govuk-textarea" id="medications-efficacy" name="medications-efficacy" rows="1" aria-describedby="medication effectivness">Sometimes effective</textarea>
+              <textarea class="govuk-textarea" id="medications-efficacy" name="medications-efficacy" rows="1" aria-describedby="medication effectivness">Sometime eases symptoms</textarea>
             </div>
   
             <div class="govuk-form-group">
@@ -86,7 +83,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Save and continue
           </button>
 
-            <p><a href="report-error">Cancel</a></p>
+      
+            <p><a href="medication-single">Cancel</a></p>
+
 
           </div>
 
