@@ -36,7 +36,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="15">{{data["dressingNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="15">She is physically capable of putting on and taking off t-shirts, shirts, sweaters and tops independently without difficulties. 
+              She tends to find managing zips, fastenings and buttons a bit fiddly due to her hand pains and possibly having swollen fingers. She needs to be sitting down to put on and take off trousers, socks and shoes, for lower half items once sat down she leans forwards to reach down to her feet and lifts her knees closer to her chest in sitting, depending on which position is mostly comfortable.</textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -312,7 +313,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["dressingSelect"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="dressingSelect">
                   (6a) Can dress and undress unaided
                 </label>
@@ -364,7 +365,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for dressing and undressing
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingJustification" name="dressingJustify" rows="15">{{data["dressingJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingJustification" name="dressingJustify" rows="15">Restrictions reported: 
+
+              CQ states has problems dressing daily, shoulder is stiff and painful, doesn't have full range of movement, cannot do zips at the back or bras, 5 days out 7 days cannot tie trainers or laces, cannot put arm up to wear a jumper. 
+      
+              FH states takes a long time to dress to allow for joint stiffness to ease in the morning, managing buttons can be fiddly due to hand pains, for lower half items once sat down she leans forwards to reach down to her feet and lifts her knees closer to her chest in sitting, depending on which position is mostly comfortable.</textarea>
           </div> 
           
           

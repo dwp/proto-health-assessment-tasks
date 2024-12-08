@@ -36,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyNotes" name="communicatingverballyNotes" rows="15">{{data["communicatingverballyNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyNotes" name="communicatingverballyNotes" rows="15">She does not express any significant issues with verbal communication, speaking and hearing. Normally she can speak to people, can understand what is being said and can maintain a conversation going without difficulties.</textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -234,7 +234,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["communicatingverballySelect"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="communicatingverballySelect" name="communicatingverballySelect" type="radio" value="(7a) Can express and understand verbal information unaided">
+                    <input class="govuk-radios__input" id="communicatingverballySelect" name="communicatingverballySelect" type="radio" value="(7a) Can express and understand verbal information unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="communicatingverballySelect">
                   (7a) Can express and understand verbal information unaided
                 </label>
@@ -281,7 +281,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for communicating verbally
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyJustification" name="communicatingverballyJustify" rows="15">{{data["communicatingverballyJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="communicatingverballyJustification" name="communicatingverballyJustify" rows="15">Restrictions reported: 
+
+              CQ states when anxious and depressed cannot fully take in what people are saying, most of the time closes down because of the overload, has poor memory, tries to write notes down to remember, when listening to instructions never remembers them and has to be asked to be taken through them 1 by 1, attention isn't very good. 
+              FH states she does not express any significant issues with verbal communication, speaking and hearing. </textarea>
           </div>
           
           

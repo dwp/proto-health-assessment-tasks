@@ -36,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="readingunderstandingNotes" name="readingunderstandingNotes" rows="15">{{data["readingunderstandingNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="readingunderstandingNotes" name="readingunderstandingNotes" rows="15">She is able to read and understand basic and complex written information and sentences without difficulties. If she receives official documentation, letters and correspondence she wouldn't require complex information to be broken down into simple text for her to make sense out of what she's just read. She can easily distinguish between signs and symbols in roads and public places.</textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -234,7 +234,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["readingunderstandingSelect"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="readingunderstandingSelect" name="readingunderstandingSelect" type="radio" value="(8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses">
+                    <input class="govuk-radios__input" id="readingunderstandingSelect" name="readingunderstandingSelect" type="radio" value="(8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="readingunderstandingSelect">
                   (8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses
                 </label>
@@ -279,7 +279,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for reading and undersdtanding signs, symbols and words
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="readingJustification" name="readingJustify" rows="15">{{data["readingJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="readingJustification" name="readingJustify" rows="15">Restrictions reported: 
+
+              CQ states lines get mixed up and she doesn't remember what she's read, cannot focus. FH states she can read and understand basic and complex written information and sentences without difficulties.</textarea>
           </div>
           
           
