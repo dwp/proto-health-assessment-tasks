@@ -36,7 +36,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="15">{{data["facetofaceNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceNotes" name="facetofaceNotes" rows="15">She feels confident interacting with her friends and people she know well. She doesn't interact with people she doesn't know as she can feel uncomfortable and overwhelmed due to mental health reasons. 
+              If she is to interact with a new person face to face, she'd need to be notified of the meeting beforehand so that she mentally prepares herself for the actual encounter, and she would also need any friend or close relative support her before, during and after she meets that person to ensure that she remains calm and composed.</textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -174,7 +175,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["facetofaceSelect"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided">
+                    <input class="govuk-radios__input" id="facetofaceSelect" name="facetofaceSelect" type="radio" value="(9a) Can engage with other people unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="facetofaceSelect">
                   (9a) Can engage with other people unaided
                 </label>
@@ -213,7 +214,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for face to face
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceJustification" name="facetofaceJustify" rows="15">{{data["facetofaceJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="facetofaceJustification" name="facetofaceJustify" rows="15">Restrictions reported: 
+
+              CQ states cannot go in crowds or where there is a lot of people as this causes stress and anxiety, gets anxious, panicky and cannot speak when meeting new people, avoids such situations if possible, has a small group of friends who she sees occasionally but cannot meet anyone else.</textarea>
           </div>
           
           

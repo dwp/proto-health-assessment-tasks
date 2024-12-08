@@ -36,7 +36,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyNotes" name="managingtherapyNotes" rows="15">{{data["managingtherapyNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyNotes" name="managingtherapyNotes" rows="15">She tends to be forgetful about which medication she has to take at which time of day. Normally certain symptoms come on, and this would serve as a reminder to her that she needs to take her tablets.
+              She is able to manage pill packets and can administer the tablets with a glass of water independently. She currently has a monthly prescription. She is in control of her medication and tablets are at her disposal.</textarea>
           </div>          
           <div class="govuk-form-group">
 
@@ -317,7 +318,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["managingtherapySelect"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="managingtherapySelect" name="managingtherapySelect" type="radio" value="(3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided">
+                    <input class="govuk-radios__input" id="managingtherapySelect" name="managingtherapySelect" type="radio" value="(3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="managingtherapySelect">
                   (3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided
                     </label>  
@@ -365,7 +366,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 Justification for managing therapy
               </label>
             
-              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyJustification" name="managingtherapyJustify" rows="15">{{data["managingtherapyJustify"]}}</textarea>
+              <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="managingtherapyJustification" name="managingtherapyJustify" rows="15">Restrictions reported: 
+
+                CQ states most mornings forgets to take anti-depressants, forgets to check blood sugars most days, hardly remembers to take Paracetamol unless asked, had to cancel tests and appointments due to anxiety and pain. 
+                Previous PA4 suggests unaided. FH states she tends to be forgetful about which medication she has to take at which time of day.</textarea>
             </div>
             
           
