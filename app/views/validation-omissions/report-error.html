@@ -20,7 +20,95 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-    {% if data["washingbathingSelect"] and data["reviewtimereasons"] !== "None" and data["medications-reason"] !== "None" %} 
+    {% if data["reviewtimereasons"] === "None" and data["medications-reason"] === "None" and data["washingbathingSelect"]  %} 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
+            {% endif %} 
+            {% if data["washingbathingSelect"] === undefined %} 
+            <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            {% endif %} 
+            {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %} 
+            <li><a href="review-error?source=Review">Review period error</a></li>
+            {% endif %} 
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% elseif data["reviewtimereasons"] === "None" and data["medications-reason"] and data["washingbathingSelect"]  %} 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
+            {% endif %} 
+            {% if data["washingbathingSelect"] === undefined %} 
+            <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            {% endif %} 
+            {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %} 
+            <li><a href="review-error?source=Review">Review period error</a></li>
+            {% endif %} 
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% elseif data["reviewtimereasons"] and data["medications-reason"] === "None" and data["washingbathingSelect"]  %} 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
+            {% endif %} 
+            {% if data["washingbathingSelect"] === undefined %} 
+            <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            {% endif %} 
+            {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %} 
+            <li><a href="review-error?source=Review">Review period error</a></li>
+            {% endif %} 
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% elseif data["washingbathingSelect"] and data["medications-reason"] and data["reviewtimereasons"] %} 
+
+    {% elseif data["washingbathingSelect"] and data["medications-reason"] %} 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
+            {% endif %} 
+            {% if data["washingbathingSelect"] === undefined %} 
+            <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
+            {% endif %} 
+            {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %} 
+            <li><a href="review-error?source=Review">Review period error</a></li>
+            {% endif %} 
+          </ul>
+        </div>
+      </div>
+    </div>
 
     {% else %} 
     <div class="govuk-error-summary" data-module="govuk-error-summary">
@@ -30,19 +118,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </h2>
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === "" %} 
+            <li><a href="medication-change-error">Reason for taking medication</a></li>
+            {% endif %} 
             {% if data["washingbathingSelect"] === undefined %} 
             <li><a href="washingbathing-error?source=Washing and bathing">Select a descriptor for washing and bathing</a></li>
             {% endif %} 
-            {% if data["reviewtimereasons"] === 'None' or data["reviewtimereasons"] == "" %} 
+            {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %} 
             <li><a href="review-error?source=Review">Review period error</a></li>
-            {% endif %} 
-            {% if data["medications-reason"] === "None" or data["medications-reason"] == "" %} 
-            <li><a href="medication-change-error">Reason for taking medication</a></li>
             {% endif %} 
           </ul>
         </div>
       </div>
     </div>
+
     {% endif %} 
     
   
@@ -1127,8 +1216,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dt class="govuk-summary-list__key">
             Reason for this review period
           </dt>
-          <dd class="govuk-summary-list__values">
-            <p>{{data["reviewtimereasons"]}}</p>
+          <dd class="govuk-summary-list__value">
+            {{ data["reviewtimereasons"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Review">
