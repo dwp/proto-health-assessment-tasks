@@ -187,10 +187,29 @@
            
             {% endif %}
 
-            {% if data["source"] == 'Medication' %}
+            <!-- Active on the page nothing entered into input box -->
+            {% if data["source"] === "Medication" and data["medications-reason"] === "None" %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="medication-single?source=Medication">Medication</a>
+              <a href="medication-single?source=Medication" style="color:#d4351c">Error: Medication</a>
             </li>
+            {% elseif data["source"] === "Medication" and data["medications-reason"] === "" %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="medication-change-error" aria-current="location" style="color:#d4351c">Error: Medication</a>
+             </li>
+              <!-- Not active on page with no input in review period box -->
+             {% elseif data["medications-reason"] === "None" %}
+             <li class="moj-side-navigation__item">
+               <a href="medication-single?source=Medication" aria-current="location" style="color:#d4351c">Error: Medication</a>
+             </li>
+             {% elseif data["medications-reason"] === "" %}
+             <li class="moj-side-navigation__item">
+               <a href="medication-change-error" aria-current="location" style="color:#d4351c">Error: Medication</a>
+             </li>
+              <!-- Active on the page with input in the input box -->
+              {% elseif data["source"] == "Medication" and data["medications-reason"] %}
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="medication-single?source=Medication">Medication</a>
+              </li>
             {% else %}
             <li class="moj-side-navigation__item">
               <a href="medication-single?source=Medication">Medication</a>
@@ -206,8 +225,6 @@
               <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
             </li>
             {% endif %}
-
-            
 
           
              <h4 class="moj-side-navigation__title">Daily living</h4>
@@ -387,20 +404,28 @@
              {% endif %}
 
               <!-- Active on the page nothing entered into input box -->
-             {% if data["source"] == 'Review' and data["reviewtimereasons"] === "None" or data["reviewtimereasons"] == "" %}
+             {% if data["source"] === "Review" and data["reviewtimereasons"] === "None" %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="review-error?source=Review" aria-current="location" style="color:#d4351c">Review period for PIP</a>
              </li>
+             {% elseif data["source"] === "Review" and data["reviewtimereasons"] === "" %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="review-error?source=Review" aria-current="location" style="color:#d4351c">Review period for PIP</a>
+             </li>
+             <!-- Not active on page with no input in review period box -->
+             {% elseif data["reviewtimereasons"] === "None" %}
+             <li class="moj-side-navigation__item">
+               <a href="review-error?source=Review" aria-current="location" style="color:#d4351c">Error: Review period for PIP</a>
+             </li>
+             {% elseif data["reviewtimereasons"] === "" %}
+             <li class="moj-side-navigation__item">
+               <a href="review-error?source=Review" aria-current="location" style="color:#d4351c">Error: Review period for PIP</a>
+             </li>
              <!-- Active on the page with input in the input box -->
-             {% elseif data["source"] == 'Review' and (data["reviewtimereasons"]) %}
+             {% elseif data["source"] == "Review" and data["reviewtimereasons"] %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="review?source=Review">Review period for PIP</a>
              </li>
-              <!-- Not active on page with no radio button selection -->
-              {% elseif data["reviewtimereasons"] === "None" or data["reviewtimereasons"] == "" %}
-              <li class="moj-side-navigation__item">
-                <a href="review-error?source=Review" aria-current="location" style="color:#d4351c">Error: Review period for PIP</a>
-              </li>
              {% else %}
              <li class="moj-side-navigation__item">
                <a href="review?source=Review">Review period for PIP</a>
