@@ -36,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </label>
       
       
-        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingNotes" name="budgetingNotes" rows="15">{{data["budgetingNotes"]}}</textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingNotes" name="budgetingNotes" rows="15">She has a good understanding of money and is aware of how money works. She is aware of the concept of money, the value of things and the need to budget for future purchases.</textarea>
       </div>
 
       <div class="govuk-form-group">
@@ -170,7 +170,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
               {% elseif data["budgetingSelect"] === undefined %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
               (10a) Can manage complex budgeting decisions unaided
             </label>
@@ -208,7 +208,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Justification for budgeting
         </label>
       
-        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingJustification" name="budgetingJustify" rows="15">{{data["budgetingJustify"]}}</textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingJustification" name="budgetingJustify" rows="15">Restrictions reported: 
+
+          CQ states gets anxious about money and bills, due to depression and anxiety she doesn't have a clear head and she cannot plan, support worker and husband help with bills, gets overloaded and has panic attacks. FH states understands how money works.</textarea>
       </div>
       
       

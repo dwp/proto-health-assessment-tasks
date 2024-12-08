@@ -36,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJourneyNotes" name="planningJourneyNotes" rows="15">{{data["planningJourneyNotes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJourneyNotes" name="planningJourneyNotes" rows="15">She usually gets a lift to attend for appointments, as she's used to it being done this way. She usually goes out to the countryside accompanied by her friend once every couple of weeks.</textarea>
           </div>
 
           <div class="govuk-form-group">
@@ -312,7 +312,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   {% elseif data["journeysSelectpbr"] === undefined %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided" {{ checked }}>
                     <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
                   (11a) Can plan and follow the route of a journey unaided
                 </label>
@@ -365,7 +365,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Justification for planning and following journeys
             </label>
           
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJustification" name="planningJustify" rows="15">{{data["planningJustify"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJustification" name="planningJustify" rows="15">Restrictions reported: 
+
+              CQ states gets frightened about having a panic attack at the thought of leaving the house, asks husband or relatives to do the shopping, is usually fine in known places but if the route changes or she gets lost gets extremely anxious, panicky, cannot breathe and feels sick, is not comfortable approaching anyone for directions, cannot follow a map if anxious, gets distressed about missing a turn, usually doesn't go to new places due to anxiety. FH states she usually gets a lift to attend for appointments, as she's used to it being done this way.</textarea>
           </div>
           
           
