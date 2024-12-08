@@ -3923,7 +3923,7 @@ router.post('/validation-omissions/medication-change-error', function(req, res) 
     medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
     req.session.data.medicationAdded = medicationAdded
 
-res.redirect('/validation-omissions/report-error#medicationSection')
+res.redirect('/validation-omissions/report-error')
 })
 
 router.post('/validation-omissions/medication-view', function(req, res) {

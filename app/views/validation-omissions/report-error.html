@@ -20,7 +20,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-    {% if data["washingbathingSelect"] and data["reviewtimereasons"] !== "None" and data["medications-reason"] %} 
+    {% if data["washingbathingSelect"] and data["reviewtimereasons"] !== "None" and data["medications-reason"] !== "None" %} 
 
     {% else %} 
     <div class="govuk-error-summary" data-module="govuk-error-summary">
