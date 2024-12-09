@@ -28,6 +28,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         
          
           <dl class="govuk-summary-list">
+            {% if data["medications-reason"] === "None" or data["medications-reason"] === ""  %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <h2 class="govuk-heading-m"><a class="govuk-link" href="medication-single-error" style="color:#d4351c">Error: Codeine</a></h2>
+              </dt>
+              <dd class="govuk-summary-list__value">
+              
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">medication</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">medication</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+            {% else %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 <h2 class="govuk-heading-m"><a class="govuk-link" href="medication-single-error">Codeine</a></h2>
@@ -37,10 +57,31 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medn={{medication.medicationName}}&dose={{medication.medicationDose}}&fre={{medication.medicationFrequency}}&reas={{medication.medicationReason}}&eff={{medication.medicationEffectiveness}}&side={{medication.medicationSideEffect}}">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
                         Change<span class="govuk-visually-hidden">medication</span>
                     </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-medication?medications={{medication.medicationName}}">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden">medication</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <h2 class="govuk-heading-m"><a class="govuk-link" href="#">Sertraline</a></h2>
+              </dt>
+              <dd class="govuk-summary-list__value">
+              
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">medication</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
                       Remove<span class="govuk-visually-hidden">medication</span>
                     </a></li>
                 </ul>
