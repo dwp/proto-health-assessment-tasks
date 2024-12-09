@@ -199,7 +199,7 @@
              </li>
              {% elseif data["medications-reason"] === "" %}
              <li class="moj-side-navigation__item">
-               <a href="medication-change-error" aria-current="location" style="color:#d4351c">Error: Medication</a>
+               <a href="medication-single?source=Medication" aria-current="location" style="color:#d4351c">Error: Medication</a>
              </li>
               <!-- Active on the page with input in the input box -->
               {% elseif data["source"] == "Medication" and data["medications-reason"] %}
