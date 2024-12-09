@@ -3747,8 +3747,17 @@ router.post('/validation/medication-addAnother', function(req, res) {
 })
 
 router.post('/validation/attendees', function(req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
 
- res.redirect('/validation/attendees-error')
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+ res.redirect('/validation/attendees-addAnother')
 })
 
  router.post('/validation/attendees-change', function(req, res) {
