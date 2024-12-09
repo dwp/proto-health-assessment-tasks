@@ -186,11 +186,11 @@
             <!-- Active on the page nothing entered into input box -->
             {% if data["source"] === "Medication" and data["medications-reason"] === "None" %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="medication-single?source=Medication" style="color:#d4351c">Error: Medication</a>
+              <a href="medication-single?source=Medication?source=Medication" style="color:#d4351c">Error: Medication</a>
             </li>
             {% elseif data["source"] === "Medication" and data["medications-reason"] === "" %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="medication-change-error" aria-current="location" style="color:#d4351c">Error: Medication</a>
+               <a href="medication-single?source=Medication" aria-current="location" style="color:#d4351c">Error: Medication</a>
              </li>
               <!-- Not active on page with no input in review period box -->
              {% elseif data["medications-reason"] === "None" %}
