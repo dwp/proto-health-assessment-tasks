@@ -19,6 +19,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %}
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Enter a review period</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% else %}
+    
+    {% endif %}
   
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -79,7 +98,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </fieldset>
         </div>
         
-        {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] == "" %}
+        {% if data["reviewtimereasons"] === "None" or data["reviewtimereasons"] === "" %}
         <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label govuk-label--s" for="reviewtimereasons">
             Why do you recommend this review period?
