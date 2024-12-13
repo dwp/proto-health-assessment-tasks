@@ -10,20 +10,20 @@
     {{
         dwpHeader({
             name: "Health Assessment Service",
-            serviceHref: '../../',
+            serviceHref: '../',
             container: true,
-            containerClasses: "govuk-width-container--full-width"
+            containerClasses: "govuk-width-container"
         })
     }}
 
   <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-    <dl class="key-details-bar__key-details govuk-width-container--full-width">
+    <dl class="key-details-bar__key-details govuk-width-container">
       <div class="key-details-bar__top-block">
         <dt class="govuk-visually-hidden">Name:</dt>
         <dt class="key-details-bar__name">John Smith</dt>
   
         <dt class="govuk-visually-hidden">National Insurance number:</dt>
-        <dt class="key-details-bar__nino">AB  CB  12  13</dt>
+        <dt class="key-details-bar__nino">RN 00 01 23 A</dt>
   
         <dt class="govuk-visually-hidden">Claim status:</dt>
         <dd class="key-details-bar__status">ASSESSMENT BOOKED</dd>
@@ -39,45 +39,7 @@
       </div>
     </dl>
   </section>
-  <header class="moj-primary-navigation">
-      <div class="moj-primary-navigation">
-  
-        <div class="moj-primary-navigation__container govuk-width-container--full-width">
-      
-          <div class="moj-primary-navigation__nav">
-      
-            <nav class="moj-primary-navigation" aria-label="Primary navigation">
-      
-              <ul class="moj-primary-navigation__list">
-                <li class="moj-primary-navigation__item"> 
-                  <a class="moj-primary-navigation__link" aria-current="page" href="evidence">Assessment</a>
-                  </li>
-      
-                  <!-- <li class="moj-primary-navigation__item" > 
-                    <a class="moj-primary-navigation__link"  href="telephone-start">Telephone call</a>
-                    </li> -->
-  
-                <li class="moj-primary-navigation__item">
-                  <a class="moj-primary-navigation__link claim-documents" href="docs-3">Claimant documents</a>
-                </li>
-      
-  
-                <!-- <li class="moj-primary-navigation__item">
-                  <a class="moj-primary-navigation__link" href="other-services/timeline-view">Timeline</a>
-                </li> -->
-  
-  
-              </ul>
-      
-            </nav>
-      
-          </div>
-        </div>
-      
-      </div>
-      
 
-    </header>
       
   {% endblock %}
   
@@ -114,7 +76,7 @@
           <!-- <h4 class="moj-side-navigation__title">Section 1</h4> -->
           <ul class="moj-side-navigation__list">
 
-          <h4 class="moj-side-navigation__title">Evidence</h4>
+          <h4 class="moj-side-navigation__title">History</h4>
             {% if data["source"] == 'evidence' or data["source"] == 'default' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="evidence?source=evidence" aria-current="location">Evidence</a>
@@ -122,6 +84,36 @@
             {% else %}
             <li class="moj-side-navigation__item">
               <a href="evidence?source=evidence" aria-current="location">Evidence</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'History of condition' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="conditions?source=History of condition">History of condition</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="conditions?source=History of condition">History of condition</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Current medication and treatment' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="med-treatment?source=Current medication and treatment">Current medication and treatment</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="med-treatment?source=Current medication and treatment">Current medication and treatment</a>
+            </li>
+            {% endif %}
+
+            {% if data["source"] == 'Social and occupational history' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
             </li>
             {% endif %}
 
@@ -136,13 +128,13 @@
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Claimant identity' %}
+            {% if data["source"] == 'Verify identity' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
+              <a href="verify-id?source=Verify identity">Verify identity</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
+              <a href="verify-id?source=Verify identity">Verify identity</a>
             </li>
             {% endif %}
 
@@ -158,60 +150,13 @@
 
             {% if data["source"] == 'Additional attendees' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% elseif (data['attendeeAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="attendees-addAnother?source=Additional attendees">Additional attendees</a>
+              <a href="attendees?source=Additional attendees">Additional attendees</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
+              <a href="attendees?source=Additional attendees">Additional attendees</a>
             </li>
             {% endif %}
-
-            <h4 class="moj-side-navigation__title">History</h4>
-
-            {% if data["source"] == 'Condition history' %} 
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="conditions-none?source=Condition history">Condition history</a>
-            </li>
-            {% elseif (data['conditionAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions-addAnother?source=Condition history">Condition history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions-none?source=Condition history">Condition history</a>
-            </li>
-           
-            {% endif %}
-
-            {% if data["source"] == 'Medication' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="medications-none?source=Medication">Medication</a>
-            </li>
-            {% elseif (data['medicationAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="medication-addAnother?source=Medication">Medication</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="medications-none?source=Medication">Medication</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Social and occupational history' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
-            </li>
-            {% endif %}
-
-            
 
           
              <h4 class="moj-side-navigation__title">Daily living</h4>
@@ -347,13 +292,13 @@
              </li>
              {% endif %}
 
-             {% if data["source"] == 'Informal observations' %}
+             {% if data["source"] == 'Physical state observations' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="physical-state?source=Informal observations" aria-current="location">Informal observations</a>
+               <a href="physical-state?source=Physical state observations" aria-current="location">Physical state observations</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="physical-state?source=Informal observations">Informal observations</a>
+               <a href="physical-state?source=Physical state observations">Physical state observations</a>
              </li>
              {% endif %}
 
@@ -504,20 +449,17 @@
             ]
           }) }} -->
 
-  
-          <a href="check-answers-new" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
-         
+    
+       
+          <a href="report-base" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
 
           <!-- <a href="/next-page" class="govuk-link save-and-redirect-link">Next page></a> -->
 
           <!-- <button type="submit" class="govuk-button" data-module="govuk-button">
             Check answers
           </button> -->
-
+          
         </form>
-
-        <input form="auto-redirect" type="hidden" name="error" value="true">
-
         <script>
           const item = document.querySelectorAll(".moj-side-navigation__item > a");
           item.forEach(link => {
