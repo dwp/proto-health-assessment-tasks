@@ -16,7 +16,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <div class="govuk-inset-text">
       No harmful information has been included in this report
     </div>
-
+   
+    {% if (data['evidenceusedpip']) %}
     <h2 class="govuk-heading-l">Evidence used</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-5">
         {% for evidence in data['evidenceusedpip'] %}
@@ -37,6 +38,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <br>
         {% endfor %}
         </dl>
+
+        {% else %}
+        <div>
+          <h2 class="govuk-heading-l"  style="display: inline-block;">Evidence used</h2>
+          <a href="#" class="govuk-link govuk-body" style="float: right">Add</a>
+        </div>
+
+        {% endif %}
         
         {% if (data['other-evidence']) %}
         <h3 class="govuk-heading-m" style="margin-top:-5%;">Other evidence used</h3>
@@ -72,6 +81,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% endfor %}
 
       {% else %}
+      <div>
+        <h2 class="govuk-heading-l" style="display: inline-block;">Short call</h2>
+        <a href="shortcall" class="govuk-link govuk-body" style="float: right">Add</a>
+      </div>
       {% endif %}
 
       <br>
