@@ -26,13 +26,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <!-- logic for adding attendees -->
        {% for attendee in data['attendeeAdded'] %}
        <dl class="govuk-summary-list govuk-!-margin-bottom-5">
-        <h2 class="govuk-heading-m">{{ attendee.attendeeName }}</h2>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Relationship or role
-          </dt>
+        <h2 class="govuk-heading-m"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">{{ attendee.attendeeName }}</a></h2>
           <dd class="govuk-summary-list__value">
-            {{ attendee.relation }}
+               
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -44,7 +41,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </a></li>
             </ul>
           </dd>
-        </div>
+          </div>
         <br>
         </dl>
         {% endfor %}
