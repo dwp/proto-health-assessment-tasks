@@ -4,6 +4,49 @@
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+  <header class="moj-primary-navigation">
+    <div class="govuk-width-container">
+      <div class="moj-primary-navigation">
+  
+        <div class="moj-primary-navigation__container">
+      
+          <div class="moj-primary-navigation__nav">
+      
+            <nav class="moj-primary-navigation" aria-label="Primary navigation">
+      
+              <ul class="moj-primary-navigation__list">
+                <li class="moj-primary-navigation__item"> 
+                  <a class="moj-primary-navigation__link" aria-current="page" href=" ">Assessment</a>
+                  </li>
+  
+  
+                <li class="moj-primary-navigation__item">
+                  <a class="moj-primary-navigation__link" href="attendees-docs">Claimant documents</a>
+                </li>
+              </ul>
+          </nav>
+      
+          </div>
+        </div>
+      </div>
+      
+  
+        
+    </div>
+    </header> 
+
+{% endblock %}
+
 {% block content_left %}
 
 <style type="text/css">
@@ -14,6 +57,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   }
              
   </style>
+
  
 
   <form action="#" method="post" id="auto-redirect">
@@ -33,7 +77,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="event-name">
-            <b>Relationship to claimant</b>
+            <b>Relationship or role</b>
           </label>
           <input class="govuk-input" id="relationship-to-claimant" name="relationshipToClaimant" type="text">
         </div>
@@ -46,9 +90,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </button>
 
       {% if (data['conditionAdded']) %}
-      <p><a href="conditions-addAnother">Cancel</a></p>
+      <p><a href="attendees-addAnother">Cancel</a></p>
       {% else %}
-      <p><a href="conditions-none">Cancel</a></p>
+      <p><a href="attendees-none">Cancel</a></p>
       {% endif %}
      </div>
 
