@@ -3935,6 +3935,11 @@ router.post('/validation-omissions/medication-change-error', function(req, res) 
 res.redirect('/validation-omissions/medication-single?source=Medication')
 })
 
+router.post('/validation-omissions/attendees-change-error', function(req, res) {
+
+res.redirect('/validation-omissions/attendees-addAnother?Additional attendees')
+})
+
 router.post('/validation-omissions/medication-single-error', function(req, res) {
   const medicationName = req.session.data['medications-name']
   const medicationDose = req.session.data['medications-dose']
