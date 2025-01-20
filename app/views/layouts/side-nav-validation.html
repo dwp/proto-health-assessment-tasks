@@ -156,19 +156,37 @@
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Additional attendees' %}
+          
+            <!-- Active on the page nothing entered into input box -->
+            {% if data["source"] === "Additional attendees" and data["relationshipToClaimant"] === "None" %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
+              <a href="medication-single?source=Medication?source=Medication" style="color:#d4351c">Error: Additional attendees</a>
             </li>
-            {% elseif (data['attendeeAdded']) %}
+            {% elseif data["source"] === "Additional attendees" and data["relationshipToClaimant"] === "" %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="attendees-addAnother?source=Additional attendees" aria-current="location" style="color:#d4351c">Error: Additional attendees</a>
+             </li>
+              <!-- Not active on page with no input in feild -->
+             {% elseif data["relationshipToClaimant"] === "None" %}
+             <li class="moj-side-navigation__item">
+               <a href="attendees-addAnother?source=Additional attendees" aria-current="location" style="color:#d4351c">Error: Additional attendees</a>
+             </li>
+             {% elseif data["relationshipToClaimant"] === "" %}
+             <li class="moj-side-navigation__item">
+               <a href="attendees-addAnother?source=Additional attendees" aria-current="location" style="color:#d4351c">Error: Additional attendees</a>
+             </li>
+              <!-- Active on the page with input in the input box -->
+              {% elseif data["source"] == "Additional attendees" and data["relationshipToClaimant"] %}
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="attendees-addAnother?source=Additional attendees">Additional attendees</a>
+              </li>
+            {% else %}
             <li class="moj-side-navigation__item">
               <a href="attendees-addAnother?source=Additional attendees">Additional attendees</a>
             </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
-            </li>
             {% endif %}
+            
+
 
             <h4 class="moj-side-navigation__title">History</h4>
 

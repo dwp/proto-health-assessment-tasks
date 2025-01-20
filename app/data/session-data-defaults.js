@@ -20,6 +20,7 @@ module.exports = {
   'neurologicalNotExamined': 'None',
   'noPhysicalExamination': 'None',
   'reviewtimereasons': 'None',
-  'medications-reason': 'None'
+  'medications-reason': 'None',
+  'relationshipToClaimant': 'None'
 
 }
