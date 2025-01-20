@@ -3979,7 +3979,7 @@ router.post('/validation-omissions/medication-view', function(req, res) {
 
 router.post('/validation-omissions/attendees', function(req, res) {
 
- res.redirect('/validation-omissions/attendees-error')
+ res.redirect('/validation-omissions/attendees-addAnother')
 })
 
  router.post('/validation-omissions/attendees-change', function(req, res) {
