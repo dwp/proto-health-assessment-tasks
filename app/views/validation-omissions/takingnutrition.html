@@ -34,10 +34,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="takingnutritionNotes">
               Functional history for taking nutrition
             </label>
-          
-          
+        
             <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionNotes" name="takingnutritionNotes" rows="15">Whenever she has a plate of food in front of her, she can independently convey it to the mouth, chew and swallow, reporting no regular spillage episodes. 
-
               However she generally eats foods which require her to only use a fork or a spoon with the right hand for ease and convenience purposes as her left hand might cause tremors. 
       
               She asks someone else to cut up food in small portions to ensure that she doesn't have to use a fork and knife simultaneously as her left hand can have tremors.
@@ -45,318 +43,493 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       
                She'd need to be reminded to eat regularly, and once reminded she'd get herself to eat something. She normally eats 1 main meal daily, tending to snack on fruit throughout the day when she feels like. </textarea>
           </div>
-          <div class="govuk-form-group">
 
+          <div class="govuk-form-group">
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
             
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            
               Which of these describes how well the claimant can take nutrition?
-            
             </legend>
             
           
-     <div class="govuk-radios">
-            {% if data["takingnutritionSelect"] == '(2a) Can take nutrition unaided' %}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided" {{ checked }}>
-                  <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-                (2a) Can take nutrition unaided
-              </label>
-            </div>
-                
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-                  <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-                (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-              </label>
-            </div>
-                
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-                  <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-                (2c) Needs a therapeutic source to be able to take nutrition
-              </label>
-            </div>
-        
+        <div class="govuk-radios">
+          <!--Radio one-->
+          {% if data["takingnutritionSelect"] == '(2a) Can take nutrition unaided' %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-          (2d) Needs prompting to be able to take nutrition
-            </label>
-          </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-          (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-        </label>
-      </div>
-          
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-        (2f) Cannot convey food and drink to their mouth and needs another person to do so
-      </label>
-    </div>
-
-    {% elseif data["takingnutritionSelect"] == '(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food' %}
-            <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
-                <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+              value="(2a) Can take nutrition unaided" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
               (2a) Can take nutrition unaided
             </label>
           </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food" {{ checked }}>
-                <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-              (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
+                
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+              value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+              (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+              assistance to be able to cut up food
             </label>
           </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-                <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+              value="(2c) Needs a therapeutic source to be able to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
               (2c) Needs a therapeutic source to be able to take nutrition
             </label>
           </div>
-    
+        
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+          value="(2d) Needs prompting to be able to take nutrition">
+        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+          (2d) Needs prompting to be able to take nutrition
+        </label>
+      </div>
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+          value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+          (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+        </label>
+      </div>
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+          value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+          (2f) Cannot convey food and drink to their mouth and needs another person to do so
+        </label>
+      </div>
+
+      <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+          value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+          The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+        </label>
+      </div>
+
+    {% elseif data["takingnutritionSelect"] == '(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food' %}
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-        (2d) Needs prompting to be able to take nutrition
+          <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+            value="(2a) Can take nutrition unaided">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            (2a) Can take nutrition unaided
           </label>
         </div>
         
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-        (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-      </label>
-    </div>
+          <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+            value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food"
+            {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+            (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+            assistance to be able to cut up food
+          </label>
+        </div>
         
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-      (2f) Cannot convey food and drink to their mouth and needs another person to do so
-    </label>
-  </div>
-
-  {% elseif data["takingnutritionSelect"] == '(2c) Needs a therapeutic source to be able to take nutrition' %}
-  <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
-      <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-    (2a) Can take nutrition unaided
-  </label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+            value="(2c) Needs a therapeutic source to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+            (2c) Needs a therapeutic source to be able to take nutrition
+          </label>
+        </div>
     
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-      <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-    (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-  </label>
-</div>
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition" {{ checked }}>
-      <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-    (2c) Needs a therapeutic source to be able to take nutrition
-  </label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+            value="(2d) Needs prompting to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+            (2d) Needs prompting to be able to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+            value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+            (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+            value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+            (2f) Cannot convey food and drink to their mouth and needs another person to do so
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-(2d) Needs prompting to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-(2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-</label>
-</div>
+     {% elseif data["takingnutritionSelect"] == '(2c) Needs a therapeutic source to be able to take nutrition' %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+            value="(2a) Can take nutrition unaided">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            (2a) Can take nutrition unaided
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+            value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+            (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+            assistance to be able to cut up food
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+            value="(2c) Needs a therapeutic source to be able to take nutrition" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+            (2c) Needs a therapeutic source to be able to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+            value="(2d) Needs prompting to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+            (2d) Needs prompting to be able to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+            value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+            (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+            value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+            (2f) Cannot convey food and drink to their mouth and needs another person to do so
+          </label>
+        </div>
+        
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-(2f) Cannot convey food and drink to their mouth and needs another person to do so
-</label>
-</div>
+        {% elseif data["takingnutritionSelect"] == '(2d) Needs prompting to be able to take nutrition' %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+            value="(2a) Can take nutrition unaided">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            (2a) Can take nutrition unaided
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+            value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+            (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+            assistance to be able to cut up food
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+            value="(2c) Needs a therapeutic source to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+            (2c) Needs a therapeutic source to be able to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+            value="(2d) Needs prompting to be able to take nutrition" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+            (2d) Needs prompting to be able to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+            value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+            (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+            value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+            (2f) Cannot convey food and drink to their mouth and needs another person to do so
+          </label>
+        </div>
+        
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+          </label>
+        </div>
 
-{% elseif data["takingnutritionSelect"] == '(2d) Needs prompting to be able to take nutrition' %}
-<div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-  (2a) Can take nutrition unaided
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-  (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-  (2c) Needs a therapeutic source to be able to take nutrition
-</label>
-</div>
+        {% elseif data["takingnutritionSelect"] == '(2e) Needs assistance to be able to manage a therapeutic source to take nutrition' %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+            value="(2a) Can take nutrition unaided">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            (2a) Can take nutrition unaided
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition" {{ checked }}>
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-(2d) Needs prompting to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+            value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+            (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+            assistance to be able to cut up food
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-(2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+            value="(2c) Needs a therapeutic source to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+            (2c) Needs a therapeutic source to be able to take nutrition
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-(2f) Cannot convey food and drink to their mouth and needs another person to do so
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+            value="(2d) Needs prompting to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+            (2d) Needs prompting to be able to take nutrition
+          </label>
+        </div>
 
-{% elseif data["takingnutritionSelect"] == '(2e) Needs assistance to be able to manage a therapeutic source to take nutrition' %}
-<div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-  (2a) Can take nutrition unaided
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-  (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-  (2c) Needs a therapeutic source to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+            value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+            (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-(2d) Needs prompting to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+            value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+            (2f) Cannot convey food and drink to their mouth and needs another person to do so
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition" {{ checked }}>
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-(2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-(2f) Cannot convey food and drink to their mouth and needs another person to do so
-</label>
-</div>
+      {% elseif data["takingnutritionSelect"] == '(2f) Cannot convey food and drink to their mouth and needs another person to do so' %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+            value="(2a) Can take nutrition unaided">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+            (2a) Can take nutrition unaided
+          </label>
+        </div>
 
-{% elseif data["takingnutritionSelect"] == '(2f) Cannot convey food and drink to their mouth and needs another person to do so' %}
-<div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-  (2a) Can take nutrition unaided
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-  (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-  (2c) Needs a therapeutic source to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+            value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+            (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+            assistance to be able to cut up food
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-(2d) Needs prompting to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+            value="(2c) Needs a therapeutic source to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+            (2c) Needs a therapeutic source to be able to take nutrition
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-(2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+            value="(2d) Needs prompting to be able to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+            (2d) Needs prompting to be able to take nutrition
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so" {{ checked }}>
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-(2f) Cannot convey food and drink to their mouth and needs another person to do so
-</label>
-</div>
-{% elseif data["takingnutritionSelect"] === undefined %}
-<div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio" value="(2a) Can take nutrition unaided"  {{ checked }}>
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
-  (2a) Can take nutrition unaided
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio" value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
-  (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food
-</label>
-</div>
-  
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio" value="(2c) Needs a therapeutic source to be able to take nutrition">
-    <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
-  (2c) Needs a therapeutic source to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+            value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+            (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio" value="(2d) Needs prompting to be able to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
-(2d) Needs prompting to be able to take nutrition
-</label>
-</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+            value="(2f) Cannot convey food and drink to their mouth and needs another person to do so" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+            (2f) Cannot convey food and drink to their mouth and needs another person to do so
+          </label>
+        </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio" value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
-(2e) Needs assistance to be able to manage a therapeutic source to take nutrition
-</label>
-</div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+            </label>
+          </div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio" value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
-<label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
-(2f) Cannot convey food and drink to their mouth and needs another person to do so
-</label>
-</div>
-{% endif %}
+        {% elseif data["takingnutritionSelect"] === "The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise" %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+              value="(2a) Can take nutrition unaided">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+              (2a) Can take nutrition unaided
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+              value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+              (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+              assistance to be able to cut up food
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+              value="(2c) Needs a therapeutic source to be able to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+              (2c) Needs a therapeutic source to be able to take nutrition
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+              value="(2d) Needs prompting to be able to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+              (2d) Needs prompting to be able to take nutrition
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+              value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+              (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+              value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+              (2f) Cannot convey food and drink to their mouth and needs another person to do so
+            </label>
+          </div>
+          
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
+              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+            </label>
+          </div>
+
+
+       {% elseif data["takingnutritionSelect"] === undefined %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
+              value="(2a) Can take nutrition unaided" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect">
+              (2a) Can take nutrition unaided
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-2" name="takingnutritionSelect" type="radio"
+              value="(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-2">
+              (2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or
+              assistance to be able to cut up food
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-3" name="takingnutritionSelect" type="radio"
+              value="(2c) Needs a therapeutic source to be able to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-3">
+              (2c) Needs a therapeutic source to be able to take nutrition
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-4" name="takingnutritionSelect" type="radio"
+              value="(2d) Needs prompting to be able to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-4">
+              (2d) Needs prompting to be able to take nutrition
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-5" name="takingnutritionSelect" type="radio"
+              value="(2e) Needs assistance to be able to manage a therapeutic source to take nutrition">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-5">
+              (2e) Needs assistance to be able to manage a therapeutic source to take nutrition
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-6" name="takingnutritionSelect" type="radio"
+              value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
+              (2f) Cannot convey food and drink to their mouth and needs another person to do so
+            </label>
+          </div>
+
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="preparingfoodSelect" type="radio"
+              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
+            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
+              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
+            </label>
+          </div>
+
+    {% endif %}
+
   </div>
 </div>
             
@@ -374,24 +547,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 </div>
 
-        
-              <!-- <button class="govuk-button" data-module="govuk-button">
-                Save and continue
-              </button> -->
+    
           
           </form>
     </div>
 
       </form>
-
-   
-<!--
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-
-  -->
 
 
 {% endblock %}
