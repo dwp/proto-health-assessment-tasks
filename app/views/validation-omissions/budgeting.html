@@ -40,13 +40,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
       <div class="govuk-form-group">
-
         <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
-        
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-        
           Which of these describes how well the claimant can budget?
-        
         </legend>
         
       
@@ -54,147 +50,254 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           {% if data["budgetingSelect"] == '(10a) Can manage complex budgeting decisions unaided' %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
-              (10a) Can manage complex budgeting decisions unaided
-            </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
-              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
-            </label>
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
-              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
-            </label>
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
               </div>
- 
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
-              (10d) Cannot make any budgeting decisions at all
-            </label>
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
               </div>
 
               {% elseif data["budgetingSelect"] == '(10b) Needs prompting or assistance to be able to make complex budgeting decisions' %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
-              (10a) Can manage complex budgeting decisions unaided
-            </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions" {{ checked }}>
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
-              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
-            </label>
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
-              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
-            </label>
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
               </div>
- 
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
-              (10d) Cannot make any budgeting decisions at all
-            </label>
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
               </div>
 
               {% elseif data["budgetingSelect"] == '(10c) Needs prompting or assistance to be able to make simple budgeting decisions' %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
-              (10a) Can manage complex budgeting decisions unaided
-            </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
-              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
-            </label>
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions" {{ checked }}>
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
-              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
-            </label>
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
               </div>
- 
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
-              (10d) Cannot make any budgeting decisions at all
-            </label>
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
               </div>
 
               {% elseif data["budgetingSelect"] == '(10d) Cannot make any budgeting decisions at all' %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
-              (10a) Can manage complex budgeting decisions unaided
-            </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
-              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
-            </label>
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
-              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
-            </label>
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
               </div>
- 
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all" {{ checked }}>
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all" {{ checked }}>
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
-              (10d) Cannot make any budgeting decisions at all
-            </label>
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
+              </div>
+
+              {% elseif data["budgetingSelect"] === "The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
               </div>
 
               {% elseif data["budgetingSelect"] === undefined %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
+                  value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect">
-              (10a) Can manage complex budgeting decisions unaided
-            </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
-              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
-            </label>
+                  (10a) Can manage complex budgeting decisions unaided
+                </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
-              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
-            </label>
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio"
+                  value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+                  (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+                </label>
               </div>
- 
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio"
+                  value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+                  (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio"
+                  value="(10d) Cannot make any budgeting decisions at all">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
-              (10d) Cannot make any budgeting decisions at all
-            </label>
+                  (10d) Cannot make any budgeting decisions at all
+                </label>
+              </div>
+
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
+                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
+                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
+                </label>
               </div>
           {% endif %}
           
