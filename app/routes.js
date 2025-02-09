@@ -4046,6 +4046,32 @@ router.post('/validation-omissions/attendees-none', function(req, res) {
 
 // Routes for evidenceDesign work //
 
+// Routes for evidence none //
+router.post('/evidenceDesign/evidence-none', function(req, res) {
+      
+  res.redirect('/evidenceDesign/evidence')
+ })
+
+  // Routes for adding more evidence //
+router.post('/evidenceDesign/evidence', function(req, res) {
+  const evidenceNo = req.session.data['loop.index0']
+  const evidenceName = req.session.data['document-name']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
+
+res.redirect('/evidenceDesign/evidence-addAnother')
+})
+
+// Adding another peice of evidence //
+router.post('/evidenceDesign/evidence-addAnother', function(req, res) {
+
+  res.redirect('/evidenceDesign/evidence')
+})
+
   // Routes for adding another condition
   router.post('/evidenceDesign/conditions-none', function(req, res) {
       
