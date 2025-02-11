@@ -26,31 +26,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <p>All view links open in a new tab.</p>
        
           <!--logic for adding evidence-->
+          <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                <h2 class="govuk-heading-m">{{ evidence.evidenceName }}</h2>
-              </dt>
-              <!-- <dd class="govuk-summary-list__value">
-               
-              </dd> -->
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
-                        View<span class="govuk-visually-hidden">evidence change</span>
-                    </a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
-                      Remove<span class="govuk-visually-hidden">evidence remove</span>
-                    </a></li>
-                </ul>
-              </dd>
-            </div>
-       </dl>
-  
-       <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-        
-       {% endfor %}
+            {% set outerLoopIndex = loop.index %}
+
+             <!-- Pulling out specific values to display -->
+            {% for evidenceName in evidence.evidenceName %}
+              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index }}">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
+                  </dt>
+                  <!-- <dd class="govuk-summary-list__value">
+                  
+                  </dd> -->
+                  <dd class="govuk-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list">
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
+                            View<span class="govuk-visually-hidden">evidence change</span>
+                        </a></li>
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
+                          Remove<span class="govuk-visually-hidden">evidence remove</span>
+                        </a></li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>  
+            {% endfor %}
+          {% endfor %}
 
             <br>
 
