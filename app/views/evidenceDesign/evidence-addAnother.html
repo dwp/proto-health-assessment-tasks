@@ -1,4 +1,4 @@
--{% extends "layouts/side-nav-evidence.html" %}
+-{% extends "layouts/evidence-noSpiltscreen.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -32,9 +32,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
              <!-- Pulling out specific values to display -->
             {% for evidenceName in evidence.evidenceName %}
-              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index }}">
+              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '.' + loop.index }}">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
+<!-- 
+                    {% if evidenceName == "Careplan" %}
+                    <h2 class="govuk-heading-m">{{ evidenceName }} {{ outerLoopIndex + '.' + loop.index  }}</h2>
+
+                    {% endif %} -->
                     <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
                   </dt>
                   <!-- <dd class="govuk-summary-list__value">

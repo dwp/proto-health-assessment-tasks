@@ -4054,7 +4054,7 @@ router.post('/evidenceDesign/evidence-none', function(req, res) {
 
   // Routes for adding more evidence //
 router.post('/evidenceDesign/evidence', function(req, res) {
-  const evidenceNo = req.session.data['loop.index0']
+  const evidenceNo = req.session.data['loop.index']
   const evidenceName = req.session.data['document-name']
 
   const evidenceAdded = req.session.data.evidenceAdded || []
@@ -4064,6 +4064,7 @@ router.post('/evidenceDesign/evidence', function(req, res) {
   req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
 
 res.redirect('/evidenceDesign/evidence-addAnother')
+
 })
 
 // Adding another peice of evidence //
