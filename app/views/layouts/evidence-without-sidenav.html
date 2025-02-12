@@ -93,16 +93,10 @@
   <div class="govuk-grid-row">
     
   
-    <div class="{{ "govuk-grid-column-one-half" if data.splitScreen else "govuk-grid-column-two-thirds" }}">
+    <div class="{{ "govuk-grid-column-one-half" if data.splitScreen else "govuk-grid-column-three-quarters" }}">
       {% block content_left %}{% endblock %}
     </div>
-  
-  {% if data.splitScreen %}
-      <div class="govuk-grid-column-one-half">
-      {% include "partials/documents.html" %}
-      </div>
-  {% endif %}
-  
+
       
     </div>
   {% endblock %}

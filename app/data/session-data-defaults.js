@@ -21,6 +21,7 @@ module.exports = {
   'noPhysicalExamination': 'None',
   'reviewtimereasons': 'None',
   'medications-reason': 'None',
-  'relationshipToClaimant': 'None'
+  'relationshipToClaimant': 'None',
+  'document-name': 'None'
 
 }
