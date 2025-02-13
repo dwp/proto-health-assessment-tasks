@@ -4064,7 +4064,25 @@ router.post('/evidenceDesign/evidence', function(req, res) {
   req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
 
 res.redirect('/evidenceDesign/evidence-addAnother')
+})
 
+router.post('/evidenceDesign/remove-evidence', function(req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['evidence']
+
+  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/evidenceDesign/evidence-addAnother')
+
+  } else  if (req.session.data['removeCondition'] == "Yes") {
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+   evidenceAdded.indexOf(evidenceNo, evidenceName);
+    evidenceAdded.splice(evidenceName, 1); // 2nd parameter means remove one item only
+
+  req.session.data.evidenceAdded = evidenceAdded
+    
+  res.redirect('/evidenceDesign/evidence-addAnother')
+  }
 })
 
 // Adding another peice of evidence //
