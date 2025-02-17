@@ -46,7 +46,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>List of actual evidence available</li>
       </ul>
 
+      {% if (data['evidenceAdded']) %}
+      <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-addAnother?source=evidence">View journey</a></h3>
+      {% else %}
       <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-none?source=default">View journey</a></h3>
+      {% endif %}
+      
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 

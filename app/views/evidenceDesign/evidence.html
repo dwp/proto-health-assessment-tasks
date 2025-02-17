@@ -27,6 +27,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">Benefit type</th>
                     <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Date of document</th>
                     <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>
+                    <th scope="col" class="govuk-table__header column-width-15"></th>
                   </tr>
                 </thead>
             
@@ -54,13 +55,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           </div>
                           {% endif %}
                     </td>
-                    <td class="govuk-table__cell">
-                      {# if adding a new document - make sure the link has a class of document-link and the data-url is set to the correct document #}
-                      <a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf" href="#">Claimant questionaire</a>
+                    <td class="govuk-table__cell">Claimant questionaire</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="8/06/23">9 September 2020</td>
                     <td class="govuk-table__cell" data-sort-value="9/06/23">13 September 2020</td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" href="evidence-view">View</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -84,13 +84,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                             </div>
                           {% endif %}
                       </td>
-                    <td class="govuk-table__cell">
-                      {# if adding a new document - make sure the link has a class of document-link and the data-url is set to the correct document #}
-                      <a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf" href="#">GP letter</a>
+                    <td class="govuk-table__cell">GP letter</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="8/06/23">9 September 2020</td>
                     <td class="govuk-table__cell" data-sort-value="9/06/23">13 September 2020</td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" href="evidence-view-gp">View</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -117,13 +116,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                  </div>
                    {% endif %}
                     </td>
-                    <td class="govuk-table__cell">
-                      {# if adding a new document - make sure the link has a class of document-link and the data-url is set to the correct document #}
-                      <a class="reco-document documentLinks document-link" data-url="/public/pdfs/cq-2.pdf" href="#">Careplan</a>
+                    <td class="govuk-table__cell">Careplan</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="8/06/23">23 June 2023</td>
                     <td class="govuk-table__cell" data-sort-value="9/06/23">10 August 2019</td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf" target="_blank" href="evidence-view-careplan">View</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -150,14 +148,36 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                  </div>
                    {% endif %}
                     </td>
-                    <td class="govuk-table__cell">
-                      {# if adding a new document - make sure the link has a class of document-link and the data-url is set to the correct document #}
-                      <a class="reco-document documentLinks document-link" data-url="/public/pdfs/cq-2.pdf" href="#">Hospital letter 1</a>
+                    <td class="govuk-table__cell">Hospital letter 1</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="8/06/23">19 August 2019</td>
                     <td class="govuk-table__cell" data-sort-value="9/06/23">11 September 2019</td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf"  target="_blank" href="evidence-view-hospital">View</a></td>
                   </tr>
+                  {% if data["document-name"].includes("Evidence doc") %}
+                  
+                  {% else %}
+                  <tr class="govuk-table__row"></tr>
+                    <td class="govuk-table__cell">
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="evidence-five" name="document-name" type="checkbox" value="Evidence doc">
+                          <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">Evidence doc</a>
+                    </td>
+                
+                  <td class="govuk-table__cell">PIP</td>
+                  <td class="govuk-table__cell" data-sort-value="8/06/23">19 August 2019</td>
+                  <td class="govuk-table__cell" data-sort-value="9/06/23">11 September 2019</td>
+                  <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf"  target="_blank" href="evidence-view-hospital">View</a></td>
+                  </tr>
+
+                  {% endif %}
+      
                 </tbody>
               </table>
             </div>
