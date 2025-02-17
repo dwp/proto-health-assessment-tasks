@@ -4054,7 +4054,7 @@ router.post('/evidenceDesign/evidence-none', function(req, res) {
 
   // Routes for adding more evidence //
 router.post('/evidenceDesign/evidence', function(req, res) {
-  const evidenceNo = req.session.data['loop.index']
+  const evidenceNo = req.session.data['index']
   const evidenceName = req.session.data['document-name']
 
   const evidenceAdded = req.session.data.evidenceAdded || []
@@ -4067,20 +4067,19 @@ res.redirect('/evidenceDesign/evidence-addAnother')
 })
 
 router.post('/evidenceDesign/remove-evidence', function(req, res) {
-  const evidenceNo = req.session.data['index']
+  const evidenceNo = req.session.data['indexEvidence']
   const evidenceName = req.session.data['evidence']
+  const evNo = "2-0";
 
   if (req.session.data['removeCondition'] == "No") {
     res.redirect('/evidenceDesign/evidence-addAnother')
 
-  } else  if (req.session.data['removeCondition'] == "Yes") {
+  } else if (req.session.data['removeCondition'] == "Yes") {
 
   const evidenceAdded = req.session.data.evidenceAdded || []
-   evidenceAdded.indexOf(evidenceNo, evidenceName);
-    evidenceAdded.splice(evidenceName, 1); // 2nd parameter means remove one item only
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
+    req.session.data.evidenceAdded = evidenceAdded
 
-  req.session.data.evidenceAdded = evidenceAdded
-    
   res.redirect('/evidenceDesign/evidence-addAnother')
   }
 })
@@ -4126,6 +4125,7 @@ router.post('/evidenceDesign/conditions', function(req, res) {
   const homeTherapy = req.session.data['home-therapies']
   const mentalHealth = req.session.data['mentalHealthCondition']
   const conditionNo = req.session.data['index']
+
 
   const conditionAdded = req.session.data.conditionAdded || []
     // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
