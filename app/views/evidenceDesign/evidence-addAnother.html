@@ -31,26 +31,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% set outerLoopIndex = loop.index %}
 
              <!-- Pulling out specific values to display -->
-            {% for evidenceName in evidence.evidenceName %}
+            {% for evidenceName in evidence.evidenceName %} 
               <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index }}">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-<!-- 
-                    {% if evidenceName == "Careplan" %}
-                    <h2 class="govuk-heading-m">{{ evidenceName }} {{ outerLoopIndex + '-' + loop.index  }}</h2>
-
-                    {% endif %} -->
+                    {% if outerLoopIndex > 0 %}
                     <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
+            
+                    {% endif %} 
+                    
                   </dt>
                   <!-- <dd class="govuk-summary-list__value">
                   
                   </dd> -->
+                
                   <dd class="govuk-summary-list__actions">
                     <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
                             View<span class="govuk-visually-hidden">evidence change</span>
                         </a></li>
-                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?index={{ outerLoopIndex + '-' + loop.index }}&evidence={{evidenceName}}">
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex + '-' + loop.index }}&evidence={{evidenceName}}">
                           Remove<span class="govuk-visually-hidden">evidence remove</span>
                         </a></li>
                     </ul>
