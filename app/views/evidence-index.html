@@ -46,10 +46,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <li>List of actual evidence available</li>
       </ul>
 
+      <!--Journey one-->
       {% if (data['evidenceAdded']) %}
-      <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-addAnother?source=evidence">View journey</a></h3>
+      <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-addAnother?source=evidence">View journey - evidence remains ticked</a></h3>
       {% else %}
-      <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-none?source=default">View journey</a></h3>
+      <h3 class="govuk-heading-s"><a href="evidenceDesign/evidence-none?source=default">View journey - evidence remains ticked</a></h3>
+      {% endif %}
+
+      <!--Journey two-->
+      {% if (data['evidenceAdded']) %}
+      <h3 class="govuk-heading-s"><a href="evidenceDesign-one/evidence-addAnother?source=evidence">View journey - evidence removes from list once ticked</a></h3>
+      {% else %}
+      <h3 class="govuk-heading-s"><a href="evidenceDesign-one/evidence-none?source=default">View journey - evidence removes from list once ticked</a></h3>
       {% endif %}
       
 

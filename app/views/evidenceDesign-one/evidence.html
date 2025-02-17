@@ -32,28 +32,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </thead>
             
                 <tbody class="govuk-table__body">
+                  {% if data["document-name"].includes("Claimant questionaire") %}
+                  <input class="govuk-checkboxes__input" id="evidence-one" name="document-name" type="hidden" value="Claimant questionaire" {{ checked }}>
+                 
+                  {% else %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <!-- <input type="hidden" name="my_id" id="my_id" value="1"> -->
                           <input class="govuk-checkboxes__input" id="evidence-one" name="document-name" type="checkbox" value="Claimant questionaire">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-one"></label>
                         </div>
-                        {% elseif data["document-name"].includes("Claimant questionaire") %}
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="evidence-one" name="document-name" type="checkbox" value="Claimant questionaire" {{ checked }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="evidence-one"></label>
-                          </div>
-                          {% else %}
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="evidence-one" name="document-name" type="checkbox" value="Claimant questionaire">
-                            <label class="govuk-label govuk-checkboxes__label" for="evidence-one"></label>
-                          </div>
-                          {% endif %}
                     </td>
                     <td class="govuk-table__cell">Claimant questionaire</a>
                     </td>
@@ -62,28 +52,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="9/06/23">13 September 2020</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" href="evidence-view">View</a></td>
                   </tr>
+                  {% endif %}
+
+                  {% if data["document-name"].includes("GP letter") %}
+                  <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="hidden" value="GP letter" {{ checked }}>
+
+                  {% else %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="GP letter">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
                         </div>
-                      {% elseif data["document-name"].includes("GP letter") %}
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="GP letter" {{ checked }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
-                          </div>
-                          {% else %}
-                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="GP letter">
-                              <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
-                            </div>
-                          {% endif %}
-                      </td>
+                    </td>
                     <td class="govuk-table__cell">GP letter</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
@@ -91,30 +73,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="9/06/23">13 September 2020</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" href="evidence-view-gp">View</a></td>
                   </tr>
+                  {% endif %}
+
+                  {% if data["document-name"].includes("Careplan") %}
+                  <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="hidden" value="Careplan" {{ checked }}>
+
+                  {% else %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="Careplan">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
                         </div>
                      </div>
-                     {% elseif data["document-name"].includes("Careplan") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="Careplan" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="Careplan">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
-                    </div>
-                 </div>
-                   {% endif %}
                     </td>
                     <td class="govuk-table__cell">Careplan</a>
                     </td>
@@ -123,30 +95,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="9/06/23">10 August 2019</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf" target="_blank" href="evidence-view-careplan">View</a></td>
                   </tr>
+                  {% endif %}
+
+                  {% if data["document-name"].includes("Hospital letter 1") %}
+                  <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="hidden" value="Hospital letter 1" {{ checked }}>
+
+                  {% else %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="Hospital letter 1">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
                         </div>
-                     </div>
-                     {% elseif data["document-name"].includes("Hospital letter 1") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="Hospital letter 1" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="Hospital letter 1">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
-                    </div>
-                 </div>
-                   {% endif %}
+                     </div>      
                     </td>
                     <td class="govuk-table__cell">Hospital letter 1</a>
                     </td>
@@ -155,7 +117,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="9/06/23">11 September 2019</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2-test-scenario.pdf"  target="_blank" href="evidence-view-hospital">View</a></td>
                   </tr>
-      
+                  {% endif %}
                 </tbody>
               </table>
             </div>
