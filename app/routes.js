@@ -4077,7 +4077,7 @@ router.post('/evidenceDesign/remove-evidence', function(req, res) {
   } else if (req.session.data['removeCondition'] == "Yes") {
 
   const evidenceAdded = req.session.data.evidenceAdded || []
-    evidenceAdded.splice(1, 1); // 2nd parameter means remove one item only
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
     req.session.data.evidenceAdded = evidenceAdded
 
   res.redirect('/evidenceDesign/evidence-addAnother')
