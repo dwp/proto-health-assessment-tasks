@@ -28,14 +28,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
-            {% set outerLoopIndex = loop.index %}
+            {% set outerLoopIndex = loop.index0 %}
 
              <!-- Pulling out specific values to display -->
             {% for evidenceName in evidence.evidenceName %} 
-              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index }}">
+              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    {% if outerLoopIndex > 0 %}
+                    {% if outerLoopIndex >= 0 %}
                     <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
             
                     {% endif %} 
@@ -50,7 +50,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
                             View<span class="govuk-visually-hidden">evidence change</span>
                         </a></li>
-                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex + '-' + loop.index }}&evidence={{evidenceName}}">
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
                           Remove<span class="govuk-visually-hidden">evidence remove</span>
                         </a></li>
                     </ul>
