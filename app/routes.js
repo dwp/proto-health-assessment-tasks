@@ -4275,13 +4275,13 @@ router.post('/evidenceDesign-one/evidence', function(req, res) {
   const evidenceNo = req.session.data['index']
   const evidenceName = req.session.data['document-name']
 
-  const evidenceAdded = req.session.data.evidenceAdded || []
-  evidenceAdded.push({ evidenceNo, evidenceName })
-  req.session.data.evidenceAdded = evidenceAdded
+    const evidenceAdded = req.session.data.evidenceAdded || []
+    evidenceAdded.push({ evidenceNo, evidenceName })
+    req.session.data.evidenceAdded = evidenceAdded
+  
+    req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
+    res.redirect('/evidenceDesign-one/evidence-addAnother')
 
-  req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
-
-res.redirect('/evidenceDesign-one/evidence-addAnother')
 })
 
 router.post('/evidenceDesign-one/remove-evidence', function(req, res) {
