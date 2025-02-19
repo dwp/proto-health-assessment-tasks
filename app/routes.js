@@ -4061,7 +4061,8 @@ router.post('/evidenceDesign/evidence', function(req, res) {
   evidenceAdded.push({ evidenceNo, evidenceName })
   req.session.data.evidenceAdded = evidenceAdded
 
-  req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1].action
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+  console.log(last);
 
 res.redirect('/evidenceDesign/evidence-addAnother')
 })
