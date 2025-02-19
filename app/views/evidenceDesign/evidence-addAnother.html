@@ -29,35 +29,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
             {% set outerLoopIndex = loop.index0 %}
-
-             <!-- Pulling out specific values to display -->
-            {% for evidenceName in evidence.evidenceName %} 
-              <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    {% if outerLoopIndex >= 0 %}
-                    <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
-            
-                    {% endif %} 
-                    
-                  </dt>
-                  <!-- <dd class="govuk-summary-list__value">
-                  
-                  </dd> -->
+              {% if loop.last %}
+                    <!-- Pulling out specific values to display -->
+                  {% for evidenceName in evidence.evidenceName %} 
+                    <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                      
+                          <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
                 
-                  <dd class="govuk-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="evidence-only?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
-                            View<span class="govuk-visually-hidden">evidence change</span>
-                        </a></li>
-                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
-                          Remove<span class="govuk-visually-hidden">evidence remove</span>
-                        </a></li>
-                    </ul>
-                  </dd>
-                </div>
-              </dl>  
-            {% endfor %}
+                        </dt>
+                        <!-- <dd class="govuk-summary-list__value">
+                        
+                        </dd> -->
+                      
+                        <dd class="govuk-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="evidence-only?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                                  View<span class="govuk-visually-hidden">evidence change</span>
+                              </a></li>
+                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                                Remove<span class="govuk-visually-hidden">evidence remove</span>
+                              </a></li>
+                          </ul>
+                        </dd>
+                      </div>
+                    </dl>  
+                  {% endfor %}
+                  {% endif %}
           {% endfor %}
 
             <br>
