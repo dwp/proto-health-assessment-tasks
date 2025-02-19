@@ -29,6 +29,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
             {% set outerLoopIndex = loop.index0 %}
+            <!--Only show the last iteration of loop-->
               {% if loop.last %}
                     <!-- Pulling out specific values to display -->
                   {% for evidenceName in evidence.evidenceName %} 
