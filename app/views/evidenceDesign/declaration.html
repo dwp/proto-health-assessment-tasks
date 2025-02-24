@@ -1,0 +1,61 @@
+{% extends "layouts/declaration" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<form action="submitted" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+  
+      <h1 class="govuk-heading-l">Declaration</h1>
+
+      <p class="govuk-body">By submitting this report, you confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>All further medical evidence available has been reviewed and considered</li>
+          <li>No harmful information has been included in this report</li>
+      </ul>
+
+      <br>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="declaration">
+         
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="declaration-box" name="declaration" type="checkbox" value="I confirm that these statements are true and can be added to the report">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I confirm that these statements are true and can be added to the report
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <br>
+        <br>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Submit report
+        </button>
+      </div>
+  
+      </div>
+    </form>
+  </div>
+</div>
+
+      
+
+{% endblock %}
