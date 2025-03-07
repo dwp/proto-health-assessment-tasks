@@ -32,10 +32,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </legend>
 
        <p>No evidence has been added.</p>
-      
+
+       <div class="govuk-button-group govuk-!-margin-bottom-8">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Add evidence
           </button>
+       </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-evidence">
+              <b>Other evidence used</b>
+            </label>
+            <textarea class="govuk-textarea" id="more-evidence" name="otherEvidence" rows="5">{{ data["otherEvidence"] }}</textarea>
+          </div>
          
       </fieldset>
     </div>

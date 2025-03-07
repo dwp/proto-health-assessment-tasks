@@ -24,7 +24,48 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </h1>
 
         <p>All view links open in a new tab.</p>
-       
+
+        <div class="govuk-!-margin-bottom-9">
+          <h2 class="govuk-heading-m">Benefit evidence</h2>
+          <!--logic for adding evidence-->
+          <!-- looking into the array as a whole -->
+          {% for DWPevidence in data['evidenceAdded'] %}
+            {% set outerLoopIndex = loop.index0 %}
+            <!--Only show the last iteration of loop-->
+              {% if loop.last %}
+                  <!-- Pulling out specific values to display -->
+                {% for coreEvidence in DWPevidence.coreEvidence %} 
+                  <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                    
+                        <p class="govuk-body"><b>{{ coreEvidence }}</b></p>
+              
+                      </dt>
+                      <!-- <dd class="govuk-summary-list__value">
+                      
+                      </dd> -->
+                    
+                      <dd class="govuk-summary-list__actions">
+                        <ul class="govuk-summary-list__actions-list">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf">
+                                View<span class="govuk-visually-hidden">evidence change</span>
+                            </a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                              Remove<span class="govuk-visually-hidden">evidence remove</span>
+                            </a></li>
+                        </ul>
+                      </dd>
+                    </div>
+                  </dl>  
+                {% endfor %}
+                {% endif %}
+          {% endfor %}
+          </div>
+
+
+       <div>
+        <h2 class="govuk-heading-m">Further medical evidence</h2>
           <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
@@ -36,17 +77,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                    
-                        <h2 class="govuk-heading-m">{{ evidenceName }}</h2>
-              
+                        <b><p class="govuk-body"><b>{{ evidenceName }}</b></p></b>
+
                       </dt>
-                      <!-- <dd class="govuk-summary-list__value">
-                      
-                      </dd> -->
+                      <dd class="govuk-summary-list__value">
+                     	19 August 2019
+                      </dd>
                     
                       <dd class="govuk-summary-list__actions">
                         <ul class="govuk-summary-list__actions-list">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="evidence-only?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf">
                                 View<span class="govuk-visually-hidden">evidence change</span>
                             </a></li>
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
@@ -60,19 +100,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endif %}
           {% endfor %}
 
+        </div>
+
             <br>
 
 
 <form action="#" method="post" id="auto-redirect">
   
-  <div class="govuk-button-group">
+  <div class="govuk-button-group govuk-!-margin-bottom-8">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Add evidence
     </button>
     </div>
-    <br>
-    <br>
-    <br>
+   
     <div class="govuk-form-group">
       <label class="govuk-label" for="more-evidence">
         <b>Other evidence used</b>

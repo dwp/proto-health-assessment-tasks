@@ -22,6 +22,7 @@ module.exports = {
   'reviewtimereasons': 'None',
   'medications-reason': 'None',
   'relationshipToClaimant': 'None',
-  'document-name': 'None'
+  'document-name': 'None',
+  'dwp-evidence': 'None'
 
 }
