@@ -4058,9 +4058,10 @@ router.post('/evidenceDesign/evidence', function(req, res) {
   const evidenceName = req.session.data['document-name']
   const evidenceDate = req.session.data['evidenceDate']
   const coreEvidence = req.session.data['dwp-evidence']
+  const evidenceLink = req.session.data['evidenceURL']
 
   const evidenceAdded = req.session.data.evidenceAdded || []
-  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence })
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink })
   req.session.data.evidenceAdded = evidenceAdded
 
   const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
