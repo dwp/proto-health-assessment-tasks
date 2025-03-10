@@ -26,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <p>All view links open in a new tab.</p>
 
         <div class="govuk-!-margin-bottom-9">
-          <h2 class="govuk-heading-m">Benefit evidence</h2>
+          <h2 class="govuk-heading-m">Benefit claim documents</h2>
           <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
           {% for DWPevidence in data['evidenceAdded'] %}
@@ -48,7 +48,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     
                       <dd class="govuk-summary-list__actions">
                         <ul class="govuk-summary-list__actions-list">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
                                 View<span class="govuk-visually-hidden">evidence change</span>
                             </a></li>
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
@@ -87,17 +87,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </dd>
                       {% endfor %}
 
-                      <dd class="govuk-summary-list__actions">
-                        <ul class="govuk-summary-list__actions-list">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
-                                View<span class="govuk-visually-hidden">evidence change</span>
-                            </a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
-                              Remove<span class="govuk-visually-hidden">evidence remove</span>
-                            </a></li>
-                        </ul>
-                      </dd>
-                    </div>
+                    <dd class="govuk-summary-list__actions">
+                      <ul class="govuk-summary-list__actions-list">
+                        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                              View<span class="govuk-visually-hidden">evidence change</span>
+                          </a></li>
+                        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                            Remove<span class="govuk-visually-hidden">evidence remove</span>
+                          </a></li>
+                      </ul>
+                    </dd>
+                  </div>
                   </dl>  
                 {% endfor %}
                 {% endif %}
