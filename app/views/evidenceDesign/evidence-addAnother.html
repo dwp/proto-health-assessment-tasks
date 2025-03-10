@@ -80,19 +80,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <b><p class="govuk-body"><b>{{ evidenceName }}</b></p></b>
 
                       </dt>
-      
-                      {% for evidenceDate in evidence.evidenceDate %} 
-                      {% set outerLoopIndex = loop.index0 %}
                     
+                      {% for evidenceDate in evidence.evidenceDate %} 
                       <dd class="govuk-summary-list__value" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                         {{ evidenceDate }}
                       </dd>
-          
                       {% endfor %}
-                    
+
                       <dd class="govuk-summary-list__actions">
                         <ul class="govuk-summary-list__actions-list">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2-test-scenario.pdf?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
                                 View<span class="govuk-visually-hidden">evidence change</span>
                             </a></li>
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
