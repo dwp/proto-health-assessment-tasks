@@ -4056,10 +4056,11 @@ router.post('/evidenceDesign/evidence-none', function(req, res) {
 router.post('/evidenceDesign/evidence', function(req, res) {
   const evidenceNo = req.session.data['index']
   const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['evidenceDate']
   const coreEvidence = req.session.data['dwp-evidence']
 
   const evidenceAdded = req.session.data.evidenceAdded || []
-  evidenceAdded.push({ evidenceNo, evidenceName, coreEvidence })
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence })
   req.session.data.evidenceAdded = evidenceAdded
 
   const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
