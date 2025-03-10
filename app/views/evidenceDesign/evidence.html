@@ -64,7 +64,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="26 January 2022">26 January 2022</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">1 February 2022</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2 questionnaire.pdf" target="_blank" href="/public/pdfs/PIP2 questionnaire.pdf">View</a></td>
                   </tr>
                   <tr class="govuk-table__row">
@@ -95,8 +95,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell">Award Review AR1</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
-                    <td class="govuk-table__cell" data-sort-value="3 March 2025">3 March 2025</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="3 March 2025">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">3 March 2025</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Award review AR1.pdf"  target="_blank" href="/public/pdfs/Award review AR1.pdf">View</a></td>
                   </tr>
 
@@ -129,7 +129,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="3 March 2025">8 March 2024</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">8 March 2024</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/AP assessment report.pdf"  target="_blank" href="/public/pdfs/AP assessment report.pdf">View</a></td>
                   </tr>
 
@@ -161,8 +161,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell">Award Review AR1 covering letter</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
-                    <td class="govuk-table__cell" data-sort-value="19 August 2019">3 March 2025</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="19 August 2019">28 February 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">3 March 2025</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Award review AR1 covering letter.pdf"  target="_blank" href="/public/pdfs/Award review AR1 covering letter.pdf">View</a></td>
                   </tr>
                   
@@ -190,7 +190,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
                       {% if data["document-name"] == "None" %}
-                      <input type="hidden" name="evidenceDate" value="8 March 2025">
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence">
@@ -198,7 +197,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </div>
                       </div>
                       {% elseif data["document-name"].includes("Further Evidence") %}
-                      <input type="hidden" name="evidenceDate" value="8 March 2025">
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence" {{ checked }}>
@@ -206,7 +204,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           </div>
                         </div>
                           {% else %}
-                          <input type="hidden" name="evidenceDate" value="8 March 2025">
                           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence">
@@ -225,7 +222,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
                       {% if data["document-name"] == "None" %}
-                      <input type="hidden" name="evidenceDate" value="9 March 2025">
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter">
@@ -233,7 +229,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </div>
                      </div>
                      {% elseif data["document-name"].includes("NHS Hospital appointment letter") %}
-                     <input type="hidden" name="evidenceDate" value="9 March 2025">
                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter" {{ checked }}>
@@ -241,7 +236,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </div>
                    </div>
                    {% else %}
-                   <input type="hidden" name="evidenceDate" value="9 March 2025">
                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter">
@@ -287,7 +281,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="11 November 2024">11 November 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter 1.pdf"  target="_blank" href="/public/pdfs/GP letter 1.pdf">View</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">View</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -358,32 +352,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letter">
+                          <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                         </div>
                      </div>
-                     {% elseif data["document-name"].includes("GP letter") %}
+                     {% elseif data["document-name"].includes("GP letters") %}
                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letter" {{ checked }}>
+                        <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters" {{ checked }}>
                         <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                       </div>
                    </div>
                    {% else %}
                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letter">
+                      <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
                       <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                     </div>
                  </div>
                    {% endif %}
                     </td>
-                    <td class="govuk-table__cell">GP letter</a>
+                    <td class="govuk-table__cell">GP letters</a>
                     </td>
                     <td class="govuk-table__cell">PIP</td>
                     <td class="govuk-table__cell" data-sort-value="8 August 2024">8 August 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter 2.pdf"  target="_blank" href="/public/pdfs/GP letter 2.pdf">View</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">View</a></td>
                   </tr>
                 </tbody>
               </table>

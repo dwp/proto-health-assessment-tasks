@@ -35,31 +35,44 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% if loop.last %}
                   <!-- Pulling out specific values to display -->
                 {% for coreEvidence in DWPevidence.coreEvidence %} 
-                  <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                    
-                        <p class="govuk-body"><b>{{ coreEvidence }}</b></p>
-              
-                      </dt>
-                      <!-- <dd class="govuk-summary-list__value">
+                    <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <p class="govuk-body"><b>{{ coreEvidence }}</b></p>
+                        </dt>
+                        
+                        <dd class="govuk-summary-list__value">
+                          {% if coreEvidence === "AP assessment report" %}
+                          8 March 2024
+                          {% endif %}
+
+                          {% if coreEvidence === "Award Review AR1" %}
+                          28 February 2025
+                          {% endif %}
+
+                          {% if coreEvidence === "Award Review AR1 covering letter" %}
+                          28 February 2025
+                          {% endif %}
+
+                          {% if coreEvidence === "PIP2 questionnaire" %}
+                          26 January 2022
+                          {% endif %}
+                        </dd>
                       
-                      </dd> -->
-                    
-                      <dd class="govuk-summary-list__actions">
-                        <ul class="govuk-summary-list__actions-list">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
-                                View<span class="govuk-visually-hidden">evidence change</span>
-                            </a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
-                              Remove<span class="govuk-visually-hidden">evidence remove</span>
-                            </a></li>
-                        </ul>
-                      </dd>
-                    </div>
-                  </dl>  
+                        <dd class="govuk-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
+                                  View<span class="govuk-visually-hidden">evidence change</span>
+                              </a></li>
+                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                                Remove<span class="govuk-visually-hidden">evidence remove</span>
+                              </a></li>
+                          </ul>
+                        </dd>
+                      </div>
+                    </dl>  
                 {% endfor %}
-                {% endif %}
+             {% endif %}
           {% endfor %}
           </div>
 
@@ -78,15 +91,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         <b><p class="govuk-body"><b>{{ evidenceName }}</b></p></b>
-
                       </dt>
                     
-                      {% for evidenceDate in evidence.evidenceDate %} 
-                      <dd class="govuk-summary-list__value" id="{{ outerLoopIndex + '-' + loop.index0 }}">
-                        {{ evidenceDate }}
-                      </dd>
-                      {% endfor %}
+                      <dd class="govuk-summary-list__value">
+                        {% if evidenceName === "NHS Hospital appointment letter" %}
+                        29 January 2025
+                        {% endif %}
 
+                        {% if evidenceName === "Further Evidence" %}
+                        2 February 2025
+                        {% endif %}
+
+                        {% if evidenceName === "Hospital Factual Report" %}
+                        19 September 2024
+                        {% endif %}
+
+                        {% if evidenceName === "GP letter" %}
+                        11 November 2024
+                        {% endif %}
+
+                        {% if evidenceName === "Care plan" %}
+                        25 November 2024
+                        {% endif %}
+
+                        {% if evidenceName === "GP letters" %}
+                        8 August 2024
+                        {% endif %}
+                      </dd>
+               
                     <dd class="govuk-summary-list__actions">
                       <ul class="govuk-summary-list__actions-list">
                         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
