@@ -80,9 +80,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <b><p class="govuk-body"><b>{{ evidenceName }}</b></p></b>
 
                       </dt>
-                      <dd class="govuk-summary-list__value">
-                     	19 August 2019
+      
+                      {% for evidenceDate in evidence.evidenceDate %} 
+                      {% set outerLoopIndex = loop.index0 %}
+                    
+                      <dd class="govuk-summary-list__value" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                        {{ evidenceDate }}
                       </dd>
+          
+                      {% endfor %}
                     
                       <dd class="govuk-summary-list__actions">
                         <ul class="govuk-summary-list__actions-list">
@@ -113,7 +119,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </button>
     </div>
    
-    <div class="govuk-form-group">
+    <div class="govuk-form-group" id="evidenceInConsultation">
       <label class="govuk-label" for="more-evidence">
         <b>Evidence supplied during consultation</b>
       </label>

@@ -25,63 +25,43 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
     <h2 class="govuk-heading-l">Evidence</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence used
         </dt>
-        <dd class="govuk-summary-list__value">
-          Prescription or medication list, 20 May 2024
-          GP letter, 12 March 2023<br>
-          Factual medical report (FRR2), 18 June 2024
-        </dd>
+        {% for evidence in data['evidenceAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+        <!--Only show the last iteration of loop-->
+        {% if loop.last %}
+            <!-- Pulling out specific values to display -->
+        {% for evidenceName in evidence.evidenceName %} 
+ 
+          <p class="govuk-body" style="margin-bottom: 3.5%;">{{ evidenceName }}</p> 
+        
+
+        {% endfor %}
+        {% endif %}
+    {% endfor %}
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="evidence-addAnother">
             Change<span class="govuk-visually-hidden"> evidence used</span>
           </a>
         </dd>
       </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Other evidence used
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Prescription letters and further evidence to support for medical conditions
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> other evidence used</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Evidence requested but not returned
-        </dt>
-        <dd class="govuk-summary-list__value">
-          GP patient form (113), <br>Factual medical report (FRR2)   </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> evidence requested but not returned</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Other evidence requested but not returned
-        </dt>
-        <dd class="govuk-summary-list__value">
-None        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> other evidence requested but not returned</span>
-          </a>
-        </dd>
-      </div>
     </dl>
+   
+
+
+    <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
+      <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ data["otherEvidence"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  
 
     <h2 class="govuk-heading-l">Consultation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
