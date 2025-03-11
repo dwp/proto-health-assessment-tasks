@@ -93,7 +93,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             25 November 2024
             {% endif %}
 
-            {% if evidenceName === "GP letter" %}
+            {% if evidenceName === "GP letters" %}
             8 August 2024
             {% endif %}
            </p> 
@@ -116,10 +116,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
       <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
-      <p class="govuk-body" style="width: 90%;">{{ data["otherEvidence"] }}</p>
+      {% if data["furtherEvidence"] === "Yes" %}
+      <p class="govuk-body" style="width: 90%;">{{ data["yesFurtherEvidence"] }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     </div>
-  
+    {% elseif data["furtherEvidence"] === "No" %}
+    <p class="govuk-body" style="width: 90%;">No</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+  {% endif %}
 
     <h2 class="govuk-heading-l">Consultation</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
