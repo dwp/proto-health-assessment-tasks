@@ -1,0 +1,118 @@
+{% extends "layouts/evidence-without-sidenav.html" %}
+
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container full-width-container1280">
+
+    <form action="claimant-documents-buttons" method="post" novalidate>
+       
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+
+
+        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+ 
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                <span id="docAmountSpan" class="govuk-caption-l">{{ data["indexEvidence"] }} of 4 documents</span>
+
+                <h1 class="govuk-heading-l">{{ data["evidence"] }}</h1>
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                       
+                        {% if document.drsName %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">DRS document name</dt>
+                            <dd class="govuk-summary-list__value">{{ document.drsName }}</dd>
+                            <dd class="govuk-summary-list__actions"></dd>
+                        </div>
+                        {% endif %}
+                       
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Date of document</dt>
+                            <dd class="govuk-summary-list__value">9 September 2020</dd>
+                            <dd class="govuk-summary-list__actions"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Date DWP received</dt>
+                            <dd class="govuk-summary-list__value">13 September 2020</dd>
+                        </div>
+                        
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Benefit type</dt>
+                            <dd class="govuk-summary-list__value">PIP</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Harmful information</dt>
+                            <dd class="govuk-summary-list__value">Not harmful</dd>
+                        </div>    
+                        {% if not query.irrelevant %}
+                        {% if document.comment %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Comment</dt>
+                            <dd class="govuk-summary-list__value">{{ document.comment }}</dd>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </dl>
+                </div>
+
+    
+                <div class="govuk-grid-column-one-third">
+                    <aside class="app-related-items" role="complementary">
+                        <h1 class="govuk-heading-m">Manage </h1>
+                        <p class="govuk-body">
+                        <a href="#" class="govuk-link" rel="noreferrer noopener">Update document details</a>
+                        </p>
+                        <p class="govuk-body">
+                            <a href="#" class="govuk-link" rel="noreferrer noopener">View document activity</a>
+                            </p>
+                        <p class="govuk-body">
+                        <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Open PDF document in a new tab</a>
+                        </p> 
+                    </aside>
+                </div>
+            </div>
+  
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">  
+               
+                    <!-- <div class="govuk-grid-column-one-half">   -->
+                    <ul class="govuk-list nav-right" style="float: right">
+                        <li>
+                            <nav class="govuk-pagination" role="navigation" aria-label="results">
+                                <div class="govuk-pagination__prev">
+                                    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                    </svg>
+                                    <span class="govuk-pagination__link-title">Previous document</span></a>
+                                </div>
+                               
+                                <div class="govuk-pagination__next">
+                                    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next document</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                    </svg></a>
+                                </div>
+                            </nav>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+  
+            <div class="govuk-grid-row govuk-!-margin-bottom-6">
+                <div class="govuk-grid-column-full">
+                <iframe class="document" src="/public/pdfs/PIP2-test-scenario.pdf" title="{{ document.name }}"></iframe>
+                </div>
+            </div>  
+
+        </main>
+    </form>
+</div>
+ 
+
+{% endblock %}
