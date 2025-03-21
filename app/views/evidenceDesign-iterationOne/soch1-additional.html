@@ -1,0 +1,108 @@
+{% extends "layouts/side-nav-evidence.html" %}
+
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="#" method="post" id="auto-redirect">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Social and occupational history
+        </h1>
+      </legend>
+<br>
+<br>
+  
+  <div class="govuk-form-group">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="home-live-in">
+       <b>Type of home and living situation</b>
+      </label>
+      <textarea class="govuk-textarea" id="home-live-with" name="home-live-in" rows="4">{{data["home-live-in"]}}</textarea>
+    </div>  
+
+    <div class="govuk-form-group">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="caring-responsibilities">
+         <b>Caring responsibilities</b>
+        </label>
+        <textarea class="govuk-textarea" id="caring-responsibilities" name="caring-responsibilities" rows="4">{{data["caring-responsibilities"]}}</textarea>
+      </div>  
+
+    <label class="govuk-label" for="access-home-areas">
+      <b>Aids, appliances and adaptations</b>
+    </label>
+    <textarea class="govuk-textarea" id="access-home-areas" name="aids-adaptations" rows="4">{{data["aids-adaptations"]}}</textarea>
+  </div>      
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="work-study">
+      <b>Work and education</b>
+    </label>
+    <textarea class="govuk-textarea" id="work-study" name="work-education" rows="4">{{data["work-education"]}}</textarea>
+ </div> 
+
+ <div class="govuk-form-group">
+  <label class="govuk-label" for="getting-around">
+    <b>Driving and getting around</b>
+  </label>
+  <textarea class="govuk-textarea" id="getting-around" name="getting-around" rows="4">{{data["getting-around"]}}</textarea>
+</div>
+  
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="everyday-activities">
+      <b>Shopping and housework</b>
+    </label>
+    <textarea class="govuk-textarea" id="everyday-activities" name="shopping-housework" rows="4">{{data["shopping-housework"]}}</textarea>
+  </div>      
+  
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="spending-spare-time">
+      <b>Hobbies and spare time</b>
+    </label>
+    <textarea class="govuk-textarea" id="spending-spare-time" name="spare-time" rows="4">{{data["spare-time"]}}</textarea>
+  </div> 
+ 
+
+   
+
+       
+
+  <br>
+  <br>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="additional-social-history">
+     <b>Additional social and occupational history</b>
+    </label>
+    <textarea class="govuk-textarea" id="additional-social-history" name="additional-social-history" rows="4">{{data["additional-social-history"]}}</textarea>
+  </div>  
+
+      
+    </div>
+
+      </form>
+
+  </fieldset>
+  </form>
+  </div>      
+
+{% endblock %}

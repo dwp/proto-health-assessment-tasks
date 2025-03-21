@@ -33,12 +33,34 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-l">Changelog</h2>
 
-      <h3 class="govuk-heading-m" id="research">Iteration 1
+      <h3 class="govuk-heading-m" id="research">Iteration 2
         <strong class="govuk-tag govuk-tag">
           Latest version
         </strong>
       </h3>
-      <h4 class="govuk-heading-s">February 2024</h4>
+      <h4 class="govuk-heading-s">March 2025</h4>
+
+      <p class="govuk-body">Includes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Renaming of evidence lists</li>
+        <li>Evidence declaration in evidence section</li>
+      </ul>
+
+      <!--Journey one-->
+      {% if (data['evidenceAdded']) %}
+      <h3 class="govuk-heading-s"><a href="evidenceDesign-iterationOne/evidence-addAnother?source=evidence">View journey</a></h3>
+      {% else %}
+      <h3 class="govuk-heading-s"><a href="evidenceDesign-iterationOne/evidence-none?source=default">View journey</a></h3>
+      {% endif %}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" id="research">Iteration 1
+        <strong class="govuk-tag govuk-tag--grey">
+          Older version
+        </strong>
+      </h3>
+      <h4 class="govuk-heading-s">February 2025</h4>
 
       <p class="govuk-body">Includes:</p>
       <ul class="govuk-list govuk-list--bullet">

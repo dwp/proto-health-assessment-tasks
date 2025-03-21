@@ -1,0 +1,390 @@
+{% extends "layouts/side-nav-evidence.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Dressing and undressing</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="dressingNotes">
+              Functional history for dressing and undressing
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingNotes" name="dressingNotes" rows="15">{{data["dressingNotes"]}}</textarea>
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can dress and undress?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+
+              {% if data["dressingSelect"] == '(6a) Can dress and undress unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] == '(6b) Needs to use an aid or appliance to be able to dress or undress' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] == '(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] == '(6d) Needs assistance to be able to dress or undress their lower body' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] == '(6e) Needs assistance to be able to dress or undress their upper body' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] == '(6f) Cannot dress or undress at all' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+
+                  {% elseif data["dressingSelect"] === undefined %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect" name="dressingSelect" type="radio" value="(6a) Can dress and undress unaided">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect">
+                  (6a) Can dress and undress unaided
+                </label>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-2" name="dressingSelect" type="radio" value="(6b) Needs to use an aid or appliance to be able to dress or undress">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-2">
+                  (6b) Needs to use an aid or appliance to be able to dress or undress
+                </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-3" name="dressingSelect" type="radio" value="(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-3">
+                  (6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-4" name="dressingSelect" type="radio" value="(6d) Needs assistance to be able to dress or undress their lower body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-4">
+                  (6d) Needs assistance to be able to dress or undress their lower body
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-5" name="dressingSelect" type="radio" value="(6e) Needs assistance to be able to dress or undress their upper body">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-5">
+                  (6e) Needs assistance to be able to dress or undress their upper body
+                </label>
+                  </div>
+   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dressingSelect-6" name="dressingSelect" type="radio" value="(6f) Cannot dress or undress at all">
+                    <label class="govuk-label govuk-radios__label" for="dressingSelect-6">
+                  (6f) Cannot dress or undress at all
+                </label>
+                  </div>
+              {% endif %}
+
+            </div>
+            
+          
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="dressingJustify">
+              Justification for dressing and undressing
+            </label>
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="dressingJustification" name="dressingJustify" rows="15">{{data["dressingJustify"]}}</textarea>
+          </div> 
+          
+          
+          </div>                 
+          <!-- <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button> -->
+          
+          </form>
+    </div>
+
+      </form>
+      </div>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+
+
+{% endblock %}
