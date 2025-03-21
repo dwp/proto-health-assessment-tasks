@@ -109,21 +109,45 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dd>
       </div>
     </dl>
-   
-
-
+  
     <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
+      {% if data["furtherEvidence"] === "Yes" %}
       <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
       <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
-      {% if data["furtherEvidence"] === "Yes" %}
       <p class="govuk-body" style="width: 90%;">{{ data["yesFurtherEvidence"] }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     </div>
+
     {% elseif data["furtherEvidence"] === "No" %}
-    <p class="govuk-body" style="width: 90%;">No</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence supplied during consultation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> evidence supplied during consultation</span>
+          </a>
+        </dd>
+      </div>
+   </dl>
+  </div>
+
+  {% else %}
+
+  <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
+    <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
+    <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+
+    <p class="govuk-body" style="width: 90%;"></p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   </div>
+  
   {% endif %}
 
     <h2 class="govuk-heading-l">Consultation</h2>
@@ -1187,7 +1211,7 @@ Integer id vehicula quam. Integer magna justo, euismod non semper ut, molestie i
 <br>
 <br>
   
-    <form action="declaration" method="post" novalidate>
+    <form action="submitted" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Continue
