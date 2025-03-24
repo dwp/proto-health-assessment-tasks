@@ -23,6 +23,7 @@ module.exports = {
   'medications-reason': 'None',
   'relationshipToClaimant': 'None',
   'document-name': 'None',
-  'dwp-evidence': 'None'
+  'dwp-evidence': 'None',
+  'evidenceDeclaration': 'None'
 
 }
