@@ -77,6 +77,41 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
 
 
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Evidence declaration
+          </h2>
+        </legend>
+
+    {% if data["evidenceDeclaration"] == "None" %}    
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
+          <label class="govuk-label govuk-checkboxes__label" for="evDec">
+            All evidence available has been reviewed
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["evidenceDeclaration"] == "All evidence available has been reviewed" %}
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="" {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="evDec">
+            All evidence available has been reviewed
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %}    
+
+
           <!-- <div class="govuk-form-group">
             <label class="govuk-label" for="more-evidence">
               <b>Evidence supplied during consultation</b>
