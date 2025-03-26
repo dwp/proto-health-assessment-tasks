@@ -1,0 +1,55 @@
+{% extends "layouts/paperbased-new.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+<form action="#" method="post" id="auto-redirect">
+  <input type="hidden" name="{{ loop.index0 }}"/>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Record a shortcall
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="call">
+          Who did you call?
+        </label>
+        <input class="govuk-input" id="shortcall-name" name="shortcallName" type="text" value="{{ data["shortcallName"] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="consultation-notes">
+          Consultation notes
+        </label>
+        <textarea class="govuk-textarea" id="consultation-notes" name="shortcallNotes" rows="10" aria-describedby="consultation notes">{{ data["shortcallNotes"] }}</textarea>
+      </div>
+      </fieldset>
+    </div>
+  </form>
+  </div>
+</div>
+      
+
+{% endblock %}
