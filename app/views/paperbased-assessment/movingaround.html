@@ -1,4 +1,4 @@
-{% extends "layouts/side-nav-prompts-three.html" %}
+{% extends "layouts/paperbased-new.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -19,7 +19,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Moving around</h1>
@@ -27,31 +26,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <form action="#" method="post" id="auto-redirect">
-              
-              
-
-        <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s" for="movingaroundNotes">
-              Functional history for moving around
-            </label>
-          
-          
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingaroundNotes" name="movingaroundNotes" rows="15">{{data["movingaroundNotes"]}}</textarea>
-          </div>
-
           <div class="govuk-form-group">
-
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
-            
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            
               Which of these describes how well the claimant can move around?
-            
             </legend>
             
-          
             <div class="govuk-radios">
-  
               {% if data["movingaroundSelectpbr"] == '(12a) Can stand and then move more than 200 metres, either aided or unaided' %}
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="movingaroundSelectpbr" name="movingaroundSelectpbr" type="radio" value="(12a) Can stand and then move more than 200 metres, either aided or unaided" {{ checked }}>
