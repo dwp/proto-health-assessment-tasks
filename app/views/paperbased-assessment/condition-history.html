@@ -1,4 +1,4 @@
-{% extends "layouts/side-nav-prompts-three" %}
+{% extends "layouts/paperbased-new.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -20,29 +20,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">   
 
 <form action="#" method="post" id="auto-redirect">
+  <input type="hidden" name="{{ loop.index0 }}"/>
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
         <h1 class="govuk-fieldset__heading">
-          Additional attendees
+          Brief summary of clinical details
         </h1>
-        <div id="condition-hint" class="govuk-hint">
+        <div id="passport-issued-hint" class="govuk-hint">
         </div>
       </legend>
 
-       <p>No additional attendees have been added.</p>
-      
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Add an attendee
-          </button>
-         
+      <div class="govuk-form-group">
+        <textarea class="govuk-textarea" id="briefSummary" name="summary-of-details" rows="20" aria-describedby="brief summary of clinical details">{{ data["summary-of-details"] }}</textarea>
+      </div>
       </fieldset>
     </div>
-    </form>
-    </div>
+  </form>
   </div>
-
+</div>
       
 
 {% endblock %}
