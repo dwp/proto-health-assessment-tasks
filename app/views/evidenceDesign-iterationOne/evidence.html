@@ -132,39 +132,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">8 March 2024</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/AP assessment report.pdf"  target="_blank" href="/public/pdfs/AP assessment report.pdf">View</a></td>
                   </tr>
-
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["dwp-evidence"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="DWP-two" name="dwp-evidence" type="checkbox" value="Award Review AR1 covering letter">
-                          <label class="govuk-label govuk-checkboxes__label" for="DWP-two"></label>
-                        </div>
-                     </div>
-                     {% elseif data["dwp-evidence"].includes("Award Review AR1 covering letter") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="DWP-two" name="dwp-evidence" type="checkbox" value="Award Review AR1 covering letter" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="DWP-two"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="DWP-two" name="dwp-evidence" type="checkbox" value="Award Review AR1 covering letter">
-                      <label class="govuk-label govuk-checkboxes__label" for="DWP-two"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell">Award Review AR1 covering letter</a>
-                    </td>
-                    <td class="govuk-table__cell">PIP</td>
-                    <td class="govuk-table__cell" data-sort-value="19 August 2019">28 February 2025</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">3 March 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Award Review AR1 covering letter.pdf"  target="_blank" href="/public/pdfs/Award Review AR1 covering letter.pdf">View</a></td>
-                  </tr>
                   
                 </tbody>
               </table>

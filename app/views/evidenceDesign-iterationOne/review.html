@@ -158,6 +158,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Harmful information
+              </h2>
+            </legend>
+    
+        {% if data["harmfulInfoBox"] == "None" %}    
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="harmful" name="harmfulInfoBox" type="checkbox" value="No harmful information has been included in this report." data-aria-controls="">
+              <label class="govuk-label govuk-checkboxes__label" for="harmful">
+                No harmful information has been included in this report. 
+              </label>
+            </div>
+          </div>
+          </fieldset>
+          </div>
+    
+          {% elseif data["harmfulInfoBox"] == "No harmful information has been included in this report." %}
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="harmful" name="harmfulInfoBox" type="checkbox" value="No harmful information has been included in this report." data-aria-controls="" {{ checked }}>
+              <label class="govuk-label govuk-checkboxes__label" for="harmful">
+                No harmful information has been included in this report.
+              </label>
+            </div>
+          </div>
+          </fieldset>
+          </div>
+          {% endif %}    
         
 
     <!-- <button class="govuk-button" data-module="govuk-button">
