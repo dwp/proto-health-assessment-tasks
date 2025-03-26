@@ -1,0 +1,148 @@
+{% extends "layouts/prompts-without-sidenav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+  <header class="moj-primary-navigation">
+    <div class="govuk-width-container">
+      <div class="moj-primary-navigation">
+  
+        <div class="moj-primary-navigation__container">
+      
+          <div class="moj-primary-navigation__nav">
+      
+            <nav class="moj-primary-navigation" aria-label="Primary navigation">
+      
+              <ul class="moj-primary-navigation__list">
+                <li class="moj-primary-navigation__item"> 
+                  <a class="moj-primary-navigation__link" aria-current="page" href=" ">Assessment</a>
+                  </li>
+  
+  
+                <li class="moj-primary-navigation__item">
+                  <a class="moj-primary-navigation__link" href="conditions-docs">Claimant documents</a>
+                </li>
+              </ul>
+          </nav>
+      
+          </div>
+        </div>
+      </div>
+      
+  
+        
+    </div>
+    </header> 
+
+{% endblock %}
+
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row"> -->
+  <!-- <div class="govuk-grid-column-two-thirds">    -->
+
+<form action="#" method="post" id="auto-redirect">
+  <input type="hidden" name="{{ loop.index0 }}"/>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Add a condition or disability
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="condition-name-first">
+          <b>Condition or disability name</b>
+        </label>
+        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="condition-start">
+          <b>When did the condition or disability start?</b>
+        </label>
+        <input class="govuk-input" id="condition-start" name="condition-start" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="diagnosis">
+          <b>Diagnosis, impact and variability</b>
+        </label>
+        <!-- <div id="diagnosis-hint" class="govuk-hint">
+          
+        </div> -->
+        <textarea class="govuk-textarea" id="diagnosis" name="diagnosis" rows="5" aria-describedby="diagnosis"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="meds-care-treatments">
+          <b>Current treatments, specialist input and hospital stays</b>
+        </label>
+        <!-- <div id="medical-care-hint" class="govuk-hint">
+          Include who they see for this care, the frequency and effectiveness of it.
+        </div> -->
+        <textarea class="govuk-textarea" id="meds-care-treatments" name="meds-care-treatments" rows="5" aria-describedby="medical-care-and-treatments"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="home-therapies">
+          <b>Home therapies (optional)</b>
+        </label>
+        <textarea class="govuk-textarea" id="home-therapies" name="home-therapies" rows="5" aria-describedby="home therapy"></textarea>
+      </div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="self-harm">
+          <b>Suicidal thoughts and self harm (optional)</b>
+        </label>
+        <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5" aria-describedby="mental-health"></textarea>
+      </div>
+
+    
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+          {% if (data['conditionAdded']) %}
+          <p><a href="conditions-addAnother">Cancel</a></p>
+          {% else %}
+          <p><a href="conditions-none">Cancel</a></p>
+          {% endif %}
+
+         </div>
+          
+
+      </fieldset>
+    </div>
+  </form>
+  <!-- </div> -->
+<!-- </div> -->
+      
+
+{% endblock %}
