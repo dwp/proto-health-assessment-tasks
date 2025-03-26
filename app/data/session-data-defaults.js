@@ -24,6 +24,7 @@ module.exports = {
   'relationshipToClaimant': 'None',
   'document-name': 'None',
   'dwp-evidence': 'None',
-  'evidenceDeclaration': 'None'
+  'evidenceDeclaration': 'None',
+  'harmfulInfoBox': 'None'
 
 }
