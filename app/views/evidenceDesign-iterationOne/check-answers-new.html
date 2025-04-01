@@ -26,6 +26,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Evidence</h2>
 
+    <div class="govuk-inset-text">
+      All further medical evidence available has been reviewed and considered.
+    </div>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -151,6 +155,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   {% endif %}
 
     <h2 class="govuk-heading-l">Consultation</h2>
+    <div class="govuk-inset-text">
+      The purpose of the consultation has been explained to the claimant.
+    </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -196,7 +203,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Did the claimant give consent?
+          Did the claimant consent to the consultation?
         </dt>
         <dd class="govuk-summary-list__value">
           Yes
@@ -1207,10 +1214,11 @@ Integer id vehicula quam. Integer magna justo, euismod non semper ut, molestie i
         </div>
       </dl>
 
-    
+<div class="govuk-inset-text">
+  No harmful information has been included in this report.
+</div>
 <br>
-<br>
-  
+
     <form action="submitted" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
