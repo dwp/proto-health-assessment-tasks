@@ -4684,3 +4684,51 @@ router.post('/evidenceDesign-one/attendees-none', function(req, res) {
   res.redirect('/evidenceDesign-one/attendees')
  })
 
+// Routes for paperbased assessment work //
+
+ // Routes for adding another phonecall //\
+ router.post('/paperbased-assessment/phonecall', function(req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['shortcallName']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAddedFirst = req.session.data.phoneAddedFirst || []
+    phoneAddedFirst.splice(phonecallNo, 1);
+    phoneAddedFirst.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallConsent, phonecallNotes })
+    req.session.data.phoneAddedFirst = phoneAddedFirst
+
+res.redirect('/paperbased-assessment/phonecall-addAnother')
+})
+
+ router.post('/paperbased-assessment/phonecall-addAnother', function(req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['shortcallName']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallConsent, phonecallNotes })
+    req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/paperbased-assessment/phonecall-result')
+})
+
+router.post('/paperbased-assessment/phonecall-result', function(req, res) {
+
+  res.redirect('/paperbased-assessment/phonecall-addAnother')
+})
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+

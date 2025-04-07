@@ -1,7 +1,20 @@
-{% extends "layouts/paperbased-new.html" %}
+{% extends "layouts/phonecall-without-sidenav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
 {% endblock %}
 
 {% set containerClasses = "full-width-container" %}
@@ -16,8 +29,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">   
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">    -->
 
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" name="{{ loop.index0 }}"/>
@@ -81,7 +94,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div id="event-name-hint" class="govuk-hint">
             If they are not the claimant, include their role in the assessment
           </div>
-        <input class="govuk-input" id="shortcall-name" name="shortcallName" type="text" value="{{ data["shortcallName"] }}">
+        <input class="govuk-input" id="shortcall-name" name="shortcallName" type="text">
         </div>
       
       <!-- identity question -->
@@ -247,7 +260,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label govuk-label--m" for="consultation-notes">
           Phone call notes
         </label>
-        <textarea class="govuk-textarea" id="consultation-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes">{{ data["phonecallNotes"] }}</textarea>
+        <textarea class="govuk-textarea" id="phone-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes">{{ data["phonecallNotes"] }}</textarea>
       </div>
       </fieldset>
     </div>
@@ -257,8 +270,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </button>
    
   </form>
-  </div>
-</div>
+  <!-- </div>
+</div> -->
       
 
 {% endblock %}
