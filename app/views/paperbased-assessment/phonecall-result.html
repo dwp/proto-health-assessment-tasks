@@ -25,44 +25,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" name="{{ loop.index0 }}"/>
 
-   <!--logic for adding first phone call -->
- {% for phoneFirst in data['phoneAddedFirst'] %}
- <dl class="govuk-summary-list">
-   <div class="govuk-summary-list__row">
-     <dt class="govuk-summary-list__key">
-       <h2 class="govuk-heading-m"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">{{ phoneFirst.phonecallName }}</a></h2>
-     </dt>
-     <dd class="govuk-summary-list__value">
-      
-     </dd>
-     <dd class="govuk-summary-list__actions">
-       <ul class="govuk-summary-list__actions-list">
-         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
-             Change<span class="govuk-visually-hidden">phone call change</span>
-           </a></li>
-         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
-             Remove<span class="govuk-visually-hidden">phone call remove</span>
-           </a></li>
-       </ul>
-     </dd>
-   </div>
-</dl>
-
-{% endfor %}
 
  <!--logic for adding more than one phone call-->
  {% for phone in data['phoneAdded'] %}
  <dl class="govuk-summary-list">
    <div class="govuk-summary-list__row">
      <dt class="govuk-summary-list__key">
-       <h2 class="govuk-heading-m"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">{{ phone.phonecallName }}</a></h2>
+       <h2 class="govuk-heading-m"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&ident={{phone.phonecallIdentity}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}">{{ phone.phonecallName }}</a></h2>
      </dt>
      <dd class="govuk-summary-list__value">
       
      </dd>
      <dd class="govuk-summary-list__actions">
        <ul class="govuk-summary-list__actions-list">
-         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
+         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&ident={{phone.phonecallIdentity}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}">
              Change<span class="govuk-visually-hidden">phone call change</span>
            </a></li>
          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
