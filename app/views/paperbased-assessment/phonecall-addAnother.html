@@ -17,7 +17,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
 <style type="text/css">
@@ -61,7 +60,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="phonecall-day">
                   Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -69,7 +68,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="phonecall-month">
                   Month
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -77,7 +76,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="phonecall-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
@@ -104,9 +103,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Did you confirm the claimant's identity?
         </legend>
       <div class="govuk-radios" data-module="govuk-radios">
-        {% if data["claimantIdentity"] == 'Yes' %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
+        <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" data-aria-controls="conditional-yes">
         <label class="govuk-label govuk-radios__label" for="id">
           Yes
         </label>
@@ -116,7 +114,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label" for="no-examination">
               How did you confirm their identity?
             </label>
-            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no"></textarea>
           </div>
         </div>
 
@@ -131,77 +129,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label" for="no-examination">
               Why could you not confirm their identity?
             </label>
-            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no"></textarea>
           </div>
         </div>
       </div>
       </fieldset>
     </div>
-    {% elseif data["claimantIdentity"] == 'No' %}
-    <div class="govuk-radios" data-module="govuk-radios">
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" data-aria-controls="conditional-yes">
-      <label class="govuk-label govuk-radios__label" for="id">
-        Yes
-      </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="no-examination">
-            How did you confirm their identity?
-          </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
-        </div>
-      </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="id-2" name="claimantIdentity" type="radio" value="No" checked data-aria-controls="conditional-no">
-      <label class="govuk-label govuk-radios__label" for="id-2">
-        No
-      </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="no-examination">
-            Why could you not confirm their identity?
-          </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
-        </div>
-      </div>
-    </div>
-    {% elseif data["claimantIdentity"] === undefined %}
-    <div class="govuk-radios" data-module="govuk-radios">
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" data-aria-controls="conditional-yes">
-      <label class="govuk-label govuk-radios__label" for="id">
-        Yes
-      </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="no-examination">
-            How did you confirm their identity?
-          </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
-        </div>
-      </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="id-2" name="claimantIdentity" type="radio" value="No" data-aria-controls="conditional-no">
-      <label class="govuk-label govuk-radios__label" for="id-2">
-        No
-      </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="no-examination">
-            Why could you not confirm their identity?
-          </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
-        </div>
-      </div>
-    </div>
-    {% endif %}
+  </div>
+  
 
     <!-- claimant consent-->
     <div class="govuk-form-group">
@@ -213,33 +148,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           Did they give consent?
         </legend>
-        {% if data["consentPBR"] == 'Yes' %}
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes" {{ checked }}>
-          <label class="govuk-label govuk-radios__label" for="consentID">
-            Yes
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="consent-no" name="consentPBR" type="radio" value="No">
-          <label class="govuk-label govuk-radios__label" for="consent-no">
-            No
-          </label>
-        </div>
-        {% elseif data["consentPBR"] == 'No' %}
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes">
-          <label class="govuk-label govuk-radios__label" for="consentID">
-            Yes
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="consent-no" name="consentPBR" type="radio" value="No" {{ checked }}>
-          <label class="govuk-label govuk-radios__label" for="consent-no">
-            No
-          </label>
-        </div>
-        {% elseif data["consentPBR"] === undefined %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="consentID">
@@ -251,8 +159,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-radios__label" for="consent-no">
             No
           </label>
-        </div>
-        {% endif %}
+        </div>     
         </fieldset>
     </div>
 
@@ -260,14 +167,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label govuk-label--m" for="consultation-notes">
           Phone call notes
         </label>
-        <textarea class="govuk-textarea" id="phone-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes">{{ data["phonecallNotes"] }}</textarea>
+        <textarea class="govuk-textarea" id="phone-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes"></textarea>
       </div>
-      </fieldset>
-    </div>
+     
 
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Save and add another phone call
     </button>
+
+  </fieldset>
+</div>
    
   </form>
   <!-- </div>
