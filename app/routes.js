@@ -4710,13 +4710,15 @@ router.post('/paperbased-assessment/phonecall-change', function(req, res) {
   const phonecallYear = req.session.data['phone-year']
   const phonecallName = req.session.data['shortcallName']
   const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesID']
+  const phonecallIdentityNo = req.session.data['noID']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
     phoneAdded.splice(phonecallNo, 1);
-    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallConsent, phonecallNotes })
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
     req.session.data.phoneAdded = phoneAdded
 
 res.redirect('/paperbased-assessment/phonecall-result')
@@ -4728,12 +4730,14 @@ res.redirect('/paperbased-assessment/phonecall-result')
   const phonecallYear = req.session.data['phone-year']
   const phonecallName = req.session.data['shortcallName']
   const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesID']
+  const phonecallIdentityNo = req.session.data['noID']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallConsent, phonecallNotes })
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
     req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/paperbased-assessment/phonecall-result')
