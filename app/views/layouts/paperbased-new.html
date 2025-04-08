@@ -142,6 +142,10 @@
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="phonecall?source=Phone call" aria-current="location">Phone call</a>
             </li>
+            {% elseif (data['phoneAdded']) %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="phonecall-result?source=Phone call" aria-current="location">Phone call</a>
+            </li>
             {% else %}
             <li class="moj-side-navigation__item">
               <a href="phonecall?source=Phone call" aria-current="location">Phone call</a>
