@@ -168,18 +168,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% endfor %}
         {% endif %}
     {% endfor %}
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="evidence-addAnother">
-            Change<span class="govuk-visually-hidden"> evidence used</span>
-          </a>
-        </dd>
+
       </div>
     </dl>
   
     <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
       {% if data["furtherEvidence"] === "Yes" %}
       <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
-      <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
       <p class="govuk-body" style="width: 90%;">{{ data["yesFurtherEvidence"] }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -208,7 +203,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
     <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
-    <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
 
     <p class="govuk-body" style="width: 90%;"></p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
