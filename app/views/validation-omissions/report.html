@@ -1,4 +1,4 @@
-{% extends "layouts/editing.html" %}
+{% extends "layouts/validation-nav.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -200,10 +200,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Reason for taking
           </dt>
           <dd class="govuk-summary-list__value">
-           <a href="#" class="govuk-link">Enter a reason for taking</a>
+           <!-- <a href="#" class="govuk-link">Enter a reason for taking</a> -->
           </dd>
           <dd class="govuk-summary-list__actions">
-            
+            <a class="govuk-link" href="#">
+              Add<span class="govuk-visually-hidden"> name</span>
+            </a>
           </dd>
         </div>
 
@@ -651,10 +653,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Reason for this review period
           </dt>
           <dd class="govuk-summary-list__value">
-          <a href="#" class="govuk-link">Enter a review period</a>
+          <!-- <a href="#" class="govuk-link">Enter a review period</a> -->
           </dd>
           <dd class="govuk-summary-list__actions">
-         
+              <a class="govuk-link" href="#">
+                Add<span class="govuk-visually-hidden"> restriction</span>
+              </a>
           </dd>
         </div>
   
