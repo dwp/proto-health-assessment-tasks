@@ -27,8 +27,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <form action="#" method="post" id="auto-redirect">
-              
-              
 
         <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="takingnutritionNotes">
@@ -104,15 +102,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </label>
       </div>
 
-      <div class="govuk-radios__divider">or</div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-          value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-        <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-          The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-        </label>
-      </div>
-
     {% elseif data["takingnutritionSelect"] == '(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food' %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
@@ -161,15 +150,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
           <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
             (2f) Cannot convey food and drink to their mouth and needs another person to do so
-          </label>
-        </div>
-
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
           </label>
         </div>
 
@@ -223,15 +203,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </label>
         </div>
         
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-          </label>
-        </div>
-
         {% elseif data["takingnutritionSelect"] == '(2d) Needs prompting to be able to take nutrition' %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
@@ -281,15 +252,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             (2f) Cannot convey food and drink to their mouth and needs another person to do so
           </label>
         </div>
-        
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-          </label>
-        </div>
+      
 
         {% elseif data["takingnutritionSelect"] == '(2e) Needs assistance to be able to manage a therapeutic source to take nutrition' %}
         <div class="govuk-radios__item">
@@ -338,15 +301,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             value="(2f) Cannot convey food and drink to their mouth and needs another person to do so">
           <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-6">
             (2f) Cannot convey food and drink to their mouth and needs another person to do so
-          </label>
-        </div>
-
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-            value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-          <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-            The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
           </label>
         </div>
 
@@ -400,15 +354,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </label>
         </div>
 
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-            </label>
-          </div>
-
         {% elseif data["takingnutritionSelect"] === "The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise" %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
@@ -458,17 +403,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               (2f) Cannot convey food and drink to their mouth and needs another person to do so
             </label>
           </div>
-          
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="takingnutritionSelect" type="radio"
-              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise" {{ checked }}>
-            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-            </label>
-          </div>
-
-
+        
        {% elseif data["takingnutritionSelect"] === undefined %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="takingnutritionSelect" name="takingnutritionSelect" type="radio"
@@ -519,15 +454,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
 
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="takingnutritionSelect-7" name="preparingfoodSelect" type="radio"
-              value="The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise">
-            <label class="govuk-label govuk-radios__label" for="takingnutritionSelect-7">
-              The claimant has not reported problems with taking nutrition, and I have not found evidence to suggest otherwise
-            </label>
-          </div>
-
     {% endif %}
 
   </div>
@@ -536,9 +462,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </fieldset>
 
   <div class="govuk-form-group">
-    <label class="govuk-label govuk-label--s" for="takingnutritionJustify">
+    <label class="govuk-label govuk-label--m" for="takingnutritionJustify">
       Justification for taking nutrition
     </label>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            No problems with this activity
+          </h1>
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <br>
   
     <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionJustification" name="takingnutritionJustify" rows="15">Restrictions reported: 
 
