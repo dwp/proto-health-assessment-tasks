@@ -101,14 +101,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </label>
     </div>
 
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-            The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-          </label>
-        </div>
-
         <!--second radio-->
         {% elseif data["preparingfoodSelect"] == '(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal' %}
           <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
@@ -145,14 +137,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
         (1f) Cannot prepare and cook food
       </label>
-        </div>
-
-        <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-            The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-          </label>
         </div>
 
          <!--third radio -->
@@ -192,14 +176,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        (1f) Cannot prepare and cook food
      </label>
        </div>
-       <div class="govuk-radios__divider">or</div>
-       <div class="govuk-radios__item">
-         <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-           The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-         </label>
-       </div>
-
+  
         <!--fourth radio -->
         {% elseif data["preparingfoodSelect"] == '(1d) Needs prompting to be able to either prepare or cook a simple meal' %}
         <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
@@ -237,14 +214,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       (1f) Cannot prepare and cook food
     </label>
       </div>
-      <div class="govuk-radios__divider">or</div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-          The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-        </label>
-      </div>
-
+ 
       <!--fifth radio -->
       {% elseif data["preparingfoodSelect"] == '(1e) Needs supervision or assistance to either prepare or cook a simple meal' %}
       <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
@@ -282,13 +252,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     (1f) Cannot prepare and cook food
   </label>
     </div>
-    <div class="govuk-radios__divider">or</div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-        The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-      </label>
-    </div>
+ 
 
       <!--sixth radio -->
       {% elseif data["preparingfoodSelect"] == '(1f) Cannot prepare and cook food' %}
@@ -326,14 +290,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
     (1f) Cannot prepare and cook food
   </label>
-    </div>
-
-    <div class="govuk-radios__divider">or</div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise">
-      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-        The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-      </label>
     </div>
 
      <!--seventh radio -->
@@ -374,13 +330,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
  </label>
    </div>
 
-   <div class="govuk-radios__divider">or</div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise" {{ checked }}>
-        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-          The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-        </label>
-      </div>
 
      <!--undefined radio -->
      {% elseif data["preparingfoodSelect"] === undefined %}
@@ -419,23 +368,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    (1f) Cannot prepare and cook food
  </label>
    </div>
-
-    <div class="govuk-radios__divider">or</div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="preparingfoodSelect-7" name="preparingfoodSelect" type="radio" value="The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise">
-        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-7">
-          The claimant has not reported problems with preparing food, and I have not found evidence to suggest otherwise
-        </label>
-      </div>
     {% endif %}
-  </div>
 </fieldset>
 
 <div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="preparingfoodNotes">
+  <label class="govuk-label govuk-label--m" for="preparingfoodNotes">
     Justification for preparing food
   </label>
 
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          No problems with this activity
+        </h1>
+      </legend>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="noProblems" name="noProblemPrepFood" type="checkbox" value="The claimant has not reported problems with preparing food, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+            The claimant has not reported problems with preparing food, and there was no evidence to suggest otherwise.
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <br>
   <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="preparingfoodJustification" name="preparingfoodJustify" rows="15">
     Restrictions reported: 
     
