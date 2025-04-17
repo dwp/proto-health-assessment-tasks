@@ -81,15 +81,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </label>
               </div>
 
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
-                </label>
-              </div>
-
               {% elseif data["budgetingSelect"] == '(10b) Needs prompting or assistance to be able to make complex budgeting decisions' %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
@@ -120,15 +111,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   value="(10d) Cannot make any budgeting decisions at all">
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
                   (10d) Cannot make any budgeting decisions at all
-                </label>
-              </div>
-
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
                 </label>
               </div>
 
@@ -165,15 +147,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </label>
               </div>
 
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
-                </label>
-              </div>
-
               {% elseif data["budgetingSelect"] == '(10d) Cannot make any budgeting decisions at all' %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
@@ -204,15 +177,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   value="(10d) Cannot make any budgeting decisions at all" {{ checked }}>
                 <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
                   (10d) Cannot make any budgeting decisions at all
-                </label>
-              </div>
-
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
                 </label>
               </div>
 
@@ -249,15 +213,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </label>
               </div>
 
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise" {{ checked }}>
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
-                </label>
-              </div>
-
               {% elseif data["budgetingSelect"] === undefined %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio"
@@ -290,15 +245,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   (10d) Cannot make any budgeting decisions at all
                 </label>
               </div>
-
-              <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="budgetingSelect-5" name="budgetingSelect" type="radio"
-                  value="The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise">
-                <label class="govuk-label govuk-radios__label" for="budgetingSelect-5">
-                  The claimant has not reported problems with budgeting, and I have not found evidence to suggest otherwise
-                </label>
-              </div>
           {% endif %}
           
         </div>
@@ -307,9 +253,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </fieldset>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="budgetingJustify">
+        <label class="govuk-label govuk-label--m" for="budgetingJustify">
           Justification for budgeting
         </label>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemBudgeting" type="checkbox" value="The claimant has not reported problems with budgeting and there was no evidence to suggest otherwise.">
+                <label class="govuk-label govuk-checkboxes__label" for="noProblems">
+                  The claimant has not reported problems with budgeting and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+    
+        <br>
       
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingJustification" name="budgetingJustify" rows="15">Restrictions reported: 
 
