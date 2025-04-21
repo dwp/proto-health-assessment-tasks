@@ -217,7 +217,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-label--s" for="reviewtimereasons">
             Justification for review period
           </label>
-          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5">{{data["reviewtimereasons"]}}</textarea>
+          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewPeriodJustification" rows="5">{{data["reviewPeriodJustification"]}}</textarea>
         </div>
           
         <div class="govuk-form-group">
@@ -420,14 +420,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{ checked }}>
+            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="special-rules-2">
           No
         </label>
           </div>
-        </fieldset>
-      </div>
-    </div>
+
     {% endif %}
 
         
@@ -446,12 +444,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div>
-
-    <!-- <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button> -->
-
-        
     </form>    
 </div>
 </div>
