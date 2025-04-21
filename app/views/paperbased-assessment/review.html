@@ -32,11 +32,53 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Should this claim be reviewed in future?
+              Should this claim be reviewed?
             </h1>
           </legend>
         
           <div class="govuk-radios" data-module="govuk-radios">
+            {% if data["claimReviewed"] == 'Yes' %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <label class="govuk-label govuk-date-input__label" for="conditional-contact">
+                <b>Recommended review period</b>
+              </label>
+              <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Years
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric" value="{{data["reviewYear"]}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                  Months
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric" value="{{data["reviewMonth"]}}">
+              </div>
+            </div>
+          </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, recommend an indefinte award">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, recommend an indefinte award
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, recommend an indefinte award">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, a future review is not needed
+              </label>
+            </div>
+            {% elseif data["claimReviewed"] == 'No, recommend an indefinte award' %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-radios__label" for="contact">
@@ -66,20 +108,116 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, recommend an indefinte award" {{ checked }}>
               <label class="govuk-label govuk-radios__label" for="contact-2">
-                No
+                No, recommend an indefinte award
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, a future review is not needed">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, a future review is not needed
               </label>
             </div>
           </div>
         </fieldset>
       </div>
+      {% elseif data["claimReviewed"] == 'No, a future review is not needed' %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <label class="govuk-label govuk-date-input__label" for="conditional-contact">
+                <b>Recommended review period</b>
+              </label>
+              <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Years
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                  Months
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, recommend an indefinte award">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, recommend an indefinte award
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, a future review is not needed" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, a future review is not needed
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% elseif data["claimReviewed"] === undefined %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <label class="govuk-label govuk-date-input__label" for="conditional-contact">
+          <b>Recommended review period</b>
+        </label>
+        <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="reviewYear">
+            Years
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+            Months
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, recommend an indefinte award">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No, recommend an indefinte award
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, a future review is not needed">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No, a future review is not needed
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+{% endif %}
+     
         
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="reviewtimereasons">
             Justification for review period
           </label>
-          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5"></textarea>
+          <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewtimereasons" rows="5">{{data["reviewtimereasons"]}}</textarea>
         </div>
           
         <div class="govuk-form-group">
@@ -87,9 +225,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Is it likely that the functional restriction identified in this report will still be present when the claim is reviewed?
           </legend>
-          <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios">
+            {% if data["functional-restict-review"] == 'Yes' %}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
+                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes" {{ checked }}>
                   <label class="govuk-label govuk-radios__label" for="functional-restict-review">
                 Yes
               </label>
@@ -107,17 +246,86 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </label>
                 </div>
           </div>
+          {% elseif data["functional-restict-review"] == 'No' %}
+          <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
+                No
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
+                Not applicable
+              </label>
+                </div>
+          </div>
         </fieldset>
         </div>
+        {% elseif data["functional-restict-review"] == 'Not applicable' %}
+          <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
+                No
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
+                Not applicable
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+        {% elseif data["functional-restict-review"] === undefined %}
+        <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="functional-restict-review">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
+              No
+            </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
+                <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
+              Not applicable
+            </label>
+              </div>
+        </div>
+      </fieldset>
+      </div>
+        {% endif %}
           
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Is the claimant likely to need additional support for future claim processes?
           </legend>
-          <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios">
+            {% if data["as-marker"] == 'Yes' %}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes" {{ checked }}>
                   <label class="govuk-label govuk-radios__label" for="as-marker">
                 Yes
               </label>
@@ -131,21 +339,55 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div>
+        {% elseif data["as-marker"] == 'No' %}
+        <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="as-marker">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="as-marker-2">
+              No
+            </label>
+              </div>
+        </div>
+      </fieldset>
+    </div>
+      {% elseif data["as-marker"] === undefined %}
+      <div class="govuk-radios govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="as-marker">
+        Yes
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="as-marker-2">
+        No
+      </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+      {% endif %}
           
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
           </legend>
-          <div class="govuk-radios govuk-radios--inline">
-                
+          <div class="govuk-radios govuk-radios">
+            {% if data["special-rules"] == 'Yes' %}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" {{ checked }}>
                   <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
               </label>
                 </div>
-                
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
                   <label class="govuk-label govuk-radios__label" for="special-rules-2">
@@ -154,7 +396,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </div>
           </div>
         </fieldset>
-        </div>
+      </div>
+          {% elseif data["special-rules"] == 'No' %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="special-rules">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="special-rules-2">
+          No
+        </label>
+          </div>
+        </fieldset>
+      </div>
+          {% elseif data["special-rules"] === undefined %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="special-rules">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="special-rules-2">
+          No
+        </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    {% endif %}
+
         
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
