@@ -4,7 +4,6 @@
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-
 {% block header %}
 
 {{
@@ -28,6 +27,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
+
+
 <form action="#" method="post" id="auto-redirect">
   <input type="hidden" name="{{ loop.index0 }}"/>
   <div class="govuk-form-group">
@@ -42,55 +43,197 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </legend>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              Phone call date
-            </h2>
+            <h1 class="govuk-fieldset__heading">
+              When did you make this phone call?
+            </h1>
           </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 2025
-          </div>
-          <div class="govuk-date-input" id="phonecall-date">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="phonecall-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["day"] }}">
-              </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            {% if data["phoned"] == 'Today' %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="contacted">
+                Today
+              </label>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="phonecall-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["month"] }}">
-              </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay">
+              <label class="govuk-label govuk-radios__label" for="contacted-2">
+                Another day
+              </label>
             </div>
-            <div class="govuk-date-input__item">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="phonecall-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["year"] }}">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                      Phone call date
+                    </h2>
+                  </legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 27 3 2025
+                  </div>
+              <div class="govuk-date-input" id="phonecall-date">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </fieldset>
       </div>
+       {% elseif data["phoned"] == 'Another day' %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today">
+              <label class="govuk-label govuk-radios__label" for="contacted">
+                Today
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="contacted-2">
+                Another day
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                      Phone call date
+                    </h2>
+                  </legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 27 3 2025
+                  </div>
+              <div class="govuk-date-input" id="phonecall-date">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% elseif data["whenPhoned"] === undefined %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today">
+              <label class="govuk-label govuk-radios__label" for="contacted">
+                Today
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay">
+              <label class="govuk-label govuk-radios__label" for="contacted-2">
+                Another day
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                      Phone call date
+                    </h2>
+                  </legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 27 3 2025
+                  </div>
+              <div class="govuk-date-input" id="phonecall-date">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% endif %}
 
         <!-- who was called -->
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--m" for="event-name">
+            <label class="govuk-label govuk-label--m" for="shortcall-name">
               Who did you call?
             </label>
           </h2>
-          <div id="event-name-hint" class="govuk-hint">
-            If they are not the claimant, include their role in the assessment
-          </div>
-        <input class="govuk-input" id="shortcall-name" name="shortcallName" type="text" value="{{ data["name"] }}">
+        <input class="govuk-input" id="shortcall-name" name="shortcallName" type="text" value="{{ data["shortcallName"] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="relation-or-role">
+             Relationship or role (optional)
+            </label>
+          </h2>
+        <input class="govuk-input" id="relation-or-role" name="relation" type="text" value="{{ data["relation"] }}">
         </div>
       
       <!-- identity question -->
@@ -100,7 +243,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Did you confirm the claimant's identity?
         </legend>
       <div class="govuk-radios" data-module="govuk-radios">
-        {% if data["ident"] === "Yes" %}
+        {% if data["claimantIdentity"] == 'Yes' %}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
         <label class="govuk-label govuk-radios__label" for="id">
@@ -112,7 +255,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label" for="no-examination">
               How did you confirm their identity?
             </label>
-            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesID" rows="5" aria-describedby="more-detail-no">{{data["idYes"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
           </div>
         </div>
 
@@ -127,13 +270,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label" for="no-examination">
               Why could you not confirm their identity?
             </label>
-            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noID" rows="5" aria-describedby="more-detail-no">{{data["idNo"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
           </div>
         </div>
       </div>
       </fieldset>
     </div>
-    {% elseif data["ident"] === "No" %}
+    {% elseif data["claimantIdentity"] == 'No' %}
     <div class="govuk-radios" data-module="govuk-radios">
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" data-aria-controls="conditional-yes">
@@ -146,7 +289,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label" for="no-examination">
             How did you confirm their identity?
           </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["idYes"]}}</textarea>
+          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
         </div>
       </div>
 
@@ -161,11 +304,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label" for="no-examination">
             Why could you not confirm their identity?
           </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["idNo"]}}</textarea>
+          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
         </div>
       </div>
     </div>
-    {% elseif data["ident"] === undefined %}
+    {% elseif data["claimantIdentity"] === undefined %}
     <div class="govuk-radios" data-module="govuk-radios">
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="id" name="claimantIdentity" type="radio" value="Yes" data-aria-controls="conditional-yes">
@@ -209,7 +352,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           Did they give consent?
         </legend>
-        {% if data["cons"] === "Yes" %}
+        {% if data["consentPBR"] == 'Yes' %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes" {{ checked }}>
           <label class="govuk-label govuk-radios__label" for="consentID">
@@ -222,7 +365,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             No
           </label>
         </div>
-        {% elseif data["cons"] === "No" %}
+        {% elseif data["consentPBR"] == 'No' %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="consentID">
@@ -235,7 +378,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             No
           </label>
         </div>
-        {% elseif data["cons"] === undefined %}
+        {% elseif data["consentPBR"] === undefined %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="consentID" name="consentPBR" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="consentID">
@@ -256,19 +399,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label govuk-label--m" for="consultation-notes">
           Phone call notes
         </label>
-        <textarea class="govuk-textarea" id="phone-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes">{{ data["phonecallNotes"] }}</textarea>
+        <textarea class="govuk-textarea" id="consultation-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes">{{ data["phonecallNotes"] }}</textarea>
       </div>
-      
+      </fieldset>
+    </div>
 
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Save and add another phone call
-    </button>
+   
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
-  </fieldset>
-</div>
+      <p><a href="phonecall-result">Cancel</a></p>
+     </div>
+   
   </form>
-  <!-- </div>
-</div> -->
+  </div>
+</div>
       
 
 {% endblock %}
