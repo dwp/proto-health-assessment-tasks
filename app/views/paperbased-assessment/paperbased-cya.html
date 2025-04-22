@@ -82,9 +82,356 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
 
-      <h2 class="govuk-heading-l">Daily living</h2>
-      
+    <h2 class="govuk-heading-l">Phone calls</h2>
+   
+    {% if (data['phoneAdded']) %}
+    {% for calls in data['phoneAdded'] %}
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallDay }}
+          {% if calls.phonecallMonth === "1" %} 
+          January
+          {% endif %}
+
+          {% if calls.phonecallMonth === "2" %} 
+          February
+          {% endif %}
+
+          {% if calls.phonecallMonth === "3" %} 
+          March
+          {% endif %}
+
+          {% if calls.phonecallMonth === "4" %} 
+           April
+          {% endif %}
+
+          {% if calls.phonecallMonth === "5" %} 
+          May
+          {% endif %}
+
+          {% if calls.phonecallMonth === "6" %} 
+          June
+          {% endif %}
+
+          {% if calls.phonecallMonth === "7" %} 
+          July
+          {% endif %}
+
+          {% if calls.phonecallMonth === "8" %} 
+          August
+          {% endif %}
+
+          {% if calls.phonecallMonth === "9" %} 
+          September
+          {% endif %}
+
+          {% if calls.phonecallMonth === "10" %} 
+          October
+          {% endif %}
+
+          {% if calls.phonecallMonth === "11" %} 
+          November
+          {% endif %}
+
+          {% if calls.phonecallMonth === "12" %} 
+          December
+          {% endif %}
+
+          {{ calls.phonecallYear }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallName }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.relationship }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% if calls.phonecallIdentity === "Yes" %} 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Was the claimants identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallIdentity }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         How was thier idenity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallIdentityYes }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% elseif calls.phonecallIdentity === "No" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Was the claimants identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallIdentity }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why could you not confirm their identity?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallIdentityNo }} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Did the claimant give consent to the phonecall?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallConsent }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+    <br>
+    <br>
+    {% endfor %}
+  
+    <!--logic for showing only one record before going into the 'add another'-->
+    {% else %}
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["phone-day"] }}
+          {% if data["phone-month"] === "1" %} 
+          January
+          {% endif %}
+
+          {% if data["phone-month"] === "2" %} 
+          February
+          {% endif %}
+
+          {% if data["phone-month"] === "3" %} 
+          March
+          {% endif %}
+
+          {% if data["phone-month"] === "4" %} 
+           April
+          {% endif %}
+
+          {% if data["phone-month"] === "5" %} 
+          May
+          {% endif %}
+
+          {% if data["phone-month"] === "6" %} 
+          June
+          {% endif %}
+
+          {% if data["phone-month"] === "7" %} 
+          July
+          {% endif %}
+
+          {% if data["phone-month"] === "8" %} 
+          August
+          {% endif %}
+
+          {% if data["phone-month"] === "9" %} 
+          September
+          {% endif %}
+
+          {% if data["phone-month"] === "10" %} 
+          October
+          {% endif %}
+
+          {% if data["phone-month"] === "11" %} 
+          November
+          {% endif %}
+
+          {% if data["phone-month"] === "12" %} 
+          December
+          {% endif %}
+
+          {{ data["phone-year"] }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["shortcallName"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["relation"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% if data["claimantIdentity"] === "Yes" %} 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Was the claimants identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["claimantIdentity"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         How was thier idenity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["yesWhy"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% elseif data["claimantIdentity"] === "No" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Was the claimants identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["claimantIdentity"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why could you not confirm their identity?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["noWhy"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Did the claimant give consent to the phonecall?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["consentPBR"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ data["phonecallNotes"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+    {% endif %}
+
+
+      <h2 class="govuk-heading-l">Daily living</h2>
+
       <h3 class="govuk-heading-m" style="display: inline-block;">Preparing food</h3>
         
 
@@ -629,14 +976,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </dl>
 
       <h2 class="govuk-heading-l">Review period</h2>
+      {% if data["claimReviewed"] == "Yes" %} 
       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Recommended future review period
           </dt>
           <dd class="govuk-summary-list__value">
-            18 months
+            {{ data["reviewYear"] }} years and {{ data["reviewMonth"] }} months
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -644,12 +991,44 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-        </dl>
+       </dl>
+       {% elseif data["claimReviewed"] == "No, recommend an indefinte award" %}
+       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended future review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Indefinite
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+       </dl>
+       {% elseif data["claimReviewed"] == "No, a future review is not needed" %}
+       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended future review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No, a future review is not needed
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+       </dl>
+       {% endif %}
 
         <div style="margin-top: 1%;">
           <h4 class="govuk-heading-s" style="display: inline-block;">Reason for this review period</h4>
           <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-      
           <p class="govuk-body" style="width: 90%;">Certain functional limitations were present at the time of the assessment, which would warrant a review. She is currently on the waiting list to have counselling. 
             She is due to start having PT sessions for the left knee, and once she would have had enough sessions she's to enlist for a left TKR surgery. Since there are pending specialists' 
             interventions in place with no official confirmatory appointment start date, the reported symptoms are likely to have a functional impact on her ability to carry out daily living 
@@ -663,7 +1042,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Is it likely that the functional restriction will still be present when reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes
+            {{ data["functional-restict-review"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -676,7 +1055,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Do they need additional support for future claims processes?
           </dt>
           <dd class="govuk-summary-list__value">
-            No
+            {{ data["as-marker"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -689,7 +1068,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Does the claimant meet the criteria for special rules?
           </dt>
           <dd class="govuk-summary-list__value">
-            No
+            {{ data["special-rules"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
