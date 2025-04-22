@@ -33,179 +33,53 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </legend>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              When did you make this phone call?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            {% if data["whenPhoned"] == 'Today' %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today" {{ checked }}>
-              <label class="govuk-label govuk-radios__label" for="contacted">
-                Today
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay">
-              <label class="govuk-label govuk-radios__label" for="contacted-2">
-                Another day
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h2 class="govuk-fieldset__heading">
-                      Phone call date
-                    </h2>
-                  </legend>
-                  <div id="passport-issued-hint" class="govuk-hint">
-                    For example, 27 3 2025
-                  </div>
-              <div class="govuk-date-input" id="phonecall-date">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
-                  </div>
-                </div>
-              </div>
-            </div>
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Phone call date
+          </h2>
+        </legend>
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 3 2025
+        </div>
+      <div class="govuk-date-input" id="phonecall-date">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="phonecall-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecallDay" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
           </div>
-        </fieldset>
-      </div>
-       {% elseif data["whenPhoned"] == 'Another day' %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today">
-              <label class="govuk-label govuk-radios__label" for="contacted">
-                Today
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay" {{ checked }}>
-              <label class="govuk-label govuk-radios__label" for="contacted-2">
-                Another day
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h2 class="govuk-fieldset__heading">
-                      Phone call date
-                    </h2>
-                  </legend>
-                  <div id="passport-issued-hint" class="govuk-hint">
-                    For example, 27 3 2025
-                  </div>
-              <div class="govuk-date-input" id="phonecall-date">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="phonecall-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
           </div>
-        </fieldset>
-      </div>
-      {% elseif data["whenPhoned"] === undefined %}
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact" name="whenPhoned" type="radio" value="Today">
-              <label class="govuk-label govuk-radios__label" for="contacted">
-                Today
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="whenPhoned" type="radio" value="Another day" data-aria-controls="anotherDay">
-              <label class="govuk-label govuk-radios__label" for="contacted-2">
-                Another day
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="anotherDay">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="phoneCall-date">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h2 class="govuk-fieldset__heading">
-                      Phone call date
-                    </h2>
-                  </legend>
-                  <div id="passport-issued-hint" class="govuk-hint">
-                    For example, 27 3 2025
-                  </div>
-              <div class="govuk-date-input" id="phonecall-date">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-day" name="phone-day" type="text" inputmode="numeric" value="{{ data["phone-day"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="phonecall-month" name="phone-month" type="text" inputmode="numeric" value="{{ data["phone-month"] }}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="phonecall-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="phonecall-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="phonecall-year" name="phone-year" type="text" inputmode="numeric" value="{{ data["phone-year"] }}">
           </div>
-        </fieldset>
+        </div>
       </div>
-      {% endif %}
+      </fieldset>
+      </div>
+
+      <!-- <script>
+        function addDate(number){
+            document.getElementById("phonecallDay").value=number;
+        }
+    </script> -->
+<!-- <br>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" value="1" onclick="addDate(this.value)">
+        Add todays date
+      </button> -->
 
         <!-- who was called -->
         <div class="govuk-form-group">
@@ -394,9 +268,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </fieldset>
     </div>
 
+    <div class="govuk-form-group">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Record another phone call
     </button>
+   </div>
    
   </form>
   </div>
