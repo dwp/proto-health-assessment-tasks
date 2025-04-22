@@ -4707,7 +4707,6 @@ res.redirect('/paperbased-assessment/phonecall-addAnother')
 })
 
 router.post('/paperbased-assessment/phonecall-change', function(req, res) {
-  const phoned = req.session.data['whenPhoned']
   const phonecallDay = req.session.data['phone-day']
   const phonecallMonth = req.session.data['phone-month']
   const phonecallYear = req.session.data['phone-year']
@@ -4722,14 +4721,13 @@ router.post('/paperbased-assessment/phonecall-change', function(req, res) {
 
   const phoneAdded = req.session.data.phoneAdded || []
     phoneAdded.splice(phonecallNo, 1);
-    phoneAdded.push({ phonecallNo, phonecallDay, phoned, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
     req.session.data.phoneAdded = phoneAdded
 
 res.redirect('/paperbased-assessment/phonecall-result')
 })
 
  router.post('/paperbased-assessment/phonecall-addAnother', function(req, res) {
-  const phoned = req.session.data['whenPhoned']
   const phonecallDay = req.session.data['phone-day']
   const phonecallMonth = req.session.data['phone-month']
   const phonecallYear = req.session.data['phone-year']
@@ -4743,7 +4741,7 @@ res.redirect('/paperbased-assessment/phonecall-result')
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-    phoneAdded.push({ phonecallNo, phonecallDay, phoned, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
     req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/paperbased-assessment/phonecall-result')
