@@ -124,22 +124,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["idYes"]}}</textarea>
           </div>
         </div>
-     </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="id-2" name="claimantIdentity" type="radio" value="No" data-aria-controls="conditional-no">
-        <label class="govuk-label govuk-radios__label" for="id-2">
-          No
-        </label>
+     <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="id-2" name="claimantIdentity" type="radio" value="No" data-aria-controls="conditional-no">
+      <label class="govuk-label govuk-radios__label" for="id-2">
+        No
+      </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="no-examination">
+            Why could you not confirm their identity?
+          </label>
+          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="no-examination">
-              Why could you not confirm their identity?
-            </label>
-            <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["idNo"]}}</textarea>
-          </div>
-        </div>
+      </div>
+    </div>
       </fieldset>
     </div>
     
