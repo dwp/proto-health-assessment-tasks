@@ -84,7 +84,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <label class="govuk-label" for="no-examination">
                       How did you confirm their identity?
                     </label>
-                    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">Used DOB, first line of address and contatced GP surgery</textarea>
+                    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no"></textarea>
+                    <!--Used DOB, first line of address and contatced GP surgery-->
                   </div>
                 </div>
   
@@ -108,39 +109,43 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <span class="govuk-visually-hidden">Error:</span> Enter the reason you could not confirm the claimant's identity
                 </p>
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
-                <label class="govuk-label govuk-radios__label" for="id">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="id">
-                    How did you confirm their identity?
+                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                  <label class="govuk-label govuk-radios__label" for="id">
+                    Yes
                   </label>
-                  <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" checked data-aria-controls="conditional-no">
-                <label class="govuk-label govuk-radios__label" for="id-2">
-                  No
-                </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="id-2">
-                      Why could you not confirm their identity?
-                    </label>
-                    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
                   </div>
-              </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="no-examination">
+                        How did you confirm their identity?
+                      </label>
+                      <textarea class="govuk-textarea govuk-!-width-two-thirds" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no"></textarea>
+                    </div>
+                  </div>
+    
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" checked data-aria-controls="conditional-no">
+                  <label class="govuk-label govuk-radios__label" for="id-2">
+                    No
+                  </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="no-examination">
+                        Why could you not confirm their identity?
+                      </label>
+                      <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                    </div>
+                  </div>
+                </div>
               {% elseif data["claimantVerify"] === undefined %}
               <p id="whereDoYouLive-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span>Select yes if you were able to confirm the claimant's identity
               </p>
 
+              <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
                 <label class="govuk-label govuk-radios__label" for="id">
@@ -152,7 +157,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <label class="govuk-label" for="id">
                       How did you confirm their identity?
                     </label>
-                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">Used DOB, first line of address and contatced GP surgery</textarea>
+                    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no"></textarea>
                   </div>
                 </div>
               <div class="govuk-radios__item">
@@ -166,9 +171,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <label class="govuk-label" for="id-2">
                     Why could you not confirm their identity?
                   </label>
-                  <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                  <textarea class="govuk-textarea govuk-!-width-two-thirds" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
                 </div>
               </div>
+            </div>
               {% endif %}
 
               </div>
