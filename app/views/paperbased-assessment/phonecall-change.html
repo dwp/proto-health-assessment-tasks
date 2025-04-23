@@ -107,7 +107,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Did you confirm the claimant's identity?
+          Did you confirm their identity?
         </legend>
       <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
@@ -125,6 +125,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </div>
      </div>
+
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="id-2" name="claimantIdentity" type="radio" value="No" data-aria-controls="conditional-no">
         <label class="govuk-label govuk-radios__label" for="id-2">
@@ -141,6 +142,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </fieldset>
     </div>
+    
     {% elseif data["ident"] == 'No' %}
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
