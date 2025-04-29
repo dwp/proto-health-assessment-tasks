@@ -13,12 +13,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    padding-right: 0;
    text-align: right;
  }
- .govuk-summary-list__key {
-   width: 50%;
- }
- .govuk-heading-m {
-   margin-bottom: 0%;
- }
+
 </style>
 
 <div class="govuk-grid-row">
@@ -33,15 +28,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        {% for attendee in data['attendeeAdded'] %}
        <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <h2 class="govuk-heading-m"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">{{ attendee.attendeeName }}</a></h2>
-          <div>
           <dt class="govuk-summary-list__key">
-            <h3 class="govuk-heading-s">Relationship to claimant</h3> 
+            <h2 class="govuk-heading-m"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">{{ attendee.attendeeName }}</a></h2>
           </dt>
           <dd class="govuk-summary-list__value">
             {{ attendee.relation }} 
           </dd>
-          </div>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="attendees-change?index={{loop.index0}}&name={{attendee.attendeeName}}&relate={{attendee.relation}}">
