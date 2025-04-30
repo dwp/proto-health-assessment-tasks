@@ -33,9 +33,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      <dt class="govuk-summary-list__key">
        <h2 class="govuk-heading-m"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}">Call to {{ phone.phonecallName }}</a></h2>
      </dt>
-     <!-- <dd class="govuk-summary-list__value">
-      
-     </dd> -->
+     <dd class="govuk-summary-list__value">
+      {{ phone.relationship }}
+     </dd>
      <dd class="govuk-summary-list__actions">
        <ul class="govuk-summary-list__actions-list">
          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&phoned={{phone.phoned}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}">
