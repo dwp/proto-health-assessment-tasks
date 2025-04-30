@@ -89,6 +89,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallName }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.relationship }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Phone call date
         </dt>
         <dd class="govuk-summary-list__value">
@@ -147,100 +173,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Who was called
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallName }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Relationship or role
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.relationship }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      {% if calls.phonecallIdentity === "Yes" %} 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Was the claimants identity verified?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallIdentity }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         How was thier idenity verified?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallIdentityYes }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      {% elseif calls.phonecallIdentity === "No" %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Was the claimants identity verified?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallIdentity }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Why could you not confirm their identity?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallIdentityNo }} 
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-        </dd>
-      </div>
-      {% endif %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Did the claimant give consent to the phonecall?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ calls.phonecallConsent }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
           </a>
         </dd>
       </div>
@@ -992,7 +924,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
        </dl>
-       {% elseif data["claimReviewed"] == "No, recommend an indefinte award" %}
+       {% elseif data["claimReviewed"] == "No, it's unlikely the claimant's condition or disability will improve" %}
        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
