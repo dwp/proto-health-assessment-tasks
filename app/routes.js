@@ -4758,3 +4758,73 @@ router.post('/paperbased-assessment/phonecall-result', function(req, res) {
 /////////////////////////////////////////////////////////////////////////////////
 
 
+// Routes for paperbased assessment work - iteration two //
+
+ // Routes for adding another phonecall //\
+ router.post('/paperbased-assessment-two/phonecall', function(req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['shortcallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+    req.session.data.phoneAdded = phoneAdded
+
+res.redirect('/paperbased-assessment-two/phonecall-addAnother')
+})
+
+router.post('/paperbased-assessment-two/phonecall-change', function(req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['shortcallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+    phoneAdded.splice(phonecallNo, 1);
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+    req.session.data.phoneAdded = phoneAdded
+
+res.redirect('/paperbased-assessment-two/phonecall-result')
+})
+
+ router.post('/paperbased-assessment-two/phonecall-addAnother', function(req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['shortcallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+  
+  const phoneAdded = req.session.data.phoneAdded || []
+    phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+    req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/paperbased-assessment-two/phonecall-result')
+})
+
+router.post('/paperbased-assessment-two/phonecall-result', function(req, res) {
+
+  res.redirect('/paperbased-assessment-two/phonecall-addAnother')
+})
+
+
