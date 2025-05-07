@@ -27,7 +27,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#">Select a descriptor for washing and bathing</a>
+              <a href="#">Select a descriptor for washing and bathing, or select that no problems were reported</a>
             </li>
           </ul>
         </div>
@@ -69,7 +69,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </legend>
             
             <p id="whereDoYouLive-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Select a descriptor for washing and bathing
+              <span class="govuk-visually-hidden">Error:</span> Select a descriptor for washing and bathing, or select that no problems were reported
             </p>
             <div class="govuk-radios">
               
@@ -548,7 +548,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </fieldset>
         </div>
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-label--m" for="washingJustify">
               Justification for washing and bathing
             </label>
@@ -572,14 +572,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
         
             <br>
-          
-            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="washingJustification" name="washingJustify" rows="15">Restrictions reported: 
-
-              CQ states having a warm bath helps with stiffness and pain in back, legs and shoulder, has difficulty getting out of the bath, only has a bath rarely when there is someone to help her get out, cannot wash her hair due to left shoulder impingement, cannot lift arm up above shoulder height.
-              Previous PA4 suggests aided. FH states needs to hold onto grab rails in and out of the bath to make bathing transfers safely due to pain, she usually has a wash by the sink on most days, and has a shower once every few days.</textarea>
+            <p id="more-detail-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a justification for your washing and bathing selection
+            </p>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="washingJustification" name="washingJustify" rows="15"></textarea>
           </div>
 
-          
+          <!--Restrictions reported: 
+
+              CQ states having a warm bath helps with stiffness and pain in back, legs and shoulder, has difficulty getting out of the bath, only has a bath rarely when there is someone to help her get out, cannot wash her hair due to left shoulder impingement, cannot lift arm up above shoulder height.
+              Previous PA4 suggests aided. FH states needs to hold onto grab rails in and out of the bath to make bathing transfers safely due to pain, she usually has a wash by the sink on most days, and has a shower once every few days.-->
                    
           <!-- <button class="govuk-button" data-module="govuk-button">
             Save and continue
