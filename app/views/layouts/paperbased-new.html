@@ -138,17 +138,17 @@
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Phone call' %} 
+            {% if data["source"] == 'Phone calls' %} 
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="phonecall?source=Phone call" aria-current="location">Phone call</a>
+              <a href="phonecall?source=Phone calls" aria-current="location">Phone calls</a>
             </li>
             {% elseif (data['phoneAdded']) %}
             <li class="moj-side-navigation__item">
-              <a href="phonecall-result?source=Phone call" aria-current="location">Phone call</a>
+              <a href="phonecall-result?source=Phone calls" aria-current="location">Phone calls</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="phonecall?source=Phone call" aria-current="location">Phone call</a>
+              <a href="phonecall?source=Phone calls" aria-current="location">Phone calls</a>
             </li>
             {% endif %}
       
