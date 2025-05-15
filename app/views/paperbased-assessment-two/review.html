@@ -72,9 +72,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
-              <label class="govuk-label govuk-radios__label" for="contact-2">
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+              <label class="govuk-label govuk-radios__label" for="contact-3">
                 No, it's unlikely the claimant's condition or disability will improve
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+              <label class="govuk-label govuk-radios__label" for="contact-4">
+                No, recommend short award with no review
               </label>
             </div>
             {% elseif data["claimReviewed"] == "No, it's unlikely the claimant's condition or disability will improve" %}
@@ -113,9 +119,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve" {{ checked }}>
-              <label class="govuk-label govuk-radios__label" for="contact-2">
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve" {{ checked }}>
+              <label class="govuk-label govuk-radios__label" for="contact-3">
                 No, it's unlikely the claimant's condition or disability will improve
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+              <label class="govuk-label govuk-radios__label" for="contact-4">
+                No, recommend short award with no review
               </label>
             </div>
           </div>
@@ -157,9 +169,65 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
-            <label class="govuk-label govuk-radios__label" for="contact-2">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
               No, it's unlikely the claimant's condition or disability will improve
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+            <label class="govuk-label govuk-radios__label" for="contact-4">
+              No, recommend short award with no review
+            </label>
+          </div>
+          </div>
+        </fieldset>
+      </div>
+      {% elseif data["claimReviewed"] == "No, recommend short award with no review" %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <label class="govuk-label govuk-date-input__label" for="conditional-contact">
+                <b>Recommended review period</b>
+              </label>
+              <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Years
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                  Months
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No, the claimant is unlikely to get PIP
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
+              No, it's unlikely the claimant's condition or disability will improve
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="contact-4">
+              No, recommend short award with no review
             </label>
           </div>
           </div>
@@ -201,9 +269,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
-      <label class="govuk-label govuk-radios__label" for="contact-2">
+      <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+      <label class="govuk-label govuk-radios__label" for="contact-3">
         No, it's unlikely the claimant's condition or disability will improve
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+      <label class="govuk-label govuk-radios__label" for="contact-4">
+        No, recommend short award with no review
       </label>
     </div>
     </div>
