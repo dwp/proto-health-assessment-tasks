@@ -38,7 +38,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                          <p class="govuk-body"><b>{{ coreEvidence }}</b></p>
+                          <p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
+                            {{ coreEvidence }}<span class="govuk-visually-hidden">evidence change</span>
+                        </a></b></p>
                         </dt>
                         
                         <dd class="govuk-summary-list__value">
@@ -61,9 +63,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       
                         <dd class="govuk-summary-list__actions">
                           <ul class="govuk-summary-list__actions-list">
-                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
+                            <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
                                   View<span class="govuk-visually-hidden">evidence change</span>
-                              </a></li>
+                              </a></li> -->
                             <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
                                 Remove<span class="govuk-visually-hidden">evidence remove</span>
                               </a></li>
@@ -90,7 +92,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        <b><p class="govuk-body"><b>{{ evidenceName }}</b></p></b>
+                        <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                          {{ evidenceName }}<span class="govuk-visually-hidden">evidence change</span>
+                      </a></b></p></b>
                       </dt>
                     
                       <dd class="govuk-summary-list__value">
@@ -121,9 +125,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                
                     <dd class="govuk-summary-list__actions">
                       <ul class="govuk-summary-list__actions-list">
-                        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                        <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
                               View<span class="govuk-visually-hidden">evidence change</span>
-                          </a></li>
+                          </a></li> -->
                         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
                             Remove<span class="govuk-visually-hidden">evidence remove</span>
                           </a></li>
@@ -171,7 +175,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="evidence-consultation">
                 Evidence presented during consultation
               </label>
-              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
+              <textarea class="govuk-textarea govuk-!-width-full" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -208,7 +212,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="evidence-consultation">
                 Evidence presented during consultation
               </label>
-              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
+              <textarea class="govuk-textarea govuk-!-width-full" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -244,7 +248,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label" for="evidence-consultation">
                 Evidence presented during consultation
               </label>
-              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
+              <textarea class="govuk-textarea govuk-!-width-full" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5">{{ data["yesFurtherEvidence"] }}</textarea>
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -272,19 +276,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
-          All further medical evidence available has been reviewed and considered.
+          All evidence received before or on the day of the assessment report has been reviewed.
         </label>
       </div>
     </div>
     </fieldset>
     </div>
 
-    {% elseif data["evidenceDeclaration"] == "All evidence available has been reviewed" %}
+    {% elseif data["evidenceDeclaration"] == "All evidence received before or on the day of the assessment report has been reviewed." %}
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="" {{ checked }}>
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
-          All further medical evidence available has been reviewed and considered.
+          All evidence received before or on the day of the assessment report has been reviewed.
         </label>
       </div>
     </div>

@@ -52,7 +52,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewYear">
                   Years
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric" value="{{data["reviewYear"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewPeriodYear" type="text" inputmode="numeric" value="{{data["reviewPeriodYear"]}}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -60,30 +60,62 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewMonth">
                   Months
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric" value="{{data["reviewMonth"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewPeriodMonth" type="text" inputmode="numeric" value="{{data["reviewPeriodMonth"]}}">
               </div>
             </div>
           </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP">
+              <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, there is limited or no functional restriction">
               <label class="govuk-label govuk-radios__label" for="contact-2">
-                No, the claimant is unlikely to get PIP
+                No, there is limited or no functional restriction
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
               <label class="govuk-label govuk-radios__label" for="contact-3">
-                No, it's unlikely the claimant's condition or disability will improve
+                No, the claimant's condition or disability is unlikely to improve
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend a short award with no review" data-aria-controls="conditional-contacts">
               <label class="govuk-label govuk-radios__label" for="contact-4">
-                No, recommend short award with no review
+                No, recommend a short award with no review
               </label>
             </div>
-            {% elseif data["claimReviewed"] == "No, it's unlikely the claimant's condition or disability will improve" %}
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contacts">
+              <label class="govuk-label govuk-date-input__label" for="conditional-contacts">
+                <b>How long is the functional restriction likely to last?</b>
+              </label>
+              <div id="review-period-hint" class="govuk-hint">
+                Duration should be a minimum of 9 months and up to 2 years.
+              </div>
+              <!-- <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="reviewDay" type="text" inputmode="numeric" value="{{ data["reviewDay"]}}">
+                </div>
+              </div> -->
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                    Years
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Months
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+              </div>
+            </div>
+          </div>
+            {% elseif data["claimReviewed"] == "No, the claimant's condition or disability is unlikely to improve" %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-radios__label" for="contact">
@@ -113,27 +145,59 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP">
+            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, there is limited or no functional restriction">
             <label class="govuk-label govuk-radios__label" for="contact-2">
-              No, the claimant is unlikely to get PIP
+              No, there is limited or no functional restriction
             </label>
           </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve" {{ checked }}>
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve" {{ checked }}>
               <label class="govuk-label govuk-radios__label" for="contact-3">
-                No, it's unlikely the claimant's condition or disability will improve
+                No, the claimant's condition or disability is unlikely to improve
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+              <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend a short award with no review" data-aria-controls="conditional-contacts">
               <label class="govuk-label govuk-radios__label" for="contact-4">
-                No, recommend short award with no review
+                No, recommend a short award with no review
               </label>
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contacts">
+              <label class="govuk-label govuk-date-input__label" for="conditional-contacts">
+                <b>Recommended duration of short award</b>
+              </label>
+              <div id="review-period-hint" class="govuk-hint">
+                Duration should be a minimum of 9 months and up to 2 years.
+              </div>
+              <!-- <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="reviewDay" type="text" inputmode="numeric" value="{{ data["reviewDay"]}}">
+                </div>
+              </div> -->
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                    Years
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Months
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+              </div>
+            </div>
+          </div>
           </div>
         </fieldset>
       </div>
-      {% elseif data["claimReviewed"] == "No, the claimant is unlikely to get PIP" %}
+      {% elseif data["claimReviewed"] == "No, there is limited or no functional restriction" %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-radios__label" for="contact">
@@ -163,27 +227,59 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP" {{ checked }}>
+            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, there is limited or no functional restriction" {{ checked }}>
             <label class="govuk-label govuk-radios__label" for="contact-2">
-              No, the claimant is unlikely to get PIP
+              No, there is limited or no functional restriction
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
             <label class="govuk-label govuk-radios__label" for="contact-3">
-              No, it's unlikely the claimant's condition or disability will improve
+              No, the claimant's condition or disability is unlikely to improve
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend a short award with no review" data-aria-controls="conditional-contacts">
             <label class="govuk-label govuk-radios__label" for="contact-4">
-              No, recommend short award with no review
+              No, recommend a short award with no review
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contacts">
+            <label class="govuk-label govuk-date-input__label" for="conditional-contacts">
+              <b>Recommended duration of short award</b>
+            </label>
+            <div id="review-period-hint" class="govuk-hint">
+              Duration should be a minimum of 9 months and up to 2 years.
+            </div>
+            <!-- <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="reviewDay" type="text" inputmode="numeric" value="{{ data["reviewDay"]}}">
+              </div>
+            </div> -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                  Years
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                Months
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+            </div>
+          </div>
+        </div>
           </div>
         </fieldset>
       </div>
-      {% elseif data["claimReviewed"] == "No, recommend short award with no review" %}
+      {% elseif data["claimReviewed"] == "No, recommend a short award with no review" %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-radios__label" for="contact">
@@ -213,23 +309,55 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP">
+            <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, there is limited or no functional restriction">
             <label class="govuk-label govuk-radios__label" for="contact-2">
-              No, the claimant is unlikely to get PIP
+              No, there is limited or no functional restriction
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
             <label class="govuk-label govuk-radios__label" for="contact-3">
-              No, it's unlikely the claimant's condition or disability will improve
+              No, the claimant's condition or disability is unlikely to improve
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review" {{ checked }}>
+            <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend a short award with no review" data-aria-controls="conditional-contacts" {{ checked }}>
             <label class="govuk-label govuk-radios__label" for="contact-4">
-              No, recommend short award with no review
+              No, recommend a short award with no review
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contacts">
+            <label class="govuk-label govuk-date-input__label" for="conditional-contacts">
+              <b>Recommended duration of short award</b>
+            </label>
+            <div id="review-period-hint" class="govuk-hint">
+              Duration should be a minimum of 9 months and up to 2 years.
+            </div>
+            <!-- <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="reviewDay" type="text" inputmode="numeric" value="{{ data["reviewDay"]}}">
+              </div>
+            </div> -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+                  Years
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="reviewYear">
+                Months
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+            </div>
+          </div>
+        </div>
           </div>
         </fieldset>
       </div>
@@ -249,7 +377,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-date-input__label" for="reviewYear">
             Years
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYear" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewPeriodYear" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -257,29 +385,61 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-date-input__label" for="reviewMonth">
             Months
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonth" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewPeriodMonth" type="text" inputmode="numeric">
         </div>
       </div>
     </div>
 
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, the claimant is unlikely to get PIP">
+      <input class="govuk-radios__input" id="contact-2" name="claimReviewed" type="radio" value="No, there is limited or no functional restriction">
       <label class="govuk-label govuk-radios__label" for="contact-2">
-        No, the claimant is unlikely to get PIP
+        No, there is limited or no functional restriction
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, it's unlikely the claimant's condition or disability will improve">
+      <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
       <label class="govuk-label govuk-radios__label" for="contact-3">
-        No, it's unlikely the claimant's condition or disability will improve
+        No, the claimant's condition or disability is unlikely to improve
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend short award with no review">
+      <input class="govuk-radios__input" id="contact-4" name="claimReviewed" type="radio" value="No, recommend a short award with no review" data-aria-controls="conditional-contacts">
       <label class="govuk-label govuk-radios__label" for="contact-4">
-        No, recommend short award with no review
+        No, recommend a short award with no review
       </label>
     </div>
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contacts">
+      <label class="govuk-label govuk-date-input__label" for="conditional-contacts">
+        <b>Recommended duration of short award</b>
+      </label>
+      <div id="review-period-hint" class="govuk-hint">
+        Duration should be a minimum of 9 months and up to 2 years.
+      </div>
+      <!-- <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="reviewYear">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="reviewDay" type="text" inputmode="numeric">
+        </div>
+      </div> -->
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="reviewMonth">
+            Years
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="reviewYear">
+          Months
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric">
+      </div>
+    </div>
+  </div>
     </div>
   </fieldset>
 </div>
@@ -292,103 +452,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </label>
           <textarea class="govuk-textarea" id="reviewtimereasons" name="reviewPeriodJustification" rows="5">{{data["reviewPeriodJustification"]}}</textarea>
         </div>
-          
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Is it likely that the functional restriction identified in this report will still be present when the claim is reviewed?
-          </legend>
-          <div class="govuk-radios govuk-radios">
-            {% if data["functional-restict-review"] == 'Yes' %}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes" {{ checked }}>
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
-                Yes
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
-                No
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
-                Not applicable
-              </label>
-                </div>
-          </div>
-          {% elseif data["functional-restict-review"] == 'No' %}
-          <div class="govuk-radios govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
-                Yes
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No" {{ checked }}>
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
-                No
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
-                Not applicable
-              </label>
-                </div>
-          </div>
-        </fieldset>
-        </div>
-        {% elseif data["functional-restict-review"] == 'Not applicable' %}
-          <div class="govuk-radios govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review">
-                Yes
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
-                No
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable" {{ checked }}>
-                  <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
-                Not applicable
-              </label>
-                </div>
-          </div>
-        </fieldset>
-        </div>
-        {% elseif data["functional-restict-review"] === undefined %}
-        <div class="govuk-radios govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="functional-restict-review" name="functional-restict-review" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="functional-restict-review">
-              Yes
-            </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="functional-restict-review-2" name="functional-restict-review" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="functional-restict-review-2">
-              No
-            </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="functional-restict-review-3" name="functional-restict-review" type="radio" value="Not applicable">
-                <label class="govuk-label govuk-radios__label" for="functional-restict-review-3">
-              Not applicable
-            </label>
-              </div>
-        </div>
-      </fieldset>
-      </div>
-        {% endif %}
           
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">

@@ -81,11 +81,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <br>
-
-    <h2 class="govuk-heading-l">Phone calls</h2>
    
     {% if (data['phoneAdded']) %}
+    <div style="margin-top: 1%;">
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a>
+    </div>
+
     {% for calls in data['phoneAdded'] %}
+  
     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -95,9 +99,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ calls.phonecallName }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -108,9 +112,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ calls.relationship }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -171,16 +175,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+          </a> -->
         </dd>
       </div>
     </dl>
 
     <div style="margin-top: 1%;">
       <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+      <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a> -->
   
       <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -192,7 +196,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <!--logic for showing only one record before going into the 'add another'-->
     {% else %}
 
+    <div style="margin-top: 1%;">
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a>
+    </div>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["shortcallName"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Phone call date
@@ -251,22 +273,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Who was called
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["shortcallName"] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -277,12 +286,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["relation"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
+    </dl>
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a> -->
+  
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+      {% endif %}
+
+
       {% if data["claimantIdentity"] === "Yes" %} 
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
          Was their identity verified?
@@ -291,9 +313,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["claimantIdentity"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -304,9 +326,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["yesWhy"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       {% elseif data["claimantIdentity"] === "No" %}
@@ -318,9 +340,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["claimantIdentity"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -331,12 +353,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["noWhy"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
-      {% endif %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
          Did the claimant give consent to the phonecall?
@@ -345,20 +366,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ data["consentPBR"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
+          </a> -->
         </dd>
       </div>
     </dl>
 
-    <div style="margin-top: 1%;">
-      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">{{ data["phonecallNotes"] }}</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
     {% endif %}
 
 
@@ -907,18 +921,49 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </dl>
 
+
+      <!-- Start of review period -->
       <h2 class="govuk-heading-l">Review period</h2>
       {% if data["claimReviewed"] == "Yes" %} 
       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Recommended future review period
+           Should this claim be reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["reviewYear"] }} years and {{ data["reviewMonth"] }} months
+           Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["reviewPeriodYear"] }} years and {{ data["reviewPeriodMonth"] }} months
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="review?source=Review">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+       </dl>
+       {% elseif data["claimReviewed"] == "No, the claimant is unlikely to get PIP" %}
+       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Should this claim be reviewed?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No, the claimant is unlikely to get PIP
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
@@ -928,29 +973,92 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Recommended future review period
+            Should this claim be reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            Indefinite
+            No, it's unlikely the claimant's condition or disability will improve
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
        </dl>
-       {% elseif data["claimReviewed"] == "No, a future review is not needed" %}
+       {% elseif data["claimReviewed"] == "No, recommend a short award with no review" %}
        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Recommended future review period
+            Should this claim be reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            No, a future review is not needed
+            No, recommend a short award with no review
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended short award end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data["reviewDay"] }} 
+
+          {% if data["reviewMonths"] === "1" %} 
+          January
+          {% endif %}
+
+          {% if data["reviewMonths"] === "2" %} 
+          February
+          {% endif %}
+
+          {% if data["reviewMonths"] === "3" %} 
+          March
+          {% endif %}
+
+          {% if data["reviewMonths"] === "4" %} 
+           April
+          {% endif %}
+
+          {% if data["reviewMonths"] === "5" %} 
+          May
+          {% endif %}
+
+          {% if data["reviewMonths"] === "6" %} 
+          June
+          {% endif %}
+
+          {% if data["reviewMonths"] === "7" %} 
+          July
+          {% endif %}
+
+          {% if data["reviewMonths"] === "8" %} 
+          August
+          {% endif %}
+
+          {% if data["reviewMonths"] === "9" %} 
+          September
+          {% endif %}
+
+          {% if data["reviewMonths"] === "10" %} 
+          October
+          {% endif %}
+
+          {% if data["reviewMonths"] === "11" %} 
+          November
+          {% endif %}
+
+          {% if data["reviewMonths"] === "12" %} 
+          December
+          {% endif %}
+            
+          {{ data["reviewYears"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
@@ -959,8 +1067,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        {% endif %}
 
         <div style="margin-top: 1%;">
-          <h4 class="govuk-heading-s" style="display: inline-block;">Reason for this review period</h4>
-          <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+          <h4 class="govuk-heading-s" style="display: inline-block;">Justification for this review period</h4>
+          <!-- <a href="review?source=Review" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a> -->
           <p class="govuk-body" style="width: 90%;">Certain functional limitations were present at the time of the assessment, which would warrant a review. She is currently on the waiting list to have counselling. 
             She is due to start having PT sessions for the left knee, and once she would have had enough sessions she's to enlist for a left TKR surgery. Since there are pending specialists' 
             interventions in place with no official confirmatory appointment start date, the reported symptoms are likely to have a functional impact on her ability to carry out daily living 
@@ -977,7 +1085,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {{ data["functional-restict-review"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden"> restriction</span>
             </a>
           </dd>
@@ -990,7 +1098,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {{ data["as-marker"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden">additional support</span>
             </a>
           </dd>
@@ -1003,7 +1111,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {{ data["special-rules"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="review?source=Review">
               Change<span class="govuk-visually-hidden"> special rules</span>
             </a>
           </dd>

@@ -1,4 +1,4 @@
-{% extends "layouts/editing.html" %}
+{% extends "layouts/paperbased-check.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -27,14 +27,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">Evidence</h2>
 
     <div class="govuk-inset-text">
-      All further medical evidence available has been reviewed and considered.
+      All evidence available on the day of the assessment report has been reviewed.
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-form-group--error">
+          Evidence declaration
+        </dt>
+
+        style="color:#d4351c"
+
+        <dd class="govuk-summary-list__value">
+          <b><a href="review-error?source=Review" class="govuk-link">Confirm that all evidence has been reviewed</a></b>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="evidence-addAnother">
+            <span class="govuk-visually-hidden"> evidence used</span>
+          </a>
+        </dd>
+
+        </div> -->
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence used
         </dt>
+
+        <!-- <dd class="govuk-summary-list__value">
+          
+        </dd> -->
 
         {% for DWPevidence in data['evidenceAdded'] %}
         {% set outerLoopIndex = loop.index0 %}
@@ -108,7 +132,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     {% endfor %}
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="evidence-addAnother">
-            Change<span class="govuk-visually-hidden"> evidence used</span>
+            <span class="govuk-visually-hidden"> evidence used</span>
           </a>
         </dd>
       </div>
@@ -116,8 +140,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
     <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
       {% if data["furtherEvidence"] === "Yes" %}
-      <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
-      <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Did the claimant present further evidence during the consultation?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["furtherEvidence"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> consultation date</span>
+            </a> -->
+          </dd>
+        </div>
+     </dl>
+      <h4 class="govuk-heading-s" style="display: inline-block;">Evidence presented during consultation</h4>
+      <!-- <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a> -->
   
       <p class="govuk-body" style="width: 90%;">{{ data["yesFurtherEvidence"] }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -125,34 +164,59 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     {% elseif data["furtherEvidence"] === "No" %}
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-1">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Evidence supplied during consultation
+          Did the claimant present further evidence during the consultation?
         </dt>
         <dd class="govuk-summary-list__value">
-          No
+          {{data["furtherEvidence"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> consultation date</span>
+          </a> -->
+        </dd>
+      </div>
+   </dl>
+
+    <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-form-group--error">
+          Did the claimant present further evidence during the consultation?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <b><a href="review-error?source=Review" class="govuk-link" style="color:#d4351c">Select yes if the claimant presented further evidence during the consultation</a></b>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> evidence supplied during consultation</span>
+            <span class="govuk-visually-hidden"> Evidence presented during consultation</span>
           </a>
         </dd>
       </div>
    </dl>
-  </div>
+  </div> -->
 
   {% else %}
 
-  <div class="govuk-!-margin-bottom-9" style="margin-top: 1%;">
-    <h4 class="govuk-heading-s" style="display: inline-block;">Evidence supplied during consultation</h4>
-    <a href="evidence-addAnother#evidenceInConsultation" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-
-    <p class="govuk-body" style="width: 90%;"></p>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Did the claimant present further evidence during the consultation?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       
+      </dd>
+    </div>
+ </dl>
   
   {% endif %}
+
+  <br>
+  <br>
 
     <h2 class="govuk-heading-l">Consultation</h2>
     <div class="govuk-inset-text">

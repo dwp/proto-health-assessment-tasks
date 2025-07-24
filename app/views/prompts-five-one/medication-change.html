@@ -1,0 +1,109 @@
+{% extends "layouts/prompts-without-sidenav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">    -->
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl"></span>
+            <h1 class="govuk-fieldset__heading">
+              Add a medication
+            </h1>
+            <div id="passport-issued-hint" class="govuk-hint">
+            </div>
+          </legend>
+    
+              <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="medications-name">
+                    <b>Medication name</b>
+                  </label>
+                  <textarea class="govuk-textarea" id="medications-name" name="medications-name" rows="1">{{data["medName"]}}</textarea>
+                </div>
+    
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="medications-dose">
+                    <b>Dosage and frequency</b>
+                  </label>
+                  <textarea class="govuk-textarea" id="medications-dose" name="medications-dose" rows="1">{{data["med-doseF"]}}</textarea>
+                </div>
+    
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="medications-reason">
+                    <b>Reason for taking</b>
+                  </label>
+                  <textarea class="govuk-textarea" id="medications-reason" name="medications-reason" rows="1">{{data["med-reason"]}}</textarea>
+                </div>
+               
+      
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="medications-efficacy">
+                    <b>Effectiveness</b>
+                  </label>
+                  <textarea class="govuk-textarea" id="medications-efficacy" name="medications-efficacy" rows="1" aria-describedby="medication effectivness">{{data["med-eff"]}}</textarea>
+                </div>
+      
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="medications-side-effects">
+                  <b>Additional notes (optional)</b>
+                  </label>
+                  {% for medication in data['medicationAdded'] %}
+                  {% set outerLoopIndex = loop.index0 %}
+                  {% if outerLoopIndex == data["indexMed"] %}
+                  <textarea class="govuk-textarea" style="white-space: pre-line;" id="medications-side-effects" name="medications-additional-notes" rows="5" aria-describedby="medication side effects">{{ medication.medicationAdditionalNotes }}</textarea>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+              </fieldset>
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+            {% if (data['medicationAdded']) %}
+            <p><a href="medication-addAnother">Cancel</a></p>
+            {% else %}
+            <p><a href="medications-none">Cancel</a></p>
+            {% endif %}
+
+          </div>
+
+        </div>
+      <!-- </div> -->
+    </form>
+  <!-- </div> -->
+      
+
+{% endblock %}

@@ -1,0 +1,149 @@
+-{% extends "layouts/side-nav-prompts-five" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  }
+</style>
+
+<!-- 
+display: block;
+    text-align: left;
+    margin-top: -25%;
+    overflow: auto;
+    width: 270%;
+    -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Condition history
+        </h1>
+       
+          <!--logic for adding conditions-->
+          {% for condition in data['conditionAdded'] %}
+          <!-- <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <h2 class="govuk-heading-m"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">{{ condition.conditionName }}</a></h2>
+              </dt>
+              <dd class="govuk-summary-list__value">
+               
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions-change?index={{loop.index0}}&edit={{condition.conditionName}}&length={{condition.conditionLength}}&diag={{condition.diagnosis}}&med={{condition.medicalcareTreatments}}&therapy={{condition.homeTherapy}}&menth={{condition.mentalHealth}}">
+                        Change<span class="govuk-visually-hidden">condition change</span>
+                    </a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-condition?conditions={{condition.conditionName}}">
+                      Remove<span class="govuk-visually-hidden">condition remove</span>
+                    </a></li>
+                </ul>
+              </dd>
+            </div>
+       </dl> -->
+
+       <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            {{ condition.conditionName }}
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did the condition or disability start?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{condition.conditionLength}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Condition history
+                <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
+              </dt>
+              <dd class="govuk-summary-list__value">
+           
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              </dd> 
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Is this a mental health condition?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.mentalHealthQuestion }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+              </dd>
+            </div>
+            {% if (condition.mentalHealthQuestion === "Yes") %}
+            <div class="govuk-summary-list__row">
+              <!-- <div class="mentalHealth-title"> -->
+              <dt class="govuk-summary-list__key">
+               <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
+               <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
+              </dt>
+              <dd class="govuk-summary-list__value">
+               
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+              </dd>
+            </div>
+            {% else %}
+
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+  
+       <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+        
+       {% endfor %}
+
+            <br>
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another condition
+    </button>
+    </div>
+
+      </form>
+    </div>
+</div>
+     
+   
+
+{% endblock %}

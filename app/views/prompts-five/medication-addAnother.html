@@ -1,0 +1,172 @@
+-{% extends "layouts/side-nav-prompts-five.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+ .medication-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Medication and treatments
+        </h1>
+
+          <!--logic for adding medications-->
+          {% for medication in data['medicationAdded'] %}
+      
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                  {{ medication.medicationName }}
+                </h2>
+              </div>
+              <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationDoseFreq }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationReason }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Effectiveness
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationEffectiveness }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">{{ medication.medicationAdditionalNotes }}</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+   
+          
+     {% endfor %}
+
+          
+<br>
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another medication
+    </button>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Does the claimant experience any side effects from their medication?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectNo" name="sideEffects" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="side-effectNo">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectYes" name="sideEffects" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+            <label class="govuk-label govuk-radios__label" for="side-effectYes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sideEffectsDescription">
+                <b>Side effects</b>
+              </label>
+              <textarea class="govuk-textarea" id="sideEffectsDescription" name="sideEffectsMedication" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Does the claimant receive any prescribed treatments or therapies?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="therapiesNo" name="treatmentThreapy" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="therapiesNo">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="therapiesYes" name="treatmentThreapy" type="radio" value="Yes" data-aria-controls="therapy-reveal">
+            <label class="govuk-label govuk-radios__label" for="therapiesYes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="therapy-reveal">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="therapyDescription">
+                <b>Therapy treatments</b>
+              </label>
+              <textarea class="govuk-textarea" id="therapyDescription" name="therapyTreatmentExplain" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

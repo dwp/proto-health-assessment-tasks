@@ -62,7 +62,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label" for="evidence-consultation">
                   Evidence presented during consultation
                 </label>
-                <textarea class="govuk-textarea govuk-!-width-two-thirds" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5"></textarea>
+                <textarea class="govuk-textarea govuk-!-width-full" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5"></textarea>
               </div>
             </div>
             <div class="govuk-radios__item">
@@ -91,19 +91,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
           <label class="govuk-label govuk-checkboxes__label" for="evDec">
-            All further medical evidence available has been reviewed and considered.
+            All evidence available on the day of the assessment report has been reviewed.
           </label>
         </div>
       </div>
       </fieldset>
       </div>
 
-      {% elseif data["evidenceDeclaration"] == "All evidence available has been reviewed" %}
+      {% elseif data["evidenceDeclaration"] == "All evidence available on the day of the assessment report has been reviewed." %}
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="" {{ checked }}>
           <label class="govuk-label govuk-checkboxes__label" for="evDec">
-            All further medical evidence available has been reviewed and considered.
+            All evidence available on the day of the assessment report has been reviewed.
           </label>
         </div>
       </div>
