@@ -263,7 +263,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
     {% endif %}
 
-    <div class="govuk-form-group">
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
@@ -274,27 +274,63 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     {% if data["evidenceDeclaration"] == "None" %}    
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
+        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." data-aria-controls="">
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
-          All evidence received before or on the day of the assessment report has been reviewed.
+          All evidence available on the day of the assessment report has been reviewed.
         </label>
       </div>
     </div>
     </fieldset>
     </div>
 
-    {% elseif data["evidenceDeclaration"] == "All evidence received before or on the day of the assessment report has been reviewed." %}
+    {% elseif data["evidenceDeclaration"] == "All evidence available on the day of the assessment report has been reviewed." %}
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="" {{ checked }}>
+        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." data-aria-controls="" {{ checked }}>
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
-          All evidence received before or on the day of the assessment report has been reviewed.
+          All evidence available on the day of the assessment report has been reviewed.
         </label>
       </div>
     </div>
     </fieldset>
     </div>
-    {% endif %}   
+    {% endif %} 
+    
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Abbreviations used in this report</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Abbreviation</th>
+          <th scope="col" class="govuk-table__header">What it means</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">CH</th>
+          <td class="govuk-table__cell">Condition history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">FE</th>
+          <td class="govuk-table__cell">Further evidence</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">FH</th>
+          <td class="govuk-table__cell">Functional history</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IO</th>
+          <td class="govuk-table__cell">Informal observations</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">MSO</th>
+          <td class="govuk-table__cell">Mental state observations</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">SOH</th>
+          <td class="govuk-table__cell">Social and occupational history</td>
+        </tr>
+      </tbody>
+    </table>
   
 
       </form>
