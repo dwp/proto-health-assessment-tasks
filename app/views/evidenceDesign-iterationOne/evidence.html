@@ -36,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
               {% endif %}
 
-              <p>All view links open in a new tab.</p>
+              <p>All name links open in a new tab.</p>
 
               <!-- top table evidence that orginated from DWP -->
               <table class="govuk-table govuk-!-margin-bottom-9" data-module="moj-sortable-table" aria-describedby="last-updated">
@@ -84,7 +84,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="26 January 2022">26 January 2022</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">1 February 2022</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2 questionnaire.pdf" href="evidence-update?docName=PIP2 questionnaire">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/PIP2 questionnaire.pdf" href="evidence-update?docName=PIP2 questionnaire">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -116,7 +116,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="3 March 2025">28 February 2025</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">3 March 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Award Review AR1.pdf" href="evidence-update?docName=Award Review AR1">Update doucment details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Award Review AR1.pdf" href="evidence-update?docName=Award Review AR1">Update details</a></td>
                   </tr>
 
                   <tr class="govuk-table__row">
@@ -149,15 +149,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="3 March 2025">8 March 2022</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">8 March 2024</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/AP assessment report.pdf" href="evidence-update?docName=AP assessment report">Update doucment details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/AP assessment report.pdf" href="evidence-update?docName=AP assessment report">Update details</a></td>
                   </tr>
                   
                 </tbody>
               </table>
             </div>
 
-
-
+            <div id="document-list">
           <!-- bottom table -- other evidence that has been sent by claimant -->
               <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
                 <caption class="govuk-table__caption govuk-table__caption--m">Other supporting documents</caption>
@@ -171,7 +170,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <th scope="col" class="govuk-table__header column-width-15"></th>
                   </tr>
                 </thead>
-            
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -199,11 +197,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           {% endif %}
                       </td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/Further Evidence.pdf" href="/public/pdfs/Further Evidence.pdf">Further Evidence</a></td>
-                    </td>
+                
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="2 February 2025">2 February 2025</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Further Evidence.pdf" href="evidence-update?docName=Further Evidence">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Further Evidence.pdf" href="evidence-update?docName=Further Evidence">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -230,12 +228,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                  </div>
                    {% endif %}
                     </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/NHS Hospital appointment letter.pdf"  href="/public/pdfs/NHS Hospital appointment letter.pdf">NHS Hospital appointment letter</a></td>
-                    </td>
+                    <td class="govuk-table__cell" style="width: 25%"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/NHS Hospital appointment letter.pdf"  href="/public/pdfs/NHS Hospital appointment letter.pdf">NHS Hospital appointment letter</a></td>
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="29 January 2025">29 January 2025</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/NHS Hospital appointment letter.pdf" href="evidence-update?docName=NHS Hospital appointment letter">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/NHS Hospital appointment letter.pdf" href="evidence-update?docName=NHS Hospital appointment letter">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -263,7 +260,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                    {% endif %}
                     </td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">GP letter</a></td>
-                    </td>
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="11 November 2024"><!--11 November 2024--> 
                       {{ data["docDay"] }} 
@@ -321,7 +317,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                     </td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letter">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letter">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -349,11 +345,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                    {% endif %}
                     </td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf"  target="_blank" href="/public/pdfs/Care plan.pdf">Care plan</a></td>
-                    </td>
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="25 November 2024">25 November 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf" href="evidence-update?docName=Care plan">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf" href="evidence-update?docName=Care plan">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -381,11 +376,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                    {% endif %}
                     </td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Hospital Factual Report.pdf"  target="_blank" href="/public/pdfs/Hospital Factual Report.pdf">Hospital Factual Report</a></td>
-                    </td>
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="19 September 2024">19 September 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Hospital Factual Report.pdf" href="evidence-update?docName=Hospital Facutal Report">Update document details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Hospital Factual Report.pdf" href="evidence-update?docName=Hospital Facutal Report">Update details</a></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
@@ -413,11 +407,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                    {% endif %}
                     </td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">GP letters</a></td>
-                    </td>
+
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="8 August 2024">8 August 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letters">Update docment details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letters">Update details</a></td>
                   </tr>
                 </tbody>
               </table>

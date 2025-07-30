@@ -1,0 +1,63 @@
+{% extends "layouts/warning-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+
+
+{% endblock %}
+
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }   
+</style>
+
+<!-- <div class="govuk-grid-row"> -->
+  <!-- <div class="govuk-grid-column-two-thirds">    -->
+
+    <h1 class="govuk-heading-l">Document details not updated</h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your changes have not been saved due to a technical issue.
+      </strong>
+    </div>
+
+    <p class="govuk-body">Try to update the document’s details again or alternatively, update them in claimant documents.</p>
+
+    <br>
+
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Go back to review and add evidence
+    </button>
+  </div>
+          
+
+      </fieldset>
+    </div>
+  </form>
+  <!-- </div> -->
+<!-- </div> -->
+      
+
+{% endblock %}
