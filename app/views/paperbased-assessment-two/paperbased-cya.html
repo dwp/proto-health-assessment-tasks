@@ -953,14 +953,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
        </dl>
-       {% elseif data["claimReviewed"] == "No, the claimant is unlikely to get PIP" %}
+       {% elseif data["claimReviewed"] == "No, there is limited or no functional restriction" %}
        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Should this claim be reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            No, the claimant is unlikely to get PIP
+            No, there is limited or no functional restriction
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Review">
@@ -969,14 +969,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div>
        </dl>
-       {% elseif data["claimReviewed"] == "No, it's unlikely the claimant's condition or disability will improve" %}
+       {% elseif data["claimReviewed"] == "No, recommend an ongoing award" %}
        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Should this claim be reviewed?
           </dt>
           <dd class="govuk-summary-list__value">
-            No, it's unlikely the claimant's condition or disability will improve
+            No, recommend an ongoing award 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Review">
@@ -1002,12 +1002,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Recommended short award end date
+            Recommended duration of short award
           </dt>
           <dd class="govuk-summary-list__value">
-          {{ data["reviewDay"] }} 
+          {{ data["ShortAwardYears"] }} years and {{ data["ShortAwardMonths"] }} months
 
-          {% if data["reviewMonths"] === "1" %} 
+          <!-- {% if data["reviewMonths"] === "1" %} 
           January
           {% endif %}
 
@@ -1055,7 +1055,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           December
           {% endif %}
             
-          {{ data["reviewYears"] }}
+          {{ data["reviewYears"] }} -->
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Review">

@@ -72,9 +72,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, recommend an ongoing award">
               <label class="govuk-label govuk-radios__label" for="contact-3">
-                No, the claimant's condition or disability is unlikely to improve
+                No, recommend an ongoing award
               </label>
             </div>
             <div class="govuk-radios__item">
@@ -103,7 +103,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-date-input__label" for="reviewMonth">
                     Years
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="ShortAwardYears" type="text" inputmode="numeric" value="{{ data["ShortAwardYears"]}}">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -111,11 +111,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewYear">
                   Months
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="ShortAwardMonths" type="text" inputmode="numeric" value="{{ data["ShortAwardMonths"]}}">
               </div>
             </div>
           </div>
-            {% elseif data["claimReviewed"] == "No, the claimant's condition or disability is unlikely to improve" %}
+            {% elseif data["claimReviewed"] == "No, recommend an ongoing award" %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="claimReviewed" type="radio" value="Yes" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-radios__label" for="contact">
@@ -151,9 +151,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve" {{ checked }}>
+              <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, recommend an ongoing award" {{ checked }}>
               <label class="govuk-label govuk-radios__label" for="contact-3">
-                No, the claimant's condition or disability is unlikely to improve
+                No, recommend an ongoing award
               </label>
             </div>
             <div class="govuk-radios__item">
@@ -182,7 +182,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-date-input__label" for="reviewMonth">
                     Years
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="ShortAwardYears" type="text" inputmode="numeric" value="{{ data["ShortAwardYears"]}}">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -190,7 +190,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewYear">
                   Months
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="ShortAwardMonths" type="text" inputmode="numeric" value="{{ data["ShortAwardMonths"]}}">
               </div>
             </div>
           </div>
@@ -233,9 +233,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, recommend an ongoing award">
             <label class="govuk-label govuk-radios__label" for="contact-3">
-              No, the claimant's condition or disability is unlikely to improve
+              No, recommend an ongoing award
             </label>
           </div>
           <div class="govuk-radios__item">
@@ -264,7 +264,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewMonth">
                   Years
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="ShortAwardYears" type="text" inputmode="numeric" value="{{ data["ShortAwardYears"]}}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -272,7 +272,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-date-input__label" for="reviewYear">
                 Months
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="ShortAwardMonths" type="text" inputmode="numeric" value="{{ data["ShortAwardMonths"]}}">
             </div>
           </div>
         </div>
@@ -315,9 +315,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
+            <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, recommend an ongoing award">
             <label class="govuk-label govuk-radios__label" for="contact-3">
-              No, the claimant's condition or disability is unlikely to improve
+              No, recommend an ongoing award
             </label>
           </div>
           <div class="govuk-radios__item">
@@ -346,7 +346,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="reviewMonth">
                   Years
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="reviewYears" type="text" inputmode="numeric" value="{{ data["reviewYears"]}}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years" name="ShortAwardYears" type="text" inputmode="numeric" value="{{ data["ShortAwardYears"]}}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -354,7 +354,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-date-input__label" for="reviewYear">
                 Months
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="reviewMonths" type="text" inputmode="numeric" value="{{ data["reviewMonths"]}}">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months" name="ShortAwardMonths" type="text" inputmode="numeric" value="{{ data["ShortAwardMonths"]}}">
             </div>
           </div>
         </div>
@@ -397,9 +397,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, the claimant's condition or disability is unlikely to improve">
+      <input class="govuk-radios__input" id="contact-3" name="claimReviewed" type="radio" value="No, recommend an ongoing award">
       <label class="govuk-label govuk-radios__label" for="contact-3">
-        No, the claimant's condition or disability is unlikely to improve
+        No, recommend an ongoing award
       </label>
     </div>
     <div class="govuk-radios__item">
@@ -428,7 +428,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <label class="govuk-label govuk-date-input__label" for="reviewMonth">
             Years
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="reviewYears" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="year" name="ShortAwardYears" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -436,7 +436,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label govuk-date-input__label" for="reviewYear">
           Months
         </label>
-        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="reviewMonths" type="text" inputmode="numeric">
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="ShortAwardMonths" type="text" inputmode="numeric">
       </div>
     </div>
   </div>

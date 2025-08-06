@@ -916,6 +916,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {{ data["reviewPeriodYear"] }} years and {{ data["reviewPeriodMonth"] }} months
           </dd>
         </div> -->
+        {% if data["claimReviewed"] == "No, recommend a short award with no review" %}
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Short award end date
@@ -924,7 +925,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             3 March 2026
           </dd>
         </div>
+
+        {% else %}
+
+        {% endif %}
         </dl>
+       
 
         <div style="margin-top: 1%;">
           <h4 class="govuk-heading-s" style="display: inline-block;">Justification for this review period</h4>
