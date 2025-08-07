@@ -11,6 +11,6 @@
     "@ministryofjustice/frontend": "2.2.5",
     "@x-govuk/govuk-prototype-filters": "1.5.0",
     "govuk-frontend": "5.11.1",
-    "govuk-prototype-kit": "13.17.0"
+    "govuk-prototype-kit": "13.18.0"
   }
 }
