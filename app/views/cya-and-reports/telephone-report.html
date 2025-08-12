@@ -899,37 +899,135 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   
       <h2 class="govuk-heading-l">Review period</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Should this claim be reviewed?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["claimReviewed"] }}
-          </dd>
-        </div>
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Recommended review period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["reviewPeriodYear"] }} years and {{ data["reviewPeriodMonth"] }} months
-          </dd>
-        </div> -->
-        {% if data["claimReviewed"] == "No, recommend a short award with no review" %}
-         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Short award end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            3 March 2026
-          </dd>
-        </div>
-
-        {% else %}
-
-        {% endif %}
-        </dl>
+        {% if data["claimReviewed"] == "Yes" %} 
+        <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Should this claim be reviewed?
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Recommended review period
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["reviewPeriodYear"] }} years and {{ data["reviewPeriodMonth"] }} months
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+         </dl>
+         {% elseif data["claimReviewed"] == "No, there is limited or no functional restriction" %}
+         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should this claim be reviewed?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No, there is limited or no functional restriction
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+            
+            </dd> -->
+          </div>
+         </dl>
+         {% elseif data["claimReviewed"] == "No, recommend an ongoing award" %}
+         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should this claim be reviewed?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No, recommend an ongoing award 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+         </dl>
+         {% elseif data["claimReviewed"] == "No, recommend a short award with no review" %}
+         <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should this claim be reviewed?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No, recommend a short award with no review
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Recommended duration of short award
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data["ShortAwardYears"] }} years and {{ data["ShortAwardMonths"] }} months
+  
+            <!-- {% if data["reviewMonths"] === "1" %} 
+            January
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "2" %} 
+            February
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "3" %} 
+            March
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "4" %} 
+             April
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "5" %} 
+            May
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "6" %} 
+            June
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "7" %} 
+            July
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "8" %} 
+            August
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "9" %} 
+            September
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "10" %} 
+            October
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "11" %} 
+            November
+            {% endif %}
+  
+            {% if data["reviewMonths"] === "12" %} 
+            December
+            {% endif %}
+              
+            {{ data["reviewYears"] }} -->
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+         </dl>
+         {% endif %}
        
 
         <div style="margin-top: 1%;">
@@ -942,7 +1040,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
        
         <dl class="govuk-summary-list" style="margin-top: -2%;">
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is it likely that the functional restriction will still be present when reviewed?
           </dt>
@@ -952,7 +1050,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <dd class="govuk-summary-list__actions">
            
           </dd>
-        </div>
+        </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do they need additional support for future claims processes?
