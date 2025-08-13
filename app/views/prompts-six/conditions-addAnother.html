@@ -51,7 +51,7 @@ display: block;
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">{{ condition.conditionName }}</a> 
+                 {{ condition.conditionName }}
                 <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
                 <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a> 
               </span>
@@ -202,6 +202,39 @@ display: block;
       Add another condition
     </button>
     </div>
+
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Conditions declaration
+          </h2>
+        </legend>
+
+    {% if data["conditionDeclaration"] == "None" %}    
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added.">
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["conditionDeclaration"] == "All conditions and disabilities reported during the consultation have been added." %}
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %} 
 
       </form>
     </div>

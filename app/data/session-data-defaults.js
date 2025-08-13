@@ -25,6 +25,7 @@ module.exports = {
   'document-name': 'None',
   'dwp-evidence': 'None',
   'evidenceDeclaration': 'None',
+  'conditionDeclaration': 'None',
   'harmfulInfoBox': 'None'
 
 }

@@ -39,7 +39,43 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          
       </fieldset>
     </div>
+
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Conditions declaration
+          </h2>
+        </legend>
+
+    {% if data["conditionDeclaration"] == "None" %}    
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added.">
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["conditionDeclaration"] == "All conditions and disabilities reported during the consultation have been added." %}
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %}   
+
     </form>
+
+
 
     
     </div>
