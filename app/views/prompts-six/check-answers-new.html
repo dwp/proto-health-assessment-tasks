@@ -12,8 +12,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     display: block;
     white-space: pre-line;
   }
-             
-  </style>
+
+.title-text {
+    width: 63%;
+    text-wrap: wrap;
+  }
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  }
+
+</style>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -205,13 +222,14 @@ None        </dd>
 
     <h2 class="govuk-heading-l">Condition history</h3>
 
+      {% for condition in data['conditionAdded'] %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Condition or disability name
         </dt>
         <dd class="govuk-summary-list__value">
-          Depression
+          {{ condition.conditionName }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> condition or disability name</span></a>
@@ -222,105 +240,68 @@ None        </dd>
            When did the condition or disability start?
         </dt>
         <dd class="govuk-summary-list__value">
-          March 2022
+          {{ condition.conditionLength }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> when Depression started</span></a>
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Condition history
+          <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+     
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a>
+        </dd> 
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ condition.mentalHealthQuestion }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+      {% if (condition.mentalHealthQuestion == "Yes") %}
+      <div class="govuk-summary-list__row">
+        <!-- <div class="mentalHealth-title"> -->
+        <dt class="govuk-summary-list__key">
+         <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
+         <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+      {% else %}
+
+      {% endif %}
     </dl>
+    <br>
+    <br>
+    <br>
+    {% endfor %}
 
-  <div class="govuk-summary-list govuk-!-margin-bottom-0">
-    <h4 class="govuk-heading-s" style="display: inline-block;">Diagnosis, impact and variability</h4>
-    <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-
-    <p class="govuk-body" style="width: 90%;">Struggles with motivation and with doing basic activities around the house, has good days and bad days which can be hard to predict in frequency</p>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-
-  <div style="margin-top: -1.5%;">
-    <h4 class="govuk-heading-s" style="display: inline-block;">Current treatments, specialist input and hospital stays</h4>
-    <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-
-    <p class="govuk-body" style="width: 90%;">Over the past 12 months she last had a hospital admission in December 2020 due to an attempted overdose on medication, and she stayed in hospital for a duration of a day in total for this.</p>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-
-  <div style="margin-top: -1.5%;">
-    <h4 class="govuk-heading-s" style="display: inline-block;">Home therapies (optional)</h4>
-    <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-
-    <p class="govuk-body" style="width: 90%;">No caring responsibilities</p>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  </div>
-
-  <div style="margin-top: -1.5%;">
+  <!-- <div style="margin-top: -1.5%;">
     <h4 class="govuk-heading-s" style="display: inline-block;">Suicidal thoughts and self harm (optional)</h4>
     <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
 
     <p class="govuk-body" style="width: 90%;">She's been experiencing suicidal thoughts since the time of her condition diagnosis, she last tried to overdose on medication in December 2020 which required hospitalisation. 
       Currently she still experiences such thoughts, however she wouldn't have intentions or plans to act on the thoughts.</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
-  </div>
+  </div> -->
 
   <br>
-
-  <dl class="govuk-summary-list govuk-!-margin-bottom-2">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Condition or disability name
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Back pain
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-         When did the condition or disability start?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        June 2012
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-      </dd>
-    </div>
-  </dl>
-
-    <div class="govuk-!-margin-bottom-0"> 
-      <h4 class="govuk-heading-s" style="display: inline-block;">Diagnosis, impact and variability</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">Had scans at the hospital for a suspected bulging disc, no overnight hospital stay was requried.</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-
-    <div style="margin-top: -1.5%;">
-      <h4 class="govuk-heading-s" style="display: inline-block;">Current treatments, specialist input and hospital stays</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">Has had physiotherapy, did not help get better, still in lots of pain and hoping will get better overtime</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  
-    <div style="margin-top: -1.5%;">
-      <h4 class="govuk-heading-s" style="display: inline-block;">Home therapies (optional)</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">No caring responsibilities</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  
-    <div style="margin-top: -1.5%;">
-      <h4 class="govuk-heading-s" style="display: inline-block;">Suicidal thoughts and self harm (optional)</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">No suidcidal thoughts</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9 govuk-section-break--visible">
-    </div>
 
       <h2 class="govuk-heading-l">Medication (optional)</h2>
 

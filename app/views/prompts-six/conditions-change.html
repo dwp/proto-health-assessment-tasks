@@ -73,7 +73,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <b>Condition history</b>
             </label>
             <div id="condition-history" class="govuk-hint">
-              This could include: diagnosis, symptoms, variability, treatments, specalist inputs, hospital stays
+              This could include: diagnosis details, symptoms, variability, treatments, specalist inputs, hospital stays
             </div>
             <script>
               function addHeadings(){
@@ -82,13 +82,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                   if (titles == "" || titles.length == 0 || titles == null)
                   {
-                    document.getElementById("conditionSubHeadings").value += 'Diagnosis \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
                   } else {
-                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
                   }
               }
             </script>
-            <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add sub headings</a>
+            <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
             {% for condition in data['conditionAdded'] %}
             {% set outerLoopIndex = loop.index0 %}
             {% if outerLoopIndex == data["indexCond"] %}
