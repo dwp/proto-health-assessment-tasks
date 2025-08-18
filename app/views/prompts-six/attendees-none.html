@@ -31,7 +31,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
       </legend>
 
-       <p>No additional attendees have been added.</p>
+      <div class="govuk-form-group govuk-!-margin-bottom-9">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <!-- <h2 class="govuk-fieldset__heading">
+             
+            </h2> -->
+          </legend>
+  
+      {% if data["attendeeDeclaration"] == "None" %}    
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="The claimant was alone during the consultation.">
+            <label class="govuk-label govuk-checkboxes__label" for="attendeeDec">
+              The claimant was alone during the consultation.
+            </label>
+          </div>
+        </div>
+        </fieldset>
+        </div>
+  
+        {% elseif data["attendeeDeclaration"] == "The claimant was alone during the consultation." %}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="The claimant was alone during the consultation." {{ checked }}>
+            <label class="govuk-label govuk-checkboxes__label" for="attendeeDec">
+              The claimant was alone during the consultation.
+            </label>
+          </div>
+        </div>
+        </fieldset>
+        </div>
+        {% endif %}  
       
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Add an attendee
