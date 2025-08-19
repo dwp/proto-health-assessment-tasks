@@ -84,8 +84,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    
     {% if (data['phoneAdded']) %}
     <div style="margin-top: 1%;">
-      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h2>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a>
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls (optional)</h2>
+      <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a> -->
     </div>
 
     {% for calls in data['phoneAdded'] %}
@@ -99,9 +99,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ calls.phonecallName }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
+          <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a> -->
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -112,9 +112,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {{ calls.relationship }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
+          <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a> -->
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -175,16 +175,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
         </dd>
         <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
+          <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
-          </a> -->
+          </a>
         </dd>
       </div>
     </dl>
 
     <div style="margin-top: 1%;">
       <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
-      <!-- <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a> -->
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
       <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -197,7 +197,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     {% else %}
 
     <div style="margin-top: 1%;">
-      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h2>
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls (optional)</h2>
       <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a>
     </div>
 
@@ -208,6 +208,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["shortcallName"] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["relation"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <!-- <a class="govuk-link" href="#">
@@ -275,19 +288,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           <!-- <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> name</span>
-          </a> -->
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Relationship or role
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["relation"] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
           </a> -->
         </dd>
       </div>
