@@ -1,0 +1,143 @@
+{% extends "layouts/no-side-nav-prompts-five.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+
+
+{% endblock %}
+
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+
+<!-- <div class="govuk-grid-row"> -->
+  <!-- <div class="govuk-grid-column-two-thirds">    -->
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Add a condition or disability
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="condition-name-first">
+          <b>Condition or disability name</b>
+        </label>
+        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="condition-start">
+          <b>When did the condition or disability start?</b>
+        </label>
+        <input class="govuk-input" id="condition-start" name="condition-start" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="diagnosis">
+          <b>Condition history</b>
+        </label>
+        <div id="condition-history" class="govuk-hint">
+          This could include diagnosis details, symptoms, variability, treatments, specialist inputs and hospital stays
+        </div>
+        <!-- <div id="boldHeadings"><p><b>Diagnosis <br><br><br>Symptoms <br><br><br>Variability <br><br><br>Treatments <br><br><br>Specialist inputs <br><br><br>Hospital stays</b></p></div> -->
+        <script>
+          function addHeadings(){
+              var boldTitles = document.getElementById("boldHeadings")
+              var titles = document.getElementById("conditionSubHeadings").value;
+
+              if (titles == "" || titles.length == 0 || titles == null)
+                  {
+                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  } else {
+                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  }
+          }
+      </script>
+        <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
+        <textarea class="govuk-textarea" id="conditionSubHeadings" name="condition-history" rows="20" aria-describedby="condition history"></textarea>
+      </div>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Is this a mental health condition?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mentalHealthYes" name="mentalHealthQ" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+              <label class="govuk-label govuk-radios__label" for="mental-healthYes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription">
+                  <b>Suicidal thoughts and self harm</b>
+                </label>
+                <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mental-healthNo" name="mentalHealthQ" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="mental-healthNo">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+          {% if (data['conditionAdded']) %}
+          <p><a href="conditions-addAnother">Cancel</a></p>
+          {% else %}
+          <p><a href="conditions-none">Cancel</a></p>
+          {% endif %}
+
+         </div>
+          
+
+      </fieldset>
+    </div>
+  </form>
+  <!-- </div> -->
+<!-- </div> -->
+      
+
+{% endblock %}
