@@ -99,6 +99,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <br>
           <br>
 
+          
+
 <form action="#" method="post" id="auto-redirect">
   
   <div class="govuk-button-group">
@@ -108,6 +110,75 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <br>
+
+    <h2 class="govuk-heading-m">
+      Medication referenced from evidence
+    </h2>
+
+        <!--logic for adding evidence-->
+          <!-- looking into the array as a whole -->
+          {% for evidence in data['evidenceAdded'] %}
+          {% set outerLoopIndex = loop.index0 %}
+          <!--Only show the last iteration of loop-->
+            {% if loop.last %}
+                <!-- Pulling out specific values to display -->
+              {% for evidenceName in evidence.evidenceName %} 
+                <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                        {{ evidenceName }}<span class="govuk-visually-hidden">evidence change</span>
+                    </a></b></p></b>
+                    </dt>
+                  
+                    <dd class="govuk-summary-list__value">
+                      {% if evidenceName === "NHS Hospital appointment letter" %}
+                      29 January 2025
+                      {% endif %}
+
+                      {% if evidenceName === "Further Evidence" %}
+                      2 February 2025
+                      {% endif %}
+
+                      {% if evidenceName === "Hospital Factual Report" %}
+                      19 September 2024
+                      {% endif %}
+
+                      {% if evidenceName === "GP letter" %}
+                      11 November 2024
+                      {% endif %}
+
+                      {% if evidenceName === "Care plan" %}
+                      25 November 2024
+                      {% endif %}
+
+                      {% if evidenceName === "GP letters" %}
+                      8 August 2024
+                      {% endif %}
+                    </dd>
+             
+                  <dd class="govuk-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list">
+                      <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                            View<span class="govuk-visually-hidden">evidence change</span>
+                        </a></li> -->
+                      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                          Remove<span class="govuk-visually-hidden">evidence remove</span>
+                        </a></li>
+                    </ul>
+                  </dd>
+                </div>
+                </dl>  
+              {% endfor %}
+              {% endif %}
+        {% endfor %}
+
+        <div class="govuk-button-group">
+          <a href="evidence-med" class="govuk-button govuk-button--secondary">Add another reference to medication</a>
+          </div>
+
+          <br>
+          
 
     {% if data["sideEffects"] == 'Yes' %}
     <div class="govuk-form-group">
@@ -305,6 +376,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 </fieldset>
               </div>
               {% endif %}
+
+
+      </div>
 
       </form>
     </div>

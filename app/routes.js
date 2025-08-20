@@ -4190,6 +4190,27 @@ res.redirect('/prompts-six-one/conditions-addAnother')
   res.redirect('/prompts-six-one/conditions')
 })
 
+
+ // Routes for adding another medication
+ router.post('/prompts-six-one/evidence-med', function(req, res) {
+
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+  console.log(last);
+
+  res.redirect('/prompts-six-one/medication-addAnother')
+ })
+
  // Routes for adding another medication
  router.post('/prompts-six-one/medications-none', function(req, res) {
 
@@ -4215,6 +4236,8 @@ router.post('/prompts-six-one/medication', function(req, res) {
 
 res.redirect('/prompts-six-one/medication-addAnother?source=Medication')
 })
+
+
 
 // Routes for adding another medication //\
 router.post('/prompts-six-one/medication-change', function(req, res) {
