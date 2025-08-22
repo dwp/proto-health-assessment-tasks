@@ -166,6 +166,39 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     </div>
                   </fieldset>
                 </div>
+
+                {% elseif data["medications-efficacy"] == undefined %}
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        How effective is the medication?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="effectiveYes" name="medications-efficacy" type="radio" value="Effective">
+                        <label class="govuk-label govuk-radios__label" for="effectiveYes">
+                          Effective
+                        </label>
+                      </div>
+                   
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="partialEffective" name="medications-efficacy" type="radio" value="Partially effective">
+                        <label class="govuk-label govuk-radios__label" for="partialEffective">
+                          Partially effective
+                        </label>
+                      </div>
+    
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="notEffective" name="medications-efficacy" type="radio" value="Not effective">
+                        <label class="govuk-label govuk-radios__label" for="notEffective">
+                          Not effective
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
                 
                 {% endif %}
       
