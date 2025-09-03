@@ -117,43 +117,55 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
-          {% for evidence in data['evidenceAdded'] %}
+          {% for evidence in data['evidenceMedAdded'] %}
           {% set outerLoopIndex = loop.index0 %}
           <!--Only show the last iteration of loop-->
             {% if loop.last %}
                 <!-- Pulling out specific values to display -->
-              {% for evidenceName in evidence.evidenceName %} 
+              {% for evidenceMedName in evidence.evidenceMedName %} 
                 <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
-                        {{ evidenceName }}<span class="govuk-visually-hidden">evidence change</span>
+                        {{ evidenceMedName }}<span class="govuk-visually-hidden">evidence change</span>
                     </a></b></p></b>
                     </dt>
                   
                     <dd class="govuk-summary-list__value">
-                      {% if evidenceName === "NHS Hospital appointment letter" %}
+                      {% if evidenceMedName === "NHS Hospital appointment letter" %}
                       29 January 2025
                       {% endif %}
 
-                      {% if evidenceName === "Further Evidence" %}
+                      {% if evidenceMedName === "Further Evidence" %}
                       2 February 2025
                       {% endif %}
 
-                      {% if evidenceName === "Hospital Factual Report" %}
+                      {% if evidenceMedName === "Hospital Factual Report" %}
                       19 September 2024
                       {% endif %}
 
-                      {% if evidenceName === "GP letter" %}
+                      {% if evidenceMedName === "GP letter" %}
                       11 November 2024
                       {% endif %}
 
-                      {% if evidenceName === "Care plan" %}
+                      {% if evidenceMedName === "Care plan" %}
                       25 November 2024
                       {% endif %}
 
-                      {% if evidenceName === "GP letters" %}
+                      {% if evidenceMedName === "GP letters" %}
                       8 August 2024
+                      {% endif %}
+
+                      {% if evidenceMedName === "PIP2 questionnaire" %}
+                      26 January 2022
+                      {% endif %}
+    
+                      {% if evidenceMedName === "AP assessment report" %}
+                      8 March 2022
+                      {% endif %}
+    
+                      {% if evidenceMedName === "Award Review AR1" %}
+                      8 February 2025
                       {% endif %}
                     </dd>
              

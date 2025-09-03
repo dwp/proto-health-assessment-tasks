@@ -117,11 +117,15 @@
           <h4 class="moj-side-navigation__title">Evidence</h4>
             {% if data["source"] == 'evidence' or data["source"] == 'default' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="evidence?source=evidence" aria-current="location">Evidence</a>
+              <a href="evidence-none?source=evidence" aria-current="location">Evidence</a>
+            </li>
+            {% elseif (data['evidenceAdded']) %}
+            <li class="moj-side-navigation__item">
+              <a href="evidence-addAnother?source=evidence" aria-current="location">Evidence</a>
             </li>
             {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="evidence?source=evidence" aria-current="location">Evidence</a>
+            <li class="moj-side-navigation__item moj-side-navigation__item">
+              <a href="evidence-none?source=evidence" aria-current="location">Evidence</a>
             </li>
             {% endif %}
 
@@ -191,7 +195,7 @@
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
               <a href="medications-none?source=Medication">Medication</a>
             </li>
-            {% elseif (data['medicationAdded']) %}
+            {% elseif (data['evidenceMedAdded']) or (data['medicationAdded']) %}
             <li class="moj-side-navigation__item">
               <a href="medication-addAnother?source=Medication">Medication</a>
             </li>

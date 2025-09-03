@@ -16,9 +16,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
               <h1 class="govuk-heading-l">Add medication as reference</h1>
              
-
-            <div id="document-list">
-          <!-- bottom table -- other evidence that has been sent by claimant -->
+              
               <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
                 <!-- <caption class="govuk-table__caption govuk-table__caption--m">Other supporting documents</caption> -->
                 <thead class="govuk-table__head">
@@ -32,253 +30,217 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
+                   <!--logic for adding evidence-->
+          <!-- looking into the array as a whole -->
+          {% for evidence in data['evidenceAdded'] %}
+          {% set outerLoopIndex = loop.index0 %}
+          <!--Only show the last iteration of loop-->
+            {% if loop.last %}
+                <!-- Pulling out specific values to display -->
+
+                {% for coreEvidence in evidence.coreEvidence %} 
+                <tr class="govuk-table__row" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                  <td class="govuk-table__cell">
+
+                    {% if data["document-Medname"].includes(coreEvidence) %}
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="evidence-two" name="document-Medname" type="checkbox" value="{{ coreEvidence }}" if coreEvidence in data["evidenceMedName"] checked endif>
+                        <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
+                      </div>
+                    </div>
+
+                    {% else %}
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="evidence-two" name="document-Medname" type="checkbox" value="{{ coreEvidence }}">
+                        <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
+                      </div>
+                    </div>
+                    {% endif %}
+               
+
+                  <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/{{ coreEvidence }}.pdf" href="/public/pdfs/{{ coreEvidence }}.pdf">{{ coreEvidence }}</a></td>
+              
+                  <td class="govuk-table__cell" data-sort-value="2 February 2025">
+                  {% if coreEvidence === "PIP2 questionnaire" %}
+                  26 January 2022
+                  {% endif %}
+
+                  {% if coreEvidence === "AP assessment report" %}
+                  8 March 2022
+                  {% endif %}
+
+                  {% if coreEvidence === "Award Review AR1" %}
+                  8 February 2025
+                  {% endif %}
+                  </td>
+                  <td class="govuk-table__cell" data-sort-value="28 February 2025">
+                  {% if coreEvidence === "PIP2 questionnaire" %}
+                  1 February 2022
+                  {% endif %}
+
+                  {% if coreEvidence === "AP assessment report" %}
+                  8 March 2024
+                  {% endif %}
+
+                  {% if coreEvidence === "Award Review AR1" %}
+                  3 March 2025
+                  {% endif %}
+                  </td>
+                  </tr>
+                  
+                  {% endfor %}
+
+
+                {% for evidenceName in evidence.evidenceName %} 
+                  <tr class="govuk-table__row" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                    <td class="govuk-table__cell">                
+                      {% if data['document-Medname'].includes(evidenceName) %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence">
+                          <input class="govuk-checkboxes__input" id="evidence-two" name="document-Medname" type="checkbox" value="{{ evidenceName }}" if evidenceName in data["evidenceMedName"] checked  endif >
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
                         </div>
                       </div>
-                      {% elseif data["document-name"].includes("Further Evidence") %}
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence" {{ checked }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
-                          </div>
-                        </div>
-                          {% else %}
-                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="evidence-two" name="document-name" type="checkbox" value="Further Evidence">
-                              <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
-                            </div>
-                          </div>
-                          {% endif %}
-                      </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/Further Evidence.pdf" href="/public/pdfs/Further Evidence.pdf">Further Evidence</a></td>
+                    </td>
+
+                    {% else %}
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="evidence-two" name="document-Medname" type="checkbox" value="{{ evidenceName }}">
+                        <label class="govuk-label govuk-checkboxes__label" for="evidence-two"></label>
+                      </div>
+                    </div>
+        
+                  </td>
+
+                  {% endif %}
+           
+                      
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/{{ evidenceName }}.pdf" href="/public/pdfs/{{ evidenceName }}.pdf">{{ evidenceName }}</a></td>
                 
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="2 February 2025">2 February 2025</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Further Evidence.pdf" href="evidence-update?docName=Further Evidence">Update details</a></td> -->
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter">
-                          <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
-                        </div>
-                     </div>
-                     {% elseif data["document-name"].includes("NHS Hospital appointment letter") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-three" name="document-name" type="checkbox" value="NHS Hospital appointment letter">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-three"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell" style="width: 25%"><a class="reco-document documentLinks document-link" target="_blank" data-url="/public/pdfs/NHS Hospital appointment letter.pdf"  href="/public/pdfs/NHS Hospital appointment letter.pdf">NHS Hospital appointment letter</a></td>
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="29 January 2025">29 January 2025</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/NHS Hospital appointment letter.pdf" href="evidence-update?docName=NHS Hospital appointment letter">Update details</a></td> -->
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="GP letter">
-                          <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
-                        </div>
-                     </div>
-                     {% elseif data["document-name"].includes("GP letter") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="GP letter" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-four" name="document-name" type="checkbox" value="GP letter">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-four"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">GP letter</a></td>
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="11 November 2024"><!--11 November 2024--> 
-                      {{ data["docDay"] }} 
+                    <td class="govuk-table__cell" data-sort-value="2 February 2025">
+                    {% if evidenceName === "NHS Hospital appointment letter" %}
+                    29 January 2025
+                    {% endif %}
 
-                      {% if (data["docMonth"] === "1") %} 
-                      January
-                      {% endif %}
-            
-                      {% if (data["docMonth"]=== "2") %} 
-                      February
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "3") %} 
-                      March
-                      {% endif %}
-            
-                      {% if (data["docMonth"]=== "4") %} 
-                       April
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "5") %} 
-                      May
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "6") %} 
-                      June
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "7") %} 
-                      July
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "8") %} 
-                      August
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "9") %} 
-                      September
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "10") %} 
-                      October
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "11") %} 
-                      November
-                      {% endif %}
-            
-                      {% if (data["docMonth"] === "12") %} 
-                      December
-                      {% endif %}
-                      
-                      
-                      {{ data["docYear"] }}
+                    {% if evidenceName === "Further Evidence" %}
+                    2 February 2025
+                    {% endif %}
 
-                    </td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letter">Update details</a></td> -->
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-five" name="document-name" type="checkbox" value="Care plan">
-                          <label class="govuk-label govuk-checkboxes__label" for="evidence-five"></label>
-                        </div>
-                     </div>
-                     {% elseif data["document-name"].includes("Care plan") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-five" name="document-name" type="checkbox" value="Care plan" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-five"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-five" name="document-name" type="checkbox" value="Care plan">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-five"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf"  target="_blank" href="/public/pdfs/Care plan.pdf">Care plan</a></td>
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="25 November 2024">25 November 2024</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf" href="evidence-update?docName=Care plan">Update details</a></td> -->
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-seven" name="document-name" type="checkbox" value="Hospital Factual Report">
-                          <label class="govuk-label govuk-checkboxes__label" for="evidence-seven"></label>
-                        </div>
-                     </div>
-                     {% elseif data["document-name"].includes("Hospital Factual Report") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-seven" name="document-name" type="checkbox" value="Hospital Factual Report" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-seven"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-seven" name="document-name" type="checkbox" value="Hospital Factual Report">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-seven"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Hospital Factual Report.pdf"  target="_blank" href="/public/pdfs/Hospital Factual Report.pdf">Hospital Factual Report</a></td>
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="19 September 2024">19 September 2024</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Hospital Factual Report.pdf" href="evidence-update?docName=Hospital Facutal Report">Update details</a></td> -->
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      {% if data["document-name"] == "None" %}
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
-                          <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
-                        </div>
-                     </div>
-                     {% elseif data["document-name"].includes("GP letters") %}
-                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters" {{ checked }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
-                      </div>
-                   </div>
-                   {% else %}
-                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
-                      <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
-                    </div>
-                 </div>
-                   {% endif %}
-                    </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">GP letters</a></td>
+                    {% if evidenceName === "Hospital Factual Report" %}
+                    19 September 2024
+                    {% endif %}
 
-                    <!-- <td class="govuk-table__cell">PIP</td> -->
-                    <td class="govuk-table__cell" data-sort-value="8 August 2024">8 August 2024</td>
-                    <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <!-- <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letters">Update details</a></td> -->
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    {% if evidenceName === "GP letter" %}
+                    11 November 2024
+                    {% endif %}
+
+                    {% if evidenceName === "Care plan" %}
+                    25 November 2024
+                    {% endif %}
+
+                    {% if evidenceName === "GP letters" %}
+                    8 August 2024
+                    {% endif %}
+                    </td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">
+                    {% if evidenceName === "NHS Hospital appointment letter" %}
+                    29 January 2025
+                    {% endif %}
+
+                    {% if evidenceName === "Further Evidence" %}
+                    2 February 2025
+                    {% endif %}
+
+                    {% if evidenceName === "Hospital Factual Report" %}
+                    19 September 2024
+                    {% endif %}
+
+                    {% if evidenceName === "GP letter" %}
+                    11 November 2024
+                    {% endif %}
+
+                    {% if evidenceName === "Care plan" %}
+                    25 November 2024
+                    {% endif %}
+
+                    {% if evidenceName === "GP letters" %}
+                    8 August 2024
+                    {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+              {% endif %}
+        {% endfor %}
+              </tbody>
+            </table>
 
 
+
+            
+           
+
+             <!--logic for adding evidence-->
+          <!-- looking into the array as a whole -->
+          <!-- {% for evidence in data['evidenceAdded'] %}
+          {% set outerLoopIndex = loop.index0 %} -->
+          <!--Only show the last iteration of loop-->
+            <!-- {% if loop.last %} -->
+                <!-- Pulling out specific values to display -->
+              <!-- {% for evidenceName in evidence.evidenceName %} 
+                <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                        {{ evidenceName }}<span class="govuk-visually-hidden">evidence change</span>
+                    </a></b></p></b>
+                    </dt>
+                  
+                    <dd class="govuk-summary-list__value">
+                      {% if evidenceName === "NHS Hospital appointment letter" %}
+                      29 January 2025
+                      {% endif %}
+
+                      {% if evidenceName === "Further Evidence" %}
+                      2 February 2025
+                      {% endif %}
+
+                      {% if evidenceName === "Hospital Factual Report" %}
+                      19 September 2024
+                      {% endif %}
+
+                      {% if evidenceName === "GP letter" %}
+                      11 November 2024
+                      {% endif %}
+
+                      {% if evidenceName === "Care plan" %}
+                      25 November 2024
+                      {% endif %}
+
+                      {% if evidenceName === "GP letters" %}
+                      8 August 2024
+                      {% endif %}
+                    </dd>
+             
+                  <dd class="govuk-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list"> -->
+                      <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                            View<span class="govuk-visually-hidden">evidence change</span>
+                        </a></li> -->
+                      <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-evidence?indexEvidence={{ outerLoopIndex }}&evidence={{evidenceName}}">
+                          Remove<span class="govuk-visually-hidden">evidence remove</span>
+                        </a></li>
+                    </ul>
+                  </dd>
+                </div>
+                </dl>  
+              {% endfor %}
+              {% endif %}
+        {% endfor %} -->
+          
   
     <div class="govuk-button-group">
       <button type="submit" class="govuk-button" data-module="govuk-button">

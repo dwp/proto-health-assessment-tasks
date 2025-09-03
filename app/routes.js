@@ -4143,6 +4143,57 @@ router.post('/prompts-six/attendees-none', function(req, res) {
 
  // Routes for prompts iteration six-one //
 
+ router.post('/prompts-six-one/evidence-none', function(req, res) {
+      
+  res.redirect('/prompts-six-one/evidence')
+ })
+
+   // Routes for adding more evidence //
+router.post('/prompts-six-one/evidence', function(req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const coreEvidence = req.session.data['dwp-evidence']
+ 
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, coreEvidence })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+  console.log(last);
+
+res.redirect('/prompts-six-one/evidence-addAnother')
+})
+
+router.post('/prompts-six-one/remove-evidence', function(req, res) {
+  const evidenceNo = req.session.data['indexEvidence']
+  const evidenceName = req.session.data['evidence']
+  const evNo = "2-0";
+
+  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/prompts-six-one/evidence-addAnother')
+
+  } else if (req.session.data['removeCondition'] == "Yes") {
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
+    req.session.data.evidenceAdded = evidenceAdded
+
+  res.redirect('/prompts-six-one/evidence-addAnother')
+  }
+})
+
+// Adding another peice of evidence //
+router.post('/prompts-six-one/evidence-addAnother', function(req, res) {
+
+  res.redirect('/prompts-six-one/evidence')
+})
+
+  // Routes for adding another condition
+  router.post('/prompts-six-one/conditions-none', function(req, res) {
+      
+    res.redirect('/prompts-six-one/conditions')
+   })
+
   // Routes for adding another condition
   router.post('/prompts-six-one/conditions-none', function(req, res) {
       
@@ -4195,17 +4246,14 @@ res.redirect('/prompts-six-one/conditions-addAnother')
  router.post('/prompts-six-one/evidence-med', function(req, res) {
 
   const evidenceNo = req.session.data['index']
-  const evidenceName = req.session.data['document-name']
-  const evidenceDate = req.session.data['date-of-evidence']
-  const coreEvidence = req.session.data['dwp-evidence']
-  const coreEvidenceDate = req.session.data['coreEvidenceDate']
-  const evidenceLink = req.session.data['evidenceURL']
+  const evidenceMedName = req.session.data['document-Medname']
 
-  const evidenceAdded = req.session.data.evidenceAdded || []
-  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
-  req.session.data.evidenceAdded = evidenceAdded
 
-  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+  const evidenceMedAdded = req.session.data.evidenceMedAdded || []
+  evidenceMedAdded.push({evidenceMedName})
+  req.session.data.evidenceMedAdded = evidenceMedAdded
+
+  const last = req.session.data.evidenceMedAdded[req.session.data.evidenceMedAdded.length - 1];
   console.log(last);
 
   res.redirect('/prompts-six-one/medication-addAnother')
@@ -5187,7 +5235,7 @@ router.post('/evidenceDesign-one/evidence-none', function(req, res) {
   // Routes for adding more evidence //
 router.post('/evidenceDesign-one/evidence', function(req, res) {
   const evidenceNo = req.session.data['index']
-  const evidenceName = req.session.data['document-name']
+  const evidenceName = req.session.data['x']
 
     const evidenceAdded = req.session.data.evidenceAdded || []
     evidenceAdded.push({ evidenceNo, evidenceName })
