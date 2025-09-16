@@ -4141,7 +4141,243 @@ router.post('/prompts-six/attendees-none', function(req, res) {
   res.redirect('/prompts-six/attendees')
  })
 
- // Routes for prompts iteration six-one //
+ // Routes for justifications one //
+
+ router.post('/justifications-one/evidence-none', function(req, res) {
+      
+  res.redirect('/justifications-one/evidence')
+ })
+
+   // Routes for adding more evidence //
+router.post('/justifications-one/evidence', function(req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const coreEvidence = req.session.data['dwp-evidence']
+ 
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, coreEvidence })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+  console.log(last);
+
+res.redirect('/justifications-one/evidence-addAnother')
+})
+
+router.post('/justifications-one/remove-evidence', function(req, res) {
+  const evidenceNo = req.session.data['indexEvidence']
+  const evidenceName = req.session.data['evidence']
+  const evNo = "2-0";
+
+  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/justifications-one/evidence-addAnother')
+
+  } else if (req.session.data['removeCondition'] == "Yes") {
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
+    req.session.data.evidenceAdded = evidenceAdded
+
+  res.redirect('/justifications-one/evidence-addAnother')
+  }
+})
+
+// Adding another peice of evidence //
+router.post('/justifications-one/evidence-addAnother', function(req, res) {
+
+  res.redirect('/justifications-one/evidence')
+})
+
+  // Routes for adding another condition
+  router.post('/justifications-one/conditions-none', function(req, res) {
+      
+    res.redirect('/justifications-one/conditions')
+   })
+
+ // Routes for adding another condition //
+router.post('/justifications-one/conditions', function(req, res) {
+    const conditionName = req.session.data['condition-name-first']
+    const conditionLength = req.session.data['condition-start']
+    const conditionHistory = req.session.data['condition-history']
+    const mentalHealthQuestion = req.session.data['mentalHealthQ']
+    const mentalHealth = req.session.data['mentalHealthCondition']
+
+    const conditionAdded = req.session.data.conditionAdded || []
+    conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+    req.session.data.conditionAdded = conditionAdded
+  
+    req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+
+  res.redirect('/justifications-one/conditions-addAnother?source=Condition history')
+ })
+
+ // Routes for adding another condition //\
+ router.post('/justifications-one/conditions-change', function(req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+    // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+    conditionAdded.splice(conditionNo, 1);
+    conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+    req.session.data.conditionAdded = conditionAdded
+
+res.redirect('/justifications-one/conditions-addAnother')
+})
+
+ router.post('/justifications-one/conditions-addAnother', function(req, res) {
+
+  res.redirect('/justifications-one/conditions')
+})
+
+
+ // Routes for adding another medication
+ router.post('/justifications-one/evidence-med', function(req, res) {
+
+  const evidenceNo = req.session.data['index']
+  const evidenceMedName = req.session.data['document-Medname']
+
+
+  const evidenceMedAdded = req.session.data.evidenceMedAdded || []
+  evidenceMedAdded.push({evidenceMedName})
+  req.session.data.evidenceMedAdded = evidenceMedAdded
+
+  const last = req.session.data.evidenceMedAdded[req.session.data.evidenceMedAdded.length - 1];
+  console.log(last);
+
+  res.redirect('/justifications-one/medication-addAnother')
+ })
+
+ // Routes for adding another medication
+ router.post('/justifications-one/medications-none', function(req, res) {
+
+  res.redirect('/justifications-one/medication')
+ })
+
+
+// Routes for adding another medication //
+router.post('/justifications-one/medication', function(req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDoseFreq = req.session.data['medications-dose']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medicationAdditionalNotes = req.session.data['medications-additional-notes']
+  const medNo = req.session.data['indexMed']
+  
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDoseFreq, medicationReason, medicationSideEffect, medicationEffectiveness, medicationAdditionalNotes })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+res.redirect('/justifications-one/medication-addAnother?source=Medication')
+})
+
+
+
+// Routes for adding another medication //\
+router.post('/justifications-one/medication-change', function(req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDoseFreq = req.session.data['medications-dose']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medicationAdditionalNotes = req.session.data['medications-additional-notes']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+    medicationAdded.splice(medNo, 1);
+    medicationAdded.push({ medicationName, medicationDoseFreq, medicationReason, medicationEffectiveness, medicationSideEffect, medicationAdditionalNotes })
+    req.session.data.medicationAdded = medicationAdded
+
+res.redirect('/justifications-one/medication-addAnother')
+})
+
+router.post('/justifications-one/medication-addAnother', function(req, res) {
+
+  res.redirect('/justifications-one/medication')
+})
+
+ // Routes for adding another attendee //
+router.post('/justifications-one/attendees', function(req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+res.redirect('/justifications-one/attendees-addAnother')
+})
+
+ router.post('/justifications-one/attendees-change', function(req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+    // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+    attendeeAdded.splice(attendeeNo, 1);
+    attendeeAdded.push({ attendeeNo, attendeeName, relation })
+    req.session.data.attendeeAdded = attendeeAdded
+
+res.redirect('/justifications-one/attendees-addAnother')
+})
+
+ router.post('/justifications-one/attendees-addAnother', function(req, res) {
+
+  res.redirect('/justifications-one/attendees')
+})
+
+router.post('/justifications-one/remove-attendee', function(req, res) {
+
+  if (req.session.data['removeAttendee'] == "Yes") {
+    res.redirect('/justifications-one/attendees-addAnother')
+  } else  if (req.session.data['removeAttendee'] == "No") {
+    res.redirect('/justifications-one/attendees-addAnother')
+  }
+
+})
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+router.post('/justifications-one/remove-condition', function(req, res) {
+
+  if (req.session.data['removeCondition'] == "Yes") {
+    res.redirect('/justifications-one/conditions-addAnother')
+  } else  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/justifications-one/conditions-addAnother')
+  }
+
+})
+
+router.post('/justifications-one/remove-medication', function(req, res) {
+
+  if (req.session.data['removeMedication'] == "Yes") {
+    res.redirect('/justifications-one/medication-addAnother')
+  } else  if (req.session.data['removeMedication'] == "No") {
+    res.redirect('/justifications-one/medication-addAnother')
+  }
+
+})
+
+router.post('/justifications-one/attendees-none', function(req, res) {
+      
+  res.redirect('/justifications-one/attendees')
+ })
+
+
+  // Routes for prompts iteration six-one //
 
  router.post('/prompts-six-one/evidence-none', function(req, res) {
       
