@@ -34,7 +34,7 @@ repos:
           - --no-progress
           - --no-summary
         additional_dependencies:
-          - "@cspell/dict-en-gb@5.0.11"
+          - "@cspell/dict-en-gb@5.0.14"
         stages:
           - pre-commit
           - commit-msg
@@ -82,13 +82,13 @@ repos:
           - prettier-plugin-sh@0.18.0
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.2
+    rev: 0.34.0
     hooks:
       - id: check-gitlab-ci
       - id: check-renovate
 
   - repo: https://gitlab.com/dwp/secure-development/dwp-cli
-    rev: v3.18.4
+    rev: v3.23.0
     hooks:
       - id: check-catalog-info
       - id: check-pre-commit-config
