@@ -28,6 +28,7 @@ module.exports = {
   'evidenceDeclaration': 'None',
   'conditionDeclaration': 'None',
   'attendeeDeclaration': 'None',
-  'harmfulInfoBox': 'None'
+  'harmfulInfoBox': 'None',
+  'justificationDCheck': 'None'
 
 }

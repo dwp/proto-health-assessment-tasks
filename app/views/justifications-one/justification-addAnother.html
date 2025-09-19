@@ -1,0 +1,131 @@
+-{% extends "layouts/justification-layout" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+
+.title-text {
+    width: 63%;
+    text-wrap: wrap;
+  }
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  }
+</style>
+
+<!-- 
+display: block;
+    text-align: left;
+    margin-top: -25%;
+    overflow: auto;
+    width: 270%;
+    -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+         Descriptor choices and justifications
+        </h1>
+       
+          <!--logic for adding justifications -->
+    
+        
+        {% for justification in data['justificationAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+      
+        <h2 class="govuk-heading-m">Justification {{loop.index}}</h2>
+              
+          {% for activityName in justification.activityName %} 
+        
+      <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+           {{ activityName }}
+            </dt>
+         
+            <dd class="govuk-summary-list__value">
+               {% if activityName === "Preparing food"  %} 
+                {{data["preparingfoodSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Taking nutrition"  %} 
+                {{data["takingnutritionSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing therapy"  %} 
+               {{data["managingtherapySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Washing and bathing"  %} 
+               {{data["washingbathingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing toilet needs"  %} 
+               {{data["toiletneedsSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Dressing and undressing"  %} 
+               {{data["dressingSelect"]}}
+               {% endif %}
+
+                {% if activityName === "Communicating verbally"  %} 
+               {{data["communicatingverballySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Reading and understanding signs, symbols and words"  %} 
+               {{data["readingunderstandingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Engaging face to face"  %} 
+               {{data["facetofaceSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Budgeting"  %} 
+               {{data["budgetingSelect"]}}
+               {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+        {% endfor %}
+        <p>{{ justification.justificationText }}</p>
+        <br>
+        <br>
+        <br>
+         {% endfor %} 
+      </div>    
+      </div>
+  
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another justification
+    </button>
+    </div>
+
+    </form>
+
+     
+   
+
+{% endblock %}

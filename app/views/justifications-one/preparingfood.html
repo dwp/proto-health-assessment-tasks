@@ -1,10 +1,10 @@
-{% extends "layouts/justification-layout.html" %}
+{% extends "layouts/no-side-nav-justification-activity.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
+
 {% block content_left %}
 
 <style type="text/css">
@@ -16,33 +16,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
-<!-- <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"> -->
-    <!-- <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"> -->
         <h1 class="govuk-heading-l">Preparing food</h1>
-      <!-- </div>
-    </div> -->
-
-
-    <!-- <div class="govuk-summary-list__row">
-    <dd class="govuk-summary-list__value no-bottom-border"></dd>
-    <dd class="govuk-summary-list__actions no-bottom-border"></dd>
-    </div> -->
+   
+<!-- 
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds"> -->
 
 <form action="#" method="post" id="auto-redirect">
                         
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="preparingfoodNotes">
-    Functional history for preparing food
-  </label>
-
-
-  <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="preparingfoodNotes" name="preparingfoodNotes" rows="15">{{data["preparingfoodNotes"]}}</textarea>
-</div>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Functional history for preparing food
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           {{data["preparingfoodFunctionalHistory"]}}
+          </div>
+        </details> 
 
 <div class="govuk-form-group">
 
@@ -318,31 +310,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </fieldset>
 
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="preparingfoodNotes">
-    Justification for preparing food
-  </label>
 
-  <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="preparingfoodJustification" name="preparingfoodJustify" rows="15">{{data["preparingfoodJustify"]}}</textarea>
-</div>
 
-<!-- </div>
 
               <button class="govuk-button" data-module="govuk-button">
                 Save and continue
-              </button> -->
+              </button> 
           
           </form>
     </div>
-  </div>
-  </div>
-<!--
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+  <!-- </div>
+  </div> -->
 
-  -->
   <!-- </div>      
       </div> -->
 

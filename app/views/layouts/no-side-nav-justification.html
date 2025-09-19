@@ -1,0 +1,149 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
+  
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  {% from "internal-service-header/macro.njk" import dwpHeader %}
+
+  {% block header %}
+    {{
+        dwpHeader({
+            name: "Health Assessment Service",
+            serviceHref: '../../',
+            container: true,
+            containerClasses: "govuk-width-container--full-width"
+        })
+    }}
+
+  <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details govuk-width-container--full-width">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">John Smith</dt>
+  
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">AB  CB  12  13</dt>
+  
+        <dt class="govuk-visually-hidden">Claim status:</dt>
+        <dd class="key-details-bar__status">ASSESSMENT BOOKED</dd>
+      </div>
+  
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>31 December 1999</dd>
+  
+        <dt>Postcode:</dt>
+        <dd>N2 1XX</dd>
+  
+      </div>
+    </dl>
+  </section>
+
+      
+  {% endblock %}
+  
+  {% block content %}
+  
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+
+
+
+        <input form="auto-redirect" type="hidden" name="error" value="true">
+
+        <script>
+          const item = document.querySelectorAll(".moj-side-navigation__item > a");
+          item.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const x = document.querySelectorAll(".save-and-redirect-link"); // this will make anything redirect-able 
+          x.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const y = document.querySelectorAll(".claim-documents"); // this will make anything redirect-able 
+          y.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+
+          const z = document.querySelectorAll(".assessment-back"); // this will make anything redirect-able 
+          z.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+                  
+        </script>
+<!-- 
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+            <h4 class="moj-side-navigation__title">Section 1</h4>
+            <ul class="moj-side-navigation__list">
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="evidence">Evidence</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="takingnutrition" class="govuk-link" data-module="govuk-button">Taking nutrition</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#1.3">Verify identity</a>
+              </li>
+            </ul>
+      
+            <h4 class="moj-side-navigation__title">Section 2</h4>
+            <ul class="moj-side-navigation__list">
+              <li class="moj-side-navigation__item">
+                <a href="#2.1">Claimant consent</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#2.2">Nav item 2.2</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#2.3">Nav item 2.3</a>
+              </li>
+            </ul>
+          </nav> -->
+    
+          
+       
+        
+        </div>
+  
+    <div class="{{ "govuk-grid-column-one-quarter" if data.splitScreen else "govuk-grid-column-two-thirds" }}">
+      {% block content_left %}{% endblock %}
+    </div>
+  
+  {% if data.splitScreen %}
+      <div class="govuk-grid-column-one-half">
+      {% include "partials/documents.html" %}
+      </div>
+  {% endif %}
+  
+      
+    </div>
+  {% endblock %}
+  

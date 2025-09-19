@@ -4348,6 +4348,63 @@ router.post('/justifications-one/remove-attendee', function(req, res) {
 
 })
 
+ // Routes for adding a justification
+
+ router.post('/justifications-one/justification', function(req, res) {
+    const activityName = req.session.data['justificationDCheck']
+    const justificationText = req.session.data['groupJustify']
+
+    const justificationAdded = req.session.data.justificationAdded || []
+    justificationAdded.push({ activityName, justificationText })
+    req.session.data.justificationAdded = justificationAdded
+
+    req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+      
+    res.redirect('/justifications-one/justification-addAnother?source=Descriptor choices and justifications')
+   })
+
+router.post('/justifications-one/justification-addAnother', function(req, res) {
+    
+  res.redirect('/justifications-one/justification')
+ })
+
+   router.post('/justifications-one/preparingfood', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+
+    router.post('/justifications-one/takingnutrition', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+    router.post('/justifications-one/managingtherapy', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+    router.post('/justifications-one/washingbathing', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+   router.post('/justifications-one/toiletneeds', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+   router.post('/justifications-one/dressing', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+   router.post('/justifications-one/communicatingverbally', function(req, res) {
+    res.redirect('/justifications-one/justification')
+   })
+  router.post('/justifications-one/readingunderstanding', function(req, res) {
+  res.redirect('/justifications-one/justification')
+  })
+  router.post('/justifications-one/facetoface', function(req, res) {
+  res.redirect('/justifications-one/justification')
+  })
+  router.post('/justifications-one/budgeting', function(req, res) {
+  res.redirect('/justifications-one/justification')
+  })
+
+  router.post('/justifications-one/justification-none', function(req, res) {
+      
+    res.redirect('/justifications-one/justification')
+   })
+
 /////////////////////////////////////////////////////////////////////////////////
 
 

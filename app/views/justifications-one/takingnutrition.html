@@ -1,10 +1,10 @@
-{% extends "layouts/justification-layout.html" %}
+{% extends "layouts/no-side-nav-justification-activity.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
+
 {% block content_left %}
 
 <style type="text/css">
@@ -15,9 +15,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   }
              
   </style>
-
+<!-- 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds"> -->
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
@@ -27,17 +27,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <form action="#" method="post" id="auto-redirect">
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Functional history for taking nutrition
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           {{data["takingnutritionFunctionalHistory"]}}
+          </div>
+        </details> 
               
               
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="takingnutritionNotes">
               Functional history for taking nutrition
             </label>
           
           
             <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionNotes" name="takingnutritionNotes" rows="15">{{data["takingnutritionNotes"]}}</textarea>
-          </div>
+          </div> -->
           <div class="govuk-form-group">
 
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
@@ -355,20 +366,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             
   </fieldset>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label govuk-label--s" for="takingnutritionJustify">
-      Justification for taking nutrition
-    </label>
-  
-    <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="takingnutritionJustification" name="takingnutritionJustify" rows="15">{{data["takingnutritionJustify"]}}</textarea>
-  </div>
-
-</div>
 
         
-              <!-- <button class="govuk-button" data-module="govuk-button">
+              <button class="govuk-button" data-module="govuk-button">
                 Save and continue
-              </button> -->
+              </button>
           
           </form>
     </div>

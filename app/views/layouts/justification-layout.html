@@ -201,11 +201,11 @@
 
             {% if data["source"] == 'Functional history' %}
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="soch1-additional?source=Functional history">Functional history</a>
+              <a href="functional-history?source=Functional history">Functional history</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="soch1-additional?source=Functional history">Functional history</a>
+              <a href="functional-history?source=Functional history">Functional history</a>
             </li>
             {% endif %}
 
@@ -235,11 +235,15 @@
 
               {% if data["source"] == 'Descriptor choices and justifications' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="dl-qual?source=Descriptor choices and justifications" aria-current="location">Descriptor choices and justifications</a>
+               <a href="justification-none?source=Descriptor choices and justifications" aria-current="location">Descriptor choices and justifications</a>
+             </li>
+             {% elseif (data['justificationAdded']) %}
+              <li class="moj-side-navigation__item">
+               <a href="justification-addAnother?source=Descriptor choices and justifications" aria-current="location">Descriptor choices and justifications</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="dl-qual?source=Descriptor choices and justifications">Descriptor choices and justifications</a>
+               <a href="justification-none?source=Descriptor choices and justifications">Descriptor choices and justifications</a>
              </li>
              {% endif %}
 
