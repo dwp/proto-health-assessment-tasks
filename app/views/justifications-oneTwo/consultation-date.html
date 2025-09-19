@@ -1,0 +1,58 @@
+{% extends "layouts/justificationOneTwo-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">   
+
+     <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="consultatation-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Consultation date
+            </h1>
+          </legend>
+          <div id="consultation-date-hint" class="govuk-hint">
+            For example, 27 3 2023 
+          </div>
+          <div class="govuk-date-input" id="consultation-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="consultation-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--width-2" id="consultation-date-day" name="day" type="text" value="{{data["day"]}}" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="consultation-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="consultation-date-month" name="month" type="text" value="{{data["month"]}}" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="consultation-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="consultation-date-year" name="year" type="text"  value="{{data["year"]}}" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+        
+     </form>
+
+    </div>
+  </div>
+
+{% endblock %}

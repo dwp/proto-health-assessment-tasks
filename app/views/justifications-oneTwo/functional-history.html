@@ -1,0 +1,320 @@
+{% extends "layouts/justificationOneTwo-layout" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-l">
+     Functional history
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Daily living
+    </h2>
+
+    <form action="#" method="post" id="auto-redirect">
+
+      <h3 class="govuk-heading-s">Preparing food</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>       
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="preparingfoodFH">
+          Functional history for preparing food
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="preparingfoodFH" name="preparingfoodFunctionalHistory" rows="8">{{data["preparingfoodFunctionalHistory"]}}</textarea>
+         </div>
+
+
+        <h3 class="govuk-heading-s">Taking nutrition</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+        
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="takingnutritionFH">
+          Functional history for taking nutrition
+        </label>
+    
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="takingnutritionFH" name="takingnutritionFunctionalHistory" rows="8">{{data["takingnutritionFunctionalHistory"]}}</textarea>
+      </div>
+      
+           
+      <h3 class="govuk-heading-s">Managing therapy</h3>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Claimant's questionnaire response
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+          I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+        <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+        </div>
+      </details>    
+                  
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--s" for="managingtherapyFH">
+        Functional history for managing therapy
+      </label>
+  
+      <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="managingtherapyFH" name="managingtherapyFunctionalHistory" rows="8">{{data["managingtherapyFunctionalHistory"]}}</textarea>
+    </div>
+      
+      
+                 
+        <h3 class="govuk-heading-s">Washing and bathing</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+                  
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="washingbathingFH">
+         Functional history for washing and bathing
+        </label>
+
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="washingbathingFH" name="washingbathingFunctionalHistory" rows="8">{{data["washingbathingFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+        <h3 class="govuk-heading-s">Managing toilet needs</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+             Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+                  
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="toiletneedsFH">
+          Functional history for managing toilet needs
+        </label>
+    
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="toiletneedsFH" name="toiletneedsFunctionalHistory" rows="8">{{data["toiletneedsFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+        <h3 class="govuk-heading-s">Dressing and undressing</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="dressingFH">
+          Functional history for dressing and undressing
+        </label>
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="dressingFH" name="dressingFunctionalHistory" rows="8">{{data["dressingFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+      
+        <h3 class="govuk-heading-s">Communicating verbally</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="communicatingverballyFH">
+          Functional history for communicating verbally
+        </label>
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="communicatingverballyFH" name="communicatingverballyFunctionalHistory" rows="8">{{data["communicatingverballyFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+        <h3 class="govuk-heading-s">Reading and understanding signs, symbols and words</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+                    
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="readingunderstandingFH">
+          Functional history for reading and understanding signs, symbols and words
+        </label>
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="readingunderstandingFH" name="readingunderstandingFunctionalHistory" rows="8">{{data["readingunderstandingFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+    
+        <h3 class="govuk-heading-s">Engaging face to face</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+                  
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="facetofaceFH">
+          Functional history for engaging face to face
+        </label>
+    
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="facetofaceFH" name="facetofaceFunctionalHistory" rows="8">{{data["facetofaceFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+                 
+        <h3 class="govuk-heading-s">Budgeting</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+             Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+                    
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="budgetingFH">
+          Functional history for budgeting
+        </label>
+    
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="budgetingFH" name="budgetingFunctionalHistory" rows="8">{{data["budgetingFunctionalHistory"]}}</textarea>
+      </div>
+      
+      
+                
+      <h2 class="govuk-heading-m">Mobility</h2>
+
+        <h3 class="govuk-heading-s">Planning and following journeys</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="journeysFH">
+          Functional history for planning and following journeys
+        </label>
+
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="journeysFH" name="journeysFunctionalHistory" rows="8">{{data["journeysFunctionalHistory"]}}</textarea>
+      </div>
+      
+        <h3 class="govuk-heading-s">Moving around</h3>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>    
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="movingaroundFH">
+          Functional history for moving around
+        </label>
+    
+        <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="movingaroundFH" name="movingaroundFunctionalHistory" rows="8">{{data["movingaroundFunctionalHistory"]}}</textarea>
+      </div>
+      </form>
+    
+  </div>      
+      </div>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layouts/justificationOneTwo-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+
+{% block content_left %}
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> -->
+    
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">Claimant identity</h1>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Did you confirm the claimant's identity?
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              {% if data["claimantVerify"] == 'Yes' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                      How did you confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                  </div>
+                </div>
+  
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="no-examination">
+                      Why could you not confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                  </div>
+                </div>
+  
+                {% elseif data["claimantVerify"] == 'No' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="id">
+                    How did you confirm their identity?
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" checked data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="id-2">
+                      Why could you not confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                  </div>
+              </div>
+              {% elseif data["claimantVerify"] === undefined %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="id">
+                  Yes
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="id">
+                      How did you confirm their identity?
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                  </div>
+                </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id-2" name="claimantVerify" type="radio" value="No" data-aria-controls="conditional-no">
+                <label class="govuk-label govuk-radios__label" for="id-2">
+                  No
+                </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="id-2">
+                    Why could you not confirm their identity?
+                  </label>
+                  <textarea class="govuk-textarea govuk-!-width-one-half" id="id-2" name="noWhy" rows="5" aria-describedby="more-detail-no">{{data["noWhy"]}}</textarea>
+                </div>
+              </div>
+              {% endif %}
+
+              </div>
+            </fieldset>
+        </div>
+    
+</form>
+
+  <!-- </div>  
+  
+  </div> -->
+      
+
+{% endblock %}
