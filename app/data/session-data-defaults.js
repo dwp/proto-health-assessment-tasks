@@ -29,6 +29,7 @@ module.exports = {
   'conditionDeclaration': 'None',
   'attendeeDeclaration': 'None',
   'harmfulInfoBox': 'None',
-  'justificationDCheck': 'None'
+  'justificationDCheck': 'None',
+  'hiddenActivity': 'None'
 
 }

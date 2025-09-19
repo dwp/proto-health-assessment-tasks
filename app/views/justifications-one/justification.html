@@ -280,9 +280,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <thead class="govuk-table__head">
 
    
-        <!-- {{data["justificationDCheck"]}} -->
-          {% if data["justificationDCheck"].includes("Preparing food") %} 
+    
+          {% if data["justificationDCheck"].includes("Preparing food") or data["hiddenActivity"].includes("Preparing food")  %} 
 
+             <input class="govuk-checkboxes__input" id="justicationPF" name="hiddenActivity" type="hidden" value="Preparing food" data-aria-controls="">
+  
           {% else %}
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">
@@ -317,7 +319,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% endif %}
         </thead>
         <tbody class="govuk-table__body">
-          {% if data['justificationDCheck'].includes("Taking nutrition")  %} 
+          {% if data['justificationDCheck'].includes("Taking nutrition") or data["hiddenActivity"].includes("Taking nutrition")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Taking nutrition" data-aria-controls="">
 
           {% else %}
           <tr class="govuk-table__row">
@@ -351,6 +355,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </tr>
         {% endif %}
 
+          {% if data['justificationDCheck'].includes("Managing therapy") or data["hiddenActivity"].includes("Managing therapy")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Managing therapy" data-aria-controls="">
+
+          {% else %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -381,6 +391,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endif %}
           </tr>
 
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Washing and bathing") or data["hiddenActivity"].includes("Washing and bathing")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Washing and bathing" data-aria-controls="">
+
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -411,6 +428,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endif %}
           </tr>
 
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Managing toilet needs") or data["hiddenActivity"].includes("Managing toilet needs")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Managing toilet needs" data-aria-controls="">
+
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -440,6 +464,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              </td>
                 {% endif %}
           </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Dressing and undressing") or data["hiddenActivity"].includes("Dressing and undressing")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Dressing and undressing" data-aria-controls="">
+
+          {% else %}
 
            <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
@@ -471,6 +502,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endif %}
           </tr>
 
+               {% endif %}
+
+
+          {% if data['justificationDCheck'].includes("Communicating verbally") or data["hiddenActivity"].includes("Communicating verbally")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Communicating verbally" data-aria-controls="">
+
+          {% else %}
            <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -500,6 +538,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              </td>
                 {% endif %}
           </tr>
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Reading and understanding signs, symbols and words") or data["hiddenActivity"].includes("Reading and understanding signs, symbols and words")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Reading and understanding signs, symbols and words" data-aria-controls="">
+
+          {% else %}
 
            <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
@@ -531,6 +575,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endif %}
           </tr>
 
+          {% endif %}
+
+           {% if data['justificationDCheck'].includes("Engaging face to face") or data["hiddenActivity"].includes("Engaging face to face")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Engaging face to face" data-aria-controls="">
+
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -560,6 +610,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              </td>
                 {% endif %}
           </tr>
+          {% endif %}
+
+           {% if data['justificationDCheck'].includes("Budgeting") or data["hiddenActivity"].includes("Budgeting")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Engaging face to face" data-aria-controls="">
+
+          {% else %}
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
@@ -590,6 +646,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              </td>
                 {% endif %}
           </tr>
+
+             {% endif %}
 
           
 

@@ -4353,9 +4353,10 @@ router.post('/justifications-one/remove-attendee', function(req, res) {
  router.post('/justifications-one/justification', function(req, res) {
     const activityName = req.session.data['justificationDCheck']
     const justificationText = req.session.data['groupJustify']
+    const activityHide = req.session.data['hiddenActivity']
 
     const justificationAdded = req.session.data.justificationAdded || []
-    justificationAdded.push({ activityName, justificationText })
+    justificationAdded.push({ activityName, justificationText, activityHide })
     req.session.data.justificationAdded = justificationAdded
 
     req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
