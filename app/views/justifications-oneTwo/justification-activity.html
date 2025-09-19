@@ -35,7 +35,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--m" for="preparingfoodFH">
               Summary of evidence, consultation and observations
             </label>
-            <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="preparingfoodFH" name="preparingfoodFunctionalHistory" rows="8">{{data["preparingfoodFunctionalHistory"]}}</textarea>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="preparingfoodFH" name="summaryConsultation" rows="8">{{data["summaryConsultation"]}}</textarea>
          </div>
 
          <br>
@@ -47,7 +47,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">
-              
+              Activity name
             </th>
             <th scope="col" class="govuk-table__header">
               Descriptor choice
@@ -224,7 +224,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <th scope="row" class="govuk-table__header">
             <a href="communicatingverbally" class="govuk-link">Communicating verbally</a>
             </th>
-
+            
             <td class="govuk-table__cell">
               {% if (data['communicatingverballySelect']) %}
                  {{data["communicatingverballySelect"]}} 
@@ -301,8 +301,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% endif %}
           </td>
         </tr>
+      
+  </tbody>
+</table>
 
-         <tr class="govuk-table__row">
+<br>
+<br>
+  <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Mobility activities</caption> 
+        <thead class="govuk-table__head">
+
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Activity name
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Descriptor choice
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Status
+            </th>
+        </thead>
+        <tbody class="govuk-table__body">
+       <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
             <a href="journeys" class="govuk-link">Planning and following journeys</a>
             </th>
@@ -355,7 +376,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% endif %}
           </td>
         </tr>   
-          
+
   </tbody>
 </table>
 

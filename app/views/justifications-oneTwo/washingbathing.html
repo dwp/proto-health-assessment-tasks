@@ -28,6 +28,20 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <form action="#" method="post" id="auto-redirect">
 
+       <details class="govuk-details govuk-!-margin-bottom-4">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Chopping vegtables such as carrots can be hard as my grip on the knife isn't always strong enough to chop all the way through. I use things in the kitchen like an automatic tin opener and a kettle tipper. 
+           I somtimes need to ask a family member with chopping large amounts of food or when heavy objects need carrying around the kitchen.
+
+          <p>A timer needs to be used when cooking meals, so that a pan is not forgotten about during cooking to avoid the contents from boiling over or being burnt. </p>
+          </div>
+        </details>  
+
        <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -482,6 +496,31 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
 
           </fieldset>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="diagnosis">
+          <b>Justification</b>
+        </label>
+        <div id="condition-history" class="govuk-hint">
+          This could include diagnosis details, symptoms, variability, treatments, specialist inputs and hospital stays
+        </div>
+        <!-- <div id="boldHeadings"><p><b>Diagnosis <br><br><br>Symptoms <br><br><br>Variability <br><br><br>Treatments <br><br><br>Specialist inputs <br><br><br>Hospital stays</b></p></div> -->
+        <script>
+          function addHeadings(){
+              var boldTitles = document.getElementById("boldHeadings")
+              var titles = document.getElementById("conditionSubHeadings").value;
+
+              if (titles == "" || titles.length == 0 || titles == null)
+                  {
+                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  } else {
+                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  }
+          }
+      </script>
+        <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
+        <textarea class="govuk-textarea" id="conditionSubHeadings" name="bathingJustify" rows="20" aria-describedby="condition history">{{data["bathingJustify"]}}</textarea>
+      </div>
           
           </div>          
           <button class="govuk-button" data-module="govuk-button">
