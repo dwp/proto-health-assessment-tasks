@@ -1,10 +1,9 @@
-{% extends "layouts/justification-layout.html" %}
+{% extends "layouts/no-side-nav-justification-activity.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set containerClasses = "full-width-container" %}
 {% block content_left %}
 
 <style type="text/css">
@@ -16,8 +15,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> -->
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
@@ -27,17 +26,28 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     </div>
 
     <form action="#" method="post" id="auto-redirect">
+
+         <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Functional history for planning and following journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           {{data["journeysFunctionalHistory"]}}
+          </div>
+        </details> 
               
               
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="planningJourneyNotes">
               Functional history for planning and following journeys
             </label>
           
           
             <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJourneyNotes" name="planningJourneyNotes" rows="15">{{data["planningJourneyNotes"]}}</textarea>
-          </div>
+          </div> -->
 
           <div class="govuk-form-group">
 
@@ -360,20 +370,24 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           
           </fieldset>
 
-          <div class="govuk-form-group">
+          <!-- <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="planningJustify">
               Justification for planning and following journeys
             </label>
           
             <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJustification" name="planningJustify" rows="15">{{data["planningJustify"]}}</textarea>
-          </div>
+          </div> -->
+
+           <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
           
           
            </div>
         </form>
-      </div>
+      <!-- </div>
    </form>
-</div>
+</div> -->
 
 
 

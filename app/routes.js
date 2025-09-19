@@ -4354,9 +4354,10 @@ router.post('/justifications-one/remove-attendee', function(req, res) {
     const activityName = req.session.data['justificationDCheck']
     const justificationText = req.session.data['groupJustify']
     const activityHide = req.session.data['hiddenActivity']
+    const problemCheck = req.session.data['noProblemActivity']
 
     const justificationAdded = req.session.data.justificationAdded || []
-    justificationAdded.push({ activityName, justificationText, activityHide })
+    justificationAdded.push({ activityName, justificationText, activityHide, problemCheck })
     req.session.data.justificationAdded = justificationAdded
 
     req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
@@ -4398,6 +4399,12 @@ router.post('/justifications-one/justification-addAnother', function(req, res) {
   res.redirect('/justifications-one/justification')
   })
   router.post('/justifications-one/budgeting', function(req, res) {
+  res.redirect('/justifications-one/justification')
+  })
+   router.post('/justifications-one/journeys', function(req, res) {
+  res.redirect('/justifications-one/justification')
+  })
+  router.post('/justifications-one/movingaround', function(req, res) {
   res.redirect('/justifications-one/justification')
   })
 

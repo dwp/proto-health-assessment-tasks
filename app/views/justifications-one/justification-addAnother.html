@@ -98,6 +98,12 @@ display: block;
                {% if activityName === "Budgeting"  %} 
                {{data["budgetingSelect"]}}
                {% endif %}
+
+               {% if activityName === "Planning and following journeys"  %} 
+               {{data["journeysSelectpbr"]}}
+               {% endif %}
+
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -106,6 +112,12 @@ display: block;
         </dl>
         
         {% endfor %}
+
+        {% if justification.problemCheck == "The claimant has not reported problems with these activities and there was no evidence to suggest otherwise."  %} 
+         <p>The claimant has not reported problems with these activities and there was no evidence to suggest otherwise.</p>
+       
+         {% endif %}
+
         <p>{{ justification.justificationText }}</p>
         <br>
         <br>
@@ -113,8 +125,6 @@ display: block;
          {% endfor %} 
       </div>    
       </div>
-  
-
 
 <form action="#" method="post">
   

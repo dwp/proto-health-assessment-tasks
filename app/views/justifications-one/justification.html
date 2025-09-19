@@ -613,7 +613,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% endif %}
 
            {% if data['justificationDCheck'].includes("Budgeting") or data["hiddenActivity"].includes("Budgeting")  %} 
-          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Engaging face to face" data-aria-controls="">
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Budgeting" data-aria-controls="">
 
           {% else %}
 
@@ -649,6 +649,80 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
              {% endif %}
 
+             {% if data['justificationDCheck'].includes("Planning and following journeys") or data["hiddenActivity"].includes("Planning and following journeys")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Planning and following journeys" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Planning and following journeys" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Planning and following journeys</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['journeysSelectpbr']) %}
+             
+               {{data["journeysSelectpbr"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            <a class="govuk-link" href="journeys">
+              Change<span class="govuk-visually-hidden"> Planning journeys</span>
+            </a>
+            {% else %}
+            <a href="journeys" class="govuk-link">Select planning and following journeys descriptor</a>
+       
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
+          {% if data['justificationDCheck'].includes("Moving around") or data["hiddenActivity"].includes("Moving around")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Moving around" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Moving around" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Moving around</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['movingaroundSelectpbr']) %}
+             
+               {{data["movingaroundSelectpbr"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            <a class="govuk-link" href="movingaround">
+              Change<span class="govuk-visually-hidden"> moving around</span>
+            </a>
+            {% else %}
+            <a href="movingaround" class="govuk-link">Select moving around descriptor</a>
+       
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
           
 
          
@@ -660,9 +734,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="overallJustifcation">
+        <label class="govuk-label govuk-label--m" for="overallJustifcation">
           Justification
         </label>
+
+         <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProbs" name="noProblemActivity" type="checkbox" value="The claimant has not reported problems with these activities and there was no evidence to suggest otherwise.">
+                    <label class="govuk-label govuk-checkboxes__label" for="noProblems">
+                      The claimant has not reported problems with these activities and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation" name="groupJustify" rows="15"></textarea>
       </div>
 
@@ -676,10 +768,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             Save and continue
           </button>
 
-          {% if (data['conditionAdded']) %}
-          <p><a href="conditions-addAnother">Cancel</a></p>
+          {% if (data['justificationAdded']) %}
+          <p><a href="justification-addAnother">Cancel</a></p>
           {% else %}
-          <p><a href="conditions-none">Cancel</a></p>
+          <p><a href="justification-none">Cancel</a></p>
           {% endif %}
 
          </div>
