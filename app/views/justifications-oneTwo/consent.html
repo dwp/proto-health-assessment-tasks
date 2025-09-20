@@ -55,7 +55,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </div>
               {% elseif data["consent"] === undefined %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="consentID" name="consent" type="radio" value="Yes">
+                <input class="govuk-radios__input" id="consentID" name="consent" type="radio" value="Yes" {{checked}}>
                 <label class="govuk-label govuk-radios__label" for="consentID">
                   Yes
                 </label>
@@ -83,7 +83,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
+            <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="" {{checked}}>
             <label class="govuk-label govuk-checkboxes__label" for="evDec">
               The purpose of the consultation has been explained to the claimant.
             </label>

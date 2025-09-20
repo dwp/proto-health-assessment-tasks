@@ -25,8 +25,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         <p>All name links open in a new tab.</p>
 
-        <div class="govuk-!-margin-bottom-9">
+        <div class="govuk-!-margin-bottom-5">
           <h2 class="govuk-heading-m">Questionnaires and assessment reports</h2>
+          <dl class="govuk-summary-list" id="">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/PIP2 questionnaire.pdf">
+                            PIP2 questionnaire<span class="govuk-visually-hidden">evidence change</span>
+                        </a></b></p>
+                        </dt>
+                        
+                        <dd class="govuk-summary-list__value">
+                          26 January 2022
+                        </dd>
+                      
+                        <dd class="govuk-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" target="_blank" href="/public/pdfs/{{coreEvidence}}.pdf">
+                                  View<span class="govuk-visually-hidden">evidence change</span>
+                              </a></li> -->
+                            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
+                                Remove<span class="govuk-visually-hidden">evidence remove</span>
+                              </a></li>
+                          </ul>
+                        </dd>
+                      </div>
+                    </dl> 
           <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
           {% for DWPevidence in data['evidenceAdded'] %}
@@ -76,11 +100,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 {% endfor %}
              {% endif %}
           {% endfor %}
-          </div>
-
-
+        </div>
        <div>
-        <h2 class="govuk-heading-m">Other supporting documents</h2>
+      
+        <!-- <h2 class="govuk-heading-m">Other supporting documents</h2> -->
           <!--logic for adding evidence-->
           <!-- looking into the array as a whole -->
           {% for evidence in data['evidenceAdded'] %}
@@ -252,7 +275,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="furtherEvidence" type="radio" value="No">
+            <input class="govuk-radios__input" id="contact-2" name="furtherEvidence" type="radio" value="No" {{checked}}>
             <label class="govuk-label govuk-radios__label" for="contact-2">
              No
             </label>
@@ -271,10 +294,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </h2>
         </legend>
 
-    {% if data["evidenceDeclaration"] == "None" %}    
+    {% if data["evidenceDeclaration"] == "None" or data["evidenceDeclaration"] === undefined %}    
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." data-aria-controls="">
+        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="None" data-aria-controls="" {{checked}}>
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
           All evidence available on the day of the assessment report has been reviewed.
         </label>
@@ -286,7 +309,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     {% elseif data["evidenceDeclaration"] == "All evidence available on the day of the assessment report has been reviewed." %}
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." data-aria-controls="" {{ checked }}>
+        <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." data-aria-controls="">
         <label class="govuk-label govuk-checkboxes__label" for="evDec">
           All evidence available on the day of the assessment report has been reviewed.
         </label>

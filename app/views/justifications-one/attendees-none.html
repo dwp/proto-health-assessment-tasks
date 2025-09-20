@@ -42,7 +42,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% if data["attendeeDeclaration"] == "None" %}    
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="The claimant was alone during the consultation.">
+            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="None" {{checked}}>
             <label class="govuk-label govuk-checkboxes__label" for="attendeeDec">
               The claimant was alone during the consultation.
             </label>
