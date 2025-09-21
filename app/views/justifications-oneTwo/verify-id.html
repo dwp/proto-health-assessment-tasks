@@ -13,7 +13,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
 
     <form action="#" method="post" id="auto-redirect">
-      <div class="govuk-form-group">
+       <div class="govuk-form-group">
         <h1 class="govuk-heading-l">Claimant identity</h1>
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -23,7 +23,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <div class="govuk-radios" data-module="govuk-radios">
               {% if data["claimantVerify"] == 'Yes' %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" checked data-aria-controls="conditional-yes" {{checked}}>
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" checked data-aria-controls="conditional-yes">
                 <label class="govuk-label govuk-radios__label" for="id">
                   Yes
                 </label>
@@ -33,11 +33,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <label class="govuk-label" for="no-examination">
                       How did you confirm their identity?
                     </label>
-                    <textarea class="govuk-textarea govuk-!-width-one-half" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">Identity confirmed using the following: 
-Full name – John Smith 
-Date of birth 31 December 1999 
-National Insurance Number AB CB 12 13
-Name of benefit - Personal Independence Payment</textarea>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="no-examination" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
                   </div>
                 </div>
   
@@ -87,7 +83,7 @@ Name of benefit - Personal Independence Payment</textarea>
               </div>
               {% elseif data["claimantVerify"] === undefined %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                <input class="govuk-radios__input" id="id" name="claimantVerify" type="radio" value="Yes" data-aria-controls="conditional-yes" {{checked}}>
                 <label class="govuk-label govuk-radios__label" for="id">
                   Yes
                 </label>
@@ -97,7 +93,11 @@ Name of benefit - Personal Independence Payment</textarea>
                     <label class="govuk-label" for="id">
                       How did you confirm their identity?
                     </label>
-                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">{{data["yesWhy"]}}</textarea>
+                    <textarea class="govuk-textarea govuk-!-width-one-half" id="id" name="yesWhy" rows="5" aria-describedby="more-detail-no">Identity confirmed using the following: 
+Full name – John Smith 
+Date of birth 31 December 1999 
+National Insurance Number AB CB 12 13
+Name of benefit - Personal Independence Payment</textarea>
                   </div>
                 </div>
               <div class="govuk-radios__item">
