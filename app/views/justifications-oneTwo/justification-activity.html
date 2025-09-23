@@ -247,6 +247,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </td>
         </tr>
 
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="readingunderstanding" class="govuk-link">Reading and understanding signs, symbols and words</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['readingunderstandingSelect']) %}
+                 {{data["readingunderstandingSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+
+            <td class="govuk-table__cell">
+                  {% if (data['readingunderstandingSelect']) %}
+                  <strong class="govuk-tag">
+                    Done
+                  </strong>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">
+                    Todo
+                  </strong>
+                </td>
+                {% endif %}
+              </td>
+        </tr>
+
          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
             <a href="facetoface" class="govuk-link">Engagaing face to face</a>

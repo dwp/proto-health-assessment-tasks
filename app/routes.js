@@ -4694,7 +4694,7 @@ router.post('/justifications-oneTwo/justification-addAnother', function(req, res
     res.redirect('/justifications-oneTwo/justification-activity')
    })
   router.post('/justifications-oneTwo/readingunderstanding', function(req, res) {
-  res.redirect('/justifications-oneTwo/justificatio-activity')
+  res.redirect('/justifications-oneTwo/justification-activity')
   })
   router.post('/justifications-oneTwo/facetoface', function(req, res) {
   res.redirect('/justifications-oneTwo/justification-activity')
