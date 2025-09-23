@@ -304,25 +304,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <label class="govuk-label" for="diagnosis">
           <b>Justification</b>
         </label>
-        <div id="condition-history" class="govuk-hint">
-          This could include diagnosis details, symptoms, variability, treatments, specialist inputs and hospital stays
+        <div id="justificationOverview" class="govuk-hint">
+          This could include reported restrictions, recommendation and evidence, reported restrictions not supported, other descriptor considered
         </div>
-        <!-- <div id="boldHeadings"><p><b>Diagnosis <br><br><br>Symptoms <br><br><br>Variability <br><br><br>Treatments <br><br><br>Specialist inputs <br><br><br>Hospital stays</b></p></div> -->
         <script>
           function addHeadings(){
-              var boldTitles = document.getElementById("boldHeadings")
-              var titles = document.getElementById("conditionSubHeadings").value;
+              var titles = document.getElementById("justificationSubHeadings").value;
 
               if (titles == "" || titles.length == 0 || titles == null)
                   {
-                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                    document.getElementById("justificationSubHeadings").value += 'Reported restriction \n\n\nRecommendation and evidence \n\n\nReported restrictions not supported \n\n\nOther descriptor considered';
                   } else {
-                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                    document.getElementById("justificationSubHeadings").value += '\r\rReported restriction \n\n\nRecommendation and evidence \n\n\nReported restrictions not supported \n\n\nOther descriptor considered';
                   }
           }
       </script>
-        <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
-        <textarea class="govuk-textarea" id="conditionSubHeadings" name="commicateJustify" rows="20" aria-describedby="condition history">{{data["communicateJustify"]}}</textarea>
+        <a href="#justificationSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
+        <textarea class="govuk-textarea" id="justificationSubHeadings" name="communicatingJustify" rows="20" aria-describedby="justificationOverview">{{data["communicatingJustify"]}}</textarea>
       </div>
 
           
