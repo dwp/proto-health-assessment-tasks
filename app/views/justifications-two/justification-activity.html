@@ -1,0 +1,430 @@
+{% extends "layouts/justificationOneTwo-layout" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl"></span>
+            <h1 class="govuk-fieldset__heading">
+              Descriptor choices and justifications
+            </h1>
+            <div id="passport-issued-hint" class="govuk-hint">
+            </div>
+          </legend>
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="preparingfoodFH">
+              Notes relevant to all activities
+            </label>
+            <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="preparingfoodFH" name="summaryConsultation" rows="8">{{data["summaryConsultation"]}}</textarea>
+         </div>
+
+         <br>
+         <br>
+
+          <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Daily living activities</caption> 
+        <thead class="govuk-table__head">
+
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Activity name
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Descriptor choice
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Status
+            </th>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="preparingfood" class="govuk-link">Preparing food</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['preparingfoodSelect']) %}
+                 {{data["preparingfoodSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['preparingfoodSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="takingnutrition" class="govuk-link">Taking nutrition</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['takingnutritionSelect']) %}
+                 {{data["takingnutritionSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['takingnutritionSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="managingtherapy" class="govuk-link">Managing therapy</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['managingtherapySelect']) %}
+                 {{data["managingtherapySelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['managingtherapySelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="washingbathing" class="govuk-link">Washing and bathing</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['washingbathingSelect']) %}
+                 {{data["washingbathingSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['washingbathingSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="toiletneeds" class="govuk-link">Managing toilet needs</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['toiletneedsSelect']) %}
+                 {{data["toiletneedsSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['toiletneedsSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="dressing" class="govuk-link">Dressing and undressing</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['dressingSelect']) %}
+                 {{data["dressingSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['dressingSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="communicatingverbally" class="govuk-link">Communicating verbally</a>
+            </th>
+            
+            <td class="govuk-table__cell">
+              {% if (data['communicatingverballySelect']) %}
+                 {{data["communicatingverballySelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['communicatingverballySelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="readingunderstanding" class="govuk-link">Reading and understanding signs, symbols and words</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['readingunderstandingSelect']) %}
+                 {{data["readingunderstandingSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+
+            <td class="govuk-table__cell">
+                  {% if (data['readingunderstandingSelect']) %}
+                  <strong class="govuk-tag">
+                    Done
+                  </strong>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">
+                    Todo
+                  </strong>
+                </td>
+                {% endif %}
+              </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="facetoface" class="govuk-link">Engagaing face to face</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['facetofaceSelect']) %}
+                 {{data["facetofaceSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['facetofaceSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="budgeting" class="govuk-link">Budgeting</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['budgetingSelect']) %}
+                 {{data["budgetingSelect"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['budgetingSelect']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+      
+  </tbody>
+</table>
+
+<br>
+<br>
+  <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Mobility activities</caption> 
+        <thead class="govuk-table__head">
+
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Activity name
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Descriptor choice
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Status
+            </th>
+        </thead>
+        <tbody class="govuk-table__body">
+       <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="journeys" class="govuk-link">Planning and following journeys</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['journeysSelectpbr']) %}
+                 {{data["journeysSelectpbr"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['journeysSelectpbr']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+            <a href="movingaround" class="govuk-link">Moving around</a>
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['movingaroundSelectpbr']) %}
+                 {{data["movingaroundSelectpbr"]}} 
+              {% else %}
+              0
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell">
+              {% if (data['movingaroundSelectpbr']) %}
+              <strong class="govuk-tag">
+                Done
+              </strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Todo
+              </strong>
+            </td>
+            {% endif %}
+          </td>
+        </tr>   
+
+  </tbody>
+</table>
+
+        
+
+          
+          </fieldset>
+
+            
+            
+            </div>
+          <!-- </div> -->
+        </form>
+         
+  
+    </div> 
+
+   </fieldset>
+    </div>
+
+
+      
+
+{% endblock %}

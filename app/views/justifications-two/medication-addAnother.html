@@ -1,0 +1,739 @@
+-{% extends "layouts/justificationOneTwo-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+  .govuk-summary-list__actions {
+   width: 25%;
+   padding-right: 0;
+   text-align: right;
+ }
+ .medication-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Medication
+        </h1>
+
+          <!--logic for adding medications-->
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    GTN spray
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Two puffs taken as required, used once per month
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    To prevent chest pain/angina
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Effective
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Isosorbide
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      60mg, once per day
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Following heart attack/angina
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Effective
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Co-codamol
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      30/500mg, two tablets four times daily
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Pain relief
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Partially
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Naproxen
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      500mg, twice daily 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Pain relief
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Partially
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Lansoprazole
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     15mg, daily 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    To protect stomach 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Effective
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                   Sertraline
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     50mg, daily 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    For depression  
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Effective
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">No side effects</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+             <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                   Atorvastatin
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="#" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     20mg, once daily 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    (taken following heart attack) preventative measures 
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Claimant not sure
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">Claimant is also taking Aspirin 75 mg once daily as preventative measure since heart attack. Claimant not sure if this helps. No side effects with any medications.</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            {% for medication in data['medicationAdded'] %}
+             {% set outerLoopIndex = loop.index0 %}
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    {{ medication.medicationName }}
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a>
+                  
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Dosage and frequency
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationDoseFreq }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Reason for taking
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationReason }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      How effective is the medication?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ medication.medicationEffectiveness }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Additional notes
+                      <pre class="medication-text govuk-body">{{ medication.medicationAdditionalNotes }}</pre>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medication-change?indexMed={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+         
+
+          <br>
+          <br>
+
+          
+
+<form action="#" method="post" id="auto-redirect">
+  
+    {% if data["sideEffects"] == 'Yes' %}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Does the claimant experience any side effects from their medication?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectYes" name="sideEffects" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="side-effectYes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sideEffectsDescription">
+                <b>Side effects</b>
+              </label>
+              <textarea class="govuk-textarea" id="sideEffectsDescription" name="sideEffectsMedication" rows="5">{{data["sideEffectsMedication"]}}</textarea>
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectNo" name="sideEffects" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="side-effectNo">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    {% elseif data["sideEffects"] == 'No' %}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Does the claimant experience any side effects from their medication?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectYes" name="sideEffects" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+            <label class="govuk-label govuk-radios__label" for="side-effectYes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sideEffectsDescription">
+                <b>Side effects</b>
+              </label>
+              <textarea class="govuk-textarea" id="sideEffectsDescription" name="sideEffectsMedication" rows="5">{{data["sideEffectsMedication"]}}</textarea>
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectNo" name="sideEffects" type="radio" value="No" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="side-effectNo">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {% elseif data["sideEffects"] === undefined %}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Does the claimant experience any side effects from their medication?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectYes" name="sideEffects" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+            <label class="govuk-label govuk-radios__label" for="side-effectYes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sideEffectsDescription">
+                <b>Side effects</b>
+              </label>
+              <textarea class="govuk-textarea" id="sideEffectsDescription" name="sideEffectsMedication" rows="5">{{data["sideEffectsMedication"]}}</textarea>
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="side-effectNo" name="sideEffects" type="radio" value="No" {{checked}}>
+            <label class="govuk-label govuk-radios__label" for="side-effectNo">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    {% endif %}
+
+             {% if data["treatmentThreapy"] == 'Yes' %}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Does the claimant receive any home therapies?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesYes" name="treatmentThreapy" type="radio" value="Yes" data-aria-controls="therapy-reveal" {{ checked }}> 
+                      <label class="govuk-label govuk-radios__label" for="therapiesYes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="therapy-reveal">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="therapyDescription">
+                          <b>Home therapies</b>
+                        </label>
+                        <textarea class="govuk-textarea" id="therapyDescription" name="therapyTreatmentExplain" rows="5">{{data["therapyTreatmentExplain"]}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesNo" name="treatmentThreapy" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="therapiesNo">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              {% elseif data["treatmentThreapy"] == 'No' %}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Does the claimant receive any home therapies?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesYes" name="treatmentThreapy" type="radio" value="Yes" data-aria-controls="therapy-reveal">
+                      <label class="govuk-label govuk-radios__label" for="therapiesYes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="therapy-reveal">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="therapyDescription">
+                          <b>Home therapies</b>
+                        </label>
+                        <textarea class="govuk-textarea" id="therapyDescription" name="therapyTreatmentExplain" rows="5">{{data["therapyTreatmentExplain"]}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesNo" name="treatmentThreapy" type="radio" value="No" {{ checked }}>
+                      <label class="govuk-label govuk-radios__label" for="therapiesNo">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              {% elseif data["treatmentThreapy"] === undefined %}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Does the claimant receive any home therapies?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesYes" name="treatmentThreapy" type="radio" value="Yes" data-aria-controls="therapy-reveal"> 
+                      <label class="govuk-label govuk-radios__label" for="therapiesYes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="therapy-reveal">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="therapyDescription">
+                          <b>Home therapies</b>
+                        </label>
+                        <textarea class="govuk-textarea" id="therapyDescription" name="therapyTreatmentExplain" rows="5">{{data["therapyTreatmentExplain"]}}</textarea>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="therapiesNo" name="treatmentThreapy" type="radio" value="No" {{checked}}>
+                      <label class="govuk-label govuk-radios__label" for="therapiesNo">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              {% endif %}
+
+
+      </div>
+
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

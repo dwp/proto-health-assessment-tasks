@@ -1,0 +1,364 @@
+{% extends "layouts/no-side-nav-justification-activity.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+        <h1 class="govuk-heading-l">Preparing food</h1>
+   
+<!-- 
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"> -->
+
+<form action="#" method="post" id="auto-redirect">
+  
+      <details class="govuk-details govuk-!-margin-bottom-4">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           I struggle to chop things due to arthritis in my hands, my partner does most of the cooking, however I do like to help.
+          </div>
+        </details>  
+                        
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Functional history for preparing food
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           {{data["preparingfoodFunctionalHistory"]}}
+          </div>
+        </details> 
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+    How well can the claimant cook food?
+  </legend>
+  
+  <div class="govuk-radios">
+    
+    <!--first radio-->
+        <div class="govuk-radios__item">
+          {% if data["preparingfoodSelect"] == '(1a) Can prepare and cook a simple meal unaided' %}
+          <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+        (1a) Can prepare and cook a simple meal unaided
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+        (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+        (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+        (1d) Needs prompting to be able to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+        (1e) Needs supervision or assistance to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+        (1f) Cannot prepare and cook food
+      </label>
+        </div>
+        <!--second radio-->
+        {% elseif data["preparingfoodSelect"] == '(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal' %}
+          <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+        (1a) Can prepare and cook a simple meal unaided
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal" {{ checked }}>
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+        (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+        (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+        (1d) Needs prompting to be able to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+        (1e) Needs supervision or assistance to either prepare or cook a simple meal
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+          <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+        (1f) Cannot prepare and cook food
+      </label>
+        </div>
+         <!--third radio -->
+         {% elseif data["preparingfoodSelect"] == '(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave' %}
+         <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+       (1a) Can prepare and cook a simple meal unaided
+     </label>
+       </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+       (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+     </label>
+       </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave" {{ checked }}>
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+       (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+     </label>
+       </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+       (1d) Needs prompting to be able to either prepare or cook a simple meal
+     </label>
+       </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+       (1e) Needs supervision or assistance to either prepare or cook a simple meal
+     </label>
+       </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+         <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+       (1f) Cannot prepare and cook food
+     </label>
+       </div>
+        <!--fourth radio -->
+        {% elseif data["preparingfoodSelect"] == '(1d) Needs prompting to be able to either prepare or cook a simple meal' %}
+        <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+      (1a) Can prepare and cook a simple meal unaided
+    </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+      (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+    </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+      (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+    </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal" {{ checked }}>
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+      (1d) Needs prompting to be able to either prepare or cook a simple meal
+    </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+      (1e) Needs supervision or assistance to either prepare or cook a simple meal
+    </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+        <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+      (1f) Cannot prepare and cook food
+    </label>
+      </div>
+      <!--fifth radio -->
+      {% elseif data["preparingfoodSelect"] == '(1e) Needs supervision or assistance to either prepare or cook a simple meal' %}
+      <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+    (1a) Can prepare and cook a simple meal unaided
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+    (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+    (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+    (1d) Needs prompting to be able to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal" {{ checked }}>
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+    (1e) Needs supervision or assistance to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+    (1f) Cannot prepare and cook food
+  </label>
+    </div>
+      <!--sixth radio -->
+      {% elseif data["preparingfoodSelect"] == '(1f) Cannot prepare and cook food' %}
+      <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+    (1a) Can prepare and cook a simple meal unaided
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+    (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+    (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+    (1d) Needs prompting to be able to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+    (1e) Needs supervision or assistance to either prepare or cook a simple meal
+  </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food" {{ checked }}>
+      <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+    (1f) Cannot prepare and cook food
+  </label>
+    </div>
+     <!--undefined radio -->
+     {% elseif data["preparingfoodSelect"] === undefined %}
+     <input class="govuk-radios__input" id="preparingfoodSelect" name="preparingfoodSelect" type="radio" value="(1a) Can prepare and cook a simple meal unaided">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect">
+   (1a) Can prepare and cook a simple meal unaided
+ </label>
+   </div>
+   <div class="govuk-radios__item">
+     <input class="govuk-radios__input" id="preparingfoodSelect-2" name="preparingfoodSelect" type="radio" value="(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-2">
+   (1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+ </label>
+   </div>
+   <div class="govuk-radios__item">
+     <input class="govuk-radios__input" id="preparingfoodSelect-3" name="preparingfoodSelect" type="radio" value="(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-3">
+   (1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+ </label>
+   </div>
+   <div class="govuk-radios__item">
+     <input class="govuk-radios__input" id="preparingfoodSelect-4" name="preparingfoodSelect" type="radio" value="(1d) Needs prompting to be able to either prepare or cook a simple meal">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-4">
+   (1d) Needs prompting to be able to either prepare or cook a simple meal
+ </label>
+   </div>
+   <div class="govuk-radios__item">
+     <input class="govuk-radios__input" id="preparingfoodSelect-5" name="preparingfoodSelect" type="radio" value="(1e) Needs supervision or assistance to either prepare or cook a simple meal">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-5">
+   (1e) Needs supervision or assistance to either prepare or cook a simple meal
+ </label>
+   </div>
+   <div class="govuk-radios__item">
+     <input class="govuk-radios__input" id="preparingfoodSelect-6" name="preparingfoodSelect" type="radio" value="(1f) Cannot prepare and cook food">
+     <label class="govuk-label govuk-radios__label" for="preparingfoodSelect-6">
+   (1f) Cannot prepare and cook food
+ </label>
+   </div>
+    {% endif %}
+  </div>
+</fieldset>
+
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="diagnosis">
+          <b>Justification</b>
+        </label>
+        <div id="justificationOverview" class="govuk-hint">
+          This could include reported restrictions, recommendation and evidence, reported restrictions not supported, other descriptor considered
+        </div>
+        <script>
+          function addHeadings(){
+              var titles = document.getElementById("justificationSubHeadings").value;
+
+              if (titles == "" || titles.length == 0 || titles == null)
+                  {
+                    document.getElementById("justificationSubHeadings").value += 'Reported restriction \n\n\nRecommendation and evidence \n\n\nReported restrictions not supported \n\n\nOther descriptor considered';
+                  } else {
+                    document.getElementById("justificationSubHeadings").value += '\r\rReported restriction \n\n\nRecommendation and evidence \n\n\nReported restrictions not supported \n\n\nOther descriptor considered';
+                  }
+          }
+      </script>
+        <a href="#justificationSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
+        <textarea class="govuk-textarea" id="justificationSubHeadings" name="prepJustify" rows="20" aria-describedby="justificationOverview">{{data["prepJustify"]}}</textarea>
+      </div>
+
+
+
+
+              <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button> 
+          
+          </form>
+    </div>
+  <!-- </div>
+  </div> -->
+
+  <!-- </div>      
+      </div> -->
+
+{% endblock %}
