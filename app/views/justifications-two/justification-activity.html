@@ -1,4 +1,4 @@
-{% extends "layouts/justificationOneTwo-layout" %}
+{% extends "layouts/justification-two-layout" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -31,389 +31,461 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
           </legend>
 
-           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="preparingfoodFH">
-              Notes relevant to all activities
-            </label>
-            <textarea class="govuk-textarea govuk-!-margin-bottom-0" id="preparingfoodFH" name="summaryConsultation" rows="8">{{data["summaryConsultation"]}}</textarea>
-         </div>
-
-         <br>
-         <br>
+          
 
           <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Daily living activities</caption> 
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
         <thead class="govuk-table__head">
 
+   
+    
+          {% if data["justificationDCheck"].includes("Preparing food") or data["hiddenActivity"].includes("Preparing food")  %} 
+
+             <input class="govuk-checkboxes__input" id="justicationPF" name="hiddenActivity" type="hidden" value="Preparing food" data-aria-controls="">
+  
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">
-              Activity name
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationPF" name="justificationDCheck" type="checkbox" value="Preparing food" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationPF">
+                <b>Preparing food</b>
+                </label>
+            </div>
+          </div>
             </th>
-            <th scope="col" class="govuk-table__header">
-              Descriptor choice
-            </th>
-            <th scope="col" class="govuk-table__header">
-              Status
-            </th>
+            <td class="govuk-table__cell">
+            {% if (data['preparingfoodSelect']) %}
+
+                {{data["preparingfoodSelect"]}}
+      
+            </td>
+            <td class="govuk-table__cell">
+            <a class="govuk-link" href="preparingfood">
+              Change<span class="govuk-visually-hidden"> preparing food</span>
+            </a>
+            {% else %}
+            <a href="preparingfood" class="govuk-link">Add preparing food descriptor</a>
+             
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+              {% endif %}
+          </tr>
+          {% endif %}
         </thead>
         <tbody class="govuk-table__body">
+          {% if data['justificationDCheck'].includes("Taking nutrition") or data["hiddenActivity"].includes("Taking nutrition")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Taking nutrition" data-aria-controls="">
+
+          {% else %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="preparingfood" class="govuk-link">Preparing food</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationTN" name="justificationDCheck" type="checkbox" value="Taking nutrition" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationTN">
+                <b>Taking nutrition</b>
+                </label>
+            </div>
+          </div>
             </th>
-
-            <td class="govuk-table__cell">
-              {% if (data['preparingfoodSelect']) %}
-                 {{data["preparingfoodSelect"]}} 
-              {% else %}
-              0
-            </td>
-            {% endif %}
-    
-            <td class="govuk-table__cell">
-              {% if (data['preparingfoodSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
-            </td>
-            {% endif %}
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-            <a href="takingnutrition" class="govuk-link">Taking nutrition</a>
-            </th>
-
             <td class="govuk-table__cell">
               {% if (data['takingnutritionSelect']) %}
-                 {{data["takingnutritionSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["takingnutritionSelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['takingnutritionSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="takingnutrition">
+              Change<span class="govuk-visually-hidden"> taking nutrition</span>
+            </a>
+            {% else %}
+            <a href="takingnutrition" class="govuk-link">Add taking nutrition descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-         <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+        {% endif %}
+
+          {% if data['justificationDCheck'].includes("Managing therapy") or data["hiddenActivity"].includes("Managing therapy")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Managing therapy" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="managingtherapy" class="govuk-link">Managing therapy</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationMT" name="justificationDCheck" type="checkbox" value="Managing therapy" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationMT">
+                <b>Managing therapy</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['managingtherapySelect']) %}
-                 {{data["managingtherapySelect"]}} 
-              {% else %}
-              0
+             
+               {{data["managingtherapySelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['managingtherapySelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="managingtherapy">
+              Change<span class="govuk-visually-hidden"> managing therapy</span>
+            </a>
+            {% else %}
+            <a href="managingtherapy" class="govuk-link">Add managing therapy descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-        <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Washing and bathing") or data["hiddenActivity"].includes("Washing and bathing")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Washing and bathing" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="washingbathing" class="govuk-link">Washing and bathing</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationWB" name="justificationDCheck" type="checkbox" value="Washing and bathing" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationWB">
+                <b>Washing and bathing</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['washingbathingSelect']) %}
-                 {{data["washingbathingSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["washingbathingSelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['washingbathingSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="washingbathing">
+              Change<span class="govuk-visually-hidden"> washing and bathing</span>
+            </a>
+            {% else %}
+            <a href="washingbathing" class="govuk-link">Add washing and bathing descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-        <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Managing toilet needs") or data["hiddenActivity"].includes("Managing toilet needs")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Managing toilet needs" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="toiletneeds" class="govuk-link">Managing toilet needs</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationToiletNeeds" name="justificationDCheck" type="checkbox" value="Managing toilet needs" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationToiletNeeds">
+                <b>Managing toilet needs</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['toiletneedsSelect']) %}
-                 {{data["toiletneedsSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["toiletneedsSelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['toiletneedsSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="toiletneeds">
+              Change<span class="govuk-visually-hidden"> managing toilet needs</span>
+            </a>
+            {% else %}
+            <a href="toiletneeds" class="govuk-link">Add managing toilet needs descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-         <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Dressing and undressing") or data["hiddenActivity"].includes("Dressing and undressing")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Dressing and undressing" data-aria-controls="">
+
+          {% else %}
+
+           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="dressing" class="govuk-link">Dressing and undressing</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationDressing" name="justificationDCheck" type="checkbox" value="Dressing and undressing" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationDressing">
+                <b>Dressing and undressing</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['dressingSelect']) %}
-                 {{data["dressingSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["dressingSelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['dressingSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="dressing">
+              Change<span class="govuk-visually-hidden"> dressing and undressing</span>
+            </a>
+            {% else %}
+            <a href="dressing" class="govuk-link">Add dressing and undressing descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+               {% endif %}
 
 
-         <tr class="govuk-table__row">
+          {% if data['justificationDCheck'].includes("Communicating verbally") or data["hiddenActivity"].includes("Communicating verbally")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Communicating verbally" data-aria-controls="">
+
+          {% else %}
+           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="communicatingverbally" class="govuk-link">Communicating verbally</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationCV" name="justificationDCheck" type="checkbox" value="Communicating verbally" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationCV">
+                <b>Communicating verbally</b>
+                </label>
+            </div>
+          </div>
             </th>
-            
             <td class="govuk-table__cell">
               {% if (data['communicatingverballySelect']) %}
-                 {{data["communicatingverballySelect"]}} 
-              {% else %}
-              0
+             
+               {{data["communicatingverballySelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['communicatingverballySelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="communicatingverbally">
+              Change<span class="govuk-visually-hidden"> communicating verbally</span>
+            </a>
+            {% else %}
+            <a href="communicatingverbally" class="govuk-link">Add communicating verbally descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-        <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Reading and understanding signs, symbols and words") or data["hiddenActivity"].includes("Reading and understanding signs, symbols and words")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Reading and understanding signs, symbols and words" data-aria-controls="">
+
+          {% else %}
+
+           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="readingunderstanding" class="govuk-link">Reading and understanding signs, symbols and words</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationReading" name="justificationDCheck" type="checkbox" value="Reading and understanding signs, symbols and words" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationReading">
+                <b>Reading and understanding signs, symbols and words</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['readingunderstandingSelect']) %}
-                 {{data["readingunderstandingSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["readingunderstandingSelect"]}} 
             </td>
-            {% endif %}
-
             <td class="govuk-table__cell">
-                  {% if (data['readingunderstandingSelect']) %}
-                  <strong class="govuk-tag">
-                    Done
-                  </strong>
-                  {% else %}
-                  <strong class="govuk-tag govuk-tag--grey">
-                    Todo
-                  </strong>
-                </td>
+            <a class="govuk-link" href="readingunderstanding">
+              Change<span class="govuk-visually-hidden"> reading understanding</span>
+            </a>
+            {% else %}
+            <a href="readingunderstanding" class="govuk-link">Add reading and understanding signs, symbols and words descriptor</a>
+       
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
                 {% endif %}
-              </td>
-        </tr>
+          </tr>
 
-         <tr class="govuk-table__row">
+          {% endif %}
+
+           {% if data['justificationDCheck'].includes("Engaging face to face") or data["hiddenActivity"].includes("Engaging face to face")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Engaging face to face" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="facetoface" class="govuk-link">Engagaing face to face</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationFace" name="justificationDCheck" type="checkbox" value="Engaging face to face" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationFace">
+                <b>Engaging face to face</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['facetofaceSelect']) %}
-                 {{data["facetofaceSelect"]}} 
-              {% else %}
-              0
+             
+               {{data["facetofaceSelect"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['facetofaceSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="facetoface">
+              Change<span class="govuk-visually-hidden"> engaging face to face</span>
+            </a>
+            {% else %}
+            <a href="facetoface" class="govuk-link">Add engaging face to face descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
+             </td>
+                {% endif %}
+          </tr>
+          {% endif %}
 
-         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-            <a href="budgeting" class="govuk-link">Budgeting</a>
-            </th>
+           {% if data['justificationDCheck'].includes("Budgeting") or data["hiddenActivity"].includes("Budgeting")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Budgeting" data-aria-controls="">
 
-            <td class="govuk-table__cell">
-              {% if (data['budgetingSelect']) %}
-                 {{data["budgetingSelect"]}} 
-              {% else %}
-              0
-            </td>
-            {% endif %}
-    
-            <td class="govuk-table__cell">
-              {% if (data['budgetingSelect']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
-            </td>
-            {% endif %}
-          </td>
-        </tr>
-      
-  </tbody>
-</table>
-
-<br>
-<br>
-  <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Mobility activities</caption> 
-        <thead class="govuk-table__head">
+          {% else %}
 
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">
-              Activity name
-            </th>
-            <th scope="col" class="govuk-table__header">
-              Descriptor choice
-            </th>
-            <th scope="col" class="govuk-table__header">
-              Status
-            </th>
-        </thead>
-        <tbody class="govuk-table__body">
-       <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="journeys" class="govuk-link">Planning and following journeys</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Budgeting" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Budgeting</b>
+                </label>
+            </div>
+          </div>
             </th>
+            <td class="govuk-table__cell">
+              {% if (data['budgetingSelect']) %}
+             
+               {{data["budgetingSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            <a class="govuk-link" href="budgeting">
+              Change<span class="govuk-visually-hidden"> budgeting</span>
+            </a>
+            {% else %}
+            <a href="budgeting" class="govuk-link">Add budgeting descriptor</a>
+       
+            </td>
+             <td class="govuk-table__cell">
 
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
+             {% if data['justificationDCheck'].includes("Planning and following journeys") or data["hiddenActivity"].includes("Planning and following journeys")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Planning and following journeys" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Planning and following journeys" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Planning and following journeys</b>
+                </label>
+            </div>
+          </div>
+            </th>
             <td class="govuk-table__cell">
               {% if (data['journeysSelectpbr']) %}
-                 {{data["journeysSelectpbr"]}} 
-              {% else %}
-              0
+             
+               {{data["journeysSelectpbr"]}} 
             </td>
-            {% endif %}
-    
             <td class="govuk-table__cell">
-              {% if (data['journeysSelectpbr']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
+            <a class="govuk-link" href="journeys">
+              Change<span class="govuk-visually-hidden"> Planning journeys</span>
+            </a>
+            {% else %}
+            <a href="journeys" class="govuk-link">Add planning and following journeys descriptor</a>
+       
             </td>
-            {% endif %}
-          </td>
-        </tr>
+             <td class="govuk-table__cell">
 
-        <tr class="govuk-table__row">
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
+          {% if data['justificationDCheck'].includes("Moving around") or data["hiddenActivity"].includes("Moving around")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Moving around" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-            <a href="movingaround" class="govuk-link">Moving around</a>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationmoving" name="justificationDCheck" type="checkbox" value="Moving around" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationmoving">
+                <b>Moving around</b>
+                </label>
+            </div>
+          </div>
             </th>
-
             <td class="govuk-table__cell">
               {% if (data['movingaroundSelectpbr']) %}
-                 {{data["movingaroundSelectpbr"]}} 
-              {% else %}
-              0
+             
+               {{data["movingaroundSelectpbr"]}} 
             </td>
-            {% endif %}
+            <td class="govuk-table__cell">
+            <a class="govuk-link" href="movingaround">
+              Change<span class="govuk-visually-hidden"> moving around</span>
+            </a>
+            {% else %}
+            <a href="movingaround" class="govuk-link">Add moving around descriptor</a>
+       
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
     
-            <td class="govuk-table__cell">
-              {% if (data['movingaroundSelectpbr']) %}
-              <strong class="govuk-tag">
-                Done
-              </strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey">
-                Todo
-              </strong>
-            </td>
-            {% endif %}
-          </td>
-        </tr>   
-
   </tbody>
 </table>
 
-        
-
-          
           </fieldset>
 
-            
-            
             </div>
           <!-- </div> -->
         </form>

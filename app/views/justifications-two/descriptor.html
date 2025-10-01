@@ -1,0 +1,387 @@
+{% extends "layouts/justification-two-layout" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl"></span>
+            <h1 class="govuk-fieldset__heading">
+              Descriptor choices
+            </h1>
+            <div id="passport-issued-hint" class="govuk-hint">
+            </div>
+          </legend>
+
+    
+          <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Daily living activities</caption> 
+        <thead class="govuk-table__head">
+
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Activity name
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Descriptor choice
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Score
+            </th>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              1. Preparing food
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['preparingfoodSelect']) %}
+                 {{data["preparingfoodSelect"]}} 
+              {% else %}
+              <a href="preparingfood" class="govuk-link">Add preparing food descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['preparingfoodSelect']) %}
+                8
+              {% else %}
+               0
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              2. Taking nutrition
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['takingnutritionSelect']) %}
+                 {{data["takingnutritionSelect"]}} 
+              {% else %}
+              <a href="takingnutrition" class="govuk-link">Add taking nutrition descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['takingnutritionSelect']) %}
+                8
+              {% else %}
+              0
+            
+            {% endif %}
+          </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              3. Managing therapy
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['managingtherapySelect']) %}
+                 {{data["managingtherapySelect"]}} 
+              {% else %}
+              <a href="managingtherapy" class="govuk-link">Add managing therapy descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['managingtherapySelect']) %}
+                  8
+              {% else %}
+                0
+    
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              4. Washing and bathing
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['washingbathingSelect']) %}
+                 {{data["washingbathingSelect"]}} 
+              {% else %}
+              <a href="washingbathing" class="govuk-link">Add washing and bathing descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['washingbathingSelect']) %}
+                 8
+              {% else %}
+              0
+      
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              5. Managing toilet needs
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['toiletneedsSelect']) %}
+                 {{data["toiletneedsSelect"]}} 
+              {% else %}
+              <a href="toiletneeds" class="govuk-link">Add managing toilet needs descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['toiletneedsSelect']) %}
+                  8
+              {% else %}
+                 0
+      
+            {% endif %}
+          </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              6. Dressing and undressing
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['dressingSelect']) %}
+                 {{data["dressingSelect"]}} 
+              {% else %}
+              <a href="dressing" class="govuk-link">Add dressing and undressing descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['dressingSelect']) %}
+                  8
+              {% else %}
+                  0
+     
+            {% endif %}
+          </td>
+        </tr>
+
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              7. Communicating verbally
+            </th>
+            
+            <td class="govuk-table__cell">
+              {% if (data['communicatingverballySelect']) %}
+                 {{data["communicatingverballySelect"]}} 
+              {% else %}
+              <a href="communicatingverbally" class="govuk-link">Add communicating verbally descriptor</a>
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['communicatingverballySelect']) %}
+                  8
+              {% else %}
+                  0
+           
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              8. Reading and understanding signs, symbols and words
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['readingunderstandingSelect']) %}
+                 {{data["readingunderstandingSelect"]}} 
+              {% else %}
+              <a href="readingunderstanding" class="govuk-link">Add reading and understanding signs, symbols and words descriptor</a>
+            </td>
+            {% endif %}
+
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {% if (data['readingunderstandingSelect']) %}
+                      8
+                  {% else %}
+                    0
+         
+                {% endif %}
+              </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+             9. Engaging face to face
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['facetofaceSelect']) %}
+                 {{data["facetofaceSelect"]}} 
+              {% else %}
+              <a href="facetoface" class="govuk-link">Add enagaing face to face descriptor</a>
+              
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['facetofaceSelect']) %}
+                  8
+              {% else %}
+                  0
+   
+            {% endif %}
+          </td>
+        </tr>
+
+
+         <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              10. Budgeting
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['budgetingSelect']) %}
+                 {{data["budgetingSelect"]}} 
+              {% else %}
+              <a href="budgeting" class="govuk-link">Add budgeting descriptor</a>
+              
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['budgetingSelect']) %}
+                  8
+              {% else %}
+                  0
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score total</th>
+            <td class="govuk-table__cell govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+        </tr>
+      
+  </tbody>
+</table>
+
+<br>
+<br>
+  <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Mobility activities</caption> 
+        <thead class="govuk-table__head">
+
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Activity name
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Descriptor choice
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Status
+            </th>
+        </thead>
+        <tbody class="govuk-table__body">
+       <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+             11. Planning and following journeys
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['journeysSelectpbr']) %}
+                 {{data["journeysSelectpbr"]}} 
+              {% else %}
+              <a href="journeys" class="govuk-link">Add planning and following journeys descriptor</a>
+              
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {% if (data['journeysSelectpbr']) %}
+                  8
+              {% else %}
+                0
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+             12. Moving around
+            </th>
+
+            <td class="govuk-table__cell">
+              {% if (data['movingaroundSelectpbr']) %}
+                 {{data["movingaroundSelectpbr"]}} 
+              {% else %}
+              <a href="movingaround" class="govuk-link">Add moving around descriptor</a>
+              
+            </td>
+            {% endif %}
+    
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+            {% if (data['movingaroundSelectpbr']) %}
+                  8
+              {% else %}
+                  0
+            </td>
+            {% endif %}
+          </td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score total</th>
+            <td class="govuk-table__cell govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+        </tr>
+
+  </tbody>
+</table>
+
+        
+
+          
+          </fieldset>
+
+            
+            
+            </div>
+          <!-- </div> -->
+        </form>
+         
+  
+    </div> 
+
+   </fieldset>
+    </div>
+
+
+      
+
+{% endblock %}

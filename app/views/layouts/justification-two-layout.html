@@ -233,13 +233,23 @@
 
              <h4 class="moj-side-navigation__title">Assessment</h4>
 
-              {% if data["source"] == 'Descriptor choices and justifications' %}
+              {% if data["source"] == 'Descriptor choices' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="justification-activity?source=Descriptor choices and justifications" aria-current="location">Descriptor choices and justifications</a>
+               <a href="descriptor?source=Descriptor choices" aria-current="location">Descriptor choices</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="justification-activity?source=Descriptor choices and justifications">Descriptor choices and justifications</a>
+               <a href="descriptor?source=Descriptor choices">Descriptor choices</a>
+             </li>
+             {% endif %}
+
+              {% if data["source"] == 'Justification' %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="justification-activity?source=Justification" aria-current="location">Justification</a>
+             </li>
+             {% else %}
+             <li class="moj-side-navigation__item">
+               <a href="justification-activity?source=Justification">Justification</a>
              </li>
              {% endif %}
 

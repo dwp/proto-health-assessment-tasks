@@ -4973,41 +4973,41 @@ router.post('/justifications-two/justification-addAnother', function(req, res) {
  })
 
    router.post('/justifications-two/preparingfood', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
 
     router.post('/justifications-two/takingnutrition', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
     router.post('/justifications-two/managingtherapy', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
     router.post('/justifications-two/washingbathing', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
    router.post('/justifications-two/toiletneeds', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
    router.post('/justifications-two/dressing', function(req, res) {
-    res.redirect('/justifications-two/justification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
    router.post('/justifications-two/communicatingverbally', function(req, res) {
-    res.redirect('/justifications-twojustification-activity')
+    res.redirect('/justifications-two/descriptor')
    })
   router.post('/justifications-two/readingunderstanding', function(req, res) {
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/descriptor')
   })
   router.post('/justifications-two/facetoface', function(req, res) {
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/descriptor')
   })
   router.post('/justifications-two/budgeting', function(req, res) {
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/descriptor')
   })
    router.post('/justifications-two/journeys', function(req, res) {
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/descriptor')
   })
   router.post('/justifications-two/movingaround', function(req, res) {
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/descriptor')
   })
 
   router.post('/justifications-two/justification-none', function(req, res) {
