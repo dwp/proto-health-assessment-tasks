@@ -46,11 +46,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <th scope="col" class="govuk-table__header">
               Score
             </th>
+             <th scope="col" class="govuk-table__header">
+             
+            </th>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              <a href="preparingfood">1. Preparing food</a>
+              1. Preparing food
             </th>
 
             <td class="govuk-table__cell">
@@ -78,6 +81,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 0
             {% endif %}
           </td>
+            {% if (data['preparingfoodSelect']) %}
+          <td class="govuk-table__cell">
+            <a href="preparingfood" class="govuk-link">Change</a>
+            {% else %}
+
+            {% endif %}
+          </td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -94,11 +104,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% endif %}
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
-              {% if (data['takingnutritionSelect']) %}
-                8
+              {% if (data['takingnutritionSelect'] == "(2a) Can take nutrition unaided") %}
+                 {% set nutritionScore = 4 %} 4
+              {% elseif (data['takingnutritionSelect'] == "(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food") %}
+                 {% set nutritionScore = 5 %} 5
+              {% elseif (data['takingnutritionSelect'] == "(2c) Needs a therapeutic source to be able to take nutrition") %}
+                 {% set nutritionScore = 6 %} 6
+              {% elseif (data['takingnutritionSelect'] == "(2d) Needs prompting to be able to take nutrition") %}
+                 {% set nutritionScore = 7 %} 7
+              {% elseif (data['takingnutritionSelect'] == "(2e) Needs assistance to be able to manage a therapeutic source to take nutrition") %}
+                 {% set nutritionScore = 8 %} 8
+              {% elseif (data['takingnutritionSelect'] == "(2f) Cannot convey food and drink to their mouth and needs another person to do so") %}
+              {% set nutritionScore = 8 %} 8
               {% else %}
-              0
-            
+                0
+            {% endif %}
+          </td>
+            {% if (data['takingnutritionSelect']) %}
+          <td class="govuk-table__cell">
+            <a href="takingnutrition" class="govuk-link">Change</a>
+            {% else %}
+
             {% endif %}
           </td>
         </tr>
@@ -122,6 +148,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% else %}
                 0
     
+            {% endif %}
+          </td>
+           {% if (data['managingtherapySelect']) %}
+          <td class="govuk-table__cell">
+            <a href="managingtherapy" class="govuk-link">Change</a>
+            {% else %}
+
             {% endif %}
           </td>
         </tr>
