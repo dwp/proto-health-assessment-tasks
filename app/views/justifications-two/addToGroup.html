@@ -1,0 +1,73 @@
+{% extends "layouts/no-side-nav-justification" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">  
+    <form action="#" method="post" id="auto-redirect">
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Add descriptor to a group
+              </h1>
+            </legend>
+
+            {{data["justificationDCheck"]}}
+            {% for justification in data['justificationAdded'] %}
+            {% set actNo = loop.index %}
+
+      
+
+            <input name="actNo" type="hidden" value="{{actNo}}">
+          
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whichList" name="justificationDCheck" type="radio" value="{{data["justificationDCheck"]}}">
+                <label class="govuk-label govuk-radios__label" for="whichList">
+                    Justification {{ loop.index }}
+                </label>
+              </div>
+            </div>
+    
+              {% endfor %}
+          </fieldset>
+        </div>
+
+     
+
+       <br>
+       <br>
+
+         <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+          <p><a href="justification-activity">Cancel</a></p>
+
+
+         </div>
+        </form>
+</div>
+</div>
+
+
+
+      
+
+{% endblock %}

@@ -4953,19 +4953,61 @@ router.post('/justifications-two/remove-attendee', function(req, res) {
  // Routes for adding a justification - iteration two continued
 
  router.post('/justifications-two/justification', function(req, res) {
+    const groupName = req.session.data['groupName']
     const activityName = req.session.data['justificationDCheck']
     const justificationText = req.session.data['groupJustify']
     const activityHide = req.session.data['hiddenActivity']
     const problemCheck = req.session.data['noProblemActivity']
 
     const justificationAdded = req.session.data.justificationAdded || []
-    justificationAdded.push({ activityName, justificationText, activityHide, problemCheck })
+    justificationAdded.push({ groupName, activityName, justificationText, activityHide, problemCheck })
     req.session.data.justificationAdded = justificationAdded
 
     req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
       
     res.redirect('/justifications-two/justification-addAnother?source=Descriptor choices and justifications')
    })
+
+   router.post('/justifications-two/justification-activity', function(req, res) {
+
+    const activityName = req.session.data['justificationDCheck']
+    const justificationText = req.session.data['groupJustify']
+    const justificationTextTwo = req.session.data['groupJustifyTwo']
+    const justificationTextThree = req.session.data['groupJustifyThree']
+    const justificationTextFour = req.session.data['groupJustifyFour']
+    const justificationTextFive = req.session.data['groupJustifyFive']
+    const justificationTextSix = req.session.data['groupJustifySix']
+    const justificationTextSeven = req.session.data['groupJustifySeven']
+    const justificationTextEight = req.session.data['groupJustifyEight']
+    const justificationTextNine = req.session.data['groupJustifyNine']
+    const justificationTextTen = req.session.data['groupJustifyTen']
+    const activityHide = req.session.data['hiddenActivity']
+    const problemCheck = req.session.data['noProblemActivity']
+
+    const justificationAdded = req.session.data.justificationAdded || []
+    justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, activityHide, problemCheck })
+    req.session.data.justificationAdded = justificationAdded
+
+    req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+
+  res.redirect('/justifications-two/justification-activity')
+ })
+
+ router.post('/justifications-two/addToGroup', function(req, res) {
+
+   const activityName = req.session.data['justificationDCheck']
+   const actNo = req.session.data['aNo']
+    
+    const justificationAdded = req.session.data.justificationAdded || []
+    justificationAdded.splice(actNo, 1);
+    justificationAdded.push({ actNo, activityName })
+    req.session.data.justificationAdded = justificationAdded
+
+    req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+
+    
+  res.redirect('/justifications-two/justification-activity')
+ })
 
 router.post('/justifications-two/justification-addAnother', function(req, res) {
     

@@ -440,10 +440,127 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           </fieldset>
 
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Create group
+          </button>
+
+          <a href="addToGroup" class="govuk-link govuk-button group-btn govuk-button--secondary">Add to exisiting group</a>
+    
+
+          {% for justification in data['justificationAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+      
+        <h2 class="govuk-heading-m">Justification {{ loop.index }}</h2>
+      
+          {% for activityName in justification.activityName %} 
+          
+      <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+           {{ activityName }}
+            </dt>
+         
+            <dd class="govuk-summary-list__value">
+               {% if activityName === "Preparing food" %} 
+                {{data["preparingfoodSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Taking nutrition" %} 
+                {{data["takingnutritionSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing therapy" %} 
+               {{data["managingtherapySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Washing and bathing" %} 
+               {{data["washingbathingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing toilet needs" %} 
+               {{data["toiletneedsSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Dressing and undressing" %} 
+               {{data["dressingSelect"]}}
+               {% endif %}
+
+                {% if activityName === "Communicating verbally" %} 
+               {{data["communicatingverballySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Reading and understanding signs, symbols and words" %} 
+               {{data["readingunderstandingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Engaging face to face" %} 
+               {{data["facetofaceSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Budgeting" %} 
+               {{data["budgetingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Planning and following journeys" %} 
+               {{data["journeysSelectpbr"]}}
+               {% endif %}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+    
+        {% endfor %}
+
+        {% if justification.problemCheck == "The claimant has not reported problems with these activities and there was no evidence to suggest otherwise."  %} 
+         <p>The claimant has not reported problems with these activities and there was no evidence to suggest otherwise.</p>
+       
+         {% endif %}
+
+     {% if loop.index == "1"  %} 
+       <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustify" rows="15">{{data["groupJustify"]}}</textarea>
+     
+       {% elseif loop.index == "2"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwo" rows="15">{{data["groupJustifyTwo"]}}</textarea>
+        {% elseif loop.index == "3"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyThree" rows="15">{{data["groupJustifyThree"]}}</textarea>
+         {% elseif loop.index == "4"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFour" rows="15">{{data["groupJustifyFour"]}}</textarea>
+         {% elseif loop.index == "5"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFive" rows="15">{{data["groupJustifyFive"]}}</textarea>
+         {% elseif loop.index == "6"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySix" rows="15">{{data["groupJustifySix"]}}</textarea>
+          {% elseif loop.index == "7"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySeven" rows="15">{{data["groupJustifySeven"]}}</textarea>
+          {% elseif loop.index == "8"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEight" rows="15">{{data["groupJustifyEight"]}}</textarea>
+          {% elseif loop.index == "9"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyNine" rows="15">{{data["groupJustifyNine"]}}</textarea>
+         {% elseif loop.index == "10"  %} 
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTen" rows="15">{{data["groupJustifyTen"]}}</textarea>
+        {% endif %} 
+        <br>
+        <br>
+        <br>
+         {% endfor %} 
+
             </div>
           <!-- </div> -->
         </form>
-         
+        <script>
+           const ab = document.querySelectorAll(".group-btn"); // this will make anything redirect-able 
+          ab.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+          </script>
   
     </div> 
 
