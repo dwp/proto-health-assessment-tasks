@@ -15,7 +15,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
-
+ {{ data["indexAct"]}}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">  
     <form action="#" method="post" id="auto-redirect">
@@ -27,23 +27,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </h1>
             </legend>
 
-            {{data["justificationDCheck"]}}
+            <!-- {{data["justificationDCheck"]}} -->
             {% for justification in data['justificationAdded'] %}
-            {% set actNo = loop.index %}
+            
 
-      
-
-            <input name="actNo" type="hidden" value="{{actNo}}">
-          
             <div class="govuk-radios" data-module="govuk-radios">
+              <input type="hidden" name="radioID" value="{{ loop.index0 }}"/>
+            {% set radioID = loop.index %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="whichList" name="justificationDCheck" type="radio" value="{{data["justificationDCheck"]}}">
                 <label class="govuk-label govuk-radios__label" for="whichList">
-                    Justification {{ loop.index }}
+                    Justification {{loop.index}}
                 </label>
               </div>
             </div>
-    
+
               {% endfor %}
           </fieldset>
         </div>
