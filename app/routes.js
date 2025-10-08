@@ -4970,6 +4970,7 @@ router.post('/justifications-two/remove-attendee', function(req, res) {
 
    router.post('/justifications-two/justification-activity', function(req, res) {
 
+   console.log("This has been added")
     const activityName = req.session.data['justificationDCheck']
     const justificationText = req.session.data['groupJustify']
     const justificationTextTwo = req.session.data['groupJustifyTwo']
@@ -4984,22 +4985,37 @@ router.post('/justifications-two/remove-attendee', function(req, res) {
     const activityHide = req.session.data['hiddenActivity']
     const problemCheck = req.session.data['noProblemActivity']
 
+
     const justificationAdded = req.session.data.justificationAdded || []
   
     justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, activityHide, problemCheck })
     req.session.data.justificationAdded = justificationAdded
     req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
 
+  //   if (req.session.data['removeLink'] == req.session.data['removeLink']) {
+  //     console.log("Does this get in?")
+  //    const aID = req.session.data['id']
+
+  //   const justificationAdded = req.session.data.justificationAdded || []
+  //   justificationAdded.aID.splice(aID, 1);
+  //   req.session.data['hiddenActivity'].splice(aID, 1)
+
+  // } else {
+
+  // }
+
   res.redirect('/justifications-two/justification-activity')
  })
 
  router.post('/justifications-two/addToGroup', function(req, res) {
 
-   const activityName = req.session.data['justificationDCheck']
+   const activityName = req.session.data['justificationDCheck'].split(/,(?! )/)
    const actNo = req.session.data['radioID']
     
     const justificationAdded = req.session.data.justificationAdded || []
-    justificationAdded[actNo-1].activityName.push(activityName)
+    justificationAdded[actNo-1]?.activityName.push(...activityName)
+    req.session.data['hiddenActivity'].push(...activityName)
+    delete req.session.data['justificationDCheck']
    // justificationAdded.splice(1, 0, ({activityName:[ activityName ]}));
     //req.session.data.justificationAdded = justificationAdded
     // req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
