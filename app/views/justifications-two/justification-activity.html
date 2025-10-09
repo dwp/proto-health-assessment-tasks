@@ -17,7 +17,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </style>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">   
+  <div class="govuk-grid-column-two-thirds"> 
 
     <form action="#" method="post" id="auto-redirect">
       <div class="govuk-form-group">
@@ -31,7 +31,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
           </legend>
 
-          
+            <h2 class="govuk-heading-m">Select the activities you want to group</h2>
 
           <table class="govuk-table">
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
@@ -40,8 +40,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    
     
           {% if data["justificationDCheck"].includes("Preparing food") or data["hiddenActivity"].includes("Preparing food")  %} 
-
              <input class="govuk-checkboxes__input" id="justicationPF" name="hiddenActivity" type="hidden" value="Preparing food" data-aria-controls="">
+              {% set prepFood = 1 %}
   
           {% else %}
           <tr class="govuk-table__row">
@@ -380,7 +380,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Planning and following journeys" data-aria-controls="">
                 <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
-                <b>Planning and following journeys</b>
+                <b>11. Planning and following journeys</b>
                 </label>
             </div>
           </div>
@@ -446,24 +446,40 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           <a href="addToGroup" class="govuk-link govuk-button group-btn govuk-button--secondary">Add to exisiting group</a>
   
-          {% for justification in data['justificationAdded'] %}
+        {% for justification in data['justificationAdded'] %}
         {% set outerLoopIndex = loop.index0 %}
+         {% set count = loop.index %}
       <input type="hidden" name="radioID" value="{{ loop.index }}"/>
-        <h2 class="govuk-heading-m">Justification {{ loop.index }}</h2>
-      
+      <h2 class="govuk-heading-m">Justification for activity group {{ justification.groupName }}</h2>
+        
+        <!-- {{prepFood}}, {{nutritionNum}} {{therapyNum}} -->
+          <!-- <p class="govuk-body">{{ justification.activityName | join(", ") }}</p> -->
+
+         {% for activityName in justification.activityName %} 
+            
+         {% if activityName === "Preparing food" %} 
+                {% set prepfoodNum = 1 %}
+
+                {% set nutritionNum = 2 %}
+                {% set therapyNum = 3 %}
+                  
+    
+         {% endif %} 
+         {% endfor %} 
+         
+    
           {% for activityName in justification.activityName %} 
-          
+                 
       <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
            {{ activityName }}
             </dt>
-         
             <dd class="govuk-summary-list__value">
                {% if activityName === "Preparing food" %} 
                 {{data["preparingfoodSelect"]}}
                {% endif %}
-
+         
                {% if activityName === "Taking nutrition" %} 
                 {{data["takingnutritionSelect"]}}
                {% endif %}
@@ -520,25 +536,195 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
          {% endif %}
 
      {% if loop.index == "1"  %} 
+     <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            No problems with this activity
+          </h1>
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustify" rows="15">{{data["groupJustify"]}}</textarea>
      
        {% elseif loop.index == "2"  %} 
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwo" rows="15">{{data["groupJustifyTwo"]}}</textarea>
         {% elseif loop.index == "3"  %} 
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyThree" rows="15">{{data["groupJustifyThree"]}}</textarea>
          {% elseif loop.index == "4"  %} 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFour" rows="15">{{data["groupJustifyFour"]}}</textarea>
          {% elseif loop.index == "5"  %} 
+                    <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFive" rows="15">{{data["groupJustifyFive"]}}</textarea>
          {% elseif loop.index == "6"  %} 
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySix" rows="15">{{data["groupJustifySix"]}}</textarea>
           {% elseif loop.index == "7"  %} 
+                <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySeven" rows="15">{{data["groupJustifySeven"]}}</textarea>
           {% elseif loop.index == "8"  %} 
+                <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEight" rows="15">{{data["groupJustifyEight"]}}</textarea>
           {% elseif loop.index == "9"  %} 
+              <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyNine" rows="15">{{data["groupJustifyNine"]}}</textarea>
          {% elseif loop.index == "10"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTen" rows="15">{{data["groupJustifyTen"]}}</textarea>
         {% endif %} 
         <br>
