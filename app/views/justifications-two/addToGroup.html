@@ -21,9 +21,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+           
+              
               <h1 class="govuk-fieldset__heading">
-                Add descriptor to a group
+                Add {{data["justificationDCheck"]}} to
               </h1>
+   
             </legend>
 
             <!-- {{data["justificationDCheck"]}} -->
@@ -38,7 +41,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="whichList" name="radioID" type="radio" value="{{loop.index}}">
                 <label class="govuk-label govuk-radios__label" for="whichList">
-                    Justification for activity {{loop.index}}
+                    <b>Justification for activity {{justification.groupName}}</b> <br>
+                    {{justification.activityName | join(", ")}}
                 </label>
               </div>
             </div>
@@ -54,7 +58,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
          <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
 
           <p><a href="justification-activity">Cancel</a></p>

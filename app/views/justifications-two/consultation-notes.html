@@ -1,0 +1,862 @@
+{% extends "layouts/consultationNotes.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .text {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+
+    @media (min-width: 48.0625em) {
+.sticky {
+        position: sticky;
+        top: 10px;
+        max-height: 100vh;
+        overflow-y: auto;
+        margin-bottom: 20px;
+}
+}
+
+ .border {
+      border-left: 3px solid #1d70b8;
+      padding-left: 10px;
+  }
+
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <a href="justification-activity" class="govuk-back-link">Back</a> -->
+    
+    <h1 class="govuk-heading-l">Consultation notes</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Consulation date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          14 October 2025
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimants identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How was thier identity verified?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Passport, NINO, first line of address
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant give consent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional attendees
+        </dt>
+        <dd class="govuk-summary-list__value">
+          None
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l" id="conditionhistory">Conditions</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Condition name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Back problem
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When did the condition or disability start?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 years ago
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+</dl>
+
+      <h3 class="govuk-heading-s">Condition history</h3>
+      <p>Symptoms: Pain to lower back</p>
+        <p>Exacerbations/Fluctuations: Pain is a constant dull ache which then becomes a stabbing/shooting pain when he bends and lifts.</p>
+        <p>Had physiotherapy five years ago which slightly improved condition. Now is managed by the GP as required.</p>
+     </p>
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+    </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Condition name
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Osteoarthritis to shoulders, knees and hands
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              When did the condition or disability start?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4 years ago
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            
+            </dd>
+          </div>
+    </dl>
+
+      <h3 class="govuk-heading-s">Condition history</h3>
+      <p>Symptoms: Pain to both hands, shoulders and both knees. Exacerbations/Fluctuations: Pain is constant to knees and does not fluctuate. Shoulder pain has improved since steroid injection, does not get pain to fingers but finds they get stiff, particularly in the morning.</p>
+        <p>Sees consultant once per year, has seen consultant twice in past year for steroid injections to shoulders and knees, consultant also prescribed naproxen at this appointment. Had injection to right shoulder one year ago which has improved condition. However, injection to both knees have not helped and still has bilateral knee pain. Sees GP regularly, however no other planned treatment or injections. Next consultant review in six months' time with no planned treatment expected.</p>
+     </p>
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+    </dl>
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Condition name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Depression
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When did the condition or disability start?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 years ago
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+
+      <h3 class="govuk-heading-s">Condition history</h3>
+        <p>Feels low in mood and gets down about the pain.</p>
+        <p>Exacerbations/Fluctuations: Occurs once per month lasting two-three days, finds coping mechanisms such as spending time with his family.</p>
+        <p>Sees GP for a yearly check-up</p>
+     </p>
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+    </dl>
+    <h3 class="govuk-heading-s">Suicidal thoughts and self harm</h3>
+        <p>Has never had any thoughts of self-harm or suicide</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <br>
+    <br>
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Condition name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Heart attack
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When did the condition or disability start?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          7 years ago
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+
+      <h3 class="govuk-heading-s">Condition history</h3>
+        <p>Symptoms: Chest pain when he walks fast or walks up a hill.</p>
+        <p>Exacerbations/Fluctuations: Chest pain occurs once per month lasting a few seconds per time and GTN spray improves condition.</p>
+        <p>Was admitted to hospital for one week, seven years ago after heart attack, however since then no other treatment and is managed by GP.</p>
+        <p>No other medical problems reported during the assessment.</p>
+     </p>
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+         No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+    </dl>
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-l" id="medicationName">Medication</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          GTN spray
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Two puffs taken as required, used once per month 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+          To prevent chest pain/angina
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Effective
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+      
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+    <br>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Isosorbide
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           60mg, once per day 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Following heart attack/angina
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Effective
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+      
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+    <br>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Co-codamol
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           30/500mg, two tablets four times daily 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Pain relief
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Partially
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Naproxen
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           500mg, twice daily  
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Pain relief
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Partially
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lansoprazole
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           15mg, daily  
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+          To protect stomach 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Effective
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Sertraline
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           50mg, daily   
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+           For depression 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Effective
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>No side effects</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+   <br>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Medication name
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Atorvastatin
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+           20mg, once daily  
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+           (taken following heart attack) preventative measures
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How effective is the medication?
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Claimant not sure 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+   </dl>
+   <h3 class="govuk-heading-s">Additional notes</h3>
+      <p>Claimant is also taking Aspirin 75 mg once daily as preventative measure since heart attack. Claimant not sure if this helps. No side effects with any medications.</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <h2 class="govuk-heading-l" id="socialOcc">Social and occupational history</h2>
+   
+   <p>Lives with partner in a bungalow.</p>
+   <p>Moved from a house a few years ago, as was struggling with stairs due chest and knee pains.</p>
+   <p>Shower is over bath; struggling to get in and out and is thinking of buying a rail to support with this.</p>
+   <p>Has easy grip knives, a rubber bathmat and walking stick. Stopped working after heart attack. Partner works part time.</p>
+   <p>Drives automatic car, swapped from manual to automatic two years ago due to knee pain. No adaptations. Is able to get in and out and but will hold on to the door due to knee pain. When driving long distances finds pain increases to back and knees.</p>
+   <p>Can grip steering wheel with no restrictions. Drives 15-20 minutes maximum as then finds the pain in knees and back increases, can drive these distances several times per week. Has two adult children who they enjoy seeing weekly, is able to drive there.</p>
+   <p>Enjoys spending time with grandchildren and will look after them whilst their parents are working, will take them to the park, which is across the road, will need to sit on the bench after walking to the park due to back and knee pain and is then able to walk back.</p>
+   <p>Will talk to other people they know from the area whilst children play and enjoys this. Used to enjoy doing leisure activities however has stopped doing these due to struggling to stand because of back and knee pain. Misses doing these hobbies. Enjoys reading and will do this daily, able to turn pages of a book. Enjoys listening to radio and watching TV. Able to grip and use mobile phone to browse the internet and use social media.</p>
+   <p>Enjoys cleaning and pottering around the house slowly as and when back and knee pain allows.</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+      <h2 class="govuk-heading-l" id="functionalHistory">Functional history</h2>
+      
+      <h3 class="govuk-heading-m">Preparing food</h3>
+  
+      <h3 class="govuk-heading-s">Functional history for preparing food</h3>
+      <p class="text">Can make breakfast and snacks. Partner will prepare dinner as they have always done this, however, enjoys helping peel and chop vegetables, will do this sitting down due to pain in back and knees. Bought an easy grip knife to help peel and chop vegetables as finds this easier. Will help prepare food majority of days.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      
+      <h3 class="govuk-heading-m">Taking nutrition</h3>
+    
+      <h3 class="govuk-heading-s">Functional history for taking nutrition</h3>
+      <p class="text">Has meals three times per day. Uses standard cutlery. Does not need help with cutting cooked food.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Managing therapy</h3>
+   
+      <h3 class="govuk-heading-s">Functional history for managing therapy</h3>
+      <p class="text">Partner will take medication out the packaging as they have stiff fingers in the morning, however, would be able to do this unaided if partner was not there.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Washing and bathing</h3>
+  
+      <h3 class="govuk-heading-s">Functional history for washing and bathing</h3>
+      <p class="text">Is able to get in and out of the bath and shower, however, will lean on the wall for support and does this slowly due to knee and back pain. Has a bathmat to prevent slips/falls and is thinking of getting a grab rail to make it easier. Can wash full body and will sit on the side of the bath to wash feet and lower body as bending causes back pain.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Managing toilet needs</h3>
+     
+      <h3 class="govuk-heading-s">Functional history for managing toilet needs</h3>
+      <p class="text">Will hold onto the sink and wall for support when getting on and off the toilet due to pain in back and knees. Is able to clean self afterwards. No continence problems.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Dressing and undressing</h3>
+    
+      <h3 class="govuk-heading-s">Functional history for dressing and undressing</h3>
+      <p class="text">Able to dress upper and lower body, prefers to wear clothes without fastenings as finds this easier due to pain in hands. Struggles to bend, is able to bend just below knees and then cannot bend anymore to put on socks and lace up shoes, due to back pain and struggles to lift up feet due to knee and back pain, so uses slip on shoes and sits down to dress.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Communicating verbally</h3>
+    
+      <h3 class="govuk-heading-s">Functional history for communicating verbally</h3>
+      <p class="text">No functional history added</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Reading and understanding signs, symbols and words</h3>
+    
+      <h3 class="govuk-heading-s">Functional history for reading and understanding signs, symbols and words</h3>
+      <p class="text">No functional history added</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Engaging face to face</h3>
+  
+      <h3 class="govuk-heading-s">Functional history for engaging face to face</h3>
+      <p class="text">He is able to engage with family, friends and health professionals as required and enjoys speaking to family and friends and does this regularly. He has no problems talking with unfamiliar people as needed when at appointments or shops.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Budgeting</h3>
+    
+      <h3 class="govuk-heading-s">Functional history for budgeting</h3>
+      <p class="text">Partner manages all the bills as they have always done this. Will look online and do online banking and understands money.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Planning and following journeys</h3>
+   
+      <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
+      <p class="text">He is able to go out as required to familiar and unfamiliar places, and will take grandchildren to park. Can plan and follow a journey without support.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Moving around</h3>
+
+      <h3 class="govuk-heading-s">Functional history for moving around</h3>
+      <p class="text">He is able to walk to the park just across the road (with grandchildren), will sit down (whilst they play) and is able to walk back, does this twice per week weather depending, will use a walking stick when walking and walks at a slightly slower pace than partner, takes approximately 1 minute to get there and takes the same amount of time to walk back. Unsure of how far this is. If they were to walk this distance again it would be at a very slow pace and would struggle with the pain and would find the next day they would have increased pain. However, would still be able to potter around the house the following day.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+  
+      <h2 class="govuk-heading-l" id="mentalState">Mental state observations</h2>
+
+     <p class="text">Good cognition and insight. Speaks in normal tone, pace, volume of voice sounds jovial.</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-l" id="informal">Informal observations</h3>
+  
+     <p class="text">Did not sound tired or breathless during the telephone assessment.</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+    </form>
+
+  </div>      
+
+  <div class="govuk-grid-column-one-third sticky">
+    
+     
+       
+            <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
+              <h2 class="govuk-heading-s" id="subsection-title">
+              Quick links
+            </h2>
+              <ul class="govuk-list">
+                <li>
+                  
+                  <a href="#conditionhistory" class="govuk-link govuk-link--no-visited-state">Conditions</a>
+                  
+                </li>
+                <li>
+                  <a href="#medicationName">Medication</a>
+                </li>
+                <li>
+                  <a href="#socialOcc">Social and occupational history</a>
+                </li>
+                <li>
+                  <a href="#functionalHistory">Functional history</a>
+                </li>
+    
+                <li>
+                  <a href="#mentalState">Mental state observations</a>
+                </li>
+                <li>
+                  <a href="#informal">Informal observations</a>
+                </li>
+              </ul>
+            </nav>
+          
+    
+        </div>
+      
+      </div>
+
+{% endblock %}

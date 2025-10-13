@@ -28,7 +28,70 @@ router.use((req, res, next) => {
   if (req.session.data?.redirect) {
     const serviceRedirect = req.session.data.redirect;
     delete req.session.data.redirect;
-    res.redirect(serviceRedirect)
+    console.log(serviceRedirect);
+
+    switch (serviceRedirect) {
+      case "http://localhost:3000/justifications-two/evidence-addAnother?source=evidence":
+        return res.redirect("http://localhost:3000/justifications-two/evidence-addAnother?source=evidence")
+
+      case "http://localhost:3000/justifications-two/consultation-date?source=Consultation date":
+        return res.redirect("http://localhost:3000/justifications-two/consultation-date?source=Consultation date")
+
+      case "http://localhost:3000/justifications-two/consent?source=Claimant consent":
+        return res.redirect("http://localhost:3000/justifications-two/consent?source=Claimant consent")
+
+      case "http://localhost:3000/justifications-two/verify-id?source=Claimant identity":
+        return res.redirect("http://localhost:3000/justifications-two/verify-id?source=Claimant identity")
+
+      case "http://localhost:3000/justifications-two/attendees-none?source=Additional attendees":
+        return res.redirect("http://localhost:3000/justifications-two/attendees-none?source=Additional attendees")
+
+      case "http://localhost:3000/justifications-two/attendees-addAnother?source=Additional attendees":
+        return res.redirect("http://localhost:3000/justifications-two/attendees-addAnother?source=Additional attendees")
+
+      case "http://localhost:3000/justifications-two/conditions-addAnother?source=Condition history":
+        return res.redirect("http://localhost:3000/justifications-two/conditions-addAnother?source=Condition history")
+
+      case "http://localhost:3000/justifications-two/medication-addAnother?source=Medication":
+        return res.redirect("http://localhost:3000/justifications-two/medication-addAnother?source=Medication")
+        
+      case "http://localhost:3000/justifications-two/soch1-additional?source=Social and occupational history":
+        return res.redirect("http://localhost:3000/justifications-two/soch1-additional?source=Social and occupational history")
+
+      case "http://localhost:3000/justifications-two/functional-history?source=Functional history":
+        return res.redirect("http://localhost:3000/justifications-two/functional-history?source=Functional history")
+      
+      case "http://localhost:3000/justifications-two/mental-state?source=Mental state observations":
+        return res.redirect("http://localhost:3000/justifications-two/mental-state?source=Mental state observations")
+
+      case "http://localhost:3000/justifications-two/physical-state?source=Informal observations":
+        return res.redirect("http://localhost:3000/justifications-two/physical-state?source=Informal observations")
+      
+      case "http://localhost:3000/justifications-two/descriptor?source=Descriptor choices":
+        return res.redirect("http://localhost:3000/justifications-two/descriptor?source=Descriptor choices")
+      
+      case "http://localhost:3000/justifications-two/justification-activity?source=Justification":
+        return res.redirect("http://localhost:3000/justifications-two/justification-activity?source=Justification")
+
+      case "http://localhost:3000/justifications-two/addToGroup":
+        return res.redirect("http://localhost:3000/justifications-two/addToGroup")
+
+      case "http://localhost:3000/justifications-two/dl-qual?source=Qualifying period and prospective test":
+        return res.redirect("http://localhost:3000/justifications-two/dl-qual?source=Qualifying period and prospective test")
+      
+      case "http://localhost:3000/justifications-two/review?source=Review":
+        return res.redirect("http://localhost:3000/justifications-two/review?source=Review")
+      
+      case "http://localhost:3000/justifications-two/check-answers-new":
+        return res.redirect("http://localhost:3000/justifications-two/check-answers-new")
+
+       case "http://localhost:3000/justifications-two/docs-3":
+        return res.redirect("http://localhost:3000/justifications-two/docs-3")
+
+
+      default:
+        return res.redirect("http://localhost:3000/")
+    }
   } else {
     next();
   }
@@ -3097,7 +3160,7 @@ router.use((req, res, next) => {
     data: req.session.data //all data held
   }
   
-  console.log(JSON.stringify(log, null, 2)) // show all data as a dump in terminal
+ // console.log(JSON.stringify(log, null, 2)) // show all data as a dump in terminal
   next() // continue to next action
 
 })
@@ -4997,6 +5060,8 @@ router.post('/justifications-two/justification-activity', function (req, res) {
   const justificationTextEight = req.session.data['groupJustifyEight']
   const justificationTextNine = req.session.data['groupJustifyNine']
   const justificationTextTen = req.session.data['groupJustifyTen']
+  const justificationTextEleven = req.session.data['groupJustifyEleven']
+  const justificationTextTwelve = req.session.data['groupJustifyTwelve']
   const activityHide = req.session.data['hiddenActivity']
   const problemCheck = req.session.data['noProblemActivity']
   const prepfoodNumber = req.session.data['numOne']
@@ -5004,7 +5069,7 @@ router.post('/justifications-two/justification-activity', function (req, res) {
 
   const justificationAdded = req.session.data.justificationAdded || []
 
-  justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, activityHide, problemCheck, prepfoodNumber })
+  justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, justificationTextEleven, justificationTextTwelve, activityHide, problemCheck, prepfoodNumber })
   req.session.data.justificationAdded = justificationAdded
   req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
 

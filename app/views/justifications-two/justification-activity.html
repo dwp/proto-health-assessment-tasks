@@ -380,7 +380,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Planning and following journeys" data-aria-controls="">
                 <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
-                <b>11. Planning and following journeys</b>
+                <b>Planning and following journeys</b>
                 </label>
             </div>
           </div>
@@ -450,7 +450,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% set outerLoopIndex = loop.index0 %}
          {% set count = loop.index %}
       <input type="hidden" name="radioID" value="{{ loop.index }}"/>
-      <h2 class="govuk-heading-m">Justification for activity group {{ justification.groupName }}</h2>
+      <h2 class="govuk-heading-m">Justification for activity {{ justification.groupName }}</h2>
         
         <!-- {{prepFood}}, {{nutritionNum}} {{therapyNum}} -->
           <!-- <p class="govuk-body">{{ justification.activityName | join(", ") }}</p> -->
@@ -726,6 +726,44 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </fieldset>
             </div>
         <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTen" rows="15">{{data["groupJustifyTen"]}}</textarea>
+         {% elseif loop.index == "11"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEleven" rows="15">{{data["groupJustifyEleven"]}}</textarea>
+         {% elseif loop.index == "12"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwelve" rows="15">{{data["groupJustifyTwelve"]}}</textarea>
         {% endif %} 
         <br>
         <br>
@@ -748,6 +786,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </script>
   
     </div> 
+
+    <div class="govuk-grid-column-one-third">
+        <p class="govuk-body">
+          <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Questionnaire responses (opens in a new tab)</a>
+        </p>
+        <p class="govuk-body">
+          <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
+        </p>
+      </div>
+    </div>
 
    </fieldset>
     </div>
