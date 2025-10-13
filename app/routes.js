@@ -67,8 +67,8 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-two/physical-state?source=Informal observations"):
         return res.redirect("/justifications-two/physical-state?source=Informal observations")
       
-      case serviceRedirect.endsWith("/justifications-two/descriptor?source=Descriptor choices"):
-        return res.redirect("/justifications-two/descriptor?source=Descriptor choices")
+      case serviceRedirect.endsWith("/justifications-two/descriptor?source=Activity descriptors"):
+        return res.redirect("/justifications-two/descriptor?source=Activity descriptors")
       
       case serviceRedirect.endsWith("/justifications-two/justification-activity?source=Justification"):
         return res.redirect("/justifications-two/justification-activity?source=Justification")

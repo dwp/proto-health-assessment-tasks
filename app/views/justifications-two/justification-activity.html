@@ -13,6 +13,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     display: block;
     white-space: pre-line;
   }
+
+  .removeGroup {
+    width: 23%;
+  }
              
   </style>
 
@@ -526,8 +530,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link group-btn" id="removeLinkActivity" href="justifications-two/justification-activity?source=Justification">Remove<span class="govuk-visually-hidden"> name</span></a>
+            <dd class="govuk-summary-list__actions removeGroup">
+              <a class="govuk-link group-btn" id="removeLinkActivity" href="justifications-two/justification-activity?source=Justification">Remove from group<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
         </dl>
@@ -945,7 +949,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <div class="govuk-grid-column-one-third">
         <p class="govuk-body">
-          <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Questionnaire responses (opens in a new tab)</a>
+          <a href="claimant-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Questionnaire responses (opens in a new tab)</a>
         </p>
         <p class="govuk-body">
           <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
