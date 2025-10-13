@@ -30,67 +30,67 @@ router.use((req, res, next) => {
     delete req.session.data.redirect;
     console.log(serviceRedirect);
 
-    switch (serviceRedirect) {
-      case "http://localhost:3000/justifications-two/evidence-addAnother?source=evidence":
-        return res.redirect("http://localhost:3000/justifications-two/evidence-addAnother?source=evidence")
+    switch (true) {
+      case serviceRedirect.endsWith("/justifications-two/evidence-addAnother?source=evidence"):
+        return res.redirect("/justifications-two/evidence-addAnother?source=evidence")
 
-      case "http://localhost:3000/justifications-two/consultation-date?source=Consultation date":
-        return res.redirect("http://localhost:3000/justifications-two/consultation-date?source=Consultation date")
+      case serviceRedirect.endsWith("/justifications-two/consultation-date?source=Consultation date"):
+        return res.redirect("/justifications-two/consultation-date?source=Consultation date")
 
-      case "http://localhost:3000/justifications-two/consent?source=Claimant consent":
-        return res.redirect("http://localhost:3000/justifications-two/consent?source=Claimant consent")
+      case serviceRedirect.endsWith("/justifications-two/consent?source=Claimant consent"):
+        return res.redirect("/justifications-two/consent?source=Claimant consent")
 
-      case "http://localhost:3000/justifications-two/verify-id?source=Claimant identity":
-        return res.redirect("http://localhost:3000/justifications-two/verify-id?source=Claimant identity")
+      case serviceRedirect.endsWith("/justifications-two/verify-id?source=Claimant identity"):
+        return res.redirect("/justifications-two/verify-id?source=Claimant identity")
 
-      case "http://localhost:3000/justifications-two/attendees-none?source=Additional attendees":
-        return res.redirect("http://localhost:3000/justifications-two/attendees-none?source=Additional attendees")
+      case serviceRedirect.endsWith("/justifications-two/attendees-none?source=Additional attendees"):
+        return res.redirect("/justifications-two/attendees-none?source=Additional attendees")
 
-      case "http://localhost:3000/justifications-two/attendees-addAnother?source=Additional attendees":
-        return res.redirect("http://localhost:3000/justifications-two/attendees-addAnother?source=Additional attendees")
+      case serviceRedirect.endsWith("/justifications-two/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/justifications-two/attendees-addAnother?source=Additional attendees")
 
-      case "http://localhost:3000/justifications-two/conditions-addAnother?source=Condition history":
-        return res.redirect("http://localhost:3000/justifications-two/conditions-addAnother?source=Condition history")
+      case serviceRedirect.endsWith("/justifications-two/conditions-addAnother?source=Condition history"):
+        return res.redirect("/justifications-two/conditions-addAnother?source=Condition history")
 
-      case "http://localhost:3000/justifications-two/medication-addAnother?source=Medication":
-        return res.redirect("http://localhost:3000/justifications-two/medication-addAnother?source=Medication")
+      case serviceRedirect.endsWith("/justifications-two/medication-addAnother?source=Medication"):
+        return res.redirect("/justifications-two/medication-addAnother?source=Medication")
         
-      case "http://localhost:3000/justifications-two/soch1-additional?source=Social and occupational history":
-        return res.redirect("http://localhost:3000/justifications-two/soch1-additional?source=Social and occupational history")
+      case serviceRedirect.endsWith("/justifications-two/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/justifications-two/soch1-additional?source=Social and occupational history")
 
-      case "http://localhost:3000/justifications-two/functional-history?source=Functional history":
-        return res.redirect("http://localhost:3000/justifications-two/functional-history?source=Functional history")
+      case serviceRedirect.endsWith("/justifications-two/functional-history?source=Functional history"):
+        return res.redirect("/justifications-two/functional-history?source=Functional history")
       
-      case "http://localhost:3000/justifications-two/mental-state?source=Mental state observations":
-        return res.redirect("http://localhost:3000/justifications-two/mental-state?source=Mental state observations")
+      case serviceRedirect.endsWith("/justifications-two/mental-state?source=Mental state observations"):
+        return res.redirect("/justifications-two/mental-state?source=Mental state observations")
 
-      case "http://localhost:3000/justifications-two/physical-state?source=Informal observations":
-        return res.redirect("http://localhost:3000/justifications-two/physical-state?source=Informal observations")
+      case serviceRedirect.endsWith("/justifications-two/physical-state?source=Informal observations"):
+        return res.redirect("/justifications-two/physical-state?source=Informal observations")
       
-      case "http://localhost:3000/justifications-two/descriptor?source=Descriptor choices":
-        return res.redirect("http://localhost:3000/justifications-two/descriptor?source=Descriptor choices")
+      case serviceRedirect.endsWith("/justifications-two/descriptor?source=Descriptor choices"):
+        return res.redirect("/justifications-two/descriptor?source=Descriptor choices")
       
-      case "http://localhost:3000/justifications-two/justification-activity?source=Justification":
-        return res.redirect("http://localhost:3000/justifications-two/justification-activity?source=Justification")
+      case serviceRedirect.endsWith("/justifications-two/justification-activity?source=Justification"):
+        return res.redirect("/justifications-two/justification-activity?source=Justification")
 
-      case "http://localhost:3000/justifications-two/addToGroup":
-        return res.redirect("http://localhost:3000/justifications-two/addToGroup")
+      case serviceRedirect.endsWith("/justifications-two/addToGroup"):
+        return res.redirect("/justifications-two/addToGroup")
 
-      case "http://localhost:3000/justifications-two/dl-qual?source=Qualifying period and prospective test":
-        return res.redirect("http://localhost:3000/justifications-two/dl-qual?source=Qualifying period and prospective test")
+      case serviceRedirect.endsWith("/justifications-two/dl-qual?source=Qualifying period and prospective test"):
+        return res.redirect("/justifications-two/dl-qual?source=Qualifying period and prospective test")
       
-      case "http://localhost:3000/justifications-two/review?source=Review":
-        return res.redirect("http://localhost:3000/justifications-two/review?source=Review")
+      case serviceRedirect.endsWith("/justifications-two/review?source=Review"):
+        return res.redirect("/justifications-two/review?source=Review")
       
-      case "http://localhost:3000/justifications-two/check-answers-new":
-        return res.redirect("http://localhost:3000/justifications-two/check-answers-new")
+      case serviceRedirect.endsWith("/justifications-two/check-answers-new"):
+        return res.redirect("/justifications-two/check-answers-new")
 
-       case "http://localhost:3000/justifications-two/docs-3":
-        return res.redirect("http://localhost:3000/justifications-two/docs-3")
+       case serviceRedirect.endsWith("/justifications-two/docs-3"):
+        return res.redirect("/justifications-two/docs-3")
 
 
       default:
-        return res.redirect("http://localhost:3000/")
+        return res.redirect("/")
     }
   } else {
     next();
