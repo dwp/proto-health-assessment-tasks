@@ -5062,6 +5062,14 @@ router.post('/justifications-two/justification-activity', function (req, res) {
   const justificationTextTen = req.session.data['groupJustifyTen']
   const justificationTextEleven = req.session.data['groupJustifyEleven']
   const justificationTextTwelve = req.session.data['groupJustifyTwelve']
+  const justificationTextThirteen = req.session.data['groupJustifyThirteen']
+  const justificationTextFourteen = req.session.data['groupJustifyFourteen']
+  const justificationTextFithteen = req.session.data['groupJustifyFithteen']
+  const justificationTextSixteen = req.session.data['groupJustifySixteen']
+  const justificationTextSeventeen = req.session.data['groupJustifySeventeen']
+  const justificationTextEighteen = req.session.data['groupJustifyEighteen']
+  const justificationTextNineteen = req.session.data['groupJustifyNineteen']
+  const justificationTextTwenty = req.session.data['groupJustifyTwenty']
   const activityHide = req.session.data['hiddenActivity']
   const problemCheck = req.session.data['noProblemActivity']
   const prepfoodNumber = req.session.data['numOne']
@@ -5069,7 +5077,7 @@ router.post('/justifications-two/justification-activity', function (req, res) {
 
   const justificationAdded = req.session.data.justificationAdded || []
 
-  justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, justificationTextEleven, justificationTextTwelve, activityHide, problemCheck, prepfoodNumber })
+  justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, justificationTextEleven, justificationTextTwelve, justificationTextThirteen, justificationTextFourteen, justificationTextFithteen, justificationTextSixteen, justificationTextSeventeen, justificationTextEighteen, justificationTextNineteen, justificationTextTwenty, activityHide, problemCheck, prepfoodNumber })
   req.session.data.justificationAdded = justificationAdded
   req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
 
