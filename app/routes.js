@@ -70,8 +70,8 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-two/descriptor?source=Activity descriptors"):
         return res.redirect("/justifications-two/descriptor?source=Activity descriptors")
       
-      case serviceRedirect.endsWith("/justifications-two/justification-activity?source=Justification"):
-        return res.redirect("/justifications-two/justification-activity?source=Justification")
+      case serviceRedirect.endsWith("/justifications-two/justification-activity?source=Justifications"):
+        return res.redirect("/justifications-two/justification-activity?source=Justifications")
 
       case serviceRedirect.endsWith("/justifications-two/addToGroup"):
         return res.redirect("/justifications-two/addToGroup")
