@@ -5098,7 +5098,7 @@ router.post('/justifications-two/justification-activity', function (req, res) {
     groupName: activityName.map((e) => justifications.indexOf(e) + 1).join(", ").replace(/,(?=[^,]*$)/, " and")
   }))
 
-  res.redirect('/justifications-two/justification-activity')
+  res.redirect('/justifications-two/justification-activity?source=Justifications')
 })
 
 router.post('/justifications-two/addToGroup', function (req, res) {
