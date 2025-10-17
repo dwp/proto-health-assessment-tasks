@@ -1,0 +1,136 @@
+{% extends "layouts/no-side-nav-justification-activity.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+        
+   
+<!-- 
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"> -->
+
+<form action="#" method="post" id="auto-redirect">
+
+  {% for justification in data['justificationAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+         {% set count = loop.index %}
+      <input type="hidden" name="radioID" value="{{ loop.index }}"/>
+        {% if loop.last %}
+      <h1 class="govuk-heading-l">Justification for activity {{ justification.groupName }}</h1>
+        
+         
+          {% for activityName in justification.activityName %} 
+                 
+      <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+           {{ activityName }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {% if activityName === "Preparing food" %} 
+                {{data["preparingfoodSelect"]}}
+               {% endif %}
+         
+               {% if activityName === "Taking nutrition" %} 
+                {{data["takingnutritionSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing therapy" %} 
+               {{data["managingtherapySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Washing and bathing" %} 
+               {{data["washingbathingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing toilet needs" %} 
+               {{data["toiletneedsSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Dressing and undressing" %} 
+               {{data["dressingSelect"]}}
+               {% endif %}
+
+                {% if activityName === "Communicating verbally" %} 
+               {{data["communicatingverballySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Reading and understanding signs, symbols and words" %} 
+               {{data["readingunderstandingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Engaging face to face" %} 
+               {{data["facetofaceSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Budgeting" %} 
+               {{data["budgetingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Planning and following journeys" %} 
+               {{data["journeysSelectpbr"]}}
+               {% endif %}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions removeGroup">
+              <a class="govuk-link group-btn" id="removeLinkActivity" href="/justifications-two/justification-activity?source=Justifications">Remove from group<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+    
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        <div class="govuk-form-group">
+
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="seperateJustification" rows="15"></textarea>
+
+
+
+              <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button> 
+          
+          </form>
+    </div>
+
+  </div>
+  <!-- </div>
+  </div> -->
+
+  <!-- </div>      
+      </div> -->
+
+{% endblock %}

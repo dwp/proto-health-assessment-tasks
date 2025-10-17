@@ -31,6 +31,7 @@ router.use((req, res, next) => {
     console.log(serviceRedirect);
 
     switch (true) {
+      //justifications two -sidenav links
       case serviceRedirect.endsWith("/justifications-two/evidence-addAnother?source=evidence"):
         return res.redirect("/justifications-two/evidence-addAnother?source=evidence")
 
@@ -87,6 +88,64 @@ router.use((req, res, next) => {
 
        case serviceRedirect.endsWith("/justifications-two/docs-3"):
         return res.redirect("/justifications-two/docs-3")
+
+        //justification two iterated - sidenav
+        case serviceRedirect.endsWith("/justifications-twoIteration/evidence-addAnother?source=evidence"):
+        return res.redirect("/justifications-two/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/consultation-date?source=Consultation date"):
+        return res.redirect("/justifications-twoIteration/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/consent?source=Claimant consent"):
+        return res.redirect("/justifications-twoIteration/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/verify-id?source=Claimant identity"):
+        return res.redirect("/justifications-twoIteration/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/attendees-none?source=Additional attendees"):
+        return res.redirect("/justifications-twoIteration/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/justifications-twoIteration/attendees-addAnother?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/conditions-addAnother?source=Condition history"):
+        return res.redirect("/justifications-twoIteration/conditions-addAnother?source=Condition history")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/medication-addAnother?source=Medication"):
+        return res.redirect("/justifications-twoIteration/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/justifications-twoIteration/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/justifications-twoIteration/soch1-additional?source=Social and occupational history")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/functional-history?source=Functional history"):
+        return res.redirect("/justifications-twoIteration/functional-history?source=Functional history")
+      
+      case serviceRedirect.endsWith("/justifications-twoIteration/mental-state?source=Mental state observations"):
+        return res.redirect("/justifications-twoIteration/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/physical-state?source=Informal observations"):
+        return res.redirect("/justifications-twoIteration/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/justifications-twoIteration/descriptor?source=Activity descriptors"):
+        return res.redirect("/justifications-twoIteration/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/justifications-twoIteration/justification-activity?source=Justifications"):
+        return res.redirect("/justifications-twoIteration/justification-activity?source=Justifications")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/addToGroup"):
+        return res.redirect("/justifications-twoIteration/addToGroup")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/dl-qual?source=Qualifying period and prospective test"):
+        return res.redirect("/justifications-twoIteration/dl-qual?source=Qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/justifications-twoIteration/review?source=Review"):
+        return res.redirect("/justifications-twoIteration/review?source=Review")
+      
+      case serviceRedirect.endsWith("/justifications-twoIteration/check-answers-new"):
+        return res.redirect("/justifications-twoIteration/check-answers-new")
+
+       case serviceRedirect.endsWith("/justifications-twoIteration/docs-3"):
+        return res.redirect("/justifications-twoIteration/docs-3")
 
 
       default:
@@ -3160,7 +3219,7 @@ router.use((req, res, next) => {
     data: req.session.data //all data held
   }
   
- // console.log(JSON.stringify(log, null, 2)) // show all data as a dump in terminal
+ console.log(JSON.stringify(log, null, 2)) // show all data as a dump in terminal
   next() // continue to next action
 
 })
@@ -5192,6 +5251,391 @@ router.post('/justifications-two/attendees-none', function (req, res) {
 
   res.redirect('/justifications-two/attendees')
 })
+
+
+// Routes for justifications two iterated//
+
+router.post('/justifications-twoIteration/evidence-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/evidence')
+})
+
+// Routes for adding more evidence //
+router.post('/justifications-twoIteration/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const coreEvidence = req.session.data['dwp-evidence']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, coreEvidence })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/justifications-twoIteration/evidence-addAnother')
+})
+
+router.post('/justifications-twoIteration/remove-evidence', function (req, res) {
+  const evidenceNo = req.session.data['indexEvidence']
+  const evidenceName = req.session.data['evidence']
+  const evNo = "2-0";
+
+  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/justifications-twoIteration/evidence-addAnother')
+
+  } else if (req.session.data['removeCondition'] == "Yes") {
+
+    const evidenceAdded = req.session.data.evidenceAdded || []
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
+    req.session.data.evidenceAdded = evidenceAdded
+
+    res.redirect('/justifications-twoIteration/evidence-addAnother')
+  }
+})
+
+// Adding another peice of evidence //
+router.post('/justifications-twoIteration/evidence-addAnother', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/evidence')
+})
+
+// Routes for adding another condition
+router.post('/justifications-twoIteration/conditions-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/conditions')
+})
+
+// Routes for adding another condition //
+router.post('/justifications-twoIteration/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+
+  res.redirect('/justifications-twoIteration/conditions-addAnother?source=Condition history')
+})
+
+// Routes for adding another condition //\
+router.post('/justifications-twoIteration/conditions-change', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+  res.redirect('/justifications-twoIteration/conditions-addAnother')
+})
+
+router.post('/justifications-twoIteration/conditions-addAnother', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/conditions')
+})
+
+
+// Routes for adding another medication
+router.post('/justifications-twoIteration/evidence-med', function (req, res) {
+
+  const evidenceNo = req.session.data['index']
+  const evidenceMedName = req.session.data['document-Medname']
+
+
+  const evidenceMedAdded = req.session.data.evidenceMedAdded || []
+  evidenceMedAdded.push({ evidenceMedName })
+  req.session.data.evidenceMedAdded = evidenceMedAdded
+
+  const last = req.session.data.evidenceMedAdded[req.session.data.evidenceMedAdded.length - 1];
+
+
+  res.redirect('/justifications-twoIteration/medication-addAnother')
+})
+
+// Routes for adding another medication
+router.post('/justifications-twoIteration/medications-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/justifications-twoIteration/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDoseFreq = req.session.data['medications-dose']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medicationAdditionalNotes = req.session.data['medications-additional-notes']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDoseFreq, medicationReason, medicationSideEffect, medicationEffectiveness, medicationAdditionalNotes })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/justifications-twoIteration/medication-addAnother?source=Medication')
+})
+
+
+
+// Routes for adding another medication //\
+router.post('/justifications-twoIteration/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDoseFreq = req.session.data['medications-dose']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medicationAdditionalNotes = req.session.data['medications-additional-notes']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medicationName, medicationDoseFreq, medicationReason, medicationEffectiveness, medicationSideEffect, medicationAdditionalNotes })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/justifications-twoIteration/medication-addAnother')
+})
+
+router.post('/justifications-twoIteration/medication-addAnother', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/medication')
+})
+
+// Routes for adding another attendee //
+router.post('/justifications-twoIteration/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/justifications-twoIteration/attendees-addAnother')
+})
+
+router.post('/justifications-twoIteration/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/justifications-twoIteration/attendees-addAnother')
+})
+
+router.post('/justifications-twoIteration/attendees-addAnother', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/attendees')
+})
+
+router.post('/justifications-two/remove-attendee', function (req, res) {
+
+  if (req.session.data['removeAttendee'] == "Yes") {
+    res.redirect('/justifications-twoIteration/attendees-addAnother')
+  } else if (req.session.data['removeAttendee'] == "No") {
+    res.redirect('/justifications-twoIteration/attendees-addAnother')
+  }
+
+})
+
+// Routes for adding a justification - iteration two continued
+
+router.post('/justifications-twoIteration/justification', function (req, res) {
+  const groupName = req.session.data['groupName']
+  const activityName = req.session.data['justificationDCheck']
+  const justificationText = req.session.data['groupJustify']
+  const activityHide = req.session.data['hiddenActivity']
+  const problemCheck = req.session.data['noProblemActivity']
+
+  const justificationAdded = req.session.data.justificationAdded || []
+  justificationAdded.push({ groupName, activityName, justificationText, activityHide, problemCheck })
+  req.session.data.justificationAdded = justificationAdded
+
+  req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+
+  res.redirect('/justifications-twoIteration/justification-addAnother?source=Descriptor choices and justifications')
+})
+
+router.post('/justifications-twoIteration/justification-activity', function (req, res) {
+
+  const activityName = req.session.data['justificationDCheck']
+  const justificationText = req.session.data['groupJustify']
+  const justificationTextTwo = req.session.data['groupJustifyTwo']
+  const justificationTextThree = req.session.data['groupJustifyThree']
+  const justificationTextFour = req.session.data['groupJustifyFour']
+  const justificationTextFive = req.session.data['groupJustifyFive']
+  const justificationTextSix = req.session.data['groupJustifySix']
+  const justificationTextSeven = req.session.data['groupJustifySeven']
+  const justificationTextEight = req.session.data['groupJustifyEight']
+  const justificationTextNine = req.session.data['groupJustifyNine']
+  const justificationTextTen = req.session.data['groupJustifyTen']
+  const justificationTextEleven = req.session.data['groupJustifyEleven']
+  const justificationTextTwelve = req.session.data['groupJustifyTwelve']
+  const justificationTextThirteen = req.session.data['groupJustifyThirteen']
+  const justificationTextFourteen = req.session.data['groupJustifyFourteen']
+  const justificationTextFithteen = req.session.data['groupJustifyFithteen']
+  const justificationTextSixteen = req.session.data['groupJustifySixteen']
+  const justificationTextSeventeen = req.session.data['groupJustifySeventeen']
+  const justificationTextEighteen = req.session.data['groupJustifyEighteen']
+  const justificationTextNineteen = req.session.data['groupJustifyNineteen']
+  const justificationTextTwenty = req.session.data['groupJustifyTwenty']
+  const activityHide = req.session.data['hiddenActivity']
+  const problemCheck = req.session.data['noProblemActivity']
+  const prepfoodNumber = req.session.data['numOne']
+
+
+  const justificationAdded = req.session.data.justificationAdded || []
+
+  justificationAdded.push({ activityName, justificationText, justificationTextTwo, justificationTextThree, justificationTextFour, justificationTextFive, justificationTextSix, justificationTextSeven, justificationTextEight, justificationTextNine, justificationTextTen, justificationTextEleven, justificationTextTwelve, justificationTextThirteen, justificationTextFourteen, justificationTextFithteen, justificationTextSixteen, justificationTextSeventeen, justificationTextEighteen, justificationTextNineteen, justificationTextTwenty, activityHide, problemCheck, prepfoodNumber })
+  req.session.data.justificationAdded = justificationAdded
+  req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+
+  //   if (req.session.data['removeLink'] == req.session.data['removeLink']) {
+  //    const aID = req.session.data['id']
+
+  //   const justificationAdded = req.session.data.justificationAdded || []
+  //   justificationAdded.aID.splice(aID, 1);
+  //   req.session.data['hiddenActivity'].splice(aID, 1)
+
+  // } else {
+
+  // }
+
+  req.session.data.justificationAdded = req.session.data.justificationAdded?.map(({ activityName, activityHide }) => ({
+    activityName,
+    activityHide,
+    groupName: activityName.map((e) => justifications.indexOf(e) + 1).join(", ").replace(/,(?=[^,]*$)/, " and")
+  }))
+
+  res.redirect('/justifications-twoIteration/writeJustification')
+})
+
+router.post('/justifications-twoIteration/writeJustification', function (req, res) {
+
+  const seperateJustifications = req.session.data['seperateJustification']
+
+  const numberOfJustificationAdded = req.session.data.numberOfJustificationAdded || []
+  numberOfJustificationAdded.push({ seperateJustifications })
+  req.session.data.numberOfJustificationAdded = numberOfJustificationAdded
+  req.session.data.numberOfJustificationAdded[req.session.data.numberOfJustificationAdded.length - 1].action
+
+   res.redirect('/justifications-twoIteration/justification-activity?source=Justifications')
+})
+
+router.post('/justifications-twoIteration/addToGroup', function (req, res) {
+
+  const activityName = req.session.data['justificationDCheck'].split(/,(?! )/)
+  const actNo = req.session.data['radioID']
+
+  const justificationAdded = req.session.data.justificationAdded || []
+  justificationAdded[actNo - 1]?.activityName.push(...activityName)
+  req.session.data['hiddenActivity'].push(...activityName)
+  delete req.session.data['justificationDCheck']
+  // justificationAdded.splice(1, 0, ({activityName:[ activityName ]}));
+  //req.session.data.justificationAdded = justificationAdded
+  // req.session.data.justificationAdded[req.session.data.justificationAdded.length - 1].action
+
+  res.redirect('/justifications-twoIteration/justification-activity')
+})
+
+router.post('/justifications-twoIteration/justification-addAnother', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/justification')
+})
+
+router.post('/justifications-twoIteration/preparingfood', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+
+router.post('/justifications-twoIteration/takingnutrition', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/managingtherapy', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/washingbathing', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/toiletneeds', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/dressing', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/communicatingverbally', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/readingunderstanding', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/facetoface', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/budgeting', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/journeys', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+router.post('/justifications-twoIteration/movingaround', function (req, res) {
+  res.redirect('/justifications-twoIteration/descriptor')
+})
+
+router.post('/justifications-twoIteration/justification-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/justification')
+})
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+router.post('/justifications-twoIteration/remove-condition', function (req, res) {
+
+  if (req.session.data['removeCondition'] == "Yes") {
+    res.redirect('/justifications-twoIteration/conditions-addAnother')
+  } else if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/justifications-twoIteration/conditions-addAnother')
+  }
+
+})
+
+router.post('/justifications-twoIteration/remove-medication', function (req, res) {
+
+  if (req.session.data['removeMedication'] == "Yes") {
+    res.redirect('/justifications-twoIteration/medication-addAnother')
+  } else if (req.session.data['removeMedication'] == "No") {
+    res.redirect('/justifications-twoIteration/medication-addAnother')
+  }
+
+})
+
+router.post('/justifications-twoIteration/attendees-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/attendees')
+})
+
 
 
 
