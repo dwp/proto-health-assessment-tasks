@@ -350,6 +350,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
                     <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Care plan.pdf" href="evidence-update?docName=Care plan">Update details</a></td>
                   </tr>
+                   <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      {% if data["document-name"] == "None" %}
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="evidence-six" name="document-name" type="checkbox" value="Prescription">
+                          <label class="govuk-label govuk-checkboxes__label" for="evidence-six"></label>
+                        </div>
+                     </div>
+                     {% elseif data["document-name"].includes("Prescription") %}
+                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="evidence-six" name="document-name" type="checkbox" value="Prescription" {{ checked }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="evidence-six"></label>
+                      </div>
+                   </div>
+                   {% else %}
+                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="evidence-six" name="document-name" type="checkbox" value="Prescription">
+                      <label class="govuk-label govuk-checkboxes__label" for="evidence-six"></label>
+                    </div>
+                 </div>
+                   {% endif %}
+                    </td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Prescription.pdf"  target="_blank" href="/public/pdfs/Prescription.pdf">Prescription</a></td>
+                    <!-- <td class="govuk-table__cell">PIP</td> -->
+                    <td class="govuk-table__cell" data-sort-value="25 November 2024">24 April 2025</td>
+                    <td class="govuk-table__cell" data-sort-value="28 February 2025">1 May 2025</td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Prescription.pdf" href="evidence-update?docName=Prescription">Update details</a></td>
+                  </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
                       {% if data["document-name"] == "None" %}

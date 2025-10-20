@@ -14,10 +14,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <div class="govuk-form-group">
            <fieldset class="govuk-fieldset">
 
-              <h1 class="govuk-heading-l">Add evidence that includes medication</h1>
+              <h1 class="govuk-heading-l">Add the evidence you want to reference</h1>
 
               <div class="govuk-inset-text">
-                Check that any evidence includes the medication's frequency, dosage and purpose before adding it.
+                Only reference evidence that includes accurate details of medication.
               </div>
              
               
@@ -248,13 +248,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
     <div class="govuk-button-group">
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Save and continue
+        Add evidence
       </button>
 
       {% if (data['evidenceAdded']) %}
-      <p><a href="evidence-addAnother">Cancel</a></p>
+      <p><a href="medication-addAnother">Cancel</a></p>
       {% else %}
-      <p><a href="evidence-none">Cancel</a></p>
+      <p><a href="medications-none?source=Medication">Cancel</a></p>
       {% endif %}
 
      </div>
