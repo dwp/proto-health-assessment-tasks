@@ -5,7 +5,7 @@ include:
     file: 'ci-include-fragment-version-check.yml'
   #code-quality
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/gitleaks'
-    ref: 2.2.4
+    ref: 3.1.4
     file: 'ci-include-gitleaks.yml'
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/shell-check'
     ref: 3-1-4
