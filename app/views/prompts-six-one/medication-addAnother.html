@@ -107,7 +107,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <form action="#" method="post" id="auto-redirect">
   
   <div class="govuk-button-group">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-9" data-module="govuk-button">
       Add another medication
     </button>
     </div>
@@ -115,7 +115,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     {% else %}
     <form action="#" method="post" id="auto-redirect">
     <div class="govuk-button-group">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-9" data-module="govuk-button">
         Add a medication
       </button>
       </div>
@@ -137,7 +137,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                 <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceName}}.pdf">
+                      <b><p class="govuk-body"><b><a class="govuk-link" target="_blank" href="/public/pdfs/{{evidenceMedName}}.pdf">
                         {{ evidenceMedName }}<span class="govuk-visually-hidden">evidence change</span>
                     </a></b></p></b>
                     </dt>
@@ -178,6 +178,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       {% if evidenceMedName === "Award Review AR1" %}
                       8 February 2025
                       {% endif %}
+
+                      {% if evidenceMedName === "Prescription" %}
+                       24 April 2025
+                      {% endif %}
                     </dd>
              
                   <dd class="govuk-summary-list__actions">
@@ -197,10 +201,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% endfor %}
 
         <div class="govuk-button-group">
-          <a href="evidence-med" class="govuk-button govuk-button--secondary">Add evidence</a>
+          <a href="evidence-med" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-7">Add evidence</a>
           </div>
-
-          <br>
           
 
     {% if data["sideEffects"] == 'Yes' %}
