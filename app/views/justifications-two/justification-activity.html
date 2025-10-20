@@ -17,6 +17,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   .removeGroup {
     width: 23%;
   }
+
+  @media (min-width: 48.0625em) {
+.sticky {
+        position: sticky;
+        top: 10px;
+        max-height: 100vh;
+        overflow-y: auto;
+        margin-bottom: 20px;
+}
+}
+
+ .border {
+      border-left: 3px solid #1d70b8;
+      padding-left: 10px;
+  }
              
   </style>
 
@@ -462,7 +477,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% set outerLoopIndex = loop.index0 %}
          {% set count = loop.index %}
       <input type="hidden" name="radioID" value="{{ loop.index }}"/>
-      <h2 class="govuk-heading-m">Justification for activity {{ justification.groupName }}</h2>
+      <h2 class="govuk-heading-m" id="{{count}}">Justification for activity {{ justification.groupName }}</h2>
         
         <!-- {{prepFood}}, {{nutritionNum}} {{therapyNum}} -->
           <!-- <p class="govuk-body">{{ justification.activityName | join(", ") }}</p> -->
@@ -951,14 +966,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   
     </div> 
 
-    <div class="govuk-grid-column-one-third">
+      <div class="govuk-grid-column-one-third sticky">
+  
+            <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
+              <h2 class="govuk-heading-s" id="subsection-title">
+              On this page
+            </h2>
+              {% for justification in data['justificationAdded'] %}
+              {% set count = loop.index %}
+              <ul class="govuk-list">
+                <li>
+                  <a href="#{{count}}" class="govuk-link govuk-link--no-visited-state">Justification for activity {{ justification.groupName }}</a>
+                </li>
+              </ul>
+                {% endfor %}
+                 <ul class="govuk-list">
+                  <li>
+                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
+                    </li>
+                 </ul>
+            </nav>
+          
+    
+        </div>
+
+    <!-- <div class="govuk-grid-column-one-third">
         <p class="govuk-body">
           <a href="claimant-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Questionnaire responses (opens in a new tab)</a>
         </p>
         <p class="govuk-body">
           <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
         </p>
-      </div>
+      </div> -->
     </div>
 
    </fieldset>
