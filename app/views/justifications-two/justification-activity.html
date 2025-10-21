@@ -32,6 +32,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       border-left: 3px solid #1d70b8;
       padding-left: 10px;
   }
+
+ .border-notes {
+      padding-left: 20px;
+  }
              
   </style>
 
@@ -50,7 +54,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </div>
           </legend>
 
-            <h2 class="govuk-heading-m">Select the activities you want to group</h2>
+            <h2 class="govuk-heading-m" id="activityGroup">Select the activities you want to group</h2>
 
             <div id="activities-hint" class="govuk-hint">
              You can group activities that have the same justification. Each group must contain at least one activity.
@@ -968,10 +972,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-grid-column-one-third sticky">
   
+                  <ul class="govuk-list border-notes">
+                  <li>
+                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
+                    </li>
+                 </ul>
+
+
             <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
+            
               <h2 class="govuk-heading-s" id="subsection-title">
               On this page
             </h2>
+                <ul class="govuk-list">
+                  <li>
+                    <a href="#activityGroup" class="govuk-link govuk-link--no-visited-state">Select the activities you want to group</a>
+                  </li>
+                </ul>
               {% for justification in data['justificationAdded'] %}
               {% set count = loop.index %}
               <ul class="govuk-list">
@@ -979,12 +996,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   <a href="#{{count}}" class="govuk-link govuk-link--no-visited-state">Justification for activity {{ justification.groupName }}</a>
                 </li>
               </ul>
-                {% endfor %}
-                 <ul class="govuk-list">
-                  <li>
-                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
-                    </li>
-                 </ul>
+                {% endfor %}                 
             </nav>
           
     
