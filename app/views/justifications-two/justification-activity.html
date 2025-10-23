@@ -552,6 +552,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                {% endif %}
 
 
+                {% if activityName === "Moving around" %} 
+               {{data['movingaroundSelectpbr']}}
+               {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions removeGroup">
               <a class="govuk-link group-btn" id="removeLinkActivity" href="/justifications-two/justification-activity?source=Justifications">Remove from group<span class="govuk-visually-hidden"> name</span></a>
