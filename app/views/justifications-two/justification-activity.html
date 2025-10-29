@@ -467,6 +467,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
           </fieldset>
 
+          <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Create group
           </button>
@@ -476,6 +477,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           {% else %} 
 
           {% endif %} 
+          </div>
   
         {% for justification in data['justificationAdded'] %}
         {% set outerLoopIndex = loop.index0 %}

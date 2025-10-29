@@ -89,6 +89,71 @@ router.use((req, res, next) => {
        case serviceRedirect.endsWith("/justifications-two/docs-3"):
         return res.redirect("/justifications-two/docs-3")
 
+        //justifications one -sidenav links
+      case serviceRedirect.endsWith("/justifications-one/evidence-addAnother?source=evidence"):
+        return res.redirect("/justifications-one/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/justifications-one/consultation-date?source=Consultation date"):
+        return res.redirect("/justifications-one/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/justifications-one/consent?source=Claimant consent"):
+        return res.redirect("/justifications-one/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/justifications-one/verify-id?source=Claimant identity"):
+        return res.redirect("/justifications-one/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/justifications-one/attendees-none?source=Additional attendees"):
+        return res.redirect("/justifications-one/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/justifications-one/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/justifications-one/attendees-addAnother?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/justifications-one/conditions-addAnother?source=Condition history"):
+        return res.redirect("/justifications-one/conditions-addAnother?source=Condition history")
+
+      case serviceRedirect.endsWith("/justifications-one/medication-addAnother?source=Medication"):
+        return res.redirect("/justifications-one/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/justifications-one/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/justifications-one/soch1-additional?source=Social and occupational history")
+
+      case serviceRedirect.endsWith("/justifications-one/functional-history?source=Functional history"):
+        return res.redirect("/justifications-one/functional-history?source=Functional history")
+      
+      case serviceRedirect.endsWith("/justifications-one/mental-state?source=Mental state observations"):
+        return res.redirect("/justifications-one/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/justifications-one/physical-state?source=Informal observations"):
+        return res.redirect("/justifications-one/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/justifications-one/descriptor?source=Activity descriptors"):
+        return res.redirect("/justifications-one/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/justifications-one/justification-activity?source=Justifications"):
+        return res.redirect("/justifications-one/justification-activity?source=Justifications")
+
+      case serviceRedirect.endsWith("/justifications-one/addToGroup"):
+        return res.redirect("/justifications-one/addToGroup")
+
+      case serviceRedirect.endsWith("/justifications-one/dl-qual?source=Qualifying period and prospective test"):
+        return res.redirect("/justifications-one/dl-qual?source=Qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/justifications-one/review?source=Review"):
+        return res.redirect("/justifications-one/review?source=Review")
+      
+      case serviceRedirect.endsWith("/justifications-one/check-answers-new"):
+        return res.redirect("/justifications-one/check-answers-new")
+
+       case serviceRedirect.endsWith("/justifications-one/docs-3"):
+        return res.redirect("/justifications-one/docs-3")
+
+        case serviceRedirect.endsWith("/justifications-one/justification-none?source=Descriptor choices and justifications"):
+        return res.redirect("/justifications-one/justification-none?source=Descriptor choices and justifications")
+
+         case serviceRedirect.endsWith("/justifications-one/justification-addAnother?source=Descriptor choices and justifications"):
+        return res.redirect("/justifications-one/justification-addAnother?source=Descriptor choices and justifications")
+
+
         //justification two iterated - sidenav
         case serviceRedirect.endsWith("/justifications-twoIteration/evidence-addAnother?source=evidence"):
         return res.redirect("/justifications-two/evidence-addAnother?source=evidence")
