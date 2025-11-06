@@ -78,7 +78,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['preparingfoodSelect'] == "(1f) Cannot prepare and cook food") %}
                  {% set prepFoodScore = 8 %} 8
               {% else %}
-               {% set prepFoodScore = 0 %} 0
+               {% set prepFoodScore = 0 %} 
             {% endif %}
           </td>
             {% if (data['preparingfoodSelect']) %}
@@ -118,7 +118,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['takingnutritionSelect'] == "(2f) Cannot convey food and drink to their mouth and needs another person to do so") %}
               {% set nutritionScore = 10 %} 10
               {% else %}
-                 {% set nutritionScore = 0 %} 0
+                 {% set nutritionScore = 0 %} 
             {% endif %}
           </td>
             {% if (data['takingnutritionSelect']) %}
@@ -158,7 +158,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['managingtherapySelect'] == "(3f) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week") %}
               {% set therapyScore = 8 %} 8
               {% else %}
-                {% set therapyScore = 0 %} 0
+                {% set therapyScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['managingtherapySelect']) %}
@@ -200,7 +200,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['washingbathingSelect'] == "(4g) Cannot wash and bathe at all and needs another person to wash their entire body") %}
                 {% set washingScore = 8 %} 8
               {% else %}
-                {% set washingScore = 0 %} 0
+                {% set washingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['washingbathingSelect']) %}
@@ -240,7 +240,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['toiletneedsSelect'] == "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel") %}
               {% set toiletScore = 8 %} 8
               {% else %}
-                {% set toiletScore = 0 %} 0
+                {% set toiletScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['toiletneedsSelect']) %}
@@ -280,7 +280,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['dressingSelect'] == "(6f) Cannot dress or undress at all") %}
               {% set dressingScore = 8 %} 8
               {% else %}
-                {% set dressingScore = 0 %} 0
+                {% set dressingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['dressingSelect']) %}
@@ -319,7 +319,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['communicatingverballySelect'] == "(7e) Cannot express or understand verbal information at all even with communication support") %}
                  {% set communicatingScore = 12 %} 12
               {% else %}
-                 {% set communicatingScore = 0 %} 0
+                 {% set communicatingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['communicatingverballySelect']) %}
@@ -357,7 +357,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['readingunderstandingSelect'] == "(8e) Cannot read or understand signs, symbols or words at all") %}
                  {% set readingScore = 8 %} 8
               {% else %}
-                 {% set readingScore = 0 %} 0
+                 {% set readingScore = 0 %} 
             {% endif %}
               </td>
               {% if (data['readingunderstandingSelect']) %}
@@ -394,7 +394,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['facetofaceSelect'] == "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person") %}
                  {% set facetofaceScore = 8 %} 8
               {% else %}
-                {% set facetofaceScore = 0 %} 0
+                {% set facetofaceScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['facetofaceSelect']) %}
@@ -432,7 +432,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['budgetingSelect'] == "(10d) Cannot make any budgeting decisions at all") %}
                  {% set budgetingScore = 6 %} 6
               {% else %}
-                 {% set budgetingScore = 0 %} 0
+                 {% set budgetingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['budgetingSelect']) %}
@@ -505,7 +505,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['journeysSelectpbr'] == "(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid") %}
                 {% set journeyScore = 12 %} 12
               {% else %}
-                {% set journeyScore = 0 %} 0
+                {% set journeyScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['journeysSelectpbr']) %}
@@ -547,7 +547,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               {% elseif (data['movingaroundSelectpbr'] == "(12f) Cannot stand or move more than 1 metre, either aided or unaided") %}
                  {% set movingScore = 12 %} 12
               {% else %}
-                {% set movingScore = 0 %} 0
+                {% set movingScore = 0 %} 
             {% endif %}
           </td>
           {% if (data['movingaroundSelectpbr']) %}

@@ -18,7 +18,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"> -->
 
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Moving around</h1>
@@ -391,9 +390,14 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="movingJustification" name="movingJustify" rows="15">{{data["movingJustify"]}}</textarea>
           </div> -->
           
-           <button class="govuk-button" data-module="govuk-button">
+           <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
+
+          <p><a href="descriptor">Cancel</a></p>
+
+         </div>
            </div>
         </form>
      <!-- </div>
