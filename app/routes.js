@@ -315,6 +315,212 @@ router.use((req, res, next) => {
         return res.redirect("/prompts-six-one/docs-3")
 
 
+        // prompts version six
+        case serviceRedirect.endsWith("/prompts-six/evidence-none?source=default"):
+        return res.redirect("/prompts-six/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/prompts-six/evidence-none?source=evidence"):
+        return res.redirect("/prompts-six-/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/prompts-six/evidence-addAnother?source=evidence"):
+        return res.redirect("/prompts-six/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/prompts-six/consultation-date?source=Consultation date"):
+        return res.redirect("/prompts-six/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/prompts-six/consent?source=Claimant consent"):
+        return res.redirect("/prompts-six/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/prompts-six/verify-id?source=Claimant identity"):
+        return res.redirect("/prompts-six/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/prompts-six/attendees-none?source=Additional attendees"):
+        return res.redirect("/prompts-six/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/prompts-six/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/prompts-six/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/prompts-six/conditions-none?source=Condition history"):
+        return res.redirect("/prompts-six/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/prompts-six/conditions-addAnother?source=Condition history"):
+        return res.redirect("/prompts-six/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/prompts-six/medications-none?source=Medication"):
+        return res.redirect("/prompts-six/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/prompts-six/medication-addAnother?source=Medication"):
+        return res.redirect("/prompts-six/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/prompts-six/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/prompts-six/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/prompts-six/preparingfood?source=Preparing food"):
+        return res.redirect("/prompts-six/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/prompts-six/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/prompts-six/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/prompts-six/managingtherapy?source=Managing therapy"):
+        return res.redirect("/prompts-six/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/prompts-six/washingbathing?source=Washing and bathing"):
+        return res.redirect("/prompts-six/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/prompts-six/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/prompts-six/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/prompts-six/dressing?source=Dressing and undressing"):
+        return res.redirect("/prompts-six/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/prompts-six/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/prompts-six/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/prompts-six/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/prompts-six/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/prompts-six/facetoface?source=Engaging face to face"):
+        return res.redirect("/prompts-six/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/prompts-six/budgeting?source=Budgeting"):
+        return res.redirect("/prompts-six/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/prompts-six/journeys?source=Planning and following journeys"):
+        return res.redirect("/prompts-six/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("/movingaround?source=Moving around"):
+        return res.redirect("/prompts-six/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/prompts-six/mental-state?source=Mental state observations"):
+        return res.redirect("/prompts-six/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/prompts-six/physical-state?source=Informal observations"):
+        return res.redirect("/prompts-six/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/prompts-six/descriptor?source=Activity descriptors"):
+        return res.redirect("/prompts-six/descriptor?source=Activity descriptors")
+      
+
+      case serviceRedirect.endsWith("/prompts-six/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/prompts-six/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/prompts-six/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/prompts-six/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/prompts-six/review?source=Review"):
+        return res.redirect("/prompts-six/review?source=Review")
+      
+      case serviceRedirect.endsWith("/prompts-six/check-answers-new"):
+        return res.redirect("/prompts-six/check-answers-new")
+
+       case serviceRedirect.endsWith("/prompts-six/docs-3"):
+        return res.redirect("/prompts-six/docs-3")
+
+
+        // conditions name list
+        case serviceRedirect.endsWith("/conditionsNameList/evidence-none?source=default"):
+        return res.redirect("/conditionsNameList/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/conditionsNameList/evidence-none?source=evidence"):
+        return res.redirect("/conditionsNameList/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/conditionsNameList/evidence-addAnother?source=evidence"):
+        return res.redirect("/conditionsNameList/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/conditionsNameList/consultation-date?source=Consultation date"):
+        return res.redirect("/conditionsNameList/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/conditionsNameList/consent?source=Claimant consent"):
+        return res.redirect("/conditionsNameList/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/conditionsNameList/verify-id?source=Claimant identity"):
+        return res.redirect("/conditionsNameList/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/conditionsNameList/attendees-none?source=Additional attendees"):
+        return res.redirect("/conditionsNameList/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/conditionsNameList/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/conditionsNameList/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/conditionsNameList/conditions-none?source=Condition history"):
+        return res.redirect("/conditionsNameList/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/conditionsNameList/conditions-addAnother?source=Condition history"):
+        return res.redirect("/conditionsNameList/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/conditionsNameList/medications-none?source=Medication"):
+        return res.redirect("/conditionsNameList/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/conditionsNameList/medication-addAnother?source=Medication"):
+        return res.redirect("/conditionsNameList/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/conditionsNameList/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/conditionsNameList/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/conditionsNameList/preparingfood?source=Preparing food"):
+        return res.redirect("/conditionsNameList/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/conditionsNameList/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/conditionsNameList/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/conditionsNameList/managingtherapy?source=Managing therapy"):
+        return res.redirect("/conditionsNameList/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/conditionsNameList/washingbathing?source=Washing and bathing"):
+        return res.redirect("/conditionsNameList/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/conditionsNameList/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/conditionsNameList/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/conditionsNameList/dressing?source=Dressing and undressing"):
+        return res.redirect("/conditionsNameList/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/conditionsNameList/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/conditionsNameList/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/conditionsNameList/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/conditionsNameList/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/conditionsNameList/facetoface?source=Engaging face to face"):
+        return res.redirect("/conditionsNameList/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/conditionsNameList/budgeting?source=Budgeting"):
+        return res.redirect("/conditionsNameList/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/conditionsNameList/journeys?source=Planning and following journeys"):
+        return res.redirect("/conditionsNameList/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("conditionsNameList/movingaround?source=Moving around"):
+        return res.redirect("/conditionsNameList/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/conditionsNameList/mental-state?source=Mental state observations"):
+        return res.redirect("/conditionsNameList/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/conditionsNameList/physical-state?source=Informal observations"):
+        return res.redirect("/conditionsNameList/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/conditionsNameList/descriptor?source=Activity descriptors"):
+        return res.redirect("/conditionsNameList/descriptor?source=Activity descriptors")
+      
+
+      case serviceRedirect.endsWith("/conditionsNameList/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/conditionsNameList/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/conditionsNameList/review?source=Review"):
+        return res.redirect("/conditionsNameList/review?source=Review")
+      
+      case serviceRedirect.endsWith("/conditionsNameList/check-answers-new"):
+        return res.redirect("/conditionsNameList/check-answers-new")
+
+       case serviceRedirect.endsWith("/conditionsNameList/docs-3"):
+        return res.redirect("/conditionsNameList/docs-3")
+
+
       default:
         return res.redirect("/")
     }

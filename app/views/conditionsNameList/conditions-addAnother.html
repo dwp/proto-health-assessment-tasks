@@ -1,0 +1,254 @@
+-{% extends "layouts/side-nav-prompts-five" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style>
+
+.title-text {
+    width: 63%;
+    text-wrap: wrap;
+  }
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  }
+</style>
+
+<!-- 
+display: block;
+    text-align: left;
+    margin-top: -25%;
+    overflow: auto;
+    width: 270%;
+    -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-heading-l">
+          Condition history
+        </h1>
+       
+          <!--logic for adding conditions-->
+      
+       <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        {% for condition in data['conditionAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+        <div class="govuk-accordion__section" id="{{ outerLoopIndex }}">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                {{ condition.conditionName }}
+                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
+                <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a> 
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  When did the condition or disability start?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{condition.conditionLength}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+                </dd>
+              </div>
+              <!-- <div class="govuk-form-group--error">     
+                <div>
+                 <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
+               
+                </div>
+                <p><b><a href="washingbathing-error?source=Washing and bathing" class="govuk-link" style="color:#d4351c">Select a descriptor for washing and  bathing</a></b></p>
+             </div>  -->
+  
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Condition history
+                  <br>
+                  <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
+                </dt>
+                <dd class="govuk-summary-list__value">
+             
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a> -->
+                </dd> 
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Is this a mental health condition?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ condition.mentalHealthQuestion }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+                </dd>
+              </div>
+              {% if (condition.mentalHealthQuestion == "Yes") %}
+              <div class="govuk-summary-list__row">
+                <!-- <div class="mentalHealth-title"> -->
+                <dt class="govuk-summary-list__key">
+                 <p class="mentalHealth-title">Suicidal thoughts and self-harm</p>
+                 <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+                </dd>
+              </div>
+              {% else %}
+
+              {% endif %}
+            </dl>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+      
+   
+
+      <!-- end of accordian -->
+
+
+       <!-- <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            {{ condition.conditionName }}
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did the condition or disability start?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{condition.conditionLength}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Condition history
+                <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
+              </dt>
+              <dd class="govuk-summary-list__value">
+           
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              </dd> 
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Is this a mental health condition?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.mentalHealthQuestion }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+              </dd>
+            </div>
+            {% if (condition.mentalHealthQuestion === "Yes") %}
+            <div class="govuk-summary-list__row">
+              <div class="mentalHealth-title"> 
+              <dt class="govuk-summary-list__key">
+               <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
+               <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
+              </dt>
+              <dd class="govuk-summary-list__value">
+               
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="medication-change?index={{loop.index0}}&medName={{medication.medicationName}}&med-doseF={{medication.medicationDoseFreq}}&med-reason={{medication.medicationReason}}&med-eff={{medication.medicationEffectiveness}}&addNotes={{medication.medicationAdditionalNotes}}">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+              </dd>
+            </div>
+            {% else %}
+
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+   -->
+       <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+        
+    
+
+            <br>
+            <br>
+
+
+<form action="#" method="post">
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another condition or disability
+    </button>
+    </div>
+
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Conditions declaration
+          </h2>
+        </legend>
+
+    {% if data["conditionDeclaration"] == "None" %}    
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added.">
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["conditionDeclaration"] == "All conditions and disabilities reported during the consultation have been added." %}
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="conditionDec" name="conditionDeclaration" type="checkbox" value="All conditions and disabilities reported during the consultation have been added." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="conditionDec">
+            All conditions and disabilities reported during the consultation have been added.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %} 
+
+      </form>
+    </div>
+</div>
+     
+   
+
+{% endblock %}
