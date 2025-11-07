@@ -436,3 +436,24 @@ input:checked + .slider:before {
   }
   
   .govuk-width-container--full-width { max-width: 98% !important; }
+
+  // Overrides
+.app-autocomplete--with-suggestions .autocomplete__menu {
+  top: govuk-spacing(4);
+  margin-bottom: govuk-spacing(7);
+  border-top: 2px solid govuk-colour("black");
+}
+
+.app-autocomplete--with-suggestions:not(.app-autocomplete--with-suggestions-no-results) .autocomplete__wrapper ul:before {
+  content: 'Suggestions';
+  display: block;
+  width: 100%;
+  padding: 4px 8px;
+  border-bottom: 2px solid govuk-colour("black");
+  background-color: govuk-colour("light-grey");
+  @include govuk-font(16, $weight: regular);
+  box-sizing: border-box;
+  position: sticky;
+  z-index: 1;
+  top: 0px;
+}
