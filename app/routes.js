@@ -6010,8 +6010,50 @@ router.post('/justifications-twoIteration/attendees-none', function (req, res) {
 })
 
 
+//Conditions name
 
+router.post('/conditionsNameList/conditions-none', function (req, res) {
 
+  res.redirect('/conditionsNameList/conditions')
+})
+
+router.post('/conditionsNameList/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/conditionsNameList/conditions-addAnother')
+})
+
+router.post('/conditionsNameList/conditions-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList/conditions')
+})
+
+router.post('/conditionsNameList/conditions-change', function (req, res) {
+const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+   res.redirect('/conditionsNameList/conditions-addAnother')
+})
 
 // Routes for prompts iteration six-one //
 
