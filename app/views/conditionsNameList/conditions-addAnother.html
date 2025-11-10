@@ -1,4 +1,4 @@
--{% extends "layouts/side-nav-prompts-five" %}
+-{% extends "layouts/evidence-noSpiltscreen.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -88,7 +88,7 @@ display: block;
              
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a> -->
+                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a>
                 </dd> 
               </div>
               <div class="govuk-summary-list__row">

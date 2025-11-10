@@ -6010,7 +6010,35 @@ router.post('/justifications-twoIteration/attendees-none', function (req, res) {
 })
 
 
-//Conditions name
+//Conditions name list
+
+router.post('/conditionsNameList/evidence-none?source=evidence', function (req, res) {
+
+  res.redirect('/conditionsNameList/evidence?source=evidence')
+})
+
+router.post('/conditionsNameList/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/conditionsNameList/evidence-addAnother?source=evidence')
+})
+
+router.post('/conditionsNameList/evidence-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList/evidence')
+})
 
 router.post('/conditionsNameList/conditions-none', function (req, res) {
 
