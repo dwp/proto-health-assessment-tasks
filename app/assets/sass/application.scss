@@ -457,3 +457,76 @@ input:checked + .slider:before {
   z-index: 1;
   top: 0px;
 }
+
+.moj-filter-tags {
+  margin-bottom: 20px;
+  padding-left: 0;
+  font-size: 0;
+}
+
+.moj-filter-tags li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.moj-filter__tag {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #0b0c0c;
+  color: #0b0c0c;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
+}
+
+@media print {
+  .moj-filter__tag {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .moj-filter__tag {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+@media print {
+  .moj-filter__tag {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+.moj-filter__tag:link, .moj-filter__tag:visited {
+  color: #0b0c0c;
+}
+
+.moj-filter__tag:focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+}
+
+.moj-filter__tag:hover {
+  color: #ffffff;
+  background-color: #0b0c0c;
+}
+
+.moj-filter__tag::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  background-image: url(/assests/images/icon-tag-remove-cross.svg);
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.moj-filter__tag:hover::after {
+  background-image: url(/assets/images/icon-tag-remove-cross-white.svg);
+}

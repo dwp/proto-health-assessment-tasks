@@ -521,6 +521,109 @@ router.use((req, res, next) => {
         return res.redirect("/conditionsNameList/docs-3")
 
 
+          // conditions name list
+        case serviceRedirect.endsWith("/conditionsNameList-test/evidence-none?source=default"):
+        return res.redirect("/conditionsNameList-test/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/conditionsNameList-test/evidence-none?source=evidence"):
+        return res.redirect("/conditionsNameList-test/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/conditionsNameList-test/evidence-addAnother?source=evidence"):
+        return res.redirect("/conditionsNameList-test/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/consultation-date?source=Consultation date"):
+        return res.redirect("/conditionsNameList-test/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/consent?source=Claimant consent"):
+        return res.redirect("/conditionsNameList-test/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/verify-id?source=Claimant identity"):
+        return res.redirect("/conditionsNameList-test/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/attendees-none?source=Additional attendees"):
+        return res.redirect("/conditionsNameList-test/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/conditionsNameList-test/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/conditionsNameList-test/conditions-none?source=Condition history"):
+        return res.redirect("/conditionsNameList-test/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/conditions-addAnother?source=Condition history"):
+        return res.redirect("/conditionsNameList-test/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/conditionsNameList-test/medications-none?source=Medication"):
+        return res.redirect("/conditionsNameList-test/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/medication-addAnother?source=Medication"):
+        return res.redirect("/conditionsNameList-test/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/conditionsNameList-test/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/conditionsNameList-test/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/conditionsNameList-test/preparingfood?source=Preparing food"):
+        return res.redirect("/conditionsNameList-test/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/conditionsNameList-test/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/conditionsNameList-test/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/conditionsNameList-test/managingtherapy?source=Managing therapy"):
+        return res.redirect("/conditionsNameList-test/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/conditionsNameList-test/washingbathing?source=Washing and bathing"):
+        return res.redirect("/conditionsNameList-test/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/conditionsNameList-test/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/conditionsNameList-test/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/conditionsNameList-test/dressing?source=Dressing and undressing"):
+        return res.redirect("/conditionsNameList-test/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/conditionsNameList-test/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/conditionsNameList-test/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/conditionsNameList-test/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/conditionsNameList-test/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/conditionsNameList-test/facetoface?source=Engaging face to face"):
+        return res.redirect("/conditionsNameList-test/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/conditionsNameList-test/budgeting?source=Budgeting"):
+        return res.redirect("/conditionsNameList-test/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/conditionsNameList-test/journeys?source=Planning and following journeys"):
+        return res.redirect("/conditionsNameList-test/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("conditionsNameList-test/movingaround?source=Moving around"):
+        return res.redirect("/conditionsNameList-test/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/conditionsNameList-test/mental-state?source=Mental state observations"):
+        return res.redirect("/conditionsNameList-test/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/physical-state?source=Informal observations"):
+        return res.redirect("/conditionsNameList-test/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-test/descriptor?source=Activity descriptors"):
+        return res.redirect("/conditionsNameList-test/descriptor?source=Activity descriptors")
+      
+
+      case serviceRedirect.endsWith("/conditionsNameList-test/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList-test/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/conditionsNameList-test/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList-test/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-test/review?source=Review"):
+        return res.redirect("/conditionsNameList-test/review?source=Review")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-test/check-answers-new"):
+        return res.redirect("/conditionsNameList-test/check-answers-new")
+
+       case serviceRedirect.endsWith("/conditionsNameList-test/docs-3"):
+        return res.redirect("/conditionsNameList-test/docs-3")
+
+
       default:
         return res.redirect("/")
     }
@@ -6087,6 +6190,87 @@ const conditionName = req.session.data['condition-name-first']
   req.session.data.conditionAdded = conditionAdded
 
    res.redirect('/conditionsNameList/conditions-addAnother')
+})
+
+
+//Conditions name list -- test
+
+router.post('/conditionsNameList-test/evidence-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-test/evidence')
+})
+
+
+router.post('/conditionsNameList-test/evidence-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-test/evidence')
+})
+
+router.post('/conditionsNameLis-test/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/conditionsNameList-test/evidence-addAnother?source=evidence')
+})
+
+router.post('/conditionsNameList-test/evidence-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-test/evidence')
+})
+
+router.post('/conditionsNameList-test/conditions-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-test/conditions')
+})
+
+router.post('/conditionsNameList-test/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/conditionsNameList-test/conditions-addAnother')
+})
+
+
+router.post('/conditionsNameList-test/conditions-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-test/conditions')
+})
+
+router.post('/conditionsNameList-test/conditions-change', function (req, res) {
+const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+   res.redirect('/conditionsNameList-test/conditions-addAnother')
 })
 
 // Routes for prompts iteration six-one //

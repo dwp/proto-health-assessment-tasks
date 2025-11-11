@@ -1,0 +1,380 @@
+{% extends "layouts/side-nav-prompts-five.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Planning and following journeys</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+              
+              
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="planningJourneyNotes">
+              Functional history for planning and following journeys
+            </label>
+          
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJourneyNotes" name="planningJourneyNotes" rows="15">{{data["planningJourneyNotes"]}}</textarea>
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            
+              Which of these describes how well the claimant can plan and follow journeys?
+            
+            </legend>
+            
+          
+            <div class="govuk-radios">
+              
+              {% if data["journeysSelectpbr"] == '(11a) Can plan and follow the route of a journey unaided' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+
+                  {% elseif data["journeysSelectpbr"] == '(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+                  
+                  {% elseif data["journeysSelectpbr"] == '(11c) Cannot plan the route of a journey' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+
+                  {% elseif data["journeysSelectpbr"] == '(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+
+                  {% elseif data["journeysSelectpbr"] == '(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+
+                  {% elseif data["journeysSelectpbr"] == '(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid' %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid" {{ checked }}>
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+
+                  {% elseif data["journeysSelectpbr"] === undefined %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr" name="journeysSelectpbr" type="radio" value="(11a) Can plan and follow the route of a journey unaided">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr">
+                  (11a) Can plan and follow the route of a journey unaided
+                </label>
+                  </div>
+    
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-2" name="journeysSelectpbr" type="radio" value="(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-2">
+                  (11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+           
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-3" name="journeysSelectpbr" type="radio" value="(11c) Cannot plan the route of a journey">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-3">
+                  (11c) Cannot plan the route of a journey
+                </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-4" name="journeysSelectpbr" type="radio" value="(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-4">
+                  (11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+                </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-5" name="journeysSelectpbr" type="radio" value="(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-5">
+                  (11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+                </label>
+                  </div>
+             
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="journeysSelectpbr-6" name="journeysSelectpbr" type="radio" value="(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid">
+                    <label class="govuk-label govuk-radios__label" for="journeysSelectpbr-6">
+                  (11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                </label>
+                  </div>
+                  {% endif %}
+                
+              
+            </div>
+            
+          
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="planningJustify">
+              Justification for planning and following journeys
+            </label>
+          
+            <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="planningJustification" name="planningJustify" rows="15">{{data["planningJustify"]}}</textarea>
+          </div>
+          
+          
+           </div>
+        </form>
+      </div>
+   </form>
+</div>
+
+
+
+{% endblock %}
