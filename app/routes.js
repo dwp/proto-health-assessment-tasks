@@ -6206,7 +6206,7 @@ router.post('/conditionsNameList-test/evidence-none', function (req, res) {
   res.redirect('/conditionsNameList-test/evidence')
 })
 
-router.post('/conditionsNameLis-test/evidence', function (req, res) {
+router.post('/conditionsNameList-test/evidence', function (req, res) {
   const evidenceNo = req.session.data['index']
   const evidenceName = req.session.data['document-name']
   const evidenceDate = req.session.data['date-of-evidence']
