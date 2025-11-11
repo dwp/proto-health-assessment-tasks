@@ -6012,9 +6012,15 @@ router.post('/justifications-twoIteration/attendees-none', function (req, res) {
 
 //Conditions name list
 
-router.post('/conditionsNameList/evidence-none?source=evidence', function (req, res) {
+router.post('/conditionsNameList/evidence-none', function (req, res) {
 
-  res.redirect('/conditionsNameList/evidence?source=evidence')
+  res.redirect('/conditionsNameList/evidence')
+})
+
+
+router.post('/conditionsNameList/evidence-none', function (req, res) {
+
+  res.redirect('/conditionsNameList/evidence')
 })
 
 router.post('/conditionsNameList/evidence', function (req, res) {
