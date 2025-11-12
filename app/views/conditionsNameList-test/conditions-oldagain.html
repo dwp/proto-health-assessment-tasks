@@ -613,7 +613,26 @@
             shouldSort: true,
           });
 
+          const createTag = (keyCode = 13) => {
+            if (keyCode === 13) {
+              const input = document.querySelector("input[name='condition-name-first']");
 
+              if (input.value.trim()) {
+                const tag = document.createElement("span");
+                const tags = document.getElementById("tags");
+
+                tag.className = "moj-filter__tag govuk-!-margin-top-0 govuk-!-margin-right-2 govuk-!-margin-bottom-2";
+                tag.textContent = input.value;
+
+                tag.addEventListener("click", function () {
+                  this.remove();
+                });
+
+                input.value = "";
+                tags.appendChild(tag);
+              }
+            }
+          };
 
           accessibleAutocomplete({
             element: document.querySelector('#my-autocomplete-container'),
@@ -642,45 +661,39 @@
             }
           });
 
-          const click = (event) => setTimeout(() => createTag(), 0)
+          document
+            .querySelector("input[name='condition-name-first']")
+            .addEventListener("keyup", (event) => {
+              createTag(event.keyCode);
+            });
 
-          const createTag = () => {
-            const input = document.querySelector("input[name='condition-name-first']");
+          document
+            .querySelector("input[name='condition-name-first']")
+            .addEventListener("keydown", (event) => {
+              if (event.keyCode === 9) {
+                document.addEventListener(
+                  "keyup",
+                  () => {
+                    createTag();
+                  },
+                  {
+                    once: true,
+                  },
+                );
+              }
+            });
 
-            if (input.value.trim()) {
-              const tag = document.createElement("span");
+          document
+            .querySelector("#my-autocomplete__listbox")
+            .addEventListener("click", () => {
+              createTag(13);
+            });
 
-              tag.addEventListener("click", () => tag.remove());
-              tag.className = "moj-filter__tag govuk-!-margin-top-0 govuk-!-margin-right-2 govuk-!-margin-bottom-2";
-              tag.textContent = input.value;
-
-              input.value = "";
-
-              document.getElementById("tags").appendChild(tag);
-            }
-          };
-
-          const keydown = (event) => {
-            const input = document.querySelector("input[name='condition-name-first']");
-
-            if (event.key === "Tab" && input.value.trim()) {
-              document.addEventListener("keyup", () => createTag(), { once: true });
-            }
-          }
-
-          const keyup = (event) => {
-            if (event.key === "Enter") {
-              event.preventDefault();
-
-              createTag();
-            }
-          }
-
-          document.querySelector("#my-autocomplete__listbox").addEventListener("click", click);
-          document.querySelector("#my-autocomplete__listbox").addEventListener("keydown", keydown);
-          document.querySelector("#my-autocomplete__listbox").addEventListener("keyup", keyup);
-          document.querySelector("input[name='condition-name-first']").addEventListener("keydown", keydown);
-          document.querySelector("input[name='condition-name-first']").addEventListener("keyup", keyup);
+          document
+            .querySelector("#my-autocomplete__listbox")
+            .addEventListener("keyup", (event) => {
+              createTag(event.keyCode);
+            });
         })();
       </script>
       <!-- <div class="govuk-form-group">
