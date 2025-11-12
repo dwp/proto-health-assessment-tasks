@@ -522,11 +522,11 @@ input:checked + .slider:before {
   width: 10px;
   height: 10px;
   margin-left: 5px;
-  background-image: url(/assests/images/icon-tag-remove-cross.svg);
+  background-image: url(/public/images/icon-tag-remove-cross.svg);
   font-weight: bold;
   vertical-align: middle;
 }
 
 .moj-filter__tag:hover::after {
-  background-image: url(/assets/images/icon-tag-remove-cross-white.svg);
+  background-image: url(/public/images/icon-tag-remove-cross-white.svg);
 }
