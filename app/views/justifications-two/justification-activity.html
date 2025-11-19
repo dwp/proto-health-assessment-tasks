@@ -483,8 +483,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         {% set outerLoopIndex = loop.index0 %}
          {% set count = loop.index %}
       <input type="hidden" name="radioID" value="{{ loop.index }}"/>
-      <h2 class="govuk-heading-m" id="{{count}}">Justification for activity {{ justification.groupName }}</h2>
-        
+      <div>
+      <h2 class="govuk-heading-m" id="{{count}}" style="display: inline-block;">Justification for activity {{ justification.groupName }}</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Remove</a>
+      </div>
         <!-- {{prepFood}}, {{nutritionNum}} {{therapyNum}} -->
           <!-- <p class="govuk-body">{{ justification.activityName | join(", ") }}</p> -->
 
