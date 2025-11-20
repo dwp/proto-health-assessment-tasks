@@ -253,7 +253,27 @@
              </li>
              {% endif %}
 
-             {% if data["source"] == 'Qualifying period and prospective test' %}
+              {% if data["source"] == 'Daily living qualifying period and prospective test' %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="dl-qual?source=Daily living qualifying period and prospective test" aria-current="location">Daily living qualifying period and prospective test</a>
+             </li>
+             {% else %}
+             <li class="moj-side-navigation__item">
+               <a href="dl-qual?source=Daily living qualifying period and prospective test">Daily living qualifying period and prospective test</a>
+             </li>
+             {% endif %}
+
+             {% if data["source"] == 'Mobility qualifying period and prospective test' %}
+             <li class="moj-side-navigation__item moj-side-navigation__item--active">
+               <a href="mobility-qual?source=Mobility qualifying period and prospective test" aria-current="location">Mobility qualifying period and prospective test</a>
+             </li>
+             {% else %}
+             <li class="moj-side-navigation__item">
+               <a href="mobility-qual?source=Mobility qualifying period and prospective test">Mobility qualifying period and prospective test</a>
+             </li>
+             {% endif %}
+
+             <!-- {% if data["source"] == 'Qualifying period and prospective test' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="dl-qual?source=Qualifying period and prospective test" aria-current="location">Qualifying period and prospective test</a>
              </li>
@@ -261,7 +281,7 @@
              <li class="moj-side-navigation__item">
                <a href="dl-qual?source=Qualifying period and prospective test">Qualifying period and prospective test</a>
              </li>
-             {% endif %}
+             {% endif %} -->
 
              {% if data["source"] == 'Review' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">

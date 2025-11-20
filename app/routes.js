@@ -77,8 +77,11 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-two/addToGroup"):
         return res.redirect("/justifications-two/addToGroup")
 
-      case serviceRedirect.endsWith("/justifications-two/dl-qual?source=Qualifying period and prospective test"):
-        return res.redirect("/justifications-two/dl-qual?source=Qualifying period and prospective test")
+      case serviceRedirect.endsWith("/justifications-two/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/justifications-two/dl-qual?source=Daily living qualifying period and prospective test")
+
+      case serviceRedirect.endsWith("/justifications-two/mobility-qual?source=Mobility qualifying period and prospective test"):
+    return res.redirect("/justifications-two/mobility-qual?source=Mobility qualifying period and prospective test")
       
       case serviceRedirect.endsWith("/justifications-two/review?source=Review"):
         return res.redirect("/justifications-two/review?source=Review")
