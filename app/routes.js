@@ -159,40 +159,14 @@ router.use((req, res, next) => {
 
         //justification two iterated - sidenav
         case serviceRedirect.endsWith("/justifications-twoIteration/evidence-addAnother?source=evidence"):
-        return res.redirect("/justifications-two/evidence-addAnother?source=evidence")
+        return res.redirect("/justifications-twoIteration/evidence-addAnother?source=evidence")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/consultation-date?source=Consultation date"):
-        return res.redirect("/justifications-twoIteration/consultation-date?source=Consultation date")
+      case serviceRedirect.endsWith("/justifications-twoIteration/conditions-addAnother?source=Brief summary of clinical details"):
+        return res.redirect("/justifications-twoIteration/conditions-addAnother?source=Brief summary of clinical details")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/consent?source=Claimant consent"):
-        return res.redirect("/justifications-twoIteration/consent?source=Claimant consent")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/verify-id?source=Claimant identity"):
-        return res.redirect("/justifications-twoIteration/verify-id?source=Claimant identity")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/attendees-none?source=Additional attendees"):
-        return res.redirect("/justifications-twoIteration/attendees-none?source=Additional attendees")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/attendees-addAnother?source=Additional attendees"):
-        return res.redirect("/justifications-twoIteration/attendees-addAnother?source=Additional attendees")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/conditions-addAnother?source=Condition history"):
-        return res.redirect("/justifications-twoIteration/conditions-addAnother?source=Condition history")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/medication-addAnother?source=Medication"):
-        return res.redirect("/justifications-twoIteration/medication-addAnother?source=Medication")
+      case serviceRedirect.endsWith("/justifications-twoIteration/medication-addAnother?source=Phone calls"):
+        return res.redirect("/justifications-twoIteration/medication-addAnother?source=Phone calls")
         
-      case serviceRedirect.endsWith("/justifications-twoIteration/soch1-additional?source=Social and occupational history"):
-        return res.redirect("/justifications-twoIteration/soch1-additional?source=Social and occupational history")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/functional-history?source=Functional history"):
-        return res.redirect("/justifications-twoIteration/functional-history?source=Functional history")
-      
-      case serviceRedirect.endsWith("/justifications-twoIteration/mental-state?source=Mental state observations"):
-        return res.redirect("/justifications-twoIteration/mental-state?source=Mental state observations")
-
-      case serviceRedirect.endsWith("/justifications-twoIteration/physical-state?source=Informal observations"):
-        return res.redirect("/justifications-twoIteration/physical-state?source=Informal observations")
       
       case serviceRedirect.endsWith("/justifications-twoIteration/descriptor?source=Activity descriptors"):
         return res.redirect("/justifications-twoIteration/descriptor?source=Activity descriptors")
@@ -203,8 +177,11 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-twoIteration/addToGroup"):
         return res.redirect("/justifications-twoIteration/addToGroup")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/dl-qual?source=Qualifying period and prospective test"):
-        return res.redirect("/justifications-twoIteration/dl-qual?source=Qualifying period and prospective test")
+      case serviceRedirect.endsWith("/justifications-twoIteration/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/justifications-twoIteration/dl-qual?source=Daily living qualifying period and prospective test")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period and prospective test"):
+    return res.redirect("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period and prospective test")
       
       case serviceRedirect.endsWith("/justifications-twoIteration/review?source=Review"):
         return res.redirect("/justifications-twoIteration/review?source=Review")
