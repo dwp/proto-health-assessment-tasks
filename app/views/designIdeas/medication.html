@@ -1,0 +1,132 @@
+{% extends "layouts/no-side-nav-prompts-five.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">    -->
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Add a medication
+        </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+          <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="medications-name">
+                <b>Medication name</b>
+              </label>
+              <textarea class="govuk-textarea" id="medications-name" name="medications-name" rows="1"></textarea>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="medications-dose">
+                <b>Dosage and frequency</b>
+              </label>
+              <textarea class="govuk-textarea" id="medications-dose" name="medications-dose" rows="1"></textarea>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="medications-reason">
+                <b>Reason for taking</b>
+              </label>
+              <textarea class="govuk-textarea" id="medications-reason" name="medications-reason" rows="1"></textarea>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    How effective is the medication?
+                  </h3>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="effectiveYes" name="medications-efficacy" type="radio" value="Effective">
+                    <label class="govuk-label govuk-radios__label" for="effectiveYes">
+                      Effective
+                    </label>
+                  </div>
+               
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="partialEffective" name="medications-efficacy" type="radio" value="Partially effective">
+                    <label class="govuk-label govuk-radios__label" for="partialEffective">
+                      Partially effective
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="notEffective" name="medications-efficacy" type="radio" value="Not effective">
+                    <label class="govuk-label govuk-radios__label" for="notEffective">
+                      Not effective
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+    
+
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="medications-additional-notes">
+              <b>Additional notes (optional)</b>
+              </label>
+              <textarea class="govuk-textarea" id="medications-additional-notes" name="medications-additional-notes" rows="5" aria-describedby="medication additional notes"></textarea>
+            </div>
+          </div>
+         
+
+          </fieldset>
+
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+            {% if (data['medicationAdded']) %}
+            <p><a href="medication-addAnother">Cancel</a></p>
+            {% else %}
+            <p><a href="medications-none">Cancel</a></p>
+            {% endif %}
+
+          </div>
+
+        </div>
+      <!-- </div> -->
+    </form>
+  <!-- </div> -->
+      
+
+{% endblock %}

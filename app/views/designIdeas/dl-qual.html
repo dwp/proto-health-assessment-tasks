@@ -1,0 +1,216 @@
+{% extends "layouts/designIdeaLayout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Daily living qualifying period and prospective test</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+
+         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dl-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Has the claimant had the functional restriction for at least 3 months?
+            </legend>
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dl" name="qualifying-period" type="radio" value="Yes" {{checked}}>
+                    <label class="govuk-label govuk-radios__label" for="dl">
+                      Yes
+                    </label>
+                  </div>
+ 
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="dl-2" name="qualifying-period" type="radio" value="No" aria-controls="conditional-dl-2" aria-expanded="false">
+                      <label class="govuk-label govuk-radios__label" for="dl-2">
+                        No
+                      </label>
+                  </div>
+                  
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dl-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--s" for="part-not-met-dl">
+                          Qualifying period details
+                        </label>
+
+                          <textarea class="govuk-textarea" id="part-not-met-dl" name="part-not-met-dl" rows="5">{{data["part-not-met-dl"]}}</textarea>
+                      </div>
+                  </div>
+      
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="dl-3" name="qualifying-period" type="radio" value="No daily living restriction found">
+                      <label class="govuk-label govuk-radios__label" for="dl-3">
+                        No daily living restriction found
+                      </label>
+                    </div>
+        
+           </div>
+        </fieldset>
+      </div>
+    
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dl9-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Is the claimant likely to have the functional restriction in 9 months?
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dl9" name="dl9" type="radio" value="Yes" {{checked}}>
+                    <label class="govuk-label govuk-radios__label" for="dl9">
+                      Yes
+                    </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dl9-2" name="dl9" type="radio" value="No" aria-controls="conditional-dl9-2" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="dl9-2">
+                      No
+                    </label>
+                  </div>
+              
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dl9-2">
+                      <div class="govuk-form-group">
+                          <label class="govuk-label govuk-label--s" for="9part-not-met-dl">
+                            Prospective test details
+                          </label>
+                          <textarea class="govuk-textarea" id="9part-not-met-dl" name="9part-not-met-dl" rows="5">{{data["9part-not-met-dl"]}}</textarea>
+                      </div>
+                  </div>
+        
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dl9-3" name="dl9" type="radio" value="No daily living restriction found">
+                    <label class="govuk-label govuk-radios__label" for="dl9-3">
+                      No daily living restriction found
+                    </label>
+                 </div>
+            </div>
+                </fieldset>
+          </div>
+
+         <!-- <h2 class="govuk-heading-m">Mobility qualifying period and prospective test</h2>
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="qp-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Has the claimant had the functional restriction for at least 3 months?
+            </legend>
+            
+          
+          <div id="qp-hint" class="govuk-hint">
+              The qualifying period of the required period condition
+            </div> -->
+
+        <!-- <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="qp" name="mobility-qp" type="radio" value="Yes" {{checked}}>
+                    <label class="govuk-label govuk-radios__label" for="qp">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="qp-2" name="mobility-qp" type="radio" value="No" aria-controls="conditional-qp-2" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="qp-2">
+                      No
+                    </label>  
+                  </div>
+                  
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-qp-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--s" for="part-not-met">
+                        Qualifying period details
+                      </label>
+                      <textarea class="govuk-textarea" id="part-not-met" name="part-not-met" rows="5"></textarea>
+                    </div>
+                </div>
+                  
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="qp-3" name="mobility-qp" type="radio" value="No mobility restriction found">
+                    <label class="govuk-label govuk-radios__label" for="qp-3">
+                      No mobility restriction found
+                    </label>
+                  </div>
+            </div>
+          </fieldset>
+          
+          
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="9qp-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Is the claimant likely to have the functional restriction in 9 months?
+            </legend>-->
+            
+          
+            <!-- <div id="9qp-hint" class="govuk-hint">
+              The prospective test of the required period condition
+            </div> -->
+          
+          <!--
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="9qp" name="9qp" type="radio" value="Yes" {{checked}}>
+                    <label class="govuk-label govuk-radios__label" for="9qp">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="9qp-2" name="9qp" type="radio" value="No" aria-controls="conditional-9qp-2" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="9qp-2">
+                      No
+                    </label>
+                  </div>
+                  
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9qp-2">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="9part-not-met">
+              Prospective test details
+            </label>
+        
+            <textarea class="govuk-textarea" id="9part-not-met" name="9part-not-met" rows="5"></textarea>
+          </div>
+        </div>
+                  
+  
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="9qp-3" name="9qp" type="radio" value="No mobility restriction found">
+          <label class="govuk-label govuk-radios__label" for="9qp-3">
+        No mobility restriction found
+      </label>
+     </div> -->
+     </form>  
+ 
+     <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+         <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="mobility-qual?source=Mobility qualifying period and prospective test" rel="next">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <span class="govuk-visually-hidden">:</span>
+              <span class="govuk-pagination__link-label">Mobility qualifying period and prospective test</span>
+            </a>
+          </div>
+      </nav>
+  </div>
+</div>         
+ 
+
+{% endblock %}

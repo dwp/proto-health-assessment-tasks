@@ -1,0 +1,94 @@
+{% extends "layouts/designIdeaLayout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Additional attendees
+        </h1>
+        <div id="condition-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-9">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <!-- <h2 class="govuk-fieldset__heading">
+             
+            </h2> -->
+          </legend>
+  
+      {% if data["attendeeDeclaration"] == "None" %}    
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="None" {{checked}}>
+            <label class="govuk-label govuk-checkboxes__label" for="attendeeDec">
+              The claimant was alone during the consultation.
+            </label>
+          </div>
+        </div>
+        </fieldset>
+        </div>
+  
+        {% elseif data["attendeeDeclaration"] == "The claimant was alone during the consultation." %}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="attendeeDec" name="attendeeDeclaration" type="checkbox" value="The claimant was alone during the consultation." {{ checked }}>
+            <label class="govuk-label govuk-checkboxes__label" for="attendeeDec">
+              The claimant was alone during the consultation.
+            </label>
+          </div>
+        </div>
+        </fieldset>
+        </div>
+        {% endif %}  
+      
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add an attendee
+          </button>
+         
+      </fieldset>
+    </div>
+  
+     <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+         <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="conditions-addAnother?source=Condition history" rel="next">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <span class="govuk-visually-hidden">:</span>
+              <span class="govuk-pagination__link-label">Condition history</span>
+            </a>
+          </div>
+      </nav>
+    </form>
+    </div>
+  </div>
+
+      
+
+{% endblock %}

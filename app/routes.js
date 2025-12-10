@@ -604,6 +604,78 @@ router.use((req, res, next) => {
         return res.redirect("/conditionsNameList-test/docs-3")
 
 
+
+      //design ideas prototype
+      case serviceRedirect.endsWith("/designIdeas/evidence-addAnother?source=evidence"):
+        return res.redirect("/designIdeas/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/designIdeas/consultation-date?source=Consultation date"):
+        return res.redirect("/designIdeas/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/designIdeas/consent?source=Claimant consent"):
+        return res.redirect("/designIdeas/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/designIdeas/verify-id?source=Claimant identity"):
+        return res.redirect("/designIdeas/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/designIdeas/attendees-none?source=Additional attendees"):
+        return res.redirect("/designIdeas/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/designIdeas/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/designIdeas/attendees-addAnother?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/designIdeas/conditions-addAnother?source=Condition history"):
+        return res.redirect("/designIdeas/conditions-addAnother?source=Condition history")
+
+      case serviceRedirect.endsWith("/designIdeas/medication-addAnother?source=Medication"):
+        return res.redirect("/designIdeas/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/designIdeas/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/designIdeas/soch1-additional?source=Social and occupational history")
+
+      case serviceRedirect.endsWith("/designIdeas/functional-history?source=Functional history"):
+        return res.redirect("/designIdeas/functional-history?source=Functional history")
+      
+      case serviceRedirect.endsWith("/designIdeas/mental-state?source=Mental state observations"):
+        return res.redirect("/designIdeas/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/designIdeas/physical-state?source=Informal observations"):
+        return res.redirect("/designIdeas/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/designIdeas/descriptor?source=Activity descriptors"):
+        return res.redirect("/designIdeas/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/designIdeas/justification-activity?source=Justifications"):
+        return res.redirect("/designIdeas/justification-activity?source=Justifications")
+
+      case serviceRedirect.endsWith("/designIdeas/addToGroup"):
+        return res.redirect("/designIdeas/addToGroup")
+
+        case serviceRedirect.endsWith("/designIdeas/dl-qual?source=Qualifying period and prospective test"):
+        return res.redirect("/designIdeas/dl-qual?source=Qualifying period and prospective test")
+
+        case serviceRedirect.endsWith("/designIdeas/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/designIdeas/dl-qual?source=Daily living qualifying period and prospective test")
+
+      case serviceRedirect.endsWith("/designIdeas/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/designIdeas/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/designIdeas/review?source=Review"):
+        return res.redirect("/designIdeas/review?source=Review")
+      
+      case serviceRedirect.endsWith("/designIdeas/check-answers-new"):
+        return res.redirect("/designIdeas/check-answers-new")
+
+       case serviceRedirect.endsWith("/designIdeas/docs-3"):
+        return res.redirect("/designIdeas/docs-3")
+
+        case serviceRedirect.endsWith("/designIdeas/justification-none?source=Descriptor choices and justifications"):
+        return res.redirect("/designIdeas/justification-none?source=Descriptor choices and justifications")
+
+         case serviceRedirect.endsWith("/designIdeas/justification-addAnother?source=Descriptor choices and justifications"):
+        return res.redirect("/designIdeas/justification-addAnother?source=Descriptor choices and justifications")
+
+
       default:
         return res.redirect("/")
     }

@@ -1,0 +1,1146 @@
+{% extends "layouts/designIdeaLayout" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+
+  .removeGroup {
+    width: 23%;
+  }
+
+  @media (min-width: 48.0625em) {
+.sticky {
+        position: sticky;
+        top: 10px;
+        max-height: 100vh;
+        overflow-y: auto;
+        margin-bottom: 20px;
+}
+}
+
+ .border {
+      border-left: 3px solid #1d70b8;
+      padding-left: 10px;
+  }
+
+ .border-notes {
+      padding-left: 20px;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> 
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl"></span>
+            <h1 class="govuk-fieldset__heading">
+              Justifications
+            </h1>
+            <div id="passport-issued-hint" class="govuk-hint">
+            </div>
+          </legend>
+
+            <h2 class="govuk-heading-m" id="activityGroup">Select the activities you want to group</h2>
+
+            <div id="activities-hint" class="govuk-hint">
+             You can group activities that have the same justification. Each group must contain at least one activity.
+            </div>
+
+          <table class="govuk-table">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+        <thead class="govuk-table__head">
+
+   
+    
+          {% if data["justificationDCheck"].includes("Preparing food") or data["hiddenActivity"].includes("Preparing food")  %} 
+             <input class="govuk-checkboxes__input" id="justicationPF" name="hiddenActivity" type="hidden" value="Preparing food" data-aria-controls="">
+              {% set prepFood = 1 %}
+  
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationPF" name="justificationDCheck" type="checkbox" value="Preparing food" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationPF">
+                <b>Preparing food</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+            {% if (data['preparingfoodSelect']) %}
+
+                {{data["preparingfoodSelect"]}}
+      
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+            No descriptor selected
+             
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+              {% endif %}
+          </tr>
+          {% endif %}
+        </thead>
+        <tbody class="govuk-table__body">
+          {% if data['justificationDCheck'].includes("Taking nutrition") or data["hiddenActivity"].includes("Taking nutrition")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Taking nutrition" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationTN" name="justificationDCheck" type="checkbox" value="Taking nutrition" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationTN">
+                <b>Taking nutrition</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['takingnutritionSelect']) %}
+             
+               {{data["takingnutritionSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+             No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+        {% endif %}
+
+          {% if data['justificationDCheck'].includes("Managing therapy") or data["hiddenActivity"].includes("Managing therapy")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationTN" name="hiddenActivity" type="hidden" value="Managing therapy" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationMT" name="justificationDCheck" type="checkbox" value="Managing therapy" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationMT">
+                <b>Managing therapy</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['managingtherapySelect']) %}
+             
+               {{data["managingtherapySelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+            No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Washing and bathing") or data["hiddenActivity"].includes("Washing and bathing")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Washing and bathing" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationWB" name="justificationDCheck" type="checkbox" value="Washing and bathing" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationWB">
+                <b>Washing and bathing</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['washingbathingSelect']) %}
+             
+               {{data["washingbathingSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+               No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Managing toilet needs") or data["hiddenActivity"].includes("Managing toilet needs")  %} 
+
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Managing toilet needs" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationToiletNeeds" name="justificationDCheck" type="checkbox" value="Managing toilet needs" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationToiletNeeds">
+                <b>Managing toilet needs</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['toiletneedsSelect']) %}
+             
+               {{data["toiletneedsSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+             No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Dressing and undressing") or data["hiddenActivity"].includes("Dressing and undressing")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Dressing and undressing" data-aria-controls="">
+
+          {% else %}
+
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationDressing" name="justificationDCheck" type="checkbox" value="Dressing and undressing" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationDressing">
+                <b>Dressing and undressing</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['dressingSelect']) %}
+             
+               {{data["dressingSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+              No descriptor selected
+       
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+               {% endif %}
+
+
+          {% if data['justificationDCheck'].includes("Communicating verbally") or data["hiddenActivity"].includes("Communicating verbally")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Communicating verbally" data-aria-controls="">
+
+          {% else %}
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationCV" name="justificationDCheck" type="checkbox" value="Communicating verbally" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationCV">
+                <b>Communicating verbally</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['communicatingverballySelect']) %}
+             
+               {{data["communicatingverballySelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+             No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+           {% endif %}
+
+          {% if data['justificationDCheck'].includes("Reading and understanding signs, symbols and words") or data["hiddenActivity"].includes("Reading and understanding signs, symbols and words")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Reading and understanding signs, symbols and words" data-aria-controls="">
+
+          {% else %}
+
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationReading" name="justificationDCheck" type="checkbox" value="Reading and understanding signs, symbols and words" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationReading">
+                <b>Reading and understanding signs, symbols and words</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['readingunderstandingSelect']) %}
+             
+               {{data["readingunderstandingSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+              No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+          {% endif %}
+
+           {% if data['justificationDCheck'].includes("Engaging face to face") or data["hiddenActivity"].includes("Engaging face to face")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Engaging face to face" data-aria-controls="">
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationFace" name="justificationDCheck" type="checkbox" value="Engaging face to face" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationFace">
+                <b>Engaging face to face</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['facetofaceSelect']) %}
+             
+               {{data["facetofaceSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+              No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+          {% endif %}
+
+           {% if data['justificationDCheck'].includes("Budgeting") or data["hiddenActivity"].includes("Budgeting")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Budgeting" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Budgeting" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Budgeting</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['budgetingSelect']) %}
+             
+               {{data["budgetingSelect"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+             No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
+             {% if data['justificationDCheck'].includes("Planning and following journeys") or data["hiddenActivity"].includes("Planning and following journeys")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Planning and following journeys" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationBud" name="justificationDCheck" type="checkbox" value="Planning and following journeys" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationBud">
+                <b>Planning and following journeys</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['journeysSelectpbr']) %}
+             
+               {{data["journeysSelectpbr"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+              No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+
+          {% if data['justificationDCheck'].includes("Moving around") or data["hiddenActivity"].includes("Moving around")  %} 
+          <input class="govuk-checkboxes__input" id="justicationWB" name="hiddenActivity" type="hidden" value="Moving around" data-aria-controls="">
+
+          {% else %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="justicationmoving" name="justificationDCheck" type="checkbox" value="Moving around" data-aria-controls="">
+                <label class="govuk-label govuk-checkboxes__label" for="justicationmoving">
+                <b>Moving around</b>
+                </label>
+            </div>
+          </div>
+            </th>
+            <td class="govuk-table__cell">
+              {% if (data['movingaroundSelectpbr']) %}
+             
+               {{data["movingaroundSelectpbr"]}} 
+            </td>
+            <td class="govuk-table__cell">
+            {% else %}
+              No descriptor selected
+            </td>
+             <td class="govuk-table__cell">
+
+             </td>
+                {% endif %}
+          </tr>
+
+             {% endif %}
+    
+        </tbody>
+      </table>
+
+          </fieldset>
+
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Create group
+          </button>
+
+           {% if (data['justificationAdded']) %} 
+          <a href="addToGroup" class="govuk-link govuk-button group-btn govuk-button--secondary">Add to exisiting group</a>
+          {% else %} 
+
+          {% endif %} 
+          </div>
+  
+        {% for justification in data['justificationAdded'] %}
+        {% set outerLoopIndex = loop.index0 %}
+         {% set count = loop.index %}
+      <input type="hidden" name="radioID" value="{{ loop.index }}"/>
+      <div>
+      <h2 class="govuk-heading-m" id="{{count}}" style="display: inline-block;">Justification for activity {{ justification.groupName }}</h2>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Delete group</a>
+      </div>
+        <!-- {{prepFood}}, {{nutritionNum}} {{therapyNum}} -->
+          <!-- <p class="govuk-body">{{ justification.activityName | join(", ") }}</p> -->
+
+         {% for activityName in justification.activityName %} 
+            
+         {% if activityName === "Preparing food" %} 
+                {% set prepfoodNum = 1 %}
+
+                {% set nutritionNum = 2 %}
+                {% set therapyNum = 3 %}
+                  
+    
+         {% endif %} 
+         {% endfor %} 
+         
+    
+          {% for activityName in justification.activityName %} 
+                 
+      <dl class="govuk-summary-list" id="{{ outerLoopIndex + '-' + loop.index0 }}">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+           {{ activityName }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {% if activityName === "Preparing food" %} 
+                {{data["preparingfoodSelect"]}}
+               {% endif %}
+         
+               {% if activityName === "Taking nutrition" %} 
+                {{data["takingnutritionSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing therapy" %} 
+               {{data["managingtherapySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Washing and bathing" %} 
+               {{data["washingbathingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Managing toilet needs" %} 
+               {{data["toiletneedsSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Dressing and undressing" %} 
+               {{data["dressingSelect"]}}
+               {% endif %}
+
+                {% if activityName === "Communicating verbally" %} 
+               {{data["communicatingverballySelect"]}}
+               {% endif %}
+
+               {% if activityName === "Reading and understanding signs, symbols and words" %} 
+               {{data["readingunderstandingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Engaging face to face" %} 
+               {{data["facetofaceSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Budgeting" %} 
+               {{data["budgetingSelect"]}}
+               {% endif %}
+
+               {% if activityName === "Planning and following journeys" %} 
+               {{data["journeysSelectpbr"]}}
+               {% endif %}
+
+
+                {% if activityName === "Moving around" %} 
+               {{data['movingaroundSelectpbr']}}
+               {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions removeGroup">
+              <a class="govuk-link group-btn" id="removeLinkActivity" href="/justifications-two/justification-activity?source=Justifications">Remove from group<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+    
+        {% endfor %}
+
+        {% if justification.problemCheck == "The claimant has not reported problems with these activities and there was no evidence to suggest otherwise."  %} 
+         <p>The claimant has not reported problems with these activities and there was no evidence to suggest otherwise.</p>
+       
+         {% endif %}
+
+     {% if loop.index == "1"  %} 
+     <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            No problems with this activity
+          </h1>
+        </legend>
+        {% if (data['noProblemJustificationOne'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %} 
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationOne" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+            </label>
+          </div>
+        </div>
+        {% else %} 
+         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationOne" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+            </label>
+          </div>
+        </div>
+           {% endif %} 
+      </fieldset>
+    </div>
+       <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustify" rows="15">{{data["groupJustify"]}}</textarea>
+     
+       {% elseif loop.index == "2"  %} 
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+              {% if (data['noProblemJustificationTwo'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %} 
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationTwo" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+            {% else %}
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationTwo" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+             {% endif %}
+          </fieldset>
+        </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwo" rows="15">{{data["groupJustifyTwo"]}}</textarea>
+        {% elseif loop.index == "3"  %} 
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                No problems with this activity
+              </h1>
+            </legend>
+            {% if (data['noProblemJustificationThree'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %} 
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationThree" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+            {% else %}
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationThree" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                </label>
+              </div>
+            </div>
+            {% endif %}
+          </fieldset>
+        </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyThree" rows="15">{{data["groupJustifyThree"]}}</textarea>
+         {% elseif loop.index == "4"  %} 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              {% if (data['noProblemJustificationFour'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %} 
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationFour" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% else %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationFour" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% endif %}
+            </fieldset>
+          </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFour" rows="15">{{data["groupJustifyFour"]}}</textarea>
+         {% elseif loop.index == "5"  %} 
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                {% if (data['noProblemJustificationFive'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %} 
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationFive" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+                {% else %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationFive" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+                 {% endif %}
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFive" rows="15">{{data["groupJustifyFive"]}}</textarea>
+         {% elseif loop.index == "6"  %} 
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              {% if (data['noProblemJustificationSix'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationSix" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% else %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationSix" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+                {% endif %}
+            </fieldset>
+          </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySix" rows="15">{{data["groupJustifySix"]}}</textarea>
+          {% elseif loop.index == "7"  %} 
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+              {% if (data['noProblemJustificationSeven'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationSeven" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% else %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationSeven" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% endif %}
+            </fieldset>
+          </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySeven" rows="15">{{data["groupJustifySeven"]}}</textarea>
+          {% elseif loop.index == "8"  %} 
+                <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  No problems with this activity
+                </h1>
+              </legend>
+               {% if (data['noProblemJustificationEight'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationEight" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% else %}
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationEight" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                    The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                  </label>
+                </div>
+              </div>
+              {% endif %}
+            </fieldset>
+          </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEight" rows="15">{{data["groupJustifyEight"]}}</textarea>
+          {% elseif loop.index == "9"  %} 
+              <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                {% if (data['noProblemJustificationNine'] == "The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.") %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationNine" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint" {{checked}}>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+                {% else %}
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemJustificationNine" type="checkbox" value="The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+               {% endif %}
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyNine" rows="15">{{data["groupJustifyNine"]}}</textarea>
+         {% elseif loop.index == "10"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTen" rows="15">{{data["groupJustifyTen"]}}</textarea>
+         {% elseif loop.index == "11"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEleven" rows="15">{{data["groupJustifyEleven"]}}</textarea>
+         {% elseif loop.index == "12"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwelve" rows="15">{{data["groupJustifyTwelve"]}}</textarea>
+          {% elseif loop.index == "13"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyThirteen" rows="15">{{data["groupJustifyThirteen"]}}</textarea> 
+          {% elseif loop.index == "14"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFourteen" rows="15">{{data["groupJustifyFourteen"]}}</textarea>
+            {% elseif loop.index == "15"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyFithteen" rows="15">{{data["groupJustifyFithteen"]}}</textarea>
+            {% elseif loop.index == "16"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySixteen" rows="15">{{data["groupJustifySixteen"]}}</textarea>
+         {% elseif loop.index == "17"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifySeventeen" rows="15">{{data["groupJustifySeventeen"]}}</textarea>
+        {% elseif loop.index == "18"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyEighteen" rows="15">{{data["groupJustifyEighteen"]}}</textarea>
+        {% elseif loop.index == "19"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyNineteen" rows="15">{{data["groupJustifyNineteen"]}}</textarea>
+        {% elseif loop.index == "20"  %} 
+               <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    No problems with this activity
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="noProblems" name="noProblemTakeNut" type="checkbox" value="The claimant has not reported problems with taking nutrition, and there was no evidence to suggest otherwise." aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      The claimant has not reported problems with these activites, and there was no evidence to suggest otherwise.
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="overallJustifcation {{loop.index}}" name="groupJustifyTwenty" rows="15">{{data["groupJustifyTwenty"]}}</textarea>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+         {% endfor %} 
+
+            </div>
+          <!-- </div> -->
+        </form>
+        <script>
+           const ab = document.querySelectorAll(".group-btn"); // this will make anything redirect-able 
+          ab.forEach(link => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const formElement = document.getElementById("auto-redirect");
+              formElement.action = window.location.href = "?redirect=" + e.target.href;
+              formElement.submit();
+            });
+          });
+          </script>
+
+     <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+         <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="dl-qual?source=Daily living qualifying period and prospective test" rel="next">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <span class="govuk-visually-hidden">:</span>
+              <span class="govuk-pagination__link-label">Daily living qualifying period and prospective test</span>
+            </a>
+          </div>
+      </nav>
+    </div> 
+
+      <div class="govuk-grid-column-one-third sticky">
+  
+                  <ul class="govuk-list border-notes govuk-!-margin-bottom-8">
+                  <li>
+                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Assessment notes (opens in a new tab)</a>
+                    </li>
+                 </ul>
+
+
+            <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
+            
+              <h2 class="govuk-heading-s" id="subsection-title">
+              On this page
+            </h2>
+                <ul class="govuk-list">
+                  <li>
+                    <a href="#activityGroup" class="govuk-link govuk-link--no-visited-state">Select the activities you want to group</a>
+                  </li>
+                </ul>
+              {% for justification in data['justificationAdded'] %}
+              {% set count = loop.index %}
+              <ul class="govuk-list">
+                <li>
+                  <a href="#{{count}}" class="govuk-link govuk-link--no-visited-state">Justification for activity {{ justification.groupName }}</a>
+                </li>
+              </ul>
+                {% endfor %}                 
+            </nav>
+
+
+           
+    
+        </div>
+
+          <!-- <div class="govuk-grid-column-one-third">
+              <p class="govuk-body">
+                <a href="claimant-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Questionnaire responses (opens in a new tab)</a>
+              </p>
+              <p class="govuk-body">
+                <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Consultation notes (opens in a new tab)</a>
+              </p>
+            </div> -->
+
+             
+    </div>
+
+   </fieldset>
+    </div>
+
+
+      
+
+{% endblock %}

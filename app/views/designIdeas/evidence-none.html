@@ -1,0 +1,178 @@
+{% extends "layouts/designIdeaLayout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+
+<form action="#" method="post" id="auto-redirect">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Evidence
+        </h1>
+        <div id="condition-hint" class="govuk-hint">
+        </div>
+      </legend>
+
+       <p>No evidence has been added.</p>
+
+       <div class="govuk-button-group govuk-!-margin-bottom-8">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add evidence
+          </button>
+       </div>
+
+
+       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Did the claimant present further evidence during the consultation?
+            </h2>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+     
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="furtherEvidence" name="furtherEvidence" type="radio" value="Yes" data-aria-controls="further-evidence">
+              <label class="govuk-label govuk-radios__label" for="furtherEvidence">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="further-evidence">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="evidence-consultation">
+                  Evidence presented during consultation
+                </label>
+                <textarea class="govuk-textarea govuk-!-width-full" id="evidence-consultation" name="yesFurtherEvidence" type="text" spellcheck="false" autocomplete="text" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="furtherEvidence" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+               No
+              </label>
+            </div>
+           
+          </div>
+        </fieldset>
+      </div>
+
+
+
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Evidence declaration
+          </h2>
+        </legend>
+
+    {% if data["evidenceDeclaration"] == "None" %}    
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed.">
+          <label class="govuk-label govuk-checkboxes__label" for="evDec">
+            All evidence available on the day of the assessment report has been reviewed.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["evidenceDeclaration"] == "All evidence available on the day of the assessment report has been reviewed." %}
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available on the day of the assessment report has been reviewed." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="evDec">
+            All evidence available on the day of the assessment report has been reviewed.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %}    
+
+   
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Abbreviations used in this report</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Abbreviation</th>
+            <th scope="col" class="govuk-table__header">What it means</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">CH</th>
+            <td class="govuk-table__cell">Condition history</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">FE</th>
+            <td class="govuk-table__cell">Further evidence</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">FH</th>
+            <td class="govuk-table__cell">Functional history</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">IO</th>
+            <td class="govuk-table__cell">Informal observations</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">MSO</th>
+            <td class="govuk-table__cell">Mental state observations</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">SOH</th>
+            <td class="govuk-table__cell">Social and occupational history</td>
+          </tr>
+        </tbody>
+      </table>
+
+         
+      </fieldset>
+      
+      <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+         <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="consultation-date?source=Consultation date" rel="next">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <span class="govuk-visually-hidden">:</span>
+              <span class="govuk-pagination__link-label">Consultation date</span>
+            </a>
+          </div>
+      </nav>
+
+
+    </div>
+    </form>
+    </div>
+  </div>
+
+      
+
+{% endblock %}

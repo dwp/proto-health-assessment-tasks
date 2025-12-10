@@ -1,0 +1,242 @@
+{% extends "layouts/no-side-nav-justification-activity.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Budgeting</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+
+       <!-- <details class="govuk-details govuk-!-margin-bottom-4">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Claimant's questionnaire response
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           My partner has always looked after the bills.
+          </div>
+        </details>  
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Functional history for budgeting
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           {{data["budgetingFunctionalHistory"]}}
+          </div>
+        </details>  -->
+              
+              
+
+      <!-- <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="budgetingNotes">
+          Functional history for budgeting
+        </label>
+      
+      
+        <textarea class="govuk-textarea govuk-!-margin-bottom-9" id="budgetingNotes" name="budgetingNotes" rows="15">{{data["budgetingNotes"]}}</textarea>
+      </div> -->
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        
+          Which of these describes how well the claimant can budget?
+        
+        </legend>
+        
+      
+        <div class="govuk-radios">
+
+          {% if data["budgetingSelect"] == '(10a) Can manage complex budgeting decisions unaided' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+              (10a) Can manage complex budgeting decisions unaided
+            </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+            </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+            </label>
+              </div>
+ 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+              (10d) Cannot make any budgeting decisions at all
+            </label>
+              </div>
+
+              {% elseif data["budgetingSelect"] == '(10b) Needs prompting or assistance to be able to make complex budgeting decisions' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+              (10a) Can manage complex budgeting decisions unaided
+            </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+            </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+            </label>
+              </div>
+ 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+              (10d) Cannot make any budgeting decisions at all
+            </label>
+              </div>
+
+              {% elseif data["budgetingSelect"] == '(10c) Needs prompting or assistance to be able to make simple budgeting decisions' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+              (10a) Can manage complex budgeting decisions unaided
+            </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+            </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+            </label>
+              </div>
+ 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+              (10d) Cannot make any budgeting decisions at all
+            </label>
+              </div>
+
+              {% elseif data["budgetingSelect"] == '(10d) Cannot make any budgeting decisions at all' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+              (10a) Can manage complex budgeting decisions unaided
+            </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+            </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+            </label>
+              </div>
+ 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+              (10d) Cannot make any budgeting decisions at all
+            </label>
+              </div>
+
+              {% elseif data["budgetingSelect"] === undefined %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect" name="budgetingSelect" type="radio" value="(10a) Can manage complex budgeting decisions unaided">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect">
+              (10a) Can manage complex budgeting decisions unaided
+            </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-2" name="budgetingSelect" type="radio" value="(10b) Needs prompting or assistance to be able to make complex budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-2">
+              (10b) Needs prompting or assistance to be able to make complex budgeting decisions
+            </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-3" name="budgetingSelect" type="radio" value="(10c) Needs prompting or assistance to be able to make simple budgeting decisions">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-3">
+              (10c) Needs prompting or assistance to be able to make simple budgeting decisions
+            </label>
+              </div>
+ 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="budgetingSelect-4" name="budgetingSelect" type="radio" value="(10d) Cannot make any budgeting decisions at all">
+                <label class="govuk-label govuk-radios__label" for="budgetingSelect-4">
+              (10d) Cannot make any budgeting decisions at all
+            </label>
+              </div>
+          {% endif %}
+          
+        </div>
+
+      
+      </fieldset>
+
+         </div>  
+         
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+          <p><a href="descriptor">Cancel</a></p>
+
+         </div>
+      </form>
+    <!-- </div>
+  </div> -->
+
+
+
+{% endblock %}
