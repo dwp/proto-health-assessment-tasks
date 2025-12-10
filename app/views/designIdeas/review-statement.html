@@ -1,0 +1,107 @@
+{% extends "layouts/designIdeaLayout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }     
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Review period for PIP</h1>
+      </div>
+    </div>
+
+    <form action="#" method="post" id="auto-redirect">
+
+       <p class="govuk-body">Based on the activity descriptor choices no review period is needed. There is limited or no functional restriction. </p>
+
+    
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            {% if data["special-rules"] == 'Yes' %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="special-rules">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="special-rules-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+      </div>
+          {% elseif data["special-rules"] == 'No' %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="special-rules">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{ checked }}>
+            <label class="govuk-label govuk-radios__label" for="special-rules-2">
+          No
+        </label>
+          </div>
+        </fieldset>
+      </div>
+          {% elseif data["special-rules"] === undefined %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="special-rules">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{checked}}>
+            <label class="govuk-label govuk-radios__label" for="special-rules-2">
+          No
+        </label>
+          </div>
+
+    {% endif %}
+
+        <br>
+        <br>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Harmful information
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="harmful-info" name="harmful-info" type="checkbox" value="No harmful information has been included in this report." {{ checked}}>
+                    <label class="govuk-label govuk-checkboxes__label" for="harmful-info">
+                No harmful information has been included in this report.
+              </label>
+                  </div>
+          </div>
+        </fieldset>
+        </div>
+    </form>    
+</div>
+</div>
+
+{% endblock %}
