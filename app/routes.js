@@ -7775,3 +7775,43 @@ router.post('/paperbased-assessment-two/phonecall-result', function (req, res) {
 })
 
 
+
+//design ideas prototype (justifications)
+router.post('/designIdeas/preparingfood', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+
+router.post('/designIdeas/takingnutrition', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/managingtherapy', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/washingbathing', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/toiletneeds', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/dressing', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/communicatingverbally', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/readingunderstanding', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/facetoface', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/budgeting', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/journeys', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+router.post('/designIdeas/movingaround', function (req, res) {
+  res.redirect('/designIdeas/descriptor')
+})
+
