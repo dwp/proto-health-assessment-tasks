@@ -7815,3 +7815,7 @@ router.post('/designIdeas/movingaround', function (req, res) {
   res.redirect('/designIdeas/descriptor')
 })
 
+
+router.post('/designIdeas/notesPage', function (req, res) {
+  res.redirect('/designIdeas/notesPage')
+})
