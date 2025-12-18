@@ -29,59 +29,65 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
        <p class="govuk-body">No review period is needed for this assessment. The chosen activity descriptors show there is limited or no functional restriction.</p>
 
-    
-        <div class="govuk-form-group">
+      <br>
+      <br>
+         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
+            Is the claimant likely to need additional support for future claim processes?
           </legend>
           <div class="govuk-radios govuk-radios">
-            {% if data["special-rules"] == 'Yes' %}
+            {% if data["as-marker"] == 'Yes' %}
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" {{ checked }}>
-                  <label class="govuk-label govuk-radios__label" for="special-rules">
+                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="as-marker">
                 Yes
               </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="special-rules-2">
+                  <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="as-marker-2">
                 No
               </label>
                 </div>
           </div>
         </fieldset>
+        </div>
+        {% elseif data["as-marker"] == 'No' %}
+        <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="as-marker">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="as-marker-2">
+              No
+            </label>
+              </div>
+        </div>
+      </fieldset>
+    </div>
+      {% elseif data["as-marker"] === undefined %}
+      <div class="govuk-radios govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="as-marker">
+        Yes
+      </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No" {{checked}}>
+          <label class="govuk-label govuk-radios__label" for="as-marker-2">
+        No
+      </label>
+        </div>
       </div>
-          {% elseif data["special-rules"] == 'No' %}
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="special-rules">
-          Yes
-        </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{ checked }}>
-            <label class="govuk-label govuk-radios__label" for="special-rules-2">
-          No
-        </label>
-          </div>
-        </fieldset>
-      </div>
-          {% elseif data["special-rules"] === undefined %}
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="special-rules">
-          Yes
-        </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{checked}}>
-            <label class="govuk-label govuk-radios__label" for="special-rules-2">
-          No
-        </label>
-          </div>
-
-    {% endif %}
+    </fieldset>
+  </div>
+      {% endif %}
 
         <br>
         <br>
