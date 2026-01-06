@@ -12,6 +12,7 @@
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "5.13.0",
     "govuk-prototype-kit": "13.18.1",
+    "hmrc-frontend": "6.109.0",
     "qs": "^6.14.1"
   }
 }
