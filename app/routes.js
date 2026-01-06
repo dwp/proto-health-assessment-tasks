@@ -266,7 +266,7 @@ router.use((req, res, next) => {
            case serviceRedirect.endsWith("/prompts-six-one/journeys?source=Planning and following journeys"):
         return res.redirect("/prompts-six-one/journeys?source=Planning and following journeys")
 
-             case serviceRedirect.endsWith("/movingaround?source=Moving around"):
+             case serviceRedirect.endsWith("/prompts-six-one/movingaround?source=Moving around"):
         return res.redirect("/prompts-six-one/movingaround?source=Moving around")
     
       case serviceRedirect.endsWith("/prompts-six-one/mental-state?source=Mental state observations"):
@@ -369,7 +369,7 @@ router.use((req, res, next) => {
            case serviceRedirect.endsWith("/prompts-six/journeys?source=Planning and following journeys"):
         return res.redirect("/prompts-six/journeys?source=Planning and following journeys")
 
-             case serviceRedirect.endsWith("/movingaround?source=Moving around"):
+             case serviceRedirect.endsWith("/prompts-six/movingaround?source=Moving around"):
         return res.redirect("/prompts-six/movingaround?source=Moving around")
     
       case serviceRedirect.endsWith("/prompts-six/mental-state?source=Mental state observations"):
@@ -674,6 +674,231 @@ router.use((req, res, next) => {
 
          case serviceRedirect.endsWith("/designIdeas/justification-addAnother?source=Descriptor choices and justifications"):
         return res.redirect("/designIdeas/justification-addAnother?source=Descriptor choices and justifications")
+
+
+        //versioning prototype
+        case serviceRedirect.endsWith("/editing-final/evidence-none?source=default"):
+        return res.redirect("/editing-final/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/editing-final/evidence?source=evidence"):
+        return res.redirect("/editing-final/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/editing-final/evidence-addAnother?source=evidence"):
+        return res.redirect("/editing-final/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/editing-final/conditions?source=History of condition"):
+        return res.redirect("/editing-final/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/editing-final/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/editing-final/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/editing-final/consultation-date?source=Consultation date"):
+        return res.redirect("/editing-final/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/editing-final/verify-id?source=Verify identity"):
+        return res.redirect("/editing-final/verify-id?source=Verify identity")
+
+      case serviceRedirect.endsWith("/editing-final/consent?source=Claimant consent"):
+        return res.redirect("/editing-final/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/editing-final/attendees?source=Additional attendees"):
+        return res.redirect("/editing-final/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/editing-final/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/editing-final/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/editing-final/conditions-none?source=Condition history"):
+        return res.redirect("/editing-final/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/editing-final/conditions-addAnother?source=Condition history"):
+        return res.redirect("/editing-final/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/editing-final/medications-none?source=Medication"):
+        return res.redirect("/editing-final/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/editing-final/medication-addAnother?source=Medication"):
+        return res.redirect("/editing-final/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/editing-final/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/editing-final/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/editing-final/preparingfood?source=Preparing food"):
+        return res.redirect("/editing-final/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/editing-final/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/editing-final/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/editing-final/managingtherapy?source=Managing therapy"):
+        return res.redirect("/editing-final/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/editing-final/washingbathing?source=Washing and bathing"):
+        return res.redirect("/editing-final/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/editing-final/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/editing-final/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/editing-final/dressing?source=Dressing and undressing"):
+        return res.redirect("/editing-final/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/editing-final/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/editing-final/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/editing-final/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/editing-final/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/editing-final/facetoface?source=Engaging face to face"):
+        return res.redirect("/editing-final/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/editing-final/budgeting?source=Budgeting"):
+        return res.redirect("/editing-final/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/editing-final/journeys?source=Planning and following journeys"):
+        return res.redirect("/editing-final/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("editing-final/movingaround?source=Moving around"):
+        return res.redirect("/editing-final/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/editing-final/mental-state?source=Mental state observations"):
+        return res.redirect("/editing-final/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/editing-final/physical-state?source=Informal observations"):
+        return res.redirect("/editing-final/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/editing-final/descriptor?source=Activity descriptors"):
+        return res.redirect("/editing-final/descriptor?source=Activity descriptors")
+      
+
+      case serviceRedirect.endsWith("/editing-final/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/editing-final/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/editing-final/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/editing-final/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/editing-final/review?source=Review"):
+        return res.redirect("/editing-final/review?source=Review")
+      
+      case serviceRedirect.endsWith("/editing-final/check-answers-new"):
+        return res.redirect("/editing-final/check-answers-new")
+
+       case serviceRedirect.endsWith("/editing-final/docs-3"):
+        return res.redirect("/editing-final/docs-3")
+
+        case serviceRedirect.endsWith("/editing-final/report"):
+        return res.redirect("/editing-final/report")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/report"):
+        return res.redirect("/editing-final/edit-audit/report")
+
+
+        //versioning audit editing
+
+         case serviceRedirect.endsWith("/editing-final/edit-audit/evidence-none?source=default"):
+        return res.redirect("/editing-final/edit-audit/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/evidence?source=evidence"):
+        return res.redirect("/editing-final/edit-audit/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/evidence-addAnother?source=evidence"):
+        return res.redirect("/editing-final/edit-audit/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/conditions?source=History of condition"):
+        return res.redirect("/editing-final/edit-audit/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/editing-final/edit-audit/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/consultation-date?source=Consultation date"):
+        return res.redirect("/editing-final/edit-audit/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/verify-id?source=Verify identity"):
+        return res.redirect("/editing-final/verify-id?source=Verify identity")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/consent?source=Claimant consent"):
+        return res.redirect("/editing-final/edit-audit/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/attendees?source=Additional attendees"):
+        return res.redirect("/editing-final/edit-audit/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/editing-final/edit-audit/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/conditions-none?source=Condition history"):
+        return res.redirect("/editing-final/edit-audit/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/conditions-addAnother?source=Condition history"):
+        return res.redirect("/editing-final/edit-audit/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/medications-none?source=Medication"):
+        return res.redirect("/editing-final/edit-audit/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/medication-addAnother?source=Medication"):
+        return res.redirect("/editing-final/edit-audit/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/editing-final/edit-audit/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/editing-final/edit-audit/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/editing-final/edit-audit/preparingfood?source=Preparing food"):
+        return res.redirect("/editing-final/edit-audit/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/editing-final/edit-audit/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/editing-final/edit-audit/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/editing-final/edit-audit/managingtherapy?source=Managing therapy"):
+        return res.redirect("/editing-final/edit-audit/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/editing-final/edit-audit/washingbathing?source=Washing and bathing"):
+        return res.redirect("/editing-final/edit-audit/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/editing-final/edit-audit/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/editing-final/edit-audit/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/editing-final/edit-audit/dressing?source=Dressing and undressing"):
+        return res.redirect("/editing-final/edit-audit/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/editing-final/edit-audit/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/editing-final/edit-audit/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/editing-final/edit-audit/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/editing-final/edit-audit/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/editing-final/edit-audit/facetoface?source=Engaging face to face"):
+        return res.redirect("/editing-final/edit-audit/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/editing-final/edit-audit/budgeting?source=Budgeting"):
+        return res.redirect("/editing-final/edit-audit/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/editing-final/edit-audit/journeys?source=Planning and following journeys"):
+        return res.redirect("/editing-final/edit-audit/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("editing-final/edit-audit/movingaround?source=Moving around"):
+        return res.redirect("/editing-final/edit-audit/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/editing-final/edit-audit/mental-state?source=Mental state observations"):
+        return res.redirect("/editing-final/edit-audit/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/physical-state?source=Informal observations"):
+        return res.redirect("/editing-final/edit-audit/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/editing-final/edit-audit/descriptor?source=Activity descriptors"):
+        return res.redirect("/editing-final/edit-audit/descriptor?source=Activity descriptors")
+      
+
+      case serviceRedirect.endsWith("/editing-final/edit-audit/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/editing-final/edit-audit/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/editing-final/edit-audit/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/editing-final/edit-audit/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/editing-final/edit-audit/review?source=Review"):
+        return res.redirect("/editing-final/edit-audit/review?source=Review")
+      
+      case serviceRedirect.endsWith("/editing-final/check-answers-new"):
+        return res.redirect("/editing-final/check-answers-new")
+
+       case serviceRedirect.endsWith("/editing-final/docs-3"):
+        return res.redirect("/editing-final/docs-3")
 
 
       default:
