@@ -1,0 +1,32 @@
+name: Tests (Heroku)
+
+on:
+  push:
+    branches:
+      - main
+      - support/*
+  pull_request:
+
+jobs:
+  test-heroku:
+
+    name: Test kit on Heroku
+    runs-on: ubuntu-latest
+
+    env:
+      CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
+
+    steps:
+    - uses: actions/checkout@v4.2.2
+    - name: Use Node v24
+      uses: actions/setup-node@v4.4.0
+      with:
+        cache: 'npm'
+        node-version: '24'
+    - name: Cache Cypress binary
+      uses: actions/cache@v4.2.3
+      with:
+        path: ~/.cache/Cypress
+        key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+    - run: npm ci
+    - run: npm run test:heroku

@@ -1,0 +1,25 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+      - support/*
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - uses: actions/setup-node@v4.4.0
+        with:
+          cache: 'npm'
+          node-version-file: '.nvmrc'
+
+      - run: npm ci
+
+      - run: npx . validate-plugin

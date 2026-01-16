@@ -1,0 +1,58 @@
+name: Tests (Acceptance)
+
+on:
+  push:
+    branches:
+      - main
+      - support/*
+  pull_request:
+
+jobs:
+  tests:
+
+    strategy:
+      fail-fast: false  # continue other tests if one test in matrix fails
+      matrix:
+        node-version: [24.x]
+        os: [macos-latest, windows-2022, ubuntu-latest]
+        type: [smoke, plugins, styles, dev, prod, errors]
+
+    name: Acceptance ${{ matrix.type }} test kit on Node v${{ matrix.node-version }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    env:
+      CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
+
+    steps:
+    - uses: actions/checkout@v4.2.2
+      with:
+        fetch-depth: 0
+
+    - name: Use Node v${{ matrix.node-version }}
+      uses: actions/setup-node@v4.4.0
+      with:
+        cache: 'npm'
+        node-version: ${{ matrix.node-version }}
+
+    - name: Cache Cypress binary
+      uses: actions/cache@v4.2.3
+      with:
+        path: ~/.cache/Cypress
+        key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+
+    - run: npm ci
+
+    - run: npm run test:acceptance:${{ matrix.type }}
+      env:
+        CYPRESS_REQUEST_TIMEOUT: 20000
+        CYPRESS_DEFAULT_COMMAND_TIMEOUT: 40000
+        CYPRESS_PAGE_LOAD_TIMEOUT: 120000
+        CYPRESS_RETRIES: 3
+
+    - if: ${{ failure() }}
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: cypress-screenshots-${{ matrix.type }}-${{ runner.os }}-${{ matrix.node-version }}
+        path: cypress/screenshots/
+

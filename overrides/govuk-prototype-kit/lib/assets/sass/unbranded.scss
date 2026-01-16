@@ -1,0 +1,14 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See https://prototype-kit.service.gov.uk/docs/templates/blank-unbranded
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+@import "prototype";
+
+// Override the template background colour
+.govuk-template, .govuk-template--rebranded {
+  background-color: govuk-colour("white");
+}
