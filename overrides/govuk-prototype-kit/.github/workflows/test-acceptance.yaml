@@ -51,7 +51,7 @@ jobs:
         CYPRESS_RETRIES: 3
 
     - if: ${{ failure() }}
-      uses: actions/upload-artifact@v4.6.2
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
       with:
         name: cypress-screenshots-${{ matrix.type }}-${{ runner.os }}-${{ matrix.node-version }}
         path: cypress/screenshots/
