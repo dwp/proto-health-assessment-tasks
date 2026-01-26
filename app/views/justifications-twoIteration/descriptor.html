@@ -44,7 +44,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Descriptor choice
             </th>
             <th scope="col" class="govuk-table__header">
-              Score
+              <!-- Score -->
             </th>
              <th scope="col" class="govuk-table__header">
              
@@ -66,19 +66,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['preparingfoodSelect'] == "(1a) Can prepare and cook a simple meal unaided") %}
-                  {% set prepFoodScore = 0 %} 0
+                  {% set prepFoodScore = 0 %} 
               {% elseif (data['preparingfoodSelect'] == "(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal") %}
-                 {% set prepFoodScore = 2 %} 2
+                 {% set prepFoodScore = 2 %} 
               {% elseif (data['preparingfoodSelect'] == "(1c) Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave") %}
-                 {% set prepFoodScore = 2 %} 2
+                 {% set prepFoodScore = 2 %} 
               {% elseif (data['preparingfoodSelect'] == "(1d) Needs prompting to be able to either prepare or cook a simple meal") %}
-                 {% set prepFoodScore = 2 %} 2
+                 {% set prepFoodScore = 2 %} 
               {% elseif (data['preparingfoodSelect'] == "(1e) Needs supervision or assistance to either prepare or cook a simple meal") %}
-                 {% set prepFoodScore = 4 %} 4
+                 {% set prepFoodScore = 4 %} 
               {% elseif (data['preparingfoodSelect'] == "(1f) Cannot prepare and cook food") %}
-                 {% set prepFoodScore = 8 %} 8
+                 {% set prepFoodScore = 8 %} 
               {% else %}
-               {% set prepFoodScore = 0 %} 0
+               {% set prepFoodScore = 0 %} 
             {% endif %}
           </td>
             {% if (data['preparingfoodSelect']) %}
@@ -106,19 +106,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['takingnutritionSelect'] == "(2a) Can take nutrition unaided") %}
-                 {% set nutritionScore = 0 %} 0
+                 {% set nutritionScore = 0 %} 
               {% elseif (data['takingnutritionSelect'] == "(2b) Needs to use an aid or appliance to be able to take nutrition, or supervision to be able to take nutrition, or assistance to be able to cut up food") %}
-                 {% set nutritionScore = 2 %} 2
+                 {% set nutritionScore = 2 %} 
               {% elseif (data['takingnutritionSelect'] == "(2c) Needs a therapeutic source to be able to take nutrition") %}
-                 {% set nutritionScore = 2 %} 2
+                 {% set nutritionScore = 2 %} 
               {% elseif (data['takingnutritionSelect'] == "(2d) Needs prompting to be able to take nutrition") %}
-                 {% set nutritionScore = 4 %} 4
+                 {% set nutritionScore = 4 %} 
               {% elseif (data['takingnutritionSelect'] == "(2e) Needs assistance to be able to manage a therapeutic source to take nutrition") %}
-                 {% set nutritionScore = 6 %} 6
+                 {% set nutritionScore = 6 %} 
               {% elseif (data['takingnutritionSelect'] == "(2f) Cannot convey food and drink to their mouth and needs another person to do so") %}
-              {% set nutritionScore = 10 %} 10
+              {% set nutritionScore = 10 %} 
               {% else %}
-                 {% set nutritionScore = 0 %} 0
+                 {% set nutritionScore = 0 %} 
             {% endif %}
           </td>
             {% if (data['takingnutritionSelect']) %}
@@ -146,19 +146,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['managingtherapySelect'] == "(3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided") %}
-                 {% set therapyScore = 0 %} 0
+                 {% set therapyScore = 0 %} 
               {% elseif (data['managingtherapySelect'] == "(3b) Needs to use an aid or appliance to be able to manage medication, or needs supervision, prompting or assistance to be able to manage medication, or needs supervision, prompting or assistance to be able to monitor a health condition") %}
-                 {% set therapyScore = 1 %} 1
+                 {% set therapyScore = 1 %} 
               {% elseif (data['managingtherapySelect'] == "(3c) Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week") %}
-                 {% set therapyScore = 2 %} 2
+                 {% set therapyScore = 2 %} 
               {% elseif (data['managingtherapySelect'] == "(3d) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week") %}
-                 {% set therapyScore = 4 %} 4
+                 {% set therapyScore = 4 %} 
               {% elseif (data['managingtherapySelect'] == "(3e) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week") %}
-                 {% set therapyScore = 6 %} 6
+                 {% set therapyScore = 6 %} 
               {% elseif (data['managingtherapySelect'] == "(3f) Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week") %}
-              {% set therapyScore = 8 %} 8
+              {% set therapyScore = 8 %} 
               {% else %}
-                {% set therapyScore = 0 %} 0
+                {% set therapyScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['managingtherapySelect']) %}
@@ -186,21 +186,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['washingbathingSelect'] == "(4a) Can wash and bathe unaided") %}
-                 {% set washingScore = 0 %} 0
+                 {% set washingScore = 0 %} 
               {% elseif (data['washingbathingSelect'] == "(4b) Needs to use an aid or appliance to be able to wash or bathe") %}
-                 {% set washingScore = 2 %} 2
+                 {% set washingScore = 2 %} 
               {% elseif (data['washingbathingSelect'] == "(4c) Needs supervision or prompting to be able to wash or bathe") %}
-                 {% set washingScore = 2 %} 2
+                 {% set washingScore = 2 %} 
               {% elseif (data['washingbathingSelect'] == "(4d) Needs assistance to be able to wash either their hair or body below the waist") %}
-                 {% set washingScore = 2 %} 2
+                 {% set washingScore = 2 %} 
               {% elseif (data['washingbathingSelect'] == "(4e) Needs assistance to be able to get in or out of a bath or shower") %}
-                 {% set washingScore = 3 %} 3
+                 {% set washingScore = 3 %} 
               {% elseif (data['washingbathingSelect'] == "(4f) Needs assistance to be able to wash their body between the shoulders and waist") %}
-              {% set washingScore = 4 %} 4
+              {% set washingScore = 4 %} 
               {% elseif (data['washingbathingSelect'] == "(4g) Cannot wash and bathe at all and needs another person to wash their entire body") %}
-                {% set washingScore = 8 %} 8
+                {% set washingScore = 8 %} 
               {% else %}
-                {% set washingScore = 0 %} 0
+                {% set washingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['washingbathingSelect']) %}
@@ -228,19 +228,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
                {% if (data['toiletneedsSelect'] == "(5a) Can manage toilet needs or incontinence unaided") %}
-                 {% set toiletScore = 0 %} 0
+                 {% set toiletScore = 0 %} 
               {% elseif (data['toiletneedsSelect'] == "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence") %}
-                 {% set toiletScore = 2 %} 2
+                 {% set toiletScore = 2 %} 
               {% elseif (data['toiletneedsSelect'] == "(5c) Needs supervision or prompting to be able to manage toilet needs") %}
-                 {% set toiletScore = 2 %} 2
+                 {% set toiletScore = 2 %} 
               {% elseif (data['toiletneedsSelect'] == "(5d) Needs assistance to be able to manage toilet needs") %}
-                 {% set toiletScore = 4 %} 4
+                 {% set toiletScore = 4 %} 
               {% elseif (data['toiletneedsSelect'] == "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel") %}
-                 {% set toiletScore = 6 %} 6
+                 {% set toiletScore = 6 %} 
               {% elseif (data['toiletneedsSelect'] == "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel") %}
-              {% set toiletScore = 8 %} 8
+              {% set toiletScore = 8 %} 
               {% else %}
-                {% set toiletScore = 0 %} 0
+                {% set toiletScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['toiletneedsSelect']) %}
@@ -268,19 +268,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
                {% if (data['dressingSelect'] == "(6a) Can dress and undress unaided") %}
-                 {% set dressingScore = 0 %} 0
+                 {% set dressingScore = 0 %} 
               {% elseif (data['dressingSelect'] == "(6b) Needs to use an aid or appliance to be able to dress or undress") %}
-                 {% set dressingScore = 2 %} 2
+                 {% set dressingScore = 2 %} 
               {% elseif (data['dressingSelect'] == "(6c) Needs either prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed, or needs prompting or assistance to be able to select appropriate clothing") %}
-                 {% set dressingScore = 2 %} 2
+                 {% set dressingScore = 2 %} 
               {% elseif (data['dressingSelect'] == "(6d) Needs assistance to be able to dress or undress their lower body") %}
-                 {% set dressingScore = 2 %} 2
+                 {% set dressingScore = 2 %} 
               {% elseif (data['dressingSelect'] == "(6e) Needs assistance to be able to dress or undress their upper body") %}
-                 {% set dressingScore = 4 %} 4
+                 {% set dressingScore = 4 %} 
               {% elseif (data['dressingSelect'] == "(6f) Cannot dress or undress at all") %}
-              {% set dressingScore = 8 %} 8
+              {% set dressingScore = 8 %} 
               {% else %}
-                {% set dressingScore = 0 %} 0
+                {% set dressingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['dressingSelect']) %}
@@ -309,17 +309,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
                {% if (data['communicatingverballySelect'] == "(7a) Can express and understand verbal information unaided") %}
-                 {% set communicatingScore = 0 %} 0
+                 {% set communicatingScore = 0 %} 
               {% elseif (data['communicatingverballySelect'] == "(7b) Needs to use an aid or appliance to be able to speak or hear") %}
-                 {% set communicatingScore = 2 %} 2
+                 {% set communicatingScore = 2 %} 
               {% elseif (data['communicatingverballySelect'] == "(7c) Needs communication support to be able to express or understand complex verbal information") %}
-                 {% set communicatingScore = 4 %} 4
+                 {% set communicatingScore = 4 %} 
               {% elseif (data['communicatingverballySelect'] == "(7d) Needs communication support to be able to express or understand basic verbal information") %}
-                 {% set communicatingScore = 8 %} 8
+                 {% set communicatingScore = 8 %} 
               {% elseif (data['communicatingverballySelect'] == "(7e) Cannot express or understand verbal information at all even with communication support") %}
-                 {% set communicatingScore = 12 %} 12
+                 {% set communicatingScore = 12 %} 
               {% else %}
-                 {% set communicatingScore = 0 %} 0
+                 {% set communicatingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['communicatingverballySelect']) %}
@@ -347,17 +347,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['readingunderstandingSelect'] == "(8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses") %}
-                 {% set readingScore = 0 %} 0
+                 {% set readingScore = 0 %} 
               {% elseif (data['readingunderstandingSelect'] == "(8b) Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information") %}
-                 {% set readingScore = 2 %} 2
+                 {% set readingScore = 2 %} 
               {% elseif (data['readingunderstandingSelect'] == "(8c) Needs prompting to be able to read or understand complex written information") %}
-                 {% set readingScore = 2 %} 2
+                 {% set readingScore = 2 %} 
               {% elseif (data['readingunderstandingSelect'] == "(8d) Needs prompting to be able to read or understand basic written information") %}
-                 {% set readingScore = 4 %} 4
+                 {% set readingScore = 4 %} 
               {% elseif (data['readingunderstandingSelect'] == "(8e) Cannot read or understand signs, symbols or words at all") %}
-                 {% set readingScore = 8 %} 8
+                 {% set readingScore = 8 %} 
               {% else %}
-                 {% set readingScore = 0 %} 0
+                 {% set readingScore = 0 %} 
             {% endif %}
               </td>
               {% if (data['readingunderstandingSelect']) %}
@@ -386,15 +386,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {% if (data['facetofaceSelect'] == "(9a) Can engage with other people unaided") %}
-                 {% set facetofaceScore = 0 %} 0
+                 {% set facetofaceScore = 0 %} 
               {% elseif (data['facetofaceSelect'] == "(9b) Needs prompting to be able to engage with other people") %}
-                 {% set facetofaceScore = 2 %} 2
+                 {% set facetofaceScore = 2 %} 
               {% elseif (data['facetofaceSelect'] == "(9c) Needs social support to be able to engage with other people") %}
-                 {% set facetofaceScore = 4 %} 4
+                 {% set facetofaceScore = 4 %} 
               {% elseif (data['facetofaceSelect'] == "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person") %}
-                 {% set facetofaceScore = 8 %} 8
+                 {% set facetofaceScore = 8 %} 
               {% else %}
-                {% set facetofaceScore = 0 %} 0
+                {% set facetofaceScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['facetofaceSelect']) %}
@@ -424,15 +424,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
                {% if (data['budgetingSelect'] == "(10a) Can manage complex budgeting decisions unaided") %}
-                 {% set budgetingScore = 0 %} 0
+                 {% set budgetingScore = 0 %} 
               {% elseif (data['budgetingSelect'] == "(10b) Needs prompting or assistance to be able to make complex budgeting decisions") %}
-                 {% set budgetingScore = 2 %} 2
+                 {% set budgetingScore = 2 %} 
               {% elseif (data['budgetingSelect'] == "(10c) Needs prompting or assistance to be able to make simple budgeting decisions") %}
-                 {% set budgetingScore = 4 %} 4
+                 {% set budgetingScore = 4 %} 
               {% elseif (data['budgetingSelect'] == "(10d) Cannot make any budgeting decisions at all") %}
-                 {% set budgetingScore = 6 %} 6
+                 {% set budgetingScore = 6 %} 
               {% else %}
-                 {% set budgetingScore = 0 %} 0
+                 {% set budgetingScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['budgetingSelect']) %}
@@ -446,13 +446,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              {% endif %}
         </tr>
        
-        <tr class="govuk-table__row">
+        <!-- <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Score total</th>
             <td class="govuk-table__cell govuk-table__cell"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">{{ prepFoodScore + nutritionScore + therapyScore + washingScore + toiletScore + dressingScore + communicatingScore + readingScore + facetofaceScore + budgetingScore }}</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
         </tr>
-      
+       -->
   </tbody>
 </table>
 
@@ -470,7 +470,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               Descriptor choice
             </th>
             <th scope="col" class="govuk-table__header">
-              Score
+              <!-- Score -->
             </th>
             <th scope="col" class="govuk-table__header">
             
@@ -493,19 +493,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
              {% if (data['journeysSelectpbr'] == "(11a) Can plan and follow the route of a journey unaided") %}
-                 {% set journeyScore = 0 %} 0
+                 {% set journeyScore = 0 %} 
               {% elseif (data['journeysSelectpbr'] == "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant") %}
-                 {% set journeyScore = 4 %} 4
+                 {% set journeyScore = 4 %} 
               {% elseif (data['journeysSelectpbr'] == "(11c) Cannot plan the route of a journey") %}
-                 {% set journeyScore = 8 %} 8
+                 {% set journeyScore = 8 %} 
               {% elseif (data['journeysSelectpbr'] == "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid") %}
-                 {% set journeyScore = 10 %} 10
+                 {% set journeyScore = 10 %} 
               {% elseif (data['journeysSelectpbr'] == "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant") %}
-              {% set journeyScore = 10 %} 10
+              {% set journeyScore = 10 %} 
               {% elseif (data['journeysSelectpbr'] == "(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid") %}
-                {% set journeyScore = 12 %} 12
+                {% set journeyScore = 12 %} 
               {% else %}
-                {% set journeyScore = 0 %} 0
+                {% set journeyScore = 0 %} 
             {% endif %}
           </td>
            {% if (data['journeysSelectpbr']) %}
@@ -535,19 +535,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     
             <td class="govuk-table__cell govuk-table__cell--numeric">
             {% if (data['movingaroundSelectpbr'] == "(12a) Can stand and then move more than 200 metres, either aided or unaided") %}
-                 {% set movingScore = 0 %} 0
+                 {% set movingScore = 0 %} 
               {% elseif (data['movingaroundSelectpbr'] == "(12b) Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided") %}
-                 {% set movingScore = 4 %} 4
+                 {% set movingScore = 4 %} 
               {% elseif (data['movingaroundSelectpbr'] == "(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres") %}
-                 {% set movingScore = 8 %} 8
+                 {% set movingScore = 8 %} 
               {% elseif (data['movingaroundSelectpbr'] == "(12d) Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres") %}
-                 {% set movingScore = 10 %} 10
+                 {% set movingScore = 10 %} 
               {% elseif (data['movingaroundSelectpbr'] == "(12e) Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided") %}
-                 {% set movingScore = 12 %} 12
+                 {% set movingScore = 12 %} 
               {% elseif (data['movingaroundSelectpbr'] == "(12f) Cannot stand or move more than 1 metre, either aided or unaided") %}
-                 {% set movingScore = 12 %} 12
+                 {% set movingScore = 12 %} 
               {% else %}
-                {% set movingScore = 0 %} 0
+                {% set movingScore = 0 %} 
             {% endif %}
           </td>
           {% if (data['movingaroundSelectpbr']) %}
@@ -561,12 +561,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              {% endif %}
         </tr>
         
-        <tr class="govuk-table__row">
+        <!-- <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Score total</th>
             <td class="govuk-table__cell govuk-table__cell"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">{{ journeyScore + movingScore }}</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-        </tr>
+        </tr> -->
 
   </tbody>
 </table>

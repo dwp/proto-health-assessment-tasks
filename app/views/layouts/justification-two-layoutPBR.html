@@ -46,30 +46,30 @@
       
           <div class="moj-primary-navigation__nav">
       
-            <nav class="moj-primary-navigation" aria-label="Primary navigation">
+            <!-- <nav class="moj-primary-navigation" aria-label="Primary navigation">
       
               <ul class="moj-primary-navigation__list">
                 <li class="moj-primary-navigation__item"> 
                   <a class="moj-primary-navigation__link" aria-current="page" href="evidence">Assessment</a>
-                  </li>
+                  </li> -->
       
                   <!-- <li class="moj-primary-navigation__item" > 
                     <a class="moj-primary-navigation__link"  href="telephone-start">Telephone call</a>
                     </li> -->
   
-                <li class="moj-primary-navigation__item">
+                <!-- <li class="moj-primary-navigation__item">
                   <a class="moj-primary-navigation__link claim-documents" href="docs-3">Claimant documents</a>
-                </li>
+                </li> -->
       
   
                 <!-- <li class="moj-primary-navigation__item">
                   <a class="moj-primary-navigation__link" href="other-services/timeline-view">Timeline</a>
                 </li> -->
   
-  
+<!--   
               </ul>
       
-            </nav>
+            </nav> -->
       
           </div>
         </div>
@@ -115,7 +115,7 @@
             </li>
             {% endif %}
 
-            <h4 class="moj-side-navigation__title">Assessment</h4>
+            <h4 class="moj-side-navigation__title">History</h4>
           
               {% if data["source"] == 'Brief summary of clinical details' %} 
               <li class="moj-side-navigation__item moj-side-navigation__item--active">
@@ -134,17 +134,19 @@
 
               {% if data["source"] == 'Phone calls' %}
               <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                <a href="medication-addAnother?source=Phone calls">Phone calls</a>
+                <a href="shortcall-none?source=Phone calls">Phone calls</a>
               </li>
-              {% elseif (data['evidenceMedAdded']) or (data['medicationAdded']) %}
+              {% elseif (data['phoneAdded']) %}
               <li class="moj-side-navigation__item">
-                <a href="medication-addAnother?source=Phone calls">Phone calls</a>
+                <a href="phonecall-result?source=Phone calls">Phone calls</a>
               </li>
               {% else %}
               <li class="moj-side-navigation__item">
-                <a href="medication-addAnother?source=Phone calls">Phone calls</a>
+                <a href="shortcall-none?source=Phone calls">Phone calls</a>
               </li>
               {% endif %}
+
+              <h4 class="moj-side-navigation__title">Assessment</h4>
 
               {% if data["source"] == 'Activity descriptors' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
@@ -166,23 +168,23 @@
              </li>
              {% endif %}
 
-              {% if data["source"] == 'Daily living qualifying period and prospective test' %}
+              {% if data["source"] == 'Daily living qualifying period' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="dl-qual?source=Daily living qualifying period and prospective test" aria-current="location">Daily living qualifying period and prospective test</a>
+               <a href="dl-qual?source=Daily living qualifying period" aria-current="location">Daily living qualifying period</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="dl-qual?source=Daily living qualifying period and prospective test">Daily living qualifying period and prospective test</a>
+               <a href="dl-qual?source=Daily living qualifying period">Daily living qualifying period</a>
              </li>
              {% endif %}
 
-             {% if data["source"] == 'Mobility qualifying period and prospective test' %}
+             {% if data["source"] == 'Mobility qualifying period' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="mobility-qual?source=Mobility qualifying period and prospective test" aria-current="location">Mobility qualifying period and prospective test</a>
+               <a href="mobility-qual?source=Mobility qualifying period" aria-current="location">Mobility qualifying period</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="mobility-qual?source=Mobility qualifying period and prospective test">Mobility qualifying period and prospective test</a>
+               <a href="mobility-qual?source=Mobility qualifying period">Mobility qualifying period</a>
              </li>
              {% endif %}
 

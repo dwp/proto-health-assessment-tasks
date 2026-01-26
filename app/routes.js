@@ -229,9 +229,14 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-twoIteration/conditions-addAnother?source=Brief summary of clinical details"):
         return res.redirect("/justifications-twoIteration/conditions-addAnother?source=Brief summary of clinical details")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/medication-addAnother?source=Phone calls"):
-        return res.redirect("/justifications-twoIteration/medication-addAnother?source=Phone calls")
+      case serviceRedirect.endsWith("/justifications-twoIteration/shortcall-none?source=Phone calls"):
+        return res.redirect("/justifications-twoIteration/shortcall-none?source=Phone calls")
+
+      case serviceRedirect.endsWith("/justifications-twoIteration/phonecall-add?source=Phone calls"):
+        return res.redirect("/justifications-twoIteration/phonecall-add?source=Phone calls")
         
+      case serviceRedirect.endsWith("/justifications-twoIteration/phonecall-result?source=Phone calls"):
+        return res.redirect("/justifications-twoIteration/phonecall-result?source=Phone calls")
       
       case serviceRedirect.endsWith("/justifications-twoIteration/descriptor?source=Activity descriptors"):
         return res.redirect("/justifications-twoIteration/descriptor?source=Activity descriptors")
@@ -242,11 +247,11 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/justifications-twoIteration/addToGroup"):
         return res.redirect("/justifications-twoIteration/addToGroup")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/dl-qual?source=Daily living qualifying period and prospective test"):
-        return res.redirect("/justifications-twoIteration/dl-qual?source=Daily living qualifying period and prospective test")
+      case serviceRedirect.endsWith("/justifications-twoIteration/dl-qual?source=Daily living qualifying period"):
+        return res.redirect("/justifications-twoIteration/dl-qual?source=Daily living qualifying period")
 
-      case serviceRedirect.endsWith("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period and prospective test"):
-    return res.redirect("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period and prospective test")
+      case serviceRedirect.endsWith("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period"):
+    return res.redirect("/justifications-twoIteration/mobility-qual?source=Mobility qualifying period")
       
       case serviceRedirect.endsWith("/justifications-twoIteration/review?source=Review"):
         return res.redirect("/justifications-twoIteration/review?source=Review")
@@ -6116,6 +6121,79 @@ router.post('/justifications-twoIteration/remove-evidence', function (req, res) 
 router.post('/justifications-twoIteration/evidence-addAnother', function (req, res) {
 
   res.redirect('/justifications-twoIteration/evidence')
+  
+})
+
+router.post('/justifications-twoIteration/shortcall-none', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/phonecall-add')
+})
+
+// Routes for adding another phonecall //\
+router.post('/justifications-twoIteration/phonecall-add', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/justifications-twoIteration/phonecall-result')
+})
+
+router.post('/justifications-twoIteration/phonecall-change', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.splice(phonecallNo, 1);
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/justifications-twoIteration/phonecall-result')
+})
+
+router.post('/justifications-twoIteration/phonecall-addAnother', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/justifications-twoIteration/phonecall-result')
+})
+
+router.post('/justifications-twoIteration/phonecall-result', function (req, res) {
+
+  res.redirect('/justifications-twoIteration/phonecall-addAnother')
 })
 
 // Routes for adding another condition
@@ -6347,7 +6425,7 @@ router.post('/justifications-twoIteration/justification-activity', function (req
     groupName: activityName.map((e) => justifications.indexOf(e) + 1).join(", ").replace(/,(?=[^,]*$)/, " and")
   }))
 
-  res.redirect('/justifications-twoIteration/writeJustification')
+  res.redirect('/justifications-twoIteration/justification-activity')
 })
 
 router.post('/justifications-twoIteration/writeJustification', function (req, res) {
