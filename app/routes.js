@@ -954,7 +954,6 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/editing-final/edit-audit/descriptor?source=Activity descriptors"):
         return res.redirect("/editing-final/edit-audit/descriptor?source=Activity descriptors")
       
-
       case serviceRedirect.endsWith("/editing-final/edit-audit/dl-qual?source=Daily living qualifying period and prospective test"):
         return res.redirect("/editing-final/edit-audit/dl-qual?source=Daily living qualifying period and prospective test")
 
@@ -969,6 +968,456 @@ router.use((req, res, next) => {
 
        case serviceRedirect.endsWith("/editing-final/docs-3"):
         return res.redirect("/editing-final/docs-3")
+
+
+      // paperbased journey assessment two - sidenav
+      case serviceRedirect.endsWith("/paperbased-assessment-two/evidence-none?source=default"):
+        return res.redirect("/paperbased-assessment-two/evidence-none?source=default")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/evidence?source=evidence"):
+        return res.redirect("/paperbased-assessment-two/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/condition-history?source=Brief summary of clinical details"):
+        return res.redirect("/paperbased-assessment-two/condition-history?source=Brief summary of clinical details")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/phonecall-result?source=Phone calls"):
+        return res.redirect("/paperbased-assessment-two/phonecall-result?source=Phone calls")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/shortcall-none?source=Phone calls"):
+        return res.redirect("/paperbased-assessment-two/shortcall-none?source=Phone calls")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/evidence-none?source=evidence"):
+        return res.redirect("/ppaperbased-assessment-two/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/evidence-addAnother?source=evidence"):
+        return res.redirect("/paperbased-assessment-two/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/consultation-date?source=Consultation date"):
+        return res.redirect("/paperbased-assessment-two/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/consent?source=Claimant consent"):
+        return res.redirect("/paperbased-assessment-two/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/verify-id?source=Claimant identity"):
+        return res.redirect("/paperbased-assessment-two/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/attendees-none?source=Additional attendees"):
+        return res.redirect("/paperbased-assessment-two/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/paperbased-assessment-two/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/conditions-none?source=Condition history"):
+        return res.redirect("/paperbased-assessment-two/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/conditions-addAnother?source=Condition history"):
+        return res.redirect("/paperbased-assessment-two/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/medications-none?source=Medication"):
+        return res.redirect("/paperbased-assessment-two/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/medication-addAnother?source=Medication"):
+        return res.redirect("/paperbased-assessment-two/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/paperbased-assessment-two/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/paperbased-assessment-two/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/preparingfood?source=Preparing food"):
+        return res.redirect("/paperbased-assessment-two/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/paperbased-assessment-two/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/managingtherapy?source=Managing therapy"):
+        return res.redirect("/paperbased-assessment-two/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/paperbased-assessment-two/washingbathing?source=Washing and bathing"):
+        return res.redirect("/paperbased-assessment-two/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/paperbased-assessment-two/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/paperbased-assessment-two/dressing?source=Dressing and undressing"):
+        return res.redirect("/paperbased-assessment-two/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/paperbased-assessment-two/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/paperbased-assessment-two/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/paperbased-assessment-two/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/paperbased-assessment-two/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/paperbased-assessment-two/facetoface?source=Engaging face to face"):
+        return res.redirect("/paperbased-assessment-two/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/paperbased-assessment-two/budgeting?source=Budgeting"):
+        return res.redirect("/paperbased-assessment-two/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/paperbased-assessment-two/journeys?source=Planning and following journeys"):
+        return res.redirect("/paperbased-assessment-two/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("/paperbased-assessment-two/movingaround?source=Moving around"):
+        return res.redirect("/paperbased-assessment-two/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/paperbased-assessment-two/mental-state?source=Mental state observations"):
+        return res.redirect("/paperbased-assessment-two/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/paperbased-assessment-two/physical-state?source=Informal observations"):
+        return res.redirect("/paperbased-assessment-two/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment-two/descriptor?source=Activity descriptors"):
+        return res.redirect("/paperbased-assessment-two/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment-two/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/paperbased-assessment-two/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/paperbased-assessment-two/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/paperbased-assessment-two/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment-two/review?source=Review"):
+        return res.redirect("/paperbased-assessment-two/review?source=Review")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment-two/check-answers-new"):
+        return res.redirect("/paperbased-assessment-two/check-answers-new")
+
+        case serviceRedirect.endsWith("/paperbased-assessment-two/paperbased-cya"):
+        return res.redirect("/paperbased-assessment-two/paperbased-cya")
+
+
+
+        //paperbased assessment one
+        case serviceRedirect.endsWith("/paperbased-assessment/evidence-none?source=default"):
+        return res.redirect("/paperbased-assessment/evidence-none?source=default")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/evidence?source=evidence"):
+        return res.redirect("/paperbased-assessment/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/condition-history?source=Brief summary of clinical details"):
+        return res.redirect("/paperbased-assessment/condition-history?source=Brief summary of clinical details")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/phonecall-result?source=Phone calls"):
+        return res.redirect("/paperbased-assessment/phonecall-result?source=Phone calls")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/shortcall-none?source=Phone calls"):
+        return res.redirect("/paperbased-assessment/shortcall-none?source=Phone calls")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/evidence-none?source=evidence"):
+        return res.redirect("/ppaperbased-assessment/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/evidence-addAnother?source=evidence"):
+        return res.redirect("/paperbased-assessment/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/consultation-date?source=Consultation date"):
+        return res.redirect("/paperbased-assessment/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/consent?source=Claimant consent"):
+        return res.redirect("/paperbased-assessment/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/verify-id?source=Claimant identity"):
+        return res.redirect("/paperbased-assessment/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/attendees-none?source=Additional attendees"):
+        return res.redirect("/paperbased-assessment/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/paperbased-assessment/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/conditions-none?source=Condition history"):
+        return res.redirect("/paperbased-assessment/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/conditions-addAnother?source=Condition history"):
+        return res.redirect("/paperbased-assessment/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/medications-none?source=Medication"):
+        return res.redirect("/paperbased-assessment/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/medication-addAnother?source=Medication"):
+        return res.redirect("/paperbased-assessment/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/paperbased-assessment/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/paperbased-assessment/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/preparingfood?source=Preparing food"):
+        return res.redirect("/paperbased-assessment/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/paperbased-assessment/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/managingtherapy?source=Managing therapy"):
+        return res.redirect("/paperbased-assessment/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/paperbased-assessment/washingbathing?source=Washing and bathing"):
+        return res.redirect("/paperbased-assessment/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/paperbased-assessment/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/paperbased-assessment/dressing?source=Dressing and undressing"):
+        return res.redirect("/paperbased-assessment/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/paperbased-assessment/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/paperbased-assessment/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/paperbased-assessment/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/paperbased-assessment/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/paperbased-assessment/facetoface?source=Engaging face to face"):
+        return res.redirect("/paperbased-assessment/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/paperbased-assessment/budgeting?source=Budgeting"):
+        return res.redirect("/paperbased-assessment/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/paperbased-assessment/journeys?source=Planning and following journeys"):
+        return res.redirect("/paperbased-assessment/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("/paperbased-assessment/movingaround?source=Moving around"):
+        return res.redirect("/paperbased-assessment/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/paperbased-assessment/mental-state?source=Mental state observations"):
+        return res.redirect("/paperbased-assessment/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/paperbased-assessment/physical-state?source=Informal observations"):
+        return res.redirect("/paperbased-assessment/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment/descriptor?source=Activity descriptors"):
+        return res.redirect("/paperbased-assessment/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/paperbased-assessment/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/paperbased-assessment/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/paperbased-assessment/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment/review?source=Review"):
+        return res.redirect("/paperbased-assessment/review?source=Review")
+      
+      case serviceRedirect.endsWith("/paperbased-assessment/check-answers-new"):
+        return res.redirect("/paperbased-assessment/check-answers-new")
+
+        case serviceRedirect.endsWith("/paperbased-assessment/paperbased-cya"):
+        return res.redirect("/paperbased-assessment/paperbased-cya")
+
+
+
+        // evidence iterations - side nav links
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/evidence-none?source=default"):
+        return res.redirect("/evidenceDesign-iterationOne/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/evidence?source=evidence"):
+        return res.redirect("/evidenceDesign-iterationOne/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/evidence-addAnother?source=evidence"):
+        return res.redirect("/evidenceDesign-iterationOne/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/conditions?source=History of condition"):
+        return res.redirect("/evidenceDesign-iterationOne/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/evidenceDesign-iterationOne/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/consultation-date?source=Consultation date"):
+        return res.redirect("/evidenceDesign-iterationOne/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/verify-id?source=Claimant identity"):
+        return res.redirect("/evidenceDesign-iterationOne/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/consent?source=Claimant consent"):
+        return res.redirect("/evidenceDesign-iterationOne/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/attendees-none?source=Additional attendees"):
+        return res.redirect("/evidenceDesign-iterationOne/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/attendees?source=Additional attendees"):
+        return res.redirect("/evidenceDesign-iterationOne/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/evidenceDesign-iterationOne/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/conditions-none?source=Condition history"):
+        return res.redirect("/evidenceDesign-iterationOne/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/conditions-addAnother?source=Condition history"):
+        return res.redirect("/evidenceDesign-iterationOne/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/medications-none?source=Medication"):
+        return res.redirect("/evidenceDesign-iterationOne/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/medication-addAnother?source=Medication"):
+        return res.redirect("/evidenceDesign-iterationOne/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/evidenceDesign-iterationOne/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/evidenceDesign-iterationOne/preparingfood?source=Preparing food"):
+        return res.redirect("/evidenceDesign-iterationOne/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/evidenceDesign-iterationOne/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/evidenceDesign-iterationOne/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/evidenceDesign-iterationOne/managingtherapy?source=Managing therapy"):
+        return res.redirect("/evidenceDesign-iterationOne/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/evidenceDesign-iterationOne/washingbathing?source=Washing and bathing"):
+        return res.redirect("/evidenceDesign-iterationOne/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/evidenceDesign-iterationOne/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/evidenceDesign-iterationOne/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/evidenceDesign-iterationOne/dressing?source=Dressing and undressing"):
+        return res.redirect("/evidenceDesign-iterationOne/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/evidenceDesign-iterationOne/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/evidenceDesign-iterationOne/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/evidenceDesign-iterationOne/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/evidenceDesign-iterationOne/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/evidenceDesign-iterationOne/facetoface?source=Engaging face to face"):
+        return res.redirect("/evidenceDesign-iterationOne/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/evidenceDesign-iterationOne/budgeting?source=Budgeting"):
+        return res.redirect("/evidenceDesign-iterationOne/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/evidenceDesign-iterationOne/journeys?source=Planning and following journeys"):
+        return res.redirect("/evidenceDesign-iterationOne/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("evidenceDesign-iterationOne/movingaround?source=Moving around"):
+        return res.redirect("/evidenceDesign-iterationOne/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/mental-state?source=Mental state observations"):
+        return res.redirect("/evidenceDesign-iterationOne/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/physical-state?source=Informal observations"):
+        return res.redirect("/evidenceDesign-iterationOne/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/descriptor?source=Activity descriptors"):
+        return res.redirect("/evidenceDesign-iterationOne/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/evidenceDesign-iterationOne/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/evidenceDesign-iterationOne/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/evidenceDesign-iterationOne/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/review?source=Review"):
+        return res.redirect("/evidenceDesign-iterationOne/review?source=Review")
+      
+      case serviceRedirect.endsWith("/evidenceDesign-iterationOne/check-answers-new"):
+        return res.redirect("/evidenceDesign-iterationOne/check-answers-new")
+
+       case serviceRedirect.endsWith("/evidenceDesign-iterationOne/docs-3"):
+        return res.redirect("/evidenceDesign-iterationOne/docs-3")
+
+
+        // evidence iterations one - side nav links
+        case serviceRedirect.endsWith("/evidenceDesign/evidence-none?source=default"):
+        return res.redirect("/evidenceDesign/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/evidenceDesign/evidence-addAnother?source=evidence"):
+        return res.redirect("/evidenceDesign/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/evidenceDesign/evidence-addAnother?source=evidence"):
+        return res.redirect("/evidenceDesign/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/evidenceDesign/conditions?source=History of condition"):
+        return res.redirect("/evidenceDesign/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/evidenceDesign/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/evidenceDesign/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/evidenceDesign/consultation-date?source=Consultation date"):
+        return res.redirect("/evidenceDesign/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/evidenceDesign/verify-id?source=Claimant identity"):
+        return res.redirect("/evidenceDesign/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/evidenceDesign/consent?source=Claimant consent"):
+        return res.redirect("/evidenceDesign/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/evidenceDesign/attendees-none?source=Additional attendees"):
+        return res.redirect("/evidenceDesign/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/evidenceDesign/attendees?source=Additional attendees"):
+        return res.redirect("/evidenceDesign/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/evidenceDesign/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/evidenceDesign/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/evidenceDesign/conditions-none?source=Condition history"):
+        return res.redirect("/evidenceDesign/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/evidenceDesign/conditions-addAnother?source=Condition history"):
+        return res.redirect("/evidenceDesign/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/evidenceDesign/medications-none?source=Medication"):
+        return res.redirect("/evidenceDesign/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/evidenceDesign/medication-addAnother?source=Medication"):
+        return res.redirect("/evidenceDesign/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/evidenceDesign/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/evidenceDesign/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/evidenceDesign/preparingfood?source=Preparing food"):
+        return res.redirect("/evidenceDesign/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/evidenceDesign/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/evidenceDesign/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/evidenceDesign/managingtherapy?source=Managing therapy"):
+        return res.redirect("/evidenceDesign/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/evidenceDesign/washingbathing?source=Washing and bathing"):
+        return res.redirect("/evidenceDesign/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/evidenceDesign/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/evidenceDesign/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/evidenceDesign/dressing?source=Dressing and undressing"):
+        return res.redirect("/evidenceDesign/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/evidenceDesign/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/evidenceDesign/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/evidenceDesign/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/evidenceDesign/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/evidenceDesign/facetoface?source=Engaging face to face"):
+        return res.redirect("/evidenceDesign/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/evidenceDesign/budgeting?source=Budgeting"):
+        return res.redirect("/evidenceDesign/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/evidenceDesign/journeys?source=Planning and following journeys"):
+        return res.redirect("/evidenceDesign/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("evidenceDesign/movingaround?source=Moving around"):
+        return res.redirect("/evidenceDesign/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/evidenceDesign/mental-state?source=Mental state observations"):
+        return res.redirect("/evidenceDesign/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/evidenceDesign/physical-state?source=Informal observations"):
+        return res.redirect("/evidenceDesign/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/evidenceDesign/descriptor?source=Activity descriptors"):
+        return res.redirect("/evidenceDesign/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/evidenceDesign/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/evidenceDesign/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/evidenceDesign/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/evidenceDesign/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/evidenceDesign/review?source=Review"):
+        return res.redirect("/evidenceDesign/review?source=Review")
+      
+      case serviceRedirect.endsWith("/evidenceDesign/check-answers-new"):
+        return res.redirect("/evidenceDesign/check-answers-new")
+
+       case serviceRedirect.endsWith("/evidenceDesign/docs-3"):
+        return res.redirect("/evidenceDesign/docs-3")
 
 
       default:
