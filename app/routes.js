@@ -1420,6 +1420,515 @@ router.use((req, res, next) => {
         return res.redirect("/evidenceDesign/docs-3")
 
 
+        // face to face - side nav links (sept journey)
+        case serviceRedirect.endsWith("/face-to-face-two-sept/evidence-none?source=default"):
+        return res.redirect("/face-to-face-two-sept/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-two-sept/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-two-sept/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/conditions?source=History of condition"):
+        return res.redirect("/face-to-face-two-sept/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/face-to-face-two-sept/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/consultation-date?source=Consultation date"):
+        return res.redirect("/face-to-face-two-sept/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/verify-id?source=Claimant identity"):
+        return res.redirect("/face-to-face-two-sept/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/consent?source=Claimant consent"):
+        return res.redirect("/face-to-face-two-sept/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/attendees-none?source=Additional attendees"):
+        return res.redirect("/face-to-face-two-sept/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/attendees?source=Additional attendees"):
+        return res.redirect("/face-to-face-two-sept/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/face-to-face-two-sept/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/conditions-none?source=Condition history"):
+        return res.redirect("/face-to-face-two-sept/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/conditions-addAnother?source=Condition history"):
+        return res.redirect("/face-to-face-two-sept/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/medications-none?source=Medication"):
+        return res.redirect("/face-to-face-two-sept/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/medication-addAnother?source=Medication"):
+        return res.redirect("/face-to-face-two-sept/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/face-to-face-two-sept/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/face-to-face-two-sept/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/face-to-face-two-sept/preparingfood?source=Preparing food"):
+        return res.redirect("/face-to-face-two-sept/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("face-to-face-two-sept/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/face-to-face-two-sept/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/face-to-face-two-sept/managingtherapy?source=Managing therapy"):
+        return res.redirect("/face-to-face-two-sept/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/face-to-face-two-sept/washingbathing?source=Washing and bathing"):
+        return res.redirect("/face-to-face-two-sept/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/face-to-face-two-sept/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/face-to-face-two-sept/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/face-to-face-two-sept/dressing?source=Dressing and undressing"):
+        return res.redirect("/face-to-face-two-sept/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/face-to-face-two-sept/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/face-to-face-two-sept/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/face-to-face-two-sept/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/face-to-face-two-sept/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/face-to-face-two-sept/facetoface?source=Engaging face to face"):
+        return res.redirect("/face-to-face-two-sept/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/face-to-face-two-sept/budgeting?source=Budgeting"):
+        return res.redirect("/face-to-face-two-sept/budgeting?source=Budgeting")
+
+             case serviceRedirect.endsWith("/face-to-face-two-sept/examination-consent?source=Examination consent"):
+        return res.redirect("/face-to-face-two-sept/examination-consent?source=Examination consent")
+
+             case serviceRedirect.endsWith("/face-to-face-two-sept/physical-examination?source=Physical examination"):
+        return res.redirect("/face-to-face-two-sept/physical-examination?source=Physical examination")
+
+           case serviceRedirect.endsWith("/face-to-face-two-sept/journeys?source=Planning and following journeys"):
+        return res.redirect("/face-to-face-two-sept/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("face-to-face-two-sept/movingaround?source=Moving around"):
+        return res.redirect("/face-to-face-two-sept/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/face-to-face-two-sept/mental-state?source=Mental state observations"):
+        return res.redirect("/face-to-face-two-sept/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/face-to-face-two-sept/physical-state?source=Informal observations"):
+        return res.redirect("/face-to-face-two-sept/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/face-to-face-two-sept/descriptor?source=Activity descriptors"):
+        return res.redirect("/face-to-face-two-sept/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/face-to-face-two-sept/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/face-to-face-two-sept/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/face-to-face-two-sept/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/face-to-face-two-sept/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/face-to-face-two-sept/review?source=Review"):
+        return res.redirect("/face-to-face-two-sept/review?source=Review")
+      
+      case serviceRedirect.endsWith("/face-to-face-two-sept/report"):
+        return res.redirect("/face-to-face-two-sept/report")
+
+       case serviceRedirect.endsWith("/face-to-face-two-sept/docs-3"):
+        return res.redirect("/face-to-face-two-sept/docs-3")
+
+
+         // face to face iteration two - side nav links
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/evidence-none?source=default"):
+        return res.redirect("/face-to-face-iteration-two/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-iteration-two/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-iteration-two/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/conditions?source=History of condition"):
+        return res.redirect("/face-to-face-iteration-two/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/face-to-face-iteration-two/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/consultation-date?source=Consultation date"):
+        return res.redirect("/face-to-face-iteration-two/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/verify-id?source=Claimant identity"):
+        return res.redirect("/face-to-face-iteration-two/verify-id?source=Claimant identity")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/assessment-travel?source=Travel to consultation"):
+        return res.redirect("/face-to-face-iteration-two/assessment-travel?source=Travel to consultation")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/consent?source=Claimant consent"):
+        return res.redirect("/face-to-face-iteration-two/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/attendees-none?source=Additional attendees"):
+        return res.redirect("/face-to-face-iteration-two/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/attendees?source=Additional attendees"):
+        return res.redirect("/face-to-face-iteration-two/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/face-to-face-iteration-two/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/conditions-none?source=Condition history"):
+        return res.redirect("/face-to-face-iteration-two/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/conditions-addAnother?source=Condition history"):
+        return res.redirect("/face-to-face-iteration-two/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/medications-none?source=Medication"):
+        return res.redirect("/face-to-face-iteration-two/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/medication-addAnother?source=Medication"):
+        return res.redirect("/face-to-face-iteration-two/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/face-to-face-iteration-two/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/preparingfood?source=Preparing food"):
+        return res.redirect("/face-to-face-iteration-two/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("face-to-face-iteration-two/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/face-to-face-iteration-two/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/managingtherapy?source=Managing therapy"):
+        return res.redirect("/face-to-face-iteration-two/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/face-to-face-iteration-two/washingbathing?source=Washing and bathing"):
+        return res.redirect("/face-to-face-iteration-two/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/face-to-face-iteration-two/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/face-to-face-iteration-two/dressing?source=Dressing and undressing"):
+        return res.redirect("/face-to-face-iteration-two/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/face-to-face-iteration-two/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/face-to-face-iteration-two/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/face-to-face-iteration-two/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/face-to-face-iteration-two/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/face-to-face-iteration-two/facetoface?source=Engaging face to face"):
+        return res.redirect("/face-to-face-iteration-two/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/face-to-face-iteration-two/budgeting?source=Budgeting"):
+        return res.redirect("/face-to-face-iteration-two/budgeting?source=Budgeting")
+
+             case serviceRedirect.endsWith("/face-to-face-iteration-two/examination-consent?source=Examination consent"):
+        return res.redirect("/face-to-face-iteration-two/examination-consent?source=Examination consent")
+
+           case serviceRedirect.endsWith("/face-to-face-iteration-two/upper-body-examination?source=Upper body examination"):
+        return res.redirect("/face-to-face-iteration-two/upper-body-examination?source=Upper body examination")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/lower-body-examination?source=Lower body examination"):
+        return res.redirect("/face-to-face-iteration-two/lower-body-examination?source=Lower body examination")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/vision-examination?source=Vision examination"):
+        return res.redirect("/face-to-face-iteration-two/vision-examination?source=Vision examination")
+
+        case serviceRedirect.endsWith("/face-to-face-iteration-two/hearing-examination?source=Hearing examination"):
+        return res.redirect("/face-to-face-iteration-two/hearing-examination?source=Hearing examination")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/cardio-respriatory-examination?source=Cardio-respiratory examination"):
+        return res.redirect("/face-to-face-iteration-two/cardio-respriatory-examination?source=Cardio-respiratory examination")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/neurological-examination?source=Neurological examination"):
+        return res.redirect("/face-to-face-iteration-two/neurological-examination?source=Neurological examination")
+
+             case serviceRedirect.endsWith("/face-to-face-iteration-two/physical-examination?source=Physical examination"):
+        return res.redirect("/face-to-face-iteration-two/physical-examination?source=Physical examination")
+
+           case serviceRedirect.endsWith("/face-to-face-iteration-two/journeys?source=Planning and following journeys"):
+        return res.redirect("/face-to-face-iteration-two/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("face-to-face-iteration-two/movingaround?source=Moving around"):
+        return res.redirect("/face-to-face-iteration-two/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/mental-state?source=Mental state observations"):
+        return res.redirect("/face-to-face-iteration-two/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/physical-state?source=Informal observations"):
+        return res.redirect("/face-to-face-iteration-two/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/descriptor?source=Activity descriptors"):
+        return res.redirect("/face-to-face-iteration-two/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/face-to-face-iteration-two/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/face-to-face-iteration-two/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/face-to-face-iteration-two/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/review?source=Review"):
+        return res.redirect("/face-to-face-iteration-two/review?source=Review")
+      
+      case serviceRedirect.endsWith("/face-to-face-iteration-two/report"):
+        return res.redirect("/face-to-face-iteration-two/report")
+
+       case serviceRedirect.endsWith("/face-to-face-iteration-two/docs-3"):
+        return res.redirect("/face-to-face-iteration-two/docs-3")
+
+
+         // face to face iteration one - side nav links
+        case serviceRedirect.endsWith("/face-to-face/evidence-none?source=default"):
+        return res.redirect("/face-to-face/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/face-to-face/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face/conditions?source=History of condition"):
+        return res.redirect("/face-to-face/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/face-to-face/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/face-to-face/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/face-to-face/consultation-date?source=Consultation date"):
+        return res.redirect("/face-to-face/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/face-to-face/verify-id?source=Verify identity"):
+        return res.redirect("/face-to-face/verify-id?source=Verify identity")
+
+         case serviceRedirect.endsWith("/face-to-face/assessment-travel?source=Travel to consultation"):
+        return res.redirect("/face-to-face/assessment-travel?source=Travel to consultation")
+
+      case serviceRedirect.endsWith("/face-to-face/consent?source=Claimant consent"):
+        return res.redirect("/face-to-face/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/face-to-face/attendees-none?source=Additional attendees"):
+        return res.redirect("/face-to-face/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face/attendees?source=Additional attendees"):
+        return res.redirect("/face-to-face/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/face-to-face/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/face-to-face/conditions-none?source=Condition history"):
+        return res.redirect("/face-to-face/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/face-to-face/conditions-addAnother?source=Condition history"):
+        return res.redirect("/face-to-face/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/face-to-face/medications-none?source=Medication"):
+        return res.redirect("/face-to-face/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/face-to-face/medication-addAnother?source=Medication"):
+        return res.redirect("/face-to-face/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/face-to-face/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/face-to-face/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/face-to-face/preparingfood?source=Preparing food"):
+        return res.redirect("/face-to-face/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("face-to-face/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/face-to-face/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/face-to-face/managingtherapy?source=Managing therapy"):
+        return res.redirect("/face-to-face/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/face-to-face/washingbathing?source=Washing and bathing"):
+        return res.redirect("/face-to-face/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/face-to-face/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/face-to-face/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/face-to-face/dressing?source=Dressing and undressing"):
+        return res.redirect("/face-to-face/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/face-to-face/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/face-to-face/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/face-to-face/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/face-to-face/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/face-to-face/facetoface?source=Engaging face to face"):
+        return res.redirect("/face-to-face/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/face-to-face/budgeting?source=Budgeting"):
+        return res.redirect("/face-to-face/budgeting?source=Budgeting")
+
+             case serviceRedirect.endsWith("/face-to-face/examination-consent?source=Examination consent"):
+        return res.redirect("/face-to-face/examination-consent?source=Examination consent")
+
+           case serviceRedirect.endsWith("/face-to-face/upper-body-examination?source=Upper body examination"):
+        return res.redirect("/face-to-face/upper-body-examination?source=Upper body examination")
+
+         case serviceRedirect.endsWith("/face-to-face/lower-body-examination?source=Lower body examination"):
+        return res.redirect("/face-to-face/lower-body-examination?source=Lower body examination")
+
+        case serviceRedirect.endsWith("/face-to-face/vision-examination?source=Vision examination"):
+        return res.redirect("/face-to-face/vision-examination?source=Vision examination")
+
+        case serviceRedirect.endsWith("/face-to-face/hearing-examination?source=Hearing examination"):
+        return res.redirect("/face-to-face/hearing-examination?source=Hearing examination")
+
+         case serviceRedirect.endsWith("/face-to-face/cardio-respriatory-examination?source=Cardio-respiratory examination"):
+        return res.redirect("/face-to-face/cardio-respriatory-examination?source=Cardio-respiratory examination")
+
+         case serviceRedirect.endsWith("/face-to-face/neurological-examination?source=Neurological examination"):
+        return res.redirect("/face-to-face/neurological-examination?source=Neurological examination")
+
+             case serviceRedirect.endsWith("/face-to-face/physical-examination?source=Physical examination"):
+        return res.redirect("/face-to-face/physical-examination?source=Physical examination")
+
+           case serviceRedirect.endsWith("/face-to-face/journeys?source=Planning and following journeys"):
+        return res.redirect("/face-to-face/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("face-to-face/movingaround?source=Moving around"):
+        return res.redirect("/face-to-face/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/face-to-face/mental-state?source=Mental state observations"):
+        return res.redirect("/face-to-face/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/face-to-face/physical-state?source=Physical state observations"):
+        return res.redirect("/face-to-face/physical-state?source=Physical state observations")
+      
+      case serviceRedirect.endsWith("/face-to-face/descriptor?source=Activity descriptors"):
+        return res.redirect("/face-to-face/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/face-to-face/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/face-to-face/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/face-to-face/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/face-to-face/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/face-to-face/review?source=Review"):
+        return res.redirect("/face-to-face/review?source=Review")
+      
+      case serviceRedirect.endsWith("/face-to-face/report"):
+        return res.redirect("/face-to-face/report")
+
+       case serviceRedirect.endsWith("/face-to-face/docs-3"):
+        return res.redirect("/face-to-face/docs-3")
+
+
+        // face to face (sept journey) - side nav links
+        case serviceRedirect.endsWith("/face-to-face-one/evidence-none?source=default"):
+        return res.redirect("/face-to-face-one/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/face-to-face-one/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-one/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-one/evidence-addAnother?source=evidence"):
+        return res.redirect("/face-to-face-one/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/face-to-face-one/conditions?source=History of condition"):
+        return res.redirect("/face-to-face-one/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/face-to-face-one/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/face-to-face-one/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/face-to-face-one/consultation-date?source=Consultation date"):
+        return res.redirect("/face-to-face-one/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/face-to-face-one/verify-id?source=Verify identity"):
+        return res.redirect("/face-to-face-one/verify-id?source=Verify identity")
+
+         case serviceRedirect.endsWith("/face-to-face-one/assessment-travel?source=Travel to consultation"):
+        return res.redirect("/face-to-face-one/assessment-travel?source=Travel to consultation")
+
+      case serviceRedirect.endsWith("/face-to-face-one/consent?source=Claimant consent"):
+        return res.redirect("/face-to-face-one/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/face-to-face-one/attendees-none?source=Additional attendees"):
+        return res.redirect("/face-to-face-one/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-one/attendees?source=Additional attendees"):
+        return res.redirect("/face-to-face-one/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/face-to-face-one/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/face-to-face-one/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/face-to-face-one/conditions-none?source=Condition history"):
+        return res.redirect("/face-to-face-one/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/face-to-face-one/conditions-addAnother?source=Condition history"):
+        return res.redirect("/face-to-face-one/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/face-to-face-one/medications-none?source=Medication"):
+        return res.redirect("/face-to-face-one/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/face-to-face-one/medication-addAnother?source=Medication"):
+        return res.redirect("/face-to-face-one/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/face-to-face-one/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/face-to-face-one/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/face-to-face-one/preparingfood?source=Preparing food"):
+        return res.redirect("/face-to-face-one/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("face-to-face-one/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/face-to-face-one/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/face-to-face-one/managingtherapy?source=Managing therapy"):
+        return res.redirect("/face-to-face-one/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/face-to-face-one/washingbathing?source=Washing and bathing"):
+        return res.redirect("/face-to-face-one/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/face-to-face-one/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/face-to-face-one/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/face-to-face-one/dressing?source=Dressing and undressing"):
+        return res.redirect("/face-to-face-one/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/face-to-face-one/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/face-to-face-one/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/face-to-face-one/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/face-to-face-one/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/face-to-face-one/facetoface?source=Engaging face to face"):
+        return res.redirect("/face-to-face-one/facetoface?source=Engaging face to face")
+
+            case serviceRedirect.endsWith("/face-to-face-one/budgeting?source=Budgeting"):
+        return res.redirect("/face-to-face-one/budgeting?source=Budgeting")
+
+             case serviceRedirect.endsWith("/face-to-face-one/examination-consent?source=Examination consent"):
+        return res.redirect("/face-to-face-one/examination-consent?source=Examination consent")
+
+        case serviceRedirect.endsWith("/face-to-face-one/physical-examination?source=Physical examination"):
+        return res.redirect("/face-to-face-one/physical-examination?source=Physical examination")
+
+           case serviceRedirect.endsWith("/face-to-face-one/journeys?source=Planning and following journeys"):
+        return res.redirect("/face-to-face-one/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("face-to-face-one/movingaround?source=Moving around"):
+        return res.redirect("/face-to-face-one/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/face-to-face-one/mental-state?source=Mental state observations"):
+        return res.redirect("/face-to-face-one/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/face-to-face-one/physical-state?source=Physical state observations"):
+        return res.redirect("/face-to-face-one/physical-state?source=Physical state observations")
+      
+      case serviceRedirect.endsWith("/face-to-face-one/descriptor?source=Activity descriptors"):
+        return res.redirect("/face-to-face-one/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/face-to-face-one/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/face-to-face-one/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/face-to-face-one/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/face-to-face-one/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/face-to-face-one/review?source=Review"):
+        return res.redirect("/face-to-face-one/review?source=Review")
+      
+      case serviceRedirect.endsWith("/face-to-face-one/report"):
+        return res.redirect("/face-to-face-one/report")
+
+       case serviceRedirect.endsWith("/face-to-face-one/docs-3"):
+        return res.redirect("/face-to-face-one/docs-3")
+
+
       default:
         return res.redirect("/")
     }
