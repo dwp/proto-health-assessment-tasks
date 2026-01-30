@@ -4,6 +4,10 @@
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
+    "engines": {  
+      "node": "20.x"
+    },
+
   "dependencies": {
     "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -15,7 +19,8 @@
     "hmrc-frontend": "6.112.0"
   },
   "overrides": {
-    "qs": "6.14.1"
+    "qs": "6.14.1",
+    "del": "6.1.1"
   }
 }
  
