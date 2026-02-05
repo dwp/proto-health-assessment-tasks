@@ -5,9 +5,6 @@
     "start": "govuk-prototype-kit start"
   },
 
-"engines" : {
-    "node": "22.9.0"
-  },
   "dependencies": {
     "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
