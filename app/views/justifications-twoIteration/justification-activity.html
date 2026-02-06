@@ -1079,11 +1079,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <div class="govuk-grid-column-one-third sticky">
   
-                  <!-- <ul class="govuk-list border-notes govuk-!-margin-bottom-8">
+              
+                 <ul class="govuk-list border-notes govuk-!-margin-bottom-8">
                   <li>
-                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">Assessment notes (opens in a new tab)</a>
+                 <a href="consultation-notes" class="govuk-link" rel="noreferrer noopener" target="_blank">History overview (opens in a new tab)</a>
                     </li>
-                 </ul> -->
+                 </ul>
 
 
             <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
@@ -1092,13 +1093,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               On this page
             </h2>
                 <ul class="govuk-list">
+                   <li>
+                    <a href="#notes" class="govuk-link govuk-link--no-visited-state">My notes</a>
+                  </li>
                   <li>
                     <a href="#activityGroup" class="govuk-link govuk-link--no-visited-state">Select the activities you want to group</a>
                   </li>
-                </ul>
               {% for justification in data['justificationAdded'] %}
               {% set count = loop.index %}
-              <ul class="govuk-list">
+            
                 <li>
                   <a href="#{{count}}" class="govuk-link govuk-link--no-visited-state">Justification for activity {{ justification.groupName }}</a>
                 </li>
