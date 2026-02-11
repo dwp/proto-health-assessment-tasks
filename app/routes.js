@@ -7570,6 +7570,96 @@ const conditionName = req.session.data['condition-name-first']
    res.redirect('/conditionsNameList/conditions-addAnother')
 })
 
+// Routes for adding another medication
+router.post('/conditionsNameList/medications-none', function (req, res) {
+
+  res.redirect('/conditionsNameList/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/conditionsNameList/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/conditionsNameList/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/conditionsNameList/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/conditionsNameList/medication-addAnother')
+})
+
+router.post('/conditionsNameList/medication-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList/medication')
+})
+
+// Routes for adding another attendee //
+
+router.post('/conditionsNameList/attendees-none', function (req, res) {
+
+  res.redirect('/conditionsNameList/attendees')
+})
+
+
+router.post('/conditionsNameList/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/conditionsNameList/attendees-addAnother')
+})
+
+router.post('/conditionsNameList/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/conditionsNameList/attendees-addAnother')
+})
+
+router.post('/conditionsNameList/attendees-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList/attendees')
+})
+
 
 //Conditions name list -- test
 

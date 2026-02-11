@@ -47,11 +47,29 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
               </div>
             </div>
           </div>
-        </fieldset>
-      </div>
-        
-     </form>
 
+           <script>
+          function addDates(){
+              var day = document.getElementById("consultation-date-day").value;
+              var month = document.getElementById("consultation-date-month").value;
+              var year = document.getElementById("consultation-date-year").value;
+
+              if (day == "" || day.length == 0 || day == null)
+                  {
+                    document.getElementById("consultation-date-day").value += '11';
+                    document.getElementById("consultation-date-month").value += '2';
+                    document.getElementById("consultation-date-year").value += '2026';
+               
+                  }
+          }
+      </script>
+        <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addDates(this.value)" style="margin-top:4%">Use today's date</a>
+        <!-- <textarea class="govuk-textarea" id="conditionSubHeadings" name="condition-history" rows="20" aria-describedby="condition history"></textarea> -->
+    </div>
+        </fieldset>
+
+  
+     </form>
     </div>
   </div>
 
