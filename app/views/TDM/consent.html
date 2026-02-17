@@ -1,0 +1,107 @@
+{% extends "layouts/TDM-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+
+{% block content_left %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  
+
+    <form action="#" method="post" id="auto-redirect">
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l"></span>
+              <h1 class="govuk-fieldset__heading">
+                  Claimant consent
+              </h1>
+            </legend>
+  <br />
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Did the claimant consent to the consultation?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              {% if data["consent"] == 'Yes' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consentID" name="consent" type="radio" value="Yes" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="consentID">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consent-no" name="consent" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="consent-no">
+                  No
+                </label>
+              </div>
+              {% elseif data["consent"] == 'No' %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consentID" name="consent" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="consentID">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consent-no" name="consent" type="radio" value="No" {{ checked }}>
+                <label class="govuk-label govuk-radios__label" for="consent-no">
+                  No
+                </label>
+              </div>
+              {% elseif data["consent"] === undefined %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consentID" name="consent" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="consentID">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="consent-no" name="consent" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="consent-no">
+                  No
+                </label>
+              </div>
+              {% endif %}
+            </div>
+          </fieldset>
+        </div>
+        <br>
+        <br>
+  
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Consultation purpose declaration
+              </h2>
+            </legend>
+    
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="evDec" name="evidenceDeclaration" type="checkbox" value="All evidence available has been reviewed" data-aria-controls="">
+            <label class="govuk-label govuk-checkboxes__label" for="evDec">
+              The purpose of the consultation has been explained to the claimant.
+            </label>
+          </div>
+        </div>
+        </fieldset>
+        </div>
+  
+        <!-- <div class="govuk-button-group">
+  
+        </div><button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button> -->
+        
+      </div>
+  
+        </form>
+  </div>      
+    
+
+{% endblock %}

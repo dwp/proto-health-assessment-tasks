@@ -1,4 +1,4 @@
-{% extends "layouts/evidence-without-sidenav.html.html" %}
+{% extends "layouts/no-side-nav-prompts-five.html" %}
 
 {% block pageTitle %}
 Home – {{serviceName}} – GOV.UK Prototype Kit
@@ -27,46 +27,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   })
 }}
 
-
-
 {% endblock %}
 
 
-{% block content_left %}
+{% block content %}
 
-<style type="text/css">
-  .govuk-textarea {
-    text-align: left;
-    display: block;
-    white-space: pre-line;
-  }
-             
-  </style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-
-<!-- <div class="govuk-grid-row"> -->
-  <!-- <div class="govuk-grid-column-two-thirds">    -->
-
-<form action="#" method="post" id="auto-redirect">
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-xl"></span>
-        <h1 class="govuk-fieldset__heading">
-          Add a condition or disability
-        </h1>
-        <div id="passport-issued-hint" class="govuk-hint">
-        </div>
-      </legend>
+    <form method="post" novalidate>
+      <h1 class="govuk-heading-l">
+        Your health condition or disability
+      </h1>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-fieldset__legend--s" for="my-autocomplete">
-          Condition or disability name
+          Name of condition or disability
         </label>
          <div class="govuk-hint">
-           <!-- Select from the suggestions or enter your own. -->
+          Select from the suggestions or enter your own.
         </div>
-        <div id="my-autocomplete-container" class="app-autocomplete--with-suggestions"></div>
+        <div id="my-autocomplete-container"></div>
       </div>
 
 
@@ -83,12 +64,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Ewing sarcoma (bone cancer)",
             "Blood vessel cancer (angiosarcoma)",
             "Giant cell tumour (bone cancer)",
-            "Bone cancer (unspecified)",
+            "Other bone cancers",
             "Breast cancer",
             "Cancer of unknown origin",
             "G6PD deficiency (red blood cell disorder)",
             "Neuroblastoma",
-            "Sarcoma (unspecified)",
+            "Other cancers",
+            "Other sarcomas",
             "High cholesterol (Hyperlipidaemia)",
             "Disorders of carbohydrate metabolism",
             "Disorders of amino acid metabolism",
@@ -96,121 +78,138 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Amyloidosis",
             "Porphyria",
             "Obesity",
-            "Metabolic disease (unknown)",
+            "Other metabolic red cell disorder",
+            "Other metabolic disease",
             "Personality disorder",
+            "Speech or language disorder",
             "Dyslexia",
-            "Dyscalculia",
+            "Other specific learning disorder/type not known e.g. dyscalculia",
             "Dyspraxia (developmental co-ordination disorder)",
             "Post traumatic stress disorder (PTSD)",
+            "Other stress reaction disorder",
             "Generalised anxiety disorder (GAD)",
             "Erythrocytosis / polycythaemia",
-            "Social phobia",
-            "Agoraphobia",
+            "Other phobia",
+            "Social phobia / anxiety",
+            "Agoraphobia (anxiety)",
             "Panic disorder / panic attacks",
-            "Anxiety",
+            "Other anxiety disorder",
             "Obsessive compulsive disorder (OCD)",
-            "Anxiety and depression",
-            "Conversion disorder",
+            "Mixed anxiety and depressive disorders",
+            "Conversion disorder (hysteria)",
             "Body dysmorphic disorder (BDD)",
-            "Dissociative disorder",
+            "Other dissociative disorder",
             "Haemophilia A",
-            "Somatoform/somatic symptom disorder",
+            "Somatic symptom disorder",
             "Depression",
             "Bipolar disorder",
+            "Other mood disorder",
             "Schizophrenia",
             "Schizoaffective disorder",
-            "Psychotic disorder",
+            "Other psychotic disorder",
             "Dementia",
             "Cognitive disorder due to stroke",
-            "Cognitive disorder (unspecified)",
+            "Other cognitive disorder",
             "Haemophilia B (Christmas disease)",
             "Anorexia",
             "Bulimia",
-            "Eating disorder (unspecified)",
+            "Other eating disorder",
             "Alcohol misuse",
             "Drugs misuse",
             "Munchausen syndrome",
-            "Factitious disorder",
+            "Other factitious disorder",
             "Down's syndrome",
             "Fragile X syndrome",
             "Von Willebrand disease",
-            "Learning disability (unspecified)",
+            "Other learning disability",
             "Autism",
             "Asperger's syndrome",
             "Rett syndrome",
-            "Attention Deficit Hyperactivity Disorder (ADHD)",
+            "ADHD/ADD",
             "Conduct disorder (including oppositional defiant disorder)",
             "Enuresis (bedwetting)",
             "Faecal soiling (encopresis)",
-            "Mental health problem (unspecified)",
-            "Clotting disorder",
+            "Other psychiatric disorder",
+            "Other clotting disorder",
             "Stroke",
             "Transient ischaemic attacks / TIA (mini stroke)",
-            "Generalised epileptic seizures",
-            "Partial epileptic seizures",
+            "Other cerebrovascular disease",
+            "Generalised epileptic seizures (none in last 12 months)",
+            "Generalised epileptic seizures (within last 12 months)",
+            "Partial epileptic seizures (none in last 12 months)",
+            "Partial epileptic seizures (within last 12 months)",
             "Immune Thrombocytopenic Purpura (ITP)",
             "Narcolepsy",
             "Cataplexy",
-            "Seizure (unspecified)",
+            "Unclassifiable seizures",
             "Stokes Adams attacks (cardiovascular syncope)",
-            "Syncope (Fainting)",
-            "Non epileptic attack disorder/functional seizure/PNES",
+            "Other syncope (fainting)",
+            "Non epileptic attack disorder (pseudoseizures)",
             "Drop attacks",
+            "Other non epileptic disturbances of consciousness",
             "Parkinson's disease",
-            "Platelet disorder",
+            "Other platelet disorder",
             "Parkinsonism",
             "Benign essential tremor",
             "Huntington's disease",
             "Tourette syndrome",
             "Torticollis (twisted neck)",
-            "Blepharospasm (twitching eyelids)",
+            "Blepharospasm (twitching eyes)",
             "Writer's cramp",
-            "Movement disorder (unspecified)",
+            "Other movement disorder",
             "Multiple sclerosis (MS)",
             "Neurofibromatosis",
             "Vitamin B12 or folate deficiency anaemia",
             "Septicaemia/blood poisoning",
-            "Benign tumour (unspecified)",
+            "Other benign tumours",
             "Hydrocephalus",
             "Migraine",
-            "Headache (unspecified)",
-            "Head Injury",
-            "Paraplegia (paralysis of lower body)",
-            "Tetraplegia (paralysis of upper and lower body)",
+            "Other causes of headache",
+            "Head injury with cognitive impairment",
+            "Head injury with sensorimotor impairment",
+            "Head injury with  cognitive and sensorimotor impairment",
+            "Traumatic paraplegia",
+            "Traumatic tetraplegia",
             "Syringomyelia and syringobulbia",
-            "Spinal cord compression",
+            "Other causes of spinal cord compression",
             "Motor neurone disease (MND)",
-            "Degenerative neuronal disease (unspecified)",
-            "Blood disorder (unspecified)",
-            "Cerebral palsy",
+            "Other degenerative neuronal disease",
+            "Cerebral palsy quadriplegia",
+            "Cerebral palsy spastic diplegia",
+            "Cerebral palsy athetoid / dyskinetic",
+            "Cerebral palsy hemiparesis",
+            "Other blood disorders",
+            "Cerebral palsy ataxic",
+            "Other cerebal palsy",
             "Spina bifida",
-            "Friedreich'sÊataxia",
-            "Ataxia (unspecified)",
-            "Diabetic neuropathy (nerve damage)",
-            "Guillain-Barr syndrome",
+            "Friedreich's ataxia",
+            "Other ataxias",
+            "Diabetic neuropathy",
+            "Guillain-Barré syndrome",
             "Charcot-Marie-Tooth disease",
-            "Peripheral neuropathy",
+            "Other neuropathies including peripheral",
             "HIV/AIDS",
             "Brachial plexus injury",
-            "Peripheral nerve injury",
+            "Other peripheral nerve injury",
             "Polymyositis",
             "Dermatomyositis",
             "Myasthenia gravis",
             "Myotonic dystrophy",
-            "Muscle disease (unspecified)",
+            "Other muscle disease",
             "Duchenne muscular dystrophy",
             "Becker muscular dystrophy",
             "Limb girdle muscular dystrophy",
-            "Influenza/seasonal flu",
+            "Flu",
             "Facioscapulohumeral muscular dystrophy",
-            "Muscular dystrophy (unspecified)",
-            "Poliomyelitis/polio",
-            "Viral meningitis/encephalitis",
-            "Bacterial meningitis",
+            "Other muscular dystrophy",
+            "Polio and post-polio syndrome",
+            "Viral encephalitis or meningitis and its complications",
+            "Bacterial meningitis and its complications",
             "Creutzfeldt-Jakob disease (Transmissible Spongiform Encephalopathy TSE)",
-            "Infection of brain or nervous system (unspecified)",
-            "Myalgic encephalomyelitis or chronic fatigue syndrome (ME/CFS)",
-            "Neurological disorder (unspecified)",
+            "Brain infection or nervous system other",
+            "Chronic fatigue syndrome",
+            "Other or unspecified neurological disorder",
+            "Influenza pandemic flu",
             "Scleritis",
             "Keratitis",
             "Corneal ulceration",
@@ -219,16 +218,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Orbital cellulitis",
             "Entropion",
             "Ptosis (drooping eyelid)",
-            "Disease of conjunctiva, cornea, eyelids and lacrimal apparatus",
+            "Other disease of conjunctiva, cornea, eyelids and lacrimal apparatus",
             "Anterior uveitis (iritis)",
             "Coronavirus covid-19",
             "Posterior uveitis (choroiditis)",
-            "Chorioretinal disorder",
+            "Other chorioretinal disorder",
             "Glaucoma",
             "Eye injury",
             "Posterior vitreous detachment",
             "Vitreous haemorrhage",
-            "Vitreous disease",
+            "Other vitreous disease",
             "Detached retina (retinal detachment)",
             "Retinal artery occlusion",
             "Retinal vein occlusion",
@@ -236,14 +235,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Macular degeneration",
             "Diabetic retinopathy",
             "Hypertensive retinopathy",
-            "Retinopathy (unspecified)",
+            "Other retinopathy",
             "Optic neuritis",
             "Optic atrophy",
             "Retinitis pigmentosa",
-            "Disease of the retina and optic nerve",
+            "Other disease of the retina and optic nerve",
             "Cataracts",
+            "Measles complications",
+            "Myopia (short sighted)",
+            "Hypermetropia (long sighted)",
+            "Presbyopia",
+            "Astigmatism",
+            "Other refractive errors",
+            "Squint",
             "Nystagmus",
-            "Eye movement disorder",
+            "Other disorders of eye movement",
             "Lazy eye (amblyopia)",
             "Tunnel vision",
             "Mumps",
@@ -252,80 +258,84 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Quadrantanopia",
             "Diplopia (double vision)",
             "Cortical blindness",
-            "Visual field defect (unspecified)",
-            "Disease affecting vision (unspecified)",
+            "Other visual field defect",
+            "Other disease affecting vision",
             "Outer ear infection ( otitis externa)",
+            "Chronic suppurative otitis media",
             "Mastoiditis",
             "Aplastic anaemia",
+            "Mumps complications",
             "Middle ear infection (otitis media)",
             "Otosclerosis",
             "Conductive hearing loss due to trauma",
-            "Conductive hearing loss (unspecified)",
+            "Other causes of conductive hearing loss",
             "Congenital deafness",
             "Age-related hearing loss (Presbycusis)",
             "Labyrinthitis and vestibular neuritis",
-            "Mnire's disease",
+            "Ménière's disease",
             "Sensorineural hearing loss due to trauma",
-            "Sensorineural hearing loss (unspecified)",
+            "Other cause of sensorineural hearing loss",
             "Rubella (german measles)",
             "Mixed hearing loss",
-            "Disease affecting hearing & balance (unspecified)",
-            "Abdominal aortic aneurysm (AAA)",
-            "Cerebral (brain) aneurysm",
-            "Aneurysm (unspecified)",
+            "Other disease affecting hearing & balance",
+            "Abdominal aortic aneurysm",
+            "Brain aneurysm",
+            "Other aneurysm",
             "Bradycardia (slow heart rate)",
             "Tachycardia (fast heart rate)",
             "Heart block",
             "Atrial fibrillation/flutter",
             "Pacemaker/implantable defibrillator fitted for arrhythmia",
-            "Cardiac arrythmia (unspecified)",
-            "Cardiac (heart) failure",
+            "Rubella complications",
+            "Other cardiac arrhythmias",
+            "Heart failure",
             "Cardiomyopathy",
             "Atrial septal defect (ASD, congenital heart disease)",
             "Ventricular septal defect (VSD, congenital heart disease)",
             "Patent ductus arteriosus (PDA, congenital heart disease)",
             "Coarctation of the aorta (congenital heart disease)",
             "Tetralogy of Fallot (congenital heart disease)",
-            "Congenital heart disease (unspecified)",
-            "Herpes simplex virus (HSV)",
+            "Other congenital heart disease",
+            "Herpes simplex virus",
             "Heart transplant",
             "High blood pressure (hypertension)",
             "Angina",
-            "Myocardial infarction (MI)/Heart attack",
-            "Ischaemic heart disease",
+            "Heart attack",
+            "Other ischaemic heart disease",
             "Pericarditis",
             "Shingles (Herpes zoster)",
             "Aortic valve disease (heart)",
             "Pulmonary valve disease (heart)",
             "Mitral valve disease (heart)",
-            "Chickenpox (Varicella zoster)",
+            "Chicken pox (Varicella zoster)",
             "Tricuspid valve disease (heart)",
-            "Malformation of the heart / valve problem",
+            "Other malformation of the heart / valve problem",
             "Buerger's disease",
             "Peripheral vascular disease / Atherosclerosis",
             "Raynaud's disease/phenomenon",
+            "Other arterial disease excluding coronary",
             "Viral haemorrhagic fever",
             "DVT (deep vein thrombosis)",
-            "Peripheral venous disease",
-            "Cardiovascular disease",
-            "Hiatus hernia/gastroesophageal reflux disease (GORD)/reflux oesophagitis",
+            "Other peripheral venous disease",
+            "Other cardiovascular disease",
+            "Hiatus hernia/gastroesophageal reflux disease/reflux oesophagitis",
             "Oesophageal varices",
             "Stomach ulcer (peptic or gastric ulcer)",
-            "Disease of the oesophagus, stomach and duodenum",
+            "Other disease of the oesophagus, stomach and duodenum",
             "Yellow fever",
             "Coeliac disease",
-            "Disease of the small bowel (unspecified)",
+            "Other disease of the small bowel",
             "Crohn's disease",
-            "Ulcerative colitis (UC)",
+            "Ulcerative colitis",
             "Constipation",
             "Diverticular disease/diverticulitis",
-            "Disease of the colon (unspecified)",
+            "Other disease of the colon",
             "Anorectal abscess",
             "Haemorrhoids",
-            "Viral illness",
+            "Other viral illness",
             "Rectal prolapse",
             "Anal fistula",
-            "Disease of the rectum/anus (unspecified)",
+            "Other disease of the rectum/anus",
             "Irritable bowel syndrome (IBS)",
             "Benign tumours of the gastrointestinal tract",
             "Hernias",
@@ -333,24 +343,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Cleft lip with cleft palate",
             "Oesophageal atresia and tracheo-oesophageal fistula",
             "Hirschsprung's disease",
+            "Anthrax",
             "Campylobacter infection",
             "Cholera",
             "Clostridium difficile (C. diff)",
-            "E. coli",
+            "E coli",
+            "E coli O157",
             "Salmonella",
             "Shigella",
-            "Typhoid/ Paratyphoid",
-            "Dysentery",
+            "Typhoid and Paratyphoid",
+            "Other dystentry",
             "Diarrhoea / food poisoning",
-            "Aplastic anaemia",
             "Botulism",
-            "Norovirus/gastroenteritis",
-            "Intestinal worms",
+            "Other bacterial gastroenteritis",
+            "Other viral gastroenteritis",
+            "Norovirus",
+            "Other intestinal worms",
             "Stoma complications",
-            "Disease of the gastrointestinal tract (unspecified)",
-            "Autoimmune hepatitis (liver inflammation)",
-            "Non alcoholic steatohepatitis (NASH)/Fatty liver",
-            "Chronic hepatitis",
+            "Other disease of the gastrointestinal tract",
+            "Autoimmune hepatitis",
+            "Non alcoholic steatohepatitis (NASH)",
+            "Other chronic hepatitis",
             "Alcoholic cirrhosis",
             "Brucellosis",
             "Hepatitis B and D infection/cirrhosis",
@@ -359,23 +372,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Autoimmune cirrhosis",
             "Haemochromatosis",
             "Wilson's disease",
-            "Cirrhosis (unspecified)",
-            "Liver failure",
+            "Other cirrhosis",
+            "Liver failure - ascites",
             "Hepatic encephalopathy",
+            "Liver failure - peritonitis",
             "Diphtheria",
+            "Other features of liver failure",
             "Liver transplant",
             "Gallstones",
-            "Disease of the gallbladder and biliary tract (unspecified)",
+            "Other disease of the gallbladder and biliary tract",
             "Chronic pancreatitis",
-            "Disease of the pancreas (unspecified)",
+            "Other disease of the pancreas",
             "Impetigo",
             "Cellulitis",
-            "Fungal skin infection",
+            "Fungal infection of skin other",
             "Leprosy",
             "Scabies",
             "Head lice",
-            "Parasitic infection",
-            "Skin infection",
+            "Parasites other",
+            "Other infection of skin",
             "Eczema (dermatitis)",
             "Varicose eczema",
             "Psoriasis",
@@ -383,207 +398,237 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Acne",
             "Rosacea",
             "Leptospirosis (Weil's disease)",
-            "Rash (inflammatory)",
+            "Other papulosquamous and inflammatory rashes",
             "Pemphigus vulgaris",
             "Bullous pemphigoid",
             "Dermatitis herpetiformis",
             "Epidermolysis bullosa",
-            "Bullous disease (unspecified)",
+            "Other bullous disease",
             "Venous leg ulcers",
             "Chronic venous insufficiency",
             "Arterial leg ulcers",
             "Pressure sores",
             "Lyme disease",
             "Lymphoedema",
-            "Diseases of blood vessels/lymphatics (unspecified)",
-            "Ehlers-Danlos syndrome/hypermobility",
-            "Diseases of collagen and elastic tissue (unspecified)",
+            "Other disease of blood vessels/lymphatics",
+            "Ehlers-Danlos syndrome",
+            "Ehlers-Danlos syndrome (hypermobility type)",
+            "Other disease of collagen and elastic tissue",
             "Burns",
-            "Skin disease (unspecified)",
+            "Other skin disease",
             "Osteoarthritis - hips",
             "Osteoarthritis - knees",
+            "Osteoarthritis - other single joint",
             "Listeriosis",
-            "Osteoarthritis (generalised)",
+            "Osteoarthritis - other",
             "Fibromyalgia",
-            "Chronic pain syndrome",
-            "Rheumatoid arthritis (RA)",
+            "Other chronic pain syndrome",
+            "Rheumatoid arthritis",
             "Ankylosing spondylitis",
             "Psoriatic arthritis",
             "Reactive arthritis",
             "Juvenile chronic arthritis (Still's disease)",
-            "Inflammatory arthritis",
+            "Other inflammatory arthritis",
             "Gout",
+            "Meningococcus",
             "Pseudogout",
+            "Other crystal deposition disorder",
             "Avascular necrosis / osteonecrosis / bone infarction",
             "Osteochondritis",
             "Osteomyelitis",
-            "Rickets (severe vitamin D deficiency)",
+            "Rickets",
             "Osteomalacia",
             "Osteoporosis",
             "Paget's disease of bone",
-            "Metabolic and endocrine disorder of bone (unspecified)",
-            "Methicillin-resistant Staphylococcus aureus (MRSA)",
+            "Other metabolic and endocrine disorder of bone",
+            "MRSA",
             "Hereditary multiple exostosis (diaphyseal aclasis)",
             "Achondroplasia (dwarfism)",
             "Multiple epiphyseal dysplasia (Fairbanks disease)",
             "Brittle bone disease (Osteogenesis imperfecta)",
             "Marfan syndrome",
             "Hypermobility syndrome (double-jointed)",
-            "Genetic dysplasia or malformation of musculoskeletal system",
-            "Benign bone tumour",
+            "Other genetic disorder, dysplasia or malformation of musculoskeletal system",
+            "Benign tumours of bone",
             "Compartment syndrome (Volkmann's ischaemia)",
             "Complex regional pain syndrome (CRPS)",
             "Mycobacterial infections",
-            "Musculoskeletal disease (unspecified)",
+            "Other fracture complications",
+            "Other generalised musculoskeletal disease",
             "Rotator cuff disorder (shoulder impingement)",
             "Adhesive capsulitis (frozen shoulder)",
             "Shoulder instability",
-            "Shoulder disorder (unspecified)",
+            "Other shoulder disorder",
             "Tennis elbow (lateral epicondylitis)",
             "Golfer's elbow (medial epicondylitis)",
-            "Elbow disorder (unspecified)",
+            "Other elbow disorder",
             "Tenosynovitis",
-            "Anaemia (unspecified)",
+            "Other anaemias",
+            "Plague",
             "Carpal tunnel syndrome",
             "Dupuytren's contracture",
-            "Disorder of the wrist of hand (unspecified)",
+            "Tendon lesions",
+            "Other wrist and hand disorder",
             "Cervical disc lesion",
             "Cervical spondylosis (age-related neck pain)",
             "Whiplash injury",
-            "Neck disorder (unspecified)",
-            "Back pain",
+            "Other neck disorder",
+            "Non specific back pain (mechanical)",
             "Scoliosis",
             "Q fever",
             "Kyphosis",
             "Scheuermann's disease",
             "Slipped disc",
             "Spinal stenosis",
-            "Spondylolisthesis/slipped vertebra",
-            "Spondylosis/Spondylitis (fused spine)",
+            "Spondylolisthesis",
+            "Spondylosis/Spondylitis",
+            "Other specific back pain",
             "Developmental dysplasia of the hip (DDH)",
             "Perthes disease",
             "Slipped upper femoral epiphysis (SUFE)",
             "Rabies",
-            "Hip disorder (unspecified)",
+            "Other hip disorders",
             "Meniscus tear (knee cartilage damage)",
-            "Unstable ligament of the knee",
+            "Ligamentous instability of knee",
             "Osgood Schlatter disease",
             "Osteochondritis dissecans",
             "Recurrent patellar dislocation",
             "Chondromalacia patellae",
             "Bursitis of knee",
-            "Knee disorder (unspecified)",
+            "Other knee disorders",
             "Scarlet fever",
             "Club foot (talipes)",
             "Bunions",
             "Forefoot pain (metatarsalgia)",
-            "Ankle and foot disorders (unspecified)",
-            "Amputation (upper limb)",
-            "Amputation (lower limb)",
-            "Staphylococcus infection",
+            "Other ankle and foot disorders",
+            "Amputation upper limbs",
+            "Amputation lower limbs",
+            "Amputation upper & lower limbs",
+            "Injury/fracture/dislocation Spine",
+            "Staphylococcus other",
+            "Injury/fracture thorax",
+            "Injury Abdomen",
+            "Injury/fracture/dislocation pelvis",
+            "Injury/fracture/dislocation upper limb",
+            "Injury/fracture/dislocation lower limb",
+            "Unspecified multiple injuries",
+            "Other regional musculoskeletal disease",
             "Systemic lupus erythematosus (SLE)",
             "Antiphospholipid syndrome (APS)",
             "Systemic sclerosis (scleroderma)",
-            "Streptococcus infection",
+            "Streptococcus other",
             "Sjogren's syndrome",
             "Polymyalgia rheumatica (PMR)",
             "Temporal arteritis (giant cell arteritis)",
             "Polyarteritis nodosa",
             "Behcet's disease",
-            "Vasculitis (unspecified)",
-            "Autoimmune disease (unspecified)",
+            "Other vasculitis",
+            "Other autoimmune disease",
             "Urge incontinence - urinary",
             "Stress incontinence - urinary",
             "Overflow incontinence- urinary",
             "Tetanus",
-            "Incontinence (unspecified)",
+            "Other incontinence urinary (not Enuresis/Bed wetting)",
             "Glomerulonephritis",
             "Nephrotic syndrome",
             "Urinary tract infection (UTI)",
             "Interstitial nephritis",
             "Kidney stones (renal calculi)",
             "Hydronephrosis",
-            "Kidney disease (unspecified)",
+            "Other kidney disease",
             "Acute renal failure (acute kidney injury)",
             "Chronic renal failure (chronic kidney disease)",
             "Tuberculosis (TB)",
             "Kidney transplant",
             "Transplant rejection - kidney",
-            "Prostate disease (Benign prostatic hypertrophy BPH)",
-            "Diseases of the bladder, urethra, prostate, testes and penis (unspecified)",
+            "Prostatic disease",
+            "Other diseases of the bladder, urethra, prostate, testes and penis",
             "Ovarian cyst (benign)",
             "Pelvic inflammatory disease (PID)",
             "Endometriosis",
             "Fibroids",
             "Pelvic organ prolapse",
-            "Diseases of the ovary, uterus, cervix, vagina and vulva (unspecified)",
+            "Other diseases of the ovary, uterus, cervix, vagina and vulva",
+            "Bacterial infection other",
             "Syphilis",
             "Gonorrhoea",
-            "Sexually transmitted disease (STI)",
+            "Sexually transmitted disease other",
+            "Other genitourinary  disease",
             "Diabetes insipidus",
             "Growth hormone deficiency",
-            "Hypothalamic and pituitary diseases (unspecified)",
-            "Type 1 diabetes mellitus",
-            "Type 2 diabetes mellitus",
-            "Diabetes (type unknown)",
+            "Other hypothalamic and pituitary diseases",
+            "Type 1 diabetes",
+            "Type 2 diabetes",
+            "Diabetes (other)",
             "Malaria",
             "Underactive thyroid (hypothyroidism)",
             "Overactive thyroid (hyperthyroidism), including Grave's disease",
             "Goitre",
-            "Thyroid disease (unspecified)",
+            "Other thyroid diseases",
             "Addison's disease",
             "Cushing's syndrome",
-            "Adrenal disease (unknown)",
+            "Other adrenal diseases",
             "Hyperparathyroidism",
-            "Hypoparathyroidism",
-            "Parathyroid disease (unspecified)",
+            "Hypoparathyroidism (hypopara)",
+            "Other parathyroid diseases",
             "Hereditary spherocytosis (HS)",
-            "Endocrine disease (unspecified)",
-            "Sleep apnoea",
+            "Other protozoal disease",
+            "Other endocrine diseases",
+            "Obstructive sleep apnoea",
             "Tonsillitis",
             "Laryngitis",
-            "Disease of the upper respiratory tract (unspecified)",
+            "Other diseases of the upper respiratory tract",
             "Chronic obstructive pulmonary disease (COPD)",
             "Bronchiectasis",
             "Cystic fibrosis",
             "Asthma",
             "Extrinsic allergic alveolitis",
-            "Fungal infection (not skin)",
-            "Idiopathic pulmonary fibrosis (IPF)",
-            "Pulmonary fibrosis",
+            "Fungal infection excluding skin",
+            "Idiopathic pulmonary fibrosis (IPF) (fibrosing alveolitis)",
+            "Other pulmonary fibrosis",
             "Coal workers pneumoconiosis",
             "Silicosis",
             "Asbestosis",
-            "Pneumoconiosis",
+            "Other pneumoconiosis",
             "Sarcoidosis",
+            "Other granulomatous lung disease and pulmonary infiltration",
             "Pleural effusion",
             "Pneumothorax (collapsed lung)",
+            "Carrier of infectious disease",
             "Empyema",
-            "Pleural disease (unspecified)",
+            "Other diseases of the pleura",
             "Lung transplant",
             "Heart and lung transplant",
             "Pulmonary embolism",
-            "Legionnaires' disease",
-            "Psittacosis (parrot fever)",
+            "Common cold",
+            "Legionnaires disease",
+            "Psittacosis",
             "Whooping cough",
-            "Pneumonia",
-            "Premature birth",
+            "Contact with infectious disease",
+            "Pneumonia other",
+            "Other diseases of the lower respiratory tract",
+            "Complications of prematurity",
             "Failure to thrive (FTT)",
-            "Chromosomal syndrome",
-            "Allergy (Anaphylaxis)",
-            "Allergy (non anaphylactic)",
+            "Other chromosomal syndrome",
+            "Old age",
+            "Allergy with a risk of anaphylaxis",
+            "Allergy risk of anaphylaxis unknown or not fully assessed",
+            "Allergy no risk of anaphylaxis",
             "Oral allergy syndrome (Pollen food syndrome)",
+            "Parasitic diseases excluding parasites of skin and intestinal worms",
             "Food intolerance",
             "Angioedema",
-            "Hypersensitivity disease (unspecified)",
+            "Other hypersensitivity diseases",
+            "Other diseases of the immune system",
             "Ectopic pregnancy",
             "Threatened miscarriage",
             "Miscarriage",
             "Termination of pregnancy",
             "Molar pregnancy",
             "Anaemia of pregnancy",
-            "Severe morning sickness (Hyperemesis gravidarum)",
-            "Oligohydramnios (too little amniotic fluid)",
+            "Other infectious disease",
+            "Morning sickness (Hyperemesis gravidarum)",
+            "Oligohydramnios",
             "Polyhydramnios (too much amniotic fluid)",
             "Foetal abnormality",
             "Placental abnormality",
@@ -593,7 +638,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Eclampsia",
             "Antepartum haemorrhage (APH)",
             "Mouth or tongue cancer",
-            "Pregnancy complications",
+            "Complications of pregnancy other",
             "Gestational diabetes",
             "High blood pressure (hypertension) in pregnancy",
             "Pelvic pain in pregnancy (symphysis pubis dysfunction)",
@@ -604,20 +649,22 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Stillbirth",
             "Postpartum bleeding (haemorrhage)",
             "Oesophageal cancer",
+            "Complication of labour other",
             "Postpartum sepsis",
+            "Postpartum debility",
             "Postnatal depression/psychosis",
-            "Postnatal complication (unspecified)",
+            "Puerperium/postnatal complications other",
             "Stomach cancer",
             "Pancreatic cancer",
             "Thalassaemia",
             "Liver cancer",
             "Bowel cancer (colon, rectum, anus)",
-            "Gastrointestinal tract cancer(unspecified)",
+            "Other gastrointestinal tract cancers",
             "Laryngeal cancer",
             "Bronchus cancer (lung cancer)",
             "Mesothelioma",
-            "Lung cancer (unspecified)",
-            "Respiratory tract cancer (unspecified)",
+            "Other lung cancers",
+            "Other respiratory tract cancers",
             "Kidney cancer",
             "Renal pelvis cancer",
             "Sickle cell disease",
@@ -625,24 +672,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             "Prostate cancer",
             "Ovarian cancer",
             "Cervical cancer",
-            "Uterine (womb) cancer",
+            "Womb (uterus) cancer",
             "Testicular cancer",
             "Wilms tumour (nephroblastoma)",
-            "Genitourinary tract cancer (unspecified)",
+            "Other genitourinary tract cancers",
             "Hodgkin lymphoma",
             "Non-Hodgkins lymphoma",
-            "Haemolytic disorder (unspecified)",
+            "Other haemolytic disorders",
             "Myeloma",
-            "Acute myelogenous (myeloid) leukaemia (AML)",
-            "Acute lymphoblastic leukaemia (ALL)",
-            "Chronic myeloid leukaemia (CML)",
-            "Chronic lymphocytic leukaemia (CLL)",
-            "Leukaemia (unspecified)",
-            "Cancer of the blood (unspecified)",
+            "Acute myelogenous (myeloid) leukaemia",
+            "Acute lymphoblastic leukaemia",
+            "Chronic myeloid leukaemia",
+            "Chronic lymphocytic leukaemia",
+            "Other leukaemias",
+            "Other haematological system cancers",
             "Melanoma",
-            "Skin cancer (unspecified)",
+            "Other skin cancers",
             "Brain and spinal cord cancer"
-
           ];
 
           const fuse = new Fuse(conditions, {
@@ -653,7 +699,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           accessibleAutocomplete({
             element: document.querySelector('#my-autocomplete-container'),
             id: 'my-autocomplete', // To match it to the existing <label>.
-            name: 'condition-name-first',
+            name: 'condition-name-4',
             source: function (query, populate) {
               if (!query) {
                 populate([]);
@@ -665,7 +711,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             },
             minLength: 1,
             confirmOnBlur: true,
-            defaultValue: "",
+            defaultValue: "{{ data["condition-name-4"] | safe}}",
 
             showNoOptionsFound: false, // keep visible (set to false if you want no row at all)
             tNoResults: function () {
@@ -679,123 +725,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 }) ();
       </script>
 
-      <!-- <div class="govuk-form-group">
-        <label class="govuk-label" for="condition-name-first">
-          <b>Condition or disability name</b>
-        </label>
-        <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text">
-      </div> -->
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="condition-start">
-          <b>When did the condition or disability start?</b>
-        </label>
-        <input class="govuk-input" id="condition-start" name="condition-start" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="diagnosis">
-          <b>Condition history</b>
-        </label>
-        <div id="condition-history" class="govuk-hint">
-          This could include diagnosis details, symptoms, variability, treatments, specialist inputs and hospital stays
-        </div>
-        <!-- <div id="boldHeadings"><p><b>Diagnosis <br><br><br>Symptoms <br><br><br>Variability <br><br><br>Treatments <br><br><br>Specialist inputs <br><br><br>Hospital stays</b></p></div> -->
-        <script>
-          function addHeadings(){
-              var boldTitles = document.getElementById("boldHeadings")
-              var titles = document.getElementById("conditionSubHeadings").value;
-
-              if (titles == "" || titles.length == 0 || titles == null)
-                  {
-                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
-                  } else {
-                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
-                  }
-          }
-      </script>
-        <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
-        <textarea class="govuk-textarea" id="conditionSubHeadings" name="condition-history" rows="20" aria-describedby="condition history"></textarea>
-      </div>
-
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              Is this a mental health condition?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="mentalHealthYes" name="mentalHealthQ" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
-              <label class="govuk-label govuk-radios__label" for="mental-healthYes">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription">
-                  <b>Suicidal thoughts and self-harm</b>
-                </label>
-                <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5"></textarea>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="mental-healthNo" name="mentalHealthQ" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="mental-healthNo">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-
-        <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-             Will the condition still be present in 9 months’ time?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="CQ-yes" name="conditionQuestion" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="CQ-yes">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="CQ-no" name="conditionQuestion" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="CQ-no">
-                No
-              </label> 
-          </div>
-          <div class="govuk-radios__item">
-               <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="CQ-notsure" name="conditionQuestion" type="radio" value="It is not possible to say if it will still be present">
-              <label class="govuk-label govuk-radios__label" for="CQ-notsure">
-                It is not possible to say if it will still be present
-              </label>
-              </div>
-            </div>
-        </fieldset>
-      </div>
-    
-          <div class="govuk-button-group">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
-
-          {% if (data['conditionAdded']) %}
-          <p><a href="conditions-addAnother">Cancel</a></p>
-          {% else %}
-          <p><a href="conditions-none">Cancel</a></p>
-          {% endif %}
-
-         </div>
-          
 
       </fieldset>
     </div>

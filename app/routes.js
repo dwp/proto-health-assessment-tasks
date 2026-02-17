@@ -571,7 +571,7 @@ router.use((req, res, next) => {
         return res.redirect("/conditionsNameList/docs-3")
 
 
-          // conditions name list
+          // conditions name list test
         case serviceRedirect.endsWith("/conditionsNameList-test/evidence-none?source=default"):
         return res.redirect("/conditionsNameList-test/evidence-none?source=default")
 
@@ -1927,6 +1927,66 @@ router.use((req, res, next) => {
 
        case serviceRedirect.endsWith("/face-to-face-one/docs-3"):
         return res.redirect("/face-to-face-one/docs-3")
+
+
+        // transformed desision making (TDM)
+        case serviceRedirect.endsWith("/TDM/evidence-none?source=default"):
+        return res.redirect("/TDM/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/TDM/evidence-none?source=evidence"):
+        return res.redirect("/TDM/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/TDM/evidence-addAnother?source=evidence"):
+        return res.redirect("/TDM/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/TDM/consultation-date?source=Consultation date"):
+        return res.redirect("/TDM/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/TDM/consent?source=Claimant consent"):
+        return res.redirect("/TDM/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/TDM/verify-id?source=Claimant identity"):
+        return res.redirect("/TDM/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/TDM/attendees-none?source=Additional attendees"):
+        return res.redirect("/TDM/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/TDM/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/TDM/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/TDM/conditions-none?source=Condition history"):
+        return res.redirect("/TDM/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/TDM/conditions-addAnother?source=Condition history"):
+        return res.redirect("/TDM/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/TDM/medications-none?source=Medication"):
+        return res.redirect("/TDM/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/TDM/medication-addAnother?source=Medication"):
+        return res.redirect("/TDM/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/TDM/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/TDM/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/TDM/functional-history?source=Functional history"):
+        return res.redirect("/TDM/functional-history?source=Functional history")
+    
+      case serviceRedirect.endsWith("/TDM/mental-state?source=Mental state observations"):
+        return res.redirect("/TDM/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/TDM/physical-state?source=Informal observations"):
+        return res.redirect("/TDM/physical-state?source=Informal observations")
+       
+      case serviceRedirect.endsWith("/TDM/review?source=Additional needs"):
+        return res.redirect("/TDM/review?source=Additional needs")
+      
+      case serviceRedirect.endsWith("/TDM/check-answers-new"):
+        return res.redirect("/TDM/check-answers-tdm")
+
+       case serviceRedirect.endsWith("/conditionsNameList/docs-3"):
+        return res.redirect("/conditionsNameList/docs-3")
+
 
 
       default:
@@ -7538,9 +7598,10 @@ router.post('/conditionsNameList/conditions', function (req, res) {
   const conditionHistory = req.session.data['condition-history']
   const mentalHealthQuestion = req.session.data['mentalHealthQ']
   const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
 
   const conditionAdded = req.session.data.conditionAdded || []
-  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
   req.session.data.conditionAdded = conditionAdded
 
   req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
@@ -7658,6 +7719,177 @@ router.post('/conditionsNameList/attendees-change', function (req, res) {
 router.post('/conditionsNameList/attendees-addAnother', function (req, res) {
 
   res.redirect('/conditionsNameList/attendees')
+})
+
+
+//TDM - transformed decision making
+
+router.post('/TDM/evidence-none', function (req, res) {
+
+  res.redirect('/TDM/evidence')
+})
+
+
+router.post('/TDM/evidence-none', function (req, res) {
+
+  res.redirect('/TDM/evidence')
+})
+
+router.post('/TDM/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/TDM/evidence-addAnother?source=evidence')
+})
+
+router.post('/TDM/evidence-addAnother', function (req, res) {
+
+  res.redirect('/TDM/evidence')
+})
+
+router.post('/TDM/conditions-none', function (req, res) {
+
+  res.redirect('/TDM/conditions')
+})
+
+router.post('/TDM/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/TDM/conditions-addAnother')
+})
+
+router.post('/TDM/conditions-addAnother', function (req, res) {
+
+  res.redirect('/TDM/conditions')
+})
+
+router.post('/TDM/conditions-change', function (req, res) {
+const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+   res.redirect('/TDM/conditions-addAnother')
+})
+
+// Routes for adding another medication
+router.post('/TDM/medications-none', function (req, res) {
+
+  res.redirect('/TDM/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/TDM/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/TDM/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/TDM/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/TDM/medication-addAnother')
+})
+
+router.post('/TDM/medication-addAnother', function (req, res) {
+
+  res.redirect('/TDM/medication')
+})
+
+// Routes for adding another attendee //
+
+router.post('/TDM/attendees-none', function (req, res) {
+
+  res.redirect('/TDM/attendees')
+})
+
+
+router.post('/TDM/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/TDM/attendees-addAnother')
+})
+
+router.post('/TDM/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/TDM/attendees-addAnother')
+})
+
+router.post('/TDM/attendees-addAnother', function (req, res) {
+
+  res.redirect('/TDM/attendees')
 })
 
 
