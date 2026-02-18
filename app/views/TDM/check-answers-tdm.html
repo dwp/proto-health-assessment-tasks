@@ -303,78 +303,7 @@ None        </dd>
     <br>
     {% endfor %}
 
-<!-- Report view -->
-     {% for condition in data['conditionAdded'] %}
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> {{ condition.conditionName }}</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-           When did the condition or disability start?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ condition.conditionLength }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> when Depression started</span></a> -->
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Condition history
-          <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
-        </dt>
-        <dd class="govuk-summary-list__value">
-     
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a> -->
-        </dd> 
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Is this a mental health condition?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ condition.mentalHealthQuestion }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a> -->
-        </dd>
-      </div>
-      {% if (condition.mentalHealthQuestion == "Yes") %}
-      <div class="govuk-summary-list__row">
-        <!-- <div class="mentalHealth-title"> -->
-        <dt class="govuk-summary-list__key">
-         <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
-         <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
-        </dt>
-        <dd class="govuk-summary-list__value">
-         
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a> -->
-        </dd>
-      </div>
-      {% else %}
-
-      {% endif %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Will the condition still be present in 9 months’ time?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ condition.conditionDuration }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a> -->
-        </dd>
-      </div>
-    </dl>
-    <br>
-    <br>
-    <br>
-    {% endfor %}
 
   <!-- <div style="margin-top: -1.5%;">
     <h4 class="govuk-heading-s" style="display: inline-block;">Suicidal thoughts and self harm (optional)</h4>
@@ -860,8 +789,7 @@ Integer id vehicula quam. Integer magna justo, euismod non semper ut, molestie i
     
 
   
-    <form action="#" method="get" novalidate>
-      <input type="hidden" name="answers-checked" value="true">
+    <form action="#" method="post" novalidate>
       <button class="govuk-button" data-module="govuk-button">
         Submit report
       </button>

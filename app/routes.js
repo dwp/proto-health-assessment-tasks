@@ -7892,6 +7892,11 @@ router.post('/TDM/attendees-addAnother', function (req, res) {
   res.redirect('/TDM/attendees')
 })
 
+router.post('/TDM/check-answers-tdm', function (req, res) {
+
+  res.redirect('/TDM/submitted')
+})
+
 
 //Conditions name list -- test
 
