@@ -891,6 +891,108 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </fieldset>
       </div>
           {% endif %}
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+             Will the condition still be present in 9 months’ time?
+            </h1>
+          </legend>
+          {% if data["conditionQuestion"] == "Yes" %}
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-yes" name="conditionQuestion" type="radio" value="Yes" {{checked}}>
+              <label class="govuk-label govuk-radios__label" for="CQ-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-no" name="conditionQuestion" type="radio" value="No"> 
+              <label class="govuk-label govuk-radios__label" for="CQ-no">
+                No
+              </label> 
+          </div>
+          <div class="govuk-radios__item">
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-notsure" name="conditionQuestion" type="radio" value="It is not possible to say if it will still be present">
+              <label class="govuk-label govuk-radios__label" for="CQ-notsure">
+                It is not possible to say if it will still be present
+              </label>
+              </div>
+            </div>
+             {% elseif data["conditionQuestion"] == "No" %}
+             <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-yes" name="conditionQuestion" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="CQ-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-no" name="conditionQuestion" type="radio" value="No" {{checked}}> 
+              <label class="govuk-label govuk-radios__label" for="CQ-no">
+                No
+              </label> 
+          </div>
+          <div class="govuk-radios__item">
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-notsure" name="conditionQuestion" type="radio" value="It is not possible to say if it will still be present">
+              <label class="govuk-label govuk-radios__label" for="CQ-notsure">
+                It is not possible to say if it will still be present
+              </label>
+              </div>
+            </div>
+
+             {% elseif data["conditionQuestion"] == "It is not possible to say if it will still be present" %}
+             <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-yes" name="conditionQuestion" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="CQ-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-no" name="conditionQuestion" type="radio" value="No"> 
+              <label class="govuk-label govuk-radios__label" for="CQ-no">
+                No
+              </label> 
+          </div>
+          <div class="govuk-radios__item">
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-notsure" name="conditionQuestion" type="radio" value="It is not possible to say if it will still be present" {{checked}}>
+              <label class="govuk-label govuk-radios__label" for="CQ-notsure">
+                It is not possible to say if it will still be present
+              </label>
+              </div>
+            </div>
+            {% elseif data["conditionQuestion"] == undefined %}
+
+            <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-yes" name="conditionQuestion" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="CQ-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-no" name="conditionQuestion" type="radio" value="No"> 
+              <label class="govuk-label govuk-radios__label" for="CQ-no">
+                No
+              </label> 
+          </div>
+          <div class="govuk-radios__item">
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CQ-notsure" name="conditionQuestion" type="radio" value="It is not possible to say if it will still be present">
+              <label class="govuk-label govuk-radios__label" for="CQ-notsure">
+                It is not possible to say if it will still be present
+              </label>
+              </div>
+            </div>
+          {% endif %}
+        </fieldset>
+      </div>
         
               <div class="govuk-button-group">
               <button type="submit" class="govuk-button" data-module="govuk-button">

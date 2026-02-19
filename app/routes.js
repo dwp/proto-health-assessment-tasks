@@ -7791,12 +7791,13 @@ const conditionName = req.session.data['condition-name-first']
   const conditionHistory = req.session.data['condition-history']
   const mentalHealthQuestion = req.session.data['mentalHealthQ']
   const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
   const conditionNo = req.session.data['indexCond']
 
   const conditionAdded = req.session.data.conditionAdded || []
   // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
   conditionAdded.splice(conditionNo, 1);
-  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
   req.session.data.conditionAdded = conditionAdded
 
    res.redirect('/TDM/conditions-addAnother')

@@ -119,6 +119,17 @@ display: block;
               {% else %}
 
               {% endif %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Will the condition still be present in 9 months’ time?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ condition.conditionDuration }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+                </dd>
+              </div>
             </dl>
           </div>
         </div>
