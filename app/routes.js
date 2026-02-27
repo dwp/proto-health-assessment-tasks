@@ -1988,6 +1988,124 @@ router.use((req, res, next) => {
         return res.redirect("/conditionsNameList/docs-3")
 
 
+        // video assessment - side nav links
+        case serviceRedirect.endsWith("/video-assessment/evidence-none?source=default"):
+        return res.redirect("/video-assessment/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/video-assessment/evidence-none?source=evidence"):
+        return res.redirect("/video-assessment/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/video-assessment/evidence?source=evidence"):
+        return res.redirect("/video-assessment/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/video-assessment/evidence-addAnother?source=evidence"):
+        return res.redirect("/video-assessment/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/video-assessment/conditions?source=History of condition"):
+        return res.redirect("/video-assessment/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/video-assessment/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/video-assessment/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/video-assessment/consultation-date?source=Consultation date"):
+        return res.redirect("/video-assessment/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/video-assessment/verify-id?source=Claimant identity"):
+        return res.redirect("/video-assessment/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/video-assessment/consent?source=Claimant consent"):
+        return res.redirect("/video-assessment/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/video-assessment/attendees-none?source=Additional attendees"):
+        return res.redirect("/video-assessment/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/video-assessment/attendees?source=Additional attendees"):
+        return res.redirect("/video-assessment/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/video-assessment/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/video-assessment/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/video-assessment/conditions-none?source=Condition history"):
+        return res.redirect("/video-assessment/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/video-assessment/conditions-addAnother?source=Condition history"):
+        return res.redirect("/video-assessment/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/video-assessment/medications-none?source=Medication"):
+        return res.redirect("/video-assessment/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/video-assessment/medication-addAnother?source=Medication"):
+        return res.redirect("/video-assessment/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/video-assessment/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/video-assessment/soch1-additional?source=Social and occupational history")
+
+        case serviceRedirect.endsWith("/video-assessment/preparingfood?source=Preparing food"):
+        return res.redirect("/video-assessment/preparingfood?source=Preparing food")
+
+         case serviceRedirect.endsWith("/video-assessment/takingnutrition?source=Taking nutrition"):
+        return res.redirect("/video-assessment/takingnutrition?source=Taking nutrition")
+
+         case serviceRedirect.endsWith("/video-assessment/managingtherapy?source=Managing therapy"):
+        return res.redirect("/video-assessment/managingtherapy?source=Managing therapy")
+
+          case serviceRedirect.endsWith("/video-assessment/washingbathing?source=Washing and bathing"):
+        return res.redirect("/video-assessment/washingbathing?source=Washing and bathing")
+
+         case serviceRedirect.endsWith("/video-assessment/toiletneeds?source=Managing toilet needs"):
+        return res.redirect("/video-assessment/toiletneeds?source=Managing toilet needs")
+
+           case serviceRedirect.endsWith("/video-assessment/dressing?source=Dressing and undressing"):
+        return res.redirect("/video-assessment/dressing?source=Dressing and undressing")
+
+          case serviceRedirect.endsWith("/video-assessment/communicatingverbally?source=Communicating verbally"):
+        return res.redirect("/video-assessment/communicatingverbally?source=Communicating verbally")
+
+          case serviceRedirect.endsWith("/video-assessment/readingunderstanding?source=Reading and understanding signs, symbols and words"):
+        return res.redirect("/video-assessment/readingunderstanding?source=Reading and understanding signs, symbols and words")
+
+             case serviceRedirect.endsWith("/video-assessment/facetoface?source=Engaging face to face"):
+        return res.redirect("/video-assessment/facetoface?source=Engaging face to face")
+
+      
+            case serviceRedirect.endsWith("/video-assessment/budgeting?source=Budgeting"):
+        return res.redirect("/video-assessment/budgeting?source=Budgeting")
+
+           case serviceRedirect.endsWith("/video-assessment/journeys?source=Planning and following journeys"):
+        return res.redirect("/video-assessment/journeys?source=Planning and following journeys")
+
+             case serviceRedirect.endsWith("/video-assessment/movingaround?source=Moving around"):
+        return res.redirect("/video-assessment/movingaround?source=Moving around")
+    
+      case serviceRedirect.endsWith("/video-assessment/mental-state?source=Mental state observations"):
+        return res.redirect("/video-assessment/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/video-assessment/physical-state?source=Informal observations"):
+        return res.redirect("/video-assessment/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/video-assessment/descriptor?source=Activity descriptors"):
+        return res.redirect("/video-assessment/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/video-assessment/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/video-assessment/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/video-assessment/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/video-assessment/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/video-assessment/review?source=Review"):
+        return res.redirect("/video-assessment/review?source=Review")
+      
+      case serviceRedirect.endsWith("/video-assessment/check-answers-new"):
+        return res.redirect("/video-assessment/check-answers-new")
+
+        case serviceRedirect.endsWith("/video-assessment/examination-consent?source=Examination consent"):
+        return res.redirect("/video-assessment/examination-consent?source=Examination consent")
+
+        case serviceRedirect.endsWith("/video-assessment/physical-examination?source=Physical examination"):
+        return res.redirect("/video-assessment/physical-examination?source=Physical examination")
+
+
+
 
       default:
         return res.redirect("/")
@@ -9472,4 +9590,176 @@ router.post('/designIdeas/movingaround', function (req, res) {
 
 router.post('/designIdeas/notesPage', function (req, res) {
   res.redirect('/designIdeas/notesPage')
+})
+
+
+// Routes for evidence video assessment //
+
+// Routes for evidence none //
+router.post('/video-assessment/evidence-none', function (req, res) {
+
+  res.redirect('/video-assessment/evidence')
+})
+
+router.post('/video-assessment/evidence-update', function (req, res) {
+
+  res.redirect('/video-assessment/evidence')
+})
+
+// Routes for adding more evidence //
+router.post('/video-assessment/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/video-assessment/evidence-addAnother')
+})
+
+router.post('/video-assessment/remove-evidence', function (req, res) {
+  const evidenceNo = req.session.data['indexEvidence']
+  const evidenceName = req.session.data['evidence']
+  const evNo = "2-0";
+
+  if (req.session.data['removeCondition'] == "No") {
+    res.redirect('/video-assessment/evidence-addAnother')
+
+  } else if (req.session.data['removeCondition'] == "Yes") {
+
+    const evidenceAdded = req.session.data.evidenceAdded || []
+    evidenceAdded.splice(evidenceNo, 1); // 2nd parameter means remove one item only
+    req.session.data.evidenceAdded = evidenceAdded
+
+    res.redirect('/video-assessment/evidence-addAnother')
+  }
+})
+
+// Adding another peice of evidence //
+router.post('/video-assessment/evidence-addAnother', function (req, res) {
+
+  res.redirect('/video-assessment/evidence')
+})
+
+// Routes for adding another attendee //
+router.post('/video-assessment/attendees-none', function (req, res) {
+
+  res.redirect('/video-assessment/attendees')
+})
+
+router.post('/video-assessment/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/video-assessment/attendees-addAnother')
+})
+
+router.post('/video-assessment/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/video-assessment/attendees-addAnother')
+})
+
+router.post('/video-assessment/attendees-addAnother', function (req, res) {
+
+  res.redirect('/video-assessment/attendees')
+})
+
+router.post('/video-assessment/conditions-none', function (req, res) {
+
+  res.redirect('/video-assessment/conditions')
+})
+
+router.post('/video-assessment/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/video-assessment/conditions-addAnother')
+})
+
+
+router.post('/video-assessment/conditions-addAnother', function (req, res) {
+
+  res.redirect('/video-assessment/conditions')
+})
+
+// Routes for adding another medication
+router.post('/video-assessment/medications-none', function (req, res) {
+
+  res.redirect('/video-assessment/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/video-assessment/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/video-assessment/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/video-assessment/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/video-assessment/medication-addAnother')
+})
+
+router.post('/video-assessment/medication-addAnother', function (req, res) {
+
+  res.redirect('/video-assessment/medication')
 })

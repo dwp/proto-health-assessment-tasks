@@ -1,0 +1,675 @@
+{% extends "layouts/side-nav-face-to-face-sept.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <style>
+      .govuk-summary-list__row--no-border {
+      display: table-row;
+      padding-right: 1px;
+        }
+       
+      </style>
+    
+
+    <!-- <span class="govuk-caption-xl">Personal Independance Payment</span> -->
+    <h1 class="govuk-heading-xl">Check answers</h1>
+
+    
+    <!-- <h2 class="govuk-heading-l">Assessment details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date report was completed
+        </dt>
+        <dd class="govuk-summary-list__value">
+           13th October 2023
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Benefit
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Personal Independence Payment
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Assessment type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Telephone assessment
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> customer reference</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Healthcare professional
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Dr. Smith
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> health professional</span>
+          </a>
+        </dd>
+        
+      </div>
+    </dl>    -->
+
+    <h2 class="govuk-heading-l">Evidence</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      {% for evidenceType in data['evidenceusedpip'] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence used
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          <!-- <ul>
+            {% for evidenceType in data['evidenceusedpip'] %}
+              <p>{{ evidenceType }}, {{ docuemnt-date }}</p>
+            {% endfor %}
+
+            {{ data['evidence']['document-date'] }}
+            {% for evidenceDate in evidence['document-date'] %}
+              <p>{{ document-date }}</p>
+            {% endfor %} 
+          </ul> -->
+
+          
+          {{ evidenceType }}, {{ data['evidence'][ evidenceType | lower | replace(" ", "-")] }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+
+    <h2 class="govuk-heading-l">Consultation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Consulation date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["ConsulationDate"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data["claimantVerify"] == 'Yes' %}
+      <div class="govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key">
+          Was the claimant's identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["claimantVerify"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions" style="padding-right: 0px;">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"></span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How was their identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["yesWhy"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            <span class="govuk-visually-hidden--no-actions"></span>
+          </a>
+        </dd>
+      </div>
+
+      {% elseif data["claimantVerify"] == 'No' %}
+
+      <div class="govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key">
+          Was the claimant's identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["claimantVerify"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions" style="padding-right: 0px;">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"></span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for not confirming their identity
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["noWhy"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions--no-actions">
+          <a class="govuk-link" href="#">
+            <span class="govuk-visually-hidden"></span>
+          </a>
+        </dd>
+      </div>
+
+      {% endif %}
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant give consent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data["consent"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional attendees
+        </dt>
+        
+        <dd class="govuk-summary-list__value">
+          {{data["attendeesAssessment"]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l">History</h2>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <h2 class="govuk-heading-m">History of condition</h2>
+    <p>{{data["condition-history"] | escape | nl2br}}</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <h2 class="govuk-heading-m">Current medication and treatment</h2>
+    <p>{{data["medication-treatment"] | escape | nl2br}} </p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" style="float: right">Change</a>
+   </p>
+    <h2 class="govuk-heading-m">Social and occupational history</h2>
+    <p>{{data["social-occupational-history"] | escape | nl2br}}</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <br>
+
+      <h2 class="govuk-heading-l">Daily living</h2>
+      
+      <h3 class="govuk-heading-m">Preparing food</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right; display: inline;">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for preparing food</h3>
+      <p>{{data["preparingfoodNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant prepare food?</h3>
+      <p>{{data["preparingfoodSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for preparing food</h3>
+      <p>{{data["preparingfoodJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      
+      <h3 class="govuk-heading-m">Taking nutrition</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for taking nutrition</h3>
+      <p>{{data["takingnutritionNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant take nutrition?</h3>
+      <p>{{data["takingnutritionSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for taking nutrition</h3>
+      <p>{{data["takingnutritionJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Managing therapy</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for managing therapy</h3>
+      <p>{{data["managingtherapyNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant manage therapy or monitor a health condition?</h3>
+      <p>{{data["managingtherapySelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing therapy</h3>
+      <p>{{data["managingtherapyJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Washing and bathing</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for washing and bathing</h3>
+      <p>{{data["washingbathingNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant wash and bathe?</h3>
+      <p>{{data["washingbathingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for washing and bathing</h3>
+      <p>{{data["washingJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Managing toilet needs</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for managing toilet needs</h3>
+      <p>{{data["toiletneedsNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant manage toilet needs?</h3>
+      <p>{{data["toiletneedsSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing toilet needs</h3>
+      <p>{{data["toiletneedsJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Dressing and undressing</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for dressing and undressing</h3>
+      <p>{{data["dressingNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant dress or undress?</h3>
+      <p>{{data["dressingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for managing dressing and undressing</h3>
+      <p>{{data["dressingJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Communicating verbally</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for communicating verbally</h3>
+      <p>{{data["communicatingverballyNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant communicate verbally?</h3>
+      <p>{{data["communicatingverballySelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for communicating verbally</h3>
+      <p>{{data["communicatingverballyJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Reading and understanding signs, symbols and words</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for reading and understanding signs, symbols and words</h3>
+      <p>{{data["readingunderstandingNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant reading and understanding signs, symbols and words?</h3>
+      <p>{{data["readingunderstandingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for reading and understanding signs, symbols and words</h3>
+      <p>{{data["readingJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Engaging face to face</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for engaging face to face</h3>
+      <p>{{data["facetofaceNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant engage face to face?</h3>
+      <p>{{data["facetofaceSelect"]}}</p>
+     
+      <h3 class="govuk-heading-s">Justification for engaging face to face</h3>
+      <p>{{data["facetofaceJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Budgeting</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for budgeting</h3>
+      <p>{{data["budgetingNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant budget?</h3>
+      <p>{{data["budgetingSelect"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for budgeting</h3>
+      <p>{{data["budgetingJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
+      <p>{{data["recommendation-daily-living"]}}</p>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has the claimant had the functional restriction for at least 3 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data["qualifying-period"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant likely to have the functional restriction in 9 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["dl9"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-l">Mobility</h2>
+
+      <h3 class="govuk-heading-m">Planning and following journeys</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for planning and following journeys</h3>
+      <p>{{data["planningJourneyNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant plan and follow journeys?</h3>
+      <p>{{data["journeysSelectpbr"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for planning and following journeys</h3>
+      <p>{{data["planningJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Moving around</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Functional history for moving around</h3>
+      <p>{{data["movingaroundNotes"] | escape | nl2br}}</p>
+
+      <h3 class="govuk-heading-s">How well can the claimant move around?</h3>
+      <p>{{data["movingaroundSelectpbr"]}}</p>
+
+      <h3 class="govuk-heading-s">Justification for moving around</h3>
+      <p>{{data["movingJustify"] | escape | nl2br}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
+      <p>{{data["recommendation-mobility"]}}</p>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has the claimant had the functional restriction for at least 3 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data["mobility-qp"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant likely to have the functional restriction in 9 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["9qp"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <!--physical examinations-->
+
+      <h2 class="govuk-heading-l">Physical examinations</h2> 
+
+      <h3 class="govuk-heading-m">Examination consent</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <h3 class="govuk-heading-s">Did the claimant consent to the physical examination?</h3>
+      {% if data["examinationConsent"] == "Yes" %}
+      <p>{{data["examinationConsent"]}}</p>
+
+      {% elseif data["examinationConsent"] == "No" %}
+      <p>{{data["examinationConsent"]}}</p>
+      <h3 class="govuk-heading-s">Reason for not consenting</h3>
+      <p>{{data["no-consent-given"]}}</p>
+
+      {% elseif data["examinationConsent"] == "Physical examination not required" %}
+      <p>{{data["examinationConsent"]}}</p>
+      <h3 class="govuk-heading-s">Reason for not consenting to the physical examination</h3>
+      <p>{{data["not-required"]}}</p>
+      {% endif %}
+
+      <h3 class="govuk-heading-s">Chaperone name</h3>
+      <p>{{data["chaperone"]}}</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Physical examination</h3>
+      <!--physical examination-->
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      {% if data["noPhysicalExamination"] == "No physical examination was done during the consultation." %}
+      <p class="govuk-body">{{data["noPhysicalExamination"]}}</p>
+      {% elseif data["noPhysicalExamination"] == "None" %}
+
+      {% endif %}
+      <p class="govuk-body">{{data["noPhysicalExaminationText"] | escape | nl2br}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h2 class="govuk-heading-l">Observations</h2>
+
+      <h3 class="govuk-heading-m">Mental state observations</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["mental-state"] | escape | nl2br}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m">Informal state observations</h3>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" style="float: right">Change</a>
+     </p>
+      <p>{{data["physical-state"]  | escape | nl2br}}</p>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <br>
+          
+
+      <h2 class="govuk-heading-l">Recommendation</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended future review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data["whenreview"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for this review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data["reviewtimereasons"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> reveiw period reason</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is it likely that the functional restriction will still be present when reviewed?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["functional-restict-review"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> restriction</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["as-marker"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">additional support</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does the claimant meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["special-rules"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+     
+      <div class="govuk-inset-text">
+        No harmful information has been included in this report.
+      </div>
+    
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Print this page</a>
+      </p>
+  
+    <form action="ta-done.html" method="get" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+        Submit report
+      </button>
+    </form>
+    <!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  </div>      
+      </div>
+
+{% endblock %}
