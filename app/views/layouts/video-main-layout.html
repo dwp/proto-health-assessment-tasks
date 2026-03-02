@@ -124,7 +124,7 @@
             </li>
             {% endif %}
 
-            <h4 class="moj-side-navigation__title">History</h4>
+            <!-- <h4 class="moj-side-navigation__title">History</h4> -->
 
             {% if data["source"] == 'Condition history' %} 
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
@@ -165,10 +165,20 @@
             </li>
             {% endif %}
 
+            {% if data["source"] == 'Functional history' %}
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="functional-history?source=Functional history">Functional history</a>
+            </li>
+            {% else %}
+            <li class="moj-side-navigation__item">
+              <a href="functional-history?source=Functional history">Functional history</a>
+            </li>
+            {% endif %}
+
             
 
           
-             <h4 class="moj-side-navigation__title">Daily living</h4>
+             <!-- <h4 class="moj-side-navigation__title">Daily living</h4>
              {% if data["source"] == 'Preparing food' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="preparingfood?source=Preparing food" aria-current="location">Preparing food</a>
@@ -267,9 +277,9 @@
              <li class="moj-side-navigation__item">
                <a href="budgeting?source=Budgeting">Budgeting</a>
              </li>
-             {% endif %}
+             {% endif %} -->
 
-             <h4 class="moj-side-navigation__title">Mobility</h4>
+             <!-- <h4 class="moj-side-navigation__title">Mobility</h4>
              {% if data["source"] == 'Planning and following journeys' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="journeys?source=Planning and following journeys" aria-current="location">Planning and following journeys</a>
@@ -288,7 +298,7 @@
              <li class="moj-side-navigation__item">
                <a href="movingaround?source=Moving around">Moving around</a>
              </li>
-             {% endif %}
+             {% endif %} -->
 
              <h4 class="moj-side-navigation__title">Physical examination</h4>
              {% if data["source"] == 'Examination consent' %}
@@ -333,33 +343,13 @@
              {% endif %}
 
              <h4 class="moj-side-navigation__title">Summary</h4>
-             {% if data["source"] == 'Daily living qualifying period and prospective test' %}
+              {% if data["source"] == 'Additional needs' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="dl-qual?source=Daily living qualifying period and prospective test" aria-current="location">Daily living qualifying period and prospective test</a>
+               <a href="review?source=Additional needs" aria-current="location">Additional needs</a>
              </li>
              {% else %}
              <li class="moj-side-navigation__item">
-               <a href="dl-qual?source=Daily living qualifying period and prospective test">Daily living qualifying period and prospective test</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Mobility qualifying period and prospective test' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="mobility-qual?source=Mobility qualifying period and prospective test" aria-current="location">Mobility qualifying period and prospective test</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="mobility-qual?source=Mobility qualifying period and prospective test">Mobility qualifying period and prospective test</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Review' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="review?source=Review" aria-current="location">Review period for PIP</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="review?source=Review">Review period for PIP</a>
+               <a href="review?source=Additional needs">Additional needs</a>
              </li>
              {% endif %}
           </ul>

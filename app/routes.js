@@ -2076,6 +2076,9 @@ router.use((req, res, next) => {
 
              case serviceRedirect.endsWith("/video-assessment/movingaround?source=Moving around"):
         return res.redirect("/video-assessment/movingaround?source=Moving around")
+
+         case serviceRedirect.endsWith("/video-assessment/functional-history?source=Functional history"):
+        return res.redirect("/video-assessment/functional-history?source=Functional history")
     
       case serviceRedirect.endsWith("/video-assessment/mental-state?source=Mental state observations"):
         return res.redirect("/video-assessment/mental-state?source=Mental state observations")
@@ -2092,8 +2095,8 @@ router.use((req, res, next) => {
          case serviceRedirect.endsWith("/video-assessment/mobility-qual?source=Mobility qualifying period and prospective test"):
         return res.redirect("/video-assessment/mobility-qual?source=Mobility qualifying period and prospective test")
       
-      case serviceRedirect.endsWith("/video-assessment/review?source=Review"):
-        return res.redirect("/video-assessment/review?source=Review")
+      case serviceRedirect.endsWith("/video-assessment/review?source=Additional needs"):
+        return res.redirect("/video-assessment/review?source=Additional needs")
       
       case serviceRedirect.endsWith("/video-assessment/check-answers-new"):
         return res.redirect("/video-assessment/check-answers-new")
