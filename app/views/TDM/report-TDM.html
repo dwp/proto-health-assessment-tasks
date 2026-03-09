@@ -17,6 +17,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     width: 140%;
     font-weight: 700;
   }
+
+  .watermark {
+    opacity: 0.2;
+    color: BLACK;
+    margin: 5%;
+    width: 0;
+    white-space: nowrap;
+    position: absolute;
+    text-align: right;
+    transform-origin: bottom; 
+    margin-top: 180px;
+    transform: rotate(-25deg);
+    font-size: 350px;
+} 
+
+
+/*  horizontal version
+.watermark {
+    opacity: 0.3;
+    color: BLACK;
+    margin: 50%;
+    width: 0;
+    white-space: nowrap;
+    text-align: right;
+    font-size: 100px;
+}  */
+ 
              
   </style>
 
@@ -24,9 +51,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          You are viewing a draft version of this report.
+          <a class="govuk-notification-banner__link" href="report-version">View latest version</a>. 
+        </p>
+      </div>
+    </div> -->
     
     <span class="govuk-caption-xl">Personal Independence Payment</span>
     <h1 class="govuk-heading-xl">Health assessment report</h1>
+
+    <h2 class="govuk-heading-l watermark">DRAFT</h2>
 
     <h2 class="govuk-heading-l">Claimant details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -128,6 +171,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </dl>
 
+    <h2 class="govuk-heading-l watermark">DRAFT</h2>
     <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Abbreviations used in this report</caption>
         <thead class="govuk-table__head">
@@ -165,7 +209,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </table>
 
     
-
+   
     <h2 class="govuk-heading-l">Consultation</h2>
 
      <div class="govuk-inset-text">
