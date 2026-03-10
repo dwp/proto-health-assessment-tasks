@@ -20,5 +20,5 @@ todo-check:
 heroku-site-publish:
   extends: .heroku-site-publish-template
   variables:
-    HEROKU_APP_NAME: proto-health-assessment-tasks
+    HEROKU_APP_NAME: proto-health-assessment-tasks 
 
