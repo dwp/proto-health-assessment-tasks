@@ -2108,7 +2108,87 @@ router.use((req, res, next) => {
         return res.redirect("/video-assessment/physical-examination?source=Physical examination")
 
 
+        // Hasmrful information - side nav links
+        case serviceRedirect.endsWith("/harmful-info/evidence-none?source=default"):
+        return res.redirect("/harmful-info/evidence-none?source=default")
 
+        case serviceRedirect.endsWith("/harmful-info/evidence-none?source=evidence"):
+        return res.redirect("/harmful-info/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/harmful-info/evidence?source=evidence"):
+        return res.redirect("/harmful-info/evidence?source=evidence")
+
+        case serviceRedirect.endsWith("/harmful-info/evidence-addAnother?source=evidence"):
+        return res.redirect("/harmful-info/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/harmful-info/conditions?source=History of condition"):
+        return res.redirect("/harmful-info/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/harmful-info/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/harmful-info/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/harmful-info/consultation-date?source=Consultation date"):
+        return res.redirect("/harmful-info/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/harmful-info/verify-id?source=Claimant identity"):
+        return res.redirect("/harmful-info/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/harmful-info/consent?source=Claimant consent"):
+        return res.redirect("/harmful-info/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/harmful-info/attendees-none?source=Additional attendees"):
+        return res.redirect("/harmful-info/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/harmful-info/attendees?source=Additional attendees"):
+        return res.redirect("/harmful-info/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/harmful-info/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/harmful-info/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/harmful-info/conditions-none?source=Condition history"):
+        return res.redirect("/harmful-info/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/harmful-info/conditions-addAnother?source=Condition history"):
+        return res.redirect("/harmful-info/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/harmful-info/medications-none?source=Medication"):
+        return res.redirect("/harmful-info/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/harmful-info/medication-addAnother?source=Medication"):
+        return res.redirect("/harmful-info/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/harmful-info/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/harmful-info/soch1-additional?source=Social and occupational history")
+
+         case serviceRedirect.endsWith("/harmful-info/functional-history?source=Functional history"):
+        return res.redirect("/harmful-info/functional-history?source=Functional history")
+    
+      case serviceRedirect.endsWith("/harmful-info/mental-state?source=Mental state observations"):
+        return res.redirect("/harmful-info/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/harmful-info/physical-state?source=Informal observations"):
+        return res.redirect("/harmful-info/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/harmful-info/descriptor?source=Activity descriptors"):
+        return res.redirect("/harmful-info/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/harmful-info/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/harmful-info/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/harmful-info/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/harmful-info/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/harmful-info/review?source=Additional needs"):
+        return res.redirect("/harmful-info/review?source=Additional needs")
+      
+      case serviceRedirect.endsWith("/harmful-info/check-answers-new"):
+        return res.redirect("/harmful-info/check-answers-new")
+
+        case serviceRedirect.endsWith("/harmful-info/examination-consent?source=Examination consent"):
+        return res.redirect("/harmful-info/examination-consent?source=Examination consent")
+
+        case serviceRedirect.endsWith("/harmful-info/physical-examination?source=Physical examination"):
+        return res.redirect("/harmful-info/physical-examination?source=Physical examination")
 
       default:
         return res.redirect("/")
