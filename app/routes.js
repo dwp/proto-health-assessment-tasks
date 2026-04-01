@@ -2116,7 +2116,7 @@ router.use((req, res, next) => {
         return res.redirect("/harmful-info/evidence-none?source=evidence")
 
         case serviceRedirect.endsWith("/harmful-info/evidence?source=evidence"):
-        return res.redirect("/harmful-info/evidence?source=evidence")
+        return res.redirect("/harmful-info/check-?source=evidence")
 
         case serviceRedirect.endsWith("/harmful-info/evidence-addAnother?source=evidence"):
         return res.redirect("/harmful-info/evidence-addAnother?source=evidence")
@@ -2181,8 +2181,8 @@ router.use((req, res, next) => {
       case serviceRedirect.endsWith("/harmful-info/review?source=Additional needs"):
         return res.redirect("/harmful-info/review?source=Additional needs")
       
-      case serviceRedirect.endsWith("/harmful-info/check-answers-new"):
-        return res.redirect("/harmful-info/check-answers-new")
+      case serviceRedirect.endsWith("/harmful-info/check-answers-tdm"):
+        return res.redirect("/harmful-info/check-answers-tdm")
 
         case serviceRedirect.endsWith("/harmful-info/examination-consent?source=Examination consent"):
         return res.redirect("/harmful-info/examination-consent?source=Examination consent")
@@ -2190,8 +2190,38 @@ router.use((req, res, next) => {
         case serviceRedirect.endsWith("/harmful-info/physical-examination?source=Physical examination"):
         return res.redirect("/harmful-info/physical-examination?source=Physical examination")
 
+
+        // Harmful information paperbased - side nav links
+        case serviceRedirect.endsWith("/harmful-info-paper/evidence-none?source=default"):
+        return res.redirect("/harmful-info-paper/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/harmful-info-paper/evidence-none?source=evidence"):
+        return res.redirect("/harmful-info-paper/evidence-none?source=evidence")
+
+         case serviceRedirect.endsWith("/harmful-info-paper/evidence-addAnother?source=evidence"):
+        return res.redirect("/harmful-info-paper/evidence-addAnother?source=evidence")
+
+         case serviceRedirect.endsWith("/harmful-info-paper/condition-history?source=Brief summary of clinical details"):
+        return res.redirect("/harmful-info-paper/condition-history?source=Brief summary of clinical details")
+
+         case serviceRedirect.endsWith("/harmful-info-paper/shortcall-none?source=Phone calls"):
+        return res.redirect("/harmful-info-paper/shortcall-none?source=Phone calls")
+
+         case serviceRedirect.endsWith("/harmful-info-paper/phonecall-add?source=Phone calls"):
+        return res.redirect("/harmful-info-paper/phonecall-add?source=Phone calls")
+
+         case serviceRedirect.endsWith("/harmful-info-paper/phonecall-addAnother?source=Phone calls"):
+        return res.redirect("/harmful-info-paper/phonecall-addAnother?source=Phone calls")
+
+           case serviceRedirect.endsWith("/harmful-info-paper/phonecall-result?source=Phone calls"):
+        return res.redirect("/harmful-info-paper/phonecall-result?source=Phone calls")
+
+          case serviceRedirect.endsWith("/harmful-info-paper/review?source=Additional needs"):
+        return res.redirect("/harmful-info-paper/review?source=Additional needs")
+
       default:
         return res.redirect("/")
+
     }
   } else {
     next();
@@ -9845,4 +9875,280 @@ router.post('/video-assessment/medication-change', function (req, res) {
 router.post('/video-assessment/medication-addAnother', function (req, res) {
 
   res.redirect('/video-assessment/medication')
+})
+
+
+/// Harmful information - routes
+
+router.post('/harmful-info/evidence-none', function (req, res) {
+
+  res.redirect('/harmful-info/evidence')
+})
+
+router.post('/harmful-info/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/harmful-info/evidence-addAnother?source=evidence')
+})
+
+router.post('/harmful-info/evidence-addAnother', function (req, res) {
+
+  res.redirect('/harmful-info/evidence')
+})
+
+router.post('/harmful-info/conditions-none', function (req, res) {
+
+  res.redirect('/harmful-info/conditions')
+})
+
+router.post('/harmful-info/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/harmful-info/conditions-addAnother')
+})
+
+router.post('/harmful-info/conditions-addAnother', function (req, res) {
+
+  res.redirect('/harmful-info/conditions')
+})
+
+router.post('/harmful-info/conditions-change', function (req, res) {
+const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
+  req.session.data.conditionAdded = conditionAdded
+
+   res.redirect('/harmful-info/conditions-addAnother')
+})
+
+// Routes for adding another medication
+router.post('/harmful-info/medications-none', function (req, res) {
+
+  res.redirect('/harmful-info/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/harmful-info/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/harmful-info/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/harmful-info/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/harmful-info/medication-addAnother')
+})
+
+router.post('/harmful-info/medication-addAnother', function (req, res) {
+
+  res.redirect('/harmful-info/medication')
+})
+
+// Routes for adding another attendee //
+
+router.post('/harmful-info/attendees-none', function (req, res) {
+
+  res.redirect('/harmful-info/attendees')
+})
+
+
+router.post('/harmful-info/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/harmful-info/attendees-addAnother')
+})
+
+router.post('/harmful-info/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/harmful-info/attendees-addAnother')
+})
+
+router.post('/harmful-info/attendees-addAnother', function (req, res) {
+
+  res.redirect('/harmful-info/attendees')
+})
+
+router.post('/harmful-info/check-answers-tdm', function (req, res) {
+
+  res.redirect('/harmful-info/assessment-report')
+})
+
+
+//Harmful info - paperbased
+
+router.post('/harmful-info-paper/evidence-none', function (req, res) {
+
+  res.redirect('/harmful-info-paper/evidence')
+})
+
+router.post('/harmful-info-paper/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/harmful-info-paper/evidence-addAnother?source=evidence')
+})
+
+router.post('/harmful-info-paper/evidence-addAnother', function (req, res) {
+
+  res.redirect('/harmful-info-paper/evidence')
+})
+
+
+
+router.post('/harmful-info-paper/shortcall-none', function (req, res) {
+
+  res.redirect('/harmful-info-paper/phonecall-add')
+})
+
+// Routes for adding another phonecall //\
+router.post('/harmful-info-paper/phonecall-add', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/harmful-info-paper/phonecall-result')
+})
+
+router.post('/harmful-info-paper/phonecall-change', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.splice(phonecallNo, 1);
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/harmful-info-paper/phonecall-result')
+})
+
+router.post('/harmful-info-paper/phonecall-addAnother', function (req, res) {
+  const phonecallDay = req.session.data['phone-day']
+  const phonecallMonth = req.session.data['phone-month']
+  const phonecallYear = req.session.data['phone-year']
+  const phonecallName = req.session.data['phoneCallName']
+  const relationship = req.session.data['relation']
+  const phonecallIdentity = req.session.data['claimantIdentity']
+  const phonecallIdentityYes = req.session.data['yesWhy']
+  const phonecallIdentityNo = req.session.data['noWhy']
+  const phonecallConsent = req.session.data['consentPBR']
+  const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallNo = req.session.data['index']
+
+  const phoneAdded = req.session.data.phoneAdded || []
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  req.session.data.phoneAdded = phoneAdded
+
+  res.redirect('/harmful-info-paper/phonecall-result')
+})
+
+router.post('/harmful-info-paper/phonecall-result', function (req, res) {
+
+  res.redirect('/harmful-info-paper/phonecall-addAnother')
 })

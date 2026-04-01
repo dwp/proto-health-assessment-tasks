@@ -74,124 +74,34 @@
             </li>
             {% endif %}
 
-            <h4 class="moj-side-navigation__title">Consultation</h4>
-            {% if data["source"] == 'Consultation date' %}
+            <h4 class="moj-side-navigation__title">History</h4>
+            {% if data["source"] == 'Brief summary of clinical details' %} 
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="consultation-date?source=Consultation date">Consultation date</a>
+              <a href="condition-history?source=Brief summary of clinical details">Brief summary of clinical details</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="consultation-date?source=Consultation date">Consultation date</a>
+              <a href="condition-history?source=Brief summary of clinical details">Brief summary of clinical details</a>
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Claimant identity' %}
+    
+            {% if data["source"] == 'Phone calls' %} 
             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
+              <a href="shortcall-none?source=Phone calls" aria-current="location">Phone calls</a>
+            </li>
+            {% elseif (data['phoneAdded']) %}
+            <li class="moj-side-navigation__item">
+              <a href="phonecall-result?source=Phone calls" aria-current="location">Phone calls</a>
             </li>
             {% else %}
             <li class="moj-side-navigation__item">
-              <a href="verify-id?source=Claimant identity">Claimant identity</a>
+              <a href="shortcall-none?source=Phone calls" aria-current="location">Phone calls</a>
             </li>
             {% endif %}
 
-            {% if data["source"] == 'Claimant consent' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="consent?source=Claimant consent">Claimant consent</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="consent?source=Claimant consent">Claimant consent</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Additional attendees' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% elseif (data['attendeeAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="attendees-addAnother?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="attendees-none?source=Additional attendees">Additional attendees</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Condition history' %} 
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="conditions-none?source=Condition history">Condition history</a>
-            </li>
-            {% elseif (data['conditionAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions-addAnother?source=Condition history">Condition history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="conditions-none?source=Condition history">Condition history</a>
-            </li>
-           
-            {% endif %}
-
-            {% if data["source"] == 'Medication' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="medications-none?source=Medication">Medication</a>
-            </li>
-            {% elseif (data['evidenceMedAdded']) or (data['medicationAdded']) %}
-            <li class="moj-side-navigation__item">
-              <a href="medication-addAnother?source=Medication">Medication</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="medications-none?source=Medication">Medication</a>
-            </li>
-            {% endif %}
-
-            {% if data["source"] == 'Social and occupational history' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="soch1-additional?source=Social and occupational history">Social and occupational history</a>
-            </li>
-            {% endif %}
-
-
-            {% if data["source"] == 'Functional history' %}
-            <li class="moj-side-navigation__item moj-side-navigation__item--active">
-              <a href="functional-history?source=Functional history">Functional history</a>
-            </li>
-            {% else %}
-            <li class="moj-side-navigation__item">
-              <a href="functional-history?source=Functional history">Functional history</a>
-            </li>
-            {% endif %}
-
-             <h4 class="moj-side-navigation__title">Observations</h4>
-             {% if data["source"] == 'Mental state observations' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="mental-state?source=Mental state observations" aria-current="location">Mental state observations</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="mental-state?source=Mental state observations">Mental state observations</a>
-             </li>
-             {% endif %}
-
-             {% if data["source"] == 'Informal observations' %}
-             <li class="moj-side-navigation__item moj-side-navigation__item--active">
-               <a href="physical-state?source=Informal observations" aria-current="location">Informal observations</a>
-             </li>
-             {% else %}
-             <li class="moj-side-navigation__item">
-               <a href="physical-state?source=Informal observations">Informal observations</a>
-             </li>
-             {% endif %}
-
+    
              <h4 class="moj-side-navigation__title">Summary</h4>
-            
              {% if data["source"] == 'Additional needs' %}
              <li class="moj-side-navigation__item moj-side-navigation__item--active">
                <a href="review?source=Additional needs" aria-current="location">Additional needs</a>
