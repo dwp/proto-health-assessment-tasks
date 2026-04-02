@@ -36,6 +36,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <textarea class="govuk-textarea" id="briefSummary" name="summary-of-details" rows="20" aria-describedby="brief summary of clinical details">{{ data["summary-of-details"] }}</textarea>
       </div>
       </fieldset>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="consultation-notes">
+          Harmful information
+        </label>
+         <div id="more-detail-hint" class="govuk-hint">
+          Enter any potentially harmful information here. This will not be included in the report. 
+        </div>
+        <textarea class="govuk-textarea" id="consultation-notes" name="phonecallNotes" rows="10" aria-describedby="phone call notes"></textarea>
+      </div>
     </div>
   </form>
   </div>

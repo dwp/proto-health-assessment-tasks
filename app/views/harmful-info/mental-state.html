@@ -32,6 +32,45 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </h1>
     <textarea class="govuk-textarea" id="mental-state" name="mental-state" rows="15" aria-describedby="history-condition-hint">{{data["mental-state"]}}</textarea>
+
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Harmful information
+          </h2>
+        </legend>
+
+       {% if data["conditionDeclaration"] == "None" %}   
+        <div id="harm-hint" class="govuk-hint">
+          Harmful information will be automatically separated from the report.
+        </div> 
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="mentalStateDec" name="mentalStateDeclaration" type="checkbox" value="There is potentially harmful information in this section.">
+          <label class="govuk-label govuk-checkboxes__label" for="mentalStateDec">
+            There is potentially harmful information in this section.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+
+      {% elseif data["conditionDeclaration"] == "There is potentially harmful information in this section." %}
+       <div id="harm-hint" class="govuk-hint">
+          Harmful information will be automatically separated from the report.
+        </div> 
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="mentalStateDec" name="mentalStateDeclaration" type="checkbox" value="There is potentially harmful information in this section." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="mentalStateDec">
+           There is potentially harmful information in this section.
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      </div>
+      {% endif %} 
   </div>
 
       <!-- <div class="govuk-button-group">
