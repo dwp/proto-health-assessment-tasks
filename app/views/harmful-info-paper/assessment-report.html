@@ -63,15 +63,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <p>A telephone call was made to gather further information.</p>
     
 
-  <h2 class="govuk-heading-l">Medical conditions</h2> 
-  {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
+  <h2 class="govuk-heading-l">Brief summary of clinical details</h2> 
+
+  <p> All relevant medical conditions have been explored by a health care professional.</p>
+  <!-- {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
      <p>All relevant medical conditions have been explored by a health care professional.</p>
 
      {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
      <p>All relevant medical conditions have been explored by a health care professional.</p>
 
-     {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %}
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+     {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %} -->
+      <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% for query in data['queriesCondition'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -91,7 +93,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             </ul>
           </dd>
         </div>
-        {% endfor %}
+        {% endfor %} -->
         <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the claimant aware of this diagnosis?     
@@ -111,9 +113,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </dd>
         </div> -->
    </dl>
-   {% endif %}
+   <!-- {% endif %} -->
 
-      
+   <h2 class="govuk-heading-l">Additional needs</h2> 
+
+      <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
       <p class="govuk-body">
         <a href="#" class="govuk-link">Print this page</a>
       </p>

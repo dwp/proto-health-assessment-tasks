@@ -2219,6 +2219,12 @@ router.use((req, res, next) => {
           case serviceRedirect.endsWith("/harmful-info-paper/review?source=Additional needs"):
         return res.redirect("/harmful-info-paper/review?source=Additional needs")
 
+           case serviceRedirect.endsWith("/harmful-info-paper/check-answers-tdm"):
+        return res.redirect("/harmful-info-paper/check-answers-tdm")
+
+          case serviceRedirect.endsWith("/harmful-info-paper/assesment-report"):
+        return res.redirect("/harmful-info-paper/assesment-report")
+
       default:
         return res.redirect("/")
 
@@ -10098,10 +10104,11 @@ router.post('/harmful-info-paper/phonecall-add', function (req, res) {
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes, phonecallHarmfulNotes })
   req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/harmful-info-paper/phonecall-result')
@@ -10118,11 +10125,12 @@ router.post('/harmful-info-paper/phonecall-change', function (req, res) {
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
   phoneAdded.splice(phonecallNo, 1);
-  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes, phonecallHarmfulNotes })
   req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/harmful-info-paper/phonecall-result')
@@ -10139,10 +10147,11 @@ router.post('/harmful-info-paper/phonecall-addAnother', function (req, res) {
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
+  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes })
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes, phonecallHarmfulNotes })
   req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/harmful-info-paper/phonecall-result')
