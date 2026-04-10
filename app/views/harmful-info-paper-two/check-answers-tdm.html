@@ -1,0 +1,519 @@
+{% extends "layouts/TDM-check-answers.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .text {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+
+.title-text {
+    width: 63%;
+    text-wrap: wrap;
+  }
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  }
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+   <span class="govuk-caption-l">Report 1 of 2</span>
+    <h1 class="govuk-heading-xl">Health assessment report</h1>
+
+   <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Do not share this report with the claimant.
+      </strong>
+    </div>
+
+
+    <h2 class="govuk-heading-l">Evidence</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Prescription or medication list, 20 May 2024
+          GP letter, 12 March 2023<br>
+          Factual medical report (FRR2), 18 June 2024
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> evidence used</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Prescription letters and further evidence to support for medical conditions
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> other evidence used</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Evidence requested but not returned
+        </dt>
+        <dd class="govuk-summary-list__value">
+          GP patient form (113), <br>Factual medical report (FRR2)   </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> evidence requested but not returned</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence requested but not returned
+        </dt>
+        <dd class="govuk-summary-list__value">
+None        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> other evidence requested but not returned</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+  <!-- <div>
+    <h2 class="govuk-heading-l" style="display: inline-block;">Brief summary of clinical details</h3>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  </div> -->
+    <!-- <div style="margin-top: -1.5%;">
+    <p class="govuk-body" style="width: 90%;">She's been experiencing suicidal thoughts since the time of her condition diagnosis, she last tried to overdose on medication in December 2020 which required hospitalisation. 
+      Currently she still experiences such thoughts, however she wouldn't have intentions or plans to act on the thoughts.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+  </div> -->
+
+   <div>
+    <h2 class="govuk-heading-l" style="display: inline-block;">Brief summary of clinical details</h3>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  </div>
+    <div style="margin-top: -1.5%;">
+    <p class="govuk-body" style="width: 90%;">{{ data["summary-of-details"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+  </div>
+  
+  
+    <br>
+    <!-- <div>
+      <h2 class="govuk-heading-l" style="display: inline-block;">Social and occupational history (optional)</h3>
+        <a href="#" class="govuk-link govuk-body" style="float: right">Change</a>
+    </div>
+
+    <div>
+    <p class="govuk-body" style="width: 90%;">
+        Lives with partner in a bungalow.
+        Moved from a house a few years ago, as was struggling with stairs due chest and knee pains. 
+        Shower is over bath; struggling to get in and out and is thinking of buying a rail to support with this. 
+        Has easy grip knives, a rubber bathmat and walking stick. 
+        Stopped working after heart attack. Partner works part time. 
+
+        <p>Drives automatic car, swapped from manual to automatic two years ago due to knee pain. No adaptations. Is able to get in and out and but will hold on to the door due to knee pain. When driving long distances finds pain increases to back and knees. Can grip steering wheel with no restrictions. Drives 15-20 minutes maximum as then finds the pain in knees and back increases, can drive these distances several times per week. 
+        Has two adult children who they enjoy seeing weekly, is able to drive there. 
+        Enjoys spending time with grandchildren and will look after them whilst their parents are working, will take them to the park, which is across the road, will need to sit on the bench after walking to the park due to back and knee pain and is then able to walk back. 
+        Will talk to other people they know from the area whilst children play and enjoys this.</p>
+     
+       <p>Used to enjoy doing leisure activities however has stopped doing these due to struggling to stand because of back and knee pain. Misses doing these hobbies.
+        Enjoys reading and will do this daily, able to turn pages of a book. Enjoys listening to radio and watching TV. Able to grip and use mobile phone to browse the internet and use social media. 
+        Enjoys cleaning and pottering around the house slowly as and when back and knee pain allows.</p>
+    </p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+    </div> -->
+
+     {% for calls in data['phoneAdded'] %}
+  
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallName }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.relationship }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallDay }}
+          {% if calls.phonecallMonth === "1" %} 
+          January
+          {% endif %}
+
+          {% if calls.phonecallMonth === "2" %} 
+          February
+          {% endif %}
+
+          {% if calls.phonecallMonth === "3" %} 
+          March
+          {% endif %}
+
+          {% if calls.phonecallMonth === "4" %} 
+           April
+          {% endif %}
+
+          {% if calls.phonecallMonth === "5" %} 
+          May
+          {% endif %}
+
+          {% if calls.phonecallMonth === "6" %} 
+          June
+          {% endif %}
+
+          {% if calls.phonecallMonth === "7" %} 
+          July
+          {% endif %}
+
+          {% if calls.phonecallMonth === "8" %} 
+          August
+          {% endif %}
+
+          {% if calls.phonecallMonth === "9" %} 
+          September
+          {% endif %}
+
+          {% if calls.phonecallMonth === "10" %} 
+          October
+          {% endif %}
+
+          {% if calls.phonecallMonth === "11" %} 
+          November
+          {% endif %}
+
+          {% if calls.phonecallMonth === "12" %} 
+          December
+          {% endif %}
+
+          {{ calls.phonecallYear }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl> 
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Harmful information</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallHarmfulNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+    <br>
+    <br>
+    {% endfor %}
+
+  <!-- <div style="margin-top: 1%;">
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls (optional)</h2>
+       <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Add</a> -->
+  <!--</div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Susan Smith
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Sister
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+        
+          {% if calls.phonecallMonth === "1" %} 
+          January
+          {% endif %}
+
+          {% if calls.phonecallMonth === "2" %} 
+          February
+          {% endif %}
+
+          {% if calls.phonecallMonth === "3" %} 
+          March
+          {% endif %}
+
+          {% if calls.phonecallMonth === "4" %} 
+           April
+          {% endif %}
+
+          {% if calls.phonecallMonth === "5" %} 
+          May
+          {% endif %}
+
+          {% if calls.phonecallMonth === "6" %} 
+          June
+          {% endif %}
+
+          {% if calls.phonecallMonth === "7" %} 
+          July
+          {% endif %}
+
+          {% if calls.phonecallMonth === "8" %} 
+          August
+          {% endif %}
+
+          {% if calls.phonecallMonth === "9" %} 
+          September
+          {% endif %}
+
+          {% if calls.phonecallMonth === "10" %} 
+          October
+          {% endif %}
+
+          {% if calls.phonecallMonth === "11" %} 
+          November
+          {% endif %}
+
+          {% if calls.phonecallMonth === "12" %} 
+          December
+          {% endif %}
+
+          {{ calls.phonecallYear }}
+          <p>11 December 2025</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Susan Smith
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Sister
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if calls.phonecallMonth === "1" %} 
+          January
+          {% endif %}
+
+          {% if calls.phonecallMonth === "2" %} 
+          February
+          {% endif %}
+
+          {% if calls.phonecallMonth === "3" %} 
+          March
+          {% endif %}
+
+          {% if calls.phonecallMonth === "4" %} 
+           April
+          {% endif %}
+
+          {% if calls.phonecallMonth === "5" %} 
+          May
+          {% endif %}
+
+          {% if calls.phonecallMonth === "6" %} 
+          June
+          {% endif %}
+
+          {% if calls.phonecallMonth === "7" %} 
+          July
+          {% endif %}
+
+          {% if calls.phonecallMonth === "8" %} 
+          August
+          {% endif %}
+
+          {% if calls.phonecallMonth === "9" %} 
+          September
+          {% endif %}
+
+          {% if calls.phonecallMonth === "10" %} 
+          October
+          {% endif %}
+
+          {% if calls.phonecallMonth === "11" %} 
+          November
+          {% endif %}
+
+          {% if calls.phonecallMonth === "12" %} 
+          December
+          {% endif %}
+
+          {{ calls.phonecallYear }}
+          <p>11 December 2025</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">Notes here</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div> --> 
+  
+    <br>
+    <br>
+
+      <h2 class="govuk-heading-l">Additional needs</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">additional support</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+<!--      
+      <div class="govuk-inset-text">
+        No harmful information has been included in this report.
+      </div>
+     -->
+
+     <br>
+     <br>
+  
+     <form action="assessment-report" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+       Save and continue
+      </button>
+    </form>
+
+  </div>      
+      </div>
+
+{% endblock %}

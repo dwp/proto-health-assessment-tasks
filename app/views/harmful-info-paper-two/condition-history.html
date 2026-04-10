@@ -46,39 +46,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </div>
         <textarea class="govuk-textarea" id="paperNotes" name="paperHarmfulNotes" rows="10" aria-describedby="phone call notes">{{ data["paperHarmfulNotes"] }}</textarea>
       </div> -->
-
-        <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              Is there any harmful information?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulBriefSummary" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
-              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription">
-                  <b>Harmful information</b>
-                </label>
-                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextBriefSummary" rows="5"></textarea>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulBriefSummary" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="harmfulinfoN">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
     </div>
   </form>
   </div>
