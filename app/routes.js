@@ -10138,7 +10138,7 @@ router.post('/harmful-info-paper/phonecall-add', function (req, res) {
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
-  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
+  const phonecallHarmfulNotes = req.session.data['harmfulInfoTextPhoneCall']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
@@ -10159,7 +10159,7 @@ router.post('/harmful-info-paper/phonecall-change', function (req, res) {
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
   const phonecallNotes = req.session.data['phonecallNotes']
-  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
+  const phonecallHarmfulNotes = req.session.data['harmfulInfoTextPhoneCall']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []

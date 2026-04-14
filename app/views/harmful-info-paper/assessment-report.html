@@ -58,14 +58,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </dl> -->
 
-  <h2 class="govuk-heading-l">Phone call</h2>
-
-    <p>A telephone call was made to gather further information.</p>
-    
-
-  <h2 class="govuk-heading-l">Brief summary of clinical details</h2> 
-
-  <p> All relevant medical conditions have been explored by a health care professional.</p>
+<h2 class="govuk-heading-l">Brief summary of clinical details</h2> 
+<p class="govuk-body" style="width: 90%;">{{ data["summary-of-details"] }}</p>
+  <!-- <p> All relevant medical conditions have been explored by a health care professional.</p> -->
   <!-- {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
      <p>All relevant medical conditions have been explored by a health care professional.</p>
 
@@ -115,14 +110,129 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    </dl>
    <!-- {% endif %} -->
 
+  <h2 class="govuk-heading-l">Phone call</h2>
+
+  {% for calls in data['phoneAdded'] %}
+  
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Who was called
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallName }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship or role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.relationship }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone call date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ calls.phonecallDay }}
+          {% if calls.phonecallMonth === "1" %} 
+          January
+          {% endif %}
+
+          {% if calls.phonecallMonth === "2" %} 
+          February
+          {% endif %}
+
+          {% if calls.phonecallMonth === "3" %} 
+          March
+          {% endif %}
+
+          {% if calls.phonecallMonth === "4" %} 
+           April
+          {% endif %}
+
+          {% if calls.phonecallMonth === "5" %} 
+          May
+          {% endif %}
+
+          {% if calls.phonecallMonth === "6" %} 
+          June
+          {% endif %}
+
+          {% if calls.phonecallMonth === "7" %} 
+          July
+          {% endif %}
+
+          {% if calls.phonecallMonth === "8" %} 
+          August
+          {% endif %}
+
+          {% if calls.phonecallMonth === "9" %} 
+          September
+          {% endif %}
+
+          {% if calls.phonecallMonth === "10" %} 
+          October
+          {% endif %}
+
+          {% if calls.phonecallMonth === "11" %} 
+          November
+          {% endif %}
+
+          {% if calls.phonecallMonth === "12" %} 
+          December
+          {% endif %}
+
+          {{ calls.phonecallYear }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl> 
+
+    <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Phone call notes</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+   {% endfor %}
+
+   <br>
+   <br>
+
+    <!-- <p>A telephone call was made to gather further information.</p> -->
+    
+
+  
+
    <h2 class="govuk-heading-l">Additional needs</h2> 
 
       <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
+      
+
+<br>
       <p class="govuk-body">
         <a href="#" class="govuk-link">Print this page</a>
       </p>
-
-
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
