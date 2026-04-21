@@ -90,30 +90,33 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         </fieldset>
         </div> -->
 
+
+         {% if data["harmfulInfoTwo"] == "Yes" %} 
          <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Is there any harmful information?
+              Do you need to add any harmful information? 
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfo" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{checked}}>
               <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription">
-                  <b>Harmful information</b>
-                </label>
-                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoText" rows="5"></textarea>
+                <label class="govuk-label" for="sideEffectsDescription"></label>
+                 <div id="more-detail-hint" class="govuk-hint">
+                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
+                </div>
+                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoText"] }}</textarea>
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfo" type="radio" value="No">
+              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="mental-healthN">
                 No
               </label>
@@ -121,6 +124,76 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
       </div>
+
+       {% elseif data["harmfulInfoTwo"] == "No" %} 
+         <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Do you need to add any harmful information? 
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription"></label>
+                 <div id="more-detail-hint" class="govuk-hint">
+                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
+                </div>
+                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoText"] }}</textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No" {{checked}}>
+              <label class="govuk-label govuk-radios__label" for="mental-healthN">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+       {% else %} 
+         <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Do you need to add any harmful information? 
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription"></label>
+                 <div id="more-detail-hint" class="govuk-hint">
+                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
+                </div>
+                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoText"] }}</textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="mental-healthN">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+         {% endif %} 
 
     <!-- <button class="govuk-button" data-module="govuk-button">
         Save and continue
