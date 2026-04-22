@@ -10137,12 +10137,13 @@ router.post('/harmful-info-paper/phonecall-add', function (req, res) {
   const phonecallIdentityYes = req.session.data['yesWhy']
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
+  const harmfulPhone = req.session.data['harmfulPhoneCall']
   const phonecallNotes = req.session.data['phonecallNotes']
   const phonecallHarmfulNotes = req.session.data['harmfulInfoTextPhoneCall']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes, phonecallHarmfulNotes })
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, harmfulPhone, phonecallNotes, phonecallHarmfulNotes })
   req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/harmful-info-paper/phonecall-result')
@@ -10180,12 +10181,13 @@ router.post('/harmful-info-paper/phonecall-addAnother', function (req, res) {
   const phonecallIdentityYes = req.session.data['yesWhy']
   const phonecallIdentityNo = req.session.data['noWhy']
   const phonecallConsent = req.session.data['consentPBR']
+  const harmfulPhoneCall = req.session.data['harmfulPhoneCall']
   const phonecallNotes = req.session.data['phonecallNotes']
-  const phonecallHarmfulNotes = req.session.data['phoneHarmfulNotes']
+  const phonecallHarmfulNotes = req.session.data['harmfulInfoTextPhoneCall']
   const phonecallNo = req.session.data['index']
 
   const phoneAdded = req.session.data.phoneAdded || []
-  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, phonecallNotes, phonecallHarmfulNotes })
+  phoneAdded.push({ phonecallNo, phonecallDay, phonecallMonth, phonecallYear, phonecallName, relationship, phonecallIdentity, phonecallIdentityYes, phonecallIdentityNo, phonecallConsent, harmfulPhoneCall, phonecallNotes, phonecallHarmfulNotes })
   req.session.data.phoneAdded = phoneAdded
 
   res.redirect('/harmful-info-paper/phonecall-result')
