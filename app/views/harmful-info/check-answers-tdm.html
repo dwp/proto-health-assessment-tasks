@@ -797,8 +797,50 @@ None        </dd>
             </a>
           </dd>
         </div>
+        {% if data["harmfulInfo"] == "Yes" %} 
+         <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you need to add any harmful information?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data["harmfulInfoTextTwo"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div> -->
       </dl>
 
+      <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Do you need to add any harmful information?</h4>
+      <a href="review?source=Additional needs" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ data["harmfulInfoText"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+     {% elseif data["harmfulInfo"] == "No" %} 
+
+     <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you need to add any harmful information?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data["harmfulInfo"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="review?source=Additional needs">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      
+    
+    {% endif %}
 <!--      
       <div class="govuk-inset-text">
         No harmful information has been included in this report.
