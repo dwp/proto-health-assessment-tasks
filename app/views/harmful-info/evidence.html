@@ -9,6 +9,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
   
 
+      
         <form action="#" method="post" id="auto-redirect">
 
       <div class="govuk-form-group">
@@ -386,32 +387,32 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       {% if data["document-name"] == "None" %}
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
+                          <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="Prescription">
                           <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                         </div>
                      </div>
-                     {% elseif data["document-name"].includes("GP letters") %}
+                     {% elseif data["document-name"].includes("Prescription") %}
                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters" {{ checked }}>
+                        <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="Prescription" {{ checked }}>
                         <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                       </div>
                    </div>
                    {% else %}
                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="GP letters">
+                      <input class="govuk-checkboxes__input" id="evidence-eight" name="document-name" type="checkbox" value="Prescription">
                       <label class="govuk-label govuk-checkboxes__label" for="evidence-eight"></label>
                     </div>
                  </div>
                    {% endif %}
                     </td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf"  target="_blank" href="/public/pdfs/GP letter.pdf">GP letters</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Prescription.pdf"  target="_blank" href="/public/pdfs/Prescription.pdf">Prescription</a></td>
 
                     <!-- <td class="govuk-table__cell">PIP</td> -->
                     <td class="govuk-table__cell" data-sort-value="8 August 2024">8 August 2024</td>
                     <td class="govuk-table__cell" data-sort-value="28 February 2025">28 February 2025</td>
-                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/GP letter.pdf" href="evidence-update?docName=GP letters">Update details</a></td>
+                    <td class="govuk-table__cell"><a class="reco-document documentLinks document-link" data-url="/public/pdfs/Prescription.pdf" href="evidence-update?docName=Prescription">Update details</a></td>
                   </tr>
                 </tbody>
               </table>

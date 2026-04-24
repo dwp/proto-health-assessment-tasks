@@ -38,7 +38,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     
    <span class="govuk-caption-l">Report 1 of 2</span>
-    <h1 class="govuk-heading-xl">Health assessment report</h1>
+    <h1 class="govuk-heading-xl">Harmful information report</h1>
 
    <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -768,36 +768,9 @@ None        </dd>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9 govuk-section-break--visible">
 
-      <h2 class="govuk-heading-l">Additional needs</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+      <h2 class="govuk-heading-l">Harmful information</h2>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do they need additional support for future claims processes?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">additional support</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do they meet the criteria for special rules?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> special rules</span>
-            </a>
-          </dd>
-        </div>
-        {% if data["harmfulInfo"] == "Yes" %} 
+         {% if data["harmfulInfo"] == "Yes" %} 
          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do you need to add any harmful information?
@@ -822,7 +795,7 @@ None        </dd>
     </div>
 
      {% elseif data["harmfulInfo"] == "No" %} 
-
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
      <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do you need to add any harmful information?
@@ -838,9 +811,50 @@ None        </dd>
         </div>
       </dl>
 
-      
-    
     {% endif %}
+
+      <h2 class="govuk-heading-l">Additional needs</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data["as-marker"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">additional support</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data["special-rules"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+         {% if data["special-rules"] == "Yes" %}
+      <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Reason for this decision</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ data["specialReason"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+    {% else %}
+
+    {% endif %}
+        
 <!--      
       <div class="govuk-inset-text">
         No harmful information has been included in this report.

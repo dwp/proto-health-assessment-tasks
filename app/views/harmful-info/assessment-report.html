@@ -372,11 +372,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Observations</h2>
 
+    
+       <h2 class="govuk-heading-l">Additional needs</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
 
-
-      <h2 class="govuk-heading-l">Additional needs</h2>
-
-      <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data["as-marker"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">additional support</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data["special-rules"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
     </div>
 
 

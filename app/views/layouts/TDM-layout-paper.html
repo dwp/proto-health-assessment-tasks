@@ -231,9 +231,15 @@
             ]
           }) }} -->
 
-  
+          {% if data["harmfulBriefSummary"] == "Yes" or data["harmfulPhoneCall"] == "Yes" %} 
           <a href="check-answers-tdm" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
-         
+
+          {% elseif data["harmfulBriefSummary"] == "No" or data["harmfulPhoneCall"] == "No" %} 
+          <a href="assessment-report" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
+
+          {% else %} 
+          <a href="check-answers-tdm" class="govuk-link govuk-button save-and-redirect-link">Check answers</a>
+          {% endif %} 
 
           <!-- <a href="/next-page" class="govuk-link save-and-redirect-link">Next page></a> -->
 

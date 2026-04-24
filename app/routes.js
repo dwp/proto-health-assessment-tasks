@@ -2259,6 +2259,12 @@ router.use((req, res, next) => {
           case serviceRedirect.endsWith("/harmful-info-paper-two/assesment-report"):
         return res.redirect("/harmful-info-paper-two/assesment-report")
 
+        case serviceRedirect.endsWith("/harmful-info-paper/check-answers-tdm"):
+        return res.redirect("/harmful-info-paper/check-answers-tdm")
+
+          case serviceRedirect.endsWith("/harmful-info-paper/assessment-report"):
+        return res.redirect("/harmful-info-paper/assessment-report")
+
       default:
         return res.redirect("/")
 
