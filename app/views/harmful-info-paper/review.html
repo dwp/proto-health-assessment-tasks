@@ -108,12 +108,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div class="govuk-radios" data-module="govuk-radios">
                 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{checked}}>
+              <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal" {{checked}}>
               <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
             </label>
             </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
                 <div id="more-detail-hint" class="govuk-hint">
@@ -139,14 +139,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
           </legend>
-          <div class="govuk-radios">
+          <div class="govuk-radios" data-module="govuk-radios">
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
                   <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
               </label>
                 </div>
+                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
+                <div id="more-detail-hint" class="govuk-hint">
+                 
+                </div>
+                <textarea class="govuk-textarea" id="SRreason" name="specialReason" rows="5">{{ data["specialReason"] }}</textarea>
+              </div>
+            </div>
                 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{checked}}>
@@ -167,12 +176,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           <div class="govuk-radios" data-module="govuk-radios">
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
                   <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
               </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
                 <div id="more-detail-hint" class="govuk-hint">
