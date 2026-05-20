@@ -42,23 +42,23 @@
     show('panel-error')
   }
 
-  const postRequest = (url, token) => {
-    return fetch(url, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': token
-      },
-      body: JSON.stringify({
-        package: packageName,
-        version
-      })
-    })
-      .then(response => {
-        return response.json()
-      })
-  }
+  // const postRequest = (url, token) => {
+  //   return fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //       'X-CSRF-TOKEN': token
+  //     },
+  //     body: JSON.stringify({
+  //       package: packageName,
+  //       version
+  //     })
+  //   })
+  //     .then(response => {
+  //       return response.json()
+  //     })
+  // }
 
   const makeRequest = (fn) => {
     return new Promise((resolve) => {
