@@ -22,7 +22,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <h2 class="govuk-heading-l">Evidence used</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-5">
 
-  <p>All relevant supporting evidence has been reviewed and considered when writing this report.</p>
+  <p class="govuk-!-margin-bottom-8">All relevant supporting evidence has been reviewed and considered when writing this report.</p>
 
  
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -58,61 +58,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </dl> -->
 
-<h2 class="govuk-heading-l">Brief summary of clinical details</h2> 
-<p class="govuk-body" style="width: 90%;">{{ data["summary-of-details"] }}</p>
-  <!-- <p> All relevant medical conditions have been explored by a health care professional.</p> -->
-  <!-- {% if (data['diagnosis'] === 'No' and data['prognosis']) === 'No' %}
-     <p>All relevant medical conditions have been explored by a health care professional.</p>
+ <div>
+    <h2 class="govuk-heading-l" style="display: inline-block;">Brief summary of clinical details</h3>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  </div>
+    <div style="margin-top: -1.5%;">
+    <p class="govuk-body" style="width: 90%;">{{ data["summary-of-details"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+  </div>
 
-     {% elseif (data['diagnosis'] === 'No' and data['prognosis']) === 'Yes' %}
-     <p>All relevant medical conditions have been explored by a health care professional.</p>
+  <!-- <h2 class="govuk-heading-l">Phone call</h2> -->
 
-     {% elseif (data['diagnosis'] === 'Yes' and data['prognosis']) === 'No' %} -->
-      <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        {% for query in data['queriesCondition'] %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Condition       
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ query.condition }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                </a></li>
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                  Remove<span class="govuk-visually-hidden"> contact details</span>
-                </a></li>
-            </ul>
-          </dd>
-        </div>
-        {% endfor %} -->
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is the claimant aware of this diagnosis?     
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data["diagnosis"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="conditions">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                </a></li>
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">
-                  Remove<span class="govuk-visually-hidden"> contact details</span>
-                </a></li>
-            </ul>
-          </dd>
-        </div> -->
+    <!-- <p>A telephone call was made to gather further information.</p> -->
+    
+
    </dl>
-   <!-- {% endif %} -->
 
-  <h2 class="govuk-heading-l">Phone call</h2>
+   <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h3>
 
-  {% for calls in data['phoneAdded'] %}
+     {% for calls in data['phoneAdded'] %}
   
     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
@@ -214,52 +178,26 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     </div>
 
-   {% endfor %}
-
-   <br>
-   <br>
-
-    <!-- <p>A telephone call was made to gather further information.</p> -->
-    
-
+    <!-- <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Harmful information</h4>
+      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
+      <p class="govuk-body" style="width: 90%;">{{ calls.phonecallHarmfulNotes }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div> -->
+    <br>
+    <br>
+    {% endfor %}
+
 
    <h2 class="govuk-heading-l">Additional needs</h2> 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do they need additional support for future claims processes?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["as-marker"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="review?source=Additional needs">
-              Change<span class="govuk-visually-hidden">additional support</span>
-            </a>
-          </dd>
-        </div>
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do they meet the criteria for special rules?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["special-rules"] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="review?source=Additional needs">
-              Change<span class="govuk-visually-hidden"> special rules</span>
-            </a>
-          </dd>
-        </div> -->
-      </dl>
-      
-
-<br>
+      <p>After considering the available evidence, I have concluded that the claimant will have severe limitations. This is likely to affect their ability to mobilise on the majority of days.</p>
       <p class="govuk-body">
         <a href="#" class="govuk-link">Print this page</a>
       </p>
+
+
     <form action="#" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">

@@ -124,12 +124,6 @@ None        </dd>
   </div>
     <div style="margin-top: -1.5%;">
     <p class="govuk-body" style="width: 90%;">{{ data["summary-of-details"] }}</p>
-
-    <div>
-    <h2 class="govuk-heading-m" style="display: inline-block;">Harmful information</h3>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  </div>
-    <p class="govuk-body" style="width: 90%;">{{ data["harmfulInfoTextBriefSummary"] }}</p>  
       <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
   </div>
   
@@ -160,7 +154,7 @@ None        </dd>
     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
     </div> -->
 
-     <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h3>
+      <h2 class="govuk-heading-l" style="display: inline-block;">Phone calls</h3>
 
      {% for calls in data['phoneAdded'] %}
   
@@ -264,13 +258,13 @@ None        </dd>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     </div>
 
-    <div style="margin-top: 1%;">
+    <!-- <div style="margin-top: 1%;">
       <h4 class="govuk-heading-s" style="display: inline-block;">Harmful information</h4>
       <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
   
       <p class="govuk-body" style="width: 90%;">{{ calls.phonecallHarmfulNotes }}</p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
+    </div> -->
     <br>
     <br>
     {% endfor %}
@@ -482,7 +476,7 @@ None        </dd>
             Do they need additional support for future claims processes?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["as-marker"] }}
+            No
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Additional needs">
@@ -495,7 +489,46 @@ None        </dd>
             Do they meet the criteria for special rules?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data["special-rules"] }}
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="review?source=Additional needs">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div>
+         {% if data["harmfulInfoTwo"] == "Yes" %} 
+         <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you need to add any harmful information?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data["harmfulInfoTextTwo"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> special rules</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+      <div style="margin-top: 1%;">
+      <h4 class="govuk-heading-s" style="display: inline-block;">Do you need to add any harmful information?</h4>
+      <a href="review?source=Additional needs" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
+  
+      <p class="govuk-body" style="width: 90%;">{{ data["harmfulInfoTextTwo"] }}</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+     {% elseif data["harmfulInfoTwo"] == "No" %} 
+
+     <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you need to add any harmful information?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data["harmfulInfoTwo"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="review?source=Additional needs">
@@ -504,17 +537,11 @@ None        </dd>
           </dd>
         </div>
       </dl>
-      {% if data["special-rules"] == "Yes" %}
-      <div style="margin-top: 1%;">
-      <h4 class="govuk-heading-s" style="display: inline-block;">Reason for this decision</h4>
-      <a href="#" class="govuk-link govuk-body" style="float: right; display: inline;">Change</a>
-  
-      <p class="govuk-body" style="width: 90%;">{{ data["specialReason"] }}</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-    {% else %}
 
+      
+    
     {% endif %}
+
 <!--      
       <div class="govuk-inset-text">
         No harmful information has been included in this report.

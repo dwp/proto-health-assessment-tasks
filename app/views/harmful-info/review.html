@@ -99,33 +99,23 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
         {% endif %} 
           
-        {% if data["special-rules"] == "Yes" %} 
+             {% if data["special-rules"] == "Yes" %} 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Does the claimant meet the criteria for special rules?
+            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
           </legend>
-           <div id="contact-hint" class="govuk-hint">
-            This question and any harmful information will be automatically separated from the report.
-          </div>
           <div class="govuk-radios" data-module="govuk-radios">
                 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal" {{checked}}>
+              <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{checked}}>
               <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
             </label>
             </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription">
-                  <p class="govuk-body govuk-!-margin-bottom-2">You will need to add:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>a justification for this decision</li>
-                      <li>the date the claimant is thought to have met the criteria</li>
-                      <li>descriptor choice for activities 11 and 12 (planning and following journeys, and moving around)</li>
-                      <li>a justification for each descriptor choice</li>
-                    </ul></label>
+                <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
                 <div id="more-detail-hint" class="govuk-hint">
                  
                 </div>
@@ -147,28 +137,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Does the claimant meet the criteria for special rules?
+            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
           </legend>
-           <div id="contact-hint" class="govuk-hint">
-           This question and any harmful information will be automatically separated from the report.
-          </div>
-          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios">
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
               </label>
                 </div>
-                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
-                <div id="more-detail-hint" class="govuk-hint">
-                 
-                </div>
-                <textarea class="govuk-textarea" id="SRreason" name="specialReason" rows="5">{{ data["specialReason"] }}</textarea>
-              </div>
-            </div>
                 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{checked}}>
@@ -184,20 +162,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Does the claimant meet the criteria for special rules?
+            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
           </legend>
-           <div id="contact-hint" class="govuk-hint">
-            This question and any harmful information will be automatically separated from the report.
-          </div>
           <div class="govuk-radios" data-module="govuk-radios">
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-reveal">
                   <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
               </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-reveal">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="sideEffectsDescription"><b>Reason for this decision</b></label>
                 <div id="more-detail-hint" class="govuk-hint">

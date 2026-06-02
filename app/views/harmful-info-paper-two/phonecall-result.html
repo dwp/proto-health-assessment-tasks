@@ -13,12 +13,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    padding-right: 0;
    text-align: right;
  }
- 
- .phone-text {
-    width: 300%;
-    text-wrap: wrap;
-    margin-top: 3%;
-  }
 </style>
 
 <div class="govuk-grid-row">
@@ -32,126 +26,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <input type="hidden" name="{{ loop.index0 }}"/>
 
 
-  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-       {% for phone in data['phoneAdded'] %}
-        {% set outerLoopIndex = loop.index0 %}
-        <div class="govuk-accordion__section" id="{{ outerLoopIndex }}">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                {{ phone.phonecallName }}
-                <a class="govuk-link " href="#" style="float: right; font-size: 1.1875rem; border-left: 1px solid #b1b4b6; padding-left: 10px; margin-left: 10px;">Remove<span class="govuk-visually-hidden"></span></a> 
-                <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}" style="float: right; font-size: 1.1875rem;">Change<span class="govuk-visually-hidden"></span></a> 
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Relationship or role
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ phone.relationship }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
-                </dd>
-              </div>
-              <!-- <div class="govuk-form-group--error">     
-                <div>
-                 <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
-               
-                </div>
-                <p><b><a href="washingbathing-error?source=Washing and bathing" class="govuk-link" style="color:#d4351c">Select a descriptor for washing and  bathing</a></b></p>
-             </div>  -->
-  
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Phone call date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ phone.phonecallDay }} {{ phone.phonecallMonth }} {{ phone.phonecallYear }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a>
-                </dd> 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Phone call notes
-                 <pre class="phone-text govuk-body">{{ phone.phonecallNotes }}</pre>
-                </dt>
-                <dd class="govuk-summary-list__value">
-               
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
-                </dd>
-              </div>
-              {% if (phone.harmfulPhoneCall == "Yes") %}
-              <div class="govuk-summary-list__row">
-                <!-- <div class="mentalHealth-title"> -->
-                <dt class="govuk-summary-list__key">
-                 <p class="mentalHealth-title"><b>Do you need to add any harmful information?</b></p>
-               
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 {{phone.harmfulPhoneCall}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
-                </dd>
-              </div>
-               <div class="govuk-summary-list__row">
-                <!-- <div class="mentalHealth-title"> -->
-                <dt class="govuk-summary-list__key">
-                 <p class="mentalHealth-title"><b>Harmful information</b></p>
-                 <pre class="phone-text govuk-body">{{ phone.phonecallHarmfulNotes }}</pre>
-                </dt>
-                <dd class="govuk-summary-list__value">
-               
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
-                </dd>
-              </div>
-              {% elseif (phone.harmfulPhoneCall == "No") %}
-               <div class="govuk-summary-list__row">
-                <!-- <div class="mentalHealth-title"> -->
-                <dt class="govuk-summary-list__key">
-                 <p class="mentalHealth-title"><b>Do you need to add any harmful information?</b></p>
-            
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 {{phone.harmfulPhoneCall}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
-                </dd>
-              </div>
-
-              {% endif %}
-            </dl>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-
  <!--logic for adding more than one phone call-->
- <!-- {% for phone in data['phoneAdded'] %}
+ {% for phone in data['phoneAdded'] %}
  <dl class="govuk-summary-list">
    <div class="govuk-summary-list__row">
      <dt class="govuk-summary-list__key">
-       <h2 class="govuk-heading-m"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&hcall={{phone.harmfulPhone}}&harmful={{phone.harmfulPhoneCall}}&note={{phone.phonecallNotes}}&hn={{phone.phonecallHarmfulNotes}}">{{ phone.phonecallName }}</a></h2>
+       <h2 class="govuk-heading-m"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}&hn={{phone.phonecallHarmfulNotes}}">{{ phone.phonecallName }}</a></h2>
      </dt>
      <dd class="govuk-summary-list__value">
       {{ phone.relationship }}
      </dd>
      <dd class="govuk-summary-list__actions">
        <ul class="govuk-summary-list__actions-list">
-         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&phoned={{phone.phoned}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&hcall={{phone.harmfulPhone}}&harmful={{phone.harmfulPhoneCall}}&note={{phone.phonecallNotes}}&hn={{phone.phonecallHarmfulNotes}}">
+         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="phonecall-change?index={{loop.index0}}&phoned={{phone.phoned}}&day={{phone.phonecallDay}}&month={{phone.phonecallMonth}}&year={{phone.phonecallYear}}&name={{phone.phonecallName}}&relate={{phone.relationship}}&ident={{phone.phonecallIdentity}}&idYes={{phone.phonecallIdentityYes}}&idNo={{phone.phonecallIdentityNo}}&cons={{phone.phonecallConsent}}&note={{phone.phonecallNotes}}&hn={{phone.phonecallHarmfulNotes}}">
              Change<span class="govuk-visually-hidden">phone call change</span>
            </a></li>
          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="remove-phonecall?calls={{phone.phonecallName}}">
@@ -160,11 +47,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
        </ul>
      </dd>
    </div>
-</dl> -->
+</dl>
 
 <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
 
-<!--{% endfor %}-->
+{% endfor %}
 
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add another phone call
