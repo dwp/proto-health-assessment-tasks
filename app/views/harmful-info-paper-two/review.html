@@ -28,7 +28,54 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <form action="#" method="post" id="auto-redirect">
 
+       {% if data["as-marker"] == "Yes" %} 
        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Is the claimant likely to need additional support for future claim processes?
+          </legend>
+          <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes" {{checked}}>
+                  <label class="govuk-label govuk-radios__label" for="as-marker">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="as-marker-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+
+          {% elseif data["as-marker"] == "No" %} 
+         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Is the claimant likely to need additional support for future claim processes?
+          </legend>
+          <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker" name="as-marker" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="as-marker">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="as-marker-2" name="as-marker" type="radio" value="No" {{checked}}>
+                  <label class="govuk-label govuk-radios__label" for="as-marker-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+
+        {% else %} 
+        <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Is the claimant likely to need additional support for future claim processes?
@@ -49,20 +96,42 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div>
+
+        {% endif %} 
           
+         {% if data["special-rules"] == "Yes" %} 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Although they have not claimed under special rules, in your opinion, does the claimant meet the criteria for special rules?
+            Does the claimant meet the criteria for special rules?
           </legend>
-          <div class="govuk-radios">
+           <div id="contact-hint" class="govuk-hint">
+            This question and any harmful information will be automatically separated from the report.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
                 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="special-rules">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal" {{checked}}>
+              <label class="govuk-label govuk-radios__label" for="special-rules">
                 Yes
-              </label>
+            </label>
+            </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription">
+                  <p class="govuk-body govuk-!-margin-bottom-2">You will need to add:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>a justification for this decision</li>
+                      <li>the date the claimant is thought to have met the criteria</li>
+                      <li>descriptor choice for activities 11 and 12 (planning and following journeys, and moving around)</li>
+                      <li>a justification for each descriptor choice</li>
+                    </ul></label>
+                <div id="more-detail-hint" class="govuk-hint">
+                 
                 </div>
+                <textarea class="govuk-textarea" id="SRreason" name="specialReason" rows="5">{{ data["specialReason"] }}</textarea>
+              </div>
+            </div>
                 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
@@ -73,6 +142,95 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div>
+
+        {% elseif data["special-rules"] == "No" %} 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Does the claimant meet the criteria for special rules?
+          </legend>
+           <div id="contact-hint" class="govuk-hint">
+           This question and any harmful information will be automatically separated from the report.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
+                  <label class="govuk-label govuk-radios__label" for="special-rules">
+                Yes
+              </label>
+                </div>
+                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription">
+                  <p class="govuk-body govuk-!-margin-bottom-2">You will need to add:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>a justification for this decision</li>
+                      <li>the date the claimant is thought to have met the criteria</li>
+                      <li>descriptor choice for activities 11 and 12 (planning and following journeys, and moving around)</li>
+                      <li>a justification for each descriptor choice</li>
+                    </ul></label>
+                <div id="more-detail-hint" class="govuk-hint">
+                 
+                </div>
+                <textarea class="govuk-textarea" id="SRreason" name="specialReason" rows="5">{{ data["specialReason"] }}</textarea>
+              </div>
+            </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No" {{checked}}>
+                  <label class="govuk-label govuk-radios__label" for="special-rules-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+
+        {% else %} 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Does the claimant meet the criteria for special rules?
+          </legend>
+           <div id="contact-hint" class="govuk-hint">
+            This question and any harmful information will be automatically separated from the report.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules" name="special-rules" type="radio" value="Yes" data-aria-controls="special-rules-reveal">
+                  <label class="govuk-label govuk-radios__label" for="special-rules">
+                Yes
+              </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="special-rules-reveal">
+              <div class="govuk-form-group">
+               <label class="govuk-label" for="sideEffectsDescription">
+                  <p class="govuk-body govuk-!-margin-bottom-2">You will need to add:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>a justification for this decision</li>
+                      <li>the date the claimant is thought to have met the criteria</li>
+                      <li>descriptor choice for activities 11 and 12 (planning and following journeys, and moving around)</li>
+                      <li>a justification for each descriptor choice</li>
+                    </ul></label>
+                <div id="more-detail-hint" class="govuk-hint">
+                 
+                </div>
+                <textarea class="govuk-textarea" id="SRreason" name="specialReason" rows="5">{{ data["specialReason"] }}</textarea>
+              </div>
+            </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="special-rules-2" name="special-rules" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="special-rules-2">
+                No
+              </label>
+                </div>
+          </div>
+        </fieldset>
+        </div>
+         {% endif %} 
         
         <!-- <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -89,111 +247,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           </div>
         </fieldset>
         </div> -->
-
-
-         {% if data["harmfulInfoTwo"] == "Yes" %} 
-         <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Do you need to add any harmful information? 
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{checked}}>
-              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription"></label>
-                 <div id="more-detail-hint" class="govuk-hint">
-                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
-                </div>
-                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoText"] }}</textarea>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="mental-healthN">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-       {% elseif data["harmfulInfoTwo"] == "No" %} 
-         <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Do you need to add any harmful information? 
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
-              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription"></label>
-                 <div id="more-detail-hint" class="govuk-hint">
-                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
-                </div>
-                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoText"] }}</textarea>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No" {{checked}}>
-              <label class="govuk-label govuk-radios__label" for="mental-healthN">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-       {% else %} 
-         <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Do you need to add any harmful information? 
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoY" name="harmfulInfoTwo" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
-              <label class="govuk-label govuk-radios__label" for="harmfulInfoY">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sideEffectsDescription"></label>
-                 <div id="more-detail-hint" class="govuk-hint">
-                  Add any details that could be harmful to the claimant here. Harmful information will be automatically separated from the report
-                </div>
-                <textarea class="govuk-textarea" id="harmfulInfoT" name="harmfulInfoTextTwo" rows="5">{{ data["harmfulInfoTextTwo"] }}</textarea>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="harmfulInfoN" name="harmfulInfoTwo" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="mental-healthN">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-         {% endif %} 
 
     <!-- <button class="govuk-button" data-module="govuk-button">
         Save and continue
