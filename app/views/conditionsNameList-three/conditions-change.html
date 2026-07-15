@@ -1,0 +1,914 @@
+{% extends "layouts/prompts-without-sidenav" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<link rel="stylesheet" type="text/css" href="/public/javascripts/accessible-autocomplete.min.css" />
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script src="/public/javascripts/fuse.js"></script>
+
+<style>
+  .autocomplete__option {
+    font-size: 19px;
+    line-height: 1.31579;
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+ .condition-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+
+  .mentalHealth-text {
+    width: 300%;
+    text-wrap: wrap;
+  }
+  .mentalHealth-title {
+    width: 140%;
+    font-weight: 700;
+  } 
+  </style>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">    -->
+
+    <form action="#" method="post" id="auto-redirect">
+      <input type="hidden" name="{{ loop.index0 }}"/>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl"></span>
+            <h1 class="govuk-fieldset__heading">
+              Add a condition or disability
+            </h1>
+            <div id="passport-issued-hint" class="govuk-hint">
+            </div>
+          </legend>
+
+           <div class="govuk-form-group">
+        <label class="govuk-label govuk-fieldset__legend--s" for="my-autocomplete">
+          Condition or disability name
+        </label>
+         <div class="govuk-hint">
+          <!-- Select from the suggestions or enter your own. -->
+        </div>
+        <div id="my-autocomplete-container" class="app-autocomplete--with-suggestions"></div>
+      </div>
+
+
+      <!-- Inline autocomplete with embedded conditions and generated misspellings -->
+      <script type="text/javascript">
+        (function () {
+          // ====== Data: inline conditions (633 items) ======
+          var conditions = [
+            "Iron deficiency anaemia",
+            "Acquired Haemolytic Anaemia",
+            "Osteosarcoma (bone cancer)",
+            "Chondrosarcoma (bone cancer)",
+            "Fibrosarcoma (bone and soft tissue cancer)",
+            "Ewing sarcoma (bone cancer)",
+            "Blood vessel cancer (angiosarcoma)",
+            "Giant cell tumour (bone cancer)",
+            "Other bone cancers",
+            "Breast cancer",
+            "Cancer of unknown origin",
+            "G6PD deficiency (red blood cell disorder)",
+            "Neuroblastoma",
+            "Other cancers",
+            "Other sarcomas",
+            "High cholesterol (Hyperlipidaemia)",
+            "Disorders of carbohydrate metabolism",
+            "Disorders of amino acid metabolism",
+            "Other inborn errors of metabolism",
+            "Amyloidosis",
+            "Porphyria",
+            "Obesity",
+            "Other metabolic red cell disorder",
+            "Other metabolic disease",
+            "Personality disorder",
+            "Speech or language disorder",
+            "Dyslexia",
+            "Other specific learning disorder/type not known e.g. dyscalculia",
+            "Dyspraxia (developmental co-ordination disorder)",
+            "Post traumatic stress disorder (PTSD)",
+            "Other stress reaction disorder",
+            "Generalised anxiety disorder (GAD)",
+            "Erythrocytosis / polycythaemia",
+            "Other phobia",
+            "Social phobia / anxiety",
+            "Agoraphobia (anxiety)",
+            "Panic disorder / panic attacks",
+            "Other anxiety disorder",
+            "Obsessive compulsive disorder (OCD)",
+            "Mixed anxiety and depressive disorders",
+            "Conversion disorder (hysteria)",
+            "Body dysmorphic disorder (BDD)",
+            "Other dissociative disorder",
+            "Haemophilia A",
+            "Somatic symptom disorder",
+            "Depression",
+            "Bipolar disorder",
+            "Other mood disorder",
+            "Schizophrenia",
+            "Schizoaffective disorder",
+            "Other psychotic disorder",
+            "Dementia",
+            "Cognitive disorder due to stroke",
+            "Other cognitive disorder",
+            "Haemophilia B (Christmas disease)",
+            "Anorexia",
+            "Bulimia",
+            "Other eating disorder",
+            "Alcohol misuse",
+            "Drugs misuse",
+            "Munchausen syndrome",
+            "Other factitious disorder",
+            "Down's syndrome",
+            "Fragile X syndrome",
+            "Von Willebrand disease",
+            "Other learning disability",
+            "Autism",
+            "Asperger's syndrome",
+            "Rett syndrome",
+            "ADHD/ADD",
+            "Conduct disorder (including oppositional defiant disorder)",
+            "Enuresis (bedwetting)",
+            "Faecal soiling (encopresis)",
+            "Other psychiatric disorder",
+            "Other clotting disorder",
+            "Stroke",
+            "Transient ischaemic attacks / TIA (mini stroke)",
+            "Other cerebrovascular disease",
+            "Generalised epileptic seizures (none in last 12 months)",
+            "Generalised epileptic seizures (within last 12 months)",
+            "Partial epileptic seizures (none in last 12 months)",
+            "Partial epileptic seizures (within last 12 months)",
+            "Immune Thrombocytopenic Purpura (ITP)",
+            "Narcolepsy",
+            "Cataplexy",
+            "Unclassifiable seizures",
+            "Stokes Adams attacks (cardiovascular syncope)",
+            "Other syncope (fainting)",
+            "Non epileptic attack disorder (pseudoseizures)",
+            "Drop attacks",
+            "Other non epileptic disturbances of consciousness",
+            "Parkinson's disease",
+            "Other platelet disorder",
+            "Parkinsonism",
+            "Benign essential tremor",
+            "Huntington's disease",
+            "Tourette syndrome",
+            "Torticollis (twisted neck)",
+            "Blepharospasm (twitching eyes)",
+            "Writer's cramp",
+            "Other movement disorder",
+            "Multiple sclerosis (MS)",
+            "Neurofibromatosis",
+            "Vitamin B12 or folate deficiency anaemia",
+            "Septicaemia/blood poisoning",
+            "Other benign tumours",
+            "Hydrocephalus",
+            "Migraine",
+            "Other causes of headache",
+            "Head injury with cognitive impairment",
+            "Head injury with sensorimotor impairment",
+            "Head injury with  cognitive and sensorimotor impairment",
+            "Traumatic paraplegia",
+            "Traumatic tetraplegia",
+            "Syringomyelia and syringobulbia",
+            "Other causes of spinal cord compression",
+            "Motor neurone disease (MND)",
+            "Other degenerative neuronal disease",
+            "Cerebral palsy quadriplegia",
+            "Cerebral palsy spastic diplegia",
+            "Cerebral palsy athetoid / dyskinetic",
+            "Cerebral palsy hemiparesis",
+            "Other blood disorders",
+            "Cerebral palsy ataxic",
+            "Other cerebal palsy",
+            "Spina bifida",
+            "Friedreich's ataxia",
+            "Other ataxias",
+            "Diabetic neuropathy",
+            "Guillain-Barré syndrome",
+            "Charcot-Marie-Tooth disease",
+            "Other neuropathies including peripheral",
+            "HIV/AIDS",
+            "Brachial plexus injury",
+            "Other peripheral nerve injury",
+            "Polymyositis",
+            "Dermatomyositis",
+            "Myasthenia gravis",
+            "Myotonic dystrophy",
+            "Other muscle disease",
+            "Duchenne muscular dystrophy",
+            "Becker muscular dystrophy",
+            "Limb girdle muscular dystrophy",
+            "Flu",
+            "Facioscapulohumeral muscular dystrophy",
+            "Other muscular dystrophy",
+            "Polio and post-polio syndrome",
+            "Viral encephalitis or meningitis and its complications",
+            "Bacterial meningitis and its complications",
+            "Creutzfeldt-Jakob disease (Transmissible Spongiform Encephalopathy TSE)",
+            "Brain infection or nervous system other",
+            "Chronic fatigue syndrome",
+            "Other or unspecified neurological disorder",
+            "Influenza pandemic flu",
+            "Scleritis",
+            "Keratitis",
+            "Corneal ulceration",
+            "Herpes Zoster Ophthalmicus (shingles in the eye)",
+            "Keratoconus",
+            "Orbital cellulitis",
+            "Entropion",
+            "Ptosis (drooping eyelid)",
+            "Other disease of conjunctiva, cornea, eyelids and lacrimal apparatus",
+            "Anterior uveitis (iritis)",
+            "Coronavirus covid-19",
+            "Posterior uveitis (choroiditis)",
+            "Other chorioretinal disorder",
+            "Glaucoma",
+            "Eye injury",
+            "Posterior vitreous detachment",
+            "Vitreous haemorrhage",
+            "Other vitreous disease",
+            "Detached retina (retinal detachment)",
+            "Retinal artery occlusion",
+            "Retinal vein occlusion",
+            "Measles",
+            "Macular degeneration",
+            "Diabetic retinopathy",
+            "Hypertensive retinopathy",
+            "Other retinopathy",
+            "Optic neuritis",
+            "Optic atrophy",
+            "Retinitis pigmentosa",
+            "Other disease of the retina and optic nerve",
+            "Cataracts",
+            "Measles complications",
+            "Myopia (short sighted)",
+            "Hypermetropia (long sighted)",
+            "Presbyopia",
+            "Astigmatism",
+            "Other refractive errors",
+            "Squint",
+            "Nystagmus",
+            "Other disorders of eye movement",
+            "Lazy eye (amblyopia)",
+            "Tunnel vision",
+            "Mumps",
+            "Scotoma (blind spot)",
+            "Hemianopia",
+            "Quadrantanopia",
+            "Diplopia (double vision)",
+            "Cortical blindness",
+            "Other visual field defect",
+            "Other disease affecting vision",
+            "Outer ear infection ( otitis externa)",
+            "Chronic suppurative otitis media",
+            "Mastoiditis",
+            "Aplastic anaemia",
+            "Mumps complications",
+            "Middle ear infection (otitis media)",
+            "Otosclerosis",
+            "Conductive hearing loss due to trauma",
+            "Other causes of conductive hearing loss",
+            "Congenital deafness",
+            "Age-related hearing loss (Presbycusis)",
+            "Labyrinthitis and vestibular neuritis",
+            "Ménière's disease",
+            "Sensorineural hearing loss due to trauma",
+            "Other cause of sensorineural hearing loss",
+            "Rubella (german measles)",
+            "Mixed hearing loss",
+            "Other disease affecting hearing & balance",
+            "Abdominal aortic aneurysm",
+            "Brain aneurysm",
+            "Other aneurysm",
+            "Bradycardia (slow heart rate)",
+            "Tachycardia (fast heart rate)",
+            "Heart block",
+            "Atrial fibrillation/flutter",
+            "Pacemaker/implantable defibrillator fitted for arrhythmia",
+            "Rubella complications",
+            "Other cardiac arrhythmias",
+            "Heart failure",
+            "Cardiomyopathy",
+            "Atrial septal defect (ASD, congenital heart disease)",
+            "Ventricular septal defect (VSD, congenital heart disease)",
+            "Patent ductus arteriosus (PDA, congenital heart disease)",
+            "Coarctation of the aorta (congenital heart disease)",
+            "Tetralogy of Fallot (congenital heart disease)",
+            "Other congenital heart disease",
+            "Herpes simplex virus",
+            "Heart transplant",
+            "High blood pressure (hypertension)",
+            "Angina",
+            "Heart attack",
+            "Other ischaemic heart disease",
+            "Pericarditis",
+            "Shingles (Herpes zoster)",
+            "Aortic valve disease (heart)",
+            "Pulmonary valve disease (heart)",
+            "Mitral valve disease (heart)",
+            "Chicken pox (Varicella zoster)",
+            "Tricuspid valve disease (heart)",
+            "Other malformation of the heart / valve problem",
+            "Buerger's disease",
+            "Peripheral vascular disease / Atherosclerosis",
+            "Raynaud's disease/phenomenon",
+            "Other arterial disease excluding coronary",
+            "Viral haemorrhagic fever",
+            "DVT (deep vein thrombosis)",
+            "Other peripheral venous disease",
+            "Other cardiovascular disease",
+            "Hiatus hernia/gastroesophageal reflux disease/reflux oesophagitis",
+            "Oesophageal varices",
+            "Stomach ulcer (peptic or gastric ulcer)",
+            "Other disease of the oesophagus, stomach and duodenum",
+            "Yellow fever",
+            "Coeliac disease",
+            "Other disease of the small bowel",
+            "Crohn's disease",
+            "Ulcerative colitis",
+            "Constipation",
+            "Diverticular disease/diverticulitis",
+            "Other disease of the colon",
+            "Anorectal abscess",
+            "Haemorrhoids",
+            "Other viral illness",
+            "Rectal prolapse",
+            "Anal fistula",
+            "Other disease of the rectum/anus",
+            "Irritable bowel syndrome (IBS)",
+            "Benign tumours of the gastrointestinal tract",
+            "Hernias",
+            "Cleft lip",
+            "Cleft lip with cleft palate",
+            "Oesophageal atresia and tracheo-oesophageal fistula",
+            "Hirschsprung's disease",
+            "Anthrax",
+            "Campylobacter infection",
+            "Cholera",
+            "Clostridium difficile (C. diff)",
+            "E coli",
+            "E coli O157",
+            "Salmonella",
+            "Shigella",
+            "Typhoid and Paratyphoid",
+            "Other dystentry",
+            "Diarrhoea / food poisoning",
+            "Botulism",
+            "Other bacterial gastroenteritis",
+            "Other viral gastroenteritis",
+            "Norovirus",
+            "Other intestinal worms",
+            "Stoma complications",
+            "Other disease of the gastrointestinal tract",
+            "Autoimmune hepatitis",
+            "Non alcoholic steatohepatitis (NASH)",
+            "Other chronic hepatitis",
+            "Alcoholic cirrhosis",
+            "Brucellosis",
+            "Hepatitis B and D infection/cirrhosis",
+            "Hepatitis C infection/cirrhosis",
+            "Primary biliary cirrhosis (PBC)",
+            "Autoimmune cirrhosis",
+            "Haemochromatosis",
+            "Wilson's disease",
+            "Other cirrhosis",
+            "Liver failure - ascites",
+            "Hepatic encephalopathy",
+            "Liver failure - peritonitis",
+            "Diphtheria",
+            "Other features of liver failure",
+            "Liver transplant",
+            "Gallstones",
+            "Other disease of the gallbladder and biliary tract",
+            "Chronic pancreatitis",
+            "Other disease of the pancreas",
+            "Impetigo",
+            "Cellulitis",
+            "Fungal infection of skin other",
+            "Leprosy",
+            "Scabies",
+            "Head lice",
+            "Parasites other",
+            "Other infection of skin",
+            "Eczema (dermatitis)",
+            "Varicose eczema",
+            "Psoriasis",
+            "Hives (urticaria)",
+            "Acne",
+            "Rosacea",
+            "Leptospirosis (Weil's disease)",
+            "Other papulosquamous and inflammatory rashes",
+            "Pemphigus vulgaris",
+            "Bullous pemphigoid",
+            "Dermatitis herpetiformis",
+            "Epidermolysis bullosa",
+            "Other bullous disease",
+            "Venous leg ulcers",
+            "Chronic venous insufficiency",
+            "Arterial leg ulcers",
+            "Pressure sores",
+            "Lyme disease",
+            "Lymphoedema",
+            "Other disease of blood vessels/lymphatics",
+            "Ehlers-Danlos syndrome",
+            "Ehlers-Danlos syndrome (hypermobility type)",
+            "Other disease of collagen and elastic tissue",
+            "Burns",
+            "Other skin disease",
+            "Osteoarthritis - hips",
+            "Osteoarthritis - knees",
+            "Osteoarthritis - other single joint",
+            "Listeriosis",
+            "Osteoarthritis - other",
+            "Fibromyalgia",
+            "Other chronic pain syndrome",
+            "Rheumatoid arthritis",
+            "Ankylosing spondylitis",
+            "Psoriatic arthritis",
+            "Reactive arthritis",
+            "Juvenile chronic arthritis (Still's disease)",
+            "Other inflammatory arthritis",
+            "Gout",
+            "Meningococcus",
+            "Pseudogout",
+            "Other crystal deposition disorder",
+            "Avascular necrosis / osteonecrosis / bone infarction",
+            "Osteochondritis",
+            "Osteomyelitis",
+            "Rickets",
+            "Osteomalacia",
+            "Osteoporosis",
+            "Paget's disease of bone",
+            "Other metabolic and endocrine disorder of bone",
+            "MRSA",
+            "Hereditary multiple exostosis (diaphyseal aclasis)",
+            "Achondroplasia (dwarfism)",
+            "Multiple epiphyseal dysplasia (Fairbanks disease)",
+            "Brittle bone disease (Osteogenesis imperfecta)",
+            "Marfan syndrome",
+            "Hypermobility syndrome (double-jointed)",
+            "Other genetic disorder, dysplasia or malformation of musculoskeletal system",
+            "Benign tumours of bone",
+            "Compartment syndrome (Volkmann's ischaemia)",
+            "Complex regional pain syndrome (CRPS)",
+            "Mycobacterial infections",
+            "Other fracture complications",
+            "Other generalised musculoskeletal disease",
+            "Rotator cuff disorder (shoulder impingement)",
+            "Adhesive capsulitis (frozen shoulder)",
+            "Shoulder instability",
+            "Other shoulder disorder",
+            "Tennis elbow (lateral epicondylitis)",
+            "Golfer's elbow (medial epicondylitis)",
+            "Other elbow disorder",
+            "Tenosynovitis",
+            "Other anaemias",
+            "Plague",
+            "Carpal tunnel syndrome",
+            "Dupuytren's contracture",
+            "Tendon lesions",
+            "Other wrist and hand disorder",
+            "Cervical disc lesion",
+            "Cervical spondylosis (age-related neck pain)",
+            "Whiplash injury",
+            "Other neck disorder",
+            "Non specific back pain (mechanical)",
+            "Scoliosis",
+            "Q fever",
+            "Kyphosis",
+            "Scheuermann's disease",
+            "Slipped disc",
+            "Spinal stenosis",
+            "Spondylolisthesis",
+            "Spondylosis/Spondylitis",
+            "Other specific back pain",
+            "Developmental dysplasia of the hip (DDH)",
+            "Perthes disease",
+            "Slipped upper femoral epiphysis (SUFE)",
+            "Rabies",
+            "Other hip disorders",
+            "Meniscus tear (knee cartilage damage)",
+            "Ligamentous instability of knee",
+            "Osgood Schlatter disease",
+            "Osteochondritis dissecans",
+            "Recurrent patellar dislocation",
+            "Chondromalacia patellae",
+            "Bursitis of knee",
+            "Other knee disorders",
+            "Scarlet fever",
+            "Club foot (talipes)",
+            "Bunions",
+            "Forefoot pain (metatarsalgia)",
+            "Other ankle and foot disorders",
+            "Amputation upper limbs",
+            "Amputation lower limbs",
+            "Amputation upper & lower limbs",
+            "Injury/fracture/dislocation Spine",
+            "Staphylococcus other",
+            "Injury/fracture thorax",
+            "Injury Abdomen",
+            "Injury/fracture/dislocation pelvis",
+            "Injury/fracture/dislocation upper limb",
+            "Injury/fracture/dislocation lower limb",
+            "Unspecified multiple injuries",
+            "Other regional musculoskeletal disease",
+            "Systemic lupus erythematosus (SLE)",
+            "Antiphospholipid syndrome (APS)",
+            "Systemic sclerosis (scleroderma)",
+            "Streptococcus other",
+            "Sjogren's syndrome",
+            "Polymyalgia rheumatica (PMR)",
+            "Temporal arteritis (giant cell arteritis)",
+            "Polyarteritis nodosa",
+            "Behcet's disease",
+            "Other vasculitis",
+            "Other autoimmune disease",
+            "Urge incontinence - urinary",
+            "Stress incontinence - urinary",
+            "Overflow incontinence- urinary",
+            "Tetanus",
+            "Other incontinence urinary (not Enuresis/Bed wetting)",
+            "Glomerulonephritis",
+            "Nephrotic syndrome",
+            "Urinary tract infection (UTI)",
+            "Interstitial nephritis",
+            "Kidney stones (renal calculi)",
+            "Hydronephrosis",
+            "Other kidney disease",
+            "Acute renal failure (acute kidney injury)",
+            "Chronic renal failure (chronic kidney disease)",
+            "Tuberculosis (TB)",
+            "Kidney transplant",
+            "Transplant rejection - kidney",
+            "Prostatic disease",
+            "Other diseases of the bladder, urethra, prostate, testes and penis",
+            "Ovarian cyst (benign)",
+            "Pelvic inflammatory disease (PID)",
+            "Endometriosis",
+            "Fibroids",
+            "Pelvic organ prolapse",
+            "Other diseases of the ovary, uterus, cervix, vagina and vulva",
+            "Bacterial infection other",
+            "Syphilis",
+            "Gonorrhoea",
+            "Sexually transmitted disease other",
+            "Other genitourinary  disease",
+            "Diabetes insipidus",
+            "Growth hormone deficiency",
+            "Other hypothalamic and pituitary diseases",
+            "Type 1 diabetes",
+            "Type 2 diabetes",
+            "Diabetes (other)",
+            "Malaria",
+            "Underactive thyroid (hypothyroidism)",
+            "Overactive thyroid (hyperthyroidism), including Grave's disease",
+            "Goitre",
+            "Other thyroid diseases",
+            "Addison's disease",
+            "Cushing's syndrome",
+            "Other adrenal diseases",
+            "Hyperparathyroidism",
+            "Hypoparathyroidism (hypopara)",
+            "Other parathyroid diseases",
+            "Hereditary spherocytosis (HS)",
+            "Other protozoal disease",
+            "Other endocrine diseases",
+            "Obstructive sleep apnoea",
+            "Tonsillitis",
+            "Laryngitis",
+            "Other diseases of the upper respiratory tract",
+            "Chronic obstructive pulmonary disease (COPD)",
+            "Bronchiectasis",
+            "Cystic fibrosis",
+            "Asthma",
+            "Extrinsic allergic alveolitis",
+            "Fungal infection excluding skin",
+            "Idiopathic pulmonary fibrosis (IPF) (fibrosing alveolitis)",
+            "Other pulmonary fibrosis",
+            "Coal workers pneumoconiosis",
+            "Silicosis",
+            "Asbestosis",
+            "Other pneumoconiosis",
+            "Sarcoidosis",
+            "Other granulomatous lung disease and pulmonary infiltration",
+            "Pleural effusion",
+            "Pneumothorax (collapsed lung)",
+            "Carrier of infectious disease",
+            "Empyema",
+            "Other diseases of the pleura",
+            "Lung transplant",
+            "Heart and lung transplant",
+            "Pulmonary embolism",
+            "Common cold",
+            "Legionnaires disease",
+            "Psittacosis",
+            "Whooping cough",
+            "Contact with infectious disease",
+            "Pneumonia other",
+            "Other diseases of the lower respiratory tract",
+            "Complications of prematurity",
+            "Failure to thrive (FTT)",
+            "Other chromosomal syndrome",
+            "Old age",
+            "Allergy with a risk of anaphylaxis",
+            "Allergy risk of anaphylaxis unknown or not fully assessed",
+            "Allergy no risk of anaphylaxis",
+            "Oral allergy syndrome (Pollen food syndrome)",
+            "Parasitic diseases excluding parasites of skin and intestinal worms",
+            "Food intolerance",
+            "Angioedema",
+            "Other hypersensitivity diseases",
+            "Other diseases of the immune system",
+            "Ectopic pregnancy",
+            "Threatened miscarriage",
+            "Miscarriage",
+            "Termination of pregnancy",
+            "Molar pregnancy",
+            "Anaemia of pregnancy",
+            "Other infectious disease",
+            "Morning sickness (Hyperemesis gravidarum)",
+            "Oligohydramnios",
+            "Polyhydramnios (too much amniotic fluid)",
+            "Foetal abnormality",
+            "Placental abnormality",
+            "Fetal growth restriction (Intrauterine growth restriction)",
+            "Multiple pregnancy",
+            "Pre-eclampsia",
+            "Eclampsia",
+            "Antepartum haemorrhage (APH)",
+            "Mouth or tongue cancer",
+            "Complications of pregnancy other",
+            "Gestational diabetes",
+            "High blood pressure (hypertension) in pregnancy",
+            "Pelvic pain in pregnancy (symphysis pubis dysfunction)",
+            "Pelvic girdle pain - pregnancy related",
+            "Breast abscess",
+            "Premature labour",
+            "Caesarean section",
+            "Stillbirth",
+            "Postpartum bleeding (haemorrhage)",
+            "Oesophageal cancer",
+            "Complication of labour other",
+            "Postpartum sepsis",
+            "Postpartum debility",
+            "Postnatal depression/psychosis",
+            "Puerperium/postnatal complications other",
+            "Stomach cancer",
+            "Pancreatic cancer",
+            "Thalassaemia",
+            "Liver cancer",
+            "Bowel cancer (colon, rectum, anus)",
+            "Other gastrointestinal tract cancers",
+            "Laryngeal cancer",
+            "Bronchus cancer (lung cancer)",
+            "Mesothelioma",
+            "Other lung cancers",
+            "Other respiratory tract cancers",
+            "Kidney cancer",
+            "Renal pelvis cancer",
+            "Sickle cell disease",
+            "Bladder cancer",
+            "Prostate cancer",
+            "Ovarian cancer",
+            "Cervical cancer",
+            "Womb (uterus) cancer",
+            "Testicular cancer",
+            "Wilms tumour (nephroblastoma)",
+            "Other genitourinary tract cancers",
+            "Hodgkin lymphoma",
+            "Non-Hodgkins lymphoma",
+            "Other haemolytic disorders",
+            "Myeloma",
+            "Acute myelogenous (myeloid) leukaemia",
+            "Acute lymphoblastic leukaemia",
+            "Chronic myeloid leukaemia",
+            "Chronic lymphocytic leukaemia",
+            "Other leukaemias",
+            "Other haematological system cancers",
+            "Melanoma",
+            "Other skin cancers",
+            "Brain and spinal cord cancer"
+          ];
+
+          const fuse = new Fuse(conditions, {
+            threshold: 0.3,
+            shouldSort: true,
+          });
+
+          accessibleAutocomplete({
+            element: document.querySelector('#my-autocomplete-container'),
+            id: 'my-autocomplete', // To match it to the existing <label>.
+            name: 'condition-name-first',
+            source: function (query, populate) {
+              if (!query) {
+                populate([]);
+                return;
+              }
+
+              const results = fuse.search(query).map((i) => i.item);
+              populate(results);
+            },
+            minLength: 1,
+            confirmOnBlur: true,
+            defaultValue: "{{ data["condition-name-first"] | safe}}",
+
+            showNoOptionsFound: false, // keep visible (set to false if you want no row at all)
+            tNoResults: function () {
+              return 'No suggestions found. Enter your health condition manually';
+            },
+            tStatusNoResults: function () {
+              // Announced by screen readers (ARIA live region)
+              return 'No suggestions found. Enter your health condition manually';
+            }
+  });
+}) ();
+      </script>
+
+    
+          <!-- <div class="govuk-form-group">
+            <label class="govuk-label" for="condition-name-first">
+              <b>Condition or disability name</b>
+            </label>
+            <input class="govuk-input" id="condition-name-first" name="condition-name-first" type="text" value="{{data["condName"]}}">
+          </div> -->
+    
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="condition-start">
+              <b>When did the condition or disability start?</b>
+            </label>
+            <input class="govuk-input" id="condition-start" name="condition-start" type="text" value="{{data["conDate"]}}">
+          </div>
+    
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="condition-history">
+              <b>Condition history</b>
+            </label>
+            <div id="condition-history" class="govuk-hint">
+              This could include: diagnosis details, symptoms, variability, treatments, specalist inputs, hospital stays
+            </div>
+            <script>
+              function addHeadings(){
+                  var titles = document.getElementById("conditionSubHeadings").value;
+                  // var bText = \r\rDiagnosis \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays"; 
+
+                  if (titles == "" || titles.length == 0 || titles == null)
+                  {
+                    document.getElementById("conditionSubHeadings").value += 'Diagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  } else {
+                    document.getElementById("conditionSubHeadings").value += '\r\rDiagnosis details \n\n\nSymptoms \n\n\nVariability \n\n\nTreatments \n\n\nSpecialist inputs \n\n\nHospital stays';
+                  }
+              }
+            </script>
+            <a href="#conditionSubHeading" class="govuk-button govuk-button--secondary" onclick="addHeadings(this.value)">Add subheadings</a>
+            {% for condition in data['conditionAdded'] %}
+            {% set outerLoopIndex = loop.index0 %}
+            {% if outerLoopIndex == data["indexCond"] %}
+            <textarea class="govuk-textarea" id="conditionSubHeadings" name="condition-history" rows="20" aria-describedby="condition history">{{ condition.conditionHistory}}</textarea>
+            {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Is this a mental health condition?
+                </h1>
+              </legend>
+              {% if data["mentalHealthQ"] == "Yes" %}
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mentalHealthYes" name="mentalHealthQ" type="radio" value="Yes" data-aria-controls="side-effect-reveal" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="mental-healthYes">
+                    Yes
+                  </label>
+                </div>
+                {% for condition in data['conditionAdded'] %}
+                  {% set outerLoopIndex = loop.index0 %}
+                  {% if outerLoopIndex == data["indexCond"] %}
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="sideEffectsDescription">
+                      <b>Suicidal thoughts and self harm</b>
+                    </label>
+                  
+                    <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5">{{ condition.mentalHealth}}</textarea>
+                  </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mental-healthNo" name="mentalHealthQ" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="mental-healthNo">
+                    No
+                  </label>
+                </div>
+              </div>
+              </fieldset>
+            </div>
+              {% elseif data["mentalHealthQ"] == "No" %}
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mentalHealthYes" name="mentalHealthQ" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+                  <label class="govuk-label govuk-radios__label" for="mental-healthYes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="sideEffectsDescription">
+                      <b>Suicidal thoughts and self harm</b>
+                    </label>
+                  {% for condition in data['conditionAdded'] %}
+                  {% set outerLoopIndex = loop.index0 %}
+                  {% if outerLoopIndex == data["indexCond"] %}
+                    <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5">{{ condition.mentalHealth}}</textarea>
+                  {% endif %}
+                  {% endfor %}
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mental-healthNo" name="mentalHealthQ" type="radio" value="No" {{ checked }}>
+                  <label class="govuk-label govuk-radios__label" for="mental-healthNo">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          {% elseif data["mentalHealthQ"] == undefined %}
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mentalHealthYes" name="mentalHealthQ" type="radio" value="Yes" data-aria-controls="side-effect-reveal">
+              <label class="govuk-label govuk-radios__label" for="mental-healthYes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="side-effect-reveal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sideEffectsDescription">
+                  <b>Suicidal thoughts and self harm</b>
+                </label>
+              {% for condition in data['conditionAdded'] %}
+              {% set outerLoopIndex = loop.index0 %}
+              {% if outerLoopIndex == data["indexCond"] %}
+                <textarea class="govuk-textarea" id="mental-health" name="mentalHealthCondition" rows="5">{{ condition.mentalHealth}}</textarea>
+              {% endif %}
+              {% endfor %}
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mental-healthNo" name="mentalHealthQ" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="mental-healthNo">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+          {% endif %}
+        
+              <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+    
+              {% if (data['conditionAdded']) %}
+              <p><a href="conditions-addAnother">Cancel</a></p>
+              {% else %}
+              <p><a href="conditions-none">Cancel</a></p>
+              {% endif %}
+    
+             </div>
+              
+    
+          </fieldset>
+        </div>
+      </form>
+      
+
+{% endblock %}
