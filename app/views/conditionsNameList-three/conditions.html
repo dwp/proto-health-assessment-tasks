@@ -23,11 +23,12 @@
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-xl"></span>
-        <h1 class="govuk-fieldset__heading"> Add a condition or disability </h1>
+        <h1 class="govuk-fieldset__heading"> Add conditions or disabilities</h1>
         <div id="passport-issued-hint" class="govuk-hint">
         </div>
       </legend>
       <div class="govuk-form-group">
+         <p class="govuk-body">Add one condition or group related conditions together</p>
         <label class="govuk-label govuk-fieldset__legend--s" for="my-autocomplete"> Condition or disability name </label>
         <div class="govuk-hint"> Select from the suggestions or enter your own. </div>
         <div id="tags"></div>
@@ -694,7 +695,7 @@
 
       
       <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Add another
+        Add to group
       </button>
   
 
@@ -705,7 +706,7 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Condition
           </dt>
           <dd class="govuk-summary-list__value">
            {{ condition.conditionName }}
@@ -790,7 +791,7 @@
       </div>
      
       <div class="govuk-button-group">
-        <!-- <button type="submit" href="conditions-addAnother" class="govuk-button" data-module="govuk-button"> Save and continue </button> --><a href="conditions-addAnother" class="govuk-button">Save and continue</a> {% if (data['conditionAdded']) %} <p><a href="conditions-addAnother">Cancel</a></p> {% else %} <p><a href="conditions-none">Cancel</a></p> {% endif %} 
+         <!-- <button type="submit" href="conditions-addAnother" class="govuk-button" data-module="govuk-button"> Save and continue </button> --> <a href="conditions-addAnother" class="govuk-button">Save and continue</a>{% if (data['conditionAdded']) %} <p><a href="conditions-addAnother">Cancel</a></p> {% else %} <p><a href="conditions-none">Cancel</a></p> {% endif %} 
       </div>
         
 
