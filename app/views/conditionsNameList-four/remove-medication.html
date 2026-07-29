@@ -1,0 +1,57 @@
+{% extends "layouts/prompts-without-sidenav-v2.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content_left %}
+
+<style>
+   .govuk-summary-list__actions {
+    width: 25%;
+    padding-right: 0;
+    text-align: right;
+  }
+</style>
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<form action="#" method="post">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Are you sure you want to remove {{ data["medications"] }}?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeCondition-yes" name="removeMedication" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="removeCondition-yes">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="removeCondition-no" name="removeMedication" type="radio" value="No">
+        <label class="govuk-label govuk-radios__label" for="removeCondition-no">
+          No
+        </label>
+      </div>
+    
+    </div>
+  </fieldset>
+</div>
+  
+
+<div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+  </div>
+
+    </form>
+
+
+{% endblock %}

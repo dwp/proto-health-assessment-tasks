@@ -787,6 +787,76 @@ router.use((req, res, next) => {
          case serviceRedirect.endsWith("/conditionsNameList-three/review?source=Additional needs"):
         return res.redirect("/conditionsNameList-three/review?source=Additional needs")
 
+        // conditions name list four
+        case serviceRedirect.endsWith("/conditionsNameList-four/evidence-none?source=default"):
+        return res.redirect("/conditionsNameList-four/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/conditionsNameList-four/evidence-none?source=evidence"):
+        return res.redirect("/conditionsNameList-four/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/conditionsNameList-four/evidence-addAnother?source=evidence"):
+        return res.redirect("/conditionsNameList-four/evidence-addAnother?source=evidence")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/consultation-date?source=Consultation date"):
+        return res.redirect("/conditionsNameList-four/consultation-date?source=Consultation date")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/consent?source=Claimant consent"):
+        return res.redirect("/conditionsNameList-four/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/verify-id?source=Claimant identity"):
+        return res.redirect("/conditionsNameList-four/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/attendees-none?source=Additional attendees"):
+        return res.redirect("/conditionsNameList-four/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/conditionsNameList-four/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/conditionsNameList-four/conditions-none?source=Condition history"):
+        return res.redirect("/conditionsNameList-four/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/conditions-addAnother?source=Condition history"):
+        return res.redirect("/conditionsNameList-four/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/conditionsNameList-four/medications-none?source=Medication"):
+        return res.redirect("/conditionsNameList-four/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/medication-addAnother?source=Medication"):
+        return res.redirect("/conditionsNameList-four/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/conditionsNameList-four/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/conditionsNameList-four/soch1-additional?source=Social and occupational history")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/mental-state?source=Mental state observations"):
+        return res.redirect("/conditionsNameList-four/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/physical-state?source=Informal observations"):
+        return res.redirect("/conditionsNameList-four/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-four/descriptor?source=Activity descriptors"):
+        return res.redirect("/conditionsNameList-four/descriptor?source=Activity descriptors")
+
+      case serviceRedirect.endsWith("/conditionsNameList-four/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList-four/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/conditionsNameList-four/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/conditionsNameList-four/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-four/review?source=Review"):
+        return res.redirect("/conditionsNameList-four/review?source=Review")
+      
+      case serviceRedirect.endsWith("/conditionsNameList-four/check-answers-new"):
+        return res.redirect("/conditionsNameList-four/check-answers-new")
+
+       case serviceRedirect.endsWith("/conditionsNameList-four/docs-3"):
+        return res.redirect("/conditionsNameList-four/docs-3")
+
+        case serviceRedirect.endsWith("/conditionsNameList-four/functional-history?source=Functional history"):
+        return res.redirect("/conditionsNameList-four/functional-history?source=Functional history")
+
+         case serviceRedirect.endsWith("/conditionsNameList-four/review?source=Additional needs"):
+        return res.redirect("/conditionsNameList-four/review?source=Additional needs")
+
 
       //design ideas prototype
       case serviceRedirect.endsWith("/designIdeas/evidence-addAnother?source=evidence"):
@@ -8109,6 +8179,170 @@ router.post('/conditionsNameList/attendees-change', function (req, res) {
 router.post('/conditionsNameList/attendees-addAnother', function (req, res) {
 
   res.redirect('/conditionsNameList/attendees')
+})
+
+router.post('/conditionsNameList/evidence-none', function (req, res) {
+
+  res.redirect('/conditionsNameList/evidence')
+})
+
+//conditionslist - four routes
+
+router.post('/conditionsNameList-four/evidence', function (req, res) {
+  const evidenceNo = req.session.data['index']
+  const evidenceName = req.session.data['document-name']
+  const evidenceDate = req.session.data['date-of-evidence']
+  const coreEvidence = req.session.data['dwp-evidence']
+  const coreEvidenceDate = req.session.data['coreEvidenceDate']
+  const evidenceLink = req.session.data['evidenceURL']
+
+  const evidenceAdded = req.session.data.evidenceAdded || []
+  evidenceAdded.push({ evidenceNo, evidenceName, evidenceDate, coreEvidence, evidenceLink, coreEvidenceDate })
+  req.session.data.evidenceAdded = evidenceAdded
+
+  const last = req.session.data.evidenceAdded[req.session.data.evidenceAdded.length - 1];
+
+
+  res.redirect('/conditionsNameList-four/evidence-addAnother?source=evidence')
+})
+
+router.post('/conditionsNameList-four/evidence-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/evidence')
+})
+
+router.post('/conditionsNameList-four/conditions-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/conditions')
+})
+
+router.post('/conditionsNameList-four/conditions', function (req, res) {
+  const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionDuration = req.session.data['conditionQuestion']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth, conditionDuration })
+  req.session.data.conditionAdded = conditionAdded
+
+  req.session.data.conditionAdded[req.session.data.conditionAdded.length - 1].action
+
+  res.redirect('/conditionsNameList-four/conditions-addAnother')
+})
+
+router.post('/conditionsNameList-four/conditions-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/conditions')
+})
+
+router.post('/conditionsNameList-four/conditions-change', function (req, res) {
+const conditionName = req.session.data['condition-name-first']
+  const conditionLength = req.session.data['condition-start']
+  const conditionHistory = req.session.data['condition-history']
+  const mentalHealthQuestion = req.session.data['mentalHealthQ']
+  const mentalHealth = req.session.data['mentalHealthCondition']
+  const conditionNo = req.session.data['indexCond']
+
+  const conditionAdded = req.session.data.conditionAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  conditionAdded.splice(conditionNo, 1);
+  conditionAdded.push({ conditionName, conditionLength, conditionHistory, mentalHealthQuestion, mentalHealth })
+  req.session.data.conditionAdded = conditionAdded
+
+   res.redirect('/conditionsNameList-four/conditions-addAnother')
+})
+
+// Routes for adding another medication
+router.post('/conditionsNameList-four/medications-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/medication')
+})
+
+
+// Routes for adding another medication //
+router.post('/conditionsNameList-four/medication', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationSideEffect, medicationEffectiveness })
+  req.session.data.medicationAdded = medicationAdded
+
+  req.session.data.medicationAdded[req.session.data.medicationAdded.length - 1].action
+
+  res.redirect('/conditionsNameList-four/medication-addAnother')
+})
+
+// Routes for adding another medication //\
+router.post('/conditionsNameList-four/medication-change', function (req, res) {
+  const medicationName = req.session.data['medications-name']
+  const medicationDose = req.session.data['medications-dose']
+  const medicationFrequency = req.session.data['medications-frequency']
+  const medicationReason = req.session.data['medications-reason']
+  const medicationEffectiveness = req.session.data['medications-efficacy']
+  const medicationSideEffect = req.session.data['medications-side-effects']
+  const medNo = req.session.data['indexMed']
+
+  const medicationAdded = req.session.data.medicationAdded || []
+  medicationAdded.splice(medNo, 1);
+  medicationAdded.push({ medNo, medicationName, medicationDose, medicationFrequency, medicationReason, medicationEffectiveness, medicationSideEffect })
+  req.session.data.medicationAdded = medicationAdded
+
+  res.redirect('/conditionsNameList-four/medication-addAnother')
+})
+
+router.post('/conditionsNameList-four/medication-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/medication')
+})
+
+// Routes for adding another attendee //
+
+router.post('/conditionsNameList-four/attendees-none', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/attendees')
+})
+
+
+router.post('/conditionsNameList-four/attendees', function (req, res) {
+  const attendeeNo = req.session.data['loop.index0']
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  req.session.data.attendeeAdded[req.session.data.attendeeAdded.length - 1].action
+
+  res.redirect('/conditionsNameList-four/attendees-addAnother')
+})
+
+router.post('/conditionsNameList-four/attendees-change', function (req, res) {
+  const attendeeName = req.session.data['attendee-name']
+  const relation = req.session.data['relationshipToClaimant']
+  const attendeeNo = req.session.data['index']
+
+  const attendeeAdded = req.session.data.attendeeAdded || []
+  // const conditionNo1 = conditionAdded.findIndex(p => p.id === conditionNo.id);
+  attendeeAdded.splice(attendeeNo, 1);
+  attendeeAdded.push({ attendeeNo, attendeeName, relation })
+  req.session.data.attendeeAdded = attendeeAdded
+
+  res.redirect('/conditionsNameList-four/attendees-addAnother')
+})
+
+router.post('/conditionsNameList-four/attendees-addAnother', function (req, res) {
+
+  res.redirect('/conditionsNameList-four/attendees')
 })
 
 
