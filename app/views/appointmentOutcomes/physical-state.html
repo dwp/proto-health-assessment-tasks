@@ -1,0 +1,93 @@
+{% extends "layouts/TDM-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+    <form action="#" method="post" id="auto-redirect">
+ 
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="more-detail">
+       Informal observations
+      </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+        This can include breathlessness, tiredness, or signs they are in pain
+      </div>
+    </h1>
+    <textarea class="govuk-textarea" id="observations" name="physical-state" rows="15" aria-describedby="history-condition-hint">{{data["physical-state"]}}</textarea>
+
+     <!-- <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Harmful information
+          </h2>
+        </legend> -->
+<!-- 
+       {% if data["conditionDeclaration"] == "None" %}   
+        <div id="harm-hint" class="govuk-hint">
+          Harmful information will be automatically separated from the report.
+        </div>  -->
+      <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="informalStateDec" name="informalStateDeclaration" type="checkbox" value="There is potentially harmful information in this section.">
+          <label class="govuk-label govuk-checkboxes__label" for="informalStateDec">
+            There is potentially harmful information in this section.
+          </label>
+        </div>
+      </div> 
+      </fieldset>
+      </div> -->
+
+      <!-- {% elseif data["conditionDeclaration"] == "There is potentially harmful information in this section." %}
+       <div id="harm-hint" class="govuk-hint">
+          Harmful information will be automatically separated from the report.
+        </div>  -->
+      <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="informalStateDec" name="informalStateDeclaration" type="checkbox" value="There is potentially harmful information in this section." {{ checked }}>
+          <label class="govuk-label govuk-checkboxes__label" for="informalStateDec">
+           There is potentially harmful information in this section.
+          </label>
+        </div>
+      </div> -->
+      </fieldset>
+      </div>
+      {% endif %} 
+  </div>
+
+      <!-- <div class="govuk-button-group">
+      </div><button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button> -->
+    </div>
+
+      </form>
+      </div>
+<!--
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+    <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+  -->
+  
+
+{% endblock %}

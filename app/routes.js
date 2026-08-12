@@ -2448,6 +2448,89 @@ router.use((req, res, next) => {
           case serviceRedirect.endsWith("/harmful-info-paper/assessment-report"):
         return res.redirect("/harmful-info-paper/assessment-report")
 
+        
+         // Appointment outcomes
+        case serviceRedirect.endsWith("/appointmentOutcomes/evidence-none?source=default"):
+        return res.redirect("/appointmentOutcomes/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/evidence-none?source=evidence"):
+        return res.redirect("/appointmentOutcomes/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/evidence?source=evidence"):
+        return res.redirect("/appointmentOutcomes/check-?source=evidence")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/evidence-addAnother?source=evidence"):
+        return res.redirect("/appointmentOutcomes/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/conditions?source=History of condition"):
+        return res.redirect("/appointmentOutcomes/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/appointmentOutcomes/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/consultation-date?source=Consultation date"):
+        return res.redirect("/appointmentOutcomes/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/verify-id?source=Claimant identity"):
+        return res.redirect("/appointmentOutcomes/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/consent?source=Claimant consent"):
+        return res.redirect("/appointmentOutcomes/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/attendees-none?source=Additional attendees"):
+        return res.redirect("/appointmentOutcomes/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/attendees?source=Additional attendees"):
+        return res.redirect("/appointmentOutcomes/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/appointmentOutcomes/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/conditions-none?source=Condition history"):
+        return res.redirect("/appointmentOutcomes/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/conditions-addAnother?source=Condition history"):
+        return res.redirect("/appointmentOutcomes/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/medications-none?source=Medication"):
+        return res.redirect("/appointmentOutcomes/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/medication-addAnother?source=Medication"):
+        return res.redirect("/appointmentOutcomes/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/appointmentOutcomes/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/appointmentOutcomes/soch1-additional?source=Social and occupational history")
+
+         case serviceRedirect.endsWith("/appointmentOutcomes/functional-history?source=Functional history"):
+        return res.redirect("/appointmentOutcomes/functional-history?source=Functional history")
+    
+      case serviceRedirect.endsWith("/appointmentOutcomes/mental-state?source=Mental state observations"):
+        return res.redirect("/appointmentOutcomes/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/appointmentOutcomes/physical-state?source=Informal observations"):
+        return res.redirect("/appointmentOutcomes/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/appointmentOutcomes/descriptor?source=Activity descriptors"):
+        return res.redirect("/appointmentOutcomes/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/appointmentOutcomes/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/appointmentOutcomes/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/appointmentOutcomes/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/appointmentOutcomes/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/appointmentOutcomes/review?source=Additional needs"):
+        return res.redirect("/appointmentOutcomes/review?source=Additional needs")
+      
+      case serviceRedirect.endsWith("/appointmentOutcomes/check-answers-tdm"):
+        return res.redirect("/appointmentOutcomes/check-answers-tdm")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/examination-consent?source=Examination consent"):
+        return res.redirect("/appointmentOutcomes/examination-consent?source=Examination consent")
+
+        case serviceRedirect.endsWith("/appointmentOutcomes/physical-examination?source=Physical examination"):
+        return res.redirect("/appointmentOutcomes/physical-examination?source=Physical examination")
+
       default:
         return res.redirect("/")
 

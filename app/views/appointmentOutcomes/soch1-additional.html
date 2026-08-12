@@ -1,0 +1,58 @@
+{% extends "layouts/TDM-layout.html" %}
+
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="#" method="post" id="auto-redirect">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl"></span>
+        <h1 class="govuk-fieldset__heading">
+          Social and occupational history
+        </h1>
+      </legend>
+  
+<div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="variability" name="social-occupational-history" rows="15" aria-describedby="variability-hint">Lives with partner in a bungalow.
+Moved from a house a few years ago, as was struggling with stairs due chest and knee pains. 
+Shower is over bath; struggling to get in and out and is thinking of buying a rail to support with this. 
+Has easy grip knives, a rubber bathmat and walking stick. 
+Stopped working after heart attack. Partner works part time. 
+Drives automatic car, swapped from manual to automatic two years ago due to knee pain. No adaptations. Is able to get in and out and but will hold on to the door due to knee pain. When driving long distances finds pain increases to back and knees. Can grip steering wheel with no restrictions. Drives 15-20 minutes maximum as then finds the pain in knees and back increases, can drive these distances several times per week. 
+Has two adult children who they enjoy seeing weekly, is able to drive there. 
+Enjoys spending time with grandchildren and will look after them whilst their parents are working, will take them to the park, which is across the road, will need to sit on the bench after walking to the park due to back and knee pain and is then able to walk back. 
+Will talk to other people they know from the area whilst children play and enjoys this. 
+Used to enjoy doing leisure activities however has stopped doing these due to struggling to stand because of back and knee pain. Misses doing these hobbies.
+Enjoys reading and will do this daily, able to turn pages of a book. Enjoys listening to radio and watching TV. Able to grip and use mobile phone to browse the internet and use social media. 
+Enjoys cleaning and pottering around the house slowly as and when back and knee pain allows.</textarea>
+  </div>
+ 
+ 
+
+      
+    </div>
+
+      </form>
+
+  </fieldset>
+  </form>
+  </div>        
+
+{% endblock %}
