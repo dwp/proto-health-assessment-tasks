@@ -2531,6 +2531,9 @@ router.use((req, res, next) => {
         case serviceRedirect.endsWith("/appointmentOutcomes/physical-examination?source=Physical examination"):
         return res.redirect("/appointmentOutcomes/physical-examination?source=Physical examination")
 
+         case serviceRedirect.endsWith("/appointmentOutcomes/appointment?source=Appointment outcome"):
+        return res.redirect("/appointmentOutcomes/appointment?source=Appointment outcome")
+
       default:
         return res.redirect("/")
 
@@ -10899,4 +10902,11 @@ router.post('/harmful-info-paper-two/phonecall-addAnother', function (req, res) 
 router.post('/harmful-info-paper-two/phonecall-result', function (req, res) {
 
   res.redirect('/harmful-info-paper-two/phonecall-addAnother')
+})
+
+
+//Appointment outcomes
+router.post('/appointmentOutcomes/appointment', function (req, res) {
+
+  res.redirect('/appointmentOutcomes/consultation-completed')
 })

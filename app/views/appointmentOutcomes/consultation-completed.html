@@ -1,0 +1,77 @@
+{% extends "layouts/evidence-without-sidenav.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+  
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+ 
+
+  <form action="#" method="post" id="auto-redirect">
+     
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Was the consultation completed?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consultationOptOne" name="consultation-completed" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="consultationOptOne">
+           Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consultationOptTwo" name="consultation-completed" type="radio" value="No">
+        <label class="govuk-label govuk-radios__label" for="consultationOptTwo">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <!-- {% if (data['attendeeAdded']) %}
+      <p><a href="attendees-addAnother">Cancel</a></p>
+      {% else %}
+      <p><a href="attendees-none">Cancel</a></p>
+      {% endif %} -->
+     </div>
+
+
+      </form>
+ 
+   
+
+{% endblock %}
