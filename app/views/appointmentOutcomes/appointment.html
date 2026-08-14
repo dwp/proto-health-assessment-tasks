@@ -26,12 +26,70 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </div>
 
+{% if data["claimant-reason"] %}
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-1">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Appointment outcome
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data["claimant-reason"] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="claimant-reason">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+</dl>
+
+    {% if data["moreNotes"] %}
+      <div>
+      <h3 class="govuk-heading-s margin-top:2%" style="display: inline-block;">More details</h3>
+      <a href="claimant-reason" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+      <p class="text" style="width: 90%;">{{ data["moreNotes"] }}</p>
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+       {% elseif data["moreNotes"] == "" %}
+     
+    {% endif %}
+
+     {% elseif data["hcp-reason"] %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Appointment outcome
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["hcp-reason"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="hcp-reason">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      {% if data["moreNotesHCP"] %}
+      <div>
+      <h3 class="govuk-heading-s margin-top:2%" style="display: inline-block;">More details</h3>
+      <a href="hcp-reason" class="govuk-link govuk-body" style="float: right">Change</a>
+      </div>
+        <p class="text" style="width: 90%;">{{ data["moreNotesHCP"] }}</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      {% elseif data["moreNotesHCP"] == "" %}
+     
+      {% endif %}
+
+  {% else %}
+
+    <p class="govuk-body">No appointment has been added.</p>
+
     <form action="#" method="post" id="auto-redirect">
 
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Record appointment outcome
       </button>
-
+{% endif %}
       
         
     </form>    

@@ -10910,3 +10910,33 @@ router.post('/appointmentOutcomes/appointment', function (req, res) {
 
   res.redirect('/appointmentOutcomes/consultation-completed')
 })
+
+router.post('/appointmentOutcomes/consultation-completed', function (req, res) {
+
+  if (req.session.data['consultation-completed'] == "Yes") {
+    res.redirect('/appointmentOutcomes/check-answers-tdm')
+  } else {
+    res.redirect('/appointmentOutcomes/consultation-reason')
+  }
+})
+
+router.post('/appointmentOutcomes/consultation-reason', function (req, res) {
+
+  if (req.session.data['appt-reason'] == "Claimant issue") {
+    res.redirect('/appointmentOutcomes/claimant-reason')
+  } else {
+    res.redirect('/appointmentOutcomes/hcp-reason')
+  }
+})
+
+router.post('/appointmentOutcomes/claimant-reason', function (req, res) {
+
+ res.redirect('/appointmentOutcomes/appointment?source=Appointment outcome')
+ 
+})
+
+router.post('/appointmentOutcomes/hcp-reason', function (req, res) {
+
+ res.redirect('/appointmentOutcomes/appointment?source=Appointment outcome')
+ 
+})

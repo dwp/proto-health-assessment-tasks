@@ -1,0 +1,150 @@
+{% extends "layouts/no-side-nav-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dt class="key-details-bar__name">John Smith</dt>
+
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dt class="key-details-bar__nino">AB CB 12 13</dt>
+
+      <!-- <dt class="govuk-visually-hidden">Claim status:</dt>
+      <dd class="key-details-bar__status">HCP REVIEW</dd> -->
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>31 December 1999</dd>
+
+      <dt>Postcode:</dt>
+      <dd>N2 1XX</dd>
+
+    </div>
+  </dl>
+</section>
+
+  
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+ <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <form action="#" method="post" id="auto-redirect">
+     
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Select a reason why the appointment could not be completed
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonOne" name="claimant-reason" type="radio" value="Appointment was abandoned">
+        <label class="govuk-label govuk-radios__label" for="claimReasonOne">
+          Appointment was abandoned
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonTwo" name="claimant-reason" type="radio" value="Claimant failed to attend">
+        <label class="govuk-label govuk-radios__label" for="claimReasonTwo">
+          Claimant failed to attend
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant could not be contacted">
+        <label class="govuk-label govuk-radios__label" for="claimReasonThree">
+          Claimant could not be contacted
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonFour" name="claimant-reason" type="radio" value="Claimant declined the consultation">
+        <label class="govuk-label govuk-radios__label" for="claimReasonFour">
+          Claimant declined the consultation
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonFive" name="claimant-reason" type="radio" value="Claimant left before the consultation started">
+        <label class="govuk-label govuk-radios__label" for="claimReasonFive">
+          Claimant left before the consultation started
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonSix" name="claimant-reason" type="radio" value="Claimant arrived too late">
+        <label class="govuk-label govuk-radios__label" for="claimReasonSix">
+          Claimant arrived too late
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonSeven" name="claimant-reason" type="radio" value="Claimant special requirements not met">
+        <label class="govuk-label govuk-radios__label" for="claimReasonSeven">
+          Claimant special requirements not met
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant failed identity checks">
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant failed identity checks
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonNine" name="claimant-reason" type="radio" value="Claimant failed to comply">
+        <label class="govuk-label govuk-radios__label" for="claimReasonNine">
+          Claimant failed to comply
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    <b>Provide more details if needed</b>
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreNotes" rows="5">{{data["moreNotes"]}}</textarea>
+</div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <!-- {% if (data['attendeeAdded']) %}
+      <p><a href="attendees-addAnother">Cancel</a></p>
+      {% else %}
+      <p><a href="attendees-none">Cancel</a></p>
+      {% endif %} -->
+     </div>
+
+
+      </form>
+ 
+   
+
+{% endblock %}
