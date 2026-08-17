@@ -54,7 +54,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </style>
 
  
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<a href="consultation-reason" class="govuk-back-link">Back</a>
   <form action="#" method="post" id="auto-redirect">
      
     <div class="govuk-form-group">
@@ -64,60 +64,138 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Select a reason why the appointment could not be completed
       </h1>
     </legend>
+    {% if data["hcp-reason"] == 'HCP unavailable' %}
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonOne" name="hcp-reason" type="radio" value="HCP unavailable" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonOne">
+          HCP unavailable
+        </label>
+      </div>
+      {% else %}
+        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonOne" name="hcp-reason" type="radio" value="HCP unavailable">
         <label class="govuk-label govuk-radios__label" for="hcpReasonOne">
           HCP unavailable
         </label>
       </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'Capacity problem' %}
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="Capacity problem" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
+          Capacity problem
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="Capacity problem">
         <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
           Capacity problem
         </label>
       </div>
+      {% endif %}
+
+       {% if data["hcp-reason"] == 'Technical failure' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Technical failure" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          Technical failure
+        </label>
+      </div>
+        {% else %}
+      <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Technical failure">
         <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
           Technical failure
         </label>
       </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'Unable to complete consultation' %}
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFour" name="hcp-reason" type="radio" value="Unable to complete consultation" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFour">
+          Unable to complete consultation
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonFour" name="hcp-reason" type="radio" value="Unable to complete consultation">
         <label class="govuk-label govuk-radios__label" for="hcpReasonFour">
           Unable to complete consultation
         </label>
       </div>
+       {% endif %}
+
+       {% if data["hcp-reason"] == 'Claimant left before the consultation started' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFive" name="hcp-reason" type="radio" value="Claimant left before the consultation started" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFive">
+          Claimant left before the consultation started
+        </label>
+      </div>
+      {% else %}
        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonFive" name="hcp-reason" type="radio" value="Claimant left before the consultation started">
         <label class="govuk-label govuk-radios__label" for="hcpReasonFive">
           Claimant left before the consultation started
         </label>
       </div>
+      {% endif %}
+
+    {% if data["hcp-reason"] == 'Could not wait over 30 minutes' %}
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSix" name="hcp-reason" type="radio" value="Could not wait over 30 minutes" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSix">
+          Could not wait over 30 minutes
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonSix" name="hcp-reason" type="radio" value="Could not wait over 30 minutes">
         <label class="govuk-label govuk-radios__label" for="hcpReasonSix">
           Could not wait over 30 minutes
         </label>
       </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'Claimant special requirements not met' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements not met" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
+          Claimant special requirements not met
+        </label>
+      </div>
+       {% else %}
        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements not met">
         <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
           Claimant special requirements not met
         </label>
       </div>
+       {% endif %}
+
+       {% if data["hcp-reason"] == 'Room accomodation problem' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Room accomodation problem" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Room accomodation problem
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Room accomodation problem">
         <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
           Room accomodation problem
         </label>
       </div>
+       {% endif %}
+
     </div>
   </fieldset>
-</div>
-
-<div class="govuk-form-group">
+  <div class="govuk-form-group">
   <label class="govuk-label" for="more-detail">
     <b>Provide more details if needed</b>
   </label>
@@ -135,6 +213,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p><a href="attendees-none">Cancel</a></p>
       {% endif %} -->
      </div>
+</div>
+
+
 
 
       </form>

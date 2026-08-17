@@ -26,7 +26,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
     </div>
 
-{% if data["claimant-reason"] %}
+{% if data["appt-reason"] == 'Claimant issue' %}
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-1">
   <div class="govuk-summary-list__row">
@@ -51,10 +51,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
        {% elseif data["moreNotes"] == "" %}
-     
-    {% endif %}
+    
+      {% endif %}
 
-     {% elseif data["hcp-reason"] %}
+   {% elseif data["appt-reason"] == 'HCP or provider issue' %}
       <dl class="govuk-summary-list govuk-!-margin-bottom-1">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -80,7 +80,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
      
       {% endif %}
 
-  {% else %}
+      {% else %}
 
     <p class="govuk-body">No appointment has been added.</p>
 
@@ -90,6 +90,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Record appointment outcome
       </button>
 {% endif %}
+
+    
+      
+
+  
       
         
     </form>    

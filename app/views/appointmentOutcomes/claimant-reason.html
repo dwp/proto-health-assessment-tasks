@@ -53,7 +53,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
- <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+ <a href="consultation-reason" class="govuk-back-link">Back</a>
 
   <form action="#" method="post" id="auto-redirect">
      
@@ -64,66 +64,153 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Select a reason why the appointment could not be completed
       </h1>
     </legend>
+    {% if data["claimant-reason"] == 'Appointment was abandoned' %}
     <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonOne" name="claimant-reason" type="radio" value="Appointment was abandoned" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonOne">
+          Appointment was abandoned
+        </label>
+      </div>
+      {% else %}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonOne" name="claimant-reason" type="radio" value="Appointment was abandoned">
         <label class="govuk-label govuk-radios__label" for="claimReasonOne">
           Appointment was abandoned
         </label>
       </div>
+      {% endif %}
+
+      {% if data["claimant-reason"] == 'Claimant failed to attend' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonTwo" name="claimant-reason" type="radio" value="Claimant failed to attend" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonTwo">
+          Claimant failed to attend
+        </label>
+      </div>
+      {% else %}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonTwo" name="claimant-reason" type="radio" value="Claimant failed to attend">
         <label class="govuk-label govuk-radios__label" for="claimReasonTwo">
           Claimant failed to attend
         </label>
       </div>
+      {% endif %}
+
+      {% if data["claimant-reason"] == 'Claimant would not wait for 30 minutes' %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant could not be contacted">
+        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant would not wait for 30 minutes" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="claimReasonThree">
-          Claimant could not be contacted
+          Claimant would not wait for 30 minutes
         </label>
       </div>
+       {% else %}
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant would not wait for 30 minutes">
+        <label class="govuk-label govuk-radios__label" for="claimReasonThree">
+          Claimant would not wait for 30 minutes
+        </label>
+      </div>
+       {% endif %}
+
+       {% if data["claimant-reason"] == 'Claimant declined the consultation' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonFour" name="claimant-reason" type="radio" value="Claimant declined the consultation" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonFour">
+          Claimant declined the consultation
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonFour" name="claimant-reason" type="radio" value="Claimant declined the consultation">
         <label class="govuk-label govuk-radios__label" for="claimReasonFour">
           Claimant declined the consultation
         </label>
       </div>
+      {% endif %}
+
+       {% if data["claimant-reason"] == 'Claimant left before the consultation started' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonFive" name="claimant-reason" type="radio" value="Claimant left before the consultation started" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonFive">
+          Claimant left before the consultation started
+        </label>
+      </div>
+      {% else %}
        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonFive" name="claimant-reason" type="radio" value="Claimant left before the consultation started">
         <label class="govuk-label govuk-radios__label" for="claimReasonFive">
           Claimant left before the consultation started
         </label>
       </div>
+      {% endif %}
+
+      {% if data["claimant-reason"] == 'Claimant arrived too late' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonSix" name="claimant-reason" type="radio" value="Claimant arrived too late" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonSix">
+          Claimant arrived too late
+        </label>
+      </div>
+      {% else %}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonSix" name="claimant-reason" type="radio" value="Claimant arrived too late">
         <label class="govuk-label govuk-radios__label" for="claimReasonSix">
           Claimant arrived too late
         </label>
       </div>
+      {% endif %}
+
+       {% if data["claimant-reason"] == 'Claimant special requirements not met' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonSeven" name="claimant-reason" type="radio" value="Claimant special requirements not met" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonSeven">
+          Claimant special requirements not met
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonSeven" name="claimant-reason" type="radio" value="Claimant special requirements not met">
         <label class="govuk-label govuk-radios__label" for="claimReasonSeven">
           Claimant special requirements not met
         </label>
       </div>
+      {% endif %}
+
+      {% if data["claimant-reason"] == 'Claimant failed identity checks' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant failed identity checks" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant failed identity checks
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant failed identity checks">
         <label class="govuk-label govuk-radios__label" for="claimReasonEight">
           Claimant failed identity checks
         </label>
       </div>
+       {% endif %}
+
+       {% if data["claimant-reason"] == 'Claimant failed to comply' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonNine" name="claimant-reason" type="radio" value="Claimant failed to comply" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonNine">
+          Claimant failed to comply
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonNine" name="claimant-reason" type="radio" value="Claimant failed to comply">
         <label class="govuk-label govuk-radios__label" for="claimReasonNine">
           Claimant failed to comply
         </label>
       </div>
+       {% endif %}
     </div>
   </fieldset>
-</div>
-
-<div class="govuk-form-group">
+  <div class="govuk-form-group">
   <label class="govuk-label" for="more-detail">
     <b>Provide more details if needed</b>
   </label>
@@ -141,6 +228,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p><a href="attendees-none">Cancel</a></p>
       {% endif %} -->
      </div>
+</div>
+
+
 
 
       </form>

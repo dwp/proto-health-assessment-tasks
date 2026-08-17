@@ -52,11 +52,13 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   }
              
   </style>
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<a href="consultation-completed" class="govuk-back-link">Back</a>
  
 
   <form action="#" method="post" id="auto-redirect">
      
+  
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -64,19 +66,38 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Why could the appointment not be completed?
       </h1>
     </legend>
+    {% if data["appt-reason"] == 'Claimant issue' %}
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="apptReason" name="appt-reason" type="radio" value="Claimant issue">
-        <label class="govuk-label govuk-radios__label" for="apptReason">
+        <input class="govuk-radios__input" id="apptReasonOne" name="appt-reason" type="radio" value="Claimant issue" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="apptReasonOne">
            Claimant issue
         </label>
       </div>
+      {% else %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="apptReason" name="appt-reason" type="radio" value="HCP or provider issue">
-        <label class="govuk-label govuk-radios__label" for="apptReason">
+        <input class="govuk-radios__input" id="apptReasonOne" name="appt-reason" type="radio" value="Claimant issue">
+        <label class="govuk-label govuk-radios__label" for="apptReasonOne">
+           Claimant issue
+        </label>
+      </div>
+      {% endif %}
+
+      {% if data["appt-reason"] == 'HCP or provider issue' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="HCP or provider issue" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="apptReasonTwo">
           HCP or provider issue
         </label>
       </div>
+      {% else %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="HCP or provider issue">
+        <label class="govuk-label govuk-radios__label" for="apptReasonTwo">
+          HCP or provider issue
+        </label>
+      </div>
+      {% endif %}
     </div>
   </fieldset>
 </div>
@@ -93,9 +114,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {% endif %} -->
      </div>
 
+      
+  </form>
 
-      </form>
- 
    
 
 {% endblock %}

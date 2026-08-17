@@ -105,7 +105,7 @@ None        </dd>
          Consulation date
         </dt>
         <dd class="govuk-summary-list__value">
-          13 October 2023
+          19 August 2026
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -220,7 +220,7 @@ None        </dd>
 
     <h2 class="govuk-heading-l">Condition history</h3>
 
-      {% for condition in data['conditionAdded'] %}
+      <!-- {% for condition in data['conditionAdded'] %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -269,7 +269,7 @@ None        </dd>
       </div>
       {% if (condition.mentalHealthQuestion == "Yes") %}
       <div class="govuk-summary-list__row">
-        <!-- <div class="mentalHealth-title"> -->
+        <div class="mentalHealth-title"> 
         <dt class="govuk-summary-list__key">
          <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
          <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
@@ -299,7 +299,84 @@ None        </dd>
     <br>
     <br>
     <br>
-    {% endfor %}
+    {% endfor %} -->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Condition or disability name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Depression
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> condition or disability name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           When did the condition or disability start?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 years ago
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> when Depression started</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Condition history
+          <pre class="condition-text govuk-body">Suffers with low moood, anxiety and has motivation problems</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+     
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"> </span></a>
+        </dd> 
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+    
+      <div class="govuk-summary-list__row">
+        <!-- <div class="mentalHealth-title"> -->
+        <dt class="govuk-summary-list__key">
+         <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
+         <pre class="mentalHealth-text govuk-body">No thoughts present</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+   
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Will the condition still be present in 9 months’ time?
+        </dt>
+        <dd class="govuk-summary-list__value">
+                It is not possible to say if it will still be present
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+    </dl>
+    <br>
+    <br>
+    <br>
 
 
 
@@ -758,7 +835,7 @@ None        </dd>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9 govuk-section-break--visible">
 
-      <h2 class="govuk-heading-l">Harmful information</h2>
+      <!-- <h2 class="govuk-heading-l">Harmful information</h2> -->
 
          {% if data["harmfulInfo"] == "Yes" %} 
          <!-- <div class="govuk-summary-list__row">
