@@ -1,0 +1,259 @@
+{% extends "layouts/no-side-nav-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{
+  dwpHeader({
+      name: "Health Assessment Service",
+      serviceHref: '../',
+      container: true
+  })
+}}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dt class="key-details-bar__name">John Smith</dt>
+
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dt class="key-details-bar__nino">AB CB 12 13</dt>
+
+      <!-- <dt class="govuk-visually-hidden">Claim status:</dt>
+      <dd class="key-details-bar__status">HCP REVIEW</dd> -->
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>31 December 1999</dd>
+
+      <dt>Postcode:</dt>
+      <dd>N2 1XX</dd>
+
+    </div>
+  </dl>
+</section>
+
+  
+
+{% endblock %}
+
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+ 
+<a href="consultation-reason" class="govuk-back-link">Back</a>
+  <form action="#" method="post" id="auto-redirect">
+     
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Select a reason why the appointment could not be completed
+      </h1>
+    </legend>
+    {% if data["hcp-reason"] == 'HCP unavailable' %}
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonOne" name="hcp-reason" type="radio" value="HCP unavailable" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonOne">
+          HCP unavailable
+        </label>
+      </div>
+      {% else %}
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonOne" name="hcp-reason" type="radio" value="HCP unavailable">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonOne">
+          HCP unavailable
+        </label>
+      </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'More claimants than capacity' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="More claimants than capacity" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
+          More claimants than capacity
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="More claimants than capacity">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
+          More claimants than capacity
+        </label>
+      </div>
+      {% endif %}
+
+       {% if data["hcp-reason"] == 'DWP technical failure' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="DWP technical failure" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          DWP technical failure
+        </label>
+      </div>
+        {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="DWP technical failure">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          DWP technical failure
+        </label>
+      </div>
+      {% endif %}
+
+       {% if data["hcp-reason"] == 'Assessment provider technical failure' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Assessment provider technical failure" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          Assessment provider technical failure
+        </label>
+      </div>
+        {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Assessment provider technical failure">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          Assessment provider technical failure
+        </label>
+      </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'Unable to complete consultation' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFour" name="hcp-reason" type="radio" value="Unable to complete consultation" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFour">
+          Unable to complete consultation
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFour" name="hcp-reason" type="radio" value="Unable to complete consultation">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFour">
+          Unable to complete consultation
+        </label>
+      </div>
+       {% endif %}
+
+       <!-- {% if data["hcp-reason"] == 'Claimant left before the consultation started' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFive" name="hcp-reason" type="radio" value="Claimant left before the consultation started" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFive">
+          Claimant left before the consultation started
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonFive" name="hcp-reason" type="radio" value="Claimant left before the consultation started">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonFive">
+          Claimant left before the consultation started
+        </label>
+      </div>
+      {% endif %} -->
+
+    {% if data["hcp-reason"] == 'Could not wait over 30 minutes' %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSix" name="hcp-reason" type="radio" value="Could not wait over 30 minutes" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSix">
+          Could not wait over 30 minutes
+        </label>
+      </div>
+      {% else %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSix" name="hcp-reason" type="radio" value="Could not wait over 30 minutes">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSix">
+          Could not wait over 30 minutes
+        </label>
+      </div>
+      {% endif %}
+
+      {% if data["hcp-reason"] == 'Claimant special requirements known but not met' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements known but not met" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
+          Claimant special requirements known but not met
+        </label>
+      </div>
+       {% else %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements known but not met">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
+          Claimant special requirements known but not met
+        </label>
+      </div>
+       {% endif %}
+
+       {% if data["hcp-reason"] == 'Accommodation problem outside control' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem outside control" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem outside control
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem outside control">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem outside control
+        </label>
+      </div>
+       {% endif %}
+
+        {% if data["hcp-reason"] == 'Accommodation problem within control' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem within control" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem within control
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem within control">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem within control
+        </label>
+      </div>
+       {% endif %}
+
+       
+
+    </div>
+  </fieldset>
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    <b>Provide more details if needed</b>
+  </label>
+  <textarea class="govuk-textarea" id="more-detailhcp" name="moreNotesHCP" rows="5">{{data["moreNotesHCP"]}}</textarea>
+</div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <!-- {% if (data['attendeeAdded']) %}
+      <p><a href="attendees-addAnother">Cancel</a></p>
+      {% else %}
+      <p><a href="attendees-none">Cancel</a></p>
+      {% endif %}  test1-->
+     </div>
+</div>
+
+
+
+
+      </form>
+ 
+   
+
+{% endblock %}

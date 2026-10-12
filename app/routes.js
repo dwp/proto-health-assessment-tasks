@@ -2534,6 +2534,91 @@ router.use((req, res, next) => {
          case serviceRedirect.endsWith("/appointmentOutcomes/appointment?source=Appointment outcome"):
         return res.redirect("/appointmentOutcomes/appointment?source=Appointment outcome")
 
+       // Consultation timings
+        case serviceRedirect.endsWith("/consultationTimings/evidence-none?source=default"):
+        return res.redirect("/consultationTimings/evidence-none?source=default")
+
+        case serviceRedirect.endsWith("/consultationTimings/evidence-none?source=evidence"):
+        return res.redirect("/consultationTimings/evidence-none?source=evidence")
+
+        case serviceRedirect.endsWith("/consultationTimings/evidence?source=evidence"):
+        return res.redirect("/consultationTimings/check-?source=evidence")
+
+        case serviceRedirect.endsWith("/consultationTimings/evidence-addAnother?source=evidence"):
+        return res.redirect("/consultationTimings/evidence-addAnother?source=evidence")
+
+        case serviceRedirect.endsWith("/consultationTimings/conditions?source=History of condition"):
+        return res.redirect("/consultationTimings/conditions?source=History of condition")
+
+        case serviceRedirect.endsWith("/consultationTimings/med-treatment?source=Current medication and treatment"):
+        return res.redirect("/consultationTimings/med-treatment?source=Current medication and treatment")
+
+      case serviceRedirect.endsWith("/consultationTimings/consultation-date?source=Consultation date"):
+        return res.redirect("/consultationTimings/consultation-date?source=Consultation date")
+
+        case serviceRedirect.endsWith("/consultationTimings/verify-id?source=Claimant identity"):
+        return res.redirect("/consultationTimings/verify-id?source=Claimant identity")
+
+      case serviceRedirect.endsWith("/consultationTimings/consent?source=Claimant consent"):
+        return res.redirect("/consultationTimings/consent?source=Claimant consent")
+
+      case serviceRedirect.endsWith("/consultationTimings/attendees-none?source=Additional attendees"):
+        return res.redirect("/consultationTimings/attendees-none?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/consultationTimings/attendees?source=Additional attendees"):
+        return res.redirect("/consultationTimings/attendees?source=Additional attendees")
+
+      case serviceRedirect.endsWith("/consultationTimings/attendees-addAnother?source=Additional attendees"):
+        return res.redirect("/consultationTimings/attendees-addAnother?source=Additional attendees")
+
+        case serviceRedirect.endsWith("/consultationTimings/conditions-none?source=Condition history"):
+        return res.redirect("/consultationTimings/conditions-none?source=Condition history")
+
+      case serviceRedirect.endsWith("/consultationTimings/conditions-addAnother?source=Condition history"):
+        return res.redirect("/consultationTimings/conditions-addAnother?source=Condition history")
+
+        case serviceRedirect.endsWith("/consultationTimings/medications-none?source=Medication"):
+        return res.redirect("/consultationTimings/medications-none?source=Medication")
+
+      case serviceRedirect.endsWith("/consultationTimings/medication-addAnother?source=Medication"):
+        return res.redirect("/consultationTimings/medication-addAnother?source=Medication")
+        
+      case serviceRedirect.endsWith("/consultationTimings/soch1-additional?source=Social and occupational history"):
+        return res.redirect("/consultationTimings/soch1-additional?source=Social and occupational history")
+
+         case serviceRedirect.endsWith("/consultationTimings/functional-history?source=Functional history"):
+        return res.redirect("/consultationTimings/functional-history?source=Functional history")
+    
+      case serviceRedirect.endsWith("/consultationTimings/mental-state?source=Mental state observations"):
+        return res.redirect("/consultationTimings/mental-state?source=Mental state observations")
+
+      case serviceRedirect.endsWith("/consultationTimings/physical-state?source=Informal observations"):
+        return res.redirect("/consultationTimings/physical-state?source=Informal observations")
+      
+      case serviceRedirect.endsWith("/consultationTimings/descriptor?source=Activity descriptors"):
+        return res.redirect("/consultationTimings/descriptor?source=Activity descriptors")
+      
+      case serviceRedirect.endsWith("/consultationTimings/dl-qual?source=Daily living qualifying period and prospective test"):
+        return res.redirect("/consultationTimings/dl-qual?source=Daily living qualifying period and prospective test")
+
+         case serviceRedirect.endsWith("/consultationTimings/mobility-qual?source=Mobility qualifying period and prospective test"):
+        return res.redirect("/consultationTimings/mobility-qual?source=Mobility qualifying period and prospective test")
+      
+      case serviceRedirect.endsWith("/consultationTimings/review?source=Additional needs"):
+        return res.redirect("/consultationTimings/review?source=Additional needs")
+      
+      case serviceRedirect.endsWith("/consultationTimings/check-answers-tdm"):
+        return res.redirect("/consultationTimings/check-answers-tdm")
+
+        case serviceRedirect.endsWith("/consultationTimings/examination-consent?source=Examination consent"):
+        return res.redirect("/consultationTimings/examination-consent?source=Examination consent")
+
+        case serviceRedirect.endsWith("/consultationTimings/physical-examination?source=Physical examination"):
+        return res.redirect("/consultationTimings/physical-examination?source=Physical examination")
+
+         case serviceRedirect.endsWith("/consultationTimings/appointment?source=Appointment outcome"):
+        return res.redirect("/consultationTimings/appointment?source=Appointment outcome")
+
       default:
         return res.redirect("/")
 
