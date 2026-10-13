@@ -2619,6 +2619,9 @@ router.use((req, res, next) => {
          case serviceRedirect.endsWith("/consultationTimings/appointment?source=Appointment outcome"):
         return res.redirect("/consultationTimings/appointment?source=Appointment outcome")
 
+        case serviceRedirect.endsWith("/consultationTimings/timings?source=Record timings"):
+        return res.redirect("/consultationTimings/timings?source=Record timings")
+
       default:
         return res.redirect("/")
 

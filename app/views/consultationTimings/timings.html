@@ -1,0 +1,122 @@
+{% extends "layouts/timings-layout.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set containerClasses = "full-width-container" %}
+{% block content_left %}
+
+<style type="text/css">
+  .govuk-textarea {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Record timings</h1>
+      </div>
+    </div>
+
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Preparation time
+      </h1>
+    </legend>
+    <!-- <div id="passport-issued-hint" class="govuk-hint">
+
+    </div> -->
+    <div class="govuk-date-input" id="prep-time">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="prep-time-hours">
+            Hours
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="prep-time-hours" name="prep-hours" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="prep-time-mins">
+            Minutes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="prep-time-mins" name="prep-mins" type="text" inputmode="numeric">
+        </div>
+      </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Consultation time
+      </h1>
+    </legend>
+<div class="govuk-date-input" id="consultation-time">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="consultation-time-hours">
+        Hours
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="consultation-time-hours" name="consultation-hours" type="text" inputmode="numeric">
+    </div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="consultation-time-mins">
+        Minutes
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="consultation-time-mins" name="consultation-mins" type="text" inputmode="numeric">
+    </div>
+  </div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Write up time
+      </h1>
+    </legend>
+<div class="govuk-date-input" id="prep-time">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="writeup-time-hours">
+        Hours
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="writeup-time-hours" name="writeup-hours" type="text" inputmode="numeric">
+    </div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="writeup-time-mins">
+        Minutes
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="writeup-time-mins" name="writeup-mins" type="text" inputmode="numeric">
+    </div>
+  </div>
+</fieldset>
+</div>
+
+    
+  
+        
+    </form>    
+</div>
+</div>
+
+
+{% endblock %}
